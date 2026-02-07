@@ -73,7 +73,23 @@ class HomeScreen extends StatelessWidget {
             Text('樹階段：${stage.name}'),
             const SizedBox(height: 4),
             Text('總 XP：${snapshot.totalXp}'),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
+            Builder(
+              builder: (context) {
+                final current = progressService.currentLevelXp(snapshot.level);
+                final next = progressService.nextLevelXp(snapshot.level);
+                final progress = (snapshot.totalXp - current) / (next - current);
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
+                    const SizedBox(height: 6),
+                    LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
+                  ],
+                );
+              },
+            ),
+            const SizedBox(height: 8),
             Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
             const SizedBox(height: 4),
             Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),

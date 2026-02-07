@@ -45,6 +45,15 @@ class ProgressService {
         lastActiveDate: _lastActiveDate,
       );
 
+  int currentLevelXp(int level) {
+    if (level <= 1) return 0;
+    return _xpThreshold(level - 1);
+  }
+
+  int nextLevelXp(int level) {
+    return _xpThreshold(level);
+  }
+
   void resetDailyProgress({required bool continuedStreak}) {
     _dailyAnswered = 0;
     if (continuedStreak) {
