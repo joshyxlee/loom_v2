@@ -100,6 +100,18 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 4),
             Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
             const Spacer(),
+            if (snapshot.dailyAnswered >= snapshot.dailyTarget) ...[
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Text('今日目標已完成！額外加成已生效'),
+              ),
+              const SizedBox(height: 12),
+            ],
             Center(
               child: FilledButton(
                 onPressed: () async {
@@ -140,6 +152,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int _index = 0;
   int? _selected;
   int _lastXp = 0;
+  bool _dailyTargetJustCompleted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -168,10 +181,12 @@ class _QuizScreenState extends State<QuizScreen> {
                   onPressed: _selected == null
                       ? () => setState(() {
                             _selected = i;
-                            _lastXp = widget.progressService.recordAnswer(
+                            final result = widget.progressService.recordAnswer(
                               isCorrect: question.isCorrect(i),
                               difficulty: question.difficulty,
                             );
+                            _lastXp = result.gainedXp;
+                            _dailyTargetJustCompleted = result.completedDailyTarget;
                           })
                       : null,
                   child: Align(
@@ -187,6 +202,10 @@ class _QuizScreenState extends State<QuizScreen> {
             const Spacer(),
             if (_selected != null) ...[
               Text('本題 XP：+$_lastXp', style: Theme.of(context).textTheme.bodyMedium),
+              if (_dailyTargetJustCompleted) ...[
+                const SizedBox(height: 6),
+                const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
               const SizedBox(height: 8),
               Text(
                 question.explanation,
@@ -202,6 +221,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       _index += 1;
                       _selected = null;
                       _lastXp = 0;
+                      _dailyTargetJustCompleted = false;
                     });
                   }
                 },

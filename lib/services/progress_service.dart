@@ -20,6 +20,16 @@ class ProgressSnapshot {
   final DateTime? lastActiveDate;
 }
 
+class AnswerResult {
+  const AnswerResult({
+    required this.gainedXp,
+    required this.completedDailyTarget,
+  });
+
+  final int gainedXp;
+  final bool completedDailyTarget;
+}
+
 class ProgressService {
   ProgressService({
     this.dailyTarget = 10,
@@ -78,7 +88,7 @@ class ProgressService {
     _lastActiveDate = now;
   }
 
-  int recordAnswer({required bool isCorrect, required int difficulty}) {
+  AnswerResult recordAnswer({required bool isCorrect, required int difficulty}) {
     ensureDailyState();
     final baseXp = _baseXpForDifficulty(difficulty);
     final correctXp = isCorrect ? baseXp * 3 : baseXp;
@@ -87,7 +97,8 @@ class ProgressService {
     _totalXp += gained;
     _dailyAnswered += 1;
     _lastActiveDate = DateTime.now();
-    return gained;
+    final completedDailyTarget = _dailyAnswered == dailyTarget;
+    return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);
   }
 
   int _baseXpForDifficulty(int difficulty) {
