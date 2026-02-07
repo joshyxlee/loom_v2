@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'models/question.dart';
 import 'repositories/repository_factory.dart';
 import 'repositories/question_repository.dart';
+import 'services/progress_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +19,7 @@ class LoomV2App extends StatefulWidget {
 
 class _LoomV2AppState extends State<LoomV2App> {
   late final QuestionRepository _repository;
+  final ProgressService _progressService = ProgressService();
   bool _ready = false;
 
   @override
@@ -41,34 +43,56 @@ class _LoomV2AppState extends State<LoomV2App> {
         useMaterial3: true,
       ),
       home: _ready
-          ? HomeScreen(repository: _repository)
+          ? HomeScreen(repository: _repository, progressService: _progressService)
           : const Scaffold(body: Center(child: CircularProgressIndicator())),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key, required this.repository});
+  const HomeScreen({super.key, required this.repository, required this.progressService});
 
   final QuestionRepository repository;
+  final ProgressService progressService;
 
   @override
   Widget build(BuildContext context) {
+    final snapshot = progressService.snapshot;
     return Scaffold(
       appBar: AppBar(title: const Text('Loom v2')),
-      body: Center(
-        child: FilledButton(
-          onPressed: () async {
-            final questions = await repository.getSession(subject: 'funFacts', count: 5);
-            if (!context.mounted) return;
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => QuizScreen(questions: questions),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: 4),
+            Text('總 XP：${snapshot.totalXp}'),
+            const SizedBox(height: 4),
+            Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
+            const SizedBox(height: 4),
+            Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
+            const Spacer(),
+            Center(
+              child: FilledButton(
+                onPressed: () async {
+                  final questions = await repository.getSession(subject: 'funFacts', count: 5);
+                  if (!context.mounted) return;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => QuizScreen(
+                        questions: questions,
+                        progressService: progressService,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text('開始答題'),
               ),
-            );
-          },
-          child: const Text('開始答題'),
+            ),
+            const Spacer(),
+          ],
         ),
       ),
     );
@@ -76,9 +100,10 @@ class HomeScreen extends StatelessWidget {
 }
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key, required this.questions});
+  const QuizScreen({super.key, required this.questions, required this.progressService});
 
   final List<Question> questions;
+  final ProgressService progressService;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -87,6 +112,7 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   int _index = 0;
   int? _selected;
+  int _lastXp = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +141,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   onPressed: _selected == null
                       ? () => setState(() {
                             _selected = i;
+                            _lastXp = widget.progressService.recordAnswer(
+                              isCorrect: question.isCorrect(i),
+                              difficulty: question.difficulty,
+                            );
                           })
                       : null,
                   child: Align(
@@ -129,6 +159,8 @@ class _QuizScreenState extends State<QuizScreen> {
             }),
             const Spacer(),
             if (_selected != null) ...[
+              Text('本題 XP：+$_lastXp', style: Theme.of(context).textTheme.bodyMedium),
+              const SizedBox(height: 8),
               Text(
                 question.explanation,
                 style: Theme.of(context).textTheme.bodyMedium,
@@ -142,6 +174,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     setState(() {
                       _index += 1;
                       _selected = null;
+                      _lastXp = 0;
                     });
                   }
                 },
