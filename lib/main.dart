@@ -5,6 +5,7 @@ import 'repositories/repository_factory.dart';
 import 'repositories/question_repository.dart';
 import 'services/progress_service.dart';
 import 'services/tree_growth.dart';
+import 'services/seen_store.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,7 @@ class LoomV2App extends StatefulWidget {
 class _LoomV2AppState extends State<LoomV2App> {
   late final QuestionRepository _repository;
   final ProgressService _progressService = ProgressService();
+  final SeenStore _seenStore = SeenStore();
   bool _ready = false;
 
   @override
@@ -30,7 +32,11 @@ class _LoomV2AppState extends State<LoomV2App> {
   }
 
   Future<void> _bootstrap() async {
-    _repository = RepositoryFactory(source: RepositorySource.local).create();
+    await _seenStore.init();
+    _repository = RepositoryFactory(
+      source: RepositorySource.local,
+      seenStore: _seenStore,
+    ).create();
     await _repository.init();
     setState(() => _ready = true);
   }
