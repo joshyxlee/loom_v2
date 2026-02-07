@@ -1,0 +1,47 @@
+[
+  {
+    "id": "history_seed_0001",
+    "subject": "history",
+    "prompt": "古埃及最著名的金字塔群位於哪裡？",
+    "options": ["吉薩", "底比斯"],
+    "answerIndex": 0,
+    "explanation": "吉薩金字塔群是古埃及最著名遺址之一。",
+    "difficulty": 1
+  },
+  {
+    "id": "history_seed_0002",
+    "subject": "history",
+    "prompt": "文藝復興最早興起於哪個地區？",
+    "options": ["義大利", "英格蘭", "德意志", "北歐"],
+    "answerIndex": 0,
+    "explanation": "文藝復興起源於義大利。",
+    "difficulty": 1
+  },
+  {
+    "id": "history_seed_0003",
+    "subject": "history",
+    "prompt": "羅馬競技場位於哪座城市？",
+    "options": ["羅馬", "米蘭"],
+    "answerIndex": 0,
+    "explanation": "羅馬競技場位於羅馬市中心。",
+    "difficulty": 1
+  },
+  {
+    "id": "history_seed_0004",
+    "subject": "history",
+    "prompt": "古希臘奧運會主要獻給哪位神祇？",
+    "options": ["宙斯", "阿波羅", "雅典娜", "波賽頓"],
+    "answerIndex": 0,
+    "explanation": "古希臘奧運會是為宙斯而設。",
+    "difficulty": 1
+  },
+  {
+    "id": "history_seed_0005",
+    "subject": "history",
+    "prompt": "工業革命最早興起於哪個國家？",
+    "options": ["英國", "法國"],
+    "answerIndex": 0,
+    "explanation": "工業革命起源於英國。",
+    "difficulty": 1
+  }
+]

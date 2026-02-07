@@ -1,0 +1,47 @@
+[
+  {
+    "id": "world_seed_0001",
+    "subject": "world",
+    "prompt": "哪一個海洋面積最大？",
+    "options": ["太平洋", "大西洋", "印度洋", "北冰洋"],
+    "answerIndex": 0,
+    "explanation": "太平洋是地球上最大、最深的海洋。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0002",
+    "subject": "world",
+    "prompt": "赤道主要經過哪一洲？",
+    "options": ["非洲", "南極洲"],
+    "answerIndex": 0,
+    "explanation": "赤道穿過非洲中部。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0003",
+    "subject": "world",
+    "prompt": "以下哪個國家以袋鼠聞名？",
+    "options": ["澳洲", "加拿大", "挪威", "日本"],
+    "answerIndex": 0,
+    "explanation": "袋鼠是澳洲代表性動物。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0004",
+    "subject": "world",
+    "prompt": "世界最高的山峰是？",
+    "options": ["珠穆朗瑪峰", "玉山"],
+    "answerIndex": 0,
+    "explanation": "珠穆朗瑪峰是世界最高峰。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0005",
+    "subject": "world",
+    "prompt": "以下哪一座城市被稱為「浪漫之都」？",
+    "options": ["巴黎", "紐約", "首爾", "曼谷"],
+    "answerIndex": 0,
+    "explanation": "巴黎常被稱為浪漫之都。",
+    "difficulty": 1
+  }
+]

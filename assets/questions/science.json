@@ -1,0 +1,47 @@
+[
+  {
+    "id": "science_seed_0001",
+    "subject": "science",
+    "prompt": "水的化學式是什麼？",
+    "options": ["H2O", "CO2"],
+    "answerIndex": 0,
+    "explanation": "水由兩個氫和一個氧組成。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0002",
+    "subject": "science",
+    "prompt": "聲音無法在下列哪種環境中傳播？",
+    "options": ["真空", "空氣", "水", "鋼鐵"],
+    "answerIndex": 0,
+    "explanation": "真空中沒有介質，聲音無法傳播。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0003",
+    "subject": "science",
+    "prompt": "植物行光合作用主要需要？",
+    "options": ["陽光與二氧化碳", "鹽與油"],
+    "answerIndex": 0,
+    "explanation": "光合作用需要光能與二氧化碳。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0004",
+    "subject": "science",
+    "prompt": "地球自轉一圈約需多久？",
+    "options": ["24 小時", "365 天"],
+    "answerIndex": 0,
+    "explanation": "地球自轉約 24 小時。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0005",
+    "subject": "science",
+    "prompt": "哪一種氣體是人類呼吸最需要的？",
+    "options": ["氧氣", "二氧化碳"],
+    "answerIndex": 0,
+    "explanation": "氧氣是細胞呼吸必需氣體。",
+    "difficulty": 1
+  }
+]

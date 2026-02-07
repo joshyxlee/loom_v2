@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
+import 'models/subject.dart';
+import 'data/subjects.dart';
 import 'repositories/repository_factory.dart';
 import 'repositories/question_repository.dart';
 import 'services/progress_service.dart';
@@ -62,6 +64,21 @@ class HomeScreen extends StatelessWidget {
   final QuestionRepository repository;
   final ProgressService progressService;
 
+  Future<void> _startSubject(BuildContext context, Subject subject) async {
+    final questions = await repository.getSession(subject: subject.key, count: 5);
+    if (!context.mounted) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          questions: questions,
+          progressService: progressService,
+          subjectTitle: subject.title,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     progressService.ensureDailyState();
@@ -112,24 +129,19 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
             ],
-            Center(
-              child: FilledButton(
-                onPressed: () async {
-                  final questions = await repository.getSession(subject: 'funFacts', count: 5);
-                  if (!context.mounted) return;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => QuizScreen(
-                        questions: questions,
-                        progressService: progressService,
-                      ),
+            const SizedBox(height: 12),
+            Text('科目', style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 8),
+            ...subjects.map((subject) => Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: OutlinedButton(
+                    onPressed: () => _startSubject(context, subject),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(subject.title),
                     ),
-                  );
-                },
-                child: const Text('開始答題'),
-              ),
-            ),
+                  ),
+                )),
             const Spacer(),
           ],
         ),
@@ -139,10 +151,16 @@ class HomeScreen extends StatelessWidget {
 }
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key, required this.questions, required this.progressService});
+  const QuizScreen({
+    super.key,
+    required this.questions,
+    required this.progressService,
+    required this.subjectTitle,
+  });
 
   final List<Question> questions;
   final ProgressService progressService;
+  final String subjectTitle;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -158,7 +176,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     final question = widget.questions[_index];
     return Scaffold(
-      appBar: AppBar(title: const Text('冷知識')),
+      appBar: AppBar(title: Text(widget.subjectTitle)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

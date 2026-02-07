@@ -1,0 +1,47 @@
+[
+  {
+    "id": "money_seed_0001",
+    "subject": "money",
+    "prompt": "做每月預算的主要目的為何？",
+    "options": ["掌握收支並控制支出", "讓錢自動變多"],
+    "answerIndex": 0,
+    "explanation": "預算能幫助掌握支出並規劃花費。",
+    "difficulty": 1
+  },
+  {
+    "id": "money_seed_0002",
+    "subject": "money",
+    "prompt": "緊急預備金通常建議至少存下幾個月生活費？",
+    "options": ["3～6 個月", "24 個月以上"],
+    "answerIndex": 0,
+    "explanation": "常見建議是 3～6 個月。",
+    "difficulty": 1
+  },
+  {
+    "id": "money_seed_0003",
+    "subject": "money",
+    "prompt": "投資前先建立緊急預備金的原因是？",
+    "options": ["避免緊急時被迫賣出投資", "投資一定賺錢"],
+    "answerIndex": 0,
+    "explanation": "緊急預備金可應對突發狀況。",
+    "difficulty": 1
+  },
+  {
+    "id": "money_seed_0004",
+    "subject": "money",
+    "prompt": "「分散投資」的主要目的為？",
+    "options": ["降低單一風險", "一定提高報酬"],
+    "answerIndex": 0,
+    "explanation": "分散能降低單一事件造成的大損失。",
+    "difficulty": 1
+  },
+  {
+    "id": "money_seed_0005",
+    "subject": "money",
+    "prompt": "為什麼信用卡要準時全額繳清？",
+    "options": ["避免高額利息並維持信用", "逾期可以省錢"],
+    "answerIndex": 0,
+    "explanation": "準時全額繳清可避免循環利息。",
+    "difficulty": 1
+  }
+]
