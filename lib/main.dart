@@ -4,6 +4,7 @@ import 'models/question.dart';
 import 'repositories/repository_factory.dart';
 import 'repositories/question_repository.dart';
 import 'services/progress_service.dart';
+import 'services/tree_growth.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,7 +58,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    progressService.ensureDailyState();
     final snapshot = progressService.snapshot;
+    final stage = TreeGrowth.stageForLevel(snapshot.level);
     return Scaffold(
       appBar: AppBar(title: const Text('Loom v2')),
       body: Padding(
@@ -66,6 +69,8 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleLarge),
+            const SizedBox(height: 4),
+            Text('樹階段：${stage.name}'),
             const SizedBox(height: 4),
             Text('總 XP：${snapshot.totalXp}'),
             const SizedBox(height: 4),

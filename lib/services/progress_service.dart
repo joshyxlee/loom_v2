@@ -8,6 +8,7 @@ class ProgressSnapshot {
     required this.dailyTarget,
     required this.streakDays,
     required this.dailyBonusMultiplier,
+    required this.lastActiveDate,
   });
 
   final int totalXp;
@@ -16,6 +17,7 @@ class ProgressSnapshot {
   final int dailyTarget;
   final int streakDays;
   final double dailyBonusMultiplier;
+  final DateTime? lastActiveDate;
 }
 
 class ProgressService {
@@ -31,6 +33,7 @@ class ProgressService {
   int _dailyAnswered = 0;
   int _streakDays = 0;
   double _dailyBonusMultiplier = 1.0;
+  DateTime? _lastActiveDate;
 
   ProgressSnapshot get snapshot => ProgressSnapshot(
         totalXp: _totalXp,
@@ -39,6 +42,7 @@ class ProgressService {
         dailyTarget: dailyTarget,
         streakDays: _streakDays,
         dailyBonusMultiplier: _dailyBonusMultiplier,
+        lastActiveDate: _lastActiveDate,
       );
 
   void resetDailyProgress({required bool continuedStreak}) {
@@ -52,13 +56,28 @@ class ProgressService {
     }
   }
 
+  void ensureDailyState() {
+    final now = DateTime.now();
+    if (_lastActiveDate == null) {
+      _lastActiveDate = now;
+      return;
+    }
+    if (_isSameDay(_lastActiveDate!, now)) return;
+
+    final completed = _dailyAnswered >= dailyTarget;
+    resetDailyProgress(continuedStreak: completed);
+    _lastActiveDate = now;
+  }
+
   int recordAnswer({required bool isCorrect, required int difficulty}) {
+    ensureDailyState();
     final baseXp = _baseXpForDifficulty(difficulty);
     final correctXp = isCorrect ? baseXp * 3 : baseXp;
     final bonus = (correctXp * (_dailyBonusMultiplier - 1)).round();
     final gained = correctXp + bonus;
     _totalXp += gained;
     _dailyAnswered += 1;
+    _lastActiveDate = DateTime.now();
     return gained;
   }
 
@@ -90,5 +109,9 @@ class ProgressService {
     // level 1 -> 0 xp, level 50 ~ 50k xp
     final curve = pow(level, 2.1).toDouble();
     return (curve * 40).round();
+  }
+
+  bool _isSameDay(DateTime a, DateTime b) {
+    return a.year == b.year && a.month == b.month && a.day == b.day;
   }
 }
