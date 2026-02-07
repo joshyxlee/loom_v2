@@ -1,0 +1,47 @@
+[
+  {
+    "id": "funfacts_seed_0001",
+    "subject": "funFacts",
+    "prompt": "哪種動物的心臟位置在頭部附近？",
+    "options": ["蝸牛", "烏龜", "海豚", "企鵝"],
+    "answerIndex": 0,
+    "explanation": "蝸牛的心臟靠近頭部，是牠們身體構造的小巧思。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0002",
+    "subject": "funFacts",
+    "prompt": "以下哪個行星的一天最短？",
+    "options": ["木星", "火星"],
+    "answerIndex": 0,
+    "explanation": "木星自轉超快，約 10 小時就完成一天。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0003",
+    "subject": "funFacts",
+    "prompt": "蜂蜜幾乎不會壞的主要原因是？",
+    "options": ["含水量低、酸性高", "因為加了防腐劑", "因為溫度很低", "因為有酒精"],
+    "answerIndex": 0,
+    "explanation": "蜂蜜低水分、偏酸又含抗菌成分，所以很耐放。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0004",
+    "subject": "funFacts",
+    "prompt": "哪一種金屬在室溫下是液體？",
+    "options": ["汞", "鋁", "鐵", "銅"],
+    "answerIndex": 0,
+    "explanation": "汞在室溫下是液態金屬。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0005",
+    "subject": "funFacts",
+    "prompt": "章魚有幾顆心臟？",
+    "options": ["3 顆", "1 顆", "2 顆", "4 顆"],
+    "answerIndex": 0,
+    "explanation": "章魚有三顆心臟，其中兩顆負責鰓。",
+    "difficulty": 1
+  }
+]
