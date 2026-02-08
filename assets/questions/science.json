@@ -4,12 +4,12 @@
     "subject": "science",
     "prompt": "水的化學式是？",
     "options": [
-      "CO2",
       "H2O",
+      "CO2",
       "O2",
       "NaCl"
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": "二氧化碳很常見所以容易選錯。\n水的化學式是 H2O。",
     "difficulty": "easy"
   },
@@ -19,11 +19,11 @@
     "prompt": "地球大氣中含量最多的氣體是？",
     "options": [
       "氧氣",
-      "二氧化碳",
       "氮氣",
+      "二氧化碳",
       "氬氣"
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": "氧氣最直覺所以常被選。\n含量最多的是氮氣。",
     "difficulty": "medium"
   },
@@ -32,12 +32,12 @@
     "subject": "science",
     "prompt": "人眼主要感光細胞是？",
     "options": [
-      "視桿與視錐",
       "神經元與膠質",
       "視網膜與虹膜",
+      "視桿與視錐",
       "角膜與晶狀體"
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": "容易把結構名稱當成細胞名稱。\n真正的感光細胞是視桿與視錐。",
     "difficulty": "medium"
   },
@@ -48,10 +48,10 @@
     "options": [
       "A-C、T-G",
       "A-A、C-C",
-      "A-T、C-G",
-      "A-G、C-T"
+      "A-G、C-T",
+      "A-T、C-G"
     ],
-    "answerIndex": 2,
+    "answerIndex": 3,
     "explanation": "常以為隨便對上就行。\n互補配對遵循 A-T、C-G。",
     "difficulty": "hard"
   },
@@ -60,13 +60,643 @@
     "subject": "science",
     "prompt": "能直接顯示地球自轉的實驗是？",
     "options": [
+      "傅科擺",
       "海潮",
       "季風",
-      "地轉偏向",
-      "傅科擺"
+      "地轉偏向"
     ],
-    "answerIndex": 3,
+    "answerIndex": 0,
     "explanation": "地轉偏向是效應，不是實驗。\n傅科擺能直接展示地球自轉。",
     "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0006",
+    "subject": "science",
+    "prompt": "飛機在天空能維持上升的主要原因是？",
+    "options": [
+      "機翼會吸住空氣",
+      "機翼上下氣流壓差",
+      "重力變弱",
+      "引擎直接把機身往上拉"
+    ],
+    "answerIndex": 1,
+    "explanation": "常以為只是引擎力量往上拉。\n真正關鍵是機翼造成的壓差升力。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0007",
+    "subject": "science",
+    "prompt": "冰浮在水上，主要原因是？",
+    "options": [
+      "冰比較重但被撐住",
+      "水面張力特別強",
+      "冰分子排列較鬆散",
+      "冰裡有空氣泡"
+    ],
+    "answerIndex": 2,
+    "explanation": "直覺會覺得是水面張力。\n冰分子排列較鬆散所以密度更低。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0008",
+    "subject": "science",
+    "prompt": "同樣溫度下，金屬摸起來更冷的原因是？",
+    "options": [
+      "金屬實際溫度更低",
+      "金屬會吸走冷氣",
+      "金屬表面有水分",
+      "金屬導熱更快"
+    ],
+    "answerIndex": 3,
+    "explanation": "誤以為金屬溫度本來就更低。\n其實是導熱快讓熱量流失更快。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0009",
+    "subject": "science",
+    "prompt": "為什麼微波爐加熱食物很快？",
+    "options": [
+      "水分子快速翻轉摩擦生熱",
+      "直接加熱空氣",
+      "食物自己產生熱",
+      "金屬反射熱能"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易以為是把空氣加熱。\n微波讓水分子翻轉產生熱。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0010",
+    "subject": "science",
+    "prompt": "眼鏡為什麼能讓你看清楚？",
+    "options": [
+      "增加眼球力量",
+      "改變光線折射路徑",
+      "放大眼睛本身",
+      "讓瞳孔縮小"
+    ],
+    "answerIndex": 1,
+    "explanation": "不是在強化眼球本身。\n眼鏡是改變光線折射來對焦。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0011",
+    "subject": "science",
+    "prompt": "太陽看起來比實際大一點的原因是？",
+    "options": [
+      "太陽膨脹",
+      "眼睛放大",
+      "大氣折射",
+      "光線變慢"
+    ],
+    "answerIndex": 2,
+    "explanation": "直覺會以為是太陽變大。\n大氣折射讓它視覺上變大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0012",
+    "subject": "science",
+    "prompt": "為什麼在月球上講話聽不到聲音？",
+    "options": [
+      "聲波被地球吸走",
+      "月球太冷聲音消失",
+      "聲音只在白天存在",
+      "沒有空氣傳遞聲波"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人以為是溫度造成。\n沒有空氣就沒有聲音傳遞媒介。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0013",
+    "subject": "science",
+    "prompt": "為什麼玻璃杯中的吸管看起來彎曲？",
+    "options": [
+      "光線折射",
+      "吸管真的變形",
+      "水在流動",
+      "杯子放大效果"
+    ],
+    "answerIndex": 0,
+    "explanation": "常以為是吸管本身變彎。\n光線在水中折射造成視覺偏折。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0014",
+    "subject": "science",
+    "prompt": "為什麼天空在晴天看起來是藍色？",
+    "options": [
+      "海洋反射到天空",
+      "藍光散射較強",
+      "太陽本來是藍色",
+      "氧氣本身有顏色"
+    ],
+    "answerIndex": 1,
+    "explanation": "海洋反射是常見迷思。\n主要是大氣散射藍光。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0015",
+    "subject": "science",
+    "prompt": "為什麼熱水有時比冷水更快結冰？",
+    "options": [
+      "熱水本身更冷",
+      "冰箱只冷熱水",
+      "水分蒸發改變條件",
+      "容器會釋放冷能"
+    ],
+    "answerIndex": 2,
+    "explanation": "直覺覺得不可能。\n某些條件下蒸發與對流會影響結冰速度。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0016",
+    "subject": "science",
+    "prompt": "為什麼潛水時要慢慢上升？",
+    "options": [
+      "避免耳朵聽不到",
+      "水會變重",
+      "氧氣會消失",
+      "避免氮氣形成氣泡"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人以為只是耳壓問題。\n上升太快會讓氮氣在體內形成氣泡。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0017",
+    "subject": "science",
+    "prompt": "為什麼汽車下坡時更容易過熱煞車？",
+    "options": [
+      "摩擦轉成熱量",
+      "輪胎空氣變多",
+      "引擎自動升溫",
+      "地心引力變大"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易把熱量歸到引擎。\n煞車摩擦把動能轉成熱。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0018",
+    "subject": "science",
+    "prompt": "為什麼高山上的水較難煮熟食物？",
+    "options": [
+      "水變少",
+      "水沸點降低",
+      "火力變弱",
+      "鍋子變薄"
+    ],
+    "answerIndex": 1,
+    "explanation": "會以為是火力不夠。\n高山氣壓低，水沸點下降。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0019",
+    "subject": "science",
+    "prompt": "為什麼冬天看到哈氣是白色的？",
+    "options": [
+      "嘴巴有粉末",
+      "空氣中有煙",
+      "水氣凝結成小液滴",
+      "肺部氣體變白"
+    ],
+    "answerIndex": 2,
+    "explanation": "常以為是空氣本身變色。\n冷空氣讓水氣凝結成小水滴。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0020",
+    "subject": "science",
+    "prompt": "為什麼冷氣房內覺得乾，主要原因是？",
+    "options": [
+      "空氣分子變少",
+      "氧氣變多",
+      "溫度變高",
+      "空氣水分被冷凝帶走"
+    ],
+    "answerIndex": 3,
+    "explanation": "誤以為只是溫度低。\n冷凝除濕讓空氣水分變少。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0021",
+    "subject": "science",
+    "prompt": "手機指南針能指北，主要依靠？",
+    "options": [
+      "磁力感測器",
+      "GPS 訊號",
+      "陀螺儀重力",
+      "相機影像"
+    ],
+    "answerIndex": 0,
+    "explanation": "很多人以為靠 GPS。\n指南針靠的是磁力感測器。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0022",
+    "subject": "science",
+    "prompt": "為什麼冰箱內反而會結霜？",
+    "options": [
+      "冰箱自己產生水",
+      "空氣中的水氣凝結",
+      "冰箱太冷會冒霧",
+      "食物放太多"
+    ],
+    "answerIndex": 1,
+    "explanation": "容易以為是機器產生水。\n其實是空氣中的水氣凝結成霜。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0023",
+    "subject": "science",
+    "prompt": "為什麼閃電會先看到、後聽到雷聲？",
+    "options": [
+      "雷聲會被吸收",
+      "閃電在地底",
+      "光速比聲速快",
+      "耳朵反應慢"
+    ],
+    "answerIndex": 2,
+    "explanation": "常以為是距離造成延遲。\n其實光速遠快於聲速。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0024",
+    "subject": "science",
+    "prompt": "為什麼玻璃瓶上熱水容易裂？",
+    "options": [
+      "水太重",
+      "玻璃吸水",
+      "熱水含鹽",
+      "熱脹冷縮造成應力"
+    ],
+    "answerIndex": 3,
+    "explanation": "常以為是水的重量。\n溫度差造成材料應力開裂。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0025",
+    "subject": "science",
+    "prompt": "為什麼熱氣球能上升？",
+    "options": [
+      "熱空氣密度較低",
+      "熱空氣比較重",
+      "火會推著上去",
+      "因為氣球是圓的"
+    ],
+    "answerIndex": 0,
+    "explanation": "看起來像火把推上去。\n其實是熱空氣密度低產生浮力。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0026",
+    "subject": "science",
+    "prompt": "為什麼生鏽的鐵會變重一點？",
+    "options": [
+      "水分增加重量",
+      "吸收氧形成氧化物",
+      "鐵變密實",
+      "空氣壓縮"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為只是沾水。\n鐵與氧結合增加了質量。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0027",
+    "subject": "science",
+    "prompt": "為什麼夏天穿黑色衣服更熱？",
+    "options": [
+      "黑色本身發熱",
+      "黑色阻擋空氣",
+      "吸收更多太陽輻射",
+      "黑色讓汗消失"
+    ],
+    "answerIndex": 2,
+    "explanation": "常以為是衣服材質而已。\n黑色吸收更多輻射熱。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0028",
+    "subject": "science",
+    "prompt": "為什麼耳機線越長聲音可能越小？",
+    "options": [
+      "聲波走比較遠",
+      "耳機變小",
+      "手機自動降音",
+      "電阻增加造成衰減"
+    ],
+    "answerIndex": 3,
+    "explanation": "容易以為是聲波距離問題。\n線越長電阻越大，訊號會衰減。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0029",
+    "subject": "science",
+    "prompt": "為什麼溫度計需要在陰涼處測室溫？",
+    "options": [
+      "避免輻射加熱",
+      "避免空氣流動",
+      "避免玻璃變重",
+      "避免濕度影響"
+    ],
+    "answerIndex": 0,
+    "explanation": "常以為是風會吹亂。\n陽光輻射會直接加熱溫度計。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0030",
+    "subject": "science",
+    "prompt": "為什麼跑步時會出現「第二風」感覺？",
+    "options": [
+      "腎上腺素瞬間清零",
+      "身體調整到更有效的供氧",
+      "乳酸完全消失",
+      "心臟停止加速"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為是疲勞突然消失。\n其實是身體進入更穩定的供氧狀態。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0031",
+    "subject": "science",
+    "prompt": "為什麼把鹽灑在結冰道路上有效？",
+    "options": [
+      "讓冰瞬間融化成熱水",
+      "吸走所有熱量",
+      "降低水的凝固點",
+      "讓冰變輕"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易誤以為鹽本身很熱。\n鹽降低凝固點，使冰更易融。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0032",
+    "subject": "science",
+    "prompt": "為什麼海水比淡水更容易導電？",
+    "options": [
+      "水分子比較大",
+      "溫度更高",
+      "顏色較深",
+      "含溶解鹽離子"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人以為是顏色或溫度。\n主要是鹽離子讓導電性提高。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0033",
+    "subject": "science",
+    "prompt": "為什麼看到火花不一定代表高溫？",
+    "options": [
+      "可能是金屬氧化發光",
+      "火花等於熔融",
+      "火花只會在高溫",
+      "火花都是電擊"
+    ],
+    "answerIndex": 0,
+    "explanation": "直覺把火花當成溫度指標。\n很多火花是材料氧化或反應發光。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0034",
+    "subject": "science",
+    "prompt": "為什麼膠帶快速拉扯時會發出光？",
+    "options": [
+      "空氣太乾燥",
+      "摩擦造成電荷放電",
+      "膠水燃燒",
+      "塑膠變熱發亮"
+    ],
+    "answerIndex": 1,
+    "explanation": "看起來像發熱發光。\n其實是電荷分離造成的放電。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0035",
+    "subject": "science",
+    "prompt": "為什麼高速行駛時，車窗外的雨滴看起來向上？",
+    "options": [
+      "雨滴真的往上飄",
+      "重力方向改變",
+      "相對運動造成視覺錯覺",
+      "玻璃折射"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易以為雨滴方向真的改變。\n其實是相對速度造成的視覺錯覺。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0036",
+    "subject": "science",
+    "prompt": "為什麼冷水能比溫水更快消暑？",
+    "options": [
+      "冷水含氧更多",
+      "冷水會降低血壓",
+      "冷水會麻痺味覺",
+      "溫差更大帶走熱量"
+    ],
+    "answerIndex": 3,
+    "explanation": "常把「感覺涼」當成心理作用。\n較大的溫差讓身體散熱更快。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0037",
+    "subject": "science",
+    "prompt": "為什麼天空看起來比太空更亮？",
+    "options": [
+      "大氣散射光線",
+      "太空沒有光",
+      "地球反射更強",
+      "太陽只照地面"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易以為太空沒有光。\n大氣散射讓天空顯得更亮。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0038",
+    "subject": "science",
+    "prompt": "為什麼在太空中宇航員看不到「上」與「下」？",
+    "options": [
+      "光線不足",
+      "缺乏重力方向感",
+      "眼睛變慢",
+      "時間變慢"
+    ],
+    "answerIndex": 1,
+    "explanation": "直覺以為是光線問題。\n失重讓方向感失去參考。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0039",
+    "subject": "science",
+    "prompt": "為什麼戴耳機時更容易忽略外界聲音？",
+    "options": [
+      "耳朵自動關閉",
+      "外界聲音消失",
+      "大腦注意力被覆蓋",
+      "耳膜變薄"
+    ],
+    "answerIndex": 2,
+    "explanation": "以為是耳朵被堵住而已。\n其實是注意力被聲音覆蓋。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0040",
+    "subject": "science",
+    "prompt": "為什麼海邊白天風較大、晚上風向會變？",
+    "options": [
+      "月亮吸引氣流",
+      "海水蒸發變重",
+      "地球自轉變慢",
+      "陸海溫差造成氣流"
+    ],
+    "answerIndex": 3,
+    "explanation": "常把風向變化歸因月亮。\n陸海溫差形成海陸風循環。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0041",
+    "subject": "science",
+    "prompt": "為什麼高壓鍋能更快煮熟食物？",
+    "options": [
+      "提高沸點讓溫度更高",
+      "鍋子更厚所以更快",
+      "火力自動加倍",
+      "水分變少"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易以為只是加大火力。\n高壓提高沸點，烹煮溫度更高。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0042",
+    "subject": "science",
+    "prompt": "為什麼用玻璃杯敲擊的音調會不同？",
+    "options": [
+      "玻璃材質變了",
+      "水量改變振動頻率",
+      "空氣變重",
+      "音速變快"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為是玻璃本身改變。\n水量影響杯子振動頻率。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0043",
+    "subject": "science",
+    "prompt": "為什麼坐電梯向下時會有輕飄感？",
+    "options": [
+      "氧氣變少",
+      "重力變弱",
+      "加速度讓受力變小",
+      "耳壓突然改變"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易誤以為重力突然變弱。\n其實是加速度讓支持力變小。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0044",
+    "subject": "science",
+    "prompt": "為什麼光年是距離而不是時間？",
+    "options": [
+      "是光的一年壽命",
+      "是光的一年能量",
+      "是光的一年速度",
+      "是光在一年走的距離"
+    ],
+    "answerIndex": 3,
+    "explanation": "名字像時間單位容易誤解。\n光年是光一年走的距離。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0045",
+    "subject": "science",
+    "prompt": "為什麼太陽不是綠色，卻在大氣中看起來偏黃？",
+    "options": [
+      "大氣散射藍光",
+      "太陽本來就是黃",
+      "視網膜偏色",
+      "地表反射變黃"
+    ],
+    "answerIndex": 0,
+    "explanation": "以為太陽天生黃色。\n大氣散射讓藍光減少而呈黃。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0046",
+    "subject": "science",
+    "prompt": "為什麼冬天鼻子容易流鼻水？",
+    "options": [
+      "身體在排毒",
+      "冷空氣讓黏膜分泌增加",
+      "血液變少",
+      "鼻子會自動降溫"
+    ],
+    "answerIndex": 1,
+    "explanation": "常被誤會是感冒前兆。\n冷空氣刺激黏膜分泌保護呼吸道。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0047",
+    "subject": "science",
+    "prompt": "為什麼輪胎打氣後會變熱？",
+    "options": [
+      "輪胎摩擦地面",
+      "橡膠自燃",
+      "壓縮空氣升溫",
+      "電能轉熱"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易以為是摩擦造成。\n空氣被壓縮時溫度會上升。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0048",
+    "subject": "science",
+    "prompt": "為什麼打雷前常會先看到閃光？",
+    "options": [
+      "聲音被雲吸走",
+      "閃電在地底",
+      "眼睛慢半拍",
+      "光比聲音傳得快"
+    ],
+    "answerIndex": 3,
+    "explanation": "會以為聲音被雲吸走。\n其實是光速遠快於聲速。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0049",
+    "subject": "science",
+    "prompt": "為什麼冬天窗戶玻璃會起霧？",
+    "options": [
+      "玻璃老化",
+      "水氣遇冷凝結",
+      "室內氧氣太多",
+      "外面太暗"
+    ],
+    "answerIndex": 1,
+    "explanation": "常以為是玻璃問題。\n室內水氣遇冷凝結成霧。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0050",
+    "subject": "science",
+    "prompt": "為什麼光照到黑色物體更容易升溫？",
+    "options": [
+      "黑色會放熱",
+      "黑色反射更多光",
+      "黑色本來更熱",
+      "黑色吸收更多光能"
+    ],
+    "answerIndex": 3,
+    "explanation": "直覺會以為是顏色本身熱。\n黑色吸收更多光能轉成熱。",
+    "difficulty": "easy"
   }
 ]
