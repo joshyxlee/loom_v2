@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
 
+import '../models/subject.dart';
+import '../repositories/question_repository.dart';
+import '../services/progress_service.dart';
+import '../main.dart';
+
 class SessionSummaryCard extends StatelessWidget {
   const SessionSummaryCard({
     super.key,
-    required this.subjectTitle,
+    required this.subject,
     required this.totalQuestions,
-    required this.totalXp,
     required this.dailyAnswered,
     required this.dailyTarget,
+    required this.repository,
+    required this.progressService,
   });
 
-  final String subjectTitle;
+  final Subject subject;
   final int totalQuestions;
-  final int totalXp;
   final int dailyAnswered;
   final int dailyTarget;
+  final QuestionRepository repository;
+  final ProgressService progressService;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +49,7 @@ class SessionSummaryCard extends StatelessWidget {
             children: [
               Text('你完成了一回合', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8),
-              Text('科目：$subjectTitle'),
+              Text('科目：${subject.title}'),
               Text('題數：$totalQuestions 題'),
               const SizedBox(height: 8),
               Text('今天累積：$dailyAnswered / $dailyTarget'),
@@ -53,8 +60,31 @@ class SessionSummaryCard extends StatelessWidget {
                 const Text('今日目標已達成 ✅', style: TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               FilledButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('回到主選單'),
+                onPressed: () async {
+                  final questions = await repository.getSession(
+                    subject: subject.key,
+                    count: 5,
+                  );
+                  if (!context.mounted) return;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => QuizScreen(
+                        questions: questions,
+                        progressService: progressService,
+                        subjectTitle: subject.title,
+                        subject: subject,
+                        repository: repository,
+                      ),
+                    ),
+                  );
+                },
+                child: const Text('再玩一回合'),
+              ),
+              const SizedBox(height: 8),
+              OutlinedButton(
+                onPressed: () => Navigator.popUntil(context, (route) => route.isFirst),
+                child: const Text('今天完成'),
               ),
             ],
           ),

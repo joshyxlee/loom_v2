@@ -3,7 +3,12 @@
     "id": "world_seed_0001",
     "subject": "world",
     "prompt": "哪一個海洋面積最大？",
-    "options": ["太平洋", "大西洋", "印度洋", "北冰洋"],
+    "options": [
+      "太平洋",
+      "大西洋",
+      "印度洋",
+      "北冰洋"
+    ],
     "answerIndex": 0,
     "explanation": "太平洋是地球上最大、最深的海洋。",
     "difficulty": 1
@@ -12,7 +17,10 @@
     "id": "world_seed_0002",
     "subject": "world",
     "prompt": "赤道主要經過哪一洲？",
-    "options": ["非洲", "南極洲"],
+    "options": [
+      "非洲",
+      "南極洲"
+    ],
     "answerIndex": 0,
     "explanation": "赤道穿過非洲中部。",
     "difficulty": 1
@@ -21,7 +29,12 @@
     "id": "world_seed_0003",
     "subject": "world",
     "prompt": "以下哪個國家以袋鼠聞名？",
-    "options": ["澳洲", "加拿大", "挪威", "日本"],
+    "options": [
+      "澳洲",
+      "加拿大",
+      "挪威",
+      "日本"
+    ],
     "answerIndex": 0,
     "explanation": "袋鼠是澳洲代表性動物。",
     "difficulty": 1
@@ -30,7 +43,10 @@
     "id": "world_seed_0004",
     "subject": "world",
     "prompt": "世界最高的山峰是？",
-    "options": ["珠穆朗瑪峰", "玉山"],
+    "options": [
+      "珠穆朗瑪峰",
+      "玉山"
+    ],
     "answerIndex": 0,
     "explanation": "珠穆朗瑪峰是世界最高峰。",
     "difficulty": 1
@@ -39,9 +55,194 @@
     "id": "world_seed_0005",
     "subject": "world",
     "prompt": "以下哪一座城市被稱為「浪漫之都」？",
-    "options": ["巴黎", "紐約", "首爾", "曼谷"],
+    "options": [
+      "巴黎",
+      "紐約",
+      "首爾",
+      "曼谷"
+    ],
     "answerIndex": 0,
     "explanation": "巴黎常被稱為浪漫之都。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0006",
+    "subject": "world",
+    "prompt": "撒哈拉沙漠位於哪一洲？",
+    "options": [
+      "非洲",
+      "亞洲"
+    ],
+    "answerIndex": 0,
+    "explanation": "撒哈拉在非洲北部。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0007",
+    "subject": "world",
+    "prompt": "亞馬遜雨林主要在哪一國？",
+    "options": [
+      "巴西",
+      "澳洲"
+    ],
+    "answerIndex": 0,
+    "explanation": "亞馬遜雨林主要在巴西。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0008",
+    "subject": "world",
+    "prompt": "世界人口最多的國家是？",
+    "options": [
+      "印度",
+      "加拿大"
+    ],
+    "answerIndex": 0,
+    "explanation": "印度人口最多。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0009",
+    "subject": "world",
+    "prompt": "哪個國家以鬱金香聞名？",
+    "options": [
+      "荷蘭",
+      "瑞士"
+    ],
+    "answerIndex": 0,
+    "explanation": "荷蘭以鬱金香聞名。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0010",
+    "subject": "world",
+    "prompt": "哪個海峽連接地中海與大西洋？",
+    "options": [
+      "直布羅陀海峽",
+      "白令海峽"
+    ],
+    "answerIndex": 0,
+    "explanation": "直布羅陀海峽連接兩海。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0011",
+    "subject": "world",
+    "prompt": "世界最長河流之一是？",
+    "options": [
+      "尼羅河",
+      "日月潭"
+    ],
+    "answerIndex": 0,
+    "explanation": "尼羅河是世界長河。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0012",
+    "subject": "world",
+    "prompt": "南極洲的主要特徵是？",
+    "options": [
+      "極冷",
+      "高溫"
+    ],
+    "answerIndex": 0,
+    "explanation": "南極洲極冷。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0013",
+    "subject": "world",
+    "prompt": "世界面積最大的國家是？",
+    "options": [
+      "俄羅斯",
+      "新加坡"
+    ],
+    "answerIndex": 0,
+    "explanation": "俄羅斯面積最大。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0014",
+    "subject": "world",
+    "prompt": "下列哪座城市位於美國？",
+    "options": [
+      "紐約",
+      "巴黎"
+    ],
+    "answerIndex": 0,
+    "explanation": "紐約在美國。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0015",
+    "subject": "world",
+    "prompt": "哪個國家以金字塔聞名？",
+    "options": [
+      "埃及",
+      "西班牙"
+    ],
+    "answerIndex": 0,
+    "explanation": "埃及以金字塔聞名。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0016",
+    "subject": "world",
+    "prompt": "澳洲屬於哪個洲？",
+    "options": [
+      "大洋洲",
+      "歐洲"
+    ],
+    "answerIndex": 0,
+    "explanation": "澳洲屬於大洋洲。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0017",
+    "subject": "world",
+    "prompt": "亞平寧半島位於哪國？",
+    "options": [
+      "義大利",
+      "韓國"
+    ],
+    "answerIndex": 0,
+    "explanation": "亞平寧半島是義大利。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0018",
+    "subject": "world",
+    "prompt": "哪個國家以金字塔與獅身人面像聞名？",
+    "options": [
+      "埃及",
+      "巴西"
+    ],
+    "answerIndex": 0,
+    "explanation": "埃及有金字塔與獅身人面像。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0019",
+    "subject": "world",
+    "prompt": "北極附近的海洋是？",
+    "options": [
+      "北冰洋",
+      "紅海"
+    ],
+    "answerIndex": 0,
+    "explanation": "北極附近是北冰洋。",
+    "difficulty": 1
+  },
+  {
+    "id": "world_seed_0020",
+    "subject": "world",
+    "prompt": "歐洲最長河流之一是？",
+    "options": [
+      "多瑙河",
+      "亞馬遜河"
+    ],
+    "answerIndex": 0,
+    "explanation": "多瑙河是歐洲長河。",
     "difficulty": 1
   }
 ]

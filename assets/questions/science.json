@@ -3,7 +3,10 @@
     "id": "science_seed_0001",
     "subject": "science",
     "prompt": "水的化學式是什麼？",
-    "options": ["H2O", "CO2"],
+    "options": [
+      "H2O",
+      "CO2"
+    ],
     "answerIndex": 0,
     "explanation": "水由兩個氫和一個氧組成。",
     "difficulty": 1
@@ -12,7 +15,12 @@
     "id": "science_seed_0002",
     "subject": "science",
     "prompt": "聲音無法在下列哪種環境中傳播？",
-    "options": ["真空", "空氣", "水", "鋼鐵"],
+    "options": [
+      "真空",
+      "空氣",
+      "水",
+      "鋼鐵"
+    ],
     "answerIndex": 0,
     "explanation": "真空中沒有介質，聲音無法傳播。",
     "difficulty": 1
@@ -21,7 +29,10 @@
     "id": "science_seed_0003",
     "subject": "science",
     "prompt": "植物行光合作用主要需要？",
-    "options": ["陽光與二氧化碳", "鹽與油"],
+    "options": [
+      "陽光與二氧化碳",
+      "鹽與油"
+    ],
     "answerIndex": 0,
     "explanation": "光合作用需要光能與二氧化碳。",
     "difficulty": 1
@@ -30,7 +41,10 @@
     "id": "science_seed_0004",
     "subject": "science",
     "prompt": "地球自轉一圈約需多久？",
-    "options": ["24 小時", "365 天"],
+    "options": [
+      "24 小時",
+      "365 天"
+    ],
     "answerIndex": 0,
     "explanation": "地球自轉約 24 小時。",
     "difficulty": 1
@@ -39,9 +53,192 @@
     "id": "science_seed_0005",
     "subject": "science",
     "prompt": "哪一種氣體是人類呼吸最需要的？",
-    "options": ["氧氣", "二氧化碳"],
+    "options": [
+      "氧氣",
+      "二氧化碳"
+    ],
     "answerIndex": 0,
     "explanation": "氧氣是細胞呼吸必需氣體。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0006",
+    "subject": "science",
+    "prompt": "光年是什麼單位？",
+    "options": [
+      "距離",
+      "時間"
+    ],
+    "answerIndex": 0,
+    "explanation": "光年是距離單位。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0007",
+    "subject": "science",
+    "prompt": "植物葉子主要功能？",
+    "options": [
+      "光合作用",
+      "吸收土壤"
+    ],
+    "answerIndex": 0,
+    "explanation": "葉子進行光合作用。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0008",
+    "subject": "science",
+    "prompt": "人類呼吸最需要哪種氣體？",
+    "options": [
+      "氧氣",
+      "氮氣"
+    ],
+    "answerIndex": 0,
+    "explanation": "氧氣最重要。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0009",
+    "subject": "science",
+    "prompt": "地球繞著什麼公轉？",
+    "options": [
+      "太陽",
+      "月亮"
+    ],
+    "answerIndex": 0,
+    "explanation": "地球繞太陽公轉。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0010",
+    "subject": "science",
+    "prompt": "人體主要泵血器官？",
+    "options": [
+      "心臟",
+      "肺"
+    ],
+    "answerIndex": 0,
+    "explanation": "心臟負責泵血。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0011",
+    "subject": "science",
+    "prompt": "哪種是導電體？",
+    "options": [
+      "銅",
+      "塑膠"
+    ],
+    "answerIndex": 0,
+    "explanation": "銅導電。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0012",
+    "subject": "science",
+    "prompt": "溫度計原理？",
+    "options": [
+      "熱脹冷縮",
+      "磁性"
+    ],
+    "answerIndex": 0,
+    "explanation": "溫度計用熱脹冷縮。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0013",
+    "subject": "science",
+    "prompt": "地球大氣最多氣體？",
+    "options": [
+      "氮氣",
+      "氧氣"
+    ],
+    "answerIndex": 0,
+    "explanation": "氮氣最多。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0014",
+    "subject": "science",
+    "prompt": "哪個是再生能源？",
+    "options": [
+      "太陽能",
+      "煤"
+    ],
+    "answerIndex": 0,
+    "explanation": "太陽能為再生能源。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0015",
+    "subject": "science",
+    "prompt": "熱量通常由哪流向哪？",
+    "options": [
+      "高溫到低溫",
+      "低溫到高溫"
+    ],
+    "answerIndex": 0,
+    "explanation": "熱從高溫流向低溫。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0016",
+    "subject": "science",
+    "prompt": "地球自轉形成？",
+    "options": [
+      "晝夜",
+      "四季"
+    ],
+    "answerIndex": 0,
+    "explanation": "自轉形成晝夜。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0017",
+    "subject": "science",
+    "prompt": "電路中電池作用？",
+    "options": [
+      "提供電能",
+      "增加電阻"
+    ],
+    "answerIndex": 0,
+    "explanation": "電池提供電能。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0018",
+    "subject": "science",
+    "prompt": "蒸發是什麼？",
+    "options": [
+      "液體變氣體",
+      "固體變液體"
+    ],
+    "answerIndex": 0,
+    "explanation": "蒸發是液體變氣體。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0019",
+    "subject": "science",
+    "prompt": "人體骨骼功能？",
+    "options": [
+      "支撐身體",
+      "製造食物"
+    ],
+    "answerIndex": 0,
+    "explanation": "骨骼支撐身體。",
+    "difficulty": 1
+  },
+  {
+    "id": "science_seed_0020",
+    "subject": "science",
+    "prompt": "聲音高低與哪有關？",
+    "options": [
+      "頻率",
+      "振幅"
+    ],
+    "answerIndex": 0,
+    "explanation": "頻率越高音調越高。",
     "difficulty": 1
   }
 ]

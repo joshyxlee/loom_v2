@@ -3,7 +3,12 @@
     "id": "funfacts_seed_0001",
     "subject": "funFacts",
     "prompt": "哪種動物的心臟位置在頭部附近？",
-    "options": ["蝸牛", "烏龜", "海豚", "企鵝"],
+    "options": [
+      "蝸牛",
+      "烏龜",
+      "海豚",
+      "企鵝"
+    ],
     "answerIndex": 0,
     "explanation": "蝸牛的心臟靠近頭部，是牠們身體構造的小巧思。",
     "difficulty": 1
@@ -12,7 +17,10 @@
     "id": "funfacts_seed_0002",
     "subject": "funFacts",
     "prompt": "以下哪個行星的一天最短？",
-    "options": ["木星", "火星"],
+    "options": [
+      "木星",
+      "火星"
+    ],
     "answerIndex": 0,
     "explanation": "木星自轉超快，約 10 小時就完成一天。",
     "difficulty": 1
@@ -21,7 +29,12 @@
     "id": "funfacts_seed_0003",
     "subject": "funFacts",
     "prompt": "蜂蜜幾乎不會壞的主要原因是？",
-    "options": ["含水量低、酸性高", "因為加了防腐劑", "因為溫度很低", "因為有酒精"],
+    "options": [
+      "含水量低、酸性高",
+      "因為加了防腐劑",
+      "因為溫度很低",
+      "因為有酒精"
+    ],
     "answerIndex": 0,
     "explanation": "蜂蜜低水分、偏酸又含抗菌成分，所以很耐放。",
     "difficulty": 1
@@ -30,7 +43,12 @@
     "id": "funfacts_seed_0004",
     "subject": "funFacts",
     "prompt": "哪一種金屬在室溫下是液體？",
-    "options": ["汞", "鋁", "鐵", "銅"],
+    "options": [
+      "汞",
+      "鋁",
+      "鐵",
+      "銅"
+    ],
     "answerIndex": 0,
     "explanation": "汞在室溫下是液態金屬。",
     "difficulty": 1
@@ -39,9 +57,198 @@
     "id": "funfacts_seed_0005",
     "subject": "funFacts",
     "prompt": "章魚有幾顆心臟？",
-    "options": ["3 顆", "1 顆", "2 顆", "4 顆"],
+    "options": [
+      "3 顆",
+      "1 顆",
+      "2 顆",
+      "4 顆"
+    ],
     "answerIndex": 0,
     "explanation": "章魚有三顆心臟，其中兩顆負責鰓。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0006",
+    "subject": "funFacts",
+    "prompt": "香蕉屬於哪一類？",
+    "options": [
+      "漿果",
+      "堅果"
+    ],
+    "answerIndex": 0,
+    "explanation": "植物學上香蕉是漿果。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0007",
+    "subject": "funFacts",
+    "prompt": "章魚有幾顆心臟？",
+    "options": [
+      "3 顆",
+      "1 顆",
+      "2 顆",
+      "4 顆"
+    ],
+    "answerIndex": 0,
+    "explanation": "章魚有三顆心臟。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0008",
+    "subject": "funFacts",
+    "prompt": "人體最多的元素是？",
+    "options": [
+      "氧",
+      "碳",
+      "鐵",
+      "鈉"
+    ],
+    "answerIndex": 0,
+    "explanation": "人體含量最高的是氧。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0009",
+    "subject": "funFacts",
+    "prompt": "太陽系最大行星是？",
+    "options": [
+      "木星",
+      "地球"
+    ],
+    "answerIndex": 0,
+    "explanation": "木星體積最大。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0010",
+    "subject": "funFacts",
+    "prompt": "海星通常有幾條腕？",
+    "options": [
+      "5 條",
+      "8 條"
+    ],
+    "answerIndex": 0,
+    "explanation": "常見海星有 5 條腕。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0011",
+    "subject": "funFacts",
+    "prompt": "彩虹外側的顏色是？",
+    "options": [
+      "紅色",
+      "紫色"
+    ],
+    "answerIndex": 0,
+    "explanation": "彩虹外側是紅色。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0012",
+    "subject": "funFacts",
+    "prompt": "人類指紋有何特點？",
+    "options": [
+      "幾乎不重複",
+      "每年會變"
+    ],
+    "answerIndex": 0,
+    "explanation": "指紋幾乎不重複。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0013",
+    "subject": "funFacts",
+    "prompt": "蜂蜜不易壞的原因？",
+    "options": [
+      "含水量低、酸性高",
+      "因為加酒精"
+    ],
+    "answerIndex": 0,
+    "explanation": "低水分與酸性讓蜂蜜耐放。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0014",
+    "subject": "funFacts",
+    "prompt": "企鵝多數分布在哪個半球？",
+    "options": [
+      "南半球",
+      "北半球"
+    ],
+    "answerIndex": 0,
+    "explanation": "多數企鵝在南半球。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0015",
+    "subject": "funFacts",
+    "prompt": "世界上最大動物是？",
+    "options": [
+      "藍鯨",
+      "大象"
+    ],
+    "answerIndex": 0,
+    "explanation": "藍鯨是最大動物。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0016",
+    "subject": "funFacts",
+    "prompt": "地球上最多的氣體是？",
+    "options": [
+      "氮氣",
+      "氧氣"
+    ],
+    "answerIndex": 0,
+    "explanation": "大氣中氮氣最多。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0017",
+    "subject": "funFacts",
+    "prompt": "水在幾度會結冰？",
+    "options": [
+      "0°C",
+      "100°C"
+    ],
+    "answerIndex": 0,
+    "explanation": "水在 0°C 結冰。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0018",
+    "subject": "funFacts",
+    "prompt": "水在幾度會沸騰？",
+    "options": [
+      "100°C",
+      "0°C"
+    ],
+    "answerIndex": 0,
+    "explanation": "水在 100°C 沸騰。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0019",
+    "subject": "funFacts",
+    "prompt": "哪種動物會用超音波定位？",
+    "options": [
+      "蝙蝠",
+      "獅子"
+    ],
+    "answerIndex": 0,
+    "explanation": "蝙蝠會用超音波定位。",
+    "difficulty": 1
+  },
+  {
+    "id": "funfacts_seed_0020",
+    "subject": "funFacts",
+    "prompt": "樹木從哪裡長高？",
+    "options": [
+      "樹梢",
+      "樹幹中段"
+    ],
+    "answerIndex": 0,
+    "explanation": "樹梢是生長點。",
     "difficulty": 1
   }
 ]

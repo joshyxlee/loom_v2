@@ -95,6 +95,8 @@ class HomeScreen extends StatelessWidget {
           questions: questions,
           progressService: progressService,
           subjectTitle: subject.title,
+          subject: subject,
+          repository: repository,
         ),
       ),
     );
@@ -105,6 +107,14 @@ class HomeScreen extends StatelessWidget {
     progressService.ensureDailyState();
     final snapshot = progressService.snapshot;
     final stage = TreeGrowth.stageForLevel(snapshot.level);
+    final primarySubject = subjects.first;
+    final remainingRounds = snapshot.dailyAnswered >= snapshot.dailyTarget
+        ? 0
+        : ((snapshot.dailyTarget - snapshot.dailyAnswered) / 5).ceil();
+    final todayLine = remainingRounds > 0
+        ? '再完成 $remainingRounds 回合即可達標'
+        : '今天已完成，想再玩一回合嗎？';
+
     return Scaffold(
       appBar: AppBar(title: const Text('Loom v2')),
       body: Padding(
@@ -116,7 +126,23 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleLarge),
+                  Text('今天該做什麼', style: Theme.of(context).textTheme.titleLarge),
+                  const SizedBox(height: 6),
+                  Text(todayLine),
+                  const SizedBox(height: 12),
+                  FilledButton(
+                    onPressed: () => _startSubject(context, primarySubject),
+                    child: const Text('開始今日回合'),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            _CardSection(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 4),
                   Text('樹階段：${stage.name}'),
                   const SizedBox(height: 4),
@@ -145,12 +171,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            if (snapshot.dailyAnswered >= snapshot.dailyTarget)
-              _CardSection(
-                color: Colors.green.shade50,
-                child: const Text('今日目標已完成！額外加成已生效'),
-              ),
-            const SizedBox(height: 12),
             Text('科目', style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             ...subjects.map((subject) => Padding(
@@ -174,11 +194,15 @@ class QuizScreen extends StatefulWidget {
     required this.questions,
     required this.progressService,
     required this.subjectTitle,
+    required this.subject,
+    required this.repository,
   });
 
   final List<Question> questions;
   final ProgressService progressService;
   final String subjectTitle;
+  final Subject subject;
+  final QuestionRepository repository;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -314,11 +338,12 @@ class _QuizScreenState extends State<QuizScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (_) => _SessionSummaryCard(
-                          subjectTitle: widget.subjectTitle,
+                          subject: widget.subject,
                           totalQuestions: widget.questions.length,
-                          totalXp: widget.progressService.snapshot.totalXp,
                           dailyAnswered: widget.progressService.snapshot.dailyAnswered,
                           dailyTarget: widget.progressService.snapshot.dailyTarget,
+                          repository: widget.repository,
+                          progressService: widget.progressService,
                         ),
                       ),
                     );
@@ -376,10 +401,11 @@ class _AnswerOption extends StatelessWidget {
 
 class _SessionSummaryCard extends SessionSummaryCard {
   const _SessionSummaryCard({
-    required super.subjectTitle,
+    required super.subject,
     required super.totalQuestions,
-    required super.totalXp,
     required super.dailyAnswered,
     required super.dailyTarget,
+    required super.repository,
+    required super.progressService,
   });
 }
