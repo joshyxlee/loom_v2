@@ -234,6 +234,8 @@ class _QuizScreenState extends State<QuizScreen> {
   int _lastXp = 0;
   bool _dailyTargetJustCompleted = false;
   int _lastLevel = 1;
+  int _correctStreak = 0;
+  bool _streakJustHit = false;
 
   @override
   Widget build(BuildContext context) {
@@ -265,12 +267,20 @@ class _QuizScreenState extends State<QuizScreen> {
                   onTap: () => setState(() {
                     _selected = i;
                     _lastLevel = widget.progressService.snapshot.level;
+                    final isCorrect = question.isCorrect(i);
                     final result = widget.progressService.recordAnswer(
-                      isCorrect: question.isCorrect(i),
+                      isCorrect: isCorrect,
                       difficulty: question.difficulty,
                     );
                     _lastXp = result.gainedXp;
                     _dailyTargetJustCompleted = result.completedDailyTarget;
+                    if (isCorrect) {
+                      _correctStreak += 1;
+                      _streakJustHit = _correctStreak == 3;
+                    } else {
+                      _correctStreak = 0;
+                      _streakJustHit = false;
+                    }
                   }),
                 ),
               );
@@ -281,6 +291,10 @@ class _QuizScreenState extends State<QuizScreen> {
               if (widget.progressService.snapshot.level > _lastLevel) ...[
                 const SizedBox(height: 6),
                 const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+              if (_streakJustHit) ...[
+                const SizedBox(height: 6),
+                const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
               ],
               if (_dailyTargetJustCompleted) ...[
                 const SizedBox(height: 6),
@@ -302,6 +316,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       _selected = null;
                       _lastXp = 0;
                       _dailyTargetJustCompleted = false;
+                      _streakJustHit = false;
                     });
                   }
                 },
