@@ -37,7 +37,7 @@
     ],
     "answerIndex": 0,
     "explanation": "袋鼠是澳洲代表性動物。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0004",
@@ -49,7 +49,7 @@
     ],
     "answerIndex": 0,
     "explanation": "珠穆朗瑪峰是世界最高峰。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0005",
@@ -63,7 +63,7 @@
     ],
     "answerIndex": 0,
     "explanation": "巴黎常被稱為浪漫之都。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "world_seed_0006",
@@ -99,7 +99,7 @@
     ],
     "answerIndex": 0,
     "explanation": "印度人口最多。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0009",
@@ -111,7 +111,7 @@
     ],
     "answerIndex": 0,
     "explanation": "荷蘭以鬱金香聞名。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0010",
@@ -123,7 +123,7 @@
     ],
     "answerIndex": 0,
     "explanation": "直布羅陀海峽連接兩海。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "world_seed_0011",
@@ -159,7 +159,7 @@
     ],
     "answerIndex": 0,
     "explanation": "俄羅斯面積最大。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0014",
@@ -171,7 +171,7 @@
     ],
     "answerIndex": 0,
     "explanation": "紐約在美國。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0015",
@@ -183,7 +183,7 @@
     ],
     "answerIndex": 0,
     "explanation": "埃及以金字塔聞名。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "world_seed_0016",
@@ -219,7 +219,7 @@
     ],
     "answerIndex": 0,
     "explanation": "埃及有金字塔與獅身人面像。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0019",
@@ -231,7 +231,7 @@
     ],
     "answerIndex": 0,
     "explanation": "北極附近是北冰洋。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "world_seed_0020",
@@ -243,6 +243,6 @@
     ],
     "answerIndex": 0,
     "explanation": "多瑙河是歐洲長河。",
-    "difficulty": 1
+    "difficulty": 3
   }
 ]

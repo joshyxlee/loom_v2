@@ -39,9 +39,26 @@ class MultiLocalQuestionRepository implements QuestionRepository {
     }
 
     final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    unseen.shuffle(rng);
-    final session = unseen.take(count).toList();
+    final easy = unseen.where((q) => q.difficulty == 1).toList()..shuffle(rng);
+    final medium = unseen.where((q) => q.difficulty == 2).toList()..shuffle(rng);
+    final hard = unseen.where((q) => q.difficulty == 3).toList()..shuffle(rng);
+
+    final session = <Question>[];
+    session.addAll(easy.take(2));
+    session.addAll(medium.take(2));
+    session.addAll(hard.take(1));
+
+    if (session.length < count) {
+      final fallback = List<Question>.from(unseen)..shuffle(rng);
+      for (final q in fallback) {
+        if (session.length >= count) break;
+        if (session.any((e) => e.id == q.id)) continue;
+        session.add(q);
+      }
+    }
+
+    session.shuffle(rng);
     await seenStore.save(subject, session.map((q) => q.id));
-    return session;
+    return session.take(count).toList();
   }
 }

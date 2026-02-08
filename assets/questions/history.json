@@ -35,7 +35,7 @@
     ],
     "answerIndex": 0,
     "explanation": "羅馬競技場位於羅馬市中心。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0004",
@@ -49,7 +49,7 @@
     ],
     "answerIndex": 0,
     "explanation": "古希臘奧運會是為宙斯而設。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0005",
@@ -61,7 +61,7 @@
     ],
     "answerIndex": 0,
     "explanation": "工業革命起源於英國。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "history_seed_0006",
@@ -97,7 +97,7 @@
     ],
     "answerIndex": 0,
     "explanation": "金字塔多為法老陵墓。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0009",
@@ -109,7 +109,7 @@
     ],
     "answerIndex": 0,
     "explanation": "雅典是早期民主中心。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0010",
@@ -121,7 +121,7 @@
     ],
     "answerIndex": 0,
     "explanation": "羅馬鬥獸場是競技場。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "history_seed_0011",
@@ -157,7 +157,7 @@
     ],
     "answerIndex": 0,
     "explanation": "古奧運四年一度。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0014",
@@ -169,7 +169,7 @@
     ],
     "answerIndex": 0,
     "explanation": "羅馬法影響法律體系。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0015",
@@ -181,7 +181,7 @@
     ],
     "answerIndex": 0,
     "explanation": "古埃及常用莎草紙。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "history_seed_0016",
@@ -217,7 +217,7 @@
     ],
     "answerIndex": 0,
     "explanation": "馬丘比丘屬印加文明。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0019",
@@ -229,7 +229,7 @@
     ],
     "answerIndex": 0,
     "explanation": "拉是太陽神。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "history_seed_0020",
@@ -241,6 +241,6 @@
     ],
     "answerIndex": 0,
     "explanation": "哥德式非希臘柱式。",
-    "difficulty": 1
+    "difficulty": 3
   }
 ]

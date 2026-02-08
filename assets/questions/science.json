@@ -35,7 +35,7 @@
     ],
     "answerIndex": 0,
     "explanation": "光合作用需要光能與二氧化碳。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0004",
@@ -47,7 +47,7 @@
     ],
     "answerIndex": 0,
     "explanation": "地球自轉約 24 小時。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0005",
@@ -59,7 +59,7 @@
     ],
     "answerIndex": 0,
     "explanation": "氧氣是細胞呼吸必需氣體。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "science_seed_0006",
@@ -95,7 +95,7 @@
     ],
     "answerIndex": 0,
     "explanation": "氧氣最重要。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0009",
@@ -107,7 +107,7 @@
     ],
     "answerIndex": 0,
     "explanation": "地球繞太陽公轉。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0010",
@@ -119,7 +119,7 @@
     ],
     "answerIndex": 0,
     "explanation": "心臟負責泵血。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "science_seed_0011",
@@ -155,7 +155,7 @@
     ],
     "answerIndex": 0,
     "explanation": "氮氣最多。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0014",
@@ -167,7 +167,7 @@
     ],
     "answerIndex": 0,
     "explanation": "太陽能為再生能源。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0015",
@@ -179,7 +179,7 @@
     ],
     "answerIndex": 0,
     "explanation": "熱從高溫流向低溫。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "science_seed_0016",
@@ -215,7 +215,7 @@
     ],
     "answerIndex": 0,
     "explanation": "蒸發是液體變氣體。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0019",
@@ -227,7 +227,7 @@
     ],
     "answerIndex": 0,
     "explanation": "骨骼支撐身體。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "science_seed_0020",
@@ -239,6 +239,6 @@
     ],
     "answerIndex": 0,
     "explanation": "頻率越高音調越高。",
-    "difficulty": 1
+    "difficulty": 3
   }
 ]

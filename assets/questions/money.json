@@ -33,7 +33,7 @@
     ],
     "answerIndex": 0,
     "explanation": "緊急預備金可應對突發狀況。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0004",
@@ -45,7 +45,7 @@
     ],
     "answerIndex": 0,
     "explanation": "分散能降低單一事件造成的大損失。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0005",
@@ -57,7 +57,7 @@
     ],
     "answerIndex": 0,
     "explanation": "準時全額繳清可避免循環利息。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "money_seed_0006",
@@ -93,7 +93,7 @@
     ],
     "answerIndex": 0,
     "explanation": "定期定額分散時點風險。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0009",
@@ -105,7 +105,7 @@
     ],
     "answerIndex": 0,
     "explanation": "保險用小保費分攤大風險。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0010",
@@ -117,7 +117,7 @@
     ],
     "answerIndex": 0,
     "explanation": "只繳最低額會增加利息。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "money_seed_0011",
@@ -153,7 +153,7 @@
     ],
     "answerIndex": 0,
     "explanation": "加入不同市場可分散風險。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0014",
@@ -165,7 +165,7 @@
     ],
     "answerIndex": 0,
     "explanation": "再平衡回到原比例。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0015",
@@ -177,7 +177,7 @@
     ],
     "answerIndex": 0,
     "explanation": "房租屬固定支出。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "money_seed_0016",
@@ -213,7 +213,7 @@
     ],
     "answerIndex": 0,
     "explanation": "實質報酬扣除通膨。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0019",
@@ -225,7 +225,7 @@
     ],
     "answerIndex": 0,
     "explanation": "準時繳款可維持信用。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "money_seed_0020",
@@ -237,6 +237,6 @@
     ],
     "answerIndex": 0,
     "explanation": "停損用於控制損失。",
-    "difficulty": 1
+    "difficulty": 3
   }
 ]

@@ -473,18 +473,18 @@ class _FeedbackCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('本題 XP：+$xp', style: Theme.of(context).textTheme.bodyMedium),
+            Text('本題 +$xp XP', style: Theme.of(context).textTheme.bodyMedium),
             if (levelUp) ...[
               const SizedBox(height: 6),
-              const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text('🌱 升級完成', style: TextStyle(fontWeight: FontWeight.bold)),
             ],
             if (streakHit) ...[
               const SizedBox(height: 6),
-              const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text('🔥 連勝 x3', style: TextStyle(fontWeight: FontWeight.bold)),
             ],
             if (dailyHit) ...[
               const SizedBox(height: 6),
-              const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text('🎉 今日達標', style: TextStyle(fontWeight: FontWeight.bold)),
             ],
             const SizedBox(height: 8),
             Text(explanation, style: Theme.of(context).textTheme.bodyMedium),

@@ -37,7 +37,7 @@
     ],
     "answerIndex": 0,
     "explanation": "蜂蜜低水分、偏酸又含抗菌成分，所以很耐放。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0004",
@@ -51,7 +51,7 @@
     ],
     "answerIndex": 0,
     "explanation": "汞在室溫下是液態金屬。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0005",
@@ -65,7 +65,7 @@
     ],
     "answerIndex": 0,
     "explanation": "章魚有三顆心臟，其中兩顆負責鰓。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "funfacts_seed_0006",
@@ -105,7 +105,7 @@
     ],
     "answerIndex": 0,
     "explanation": "人體含量最高的是氧。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0009",
@@ -117,7 +117,7 @@
     ],
     "answerIndex": 0,
     "explanation": "木星體積最大。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0010",
@@ -129,7 +129,7 @@
     ],
     "answerIndex": 0,
     "explanation": "常見海星有 5 條腕。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "funfacts_seed_0011",
@@ -165,7 +165,7 @@
     ],
     "answerIndex": 0,
     "explanation": "低水分與酸性讓蜂蜜耐放。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0014",
@@ -177,7 +177,7 @@
     ],
     "answerIndex": 0,
     "explanation": "多數企鵝在南半球。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0015",
@@ -189,7 +189,7 @@
     ],
     "answerIndex": 0,
     "explanation": "藍鯨是最大動物。",
-    "difficulty": 1
+    "difficulty": 3
   },
   {
     "id": "funfacts_seed_0016",
@@ -225,7 +225,7 @@
     ],
     "answerIndex": 0,
     "explanation": "水在 100°C 沸騰。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0019",
@@ -237,7 +237,7 @@
     ],
     "answerIndex": 0,
     "explanation": "蝙蝠會用超音波定位。",
-    "difficulty": 1
+    "difficulty": 2
   },
   {
     "id": "funfacts_seed_0020",
@@ -249,6 +249,6 @@
     ],
     "answerIndex": 0,
     "explanation": "樹梢是生長點。",
-    "difficulty": 1
+    "difficulty": 3
   }
 ]
