@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -300,6 +302,66 @@ class _QuizScreenState extends State<QuizScreen> {
   int _correctStreak = 0;
   bool _streakJustHit = false;
   bool _levelUpPulse = false;
+  double _levelProgress = 0.0;
+  int _progressAnimMs = 350;
+  bool _showMoment = false;
+  bool _showXpBurst = false;
+  bool _levelUpMoment = false;
+  String _momentText = '';
+  double _momentOpacity = 0.0;
+  Offset _momentOffset = const Offset(0, 0.1);
+
+  static const _correctMomentTexts = [
+    '變強了。',
+    '又更近一步。',
+    '這題有算進去。',
+  ];
+
+  static const _wrongMomentTexts = [
+    '還在累積中。',
+    '沒關係，繼續。',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _levelProgress = _currentLevelProgress();
+  }
+
+  double _currentLevelProgress() {
+    final snapshot = widget.progressService.snapshot;
+    final current = widget.progressService.currentLevelXp(snapshot.level);
+    final next = widget.progressService.nextLevelXp(snapshot.level);
+    return ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
+  }
+
+  void _triggerMoment({required bool isCorrect, required bool leveledUp}) {
+    final rng = Random(DateTime.now().millisecondsSinceEpoch);
+    _momentText = isCorrect
+        ? _correctMomentTexts[rng.nextInt(_correctMomentTexts.length)]
+        : _wrongMomentTexts[rng.nextInt(_wrongMomentTexts.length)];
+    _showMoment = true;
+    _showXpBurst = isCorrect;
+    _levelUpMoment = leveledUp;
+    _momentOpacity = 1.0;
+    _momentOffset = const Offset(0, -0.12);
+    setState(() {});
+    Future.delayed(const Duration(milliseconds: 750), () {
+      if (!mounted) return;
+      setState(() {
+        _momentOpacity = 0.0;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 900), () {
+      if (!mounted) return;
+      setState(() {
+        _showMoment = false;
+        _showXpBurst = false;
+        _levelUpMoment = false;
+        _momentOffset = const Offset(0, 0.1);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -308,98 +370,166 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(title: Text(widget.subjectTitle)),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
-            Text('題目 ${_index + 1} / ${widget.questions.length}',
-                style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(height: 6),
-            LinearProgressIndicator(
-              value: (_index + 1) / widget.questions.length,
-            ),
-            const SizedBox(height: 12),
-            Text(
-              question.prompt,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 22),
-            ),
-            const SizedBox(height: 6),
-            Text('ID: ${question.id}',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
-            const SizedBox(height: 18),
-            ...List.generate(question.options.length, (i) {
-              final option = question.options[i];
-              final selected = _selected == i;
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: _AnswerOption(
-                  label: option,
-                  selected: selected,
-                  enabled: _selected == null,
-                  onTap: () => setState(() {
-                    _selected = i;
-                    _lastLevel = widget.progressService.snapshot.level;
-                    final isCorrect = question.isCorrect(i);
-                    final result = widget.progressService.recordAnswer(
-                      isCorrect: isCorrect,
-                      difficulty: question.difficulty,
-                    );
-                    _lastXp = result.gainedXp;
-                    _dailyTargetJustCompleted = result.completedDailyTarget;
-                    if (isCorrect) {
-                      _correctStreak += 1;
-                      _streakJustHit = _correctStreak == 3;
-                    } else {
-                      _correctStreak = 0;
-                      _streakJustHit = false;
-                    }
-                    final leveledUp = widget.progressService.snapshot.level > _lastLevel;
-                    if (leveledUp) {
-                      _levelUpPulse = true;
-                      Future.delayed(const Duration(milliseconds: 450), () {
-                        if (!mounted) return;
-                        setState(() => _levelUpPulse = false);
-                      });
-                    }
-                  }),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('題目 ${_index + 1} / ${widget.questions.length}',
+                    style: Theme.of(context).textTheme.titleMedium),
+                const SizedBox(height: 6),
+                LinearProgressIndicator(
+                  value: (_index + 1) / widget.questions.length,
                 ),
-              );
-            }),
-            const SizedBox(height: 12),
-            if (_selected != null)
-              _FeedbackCard(
-                xp: _lastXp,
-                explanation: question.explanation,
-                levelUp: widget.progressService.snapshot.level > _lastLevel,
-                streakHit: _streakJustHit,
-                dailyHit: _dailyTargetJustCompleted,
-                isLast: _index + 1 >= widget.questions.length,
-                levelUpPulse: _levelUpPulse,
-                onNext: () {
-                  if (_index + 1 >= widget.questions.length) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => _SessionSummaryCard(
-                          subject: widget.subject,
-                          totalQuestions: widget.questions.length,
-                          dailyAnswered: widget.progressService.snapshot.dailyAnswered,
-                          dailyTarget: widget.progressService.snapshot.dailyTarget,
-                          repository: widget.repository,
-                          progressService: widget.progressService,
+                const SizedBox(height: 8),
+                TweenAnimationBuilder<double>(
+                  tween: Tween(begin: 0, end: _levelProgress),
+                  duration: Duration(milliseconds: _progressAnimMs),
+                  curve: Curves.easeOut,
+                  builder: (context, value, child) {
+                    return LinearProgressIndicator(
+                      value: value,
+                      minHeight: 6,
+                      color: const Color(0xFF3CC77A),
+                      backgroundColor: Colors.green.withOpacity(0.12),
+                    );
+                  },
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  question.prompt,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 22),
+                ),
+                const SizedBox(height: 6),
+                Text('ID: ${question.id}',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
+                const SizedBox(height: 18),
+                ...List.generate(question.options.length, (i) {
+                  final option = question.options[i];
+                  final selected = _selected == i;
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: _AnswerOption(
+                      label: option,
+                      selected: selected,
+                      enabled: _selected == null,
+                      onTap: () => setState(() {
+                        _selected = i;
+                        _lastLevel = widget.progressService.snapshot.level;
+                        final isCorrect = question.isCorrect(i);
+                        final result = widget.progressService.recordAnswer(
+                          isCorrect: isCorrect,
+                          difficulty: question.difficulty,
+                        );
+                        _lastXp = result.gainedXp;
+                        _dailyTargetJustCompleted = result.completedDailyTarget;
+                        if (isCorrect) {
+                          _correctStreak += 1;
+                          _streakJustHit = _correctStreak == 3;
+                        } else {
+                          _correctStreak = 0;
+                          _streakJustHit = false;
+                        }
+                        final leveledUp = widget.progressService.snapshot.level > _lastLevel;
+                        if (leveledUp) {
+                          _levelUpPulse = true;
+                          _progressAnimMs = 300;
+                          _levelProgress = 1.0;
+                          Future.delayed(const Duration(milliseconds: 350), () {
+                            if (!mounted) return;
+                            setState(() {
+                              _levelProgress = _currentLevelProgress();
+                              _progressAnimMs = 350;
+                            });
+                          });
+                          Future.delayed(const Duration(milliseconds: 450), () {
+                            if (!mounted) return;
+                            setState(() => _levelUpPulse = false);
+                          });
+                        } else {
+                          _progressAnimMs = 350;
+                          _levelProgress = _currentLevelProgress();
+                        }
+                        _triggerMoment(isCorrect: isCorrect, leveledUp: leveledUp);
+                      }),
+                    ),
+                  );
+                }),
+                const SizedBox(height: 12),
+                if (_selected != null)
+                  _FeedbackCard(
+                    xp: _lastXp,
+                    explanation: question.explanation,
+                    levelUp: widget.progressService.snapshot.level > _lastLevel,
+                    streakHit: _streakJustHit,
+                    dailyHit: _dailyTargetJustCompleted,
+                    isLast: _index + 1 >= widget.questions.length,
+                    levelUpPulse: _levelUpPulse,
+                    onNext: () {
+                      if (_index + 1 >= widget.questions.length) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => _SessionSummaryCard(
+                              subject: widget.subject,
+                              totalQuestions: widget.questions.length,
+                              dailyAnswered: widget.progressService.snapshot.dailyAnswered,
+                              dailyTarget: widget.progressService.snapshot.dailyTarget,
+                              repository: widget.repository,
+                              progressService: widget.progressService,
+                            ),
+                          ),
+                        );
+                      } else {
+                        setState(() {
+                          _index += 1;
+                          _selected = null;
+                          _lastXp = 0;
+                          _dailyTargetJustCompleted = false;
+                          _streakJustHit = false;
+                          _levelUpPulse = false;
+                        });
+                      }
+                    },
+                  ),
+              ],
+            ),
+            if (_showMoment)
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: AnimatedOpacity(
+                    opacity: _momentOpacity,
+                    duration: const Duration(milliseconds: 200),
+                    child: AnimatedSlide(
+                      offset: _momentOffset,
+                      duration: const Duration(milliseconds: 700),
+                      curve: Curves.easeOut,
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (_levelUpMoment)
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 6),
+                                child: Text('升級了。',
+                                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                              ),
+                            if (_showXpBurst)
+                              Text('+$_lastXp XP',
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF3CC77A),
+                                  )),
+                            const SizedBox(height: 6),
+                            Text(_momentText,
+                                style: const TextStyle(fontSize: 16, color: Colors.black54)),
+                          ],
                         ),
                       ),
-                    );
-                  } else {
-                    setState(() {
-                      _index += 1;
-                      _selected = null;
-                      _lastXp = 0;
-                      _dailyTargetJustCompleted = false;
-                      _streakJustHit = false;
-                      _levelUpPulse = false;
-                    });
-                  }
-                },
+                    ),
+                  ),
+                ),
               ),
           ],
         ),
