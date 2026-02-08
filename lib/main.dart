@@ -287,6 +287,10 @@ class _QuizScreenState extends State<QuizScreen> {
           children: [
             Text('題目 ${_index + 1} / ${widget.questions.length}',
                 style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 6),
+            LinearProgressIndicator(
+              value: (_index + 1) / widget.questions.length,
+            ),
             const SizedBox(height: 12),
             Text(
               question.prompt,
