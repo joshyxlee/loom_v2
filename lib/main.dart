@@ -54,9 +54,9 @@ class _LoomV2AppState extends State<LoomV2App> {
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFFF7F8FA),
         textTheme: const TextTheme(
-          titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          bodyMedium: TextStyle(fontSize: 14),
+          bodyMedium: TextStyle(fontSize: 16),
         ),
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
@@ -288,7 +288,10 @@ class _QuizScreenState extends State<QuizScreen> {
             Text('題目 ${_index + 1} / ${widget.questions.length}',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 12),
-            Text(question.prompt, style: Theme.of(context).textTheme.titleLarge),
+            Text(
+              question.prompt,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 22),
+            ),
             const SizedBox(height: 6),
             Text('ID: ${question.id}',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
@@ -407,7 +410,10 @@ class _AnswerOption extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           label,
-          style: TextStyle(fontWeight: selected ? FontWeight.bold : FontWeight.normal),
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+          ),
         ),
       ),
     );
