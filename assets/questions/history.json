@@ -60,13 +60,643 @@
     "subject": "history",
     "prompt": "鄭成功驅逐的是哪個殖民政權？",
     "options": [
-      "西班牙",
       "荷蘭",
+      "西班牙",
       "葡萄牙",
       "英國"
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": "看到葡萄牙常會聯想到早期航海。\n實際被驅逐的是荷蘭。",
     "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0006",
+    "subject": "history",
+    "prompt": "金字塔主要不是奴隸建的說法，較接近事實的是？",
+    "options": [
+      "完全由戰俘建造",
+      "多由受薪工人組成",
+      "只有祭司能動工",
+      "由外國工匠代工"
+    ],
+    "answerIndex": 1,
+    "explanation": "奴隸建造是最常見的迷思。\n多數研究顯示是受薪工人與專業工匠。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0007",
+    "subject": "history",
+    "prompt": "「中世紀人人又髒又短命」的印象其實？",
+    "options": [
+      "完全正確",
+      "只在城市成立",
+      "過度簡化",
+      "只在貴族成立"
+    ],
+    "answerIndex": 2,
+    "explanation": "刻板印象讓人覺得一體適用。\n其實不同地區與階層差異很大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0008",
+    "subject": "history",
+    "prompt": "印刷術的大規模普及，最先改變的是？",
+    "options": [
+      "農業耕作方式",
+      "金屬冶煉技術",
+      "海上航行速度",
+      "宗教與知識傳播"
+    ],
+    "answerIndex": 3,
+    "explanation": "容易以為先影響科技硬體。\n印刷最先改變的是宗教與知識傳播。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0009",
+    "subject": "history",
+    "prompt": "黑死病之後，歐洲勞工地位反而上升的主因是？",
+    "options": [
+      "人口減少導致工資上升",
+      "國王直接提高薪資",
+      "工會制度已成熟",
+      "貨幣大量貶值"
+    ],
+    "answerIndex": 0,
+    "explanation": "直覺以為制度先改變。\n勞動力短缺讓工資與議價力上升。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0010",
+    "subject": "history",
+    "prompt": "「羅馬帝國滅亡」較貼近的描述是？",
+    "options": [
+      "一夜之間突然消失",
+      "長期衰退的累積",
+      "只因一次大地震",
+      "只因某位皇帝失敗"
+    ],
+    "answerIndex": 1,
+    "explanation": "「一夕崩潰」很容易被想像。\n其實是政治、經濟與外患長期累積。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0011",
+    "subject": "history",
+    "prompt": "十字軍東征常被描述為？",
+    "options": [
+      "純粹宗教熱情",
+      "完全出於經濟移民",
+      "宗教與利益混合",
+      "全由平民自發"
+    ],
+    "answerIndex": 2,
+    "explanation": "「純信仰」的說法很直覺。\n實際上宗教、權力與利益交織。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0012",
+    "subject": "history",
+    "prompt": "拿破崙被說「很矮」的形象其實？",
+    "options": [
+      "真的特別矮",
+      "因為穿鞋太大",
+      "只有法軍記載",
+      "只是宣傳抹黑"
+    ],
+    "answerIndex": 3,
+    "explanation": "矮小形象很容易被記住。\n多是英國宣傳與量尺換算造成誤會。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0013",
+    "subject": "history",
+    "prompt": "「哥倫布發現新大陸」的更準確說法是？",
+    "options": [
+      "第一個抵達美洲的歐洲人",
+      "第一次到達亞洲",
+      "最早的美洲居民",
+      "唯一往西航行者"
+    ],
+    "answerIndex": 0,
+    "explanation": "常忽略維京人的更早到達。\n他是第一批抵達美洲的歐洲航海者之一。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0014",
+    "subject": "history",
+    "prompt": "「瑪雅文明突然消失」的更可靠描述是？",
+    "options": [
+      "一夜之間滅亡",
+      "城市逐步衰落",
+      "被外星人帶走",
+      "被一次海嘯摧毀"
+    ],
+    "answerIndex": 1,
+    "explanation": "傳說讓人以為瞬間崩潰。\n其實是多城邦長期衰退與遷徙。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0015",
+    "subject": "history",
+    "prompt": "大航海時代最直接改變的是？",
+    "options": [
+      "農業種植技術",
+      "印刷與教育",
+      "全球貿易網絡",
+      "城市污水系統"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易以為先改變科技生活。\n最直接改變的是全球貿易與航線。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0016",
+    "subject": "history",
+    "prompt": "美國獨立革命的主因之一是？",
+    "options": [
+      "想推廣拉丁文",
+      "因氣候變冷",
+      "為奪取絲路",
+      "稅負與代表權爭議"
+    ],
+    "answerIndex": 3,
+    "explanation": "戰爭畫面讓人忽略政治脈絡。\n稅負與「無代表不納稅」是核心爭議。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0017",
+    "subject": "history",
+    "prompt": "法國大革命後，真正穩定政局的方式是？",
+    "options": [
+      "一連串政權更替",
+      "立即建立長期共和",
+      "完全回到王權",
+      "由教會接管"
+    ],
+    "answerIndex": 0,
+    "explanation": "人們常以為革命後就穩定。\n實際上經過多次政權更替才逐步穩定。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0018",
+    "subject": "history",
+    "prompt": "「二戰爆發的導火線」與「根本原因」的關係較接近？",
+    "options": [
+      "導火線就是根本原因",
+      "導火線只是觸發點",
+      "根本原因只有一個",
+      "與一戰完全無關"
+    ],
+    "answerIndex": 1,
+    "explanation": "常把單一事件當作全部原因。\n導火線只是觸發，深層原因更複雜。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0019",
+    "subject": "history",
+    "prompt": "「冷戰」最貼近的理解是？",
+    "options": [
+      "真正的大規模熱戰",
+      "只發生在歐洲",
+      "避免直接衝突的對峙",
+      "完全沒有軍備競賽"
+    ],
+    "answerIndex": 2,
+    "explanation": "名字容易讓人以為是和平。\n冷戰是避免直接衝突的對峙與競賽。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0020",
+    "subject": "history",
+    "prompt": "「殖民地帶來純粹繁榮」這種說法更接近？",
+    "options": [
+      "完全正確",
+      "只對被殖民地好",
+      "只對宗教有用",
+      "片面簡化"
+    ],
+    "answerIndex": 3,
+    "explanation": "殖民常被包裝成單向利益。\n實際上帶來剝削與結構性不平等。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0021",
+    "subject": "history",
+    "prompt": "文藝復興最初的核心推力之一是？",
+    "options": [
+      "古典文本的再發現",
+      "工業機械普及",
+      "蒸汽動力革命",
+      "大規模移民"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易把它和工業化混在一起。\n文藝復興重點是古典文本與人文再發現。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0022",
+    "subject": "history",
+    "prompt": "「絲綢之路」最重要的影響其實是？",
+    "options": [
+      "只販售絲綢",
+      "文化與宗教交流",
+      "只連接中國與印度",
+      "只在海上運輸"
+    ],
+    "answerIndex": 1,
+    "explanation": "名字讓人以為只賣絲綢。\n更深的影響是文化與宗教的交流。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0023",
+    "subject": "history",
+    "prompt": "「日本鎖國」時期對外完全斷絕嗎？",
+    "options": [
+      "完全斷絕",
+      "只與英國貿易",
+      "仍有有限貿易",
+      "只與中國斷絕"
+    ],
+    "answerIndex": 2,
+    "explanation": "鎖國兩字容易讓人理解成完全封閉。\n其實仍有有限對外貿易與交流。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0024",
+    "subject": "history",
+    "prompt": "「民主」在古希臘雅典實際是？",
+    "options": [
+      "全民都能投票",
+      "由國王決定",
+      "由外國人投票",
+      "只限男性公民"
+    ],
+    "answerIndex": 3,
+    "explanation": "現代民主概念容易被投射回去。\n當時只限男性公民參與政治。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0025",
+    "subject": "history",
+    "prompt": "「文盲率下降」最直接關聯的歷史趨勢是？",
+    "options": [
+      "公共教育普及",
+      "封建制度強化",
+      "貴族權力增強",
+      "宗教裁判擴張"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易忽略制度性改變。\n公共教育普及直接降低文盲率。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0026",
+    "subject": "history",
+    "prompt": "「古代奧運會」與現代奧運的最大差別之一是？",
+    "options": [
+      "古代全女性參賽",
+      "古代有宗教色彩",
+      "古代用計時器",
+      "古代在冬季"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為只是規模大小差別。\n古代奧運帶有強烈宗教色彩。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0027",
+    "subject": "history",
+    "prompt": "「蒙古帝國擴張」較主要依靠的是？",
+    "options": [
+      "重裝步兵",
+      "海軍艦隊",
+      "高機動騎兵",
+      "城堡防守"
+    ],
+    "answerIndex": 2,
+    "explanation": "印象中會以為是大軍堆疊。\n蒙古擴張的關鍵是高機動騎兵。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0028",
+    "subject": "history",
+    "prompt": "「羅馬道路」最重要的歷史意義是？",
+    "options": [
+      "純粹觀光用途",
+      "專供貴族狩獵",
+      "只為宗教朝聖",
+      "軍事與行政動員"
+    ],
+    "answerIndex": 3,
+    "explanation": "常被想成古代工程奇觀。\n實際上強化軍事與行政動員。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0029",
+    "subject": "history",
+    "prompt": "「大憲章」最常被視為哪種概念的起點？",
+    "options": [
+      "法治與權力限制",
+      "絕對王權",
+      "殖民擴張",
+      "國有企業"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易誤以為只是稅務文件。\n它象徵權力受限與法治的開端。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0030",
+    "subject": "history",
+    "prompt": "「俄國革命」後最直接的結果是？",
+    "options": [
+      "立即進入市場經濟",
+      "君主制瓦解",
+      "回到封建制度",
+      "停止工業化"
+    ],
+    "answerIndex": 1,
+    "explanation": "容易把長期變化當成即時結果。\n最直接結果是君主制瓦解。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0031",
+    "subject": "history",
+    "prompt": "「絲綢」在羅馬帝國的地位最貼近？",
+    "options": [
+      "日常必需",
+      "軍事制服",
+      "奢侈品",
+      "貨幣主體"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易把它想成普遍衣料。\n在羅馬是稀有昂貴的奢侈品。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0032",
+    "subject": "history",
+    "prompt": "「大航海」最早主要目的之一是？",
+    "options": [
+      "測量地球直徑",
+      "建立衛星通信",
+      "探索極地冰層",
+      "尋找新貿易航路"
+    ],
+    "answerIndex": 3,
+    "explanation": "容易把它想成單純探險。\n實際目的之一是繞過中東的貿易管制。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0033",
+    "subject": "history",
+    "prompt": "「黑死病」導致的長期社會影響之一是？",
+    "options": [
+      "封建制度逐步鬆動",
+      "君主權力立刻增強",
+      "全面停止城市化",
+      "貿易完全中止"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易只想到死亡人數。\n人口結構改變推動封建制度鬆動。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0034",
+    "subject": "history",
+    "prompt": "「冷戰」期間的代理人戰爭，通常發生在？",
+    "options": [
+      "北美本土",
+      "第三世界地區",
+      "西歐核心",
+      "南極洲"
+    ],
+    "answerIndex": 1,
+    "explanation": "容易以為主要在美蘇本土開打。\n多數衝突發生在第三世界地區。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0035",
+    "subject": "history",
+    "prompt": "「工業革命」初期最先改變的是？",
+    "options": [
+      "航空與航太",
+      "電子與網路",
+      "紡織與礦業",
+      "核能與太空"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易把現代科技當成起點。\n工業革命起初是紡織與礦業。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0036",
+    "subject": "history",
+    "prompt": "「羅馬競技場」主要用途更接近？",
+    "options": [
+      "宗教禁欲修行",
+      "學術研究中心",
+      "皇室住宅",
+      "公共娛樂與政治宣示"
+    ],
+    "answerIndex": 3,
+    "explanation": "常只想到血腥表演。\n它也是政治宣示與凝聚民心的工具。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0037",
+    "subject": "history",
+    "prompt": "「美洲原住民人口驟減」的主要原因之一是？",
+    "options": [
+      "傳染病擴散",
+      "大規模火山爆發",
+      "長期乾旱",
+      "內戰持續"
+    ],
+    "answerIndex": 0,
+    "explanation": "常把戰爭當唯一原因。\n歐洲帶入的疾病才是主因之一。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0038",
+    "subject": "history",
+    "prompt": "「十月革命」名稱的常見誤解是？",
+    "options": [
+      "發生在十月但無意義",
+      "實際發生在十一月",
+      "只在秋分當天",
+      "是春季革命"
+    ],
+    "answerIndex": 1,
+    "explanation": "名字讓人以為就是十月。\n實際因曆法差異發生在十一月。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0039",
+    "subject": "history",
+    "prompt": "「禁酒令」的直接效果之一是？",
+    "options": [
+      "酒精消費完全消失",
+      "政府收入增加",
+      "黑市與地下酒吧興起",
+      "暴力犯罪下降"
+    ],
+    "answerIndex": 2,
+    "explanation": "禁令聽起來像會立刻奏效。\n實際促成黑市與地下酒吧興起。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0040",
+    "subject": "history",
+    "prompt": "「羅馬不是一日造成的」這句話在歷史脈絡更像？",
+    "options": [
+      "一場戰爭決定",
+      "一位天才規劃",
+      "靠運氣爆發",
+      "長期累積的結果"
+    ],
+    "answerIndex": 3,
+    "explanation": "人們常期待單一英雄或事件。\n實際是長期積累的結果。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0041",
+    "subject": "history",
+    "prompt": "「二戰後歐洲快速重建」的關鍵因素之一是？",
+    "options": [
+      "國際援助與投資",
+      "完全自給自足",
+      "停止貿易",
+      "移民全面禁止"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易以為靠本國力量即可。\n國際援助與投資是關鍵因素之一。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0042",
+    "subject": "history",
+    "prompt": "「帝國的邊疆」常成為壓力點的原因是？",
+    "options": [
+      "邊疆最富有",
+      "維持成本高且易受衝擊",
+      "邊疆最安全",
+      "邊疆最易管理"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為帝國擴張越大越穩。\n邊疆維持成本高且易受外部衝擊。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0043",
+    "subject": "history",
+    "prompt": "「殖民地獨立運動」常見觸發因素之一是？",
+    "options": [
+      "完全沒有教育",
+      "無任何民族意識",
+      "戰爭消耗母國力量",
+      "全球貿易停止"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易忽略母國在戰爭中的疲弱。\n母國消耗讓殖民地更容易爭取獨立。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0044",
+    "subject": "history",
+    "prompt": "「農業革命」最直接帶來的影響是？",
+    "options": [
+      "立刻出現工廠",
+      "立即普及文字",
+      "全球化貿易",
+      "定居與人口增長"
+    ],
+    "answerIndex": 3,
+    "explanation": "容易把後來的工業化一起算進去。\n最直接影響是定居與人口增長。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0045",
+    "subject": "history",
+    "prompt": "「宗教改革」的社會效果之一是？",
+    "options": [
+      "教會權威被挑戰",
+      "全面停止教育",
+      "貨幣制度消失",
+      "城市全部解體"
+    ],
+    "answerIndex": 0,
+    "explanation": "容易把它只當成教義分歧。\n它也直接挑戰教會權威與社會秩序。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0046",
+    "subject": "history",
+    "prompt": "「羅馬帝國」分為東西兩部分後，較持久的是？",
+    "options": [
+      "西羅馬",
+      "東羅馬",
+      "兩者同時消失",
+      "北羅馬"
+    ],
+    "answerIndex": 1,
+    "explanation": "西羅馬更有名所以容易先選。\n實際東羅馬存續更久。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0047",
+    "subject": "history",
+    "prompt": "「清末改革多次失敗」的一個關鍵原因是？",
+    "options": [
+      "完全沒有外患",
+      "人口過少",
+      "內外壓力與利益糾葛",
+      "沒有任何思想交流"
+    ],
+    "answerIndex": 2,
+    "explanation": "直覺會想成單一政策錯誤。\n內外壓力與利益結構讓改革受阻。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "history_v3_0048",
+    "subject": "history",
+    "prompt": "「古希臘城邦」的典型特徵是？",
+    "options": [
+      "中央集權統一",
+      "完全無戰爭",
+      "以農奴制度為主",
+      "政治自治與競爭"
+    ],
+    "answerIndex": 3,
+    "explanation": "容易把它想成單一國家。\n城邦實際是政治自治且彼此競爭。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "history_v3_0049",
+    "subject": "history",
+    "prompt": "「兩河流域文明」被視為早期文明之一，主要因為？",
+    "options": [
+      "航太科技發展",
+      "農業灌溉與城市形成",
+      "完全沒有文字",
+      "只靠遊牧"
+    ],
+    "answerIndex": 1,
+    "explanation": "容易把文明等同王朝。\n關鍵在農業灌溉與城市形成。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "history_v3_0050",
+    "subject": "history",
+    "prompt": "「工業化」造成的社會變化之一是？",
+    "options": [
+      "人類回歸遊牧",
+      "政治完全消失",
+      "農業比重上升",
+      "城市化加速"
+    ],
+    "answerIndex": 3,
+    "explanation": "常只想到技術本身。\n工業化也帶來城市化與人口集中。",
+    "difficulty": "easy"
   }
 ]
