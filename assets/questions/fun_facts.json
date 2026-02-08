@@ -4,12 +4,12 @@
     "subject": "funFacts",
     "prompt": "章魚有幾顆心臟？",
     "options": [
-      "一顆",
       "三顆",
+      "一顆",
       "兩顆",
       "四顆"
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": "很多人以為和人一樣只有一顆。\n章魚其實有三顆心臟。",
     "difficulty": "easy"
   },
@@ -68,5 +68,635 @@
     "answerIndex": 0,
     "explanation": "變黑看起來像壞掉所以容易誤判。\n其實只是表皮細胞受冷受損變色。",
     "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0006",
+    "subject": "funFacts",
+    "prompt": "金魚只有三秒記憶是真的嗎？",
+    "options": [
+      "是真的，只有三秒",
+      "不是真的，能記得更久",
+      "要看水溫而定",
+      "只在夜晚會忘"
+    ],
+    "answerIndex": 1,
+    "explanation": "三秒記憶是很常見的迷思。\n金魚其實能記住更久的事。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0007",
+    "subject": "funFacts",
+    "prompt": "駱駝駝峰裡主要存的是？",
+    "options": [
+      "水",
+      "空氣",
+      "脂肪",
+      "鹽分"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人直覺以為是水庫。\n其實駝峰主要是脂肪儲存。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0008",
+    "subject": "funFacts",
+    "prompt": "玻璃之所以會「慢慢流動」的說法？",
+    "options": [
+      "正確，玻璃是超慢液體",
+      "只在高溫時會流動",
+      "取決於玻璃顏色",
+      "不正確，它是固體"
+    ],
+    "answerIndex": 3,
+    "explanation": "古老窗戶厚薄不一常被誤解。\n玻璃在常溫下是固體。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0009",
+    "subject": "funFacts",
+    "prompt": "在植物學上，以下哪個算「莓果」？",
+    "options": [
+      "香蕉",
+      "草莓",
+      "覆盆子",
+      "櫻桃"
+    ],
+    "answerIndex": 0,
+    "explanation": "名字像莓的常被先選。\n植物學上香蕉反而是莓果。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0010",
+    "subject": "funFacts",
+    "prompt": "閃電的溫度通常比太陽表面？",
+    "options": [
+      "更低",
+      "更高",
+      "差不多",
+      "只有冬天更高"
+    ],
+    "answerIndex": 1,
+    "explanation": "太陽最熱的印象很強。\n閃電瞬間溫度通常更高。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0011",
+    "subject": "funFacts",
+    "prompt": "貓咪嘗不出哪一種味道？",
+    "options": [
+      "鹹味",
+      "酸味",
+      "甜味",
+      "苦味"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人以為貓什麼都能嚐。\n貓幾乎感受不到甜味。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0012",
+    "subject": "funFacts",
+    "prompt": "人類出生時骨頭數量通常？",
+    "options": [
+      "比成人少",
+      "和成人一樣",
+      "取決於體重",
+      "比成人多"
+    ],
+    "answerIndex": 3,
+    "explanation": "直覺會以為長大才會變多。\n出生時骨頭數反而更多。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0013",
+    "subject": "funFacts",
+    "prompt": "雪看起來是白色，主要因為？",
+    "options": [
+      "反射與散射所有色光",
+      "雪本身就有白色素",
+      "裡面含鹽所以變白",
+      "只在夜晚會變白"
+    ],
+    "answerIndex": 0,
+    "explanation": "直覺會覺得雪本身是白色。\n其實是散射光線讓它看起來白。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0014",
+    "subject": "funFacts",
+    "prompt": "蜥蜴尾巴容易斷是因為？",
+    "options": [
+      "天生脆弱易斷",
+      "尾巴有預設斷裂點",
+      "體內水分太多",
+      "冷天會自動掉"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人以為只是脆弱。\n其實尾巴有預設斷裂點自保。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0015",
+    "subject": "funFacts",
+    "prompt": "舌頭味覺分區圖真的準確嗎？",
+    "options": [
+      "準確，每區只嚐一味",
+      "只對辣味有效",
+      "不準確，整個舌頭都能感受",
+      "只在兒童適用"
+    ],
+    "answerIndex": 2,
+    "explanation": "課本分區圖讓人很容易相信。\n實際上整個舌頭都能感受多種味道。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0016",
+    "subject": "funFacts",
+    "prompt": "蜂鳥能不能倒退飛？",
+    "options": [
+      "不能，只能懸停",
+      "只有幼鳥可以",
+      "夜間才可以",
+      "能，且是少數能倒退的鳥"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人只記得牠會懸停。\n蜂鳥其實能倒退飛。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0017",
+    "subject": "funFacts",
+    "prompt": "企鵝都住在南極是真的嗎？",
+    "options": [
+      "不是，還有溫帶企鵝",
+      "是，只有南極有企鵝",
+      "只有北極也有",
+      "只在冬天才會南遷"
+    ],
+    "answerIndex": 0,
+    "explanation": "南極形象太強容易以為唯一。\n其實也有住在溫帶的企鵝。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0018",
+    "subject": "funFacts",
+    "prompt": "貓咪大多數的喵叫是對誰用的？",
+    "options": [
+      "對其他貓",
+      "對人類",
+      "對獵物",
+      "對狗"
+    ],
+    "answerIndex": 1,
+    "explanation": "容易以為貓彼此也常喵叫。\n多數喵叫其實是對人類溝通。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0019",
+    "subject": "funFacts",
+    "prompt": "人類皮膚是身體最大的器官嗎？",
+    "options": [
+      "不是，是肝臟",
+      "不是，是心臟",
+      "是",
+      "不是，是肺"
+    ],
+    "answerIndex": 2,
+    "explanation": "常把內臟想成更大。\n皮膚其實是最大器官。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0020",
+    "subject": "funFacts",
+    "prompt": "蜘蛛被歸類為昆蟲嗎？",
+    "options": [
+      "是，因為有很多腳",
+      "只有小蜘蛛算",
+      "要看品種",
+      "不是，牠是蛛形綱"
+    ],
+    "answerIndex": 3,
+    "explanation": "八隻腳很容易被當成昆蟲。\n蜘蛛屬於蛛形綱，不是昆蟲。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0021",
+    "subject": "funFacts",
+    "prompt": "「掉地 5 秒內可以吃」是真的嗎？",
+    "options": [
+      "假的，細菌立刻沾上",
+      "真的，5 秒內安全",
+      "只對乾的食物有效",
+      "只在室外有效"
+    ],
+    "answerIndex": 0,
+    "explanation": "五秒規則很流行所以容易相信。\n細菌其實幾乎立刻就會沾上。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0022",
+    "subject": "funFacts",
+    "prompt": "北極熊的皮膚顏色其實是？",
+    "options": [
+      "白色",
+      "黑色",
+      "粉色",
+      "透明"
+    ],
+    "answerIndex": 1,
+    "explanation": "毛是白的，所以皮膚也被誤以為白。\n北極熊皮膚其實是黑色。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0023",
+    "subject": "funFacts",
+    "prompt": "鯊魚必須一直游泳才不會死嗎？",
+    "options": [
+      "所有鯊魚都必須",
+      "只有小型鯊魚要",
+      "不是，每種狀況不同",
+      "只有白天才需要"
+    ],
+    "answerIndex": 2,
+    "explanation": "這個說法很常被一概而論。\n其實不同鯊魚呼吸方式不同。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0024",
+    "subject": "funFacts",
+    "prompt": "以下哪一項是「昆蟲」的必要特徵？",
+    "options": [
+      "八隻腳",
+      "會飛",
+      "會吐絲",
+      "六隻腳"
+    ],
+    "answerIndex": 3,
+    "explanation": "會飛或吐絲很容易被當成關鍵。\n昆蟲的必要特徵是六隻腳。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0025",
+    "subject": "funFacts",
+    "prompt": "人類右腦只管藝術、左腦只管邏輯是真的嗎？",
+    "options": [
+      "假的，兩邊常一起運作",
+      "是真的，分工明確",
+      "只在兒童成立",
+      "只有左撇子例外"
+    ],
+    "answerIndex": 0,
+    "explanation": "左右腦分工說法太好記。\n實際上多數任務都靠兩邊一起運作。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0026",
+    "subject": "funFacts",
+    "prompt": "人類看見閃電後才聽到雷聲是因為？",
+    "options": [
+      "雷聲會轉彎",
+      "光走得比較快",
+      "閃電在地下",
+      "眼睛會慢半拍"
+    ],
+    "answerIndex": 1,
+    "explanation": "會以為是距離造成延遲。\n其實是光速比聲速快很多。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0027",
+    "subject": "funFacts",
+    "prompt": "蝸牛的「牙齒」其實是？",
+    "options": [
+      "硬殼上的顆粒",
+      "嘴唇邊緣的小刺",
+      "舌頭上的細小齒狀",
+      "下顎骨排列"
+    ],
+    "answerIndex": 2,
+    "explanation": "容易把外殼當成工具。\n蝸牛用舌頭上的小齒刮食物。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0028",
+    "subject": "funFacts",
+    "prompt": "鴕鳥會把頭埋進沙子是真的嗎？",
+    "options": [
+      "是真的，遇到危險就埋",
+      "只在夜晚會這樣",
+      "幼鳥才會",
+      "假的，多半是低頭覓食"
+    ],
+    "answerIndex": 3,
+    "explanation": "埋頭說法太有畫面所以常被信。\n多數其實是低頭覓食或整理羽毛。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0029",
+    "subject": "funFacts",
+    "prompt": "蝙蝠其實是「瞎子」嗎？",
+    "options": [
+      "不是，視力不錯",
+      "是，完全看不見",
+      "只有白天看不見",
+      "只在城市看不見"
+    ],
+    "answerIndex": 0,
+    "explanation": "超聲波讓人以為牠們看不見。\n蝙蝠其實也有視力。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0030",
+    "subject": "funFacts",
+    "prompt": "以下哪個不是「真正的」魚類？",
+    "options": [
+      "鯊魚",
+      "海星",
+      "鯧魚",
+      "魟魚"
+    ],
+    "answerIndex": 1,
+    "explanation": "名字有魚就會被當成魚。\n海星其實是棘皮動物，不是魚。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0031",
+    "subject": "funFacts",
+    "prompt": "人類在太空會變高一點，主要原因是？",
+    "options": [
+      "骨頭變長",
+      "肌肉長得更快",
+      "脊椎間距拉開",
+      "水分變少"
+    ],
+    "answerIndex": 2,
+    "explanation": "直覺以為骨頭變長。\n其實是脊椎間距被拉開。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0032",
+    "subject": "funFacts",
+    "prompt": "哪一個行星的一天比它的一年還長？",
+    "options": [
+      "火星",
+      "地球",
+      "木星",
+      "金星"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人只記得它轉得慢。\n金星自轉超慢，一天比一年長。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0033",
+    "subject": "funFacts",
+    "prompt": "人類打哈欠會傳染，最可能的原因是？",
+    "options": [
+      "社會與同理反應",
+      "缺氧造成同步",
+      "唾液傳播",
+      "眼睛乾澀"
+    ],
+    "answerIndex": 0,
+    "explanation": "缺氧說法很直覺。\n其實多與社會連結和同理反應有關。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0034",
+    "subject": "funFacts",
+    "prompt": "人類最常見的血型是？",
+    "options": [
+      "A 型",
+      "O 型",
+      "B 型",
+      "AB 型"
+    ],
+    "answerIndex": 1,
+    "explanation": "A 型很常見所以容易先選。\n全球最常見的是 O 型。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0035",
+    "subject": "funFacts",
+    "prompt": "下列哪個不是乳製品中的主要糖？",
+    "options": [
+      "乳糖",
+      "葡萄糖",
+      "果糖",
+      "麥芽糖"
+    ],
+    "answerIndex": 2,
+    "explanation": "甜味常讓人想到果糖。\n乳製品主要糖是乳糖，不是果糖。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0036",
+    "subject": "funFacts",
+    "prompt": "人類皮膚曬黑的主要原因是？",
+    "options": [
+      "皮膚變厚",
+      "血液變多",
+      "汗水變少",
+      "黑色素增加"
+    ],
+    "answerIndex": 3,
+    "explanation": "變厚的感覺容易誤導。\n曬黑主要是黑色素增加。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0037",
+    "subject": "funFacts",
+    "prompt": "地球上最乾燥的地方之一其實在？",
+    "options": [
+      "阿塔卡馬沙漠",
+      "撒哈拉沙漠",
+      "戈壁沙漠",
+      "撒馬爾罕"
+    ],
+    "answerIndex": 0,
+    "explanation": "大沙漠太有名所以常被先選。\n阿塔卡馬沙漠是極乾燥地區之一。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0038",
+    "subject": "funFacts",
+    "prompt": "人類平均一天眨眼次數大約？",
+    "options": [
+      "上萬次",
+      "數百次",
+      "十幾次",
+      "不到一次"
+    ],
+    "answerIndex": 1,
+    "explanation": "上萬次聽起來很誇張但容易被猜。\n實際大約是數百次的量級。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0039",
+    "subject": "funFacts",
+    "prompt": "哪一種動物的血液是藍色的？",
+    "options": [
+      "青蛙",
+      "金魚",
+      "章魚",
+      "鴿子"
+    ],
+    "answerIndex": 2,
+    "explanation": "藍血常被當成比喻。\n章魚含銅血藍素，血液呈藍色。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0040",
+    "subject": "funFacts",
+    "prompt": "人類在月球上跳得更高，主要因為？",
+    "options": [
+      "大氣更薄",
+      "宇宙射線更強",
+      "鞋子更輕",
+      "地心引力更小"
+    ],
+    "answerIndex": 3,
+    "explanation": "大氣薄很直覺但不是主因。\n主要是月球重力更小。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0041",
+    "subject": "funFacts",
+    "prompt": "以下哪個不是「乳酪洞」形成主因？",
+    "options": [
+      "老鼠啃咬",
+      "發酵氣體",
+      "菌種作用",
+      "熟成過程"
+    ],
+    "answerIndex": 0,
+    "explanation": "老鼠啃洞太有畫面所以常被信。\n乳酪洞主要是發酵氣體造成。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0042",
+    "subject": "funFacts",
+    "prompt": "人類聽覺最敏感的頻率大約在？",
+    "options": [
+      "20Hz 左右",
+      "3,000Hz 左右",
+      "20,000Hz 左右",
+      "60,000Hz 左右"
+    ],
+    "answerIndex": 1,
+    "explanation": "高頻數字很容易被誤選。\n人耳最敏感約在 3,000Hz 附近。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0043",
+    "subject": "funFacts",
+    "prompt": "河馬在水中其實不會游泳，牠們多用什麼方式移動？",
+    "options": [
+      "用尾巴當槳",
+      "靠漂浮滑行",
+      "用腳在水底行走",
+      "以仰泳為主"
+    ],
+    "answerIndex": 2,
+    "explanation": "會以為大型動物很會游。\n河馬多在水底行走或跳躍前進。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0044",
+    "subject": "funFacts",
+    "prompt": "蜂后是怎麼決定要誕生的？",
+    "options": [
+      "由體型最大幼蟲決定",
+      "由天氣自動觸發",
+      "工蜂隨機抽籤",
+      "被選中的幼蟲餵食蜂王乳"
+    ],
+    "answerIndex": 3,
+    "explanation": "直覺會以為是天生最大隻。\n實際上是被挑選並餵蜂王乳的幼蟲。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0045",
+    "subject": "funFacts",
+    "prompt": "海豚睡覺時最特別的是？",
+    "options": [
+      "半邊大腦輪流休息",
+      "完全不睡",
+      "只在白天睡",
+      "會沉到海底"
+    ],
+    "answerIndex": 0,
+    "explanation": "會以為牠們乾脆不睡。\n海豚其實是半邊大腦輪流休息。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0046",
+    "subject": "funFacts",
+    "prompt": "章魚的血液為什麼偏藍色？",
+    "options": [
+      "含鐵更少",
+      "含銅血藍素",
+      "吃了藍色食物",
+      "海水染色"
+    ],
+    "answerIndex": 1,
+    "explanation": "常以為是吃到藍色東西。\n其實是含銅的血藍素造成。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0047",
+    "subject": "funFacts",
+    "prompt": "下列哪一項會讓人更容易暈車？",
+    "options": [
+      "往前看遠方",
+      "坐在前座",
+      "看書或看手機",
+      "保持通風"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人以為閉眼就好。\n視覺與平衡感衝突時更容易暈。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0048",
+    "subject": "funFacts",
+    "prompt": "「熱水比較快結冰」這句話正確嗎？",
+    "options": [
+      "一定正確",
+      "一定錯誤",
+      "只在海水成立",
+      "有時可能發生"
+    ],
+    "answerIndex": 3,
+    "explanation": "直覺會選一定對或一定錯。\n在某些條件下確實可能發生。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0049",
+    "subject": "funFacts",
+    "prompt": "為什麼冰加鹽後會更冷？",
+    "options": [
+      "鹽本身很冷",
+      "降低冰的融點",
+      "讓冰吸走熱量",
+      "產生冷氣體"
+    ],
+    "answerIndex": 1,
+    "explanation": "以為是鹽本身溫度低。\n其實是鹽降低冰的融點。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0050",
+    "subject": "funFacts",
+    "prompt": "為什麼貓咪經常舔毛？",
+    "options": [
+      "只是因為無聊",
+      "在減少食慾",
+      "避免骨頭變軟",
+      "幫自己散熱與清潔"
+    ],
+    "answerIndex": 3,
+    "explanation": "常被解讀成單純習慣。\n其實兼具清潔與散熱作用。",
+    "difficulty": "medium"
   }
 ]
