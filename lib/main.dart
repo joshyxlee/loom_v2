@@ -128,8 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('Loom v2')),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             _CardSection(
               child: Column(
@@ -189,7 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () => _startSubject(context, subject),
                   ),
                 )),
-            const Spacer(),
           ],
         ),
       ),
