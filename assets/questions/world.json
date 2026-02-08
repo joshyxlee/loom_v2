@@ -68,5 +68,635 @@
     "answerIndex": 0,
     "explanation": "多瑙河很有名所以常被選中。\n實際最長的是伏爾加河。",
     "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0006",
+    "subject": "world",
+    "prompt": "世界上最大的沙漠其實是？",
+    "options": [
+      "撒哈拉",
+      "南極洲",
+      "戈壁",
+      "阿拉伯"
+    ],
+    "answerIndex": 1,
+    "explanation": "沙漠常被直接聯想到熱沙。\n面積最大的是南極洲的極地沙漠。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0007",
+    "subject": "world",
+    "prompt": "下列哪個國家同時跨兩個大陸？",
+    "options": [
+      "義大利",
+      "挪威",
+      "土耳其",
+      "摩洛哥"
+    ],
+    "answerIndex": 2,
+    "explanation": "歐亞分界常被忽略。\n土耳其同時跨歐洲與亞洲。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0008",
+    "subject": "world",
+    "prompt": "以下哪個國家沒有使用公里作為公路里程單位？",
+    "options": [
+      "加拿大",
+      "澳洲",
+      "德國",
+      "英國"
+    ],
+    "answerIndex": 3,
+    "explanation": "英國看起來很歐洲化。\n英國仍大量使用英里標示里程。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0009",
+    "subject": "world",
+    "prompt": "世界上人口最多的城市群位於？",
+    "options": [
+      "東京圈",
+      "紐約圈",
+      "倫敦圈",
+      "巴黎圈"
+    ],
+    "answerIndex": 0,
+    "explanation": "歐美都市很容易被先想到。\n人口最多的都市圈是東京圈。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0010",
+    "subject": "world",
+    "prompt": "下列哪條海峽連接紅海與亞丁灣？",
+    "options": [
+      "直布羅陀海峽",
+      "巴布曼德海峽",
+      "馬六甲海峽",
+      "博斯普魯斯海峽"
+    ],
+    "answerIndex": 1,
+    "explanation": "常把世界知名海峽混在一起。\n紅海出口是巴布曼德海峽。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0011",
+    "subject": "world",
+    "prompt": "以下哪個國家不屬於北歐？",
+    "options": [
+      "芬蘭",
+      "丹麥",
+      "愛爾蘭",
+      "挪威"
+    ],
+    "answerIndex": 2,
+    "explanation": "愛爾蘭常被誤放進北歐。\n它屬於西歐島國，不是北歐。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0012",
+    "subject": "world",
+    "prompt": "以下哪個國家擁有最多的島嶼？",
+    "options": [
+      "印尼",
+      "菲律賓",
+      "日本",
+      "瑞典"
+    ],
+    "answerIndex": 3,
+    "explanation": "熱帶群島很容易先入為主。\n島嶼數量最多的是瑞典。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0013",
+    "subject": "world",
+    "prompt": "地球上最大的淡水湖是？",
+    "options": [
+      "蘇必利爾湖",
+      "貝加爾湖",
+      "裏海",
+      "坦尚尼亞湖"
+    ],
+    "answerIndex": 0,
+    "explanation": "貝加爾湖以深度聞名。\n面積最大的淡水湖是蘇必利爾湖。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0014",
+    "subject": "world",
+    "prompt": "哪個國家同時擁有大西洋與地中海海岸線？",
+    "options": [
+      "義大利",
+      "西班牙",
+      "希臘",
+      "克羅埃西亞"
+    ],
+    "answerIndex": 1,
+    "explanation": "地中海國家常被一概而論。\n西班牙同時臨大西洋與地中海。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0015",
+    "subject": "world",
+    "prompt": "下列哪個國家曾經沒有官方首都？",
+    "options": [
+      "以色列",
+      "加拿大",
+      "瑞士",
+      "比利時"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人會把政治爭議當線索。\n瑞士長期沒有正式首都。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0016",
+    "subject": "world",
+    "prompt": "下列哪個國家以「雙重內陸國」著稱？",
+    "options": [
+      "哈薩克",
+      "蒙古",
+      "尼泊爾",
+      "烏茲別克"
+    ],
+    "answerIndex": 3,
+    "explanation": "內陸國很多，但雙重內陸更少。\n烏茲別克被兩層內陸國包圍。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0017",
+    "subject": "world",
+    "prompt": "以下哪個國家橫跨最多時區？",
+    "options": [
+      "俄羅斯",
+      "美國",
+      "加拿大",
+      "巴西"
+    ],
+    "answerIndex": 0,
+    "explanation": "美國的時區很有存在感。\n實際橫跨最多時區的是俄羅斯。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0018",
+    "subject": "world",
+    "prompt": "「日不落帝國」的稱號常指哪一國？",
+    "options": [
+      "西班牙",
+      "英國",
+      "法國",
+      "葡萄牙"
+    ],
+    "answerIndex": 1,
+    "explanation": "西班牙曾很強盛所以容易被選。\n日不落帝國最常指英國。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0019",
+    "subject": "world",
+    "prompt": "世界上面積最大的內陸海是？",
+    "options": [
+      "紅海",
+      "波羅的海",
+      "裏海",
+      "黑海"
+    ],
+    "answerIndex": 2,
+    "explanation": "紅海黑海名字響亮。\n最大內陸海是裏海。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0020",
+    "subject": "world",
+    "prompt": "哪個國家擁有世界上最多的鄰國？",
+    "options": [
+      "俄羅斯",
+      "印度",
+      "巴西",
+      "中國"
+    ],
+    "answerIndex": 3,
+    "explanation": "俄羅斯面積大所以常被猜。\n鄰國最多的是中國。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0021",
+    "subject": "world",
+    "prompt": "下列哪個國家沒有使用里約時區（UTC-3）？",
+    "options": [
+      "智利",
+      "阿根廷",
+      "烏拉圭",
+      "巴西"
+    ],
+    "answerIndex": 0,
+    "explanation": "南美時區容易被混為一談。\n智利主要不是 UTC-3。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0022",
+    "subject": "world",
+    "prompt": "世界最長的山脈系統是？",
+    "options": [
+      "阿爾卑斯山",
+      "安第斯山",
+      "落磯山",
+      "喜馬拉雅"
+    ],
+    "answerIndex": 1,
+    "explanation": "喜馬拉雅最高所以常被選。\n最長的是安第斯山脈。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0023",
+    "subject": "world",
+    "prompt": "下列哪一個海在歐亞之間，不屬於地中海系統？",
+    "options": [
+      "黑海",
+      "愛琴海",
+      "里海",
+      "亞得里亞海"
+    ],
+    "answerIndex": 2,
+    "explanation": "名字像海所以容易被當成地中海一部分。\n里海其實是內陸海。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0024",
+    "subject": "world",
+    "prompt": "哪個國家的國旗沒有使用紅色？",
+    "options": [
+      "南非",
+      "德國",
+      "葡萄牙",
+      "瑞典"
+    ],
+    "answerIndex": 3,
+    "explanation": "多數國旗都有紅色元素。\n瑞典國旗只有藍黃。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0025",
+    "subject": "world",
+    "prompt": "世界上人口最少的主權國家是？",
+    "options": [
+      "梵蒂岡",
+      "摩納哥",
+      "列支敦斯登",
+      "馬爾他"
+    ],
+    "answerIndex": 0,
+    "explanation": "常會被歐洲小國混淆。\n人口最少的是梵蒂岡。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0026",
+    "subject": "world",
+    "prompt": "哪個國家同時位於北半球與南半球？",
+    "options": [
+      "西班牙",
+      "厄瓜多",
+      "墨西哥",
+      "日本"
+    ],
+    "answerIndex": 1,
+    "explanation": "名字像赤道但容易忽略地理位置。\n厄瓜多正跨赤道。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0027",
+    "subject": "world",
+    "prompt": "下列哪一國擁有世界最高的瀑布？",
+    "options": [
+      "巴西",
+      "加拿大",
+      "委內瑞拉",
+      "冰島"
+    ],
+    "answerIndex": 2,
+    "explanation": "常把伊瓜蘇瀑布當第一。\n最高的是委內瑞拉天使瀑布。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0028",
+    "subject": "world",
+    "prompt": "哪個國家同時橫跨歐洲與亞洲最多領土？",
+    "options": [
+      "土耳其",
+      "喬治亞",
+      "哈薩克",
+      "俄羅斯"
+    ],
+    "answerIndex": 3,
+    "explanation": "土耳其跨洲很知名。\n實際跨歐亞最多領土的是俄羅斯。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0029",
+    "subject": "world",
+    "prompt": "以下哪條河流穿過的國家數量最多？",
+    "options": [
+      "多瑙河",
+      "萊茵河",
+      "尼羅河",
+      "亞馬遜河"
+    ],
+    "answerIndex": 0,
+    "explanation": "尼羅河與亞馬遜名氣更大。\n實際穿越國家最多的是多瑙河。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0030",
+    "subject": "world",
+    "prompt": "下列哪個國家面積最小？",
+    "options": [
+      "新加坡",
+      "梵蒂岡",
+      "摩納哥",
+      "巴林"
+    ],
+    "answerIndex": 1,
+    "explanation": "新加坡很小但不是最小。\n最小的主權國家是梵蒂岡。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0031",
+    "subject": "world",
+    "prompt": "世界上人口最多的島國是？",
+    "options": [
+      "日本",
+      "英國",
+      "印尼",
+      "菲律賓"
+    ],
+    "answerIndex": 2,
+    "explanation": "日本很直覺所以常被選。\n人口最多的島國是印尼。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0032",
+    "subject": "world",
+    "prompt": "下列哪個國家沒有與任何國家接壤？",
+    "options": [
+      "葡萄牙",
+      "挪威",
+      "泰國",
+      "紐西蘭"
+    ],
+    "answerIndex": 3,
+    "explanation": "會直覺以為島國才沒有鄰國。\n紐西蘭完全不與他國接壤。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0033",
+    "subject": "world",
+    "prompt": "哪個國家同時擁有地中海與黑海海岸線？",
+    "options": [
+      "土耳其",
+      "義大利",
+      "西班牙",
+      "法國"
+    ],
+    "answerIndex": 0,
+    "explanation": "地中海國家容易被混淆。\n只有土耳其同時臨地中海與黑海。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0034",
+    "subject": "world",
+    "prompt": "世界上最長的國界線在？",
+    "options": [
+      "俄羅斯與中國",
+      "美國與加拿大",
+      "巴西與阿根廷",
+      "印度與巴基斯坦"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人會想到衝突熱區。\n最長的和平邊界是美加邊界。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0035",
+    "subject": "world",
+    "prompt": "下列哪個國家沒有加入聯合國？",
+    "options": [
+      "瑞士",
+      "日本",
+      "梵蒂岡",
+      "巴西"
+    ],
+    "answerIndex": 2,
+    "explanation": "瑞士曾是非會員所以容易誤判。\n目前非會員的是梵蒂岡。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0036",
+    "subject": "world",
+    "prompt": "哪個國家擁有最多活火山？",
+    "options": [
+      "日本",
+      "美國",
+      "冰島",
+      "印尼"
+    ],
+    "answerIndex": 3,
+    "explanation": "日本火山很有名所以常被選。\n活火山最多的是印尼。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0037",
+    "subject": "world",
+    "prompt": "下列哪個國家位於非洲最南端？",
+    "options": [
+      "南非",
+      "納米比亞",
+      "波札那",
+      "辛巴威"
+    ],
+    "answerIndex": 0,
+    "explanation": "地圖印象很容易混淆位置。\n非洲最南端是南非。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0038",
+    "subject": "world",
+    "prompt": "世界上面積最大的熱帶雨林在？",
+    "options": [
+      "剛果盆地",
+      "亞馬遜",
+      "婆羅洲",
+      "東南亞群島"
+    ],
+    "answerIndex": 1,
+    "explanation": "剛果盆地也很大所以常被選。\n最大雨林是亞馬遜。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0039",
+    "subject": "world",
+    "prompt": "哪個國家擁有最長的海岸線？",
+    "options": [
+      "俄羅斯",
+      "美國",
+      "加拿大",
+      "澳洲"
+    ],
+    "answerIndex": 2,
+    "explanation": "面積大國很容易被誤選。\n海岸線最長的是加拿大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0040",
+    "subject": "world",
+    "prompt": "下列哪個國家首都不在最大片的島上？",
+    "options": [
+      "澳洲",
+      "日本",
+      "紐西蘭",
+      "菲律賓"
+    ],
+    "answerIndex": 3,
+    "explanation": "首都多在最大島上所以容易忽略。\n菲律賓首都馬尼拉不在最大島上。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0041",
+    "subject": "world",
+    "prompt": "世界上人口密度最高的國家是？",
+    "options": [
+      "摩納哥",
+      "新加坡",
+      "孟加拉",
+      "巴勒斯坦"
+    ],
+    "answerIndex": 0,
+    "explanation": "新加坡很擁擠所以常被選。\n人口密度最高的是摩納哥。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0042",
+    "subject": "world",
+    "prompt": "以下哪個國家同時橫跨東西半球？",
+    "options": [
+      "西班牙",
+      "俄羅斯",
+      "紐西蘭",
+      "智利"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人只想到跨時區。\n俄羅斯跨過本初子午線附近經度區域。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0043",
+    "subject": "world",
+    "prompt": "下列哪個國家同時臨三大洋？",
+    "options": [
+      "澳洲",
+      "阿根廷",
+      "南非",
+      "印度"
+    ],
+    "answerIndex": 2,
+    "explanation": "澳洲被誤以為三面都是海洋。\n南非同時臨大西洋與印度洋等海域。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0044",
+    "subject": "world",
+    "prompt": "哪個國家擁有世界上最多的湖泊？",
+    "options": [
+      "芬蘭",
+      "美國",
+      "瑞典",
+      "加拿大"
+    ],
+    "answerIndex": 3,
+    "explanation": "芬蘭被稱千湖之國很容易先選。\n最多湖泊的是加拿大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0045",
+    "subject": "world",
+    "prompt": "哪個國家是世界上最大的群島國家？",
+    "options": [
+      "印尼",
+      "菲律賓",
+      "日本",
+      "希臘"
+    ],
+    "answerIndex": 0,
+    "explanation": "菲律賓群島很有名所以常被選。\n最大群島國家是印尼。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0046",
+    "subject": "world",
+    "prompt": "以下哪個國家位於完全被包圍的內陸國？",
+    "options": [
+      "摩洛哥",
+      "聖馬利諾",
+      "葡萄牙",
+      "尼加拉瓜"
+    ],
+    "answerIndex": 1,
+    "explanation": "地中海國家容易被混淆。\n聖馬利諾被義大利完全包圍。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0047",
+    "subject": "world",
+    "prompt": "下列哪個國家首都是高原城市且海拔超過 3,500 公尺？",
+    "options": [
+      "哥倫比亞",
+      "智利",
+      "玻利維亞",
+      "祕魯"
+    ],
+    "answerIndex": 2,
+    "explanation": "安第斯多國首都都很高。\n玻利維亞的拉巴斯海拔超過 3,500 公尺。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0048",
+    "subject": "world",
+    "prompt": "世界上最長的地下河位於哪個國家？",
+    "options": [
+      "中國",
+      "越南",
+      "土耳其",
+      "墨西哥"
+    ],
+    "answerIndex": 3,
+    "explanation": "喀斯特地形容易讓人想到中國或越南。\n最長地下河系統在墨西哥尤卡坦。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0049",
+    "subject": "world",
+    "prompt": "哪個國家擁有最多的時區（含海外領地）？",
+    "options": [
+      "美國",
+      "法國",
+      "俄羅斯",
+      "英國"
+    ],
+    "answerIndex": 1,
+    "explanation": "會先想到面積最大的國家。\n含海外領地最多時區的是法國。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0050",
+    "subject": "world",
+    "prompt": "下列哪個國家沒有使用攝氏溫度？",
+    "options": [
+      "澳洲",
+      "德國",
+      "韓國",
+      "美國"
+    ],
+    "answerIndex": 3,
+    "explanation": "多數國家使用攝氏很習慣。\n美國仍以華氏為主。",
+    "difficulty": "easy"
   }
 ]
