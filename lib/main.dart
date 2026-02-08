@@ -128,66 +128,72 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('Loom v2')),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: ListView(
+        child: Column(
           children: [
-            _CardSection(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            Expanded(
+              child: ListView(
                 children: [
-                  Text('今天該做什麼', style: Theme.of(context).textTheme.titleLarge),
-                  const SizedBox(height: 6),
-                  Text(todayLine),
+                  _CardSection(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('今天該做什麼', style: Theme.of(context).textTheme.titleLarge),
+                        const SizedBox(height: 6),
+                        Text(todayLine),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 12),
-                  FilledButton(
-                    onPressed: () => _startSubject(context, primarySubject),
-                    child: const Text('開始今日回合'),
+                  _CardSection(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleMedium),
+                        const SizedBox(height: 4),
+                        Text('樹階段：${stage.name}'),
+                        const SizedBox(height: 4),
+                        Text('總 XP：${snapshot.totalXp}'),
+                        const SizedBox(height: 8),
+                        Builder(
+                          builder: (context) {
+                            final current = widget.progressService.currentLevelXp(snapshot.level);
+                            final next = widget.progressService.nextLevelXp(snapshot.level);
+                            final progress = (snapshot.totalXp - current) / (next - current);
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
+                                const SizedBox(height: 6),
+                                LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
+                              ],
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 8),
+                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
+                        const SizedBox(height: 4),
+                        Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
+                      ],
+                    ),
                   ),
+                  const SizedBox(height: 12),
+                  Text('科目', style: Theme.of(context).textTheme.titleMedium),
+                  const SizedBox(height: 8),
+                  ...subjects.map((subject) => Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: _SubjectButton(
+                          title: subject.title,
+                          onTap: () => _startSubject(context, subject),
+                        ),
+                      )),
                 ],
               ),
             ),
             const SizedBox(height: 12),
-            _CardSection(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleMedium),
-                  const SizedBox(height: 4),
-                  Text('樹階段：${stage.name}'),
-                  const SizedBox(height: 4),
-                  Text('總 XP：${snapshot.totalXp}'),
-                  const SizedBox(height: 8),
-                  Builder(
-                    builder: (context) {
-                      final current = widget.progressService.currentLevelXp(snapshot.level);
-                      final next = widget.progressService.nextLevelXp(snapshot.level);
-                      final progress = (snapshot.totalXp - current) / (next - current);
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
-                          const SizedBox(height: 6),
-                          LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
-                        ],
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 8),
-                  Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
-                  const SizedBox(height: 4),
-                  Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
-                ],
-              ),
+            FilledButton(
+              onPressed: () => _startSubject(context, primarySubject),
+              child: const Text('開始今日回合'),
             ),
-            const SizedBox(height: 12),
-            Text('科目', style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(height: 8),
-            ...subjects.map((subject) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: _SubjectButton(
-                    title: subject.title,
-                    onTap: () => _startSubject(context, subject),
-                  ),
-                )),
           ],
         ),
       ),
@@ -337,36 +343,38 @@ class _QuizScreenState extends State<QuizScreen> {
                 question.explanation,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              const SizedBox(height: 12),
-              FilledButton(
-                onPressed: () {
-                  if (_index + 1 >= widget.questions.length) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => _SessionSummaryCard(
-                          subject: widget.subject,
-                          totalQuestions: widget.questions.length,
-                          dailyAnswered: widget.progressService.snapshot.dailyAnswered,
-                          dailyTarget: widget.progressService.snapshot.dailyTarget,
-                          repository: widget.repository,
-                          progressService: widget.progressService,
-                        ),
-                      ),
-                    );
-                  } else {
-                    setState(() {
-                      _index += 1;
-                      _selected = null;
-                      _lastXp = 0;
-                      _dailyTargetJustCompleted = false;
-                      _streakJustHit = false;
-                    });
-                  }
-                },
-                child: Text(_index + 1 >= widget.questions.length ? '回到主選單' : '下一題'),
-              ),
             ],
+            const SizedBox(height: 12),
+            FilledButton(
+              onPressed: _selected == null
+                  ? null
+                  : () {
+                      if (_index + 1 >= widget.questions.length) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => _SessionSummaryCard(
+                              subject: widget.subject,
+                              totalQuestions: widget.questions.length,
+                              dailyAnswered: widget.progressService.snapshot.dailyAnswered,
+                              dailyTarget: widget.progressService.snapshot.dailyTarget,
+                              repository: widget.repository,
+                              progressService: widget.progressService,
+                            ),
+                          ),
+                        );
+                      } else {
+                        setState(() {
+                          _index += 1;
+                          _selected = null;
+                          _lastXp = 0;
+                          _dailyTargetJustCompleted = false;
+                          _streakJustHit = false;
+                        });
+                      }
+                    },
+              child: Text(_index + 1 >= widget.questions.length ? '回到主選單' : '下一題'),
+            ),
           ],
         ),
       ),
