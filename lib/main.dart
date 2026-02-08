@@ -233,6 +233,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int? _selected;
   int _lastXp = 0;
   bool _dailyTargetJustCompleted = false;
+  int _lastLevel = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -263,6 +264,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   enabled: _selected == null,
                   onTap: () => setState(() {
                     _selected = i;
+                    _lastLevel = widget.progressService.snapshot.level;
                     final result = widget.progressService.recordAnswer(
                       isCorrect: question.isCorrect(i),
                       difficulty: question.difficulty,
@@ -276,6 +278,10 @@ class _QuizScreenState extends State<QuizScreen> {
             const Spacer(),
             if (_selected != null) ...[
               Text('本題 XP：+$_lastXp', style: Theme.of(context).textTheme.bodyMedium),
+              if (widget.progressService.snapshot.level > _lastLevel) ...[
+                const SizedBox(height: 6),
+                const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
               if (_dailyTargetJustCompleted) ...[
                 const SizedBox(height: 6),
                 const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
