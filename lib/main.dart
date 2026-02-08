@@ -274,6 +274,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int _lastLevel = 1;
   int _correctStreak = 0;
   bool _streakJustHit = false;
+  bool _levelUpPulse = false;
 
   @override
   Widget build(BuildContext context) {
@@ -326,6 +327,14 @@ class _QuizScreenState extends State<QuizScreen> {
                       _correctStreak = 0;
                       _streakJustHit = false;
                     }
+                    final leveledUp = widget.progressService.snapshot.level > _lastLevel;
+                    if (leveledUp) {
+                      _levelUpPulse = true;
+                      Future.delayed(const Duration(milliseconds: 450), () {
+                        if (!mounted) return;
+                        setState(() => _levelUpPulse = false);
+                      });
+                    }
                   }),
                 ),
               );
@@ -339,6 +348,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 streakHit: _streakJustHit,
                 dailyHit: _dailyTargetJustCompleted,
                 isLast: _index + 1 >= widget.questions.length,
+                levelUpPulse: _levelUpPulse,
                 onNext: () {
                   if (_index + 1 >= widget.questions.length) {
                     Navigator.pushReplacement(
@@ -361,6 +371,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       _lastXp = 0;
                       _dailyTargetJustCompleted = false;
                       _streakJustHit = false;
+                      _levelUpPulse = false;
                     });
                   }
                 },
@@ -427,6 +438,7 @@ class _FeedbackCard extends StatelessWidget {
     required this.dailyHit,
     required this.isLast,
     required this.onNext,
+    required this.levelUpPulse,
   });
 
   final int xp;
@@ -436,47 +448,53 @@ class _FeedbackCard extends StatelessWidget {
   final bool dailyHit;
   final bool isLast;
   final VoidCallback onNext;
+  final bool levelUpPulse;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 12,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('本題 XP：+$xp', style: Theme.of(context).textTheme.bodyMedium),
-          if (levelUp) ...[
-            const SizedBox(height: 6),
-            const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+    return AnimatedScale(
+      scale: levelUpPulse ? 1.04 : 1.0,
+      duration: const Duration(milliseconds: 450),
+      curve: Curves.easeOut,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.08),
+              blurRadius: 12,
+              offset: const Offset(0, 6),
+            ),
           ],
-          if (streakHit) ...[
-            const SizedBox(height: 6),
-            const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('本題 XP：+$xp', style: Theme.of(context).textTheme.bodyMedium),
+            if (levelUp) ...[
+              const SizedBox(height: 6),
+              const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+            if (streakHit) ...[
+              const SizedBox(height: 6),
+              const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+            if (dailyHit) ...[
+              const SizedBox(height: 6),
+              const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+            const SizedBox(height: 8),
+            Text(explanation, style: Theme.of(context).textTheme.bodyMedium),
+            const SizedBox(height: 12),
+            FilledButton(
+              onPressed: onNext,
+              child: Text(isLast ? '回到主選單' : '下一題'),
+            ),
           ],
-          if (dailyHit) ...[
-            const SizedBox(height: 6),
-            const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
-          ],
-          const SizedBox(height: 8),
-          Text(explanation, style: Theme.of(context).textTheme.bodyMedium),
-          const SizedBox(height: 12),
-          FilledButton(
-            onPressed: onNext,
-            child: Text(isLast ? '回到主選單' : '下一題'),
-          ),
-        ],
+        ),
       ),
     );
   }
