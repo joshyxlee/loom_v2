@@ -8,6 +8,7 @@ import 'repositories/question_repository.dart';
 import 'services/progress_service.dart';
 import 'services/tree_growth.dart';
 import 'services/seen_store.dart';
+import 'widgets/session_summary_card.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -309,7 +310,18 @@ class _QuizScreenState extends State<QuizScreen> {
               FilledButton(
                 onPressed: () {
                   if (_index + 1 >= widget.questions.length) {
-                    Navigator.pop(context);
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => _SessionSummaryCard(
+                          subjectTitle: widget.subjectTitle,
+                          totalQuestions: widget.questions.length,
+                          totalXp: widget.progressService.snapshot.totalXp,
+                          dailyAnswered: widget.progressService.snapshot.dailyAnswered,
+                          dailyTarget: widget.progressService.snapshot.dailyTarget,
+                        ),
+                      ),
+                    );
                   } else {
                     setState(() {
                       _index += 1;
@@ -360,4 +372,14 @@ class _AnswerOption extends StatelessWidget {
       ),
     );
   }
+}
+
+class _SessionSummaryCard extends SessionSummaryCard {
+  const _SessionSummaryCard({
+    required super.subjectTitle,
+    required super.totalQuestions,
+    required super.totalXp,
+    required super.dailyAnswered,
+    required super.dailyTarget,
+  });
 }
