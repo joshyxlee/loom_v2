@@ -45,11 +45,31 @@ class _LoomV2AppState extends State<LoomV2App> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3CC77A));
     return MaterialApp(
       title: 'Loom v2',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: colorScheme,
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF7F8FA),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          bodyMedium: TextStyle(fontSize: 14),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            side: BorderSide(color: colorScheme.outlineVariant),
+          ),
+        ),
       ),
       home: _ready
           ? HomeScreen(repository: _repository, progressService: _progressService)
@@ -91,55 +111,52 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleLarge),
-            const SizedBox(height: 4),
-            Text('樹階段：${stage.name}'),
-            const SizedBox(height: 4),
-            Text('總 XP：${snapshot.totalXp}'),
-            const SizedBox(height: 8),
-            Builder(
-              builder: (context) {
-                final current = progressService.currentLevelXp(snapshot.level);
-                final next = progressService.nextLevelXp(snapshot.level);
-                final progress = (snapshot.totalXp - current) / (next - current);
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
-                    const SizedBox(height: 6),
-                    LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
-                  ],
-                );
-              },
+            _CardSection(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleLarge),
+                  const SizedBox(height: 4),
+                  Text('樹階段：${stage.name}'),
+                  const SizedBox(height: 4),
+                  Text('總 XP：${snapshot.totalXp}'),
+                  const SizedBox(height: 8),
+                  Builder(
+                    builder: (context) {
+                      final current = progressService.currentLevelXp(snapshot.level);
+                      final next = progressService.nextLevelXp(snapshot.level);
+                      final progress = (snapshot.totalXp - current) / (next - current);
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
+                          const SizedBox(height: 6),
+                          LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
+                        ],
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 8),
+                  Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
+                  const SizedBox(height: 4),
+                  Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
+                ],
+              ),
             ),
-            const SizedBox(height: 8),
-            Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
-            const SizedBox(height: 4),
-            Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
-            const Spacer(),
-            if (snapshot.dailyAnswered >= snapshot.dailyTarget) ...[
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.green.shade50,
-                  borderRadius: BorderRadius.circular(12),
-                ),
+            const SizedBox(height: 12),
+            if (snapshot.dailyAnswered >= snapshot.dailyTarget)
+              _CardSection(
+                color: Colors.green.shade50,
                 child: const Text('今日目標已完成！額外加成已生效'),
               ),
-              const SizedBox(height: 12),
-            ],
             const SizedBox(height: 12),
             Text('科目', style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             ...subjects.map((subject) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: OutlinedButton(
-                    onPressed: () => _startSubject(context, subject),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(subject.title),
-                    ),
+                  child: _SubjectButton(
+                    title: subject.title,
+                    onTap: () => _startSubject(context, subject),
                   ),
                 )),
             const Spacer(),
@@ -166,6 +183,51 @@ class QuizScreen extends StatefulWidget {
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
+class _CardSection extends StatelessWidget {
+  const _CardSection({required this.child, this.color});
+
+  final Widget child;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: color ?? Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: child,
+    );
+  }
+}
+
+class _SubjectButton extends StatelessWidget {
+  const _SubjectButton({required this.title, required this.onTap});
+
+  final String title;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: onTap,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(title, style: Theme.of(context).textTheme.titleMedium),
+      ),
+    );
+  }
+}
+
 class _QuizScreenState extends State<QuizScreen> {
   int _index = 0;
   int? _selected;
@@ -185,7 +247,7 @@ class _QuizScreenState extends State<QuizScreen> {
             Text('題目 ${_index + 1} / ${widget.questions.length}',
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 12),
-            Text(question.prompt, style: Theme.of(context).textTheme.headlineSmall),
+            Text(question.prompt, style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 6),
             Text('ID: ${question.id}',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
@@ -195,25 +257,19 @@ class _QuizScreenState extends State<QuizScreen> {
               final selected = _selected == i;
               return Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: OutlinedButton(
-                  onPressed: _selected == null
-                      ? () => setState(() {
-                            _selected = i;
-                            final result = widget.progressService.recordAnswer(
-                              isCorrect: question.isCorrect(i),
-                              difficulty: question.difficulty,
-                            );
-                            _lastXp = result.gainedXp;
-                            _dailyTargetJustCompleted = result.completedDailyTarget;
-                          })
-                      : null,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      option,
-                      style: TextStyle(fontWeight: selected ? FontWeight.bold : FontWeight.normal),
-                    ),
-                  ),
+                child: _AnswerOption(
+                  label: option,
+                  selected: selected,
+                  enabled: _selected == null,
+                  onTap: () => setState(() {
+                    _selected = i;
+                    final result = widget.progressService.recordAnswer(
+                      isCorrect: question.isCorrect(i),
+                      difficulty: question.difficulty,
+                    );
+                    _lastXp = result.gainedXp;
+                    _dailyTargetJustCompleted = result.completedDailyTarget;
+                  }),
                 ),
               );
             }),
@@ -247,6 +303,38 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ],
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AnswerOption extends StatelessWidget {
+  const _AnswerOption({
+    required this.label,
+    required this.selected,
+    required this.enabled,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool selected;
+  final bool enabled;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: enabled ? onTap : null,
+      style: OutlinedButton.styleFrom(
+        backgroundColor: selected ? Colors.green.withOpacity(0.1) : Colors.white,
+        side: BorderSide(color: selected ? Colors.green : Colors.grey.shade300),
+      ),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          label,
+          style: TextStyle(fontWeight: selected ? FontWeight.bold : FontWeight.normal),
         ),
       ),
     );
