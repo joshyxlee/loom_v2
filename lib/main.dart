@@ -9,6 +9,7 @@ import 'services/progress_service.dart';
 import 'services/tree_growth.dart';
 import 'services/seen_store.dart';
 import 'widgets/session_summary_card.dart';
+import 'widgets/onboarding.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -75,9 +76,33 @@ class _LoomV2AppState extends State<LoomV2App> {
         ),
       ),
       home: _ready
-          ? HomeScreen(repository: _repository, progressService: _progressService)
+          ? OnboardingGate(repository: _repository, progressService: _progressService)
           : const Scaffold(body: Center(child: CircularProgressIndicator())),
     );
+  }
+}
+
+class OnboardingGate extends StatefulWidget {
+  const OnboardingGate({super.key, required this.repository, required this.progressService});
+
+  final QuestionRepository repository;
+  final ProgressService progressService;
+
+  @override
+  State<OnboardingGate> createState() => _OnboardingGateState();
+}
+
+class _OnboardingGateState extends State<OnboardingGate> {
+  bool _showOnboarding = true;
+
+  @override
+  Widget build(BuildContext context) {
+    if (_showOnboarding) {
+      return OnboardingFlow(
+        onFinish: () => setState(() => _showOnboarding = false),
+      );
+    }
+    return HomeScreen(repository: widget.repository, progressService: widget.progressService);
   }
 }
 
