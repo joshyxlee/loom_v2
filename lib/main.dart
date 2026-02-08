@@ -79,33 +79,40 @@ class _LoomV2AppState extends State<LoomV2App> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.repository, required this.progressService});
 
   final QuestionRepository repository;
   final ProgressService progressService;
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   Future<void> _startSubject(BuildContext context, Subject subject) async {
-    final questions = await repository.getSession(subject: subject.key, count: 5);
+    final questions = await widget.repository.getSession(subject: subject.key, count: 5);
     if (!context.mounted) return;
-    Navigator.push(
+    await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (_) => QuizScreen(
           questions: questions,
-          progressService: progressService,
+          progressService: widget.progressService,
           subjectTitle: subject.title,
           subject: subject,
-          repository: repository,
+          repository: widget.repository,
         ),
       ),
     );
+    if (!mounted) return;
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    progressService.ensureDailyState();
-    final snapshot = progressService.snapshot;
+    widget.progressService.ensureDailyState();
+    final snapshot = widget.progressService.snapshot;
     final stage = TreeGrowth.stageForLevel(snapshot.level);
     final primarySubject = subjects.first;
     final remainingRounds = snapshot.dailyAnswered >= snapshot.dailyTarget
@@ -150,8 +157,8 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Builder(
                     builder: (context) {
-                      final current = progressService.currentLevelXp(snapshot.level);
-                      final next = progressService.nextLevelXp(snapshot.level);
+                      final current = widget.progressService.currentLevelXp(snapshot.level);
+                      final next = widget.progressService.nextLevelXp(snapshot.level);
                       final progress = (snapshot.totalXp - current) / (next - current);
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
