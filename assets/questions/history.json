@@ -2,71 +2,71 @@
   {
     "id": "history_v3_0001",
     "subject": "history",
-    "prompt": "羅馬帝國的官方語言核心是？",
+    "prompt": "羅馬帝國西部的行政與法律語言核心是？",
     "options": [
-      "拉丁語",
       "希臘語",
+      "拉丁語",
       "法語",
-      "德語"
+      "阿拉姆語"
     ],
-    "answerIndex": 0,
-    "explanation": "希臘文化影響大所以常被誤選。\n羅馬的官方語言核心是拉丁語。",
+    "answerIndex": 1,
+    "explanation": "很多人會把希臘文化影響當成語言主流。\n西部行政與法律核心其實是拉丁語。",
     "difficulty": "easy"
   },
   {
     "id": "history_v3_0002",
     "subject": "history",
-    "prompt": "工業革命最早發生於哪個國家？",
+    "prompt": "工業革命為何先在紡織業爆發？",
     "options": [
-      "法國",
-      "英國",
-      "德國",
-      "美國"
+      "機械化最容易先套用在紡紗織布",
+      "因為紡織最不需要資本",
+      "因為政府禁止鋼鐵發展",
+      "因為航海業先衰退"
     ],
-    "answerIndex": 1,
-    "explanation": "歐陸國家很容易被認為起點。\n最早的大規模工業化在英國。",
+    "answerIndex": 0,
+    "explanation": "很多人以為是政策或航海衰退造成。\n其實紡織流程最容易被機械化放大。",
     "difficulty": "medium"
   },
   {
     "id": "history_v3_0003",
     "subject": "history",
-    "prompt": "明治維新正式開始於哪一年？",
+    "prompt": "明治維新更像是從哪件事開始的轉折？",
     "options": [
-      "1840",
-      "1895",
-      "1868",
-      "1912"
+      "幕府瓦解與政權更替",
+      "全面對外開戰",
+      "天皇遷都到大阪",
+      "完全停止對外貿易"
     ],
-    "answerIndex": 2,
-    "explanation": "常把甲午或大正年份混在一起。\n明治維新開始於 1868 年。",
+    "answerIndex": 0,
+    "explanation": "常被誤以為是戰敗後才開始。\n轉折點是幕府瓦解與政權更替。",
     "difficulty": "medium"
   },
   {
     "id": "history_v3_0004",
     "subject": "history",
-    "prompt": "柏林圍牆倒塌的年份是？",
+    "prompt": "柏林圍牆倒塌最直接代表的是？",
     "options": [
-      "1987",
-      "1991",
-      "1979",
-      "1989"
+      "蘇聯立即解體",
+      "北約解散",
+      "東西柏林自由往來恢復",
+      "德國立刻加入歐盟"
     ],
-    "answerIndex": 3,
-    "explanation": "很多人把蘇聯解體年當答案。\n柏林圍牆倒塌是 1989 年。",
+    "answerIndex": 2,
+    "explanation": "常被誤認為馬上改變整個國際格局。\n最直接的是東西柏林自由往來恢復。",
     "difficulty": "hard"
   },
   {
     "id": "history_v3_0005",
     "subject": "history",
-    "prompt": "鄭成功驅逐的是哪個殖民政權？",
+    "prompt": "鄭成功收復台灣時，當地主要的歐洲勢力是？",
     "options": [
-      "荷蘭",
-      "西班牙",
       "葡萄牙",
-      "英國"
+      "英國",
+      "西班牙",
+      "荷蘭"
     ],
-    "answerIndex": 0,
-    "explanation": "看到葡萄牙常會聯想到早期航海。\n實際被驅逐的是荷蘭。",
+    "answerIndex": 3,
+    "explanation": "常把早期航海強國混在一起。\n當時台灣主要的歐洲勢力是荷蘭。",
     "difficulty": "hard"
   },
   {
