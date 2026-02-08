@@ -89,18 +89,20 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                     child: const Text('跳過'),
                   ),
                   const Spacer(),
-                  FilledButton(
-                    onPressed: () {
-                      if (_index == onboardingPages.length - 1) {
-                        widget.onFinish();
-                      } else {
-                        _controller.nextPage(
-                          duration: const Duration(milliseconds: 250),
-                          curve: Curves.easeOut,
-                        );
-                      }
-                    },
-                    child: Text(_index == onboardingPages.length - 1 ? '開始今日回合' : '下一步'),
+                  Expanded(
+                    child: FilledButton(
+                      onPressed: () {
+                        if (_index == onboardingPages.length - 1) {
+                          widget.onFinish();
+                        } else {
+                          _controller.nextPage(
+                            duration: const Duration(milliseconds: 250),
+                            curve: Curves.easeOut,
+                          );
+                        }
+                      },
+                      child: Text(_index == onboardingPages.length - 1 ? '開始今日回合' : '下一步'),
+                    ),
                   ),
                 ],
               ),
