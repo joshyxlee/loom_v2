@@ -147,81 +147,101 @@ class _HomeScreenState extends State<HomeScreen> {
     final remainingRounds = snapshot.dailyAnswered >= snapshot.dailyTarget
         ? 0
         : ((snapshot.dailyTarget - snapshot.dailyAnswered) / 5).ceil();
-    final todayLine = remainingRounds > 0
-        ? '再完成 $remainingRounds 回合即可達標'
-        : '今天已完成，想再玩一回合嗎？';
+    final isDone = remainingRounds == 0;
+    final ctaLabel = isDone ? '再玩一回合' : '開始今日回合';
+    final current = widget.progressService.currentLevelXp(snapshot.level);
+    final next = widget.progressService.nextLevelXp(snapshot.level);
+    final progress = ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
+    final nextStageHint = progress < 0.35
+        ? '再答幾題，樹就會有變化'
+        : progress < 0.7
+            ? '再走一段，就接近下一階段'
+            : '快到了，下一階段就在眼前';
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Loom v2')),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+          child: Column(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 220,
+                      height: 220,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.06),
+                            blurRadius: 20,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: const Center(
+                        child: Icon(Icons.park, size: 120, color: Color(0xFF3CC77A)),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Text(stage.name,
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                    const SizedBox(height: 6),
+                    Text(nextStageHint, style: const TextStyle(fontSize: 15, color: Colors.black54)),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: 220,
+                      child: LinearProgressIndicator(value: progress),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  _CardSection(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('今天該做什麼', style: Theme.of(context).textTheme.titleLarge),
-                        const SizedBox(height: 6),
-                        Text(todayLine),
-                      ],
+                  SizedBox(
+                    height: 56,
+                    child: FilledButton(
+                      onPressed: () => _startSubject(context, primarySubject),
+                      child: Text(ctaLabel, style: const TextStyle(fontSize: 18)),
                     ),
                   ),
                   const SizedBox(height: 12),
                   _CardSection(
+                    color: const Color(0xFFF1F2F4),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('等級 Lv.${snapshot.level}', style: Theme.of(context).textTheme.titleMedium),
+                        Text('累計 XP：${snapshot.totalXp}',
+                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
                         const SizedBox(height: 4),
-                        Text('樹階段：${stage.name}'),
+                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
+                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
                         const SizedBox(height: 4),
-                        Text('總 XP：${snapshot.totalXp}'),
-                        const SizedBox(height: 8),
-                        Builder(
-                          builder: (context) {
-                            final current = widget.progressService.currentLevelXp(snapshot.level);
-                            final next = widget.progressService.nextLevelXp(snapshot.level);
-                            final progress = (snapshot.totalXp - current) / (next - current);
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('升級進度：${snapshot.totalXp - current} / ${next - current}'),
-                                const SizedBox(height: 6),
-                                LinearProgressIndicator(value: progress.clamp(0.0, 1.0)),
-                              ],
-                            );
-                          },
-                        ),
-                        const SizedBox(height: 8),
-                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}'),
-                        const SizedBox(height: 4),
-                        Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}'),
+                        Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}',
+                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  Text('科目', style: Theme.of(context).textTheme.titleMedium),
-                  const SizedBox(height: 8),
-                  ...subjects.map((subject) => Padding(
-                        padding: const EdgeInsets.only(bottom: 8),
-                        child: _SubjectButton(
-                          title: subject.title,
-                          onTap: () => _startSubject(context, subject),
-                        ),
-                      )),
+                  const SizedBox(height: 10),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 6,
+                    children: subjects.map((subject) {
+                      return TextButton(
+                        onPressed: () => _startSubject(context, subject),
+                        child: Text(subject.title,
+                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
+                      );
+                    }).toList(),
+                  ),
                 ],
               ),
-            ),
-            const SizedBox(height: 12),
-            FilledButton(
-              onPressed: () => _startSubject(context, primarySubject),
-              child: const Text('開始今日回合'),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
