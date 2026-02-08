@@ -10,63 +10,693 @@
       "變成零"
     ],
     "answerIndex": 0,
-    "explanation": "物價上漲很直覺，所以常忽略購買力。\n通膨上升時購買力會下降。",
+    "explanation": "物價上漲讓人以為只是標價變大。\n實際上同樣的錢能買到的變少。",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0002",
     "subject": "money",
-    "prompt": "股票與債券相比，哪個通常波動較大？",
+    "prompt": "信用卡只繳最低金額，最常見的結果是？",
     "options": [
-      "債券",
-      "股票",
-      "存款",
-      "國庫券"
+      "等於全額繳清",
+      "利息累積變快",
+      "不會產生費用",
+      "會自動停卡"
     ],
     "answerIndex": 1,
-    "explanation": "債券看起來像會受利率影響很大。\n一般來說股票波動較大。",
-    "difficulty": "medium"
+    "explanation": "很多人以為最低繳款就沒事。\n其實利息會快速累積。",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0003",
     "subject": "money",
-    "prompt": "複利的關鍵是？",
+    "prompt": "緊急預備金的主要用途是？",
     "options": [
-      "利率固定",
-      "本金不變",
-      "利息再投入",
-      "只算一次利息"
+      "提高炫耀性消費",
+      "追求高報酬",
+      "應付突發支出",
+      "規避所有風險"
     ],
     "answerIndex": 2,
-    "explanation": "很多人把複利當成高利率。\n真正關鍵是利息再投入。",
-    "difficulty": "medium"
+    "explanation": "常被誤會是「拿來賺更多」。\n它的核心是穩住突發支出。",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0004",
     "subject": "money",
-    "prompt": "市場利率上升時，債券價格通常？",
+    "prompt": "看到折扣時，最容易忽略的是？",
     "options": [
-      "上漲",
-      "不變",
-      "先升後降",
-      "下跌"
+      "折扣百分比",
+      "商品外觀",
+      "付款方式",
+      "實際是否需要"
     ],
     "answerIndex": 3,
-    "explanation": "直覺會覺得利率高就更值錢。\n其實利率升會壓低既有債券價格。",
-    "difficulty": "hard"
+    "explanation": "折扣會讓人直接想「賺到」。\n真正該先問的是你是否真的需要。",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0005",
     "subject": "money",
-    "prompt": "信用評等被下調，最常見影響是？",
+    "prompt": "「月付很低」最常掩蓋的是？",
     "options": [
-      "融資成本上升",
-      "營收立刻增加",
-      "風險下降",
-      "股價必然上漲"
+      "總成本變高",
+      "品質更好",
+      "保固變長",
+      "不需要利息"
     ],
     "answerIndex": 0,
-    "explanation": "評等降低不是短期賺更多。\n最直接影響是借錢成本上升。",
+    "explanation": "低月付讓人以為負擔小。\n總期數拉長常讓總成本變高。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0006",
+    "subject": "money",
+    "prompt": "買一送一看起來划算，真正關鍵是？",
+    "options": [
+      "店員態度是否好",
+      "是否本來就會買兩份",
+      "包裝是否好看",
+      "付款是否能分期"
+    ],
+    "answerIndex": 1,
+    "explanation": "促銷容易讓人多買。\n關鍵是你本來就需要兩份嗎。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0007",
+    "subject": "money",
+    "prompt": "同樣商品兩個包裝，怎麼比價最準？",
+    "options": [
+      "看總價",
+      "看品牌",
+      "看單位價格",
+      "看折扣幅度"
+    ],
+    "answerIndex": 2,
+    "explanation": "總價很容易被包裝大小影響。\n單位價格才是公平比較。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0008",
+    "subject": "money",
+    "prompt": "「先買後付」最常見的隱形風險是？",
+    "options": [
+      "不會影響現金流",
+      "一定比刷卡便宜",
+      "自動降低消費",
+      "多筆分期累積失控"
+    ],
+    "answerIndex": 3,
+    "explanation": "每筆都小容易被低估。\n多筆分期加總後才是負擔。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0009",
+    "subject": "money",
+    "prompt": "臨時收入（獎金/退稅）最容易發生的錯誤是？",
+    "options": [
+      "當成「意外之財」亂花",
+      "全部拿去儲蓄",
+      "先還必要支出",
+      "分配到不同用途"
+    ],
+    "answerIndex": 0,
+    "explanation": "一筆意外收入會降低自制力。\n這類錢最容易被衝動花掉。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0010",
+    "subject": "money",
+    "prompt": "延期繳款最直接的代價常是？",
+    "options": [
+      "本金自動減少",
+      "額外手續費或利息",
+      "信用分數提高",
+      "帳單直接取消"
+    ],
+    "answerIndex": 1,
+    "explanation": "延期看似只是晚點付。\n多數情況會多付手續費或利息。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0011",
+    "subject": "money",
+    "prompt": "「已經花了就要繼續用」最像哪種錯誤？",
+    "options": [
+      "套利",
+      "對沖",
+      "沉沒成本",
+      "攤平"
+    ],
+    "answerIndex": 2,
+    "explanation": "已經花掉的錢很難割捨。\n這是典型的沉沒成本錯誤。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0012",
+    "subject": "money",
+    "prompt": "「免費試用」最常讓人忽略的是？",
+    "options": [
+      "功能不夠用",
+      "品牌知名度",
+      "安裝步驟",
+      "自動續費"
+    ],
+    "answerIndex": 3,
+    "explanation": "免費字眼讓人放鬆警覺。\n真正風險常在自動續費。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0013",
+    "subject": "money",
+    "prompt": "只看年收入卻忽略什麼會讓生活壓力變大？",
+    "options": [
+      "固定支出",
+      "生日月份",
+      "銀行名稱",
+      "信用卡張數"
+    ],
+    "answerIndex": 0,
+    "explanation": "收入高不等於過得輕鬆。\n固定支出才是壓力來源。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0014",
+    "subject": "money",
+    "prompt": "「延長保固」最常被忽略的評估點是？",
+    "options": [
+      "品牌廣告量",
+      "故障機率與維修成本",
+      "店員推薦語",
+      "顏色是否好看"
+    ],
+    "answerIndex": 1,
+    "explanation": "保固聽起來就很安全。\n要先看故障機率與可能維修成本。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0015",
+    "subject": "money",
+    "prompt": "「零利率分期」最常見的誤區是？",
+    "options": [
+      "付款期數太少",
+      "商品無法退貨",
+      "以為完全沒有成本",
+      "只限白天使用"
+    ],
+    "answerIndex": 2,
+    "explanation": "零利率容易讓人放鬆。\n成本可能藏在手續費或原價。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0016",
+    "subject": "money",
+    "prompt": "信用評分最常被什麼影響？",
+    "options": [
+      "手機品牌",
+      "薪水多寡",
+      "存款顏色",
+      "是否按時還款"
+    ],
+    "answerIndex": 3,
+    "explanation": "很多人以為只看存款多寡。\n按時還款紀錄影響最大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0017",
+    "subject": "money",
+    "prompt": "「預算」最核心的用途是？",
+    "options": [
+      "讓支出有上限",
+      "讓錢自動增加",
+      "避免所有花費",
+      "提高投資報酬"
+    ],
+    "answerIndex": 0,
+    "explanation": "預算常被當成束縛。\n它真正功能是設定支出上限。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0018",
+    "subject": "money",
+    "prompt": "以下哪一種最容易造成「看不見的花費」？",
+    "options": [
+      "一次性大筆支出",
+      "小額訂閱累積",
+      "固定房租",
+      "單次餐費"
+    ],
+    "answerIndex": 1,
+    "explanation": "小額很容易被忽略。\n累積後反而是大筆支出。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0019",
+    "subject": "money",
+    "prompt": "「先買需要，再買想要」在理財上最主要是？",
+    "options": [
+      "增加炫耀價值",
+      "提升信用評分",
+      "控制衝動消費",
+      "提高收入"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人以為是保守。\n其實是抑制衝動消費。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0020",
+    "subject": "money",
+    "prompt": "當你只看標價、不看稅費時，容易發生？",
+    "options": [
+      "提高折扣",
+      "減少手續費",
+      "獲得更多回饋",
+      "低估實際支出"
+    ],
+    "answerIndex": 3,
+    "explanation": "標價看起來便宜就容易下單。\n稅費與加價才是實付金額。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0021",
+    "subject": "money",
+    "prompt": "「把所有錢放在同一個帳戶」最常見的問題是？",
+    "options": [
+      "目標被混在一起難追蹤",
+      "利息會變成負數",
+      "銀行會拒絕服務",
+      "稅率會上升"
+    ],
+    "answerIndex": 0,
+    "explanation": "錢混在一起容易失控。\n不同目標難以追蹤進度。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0022",
+    "subject": "money",
+    "prompt": "信用卡「寬限期」真正代表的是？",
+    "options": [
+      "可以永遠不繳",
+      "按時繳清可避免利息",
+      "只要刷卡就有現金",
+      "延後繳會有獎勵"
+    ],
+    "answerIndex": 1,
+    "explanation": "很多人誤以為只是晚點付。\n在寬限期內繳清才不產生利息。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0023",
+    "subject": "money",
+    "prompt": "「手續費」常讓人忽略的是？",
+    "options": [
+      "它不會影響成本",
+      "它一定很小",
+      "它會吃掉折扣好處",
+      "它能提高信用"
+    ],
+    "answerIndex": 2,
+    "explanation": "折扣很吸引人。\n但手續費可能把省下的又吃掉。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0024",
+    "subject": "money",
+    "prompt": "為什麼「現金流為正」比單看資產更重要？",
+    "options": [
+      "看起來比較有錢",
+      "稅率會比較低",
+      "利率會自動上升",
+      "日常支付不會斷裂"
+    ],
+    "answerIndex": 3,
+    "explanation": "只看資產很容易忽略現金需求。\n沒有穩定現金流仍可能周轉困難。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0025",
+    "subject": "money",
+    "prompt": "「年化利率」之所以重要，是因為？",
+    "options": [
+      "不同期間利率才能公平比較",
+      "年化一定比月化高",
+      "只有銀行用得到",
+      "它不影響成本"
+    ],
+    "answerIndex": 0,
+    "explanation": "月利率看起來很低。\n年化才看得出實際成本。",
     "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0026",
+    "subject": "money",
+    "prompt": "「信用額度用滿」最可能帶來的影響是？",
+    "options": [
+      "現金流變多",
+      "信用評分被拉低",
+      "年費會消失",
+      "自動升級會員"
+    ],
+    "answerIndex": 1,
+    "explanation": "用滿讓人覺得剛好。\n高使用率反而可能拉低評分。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0027",
+    "subject": "money",
+    "prompt": "「延後付款」最容易讓人做出什麼錯覺？",
+    "options": [
+      "實際成本下降",
+      "費用自動消失",
+      "當下花費感降低",
+      "收入增加"
+    ],
+    "answerIndex": 2,
+    "explanation": "看不到錢立刻離開的感覺。\n會讓花費的痛感降低。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0028",
+    "subject": "money",
+    "prompt": "「高報酬」常伴隨的真實狀況是？",
+    "options": [
+      "風險一定更小",
+      "回本一定更快",
+      "時間一定更短",
+      "波動與不確定更大"
+    ],
+    "answerIndex": 3,
+    "explanation": "人很容易只看到回報。\n高報酬通常伴隨更高波動與不確定。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0029",
+    "subject": "money",
+    "prompt": "「分期付款」最容易被忽略的是？",
+    "options": [
+      "總成本可能更高",
+      "商品會變更好",
+      "保固會更長",
+      "貨運會更快"
+    ],
+    "answerIndex": 0,
+    "explanation": "分期把痛感分散。\n但總成本可能更高。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0030",
+    "subject": "money",
+    "prompt": "「預算超支」後還繼續買的心理是？",
+    "options": [
+      "風險分散",
+      "沉沒成本在作祟",
+      "套利行為",
+      "對沖損失"
+    ],
+    "answerIndex": 1,
+    "explanation": "超支後反而更難停手。\n常是沉沒成本與自我合理化。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0031",
+    "subject": "money",
+    "prompt": "「高薪但高壓」的工作最容易忽略的成本是？",
+    "options": [
+      "必定能升遷",
+      "稅率一定更低",
+      "時間與健康代價",
+      "花費一定更少"
+    ],
+    "answerIndex": 2,
+    "explanation": "只看收入會忽略代價。\n時間與健康也是成本。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0032",
+    "subject": "money",
+    "prompt": "「延長貸款年限」最直接的影響是？",
+    "options": [
+      "總利息降低",
+      "本金自動減少",
+      "利率自動變低",
+      "每月降低但總利息增加"
+    ],
+    "answerIndex": 3,
+    "explanation": "月付變少會讓人安心。\n但總利息通常會增加。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0033",
+    "subject": "money",
+    "prompt": "「現金回饋」最容易造成的錯覺是？",
+    "options": [
+      "花更多才覺得划算",
+      "等於省下本金",
+      "完全不需比較",
+      "一定比折扣好"
+    ],
+    "answerIndex": 0,
+    "explanation": "回饋讓人覺得在賺。\n卻可能促使花更多。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0034",
+    "subject": "money",
+    "prompt": "「貸款利率可變」的主要風險是？",
+    "options": [
+      "一定比固定低",
+      "未來還款金額不確定",
+      "不用看合約",
+      "只會往下"
+    ],
+    "answerIndex": 1,
+    "explanation": "可變聽起來彈性。\n風險是未來還款金額不確定。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0035",
+    "subject": "money",
+    "prompt": "「免運門檻」最常讓人做的事是？",
+    "options": [
+      "節省配送成本",
+      "降低總花費",
+      "多買不需要的東西",
+      "縮短配送時間"
+    ],
+    "answerIndex": 2,
+    "explanation": "免運會變成心理目標。\n常導致多買不需要的東西。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0036",
+    "subject": "money",
+    "prompt": "「現金放床底下很安全」的最大問題是？",
+    "options": [
+      "不會被偷",
+      "利息自動增加",
+      "可以避稅",
+      "通膨侵蝕價值"
+    ],
+    "answerIndex": 3,
+    "explanation": "安全感容易讓人忽略代價。\n現金會被通膨慢慢吃掉。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0037",
+    "subject": "money",
+    "prompt": "「買太多食物最後丟掉」在理財上屬於？",
+    "options": [
+      "浪費型支出",
+      "必要支出",
+      "資產配置",
+      "風險控管"
+    ],
+    "answerIndex": 0,
+    "explanation": "買太多看似小事。\n其實是典型的浪費型支出。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0038",
+    "subject": "money",
+    "prompt": "「看到原價再打折」容易造成的心理是？",
+    "options": [
+      "現金流量",
+      "錨定效應",
+      "利息效應",
+      "遞延效應"
+    ],
+    "answerIndex": 1,
+    "explanation": "原價會變成心理錨點。\n折扣看起來因此更誘人。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0039",
+    "subject": "money",
+    "prompt": "「薪水一到就想犒賞自己」最接近哪種偏誤？",
+    "options": [
+      "風險分散",
+      "對沖心理",
+      "心理帳戶",
+      "均值回歸"
+    ],
+    "answerIndex": 2,
+    "explanation": "把錢分成不同心理帳戶。\n因此更容易放縱消費。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0040",
+    "subject": "money",
+    "prompt": "「只看每月利率」最容易低估的是？",
+    "options": [
+      "當月支出",
+      "帳戶餘額",
+      "利率上限",
+      "年化成本"
+    ],
+    "answerIndex": 3,
+    "explanation": "月利率看起來很小。\n年化成本才是真正負擔。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0041",
+    "subject": "money",
+    "prompt": "「已經買了就繼續付」更容易發生在？",
+    "options": [
+      "長期合約與訂閱",
+      "一次性付清",
+      "現金付款",
+      "當場退貨"
+    ],
+    "answerIndex": 0,
+    "explanation": "長期合約讓人不想承認損失。\n會更容易被沉沒成本綁住。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0042",
+    "subject": "money",
+    "prompt": "「借錢給朋友」最容易忽略的風險是？",
+    "options": [
+      "一定會多賺利息",
+      "關係受損的可能",
+      "對方一定先還",
+      "法律成本為零"
+    ],
+    "answerIndex": 1,
+    "explanation": "往往只想到金錢本身。\n關係風險往往更大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0043",
+    "subject": "money",
+    "prompt": "「一次付清」比「分期」更安全的原因常是？",
+    "options": [
+      "一定更便宜",
+      "會提高信用",
+      "避免長期心理負擔",
+      "會加速收入"
+    ],
+    "answerIndex": 2,
+    "explanation": "不只是金錢問題。\n長期分期會帶來心理與現金流壓力。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0044",
+    "subject": "money",
+    "prompt": "「小額多筆」累積造成的問題是？",
+    "options": [
+      "總支出自動減少",
+      "更容易記帳",
+      "利息自動消失",
+      "總支出被低估"
+    ],
+    "answerIndex": 3,
+    "explanation": "每筆都小很容易忽略。\n累積後才發現超支。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0045",
+    "subject": "money",
+    "prompt": "「可變支出」最常見的錯誤是？",
+    "options": [
+      "低估彈性支出的總額",
+      "它一定不重要",
+      "永遠固定不變",
+      "不用列入預算"
+    ],
+    "answerIndex": 0,
+    "explanation": "可變支出看似零碎。\n但總額常被低估。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0046",
+    "subject": "money",
+    "prompt": "「保險全買最安心」的最大盲點是？",
+    "options": [
+      "保險一定賺錢",
+      "保費本身也是成本",
+      "理賠一定成功",
+      "保障一定越多越好"
+    ],
+    "answerIndex": 1,
+    "explanation": "安心感會掩蓋成本。\n保費本身就是持續支出。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0047",
+    "subject": "money",
+    "prompt": "「提早還清負債」最直接的好處常是？",
+    "options": [
+      "馬上提高收入",
+      "保證升薪",
+      "減少利息支出",
+      "增加信用額度"
+    ],
+    "answerIndex": 2,
+    "explanation": "很多人只看每月付款壓力。\n提早還款能直接省下利息。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "money_v3_0048",
+    "subject": "money",
+    "prompt": "「看到折扣就囤貨」最常忽略的成本是？",
+    "options": [
+      "一定不會壞",
+      "保鮮零成本",
+      "轉手更好賣",
+      "用不到的浪費"
+    ],
+    "answerIndex": 3,
+    "explanation": "折扣會讓人多買。\n用不到才是最大的浪費。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "money_v3_0049",
+    "subject": "money",
+    "prompt": "「借新還舊」最常見的風險是？",
+    "options": [
+      "利率一定下降",
+      "負債雪球變大",
+      "壓力立刻消失",
+      "信用分數上升"
+    ],
+    "answerIndex": 1,
+    "explanation": "看似把問題延後。\n實際容易讓負債越滾越大。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0050",
+    "subject": "money",
+    "prompt": "「記帳」最主要帶來的改變是？",
+    "options": [
+      "收入自動增加",
+      "稅負自動降低",
+      "支出一定歸零",
+      "看見真實支出"
+    ],
+    "answerIndex": 3,
+    "explanation": "記帳不是魔法。\n它最大的作用是看見真實支出。",
+    "difficulty": "easy"
   }
 ]
