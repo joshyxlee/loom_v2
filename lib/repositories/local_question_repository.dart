@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/question.dart';
@@ -27,6 +28,6 @@ class LocalQuestionRepository implements QuestionRepository {
   }) async {
     final pool = _cache.where((q) => q.subject == subject).toList();
     pool.shuffle();
-    return pool.take(count).toList();
+    return pool.take(count).map((q) => q.shuffled(Random())).toList();
   }
 }

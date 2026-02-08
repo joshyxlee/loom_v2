@@ -39,14 +39,28 @@ class MultiLocalQuestionRepository implements QuestionRepository {
     }
 
     final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    final easy = unseen.where((q) => q.difficulty == 1).toList()..shuffle(rng);
-    final medium = unseen.where((q) => q.difficulty == 2).toList()..shuffle(rng);
-    final hard = unseen.where((q) => q.difficulty == 3).toList()..shuffle(rng);
+    final easy = unseen.where((q) => q.difficulty == 'easy').toList()..shuffle(rng);
+    final medium = unseen.where((q) => q.difficulty == 'medium').toList()..shuffle(rng);
+    final hard = unseen.where((q) => q.difficulty == 'hard').toList()..shuffle(rng);
+
+    Question? takeOne(List<Question> source) {
+      if (source.isEmpty) return null;
+      return source.removeAt(0);
+    }
 
     final session = <Question>[];
-    session.addAll(easy.take(2));
-    session.addAll(medium.take(2));
-    session.addAll(hard.take(1));
+    final first = takeOne(easy) ?? takeOne(medium) ?? takeOne(hard);
+    if (first != null) session.add(first);
+
+    for (var i = 0; i < 2; i++) {
+      final pick = takeOne(medium) ?? takeOne(easy) ?? takeOne(hard);
+      if (pick != null) session.add(pick);
+    }
+
+    for (var i = 0; i < 2; i++) {
+      final pick = takeOne(hard) ?? takeOne(medium) ?? takeOne(easy);
+      if (pick != null) session.add(pick);
+    }
 
     if (session.length < count) {
       final fallback = List<Question>.from(unseen)..shuffle(rng);
@@ -57,8 +71,8 @@ class MultiLocalQuestionRepository implements QuestionRepository {
       }
     }
 
-    session.shuffle(rng);
-    await seenStore.save(subject, session.map((q) => q.id));
-    return session.take(count).toList();
+    final ordered = session.take(count).map((q) => q.shuffled(rng)).toList();
+    await seenStore.save(subject, ordered.map((q) => q.id));
+    return ordered;
   }
 }

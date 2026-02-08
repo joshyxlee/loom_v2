@@ -439,7 +439,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         final isCorrect = question.isCorrect(i);
                         final result = widget.progressService.recordAnswer(
                           isCorrect: isCorrect,
-                          difficulty: question.difficulty,
+                          difficulty: question.difficultyValue,
                         );
                         _lastXp = result.gainedXp;
                         _dailyTargetJustCompleted = result.completedDailyTarget;

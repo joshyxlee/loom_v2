@@ -1,242 +1,72 @@
 [
   {
-    "id": "money_seed_0001",
+    "id": "money_v3_0001",
     "subject": "money",
-    "prompt": "做每月預算的主要目的為何？",
-    "options": [
-      "掌握收支並控制支出",
-      "讓錢自動變多"
-    ],
-    "answerIndex": 0,
-    "explanation": "預算能幫助掌握支出並規劃花費。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0002",
-    "subject": "money",
-    "prompt": "緊急預備金通常建議至少存下幾個月生活費？",
-    "options": [
-      "3～6 個月",
-      "24 個月以上"
-    ],
-    "answerIndex": 0,
-    "explanation": "常見建議是 3～6 個月。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0003",
-    "subject": "money",
-    "prompt": "投資前先建立緊急預備金的原因是？",
-    "options": [
-      "避免緊急時被迫賣出投資",
-      "投資一定賺錢"
-    ],
-    "answerIndex": 0,
-    "explanation": "緊急預備金可應對突發狀況。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0004",
-    "subject": "money",
-    "prompt": "「分散投資」的主要目的為？",
-    "options": [
-      "降低單一風險",
-      "一定提高報酬"
-    ],
-    "answerIndex": 0,
-    "explanation": "分散能降低單一事件造成的大損失。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0005",
-    "subject": "money",
-    "prompt": "為什麼信用卡要準時全額繳清？",
-    "options": [
-      "避免高額利息並維持信用",
-      "逾期可以省錢"
-    ],
-    "answerIndex": 0,
-    "explanation": "準時全額繳清可避免循環利息。",
-    "difficulty": 3
-  },
-  {
-    "id": "money_seed_0006",
-    "subject": "money",
-    "prompt": "投資前先了解風險承受度原因？",
-    "options": [
-      "避免超出承受能力",
-      "風險越大越好"
-    ],
-    "answerIndex": 0,
-    "explanation": "了解風險承受度可避免心理壓力。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0007",
-    "subject": "money",
-    "prompt": "ETF 最接近？",
-    "options": [
-      "一籃子資產基金",
-      "保本存款"
-    ],
-    "answerIndex": 0,
-    "explanation": "ETF 追蹤一籃子資產。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0008",
-    "subject": "money",
-    "prompt": "定期定額好處？",
-    "options": [
-      "分散進場時點",
-      "保證獲利"
-    ],
-    "answerIndex": 0,
-    "explanation": "定期定額分散時點風險。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0009",
-    "subject": "money",
-    "prompt": "保險核心概念？",
-    "options": [
-      "分攤風險",
-      "保證獲利"
-    ],
-    "answerIndex": 0,
-    "explanation": "保險用小保費分攤大風險。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0010",
-    "subject": "money",
-    "prompt": "信用卡只繳最低額會？",
-    "options": [
-      "利息增加",
-      "免利息"
-    ],
-    "answerIndex": 0,
-    "explanation": "只繳最低額會增加利息。",
-    "difficulty": 3
-  },
-  {
-    "id": "money_seed_0011",
-    "subject": "money",
-    "prompt": "通膨上升時現金購買力？",
+    "prompt": "通膨上升時，錢的購買力通常？",
     "options": [
       "下降",
-      "上升"
+      "上升",
+      "不變",
+      "變成零"
     ],
     "answerIndex": 0,
-    "explanation": "通膨會降低購買力。",
-    "difficulty": 1
+    "explanation": "物價上漲很直覺，所以常忽略購買力。\n通膨上升時購買力會下降。",
+    "difficulty": "easy"
   },
   {
-    "id": "money_seed_0012",
+    "id": "money_v3_0002",
     "subject": "money",
-    "prompt": "長期投資心態？",
+    "prompt": "股票與債券相比，哪個通常波動較大？",
     "options": [
-      "重視時間累積",
-      "只看今天漲跌"
+      "債券",
+      "股票",
+      "存款",
+      "國庫券"
     ],
-    "answerIndex": 0,
-    "explanation": "長期投資看時間累積。",
-    "difficulty": 1
+    "answerIndex": 1,
+    "explanation": "債券看起來像會受利率影響很大。\n一般來說股票波動較大。",
+    "difficulty": "medium"
   },
   {
-    "id": "money_seed_0013",
+    "id": "money_v3_0003",
     "subject": "money",
-    "prompt": "資產配置加入不同市場目的？",
+    "prompt": "複利的關鍵是？",
     "options": [
-      "分散風險",
-      "保證獲利"
+      "利率固定",
+      "本金不變",
+      "利息再投入",
+      "只算一次利息"
     ],
-    "answerIndex": 0,
-    "explanation": "加入不同市場可分散風險。",
-    "difficulty": 2
+    "answerIndex": 2,
+    "explanation": "很多人把複利當成高利率。\n真正關鍵是利息再投入。",
+    "difficulty": "medium"
   },
   {
-    "id": "money_seed_0014",
+    "id": "money_v3_0004",
     "subject": "money",
-    "prompt": "再平衡是？",
+    "prompt": "市場利率上升時，債券價格通常？",
     "options": [
-      "把比例拉回設定",
-      "追高買進"
+      "上漲",
+      "不變",
+      "先升後降",
+      "下跌"
     ],
-    "answerIndex": 0,
-    "explanation": "再平衡回到原比例。",
-    "difficulty": 2
+    "answerIndex": 3,
+    "explanation": "直覺會覺得利率高就更值錢。\n其實利率升會壓低既有債券價格。",
+    "difficulty": "hard"
   },
   {
-    "id": "money_seed_0015",
+    "id": "money_v3_0005",
     "subject": "money",
-    "prompt": "固定支出例子？",
+    "prompt": "信用評等被下調，最常見影響是？",
     "options": [
-      "房租房貸",
-      "旅遊"
+      "融資成本上升",
+      "營收立刻增加",
+      "風險下降",
+      "股價必然上漲"
     ],
     "answerIndex": 0,
-    "explanation": "房租屬固定支出。",
-    "difficulty": 3
-  },
-  {
-    "id": "money_seed_0016",
-    "subject": "money",
-    "prompt": "收益率是？",
-    "options": [
-      "報酬相對成本",
-      "投資時間"
-    ],
-    "answerIndex": 0,
-    "explanation": "收益率衡量報酬相對成本。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0017",
-    "subject": "money",
-    "prompt": "保本型商品完全無風險？",
-    "options": [
-      "不一定",
-      "一定無風險"
-    ],
-    "answerIndex": 0,
-    "explanation": "仍可能有信用或流動性風險。",
-    "difficulty": 1
-  },
-  {
-    "id": "money_seed_0018",
-    "subject": "money",
-    "prompt": "實質報酬指？",
-    "options": [
-      "扣除通膨後回報",
-      "名目報酬"
-    ],
-    "answerIndex": 0,
-    "explanation": "實質報酬扣除通膨。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0019",
-    "subject": "money",
-    "prompt": "良好信用行為？",
-    "options": [
-      "準時繳款",
-      "常逾期"
-    ],
-    "answerIndex": 0,
-    "explanation": "準時繳款可維持信用。",
-    "difficulty": 2
-  },
-  {
-    "id": "money_seed_0020",
-    "subject": "money",
-    "prompt": "停損主要目的？",
-    "options": [
-      "控制最大損失",
-      "保證獲利"
-    ],
-    "answerIndex": 0,
-    "explanation": "停損用於控制損失。",
-    "difficulty": 3
+    "explanation": "評等降低不是短期賺更多。\n最直接影響是借錢成本上升。",
+    "difficulty": "hard"
   }
 ]

@@ -1,246 +1,72 @@
 [
   {
-    "id": "history_seed_0001",
+    "id": "history_v3_0001",
     "subject": "history",
-    "prompt": "古埃及最著名的金字塔群位於哪裡？",
-    "options": [
-      "吉薩",
-      "底比斯"
-    ],
-    "answerIndex": 0,
-    "explanation": "吉薩金字塔群是古埃及最著名遺址之一。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0002",
-    "subject": "history",
-    "prompt": "文藝復興最早興起於哪個地區？",
-    "options": [
-      "義大利",
-      "英格蘭",
-      "德意志",
-      "北歐"
-    ],
-    "answerIndex": 0,
-    "explanation": "文藝復興起源於義大利。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0003",
-    "subject": "history",
-    "prompt": "羅馬競技場位於哪座城市？",
-    "options": [
-      "羅馬",
-      "米蘭"
-    ],
-    "answerIndex": 0,
-    "explanation": "羅馬競技場位於羅馬市中心。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0004",
-    "subject": "history",
-    "prompt": "古希臘奧運會主要獻給哪位神祇？",
-    "options": [
-      "宙斯",
-      "阿波羅",
-      "雅典娜",
-      "波賽頓"
-    ],
-    "answerIndex": 0,
-    "explanation": "古希臘奧運會是為宙斯而設。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0005",
-    "subject": "history",
-    "prompt": "工業革命最早興起於哪個國家？",
-    "options": [
-      "英國",
-      "法國"
-    ],
-    "answerIndex": 0,
-    "explanation": "工業革命起源於英國。",
-    "difficulty": 3
-  },
-  {
-    "id": "history_seed_0006",
-    "subject": "history",
-    "prompt": "古羅馬使用的語言是？",
+    "prompt": "羅馬帝國的官方語言核心是？",
     "options": [
       "拉丁語",
-      "阿拉伯語"
+      "希臘語",
+      "法語",
+      "德語"
     ],
     "answerIndex": 0,
-    "explanation": "古羅馬使用拉丁語。",
-    "difficulty": 1
+    "explanation": "希臘文化影響大所以常被誤選。\n羅馬的官方語言核心是拉丁語。",
+    "difficulty": "easy"
   },
   {
-    "id": "history_seed_0007",
+    "id": "history_v3_0002",
     "subject": "history",
-    "prompt": "古希臘著名哲學家是？",
+    "prompt": "工業革命最早發生於哪個國家？",
     "options": [
-      "蘇格拉底",
-      "愛因斯坦"
+      "法國",
+      "英國",
+      "德國",
+      "美國"
     ],
-    "answerIndex": 0,
-    "explanation": "蘇格拉底是古希臘哲學家。",
-    "difficulty": 1
+    "answerIndex": 1,
+    "explanation": "歐陸國家很容易被認為起點。\n最早的大規模工業化在英國。",
+    "difficulty": "medium"
   },
   {
-    "id": "history_seed_0008",
+    "id": "history_v3_0003",
     "subject": "history",
-    "prompt": "金字塔多是誰的陵墓？",
+    "prompt": "明治維新正式開始於哪一年？",
     "options": [
-      "法老",
-      "商人"
+      "1840",
+      "1895",
+      "1868",
+      "1912"
     ],
-    "answerIndex": 0,
-    "explanation": "金字塔多為法老陵墓。",
-    "difficulty": 2
+    "answerIndex": 2,
+    "explanation": "常把甲午或大正年份混在一起。\n明治維新開始於 1868 年。",
+    "difficulty": "medium"
   },
   {
-    "id": "history_seed_0009",
+    "id": "history_v3_0004",
     "subject": "history",
-    "prompt": "古希臘民主最早出現於？",
+    "prompt": "柏林圍牆倒塌的年份是？",
     "options": [
-      "雅典",
-      "斯巴達"
+      "1987",
+      "1991",
+      "1979",
+      "1989"
     ],
-    "answerIndex": 0,
-    "explanation": "雅典是早期民主中心。",
-    "difficulty": 2
+    "answerIndex": 3,
+    "explanation": "很多人把蘇聯解體年當答案。\n柏林圍牆倒塌是 1989 年。",
+    "difficulty": "hard"
   },
   {
-    "id": "history_seed_0010",
+    "id": "history_v3_0005",
     "subject": "history",
-    "prompt": "古羅馬著名競技場名稱？",
+    "prompt": "鄭成功驅逐的是哪個殖民政權？",
     "options": [
-      "鬥獸場",
-      "阿卡迪亞"
+      "西班牙",
+      "荷蘭",
+      "葡萄牙",
+      "英國"
     ],
-    "answerIndex": 0,
-    "explanation": "羅馬鬥獸場是競技場。",
-    "difficulty": 3
-  },
-  {
-    "id": "history_seed_0011",
-    "subject": "history",
-    "prompt": "文藝復興代表藝術家之一？",
-    "options": [
-      "達文西",
-      "畢卡索"
-    ],
-    "answerIndex": 0,
-    "explanation": "達文西屬文藝復興。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0012",
-    "subject": "history",
-    "prompt": "哪個文明使用楔形文字？",
-    "options": [
-      "蘇美",
-      "馬雅"
-    ],
-    "answerIndex": 0,
-    "explanation": "蘇美使用楔形文字。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0013",
-    "subject": "history",
-    "prompt": "古希臘奧運會每隔幾年？",
-    "options": [
-      "四年",
-      "一年"
-    ],
-    "answerIndex": 0,
-    "explanation": "古奧運四年一度。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0014",
-    "subject": "history",
-    "prompt": "「羅馬法」影響主要在？",
-    "options": [
-      "法律",
-      "音樂"
-    ],
-    "answerIndex": 0,
-    "explanation": "羅馬法影響法律體系。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0015",
-    "subject": "history",
-    "prompt": "古埃及使用的書寫材料？",
-    "options": [
-      "莎草紙",
-      "塑膠"
-    ],
-    "answerIndex": 0,
-    "explanation": "古埃及常用莎草紙。",
-    "difficulty": 3
-  },
-  {
-    "id": "history_seed_0016",
-    "subject": "history",
-    "prompt": "「工業革命」帶來的變化？",
-    "options": [
-      "都市化",
-      "回到農村"
-    ],
-    "answerIndex": 0,
-    "explanation": "工業革命促進都市化。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0017",
-    "subject": "history",
-    "prompt": "古希臘史詩《伊利亞特》作者？",
-    "options": [
-      "荷馬",
-      "但丁"
-    ],
-    "answerIndex": 0,
-    "explanation": "《伊利亞特》作者是荷馬。",
-    "difficulty": 1
-  },
-  {
-    "id": "history_seed_0018",
-    "subject": "history",
-    "prompt": "哪一文明建造馬丘比丘？",
-    "options": [
-      "印加",
-      "羅馬"
-    ],
-    "answerIndex": 0,
-    "explanation": "馬丘比丘屬印加文明。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0019",
-    "subject": "history",
-    "prompt": "古埃及太陽神是？",
-    "options": [
-      "拉",
-      "宙斯"
-    ],
-    "answerIndex": 0,
-    "explanation": "拉是太陽神。",
-    "difficulty": 2
-  },
-  {
-    "id": "history_seed_0020",
-    "subject": "history",
-    "prompt": "古希臘三大柱式不包含？",
-    "options": [
-      "哥德式",
-      "多立克"
-    ],
-    "answerIndex": 0,
-    "explanation": "哥德式非希臘柱式。",
-    "difficulty": 3
+    "answerIndex": 1,
+    "explanation": "看到葡萄牙常會聯想到早期航海。\n實際被驅逐的是荷蘭。",
+    "difficulty": "hard"
   }
 ]
