@@ -84,8 +84,11 @@ class SessionSummaryCard extends StatelessWidget {
               const SizedBox(height: 8),
               OutlinedButton(
                 onPressed: () => Navigator.popUntil(context, (route) => route.isFirst),
-                child: const Text('今天完成'),
+                child: const Text('先到這裡'),
               ),
+              const SizedBox(height: 6),
+              const Text('明天回來繼續，會更快升級。',
+                  style: TextStyle(color: Colors.black54)),
             ],
           ),
         ),
