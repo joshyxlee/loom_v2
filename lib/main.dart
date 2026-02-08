@@ -60,13 +60,15 @@ class _LoomV2AppState extends State<LoomV2App> {
         ),
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+            minimumSize: const Size.fromHeight(56),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           ),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+            minimumSize: const Size.fromHeight(56),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             side: BorderSide(color: colorScheme.outlineVariant),
           ),
