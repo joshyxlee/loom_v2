@@ -330,58 +330,41 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               );
             }),
-            const Spacer(),
-            if (_selected != null) ...[
-              Text('本題 XP：+$_lastXp', style: Theme.of(context).textTheme.bodyMedium),
-              if (widget.progressService.snapshot.level > _lastLevel) ...[
-                const SizedBox(height: 6),
-                const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-              if (_streakJustHit) ...[
-                const SizedBox(height: 6),
-                const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-              if (_dailyTargetJustCompleted) ...[
-                const SizedBox(height: 6),
-                const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-              const SizedBox(height: 8),
-              Text(
-                question.explanation,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
             const SizedBox(height: 12),
-            FilledButton(
-              onPressed: _selected == null
-                  ? null
-                  : () {
-                      if (_index + 1 >= widget.questions.length) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => _SessionSummaryCard(
-                              subject: widget.subject,
-                              totalQuestions: widget.questions.length,
-                              dailyAnswered: widget.progressService.snapshot.dailyAnswered,
-                              dailyTarget: widget.progressService.snapshot.dailyTarget,
-                              repository: widget.repository,
-                              progressService: widget.progressService,
-                            ),
-                          ),
-                        );
-                      } else {
-                        setState(() {
-                          _index += 1;
-                          _selected = null;
-                          _lastXp = 0;
-                          _dailyTargetJustCompleted = false;
-                          _streakJustHit = false;
-                        });
-                      }
-                    },
-              child: Text(_index + 1 >= widget.questions.length ? '回到主選單' : '下一題'),
-            ),
+            if (_selected != null)
+              _FeedbackCard(
+                xp: _lastXp,
+                explanation: question.explanation,
+                levelUp: widget.progressService.snapshot.level > _lastLevel,
+                streakHit: _streakJustHit,
+                dailyHit: _dailyTargetJustCompleted,
+                isLast: _index + 1 >= widget.questions.length,
+                onNext: () {
+                  if (_index + 1 >= widget.questions.length) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => _SessionSummaryCard(
+                          subject: widget.subject,
+                          totalQuestions: widget.questions.length,
+                          dailyAnswered: widget.progressService.snapshot.dailyAnswered,
+                          dailyTarget: widget.progressService.snapshot.dailyTarget,
+                          repository: widget.repository,
+                          progressService: widget.progressService,
+                        ),
+                      ),
+                    );
+                  } else {
+                    setState(() {
+                      _index += 1;
+                      _selected = null;
+                      _lastXp = 0;
+                      _dailyTargetJustCompleted = false;
+                      _streakJustHit = false;
+                    });
+                  }
+                },
+              ),
           ],
         ),
       ),
@@ -433,4 +416,68 @@ class _SessionSummaryCard extends SessionSummaryCard {
     required super.repository,
     required super.progressService,
   });
+}
+
+class _FeedbackCard extends StatelessWidget {
+  const _FeedbackCard({
+    required this.xp,
+    required this.explanation,
+    required this.levelUp,
+    required this.streakHit,
+    required this.dailyHit,
+    required this.isLast,
+    required this.onNext,
+  });
+
+  final int xp;
+  final String explanation;
+  final bool levelUp;
+  final bool streakHit;
+  final bool dailyHit;
+  final bool isLast;
+  final VoidCallback onNext;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('本題 XP：+$xp', style: Theme.of(context).textTheme.bodyMedium),
+          if (levelUp) ...[
+            const SizedBox(height: 6),
+            const Text('🌱 升級啦！', style: TextStyle(fontWeight: FontWeight.bold)),
+          ],
+          if (streakHit) ...[
+            const SizedBox(height: 6),
+            const Text('🔥 連勝 x3！', style: TextStyle(fontWeight: FontWeight.bold)),
+          ],
+          if (dailyHit) ...[
+            const SizedBox(height: 6),
+            const Text('🎉 今日目標達成！', style: TextStyle(fontWeight: FontWeight.bold)),
+          ],
+          const SizedBox(height: 8),
+          Text(explanation, style: Theme.of(context).textTheme.bodyMedium),
+          const SizedBox(height: 12),
+          FilledButton(
+            onPressed: onNext,
+            child: Text(isLast ? '回到主選單' : '下一題'),
+          ),
+        ],
+      ),
+    );
+  }
 }
