@@ -10,6 +10,7 @@ import 'repositories/question_repository.dart';
 import 'services/progress_service.dart';
 import 'services/tree_growth.dart';
 import 'services/seen_store.dart';
+import 'services/core_data_store.dart';
 import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
 
@@ -29,6 +30,7 @@ class _LoomV2AppState extends State<LoomV2App> {
   late final QuestionRepository _repository;
   final ProgressService _progressService = ProgressService();
   final SeenStore _seenStore = SeenStore();
+  final CoreDataStore _coreDataStore = CoreDataStore();
   bool _ready = false;
 
   @override
@@ -39,6 +41,8 @@ class _LoomV2AppState extends State<LoomV2App> {
 
   Future<void> _bootstrap() async {
     await _seenStore.init();
+    await _coreDataStore.init(defaultSubjects: defaultSubjects);
+    setSubjects(_coreDataStore.subjects);
     _repository = RepositoryFactory(
       source: RepositorySource.local,
       seenStore: _seenStore,
@@ -480,6 +484,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   _FeedbackCard(
                     xp: _lastXp,
                     explanation: question.explanation,
+                    isCorrect: question.isCorrect(_selected!),
                     levelUp: widget.progressService.snapshot.level > _lastLevel,
                     streakHit: _streakJustHit,
                     dailyHit: _dailyTargetJustCompleted,
@@ -608,6 +613,7 @@ class _FeedbackCard extends StatelessWidget {
   const _FeedbackCard({
     required this.xp,
     required this.explanation,
+    required this.isCorrect,
     required this.levelUp,
     required this.streakHit,
     required this.dailyHit,
@@ -618,6 +624,7 @@ class _FeedbackCard extends StatelessWidget {
 
   final int xp;
   final String explanation;
+  final bool isCorrect;
   final bool levelUp;
   final bool streakHit;
   final bool dailyHit;
@@ -627,6 +634,10 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleText = isCorrect ? '答對了！太強啦！' : '差一點！這題真的容易錯';
+    final titleColor = isCorrect ? const Color(0xFF2E7D32) : const Color(0xFF8D6E63);
+    final titleBg = isCorrect ? const Color(0xFFE7F8EE) : const Color(0xFFF6F1E9);
+
     return AnimatedScale(
       scale: levelUpPulse ? 1.04 : 1.0,
       duration: const Duration(milliseconds: 450),
@@ -648,6 +659,23 @@ class _FeedbackCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              decoration: BoxDecoration(
+                color: titleBg,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                titleText,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w800,
+                  color: titleColor,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
             Text('本題 +$xp XP', style: Theme.of(context).textTheme.bodyMedium),
             if (levelUp) ...[
               const SizedBox(height: 6),
