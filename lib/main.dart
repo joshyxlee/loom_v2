@@ -505,6 +505,8 @@ class _QuizScreenState extends State<QuizScreen> {
   String _quickHintText = '';
   Color _quickHintBg = Colors.transparent;
   double _petBounceScale = 1.0;
+  bool _showResultDialog = false;
+  bool _lastIsCorrect = false;
 
   static const _correctMomentTexts = [
     '變強了。',
@@ -700,6 +702,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           _showFeedback = false;
                           _resultLine = _pickResultLine(isCorrect);
                           _lastResultLine = _resultLine;
+                          _lastIsCorrect = isCorrect;
                           if (isCorrect) {
                             _correctStreak += 1;
                             _streakJustHit = _correctStreak == 3;
@@ -741,6 +744,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 ? Colors.green.withOpacity(0.12)
                                 : Colors.red.withOpacity(0.12);
                             _petBounceScale = 1.06;
+                            _showResultDialog = true;
                           });
                           Future.delayed(const Duration(milliseconds: 120), () {
                             if (!mounted) return;
@@ -748,7 +752,10 @@ class _QuizScreenState extends State<QuizScreen> {
                           });
                           Future.delayed(const Duration(milliseconds: 900), () {
                             if (!mounted) return;
-                            setState(() => _showQuickHint = false);
+                            setState(() {
+                              _showQuickHint = false;
+                              _showResultDialog = false;
+                            });
                           });
                         });
 
@@ -772,7 +779,6 @@ class _QuizScreenState extends State<QuizScreen> {
                   _FeedbackCard(
                     xp: _lastXp,
                     explanation: question.explanation,
-                    titleText: _resultLine,
                     isCorrect: question.isCorrect(_selected!),
                     levelUp: widget.progressService.snapshot.level > _lastLevel,
                     streakHit: _streakJustHit,
@@ -806,6 +812,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           _isJudging = false;
                           _showFeedback = false;
                           _showQuickHint = false;
+                          _showResultDialog = false;
                           _petBounceScale = 1.0;
                         });
                       }
@@ -814,6 +821,34 @@ class _QuizScreenState extends State<QuizScreen> {
                 ],
               ),
             ),
+            if (_showResultDialog)
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: AnimatedOpacity(
+                    opacity: _showResultDialog ? 1.0 : 0.0,
+                    duration: const Duration(milliseconds: 200),
+                    child: Center(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+                        decoration: BoxDecoration(
+                          color: _lastIsCorrect
+                              ? Colors.green.withOpacity(0.12)
+                              : Colors.red.withOpacity(0.12),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Text(
+                          _resultLine,
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800,
+                            color: _lastIsCorrect ? Colors.green : Colors.red,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             if (_showMoment)
               Positioned.fill(
                 child: IgnorePointer(
@@ -919,7 +954,6 @@ class _FeedbackCard extends StatelessWidget {
   const _FeedbackCard({
     required this.xp,
     required this.explanation,
-    required this.titleText,
     required this.isCorrect,
     required this.levelUp,
     required this.streakHit,
@@ -931,7 +965,6 @@ class _FeedbackCard extends StatelessWidget {
 
   final int xp;
   final String explanation;
-  final String titleText;
   final bool isCorrect;
   final bool levelUp;
   final bool streakHit;
@@ -966,23 +999,6 @@ class _FeedbackCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-              decoration: BoxDecoration(
-                color: titleBg,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                titleText,
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w800,
-                  color: titleColor,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
             Text('本題 +$xp XP', style: Theme.of(context).textTheme.bodyMedium),
             if (levelUp) ...[
               const SizedBox(height: 6),
