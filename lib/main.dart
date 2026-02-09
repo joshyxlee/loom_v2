@@ -452,11 +452,14 @@ class _QuizScreenState extends State<QuizScreen> {
   double _levelProgress = 0.0;
   int _progressAnimMs = 350;
   bool _showMoment = false;
-  bool _showXpBurst = false;
   bool _levelUpMoment = false;
   String _momentText = '';
   double _momentOpacity = 0.0;
   Offset _momentOffset = const Offset(0, 0.1);
+  bool _isJudging = false;
+  bool _showFeedback = false;
+  String _resultLine = '';
+  String? _lastResultLine;
 
   static const _correctMomentTexts = [
     '變強了。',
@@ -467,6 +470,28 @@ class _QuizScreenState extends State<QuizScreen> {
   static const _wrongMomentTexts = [
     '還在累積中。',
     '沒關係，繼續。',
+  ];
+
+  static const _correctLines = [
+    '答對了！腦袋有在轉',
+    '太強了，這題你真的懂',
+    '漂亮，直接命中',
+    '你很會欸',
+    '這題被你秒殺',
+    'Nice！又變聰明了一點',
+    '穩，繼續',
+    '這就是實力',
+  ];
+
+  static const _wrongLines = [
+    '差一點點！這題很容易誤判',
+    '可惜，但你快抓到了',
+    '沒事，記住就賺到',
+    '這題很陰，下一題扳回來',
+    '懂了就好，下一題',
+    '正常，很多人也會選錯',
+    '差一口氣，下題追回來',
+    '可惜！但你有在思考',
   ];
 
   @override
@@ -488,7 +513,6 @@ class _QuizScreenState extends State<QuizScreen> {
         ? _correctMomentTexts[rng.nextInt(_correctMomentTexts.length)]
         : _wrongMomentTexts[rng.nextInt(_wrongMomentTexts.length)];
     _showMoment = true;
-    _showXpBurst = isCorrect;
     _levelUpMoment = leveledUp;
     _momentOpacity = 1.0;
     _momentOffset = const Offset(0, -0.12);
@@ -503,11 +527,22 @@ class _QuizScreenState extends State<QuizScreen> {
       if (!mounted) return;
       setState(() {
         _showMoment = false;
-        _showXpBurst = false;
         _levelUpMoment = false;
         _momentOffset = const Offset(0, 0.1);
       });
     });
+  }
+
+  String _pickResultLine(bool isCorrect) {
+    final rng = Random(DateTime.now().millisecondsSinceEpoch);
+    final pool = isCorrect ? _correctLines : _wrongLines;
+    if (pool.length == 1) return pool.first;
+    String candidate = pool[rng.nextInt(pool.length)];
+    if (_lastResultLine == null) return candidate;
+    while (candidate == _lastResultLine) {
+      candidate = pool[rng.nextInt(pool.length)];
+    }
+    return candidate;
   }
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
@@ -589,6 +624,10 @@ class _QuizScreenState extends State<QuizScreen> {
                           );
                           _lastXp = result.gainedXp;
                           _dailyTargetJustCompleted = result.completedDailyTarget;
+                          _isJudging = true;
+                          _showFeedback = false;
+                          _resultLine = _pickResultLine(isCorrect);
+                          _lastResultLine = _resultLine;
                           if (isCorrect) {
                             _correctStreak += 1;
                             _streakJustHit = _correctStreak == 3;
@@ -619,6 +658,14 @@ class _QuizScreenState extends State<QuizScreen> {
                           _triggerMoment(isCorrect: isCorrect, leveledUp: leveledUp);
                         });
 
+                        Future.delayed(const Duration(milliseconds: 350), () {
+                          if (!mounted) return;
+                          setState(() {
+                            _isJudging = false;
+                            _showFeedback = true;
+                          });
+                        });
+
                         _handleCoreGrowth(
                           subjectId: question.subject,
                           isCorrect: question.isCorrect(i),
@@ -627,11 +674,19 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   );
                 }),
-                const SizedBox(height: 12),
-                if (_selected != null)
+                const SizedBox(height: 8),
+                SizedBox(
+                  height: 20,
+                  child: _isJudging
+                      ? const Text('判斷中…', style: TextStyle(color: Colors.black54))
+                      : null,
+                ),
+                const SizedBox(height: 6),
+                if (_selected != null && _showFeedback)
                   _FeedbackCard(
                     xp: _lastXp,
                     explanation: question.explanation,
+                    titleText: _resultLine,
                     isCorrect: question.isCorrect(_selected!),
                     levelUp: widget.progressService.snapshot.level > _lastLevel,
                     streakHit: _streakJustHit,
@@ -662,6 +717,8 @@ class _QuizScreenState extends State<QuizScreen> {
                           _dailyTargetJustCompleted = false;
                           _streakJustHit = false;
                           _levelUpPulse = false;
+                          _isJudging = false;
+                          _showFeedback = false;
                         });
                       }
                     },
@@ -688,13 +745,6 @@ class _QuizScreenState extends State<QuizScreen> {
                                 child: Text('升級了。',
                                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                               ),
-                            if (_showXpBurst)
-                              Text('+$_lastXp XP',
-                                  style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF3CC77A),
-                                  )),
                             const SizedBox(height: 6),
                             Text(_momentText,
                                 style: const TextStyle(fontSize: 16, color: Colors.black54)),
@@ -763,6 +813,7 @@ class _FeedbackCard extends StatelessWidget {
   const _FeedbackCard({
     required this.xp,
     required this.explanation,
+    required this.titleText,
     required this.isCorrect,
     required this.levelUp,
     required this.streakHit,
@@ -774,6 +825,7 @@ class _FeedbackCard extends StatelessWidget {
 
   final int xp;
   final String explanation;
+  final String titleText;
   final bool isCorrect;
   final bool levelUp;
   final bool streakHit;
@@ -784,7 +836,6 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleText = isCorrect ? '答對了！太強啦！' : '差一點！這題真的容易錯';
     final titleColor = isCorrect ? const Color(0xFF2E7D32) : const Color(0xFF8D6E63);
     final titleBg = isCorrect ? const Color(0xFFE7F8EE) : const Color(0xFFF6F1E9);
 
