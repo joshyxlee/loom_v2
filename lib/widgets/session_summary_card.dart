@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/subject.dart';
 import '../repositories/question_repository.dart';
 import '../services/progress_service.dart';
+import '../services/core_data_store.dart';
 import '../main.dart';
 
 class SessionSummaryCard extends StatelessWidget {
@@ -14,6 +15,7 @@ class SessionSummaryCard extends StatelessWidget {
     required this.dailyTarget,
     required this.repository,
     required this.progressService,
+    required this.coreDataStore,
   });
 
   final Subject subject;
@@ -22,6 +24,7 @@ class SessionSummaryCard extends StatelessWidget {
   final int dailyTarget;
   final QuestionRepository repository;
   final ProgressService progressService;
+  final CoreDataStore coreDataStore;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +75,7 @@ class SessionSummaryCard extends StatelessWidget {
                       builder: (_) => QuizScreen(
                         questions: questions,
                         progressService: progressService,
+                        coreDataStore: coreDataStore,
                         subjectTitle: subject.title,
                         subject: subject,
                         repository: repository,

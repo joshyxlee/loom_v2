@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'level_thresholds.dart';
 
 class ProgressSnapshot {
   const ProgressSnapshot({
@@ -66,13 +66,8 @@ class ProgressService {
 
   void resetDailyProgress({required bool continuedStreak}) {
     _dailyAnswered = 0;
-    if (continuedStreak) {
-      _streakDays += 1;
-      _dailyBonusMultiplier = min(2.0, 1.0 + _streakDays * 0.05);
-    } else {
-      _streakDays = 0;
-      _dailyBonusMultiplier = 1.0;
-    }
+    _streakDays = 0;
+    _dailyBonusMultiplier = 1.0;
   }
 
   void ensureDailyState() {
@@ -90,10 +85,7 @@ class ProgressService {
 
   AnswerResult recordAnswer({required bool isCorrect, required int difficulty}) {
     ensureDailyState();
-    final baseXp = _baseXpForDifficulty(difficulty);
-    final correctXp = isCorrect ? baseXp * 3 : baseXp;
-    final bonus = (correctXp * (_dailyBonusMultiplier - 1)).round();
-    final gained = correctXp + bonus;
+    final gained = isCorrect ? 10 : 6;
     _totalXp += gained;
     _dailyAnswered += 1;
     _lastActiveDate = DateTime.now();
@@ -101,34 +93,12 @@ class ProgressService {
     return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);
   }
 
-  int _baseXpForDifficulty(int difficulty) {
-    switch (difficulty) {
-      case 5:
-        return 50;
-      case 4:
-        return 40;
-      case 3:
-        return 30;
-      case 2:
-        return 20;
-      case 1:
-      default:
-        return 10;
-    }
-  }
-
   int _levelForXp(int xp) {
-    for (var level = 1; level <= maxLevel; level++) {
-      if (xp < _xpThreshold(level)) return level;
-    }
-    return maxLevel;
+    return LevelThresholds.levelForXp(xp, maxLevel: maxLevel);
   }
 
   int _xpThreshold(int level) {
-    // Non-linear growth: fast early, slower later.
-    // level 1 -> 0 xp, level 50 ~ 50k xp
-    final curve = pow(level, 2.1).toDouble();
-    return (curve * 40).round();
+    return LevelThresholds.thresholdForLevel(level);
   }
 
   bool _isSameDay(DateTime a, DateTime b) {

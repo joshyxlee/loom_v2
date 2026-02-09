@@ -5,6 +5,7 @@ import '../models/player.dart';
 import '../models/subject.dart';
 import '../models/active_pet.dart';
 import '../models/pokedex_entry.dart';
+import 'level_thresholds.dart';
 
 class CoreDataStore {
   static const _playerKey = 'core_player';
@@ -39,10 +40,90 @@ class CoreDataStore {
     await _savePokedex();
   }
 
+  Future<void> recordAnswer({required String subjectId, required bool isCorrect}) async {
+    _ensureCreditsForSubjects([Subject(subjectId: subjectId, displayName: '')]);
+
+    final gainedXp = isCorrect ? 10 : 6;
+    player = player.copyWith(
+      totalXp: player.totalXp + gainedXp,
+      playerLevel: LevelThresholds.levelForXp(player.totalXp + gainedXp),
+    );
+
+    final gainedCredit = isCorrect ? 10 : 3;
+    creditsBySubject[subjectId] = (creditsBySubject[subjectId] ?? 0) + gainedCredit;
+
+    final previousStage = activePet.currentStage;
+    final nextStage = _stageForLevel(player.playerLevel);
+    final nextBond = _bondForLevel(player.playerLevel);
+
+    activePet = activePet.copyWith(
+      currentStage: nextStage,
+      currentBond: nextBond,
+    );
+
+    if (nextStage > previousStage) {
+      for (var stage = previousStage + 1; stage <= nextStage; stage++) {
+        pokedexEntries.add(_buildPokedexEntry(stage));
+      }
+    }
+
+    await _savePlayer();
+    await _saveCredits();
+    await _saveActivePet();
+    await _savePokedex();
+  }
+
   void _ensureCreditsForSubjects(List<Subject> currentSubjects) {
     for (final subject in currentSubjects) {
+      if (subject.subjectId.isEmpty) continue;
       creditsBySubject.putIfAbsent(subject.subjectId, () => 0);
     }
+  }
+
+  int _stageForLevel(int level) {
+    if (level >= 40) return 4;
+    if (level >= 20) return 3;
+    if (level >= 10) return 2;
+    if (level >= 5) return 1;
+    return 0;
+  }
+
+  int _bondForLevel(int level) {
+    if (level < 41) return 0;
+    final bond = level - 40;
+    return bond > 10 ? 10 : bond;
+  }
+
+  String _resolvePetType() {
+    final total = creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
+    if (total < 200) return 'balanced';
+    final entries = creditsBySubject.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+    if (entries.isEmpty) return 'balanced';
+    final top = entries.first;
+    final ratio = total == 0 ? 0.0 : top.value / total;
+    return ratio >= 0.4 ? 'major' : 'balanced';
+  }
+
+  List<CreditSnapshotItem> _creditSnapshotTop3() {
+    final total = creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
+    final entries = creditsBySubject.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+    return entries.take(3).map((entry) {
+      final ratio = total == 0 ? 0.0 : entry.value / total;
+      return CreditSnapshotItem(subjectId: entry.key, ratio: ratio);
+    }).toList();
+  }
+
+  PokedexEntry _buildPokedexEntry(int stage) {
+    return PokedexEntry(
+      entryId: '${DateTime.now().millisecondsSinceEpoch}_$stage',
+      petStage: stage,
+      petType: _resolvePetType(),
+      creditSnapshotTop3: _creditSnapshotTop3(),
+      bondLevelAtUnlock: activePet.currentBond,
+      unlockedAt: DateTime.now(),
+    );
   }
 
   Player _createDefaultPlayer() {

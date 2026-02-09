@@ -82,17 +82,27 @@ class _LoomV2AppState extends State<LoomV2App> {
         ),
       ),
       home: _ready
-          ? OnboardingGate(repository: _repository, progressService: _progressService)
+          ? OnboardingGate(
+              repository: _repository,
+              progressService: _progressService,
+              coreDataStore: _coreDataStore,
+            )
           : const Scaffold(body: Center(child: CircularProgressIndicator())),
     );
   }
 }
 
 class OnboardingGate extends StatefulWidget {
-  const OnboardingGate({super.key, required this.repository, required this.progressService});
+  const OnboardingGate({
+    super.key,
+    required this.repository,
+    required this.progressService,
+    required this.coreDataStore,
+  });
 
   final QuestionRepository repository;
   final ProgressService progressService;
+  final CoreDataStore coreDataStore;
 
   @override
   State<OnboardingGate> createState() => _OnboardingGateState();
@@ -108,15 +118,25 @@ class _OnboardingGateState extends State<OnboardingGate> {
         onFinish: () => setState(() => _showOnboarding = false),
       );
     }
-    return HomeScreen(repository: widget.repository, progressService: widget.progressService);
+    return HomeScreen(
+      repository: widget.repository,
+      progressService: widget.progressService,
+      coreDataStore: widget.coreDataStore,
+    );
   }
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.repository, required this.progressService});
+  const HomeScreen({
+    super.key,
+    required this.repository,
+    required this.progressService,
+    required this.coreDataStore,
+  });
 
   final QuestionRepository repository;
   final ProgressService progressService;
+  final CoreDataStore coreDataStore;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -132,6 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (_) => QuizScreen(
           questions: questions,
           progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
           subjectTitle: subject.title,
           subject: subject,
           repository: widget.repository,
@@ -257,6 +278,7 @@ class QuizScreen extends StatefulWidget {
     super.key,
     required this.questions,
     required this.progressService,
+    required this.coreDataStore,
     required this.subjectTitle,
     required this.subject,
     required this.repository,
@@ -264,6 +286,7 @@ class QuizScreen extends StatefulWidget {
 
   final List<Question> questions;
   final ProgressService progressService;
+  final CoreDataStore coreDataStore;
   final String subjectTitle;
   final Subject subject;
   final QuestionRepository repository;
@@ -445,6 +468,10 @@ class _QuizScreenState extends State<QuizScreen> {
                           isCorrect: isCorrect,
                           difficulty: question.difficultyValue,
                         );
+                        widget.coreDataStore.recordAnswer(
+                          subjectId: question.subject,
+                          isCorrect: isCorrect,
+                        );
                         _lastXp = result.gainedXp;
                         _dailyTargetJustCompleted = result.completedDailyTarget;
                         if (isCorrect) {
@@ -502,6 +529,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               dailyTarget: widget.progressService.snapshot.dailyTarget,
                               repository: widget.repository,
                               progressService: widget.progressService,
+                              coreDataStore: widget.coreDataStore,
                             ),
                           ),
                         );
@@ -606,6 +634,7 @@ class _SessionSummaryCard extends SessionSummaryCard {
     required super.dailyTarget,
     required super.repository,
     required super.progressService,
+    required super.coreDataStore,
   });
 }
 
