@@ -331,10 +331,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('累計 XP：${snapshot.totalXp}',
-                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
-                        const SizedBox(height: 4),
+                            style: const TextStyle(fontSize: 12, color: Colors.black45)),
+                        const SizedBox(height: 2),
                         Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
-                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
+                            style: const TextStyle(fontSize: 12, color: Colors.black45)),
                       ],
                     ),
                   ),
@@ -343,21 +343,13 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          petStage >= 4
-                              ? '已完全成長（Bond 會繼續提升）\n下一個 Bond：Lv ${playerLevel + 1}'
-                              : '下一次進化：Lv ${_nextStageLevel(petStage)} → Stage ${_nextStageNumber(petStage)}',
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                        const Text('再答幾題就會進化',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                         const SizedBox(height: 6),
                         Text(
-                          petStage >= 4
-                              ? '你目前 Lv $playerLevel'
-                              : '你目前 Lv $playerLevel（還差 ${_levelsToNextStage(petStage, playerLevel)} 級）',
+                          '你現在在 Lv $playerLevel，離下一次變化很近',
                           style: const TextStyle(color: Colors.black54),
                         ),
-                        const SizedBox(height: 4),
-                        const Text('升級靠答題累積 XP', style: TextStyle(color: Colors.black45)),
                       ],
                     ),
                   ),
@@ -365,10 +357,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   _CardSection(
                     child: Row(
                       children: [
-                        const Text('圖鑑', style: TextStyle(fontWeight: FontWeight.bold)),
+                        const Text('圖鑑',
+                            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
                         const SizedBox(width: 8),
                         Text('${widget.coreDataStore.pokedexEntries.length} collected',
-                            style: const TextStyle(color: Colors.black54)),
+                            style: const TextStyle(color: Colors.black45, fontSize: 12)),
                         const Spacer(),
                         TextButton(
                           onPressed: () {
@@ -379,7 +372,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                               ),
                             );
                           },
-                          child: const Text('查看'),
+                          child: const Text('查看', style: TextStyle(fontSize: 12)),
                         ),
                       ],
                     ),
