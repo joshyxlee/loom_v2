@@ -602,9 +602,11 @@ class _QuizScreenState extends State<QuizScreen> {
         padding: const EdgeInsets.all(16),
         child: Stack(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+            SingleChildScrollView(
+              padding: const EdgeInsets.only(bottom: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                 Row(
                   children: [
                     AnimatedScale(
@@ -794,7 +796,8 @@ class _QuizScreenState extends State<QuizScreen> {
                       }
                     },
                   ),
-              ],
+                ],
+              ),
             ),
             if (_showMoment)
               Positioned.fill(
