@@ -12,12 +12,12 @@ const onboardingPages = [
     subtitle: '不是考試，是每天替自己加一點知識厚度。',
   ),
   OnboardingPage(
-    title: '你在養一棵會長大的樹',
-    subtitle: '每一題都是養分，樹會替你記得你的成長。',
+    title: '你會有一個學習夥伴',
+    subtitle: '你每天學的內容，會影響它變成什麼樣子。',
   ),
   OnboardingPage(
-    title: '今天走一小步，明天就輕鬆很多',
-    subtitle: '每天一回合，累積的不是分數，是底氣。',
+    title: '每次重要成長，都會被收藏',
+    subtitle: '你的夥伴會留下不同樣子，成為你的收藏。',
   ),
 ];
 
