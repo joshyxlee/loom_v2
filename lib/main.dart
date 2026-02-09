@@ -613,6 +613,8 @@ class _QuizScreenState extends State<QuizScreen> {
                       label: option,
                       selected: selected,
                       enabled: _selected == null,
+                      isLocked: _selected != null,
+                      isCorrectOption: question.isCorrect(i),
                       onTap: () {
                         setState(() {
                           _selected = i;
@@ -767,21 +769,38 @@ class _AnswerOption extends StatelessWidget {
     required this.label,
     required this.selected,
     required this.enabled,
+    required this.isLocked,
+    required this.isCorrectOption,
     required this.onTap,
   });
 
   final String label;
   final bool selected;
   final bool enabled;
+  final bool isLocked;
+  final bool isCorrectOption;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
+    final showCorrect = isLocked && isCorrectOption;
+    final showWrong = isLocked && selected && !isCorrectOption;
+    final bgColor = showCorrect
+        ? Colors.green.withOpacity(0.12)
+        : showWrong
+            ? Colors.red.withOpacity(0.12)
+            : Colors.white;
+    final borderColor = showCorrect
+        ? Colors.green
+        : showWrong
+            ? Colors.red
+            : Colors.grey.shade300;
+
     return OutlinedButton(
       onPressed: enabled ? onTap : null,
       style: OutlinedButton.styleFrom(
-        backgroundColor: selected ? Colors.green.withOpacity(0.1) : Colors.white,
-        side: BorderSide(color: selected ? Colors.green : Colors.grey.shade300),
+        backgroundColor: bgColor,
+        side: BorderSide(color: borderColor),
       ),
       child: Align(
         alignment: Alignment.centerLeft,
