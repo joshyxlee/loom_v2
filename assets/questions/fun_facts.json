@@ -698,5 +698,705 @@
     "answerIndex": 3,
     "explanation": "常被解讀成單純習慣。\n其實兼具清潔與散熱作用。",
     "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0051",
+    "subject": "funFacts",
+    "prompt": "水母沒有大腦也能活著嗎？",
+    "options": [
+      "是",
+      "否",
+      "只有部分種類",
+      "要看水溫"
+    ],
+    "answerIndex": 0,
+    "explanation": "水母沒有大腦和心臟，靠神經網運作。這真的很反直覺😮",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0052",
+    "subject": "funFacts",
+    "prompt": "人只用到 10% 的大腦嗎？",
+    "options": [
+      "是",
+      "否",
+      "只在睡覺",
+      "看年齡"
+    ],
+    "answerIndex": 1,
+    "explanation": "不是，腦部各區域都有功能，並不是只用一小部分。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0053",
+    "subject": "funFacts",
+    "prompt": "光一秒大約能繞地球幾圈？",
+    "options": [
+      "1圈左右",
+      "約7.5圈",
+      "約30圈",
+      "約100圈"
+    ],
+    "answerIndex": 1,
+    "explanation": "光速非常快，大約一秒就能繞地球七圈多。這個速度很誇張🤯",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0054",
+    "subject": "funFacts",
+    "prompt": "馬鈴薯在植物學上屬於哪個部位？",
+    "options": [
+      "根",
+      "莖",
+      "葉",
+      "花"
+    ],
+    "answerIndex": 1,
+    "explanation": "馬鈴薯其實是地下莖，不是根。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0055",
+    "subject": "funFacts",
+    "prompt": "口香糖吞下去會在體內停七年嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在小孩身上",
+      "取決種類"
+    ],
+    "answerIndex": 1,
+    "explanation": "不會，口香糖不會被消化，但會正常排出。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0056",
+    "subject": "funFacts",
+    "prompt": "地球到月球的平均距離約是多少？",
+    "options": [
+      "3.8萬公里",
+      "38萬公里",
+      "380萬公里",
+      "3,800萬公里"
+    ],
+    "answerIndex": 1,
+    "explanation": "平均距離約38萬公里，遠比想像得遠。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0057",
+    "subject": "funFacts",
+    "prompt": "蘑菇在生物分類上屬於什麼？",
+    "options": [
+      "植物",
+      "真菌",
+      "動物",
+      "礦物"
+    ],
+    "answerIndex": 1,
+    "explanation": "蘑菇屬於真菌，不是植物。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0058",
+    "subject": "funFacts",
+    "prompt": "刮毛會讓毛長得更粗更黑嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在深色毛",
+      "只在夏天"
+    ],
+    "answerIndex": 1,
+    "explanation": "不會，變粗變黑多半是視覺錯覺。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0059",
+    "subject": "funFacts",
+    "prompt": "兔子可以嘔吐嗎？",
+    "options": [
+      "可以",
+      "不可以",
+      "只有幼兔",
+      "看品種"
+    ],
+    "answerIndex": 1,
+    "explanation": "兔子幾乎無法嘔吐，生理構造限制了這件事。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0060",
+    "subject": "funFacts",
+    "prompt": "人體最大的內臟是？",
+    "options": [
+      "肝臟",
+      "肺",
+      "脾",
+      "腎"
+    ],
+    "answerIndex": 0,
+    "explanation": "人體最大的內臟是肝臟。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0061",
+    "subject": "funFacts",
+    "prompt": "番茄在植物學上算水果嗎？",
+    "options": [
+      "算",
+      "不算",
+      "只算蔬菜",
+      "看品種"
+    ],
+    "answerIndex": 0,
+    "explanation": "番茄在植物學上是水果，日常才被當成蔬菜。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0062",
+    "subject": "funFacts",
+    "prompt": "火烈鳥的粉紅色主要來自？",
+    "options": [
+      "天生色素",
+      "食物中的色素",
+      "陽光曝曬",
+      "海水鹽分"
+    ],
+    "answerIndex": 1,
+    "explanation": "火烈鳥的粉紅色來自食物中的色素。這點很多人會驚訝😮",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0063",
+    "subject": "funFacts",
+    "prompt": "仙人掌的刺其實是？",
+    "options": [
+      "根",
+      "莖",
+      "葉",
+      "花"
+    ],
+    "answerIndex": 2,
+    "explanation": "仙人掌的刺其實是葉子演化而來。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0064",
+    "subject": "funFacts",
+    "prompt": "鯊魚的骨骼主要是什麼材質？",
+    "options": [
+      "硬骨",
+      "軟骨",
+      "石灰質",
+      "角質"
+    ],
+    "answerIndex": 1,
+    "explanation": "鯊魚骨骼主要是軟骨，不是硬骨。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0065",
+    "subject": "funFacts",
+    "prompt": "閃電不會劈同一個地方兩次嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在冬天",
+      "只在高山"
+    ],
+    "answerIndex": 0,
+    "explanation": "會，閃電可能重複擊中同一地點。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0066",
+    "subject": "funFacts",
+    "prompt": "吃糖會讓小孩變得更亢奮嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在晚上",
+      "只在男孩"
+    ],
+    "answerIndex": 1,
+    "explanation": "多數研究沒有證實糖會讓孩子更亢奮。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0067",
+    "subject": "funFacts",
+    "prompt": "撐傘會比較容易被雷打到嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在空曠地",
+      "只在山上"
+    ],
+    "answerIndex": 1,
+    "explanation": "風險主要來自地形與金屬高度，撐傘本身不是關鍵。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0068",
+    "subject": "funFacts",
+    "prompt": "人一天大約會產生多少唾液？",
+    "options": [
+      "約100毫升",
+      "約500毫升",
+      "約1公升",
+      "約3公升"
+    ],
+    "answerIndex": 2,
+    "explanation": "人一天大約會產生約1公升左右的唾液。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0069",
+    "subject": "funFacts",
+    "prompt": "大象的懷孕期大約多久？",
+    "options": [
+      "約3個月",
+      "約9個月",
+      "約22個月",
+      "約5年"
+    ],
+    "answerIndex": 2,
+    "explanation": "大象懷孕期約22個月，是非常長的孕期。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0070",
+    "subject": "funFacts",
+    "prompt": "指甲的生長速度通常？",
+    "options": [
+      "比腳趾甲快",
+      "一樣",
+      "比腳趾甲慢",
+      "只在夏天快"
+    ],
+    "answerIndex": 0,
+    "explanation": "手指甲通常長得比腳趾甲快。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0071",
+    "subject": "funFacts",
+    "prompt": "海星其實不是魚類嗎？",
+    "options": [
+      "是",
+      "不是",
+      "只有部分種類",
+      "看大小"
+    ],
+    "answerIndex": 1,
+    "explanation": "海星是棘皮動物，不是魚類。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0072",
+    "subject": "funFacts",
+    "prompt": "鴨嘴獸會下蛋嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在冬天",
+      "只有幼年"
+    ],
+    "answerIndex": 0,
+    "explanation": "會，鴨嘴獸是少數會下蛋的哺乳類。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0073",
+    "subject": "funFacts",
+    "prompt": "肝臟本身沒有痛覺受器嗎？",
+    "options": [
+      "有",
+      "沒有",
+      "只有部分",
+      "看年齡"
+    ],
+    "answerIndex": 1,
+    "explanation": "肝臟本身沒有痛覺受器，疼痛多來自包膜。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0074",
+    "subject": "funFacts",
+    "prompt": "花生其實不是堅果嗎？",
+    "options": [
+      "是堅果",
+      "不是堅果",
+      "只算乾果",
+      "看品種"
+    ],
+    "answerIndex": 1,
+    "explanation": "花生其實是豆科植物，不是堅果。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0075",
+    "subject": "funFacts",
+    "prompt": "眼鏡度數會越戴越深嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在小孩",
+      "只在高度近視"
+    ],
+    "answerIndex": 1,
+    "explanation": "度數變化主要來自用眼狀況，不是因為戴眼鏡本身。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0076",
+    "subject": "funFacts",
+    "prompt": "手指關節響會導致關節炎嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只有老年",
+      "只在冬天"
+    ],
+    "answerIndex": 1,
+    "explanation": "目前沒有證據顯示關節響會導致關節炎。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0077",
+    "subject": "funFacts",
+    "prompt": "看電視太近會永久傷眼嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在孩童",
+      "只在暗處"
+    ],
+    "answerIndex": 1,
+    "explanation": "太近會疲勞，但不會造成永久性傷害。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0078",
+    "subject": "funFacts",
+    "prompt": "人體腸道總長大約幾公尺？",
+    "options": [
+      "約2公尺",
+      "約7公尺",
+      "約20公尺",
+      "約50公尺"
+    ],
+    "answerIndex": 1,
+    "explanation": "成人腸道總長約6到7公尺。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0079",
+    "subject": "funFacts",
+    "prompt": "人一天平均呼吸次數大約？",
+    "options": [
+      "約2千次",
+      "約2萬次",
+      "約20萬次",
+      "約200次"
+    ],
+    "answerIndex": 1,
+    "explanation": "成人一天約呼吸兩萬次左右。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0080",
+    "subject": "funFacts",
+    "prompt": "海獺會用工具敲開貝類嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只有幼年",
+      "只在冬天"
+    ],
+    "answerIndex": 0,
+    "explanation": "海獺會用石頭敲開貝類，是少數會用工具的動物。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0081",
+    "subject": "funFacts",
+    "prompt": "植物長大的主要碳來源是空氣嗎？",
+    "options": [
+      "是",
+      "不是",
+      "只在夜晚",
+      "只在沙漠"
+    ],
+    "answerIndex": 0,
+    "explanation": "植物的乾重主要來自空氣中的二氧化碳。這點很反直覺😮",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0082",
+    "subject": "funFacts",
+    "prompt": "人體含量最多的元素是？",
+    "options": [
+      "碳",
+      "氧",
+      "鈣",
+      "鐵"
+    ],
+    "answerIndex": 1,
+    "explanation": "人體含量最多的元素是氧，來自水和有機物。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0083",
+    "subject": "funFacts",
+    "prompt": "蝦的心臟位置在？",
+    "options": [
+      "腹部",
+      "頭部",
+      "尾部",
+      "背部"
+    ],
+    "answerIndex": 1,
+    "explanation": "蝦的心臟在頭部區域，位置很特別。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0084",
+    "subject": "funFacts",
+    "prompt": "蟑螂沒了頭還能活一陣子嗎？",
+    "options": [
+      "能",
+      "不能",
+      "只在冬天",
+      "只有大型品種"
+    ],
+    "answerIndex": 0,
+    "explanation": "能，因為它們靠氣門呼吸，頭不是唯一生命關鍵。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0085",
+    "subject": "funFacts",
+    "prompt": "北半球水槽的旋轉方向一定是固定的嗎？",
+    "options": [
+      "一定固定",
+      "不一定",
+      "只在海邊",
+      "只在高樓"
+    ],
+    "answerIndex": 1,
+    "explanation": "水槽旋轉方向主要看水流與形狀，和地球自轉無關。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0086",
+    "subject": "funFacts",
+    "prompt": "吃紅蘿蔔會讓視力變超好嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在夜晚",
+      "只對近視有效"
+    ],
+    "answerIndex": 1,
+    "explanation": "不會，紅蘿蔔有助維持視力，但不會讓視力超越正常。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0087",
+    "subject": "funFacts",
+    "prompt": "冷天不戴帽子會散失大部分熱量嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在下雪",
+      "只在小孩"
+    ],
+    "answerIndex": 1,
+    "explanation": "散熱比例取決於暴露面積，頭部不是唯一大宗。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0088",
+    "subject": "funFacts",
+    "prompt": "人體平均血液量大約多少？",
+    "options": [
+      "約2公升",
+      "約4-5公升",
+      "約8公升",
+      "約12公升"
+    ],
+    "answerIndex": 1,
+    "explanation": "成人血液量大約4到5公升。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0089",
+    "subject": "funFacts",
+    "prompt": "地球海洋覆蓋地表約多少？",
+    "options": [
+      "約30%",
+      "約50%",
+      "約71%",
+      "約90%"
+    ],
+    "answerIndex": 2,
+    "explanation": "地球表面約七成被海洋覆蓋。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0090",
+    "subject": "funFacts",
+    "prompt": "大象會跳起來嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只有幼象",
+      "看品種"
+    ],
+    "answerIndex": 1,
+    "explanation": "大象無法跳躍，四肢結構不允許離地。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0091",
+    "subject": "funFacts",
+    "prompt": "鯨魚是哺乳類嗎？",
+    "options": [
+      "是",
+      "不是",
+      "只有部分種類",
+      "看體型"
+    ],
+    "answerIndex": 0,
+    "explanation": "鯨魚是哺乳類，需要到水面呼吸。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0092",
+    "subject": "funFacts",
+    "prompt": "人睡覺時大腦完全休息嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在深睡",
+      "只在白天"
+    ],
+    "answerIndex": 1,
+    "explanation": "不會，大腦在睡眠中仍然活躍。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0093",
+    "subject": "funFacts",
+    "prompt": "耳垢是乾淨的還是髒的？",
+    "options": [
+      "完全髒",
+      "完全乾淨",
+      "其實是保護",
+      "只在冬天出現"
+    ],
+    "answerIndex": 2,
+    "explanation": "耳垢有保護作用，能阻擋灰塵與微生物。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0094",
+    "subject": "funFacts",
+    "prompt": "蜜蜂死後蜂巢就不會運作了嗎？",
+    "options": [
+      "會停止",
+      "不一定",
+      "一定更旺",
+      "只在冬天"
+    ],
+    "answerIndex": 1,
+    "explanation": "蜂巢運作靠群體，不是靠單一個體。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "fun_v3_0095",
+    "subject": "funFacts",
+    "prompt": "人體的骨頭會一直更新嗎？",
+    "options": [
+      "會",
+      "不會",
+      "只在童年",
+      "只在運動時"
+    ],
+    "answerIndex": 0,
+    "explanation": "骨骼會持續重塑與更新。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0096",
+    "subject": "funFacts",
+    "prompt": "維他命C能立刻治好感冒嗎？",
+    "options": [
+      "能",
+      "不能",
+      "只對小孩",
+      "只在初期"
+    ],
+    "answerIndex": 1,
+    "explanation": "維他命C不能立刻治好感冒，但可能略減輕症狀。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0097",
+    "subject": "funFacts",
+    "prompt": "人類可以在完全黑暗中看見微光嗎？",
+    "options": [
+      "可以",
+      "不可以",
+      "只在戶外",
+      "只在冬天"
+    ],
+    "answerIndex": 0,
+    "explanation": "眼睛適應黑暗後，能看見微弱光線。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0098",
+    "subject": "funFacts",
+    "prompt": "海水魚需要喝水嗎？",
+    "options": [
+      "需要",
+      "不需要",
+      "只在幼年",
+      "只在夜晚"
+    ],
+    "answerIndex": 0,
+    "explanation": "海水魚會喝水，並透過鰓排出多餘鹽分。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "fun_v3_0099",
+    "subject": "funFacts",
+    "prompt": "地球上最大的活火山在海底嗎？",
+    "options": [
+      "是",
+      "不是",
+      "只有部分",
+      "看深度"
+    ],
+    "answerIndex": 0,
+    "explanation": "最大的火山體系在海底的洋中脊附近。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "fun_v3_0100",
+    "subject": "funFacts",
+    "prompt": "人類一天平均走路步數大約？",
+    "options": [
+      "約1千步",
+      "約3千步",
+      "約6千步",
+      "約2萬步"
+    ],
+    "answerIndex": 2,
+    "explanation": "一般人一天平均步數約幾千到一萬左右。",
+    "difficulty": "medium"
   }
 ]

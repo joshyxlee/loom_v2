@@ -698,5 +698,705 @@
     "answerIndex": 3,
     "explanation": "直覺會以為是顏色本身熱。\n黑色吸收更多光能轉成熱。",
     "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0051",
+    "subject": "science",
+    "prompt": "為什麼金屬勺子放進熱茶會很快變熱？",
+    "options": [
+      "熱量會自己跑過來",
+      "金屬導熱快",
+      "空氣對流強",
+      "水溫太高"
+    ],
+    "answerIndex": 1,
+    "explanation": "金屬導熱快，熱量傳得很快。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0052",
+    "subject": "science",
+    "prompt": "為什麼手碰到金屬會覺得更冷？",
+    "options": [
+      "金屬更冷",
+      "金屬導熱快",
+      "皮膚變薄",
+      "空氣更冷"
+    ],
+    "answerIndex": 1,
+    "explanation": "金屬導熱快，把熱量帶走得更快。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0053",
+    "subject": "science",
+    "prompt": "為什麼水結冰時體積會變大？",
+    "options": [
+      "分子更密",
+      "分子排列變鬆",
+      "水變成氣體",
+      "因為空氣進入"
+    ],
+    "answerIndex": 1,
+    "explanation": "冰的分子排列較鬆散，因此體積變大。這點很反直覺😮",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0054",
+    "subject": "science",
+    "prompt": "為什麼海水不容易結冰？",
+    "options": [
+      "水太深",
+      "鹽分降低冰點",
+      "浪太大",
+      "太陽太熱"
+    ],
+    "answerIndex": 1,
+    "explanation": "鹽分會降低冰點，使海水較不易結冰。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0055",
+    "subject": "science",
+    "prompt": "為什麼高山上的水較難煮熟食物？",
+    "options": [
+      "水變少",
+      "氣壓低沸點低",
+      "火不夠熱",
+      "鍋子太薄"
+    ],
+    "answerIndex": 1,
+    "explanation": "氣壓較低，水的沸點下降。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0056",
+    "subject": "science",
+    "prompt": "為什麼膠帶快速拉扯會發出光？",
+    "options": [
+      "摩擦生熱",
+      "電荷分離",
+      "空氣燃燒",
+      "水氣反射"
+    ],
+    "answerIndex": 1,
+    "explanation": "拉扯造成電荷分離，產生微弱放電。這很怪但真的會發光😮",
+    "difficulty": "hard"
+  },
+  {
+    "id": "science_v3_0057",
+    "subject": "science",
+    "prompt": "為什麼鏡子左右顛倒、上下卻不顛倒？",
+    "options": [
+      "鏡子會旋轉",
+      "其實顛倒的是前後",
+      "光線彎曲",
+      "因為眼睛"
+    ],
+    "answerIndex": 1,
+    "explanation": "鏡子翻轉的是前後方向，不是上下。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0058",
+    "subject": "science",
+    "prompt": "為什麼夏天柏油路看起來有水？",
+    "options": [
+      "真的有水",
+      "光線折射",
+      "路面反光",
+      "空氣有霧"
+    ],
+    "answerIndex": 1,
+    "explanation": "熱空氣造成折射，形成海市蜃樓。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0059",
+    "subject": "science",
+    "prompt": "為什麼白色衣服比較不吸熱？",
+    "options": [
+      "顏色更冷",
+      "反射較多光",
+      "材質更薄",
+      "風更大"
+    ],
+    "answerIndex": 1,
+    "explanation": "白色反射較多光，吸熱較少。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0060",
+    "subject": "science",
+    "prompt": "為什麼吹風機會讓水分蒸發變快？",
+    "options": [
+      "風很冷",
+      "加熱與加速對流",
+      "水自己消失",
+      "空氣變稀薄"
+    ],
+    "answerIndex": 1,
+    "explanation": "加熱與加速對流讓蒸發加快。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0061",
+    "subject": "science",
+    "prompt": "為什麼熱水瓶外壁不會很燙？",
+    "options": [
+      "水不熱",
+      "雙層隔熱",
+      "材質吸熱",
+      "空氣變冷"
+    ],
+    "answerIndex": 1,
+    "explanation": "雙層隔熱減少熱量傳出。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0062",
+    "subject": "science",
+    "prompt": "為什麼肥皂可以洗掉油？",
+    "options": [
+      "油自己消失",
+      "肥皂能包住油",
+      "水變酸",
+      "油被蒸發"
+    ],
+    "answerIndex": 1,
+    "explanation": "肥皂分子能包住油滴讓它分散。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0063",
+    "subject": "science",
+    "prompt": "為什麼電風扇不會讓室溫變低？",
+    "options": [
+      "會變低",
+      "只是讓人變涼",
+      "吸走熱氣",
+      "產生冷風"
+    ],
+    "answerIndex": 1,
+    "explanation": "風扇主要加速散熱，室溫不會降低。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0064",
+    "subject": "science",
+    "prompt": "為什麼海水導電比淡水強？",
+    "options": [
+      "鹽分多",
+      "水更重",
+      "溫度高",
+      "顏色深"
+    ],
+    "answerIndex": 0,
+    "explanation": "鹽分帶來更多離子，導電性更強。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0065",
+    "subject": "science",
+    "prompt": "為什麼氣球摩擦頭髮會吸住？",
+    "options": [
+      "因為重力",
+      "因為靜電",
+      "因為熱量",
+      "因為磁力"
+    ],
+    "answerIndex": 1,
+    "explanation": "摩擦產生靜電，帶電後相互吸引。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0066",
+    "subject": "science",
+    "prompt": "為什麼雲看起來是白色？",
+    "options": [
+      "本身白色",
+      "反射散射光",
+      "只有晚上白",
+      "雲裡有鹽"
+    ],
+    "answerIndex": 1,
+    "explanation": "雲滴散射光線，所以看起來白。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0067",
+    "subject": "science",
+    "prompt": "為什麼同樣溫度下，木頭摸起來較不冷？",
+    "options": [
+      "木頭不冷",
+      "導熱慢",
+      "木頭更熱",
+      "因為顏色"
+    ],
+    "answerIndex": 1,
+    "explanation": "木頭導熱慢，熱量流失較慢。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0068",
+    "subject": "science",
+    "prompt": "為什麼隨身聽耳機會聽到一點外界聲音？",
+    "options": [
+      "耳機壞了",
+      "隔音不是完全",
+      "耳朵開著",
+      "聲音反射"
+    ],
+    "answerIndex": 1,
+    "explanation": "多數耳機隔音不是完全密封。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0069",
+    "subject": "science",
+    "prompt": "為什麼冰箱外側有時會發熱？",
+    "options": [
+      "冰箱壞掉",
+      "散熱管在外側",
+      "外面太熱",
+      "壓縮機漏氣"
+    ],
+    "answerIndex": 1,
+    "explanation": "散熱管將熱排到外側。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0070",
+    "subject": "science",
+    "prompt": "為什麼雷雨天避免在空曠處高舉金屬物？",
+    "options": [
+      "金屬會吸雨",
+      "會成為高點",
+      "會變熱",
+      "會滑倒"
+    ],
+    "answerIndex": 1,
+    "explanation": "高而導電的物體會增加被雷擊風險。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0071",
+    "subject": "science",
+    "prompt": "為什麼水滴是球形而不是方形？",
+    "options": [
+      "重力",
+      "表面張力",
+      "風力",
+      "溫度"
+    ],
+    "answerIndex": 1,
+    "explanation": "表面張力讓水滴趨向球形。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0072",
+    "subject": "science",
+    "prompt": "為什麼橡皮筋拉長會變熱？",
+    "options": [
+      "摩擦",
+      "分子排列改變",
+      "吸熱",
+      "電流"
+    ],
+    "answerIndex": 1,
+    "explanation": "拉伸時分子排列改變，釋放熱量。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0073",
+    "subject": "science",
+    "prompt": "為什麼鹽水的沸點比純水高？",
+    "options": [
+      "鹽變熱",
+      "蒸發慢",
+      "溶質提高沸點",
+      "水變重"
+    ],
+    "answerIndex": 2,
+    "explanation": "溶質會提高沸點。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0074",
+    "subject": "science",
+    "prompt": "為什麼吸盤能黏在牆上？",
+    "options": [
+      "膠水",
+      "真空吸附",
+      "磁力",
+      "摩擦力"
+    ],
+    "answerIndex": 1,
+    "explanation": "吸盤排出空氣形成低壓吸附。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0075",
+    "subject": "science",
+    "prompt": "為什麼電池有正負極？",
+    "options": [
+      "為了顏色",
+      "化學反應方向",
+      "讓電量變大",
+      "避免爆炸"
+    ],
+    "answerIndex": 1,
+    "explanation": "化學反應有方向性，形成電位差。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0076",
+    "subject": "science",
+    "prompt": "為什麼吸管插在水中會看起來彎曲？",
+    "options": [
+      "折射",
+      "反射",
+      "水變形",
+      "眼睛錯覺"
+    ],
+    "answerIndex": 0,
+    "explanation": "光在不同介質折射造成視覺彎曲。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0077",
+    "subject": "science",
+    "prompt": "為什麼在太空中聽不到聲音？",
+    "options": [
+      "沒有空氣傳播",
+      "聲音被吸收",
+      "溫度太低",
+      "耳朵壞掉"
+    ],
+    "answerIndex": 0,
+    "explanation": "聲音需要介質傳播，太空幾乎是真空。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0078",
+    "subject": "science",
+    "prompt": "為什麼人類在高海拔容易喘？",
+    "options": [
+      "空氣太冷",
+      "氧氣分壓低",
+      "風太大",
+      "壓力太高"
+    ],
+    "answerIndex": 1,
+    "explanation": "氧氣分壓低，吸到的氧變少。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0079",
+    "subject": "science",
+    "prompt": "為什麼氣泡上升時會變大？",
+    "options": [
+      "變熱",
+      "壓力變小",
+      "空氣變重",
+      "水變輕"
+    ],
+    "answerIndex": 1,
+    "explanation": "越接近水面壓力越小，氣泡膨脹。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0080",
+    "subject": "science",
+    "prompt": "為什麼地球有磁場？",
+    "options": [
+      "地核運動",
+      "月亮影響",
+      "太陽風",
+      "海洋流動"
+    ],
+    "answerIndex": 0,
+    "explanation": "地核流動產生電流，形成磁場。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0081",
+    "subject": "science",
+    "prompt": "為什麼風會讓人覺得更冷？",
+    "options": [
+      "風很冷",
+      "加速散熱",
+      "溫度變低",
+      "衣服變薄"
+    ],
+    "answerIndex": 1,
+    "explanation": "風加速皮膚散熱，體感變冷。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0082",
+    "subject": "science",
+    "prompt": "為什麼熱氣球裡要加熱空氣？",
+    "options": [
+      "變亮",
+      "空氣變輕",
+      "空氣變濕",
+      "空氣變重"
+    ],
+    "answerIndex": 1,
+    "explanation": "熱空氣密度較低，浮力增加。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0083",
+    "subject": "science",
+    "prompt": "為什麼彩虹通常是弧形？",
+    "options": [
+      "地球是圓的",
+      "光線折射與反射",
+      "天空彎曲",
+      "雨滴形狀"
+    ],
+    "answerIndex": 1,
+    "explanation": "光在雨滴內折射與反射形成弧形。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0084",
+    "subject": "science",
+    "prompt": "為什麼玻璃容易碎成尖銳碎片？",
+    "options": [
+      "因為很薄",
+      "材料特性",
+      "裡面有氣泡",
+      "受潮"
+    ],
+    "answerIndex": 1,
+    "explanation": "玻璃是脆性材料，破裂時形成尖銳碎片。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0085",
+    "subject": "science",
+    "prompt": "為什麼海邊白天風向多從海吹向陸？",
+    "options": [
+      "海水重",
+      "海陸溫差",
+      "雲在移動",
+      "潮汐"
+    ],
+    "answerIndex": 1,
+    "explanation": "海陸溫差造成空氣流動。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0086",
+    "subject": "science",
+    "prompt": "為什麼電線外面要包絕緣層？",
+    "options": [
+      "好看",
+      "防止漏電",
+      "讓電更強",
+      "避免變熱"
+    ],
+    "answerIndex": 1,
+    "explanation": "絕緣層可防止漏電與觸電。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0087",
+    "subject": "science",
+    "prompt": "為什麼冬天靜電比較多？",
+    "options": [
+      "衣服厚",
+      "空氣乾燥",
+      "氣溫低",
+      "鞋子硬"
+    ],
+    "answerIndex": 1,
+    "explanation": "乾燥空氣讓電荷更容易累積。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0088",
+    "subject": "science",
+    "prompt": "為什麼聲音在水裡傳得更快？",
+    "options": [
+      "水更冷",
+      "介質密度較大",
+      "水會放大聲音",
+      "耳朵不同"
+    ],
+    "answerIndex": 1,
+    "explanation": "密度較大使聲波傳得更快。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0089",
+    "subject": "science",
+    "prompt": "為什麼太空人腳踩地板會漂浮？",
+    "options": [
+      "沒有重力",
+      "重力很小",
+      "鞋子太輕",
+      "地板滑"
+    ],
+    "answerIndex": 1,
+    "explanation": "在軌道上呈失重狀態，重力效果被抵消。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0090",
+    "subject": "science",
+    "prompt": "為什麼紫外線容易讓皮膚曬黑？",
+    "options": [
+      "溫度高",
+      "刺激黑色素",
+      "皮膚變乾",
+      "血液變熱"
+    ],
+    "answerIndex": 1,
+    "explanation": "紫外線刺激黑色素生成，皮膚變黑。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0091",
+    "subject": "science",
+    "prompt": "為什麼酸性物質能與金屬反應？",
+    "options": [
+      "溫度高",
+      "氫離子作用",
+      "顏色不同",
+      "重量較大"
+    ],
+    "answerIndex": 1,
+    "explanation": "酸中的氫離子容易與金屬反應。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0092",
+    "subject": "science",
+    "prompt": "為什麼紙飛機加了機翼會飛更遠？",
+    "options": [
+      "更重",
+      "增加升力",
+      "減少重力",
+      "因為漂亮"
+    ],
+    "answerIndex": 1,
+    "explanation": "機翼形狀能增加升力與穩定性。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0093",
+    "subject": "science",
+    "prompt": "為什麼玻璃窗上會結露？",
+    "options": [
+      "玻璃變冷",
+      "水氣凝結",
+      "空氣變重",
+      "風太大"
+    ],
+    "answerIndex": 1,
+    "explanation": "水氣遇冷凝結在玻璃表面。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0094",
+    "subject": "science",
+    "prompt": "為什麼喝熱飲會覺得口乾？",
+    "options": [
+      "水太熱",
+      "蒸發加快",
+      "糖太多",
+      "鹽太多"
+    ],
+    "answerIndex": 1,
+    "explanation": "熱飲讓口腔水分蒸發更快。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0095",
+    "subject": "science",
+    "prompt": "為什麼擴音器可以把聲音放大？",
+    "options": [
+      "加熱空氣",
+      "增加振幅",
+      "吸收聲音",
+      "改變頻率"
+    ],
+    "answerIndex": 1,
+    "explanation": "擴音器透過放大振幅讓聲音變大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0096",
+    "subject": "science",
+    "prompt": "為什麼夜空看不到太陽，卻能看到星星？",
+    "options": [
+      "星星更亮",
+      "太陽在背面",
+      "大氣吸收",
+      "星星較近"
+    ],
+    "answerIndex": 1,
+    "explanation": "地球轉到背向太陽的一面，太陽被地球遮住。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0097",
+    "subject": "science",
+    "prompt": "為什麼海水喝了反而更渴？",
+    "options": [
+      "鹽分高",
+      "水太冷",
+      "喝太多",
+      "胃不吸收"
+    ],
+    "answerIndex": 0,
+    "explanation": "鹽分高會讓身體排出更多水分。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0098",
+    "subject": "science",
+    "prompt": "為什麼月亮總是用同一面對著地球？",
+    "options": [
+      "月亮不轉",
+      "自轉與公轉同步",
+      "地球引力拉扯",
+      "月亮太重"
+    ],
+    "answerIndex": 1,
+    "explanation": "月球自轉與公轉週期幾乎同步。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "science_v3_0099",
+    "subject": "science",
+    "prompt": "為什麼物體在太空中會一直漂？",
+    "options": [
+      "沒有阻力",
+      "有推力",
+      "因為冷",
+      "因為磁場"
+    ],
+    "answerIndex": 0,
+    "explanation": "幾乎沒有阻力，物體會保持原運動狀態。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "science_v3_0100",
+    "subject": "science",
+    "prompt": "為什麼鏡子成像左右相反？",
+    "options": [
+      "光速變慢",
+      "前後翻轉",
+      "因為眼睛",
+      "鏡子轉動"
+    ],
+    "answerIndex": 1,
+    "explanation": "鏡子翻轉的是前後方向，因此左右看起來反。",
+    "difficulty": "medium"
   }
 ]

@@ -668,7 +668,7 @@
       "墨西哥"
     ],
     "answerIndex": 3,
-    "explanation": "喀斯特地形容易讓人想到中國或越南。\n最長地下河系統在墨西哥尤卡坦。",
+    "explanation": "喀斯特地形容易讓人想到中國或越南。\n最長地下河在墨西哥尤卡坦。",
     "difficulty": "hard"
   },
   {
@@ -698,5 +698,705 @@
     "answerIndex": 3,
     "explanation": "多數國家使用攝氏很習慣。\n美國仍以華氏為主。",
     "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0051",
+    "subject": "world",
+    "prompt": "世界上最大的島嶼（不含大陸）是？",
+    "options": [
+      "格陵蘭",
+      "馬達加斯加",
+      "婆羅洲",
+      "新幾內亞"
+    ],
+    "answerIndex": 0,
+    "explanation": "最大的是格陵蘭島，面積遠大於其他島嶼。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0052",
+    "subject": "world",
+    "prompt": "世界上最深的湖是？",
+    "options": [
+      "貝加爾湖",
+      "坦噶尼喀湖",
+      "蘇必利爾湖",
+      "維多利亞湖"
+    ],
+    "answerIndex": 0,
+    "explanation": "貝加爾湖是世界最深的湖。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0053",
+    "subject": "world",
+    "prompt": "世界最高峰是？",
+    "options": [
+      "聖母峰",
+      "喬戈里峰",
+      "干城章嘉峰",
+      "洛子峰"
+    ],
+    "answerIndex": 0,
+    "explanation": "世界最高峰是聖母峰。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0054",
+    "subject": "world",
+    "prompt": "世界最大的高原是？",
+    "options": [
+      "青藏高原",
+      "德干高原",
+      "蒙古高原",
+      "安那托利亞高原"
+    ],
+    "answerIndex": 0,
+    "explanation": "青藏高原是面積最大的高原。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0055",
+    "subject": "world",
+    "prompt": "世界最大的半島是？",
+    "options": [
+      "阿拉伯半島",
+      "印度半島",
+      "伊比利半島",
+      "斯堪地那維亞半島"
+    ],
+    "answerIndex": 0,
+    "explanation": "阿拉伯半島是世界最大半島。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0056",
+    "subject": "world",
+    "prompt": "土耳其的首都是？",
+    "options": [
+      "伊斯坦堡",
+      "安卡拉",
+      "伊茲密爾",
+      "安塔利亞"
+    ],
+    "answerIndex": 1,
+    "explanation": "土耳其首都是安卡拉，不是最大的城市。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0057",
+    "subject": "world",
+    "prompt": "澳洲的首都是？",
+    "options": [
+      "雪梨",
+      "墨爾本",
+      "坎培拉",
+      "布里斯本"
+    ],
+    "answerIndex": 2,
+    "explanation": "澳洲首都是坎培拉，不是最大城市。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0058",
+    "subject": "world",
+    "prompt": "巴西的首都是？",
+    "options": [
+      "里約",
+      "聖保羅",
+      "巴西利亞",
+      "薩爾瓦多"
+    ],
+    "answerIndex": 2,
+    "explanation": "巴西首都是巴西利亞。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0059",
+    "subject": "world",
+    "prompt": "唯一非矩形國旗的國家是？",
+    "options": [
+      "尼泊爾",
+      "瑞士",
+      "梵蒂岡",
+      "日本"
+    ],
+    "answerIndex": 0,
+    "explanation": "非矩形國旗只有尼泊爾，形狀非常特殊！😮",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0060",
+    "subject": "world",
+    "prompt": "沒有常備軍隊的國家之一是？",
+    "options": [
+      "哥斯大黎加",
+      "墨西哥",
+      "秘魯",
+      "智利"
+    ],
+    "answerIndex": 0,
+    "explanation": "哥斯大黎加沒有常備軍隊，改以其他方式維持安全。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0061",
+    "subject": "world",
+    "prompt": "官方語言數量最多的國家是？",
+    "options": [
+      "印度",
+      "南非",
+      "加拿大",
+      "比利時"
+    ],
+    "answerIndex": 1,
+    "explanation": "南非有多達 11 種官方語言。這數字很驚人🤯",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0062",
+    "subject": "world",
+    "prompt": "歐洲面積最大的國家是？",
+    "options": [
+      "俄羅斯",
+      "烏克蘭",
+      "法國",
+      "西班牙"
+    ],
+    "answerIndex": 0,
+    "explanation": "歐洲面積最大的是俄羅斯。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0063",
+    "subject": "world",
+    "prompt": "亞洲面積最小的國家是？",
+    "options": [
+      "馬爾地夫",
+      "新加坡",
+      "汶萊",
+      "巴林"
+    ],
+    "answerIndex": 0,
+    "explanation": "亞洲面積最小的國家是馬爾地夫。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0064",
+    "subject": "world",
+    "prompt": "世界人口最多的國家是？",
+    "options": [
+      "中國",
+      "印度",
+      "美國",
+      "印尼"
+    ],
+    "answerIndex": 1,
+    "explanation": "世界人口最多的是印度。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0065",
+    "subject": "world",
+    "prompt": "被稱為「千湖之國」的國家是？",
+    "options": [
+      "芬蘭",
+      "瑞典",
+      "挪威",
+      "冰島"
+    ],
+    "answerIndex": 0,
+    "explanation": "芬蘭因湖泊眾多而得名。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0066",
+    "subject": "world",
+    "prompt": "新西蘭的首都是？",
+    "options": [
+      "奧克蘭",
+      "基督城",
+      "惠靈頓",
+      "皇后鎮"
+    ],
+    "answerIndex": 2,
+    "explanation": "新西蘭首都是惠靈頓。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0067",
+    "subject": "world",
+    "prompt": "冰島的首都是？",
+    "options": [
+      "奧斯陸",
+      "雷克雅維克",
+      "赫爾辛基",
+      "哥本哈根"
+    ],
+    "answerIndex": 1,
+    "explanation": "冰島首都是雷克雅維克。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0068",
+    "subject": "world",
+    "prompt": "「死海」位於哪兩國之間？",
+    "options": [
+      "以色列與約旦",
+      "埃及與利比亞",
+      "土耳其與敘利亞",
+      "沙烏地與葉門"
+    ],
+    "answerIndex": 0,
+    "explanation": "死海位於以色列與約旦之間。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0069",
+    "subject": "world",
+    "prompt": "死海之所以出名，是因為？",
+    "options": [
+      "海水特別冷",
+      "鹽分極高",
+      "波浪很大",
+      "潮汐很強"
+    ],
+    "answerIndex": 1,
+    "explanation": "死海鹽分極高，浮力非常強。這真的很反直覺😮",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0070",
+    "subject": "world",
+    "prompt": "非洲人口最多的國家是？",
+    "options": [
+      "南非",
+      "埃及",
+      "尼日利亞",
+      "衣索比亞"
+    ],
+    "answerIndex": 2,
+    "explanation": "非洲人口最多的是尼日利亞。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0071",
+    "subject": "world",
+    "prompt": "撒哈拉沙漠主要位於哪一洲？",
+    "options": [
+      "亞洲",
+      "非洲",
+      "南美洲",
+      "北美洲"
+    ],
+    "answerIndex": 1,
+    "explanation": "撒哈拉沙漠位於非洲北部。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0072",
+    "subject": "world",
+    "prompt": "世界上最長的國土南北跨度國家是？",
+    "options": [
+      "智利",
+      "俄羅斯",
+      "加拿大",
+      "阿根廷"
+    ],
+    "answerIndex": 0,
+    "explanation": "智利南北狹長，跨度非常驚人。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0073",
+    "subject": "world",
+    "prompt": "哪個國家被稱為「世界屋脊」？",
+    "options": [
+      "尼泊爾",
+      "印度",
+      "不丹",
+      "西藏（地區）"
+    ],
+    "answerIndex": 3,
+    "explanation": "「世界屋脊」多指青藏高原所在地。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0074",
+    "subject": "world",
+    "prompt": "位於撒哈拉以南、面積最大的國家是？",
+    "options": [
+      "剛果民主共和國",
+      "蘇丹",
+      "尼日利亞",
+      "阿爾及利亞"
+    ],
+    "answerIndex": 0,
+    "explanation": "撒哈拉以南最大的是剛果民主共和國。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0075",
+    "subject": "world",
+    "prompt": "世界上最高的瀑布所在國家是？",
+    "options": [
+      "巴西",
+      "委內瑞拉",
+      "加拿大",
+      "冰島"
+    ],
+    "answerIndex": 1,
+    "explanation": "世界最高瀑布是天使瀑布，位於委內瑞拉。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0076",
+    "subject": "world",
+    "prompt": "世界上最長的跨海大橋系統位於哪裡？",
+    "options": [
+      "日本",
+      "中國",
+      "美國",
+      "法國"
+    ],
+    "answerIndex": 1,
+    "explanation": "目前最長的跨海大橋在中國。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0077",
+    "subject": "world",
+    "prompt": "巴黎位於哪條河流沿岸？",
+    "options": [
+      "塞納河",
+      "萊茵河",
+      "多瑙河",
+      "泰晤士河"
+    ],
+    "answerIndex": 0,
+    "explanation": "巴黎位於塞納河沿岸。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0078",
+    "subject": "world",
+    "prompt": "倫敦位於哪條河流沿岸？",
+    "options": [
+      "泰晤士河",
+      "塞納河",
+      "萊茵河",
+      "易北河"
+    ],
+    "answerIndex": 0,
+    "explanation": "倫敦位於泰晤士河沿岸。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0079",
+    "subject": "world",
+    "prompt": "世界上最大的國內湖泊面積國家是？",
+    "options": [
+      "美國",
+      "加拿大",
+      "俄羅斯",
+      "澳洲"
+    ],
+    "answerIndex": 1,
+    "explanation": "加拿大境內湖泊面積非常大。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0080",
+    "subject": "world",
+    "prompt": "哪個國家同時在北半球與西半球？",
+    "options": [
+      "澳洲",
+      "日本",
+      "加拿大",
+      "南非"
+    ],
+    "answerIndex": 2,
+    "explanation": "加拿大位於北半球與西半球。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0081",
+    "subject": "world",
+    "prompt": "世界上最乾燥的有人區之一是？",
+    "options": [
+      "撒哈拉沙漠",
+      "阿塔卡馬沙漠",
+      "戈壁沙漠",
+      "塔克拉瑪干沙漠"
+    ],
+    "answerIndex": 1,
+    "explanation": "阿塔卡馬沙漠以極端乾燥著名。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0082",
+    "subject": "world",
+    "prompt": "哪個國家擁有最多的火山島？",
+    "options": [
+      "日本",
+      "印尼",
+      "菲律賓",
+      "冰島"
+    ],
+    "answerIndex": 1,
+    "explanation": "印尼擁有大量火山島。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0083",
+    "subject": "world",
+    "prompt": "「地中海」的地理位置介於哪兩大洲之間？",
+    "options": [
+      "歐洲與非洲",
+      "歐洲與亞洲",
+      "非洲與亞洲",
+      "美洲與非洲"
+    ],
+    "answerIndex": 0,
+    "explanation": "地中海位於歐洲與非洲之間。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0084",
+    "subject": "world",
+    "prompt": "北極點位於哪一片海域？",
+    "options": [
+      "北冰洋",
+      "大西洋",
+      "太平洋",
+      "波羅的海"
+    ],
+    "answerIndex": 0,
+    "explanation": "北極點位於北冰洋海域。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0085",
+    "subject": "world",
+    "prompt": "非洲最長的河流是？",
+    "options": [
+      "尼羅河",
+      "剛果河",
+      "尼日河",
+      "贊比西河"
+    ],
+    "answerIndex": 0,
+    "explanation": "非洲最長的河流是尼羅河。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0086",
+    "subject": "world",
+    "prompt": "世界上最大的珊瑚礁系統是？",
+    "options": [
+      "大堡礁",
+      "伯利茲堡礁",
+      "紅海珊瑚礁",
+      "加拉巴哥珊瑚礁"
+    ],
+    "answerIndex": 0,
+    "explanation": "最大的是澳洲的大堡礁。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0087",
+    "subject": "world",
+    "prompt": "地球的「世界時」以哪座城市為基準？",
+    "options": [
+      "倫敦格林威治",
+      "巴黎",
+      "紐約",
+      "日內瓦"
+    ],
+    "answerIndex": 0,
+    "explanation": "世界時以格林威治為基準。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0088",
+    "subject": "world",
+    "prompt": "「南美洲最大的國家」是？",
+    "options": [
+      "阿根廷",
+      "秘魯",
+      "巴西",
+      "智利"
+    ],
+    "answerIndex": 2,
+    "explanation": "南美洲最大的國家是巴西。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0089",
+    "subject": "world",
+    "prompt": "世界上國土最狹長的國家之一是？",
+    "options": [
+      "挪威",
+      "智利",
+      "義大利",
+      "越南"
+    ],
+    "answerIndex": 1,
+    "explanation": "智利國土狹長非常明顯。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0090",
+    "subject": "world",
+    "prompt": "哪個國家有三座首都的設計？",
+    "options": [
+      "南非",
+      "尼日利亞",
+      "肯亞",
+      "摩洛哥"
+    ],
+    "answerIndex": 0,
+    "explanation": "南非有三個首都分別負責不同職能。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0091",
+    "subject": "world",
+    "prompt": "全世界使用阿拉伯語最多人口的國家是？",
+    "options": [
+      "沙烏地阿拉伯",
+      "埃及",
+      "伊拉克",
+      "阿爾及利亞"
+    ],
+    "answerIndex": 1,
+    "explanation": "人口最多的阿拉伯語國家是埃及。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0092",
+    "subject": "world",
+    "prompt": "日本的最高峰是？",
+    "options": [
+      "富士山",
+      "阿蘇山",
+      "御嶽山",
+      "立山"
+    ],
+    "answerIndex": 0,
+    "explanation": "日本最高峰是富士山。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0093",
+    "subject": "world",
+    "prompt": "哪個國家被稱為「翡翠之島」？",
+    "options": [
+      "冰島",
+      "愛爾蘭",
+      "紐西蘭",
+      "菲律賓"
+    ],
+    "answerIndex": 1,
+    "explanation": "「翡翠之島」常指愛爾蘭。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0094",
+    "subject": "world",
+    "prompt": "世界上最長的人工運河是？",
+    "options": [
+      "蘇伊士運河",
+      "巴拿馬運河",
+      "京杭大運河",
+      "基爾運河"
+    ],
+    "answerIndex": 2,
+    "explanation": "最長的人工運河是京杭大運河。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0095",
+    "subject": "world",
+    "prompt": "非洲面積最大的國家是？",
+    "options": [
+      "利比亞",
+      "阿爾及利亞",
+      "蘇丹",
+      "剛果民主共和國"
+    ],
+    "answerIndex": 1,
+    "explanation": "非洲面積最大的是阿爾及利亞。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0096",
+    "subject": "world",
+    "prompt": "「世界上最深的海溝」是？",
+    "options": [
+      "馬里亞納海溝",
+      "菲律賓海溝",
+      "日本海溝",
+      "阿留申海溝"
+    ],
+    "answerIndex": 0,
+    "explanation": "最深的海溝是馬里亞納海溝。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "world_v3_0097",
+    "subject": "world",
+    "prompt": "世界上最南端的首都是？",
+    "options": [
+      "威靈頓",
+      "坎培拉",
+      "布宜諾斯艾利斯",
+      "開普敦"
+    ],
+    "answerIndex": 0,
+    "explanation": "最南端的首都是威靈頓。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0098",
+    "subject": "world",
+    "prompt": "世界上最北端的首都是？",
+    "options": [
+      "雷克雅維克",
+      "赫爾辛基",
+      "奧斯陸",
+      "斯德哥爾摩"
+    ],
+    "answerIndex": 0,
+    "explanation": "最北端的首都是雷克雅維克。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "world_v3_0099",
+    "subject": "world",
+    "prompt": "「日出最早」常見於哪個國家？",
+    "options": [
+      "日本",
+      "紐西蘭",
+      "澳洲",
+      "印尼"
+    ],
+    "answerIndex": 1,
+    "explanation": "由於時區位置，紐西蘭常最早迎來日出。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "world_v3_0100",
+    "subject": "world",
+    "prompt": "世界上最大的灣是？",
+    "options": [
+      "孟加拉灣",
+      "哈德遜灣",
+      "墨西哥灣",
+      "幾內亞灣"
+    ],
+    "answerIndex": 0,
+    "explanation": "最大的是孟加拉灣。",
+    "difficulty": "medium"
   }
 ]
