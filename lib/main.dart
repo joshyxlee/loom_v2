@@ -143,8 +143,28 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   bool _showPetDetails = false;
+  late final AnimationController _petBreathController;
+  late final Animation<double> _petBreathScale;
+
+  @override
+  void initState() {
+    super.initState();
+    _petBreathController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1800),
+    )..repeat(reverse: true);
+    _petBreathScale = Tween<double>(begin: 1.0, end: 1.03).animate(
+      CurvedAnimation(parent: _petBreathController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _petBreathController.dispose();
+    super.dispose();
+  }
 
   String _resolvePetTypeLabel() {
     final credits = widget.coreDataStore.creditsBySubject;
@@ -252,22 +272,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
                       ),
                     ),
-                    Container(
-                      width: 200,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.06),
-                            blurRadius: 20,
-                            offset: const Offset(0, 8),
-                          ),
-                        ],
-                      ),
-                      child: const Center(
-                        child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
+                    ScaleTransition(
+                      scale: _petBreathScale,
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.06),
+                              blurRadius: 20,
+                              offset: const Offset(0, 8),
+                            ),
+                          ],
+                        ),
+                        child: const Center(
+                          child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -470,6 +493,10 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showFeedback = false;
   String _resultLine = '';
   String? _lastResultLine;
+  bool _showQuickHint = false;
+  String _quickHintText = '';
+  Color _quickHintBg = Colors.transparent;
+  double _petBounceScale = 1.0;
 
   static const _correctMomentTexts = [
     '變強了。',
@@ -585,12 +612,35 @@ class _QuizScreenState extends State<QuizScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('題目 ${_index + 1} / ${widget.questions.length}',
-                    style: Theme.of(context).textTheme.titleMedium),
+                Row(
+                  children: [
+                    AnimatedScale(
+                      scale: _petBounceScale,
+                      duration: const Duration(milliseconds: 140),
+                      child: const Icon(Icons.pets, size: 18, color: Color(0xFF3CC77A)),
+                    ),
+                    const SizedBox(width: 6),
+                    Text('題目 ${_index + 1} / ${widget.questions.length}',
+                        style: Theme.of(context).textTheme.titleMedium),
+                  ],
+                ),
                 const SizedBox(height: 6),
                 LinearProgressIndicator(
                   value: (_index + 1) / widget.questions.length,
                 ),
+                if (_showQuickHint) ...[
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: _quickHintBg,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(_quickHintText,
+                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+                  ),
+                ],
                 const SizedBox(height: 8),
                 TweenAnimationBuilder<double>(
                   tween: Tween(begin: 0, end: _levelProgress),
@@ -626,10 +676,10 @@ class _QuizScreenState extends State<QuizScreen> {
                       isLocked: _selected != null,
                       isCorrectOption: question.isCorrect(i),
                       onTap: () {
+                        final isCorrect = question.isCorrect(i);
                         setState(() {
                           _selected = i;
                           _lastLevel = widget.progressService.snapshot.level;
-                          final isCorrect = question.isCorrect(i);
                           final result = widget.progressService.recordAnswer(
                             isCorrect: isCorrect,
                             difficulty: question.difficultyValue,
@@ -675,6 +725,20 @@ class _QuizScreenState extends State<QuizScreen> {
                           setState(() {
                             _isJudging = false;
                             _showFeedback = true;
+                            _showQuickHint = true;
+                            _quickHintText = isCorrect ? '答對了！太強啦！' : '差一點！記住就賺到';
+                            _quickHintBg = isCorrect
+                                ? Colors.green.withOpacity(0.12)
+                                : Colors.red.withOpacity(0.12);
+                            _petBounceScale = 1.06;
+                          });
+                          Future.delayed(const Duration(milliseconds: 120), () {
+                            if (!mounted) return;
+                            setState(() => _petBounceScale = 1.0);
+                          });
+                          Future.delayed(const Duration(milliseconds: 900), () {
+                            if (!mounted) return;
+                            setState(() => _showQuickHint = false);
                           });
                         });
 
@@ -731,6 +795,8 @@ class _QuizScreenState extends State<QuizScreen> {
                           _levelUpPulse = false;
                           _isJudging = false;
                           _showFeedback = false;
+                          _showQuickHint = false;
+                          _petBounceScale = 1.0;
                         });
                       }
                     },
