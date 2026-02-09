@@ -256,6 +256,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         : ((playerLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))) /
                 (nextStageLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))))
             .clamp(0.0, 1.0);
+    final dailyTargetForFlame = 5;
+    final remainingForFlame =
+        (dailyTargetForFlame - snapshot.dailyAnswered).clamp(0, dailyTargetForFlame);
+    final flameLit = snapshot.dailyAnswered >= dailyTargetForFlame;
 
     return Scaffold(
       body: SafeArea(
@@ -344,6 +348,25 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                         SizedBox(
                           width: double.infinity,
                           child: LinearProgressIndicator(value: progress),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  _CardSection(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('今天再 $remainingForFlame 題，就能點亮今天的火焰 🔥',
+                            style: const TextStyle(color: Colors.black54)),
+                        const SizedBox(height: 6),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(7, (index) {
+                            final isFilled = index == 0 ? flameLit : false;
+                            return Text(isFilled ? '🔥' : '▢',
+                                style: const TextStyle(fontSize: 16));
+                          }),
                         ),
                       ],
                     ),
