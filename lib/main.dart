@@ -862,14 +862,14 @@ class _AnswerOption extends StatelessWidget {
     final showCorrect = isLocked && isCorrectOption;
     final showWrong = isLocked && selected && !isCorrectOption;
     final bgColor = showCorrect
-        ? Colors.green.withOpacity(0.12)
+        ? Colors.green.shade100
         : showWrong
-            ? Colors.red.withOpacity(0.12)
+            ? Colors.red.shade100
             : Colors.white;
     final borderColor = showCorrect
-        ? Colors.green
+        ? Colors.green.shade400
         : showWrong
-            ? Colors.red
+            ? Colors.red.shade400
             : Colors.grey.shade300;
 
     return OutlinedButton(
