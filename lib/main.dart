@@ -144,6 +144,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _showPetDetails = false;
+
   String _resolvePetTypeLabel() {
     final credits = widget.coreDataStore.creditsBySubject;
     final total = credits.values.fold<int>(0, (sum, v) => sum + v);
@@ -242,6 +244,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: IconButton(
+                        visualDensity: VisualDensity.compact,
+                        onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
+                        icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
+                      ),
+                    ),
                     Container(
                       width: 200,
                       height: 200,
@@ -260,19 +270,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
                       ),
                     ),
-                    const SizedBox(height: 14),
-                    Text('Lv $playerLevel',
-                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-                    const SizedBox(height: 6),
-                    Text('Bond $bond/10', style: const TextStyle(fontSize: 15, color: Colors.black87)),
+                    const SizedBox(height: 12),
+                    const Text('你的學習夥伴正在成長中',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 4),
-                    Text('Stage $petStage · $petTypeLabel',
-                        style: const TextStyle(fontSize: 15, color: Colors.black54)),
-                    const SizedBox(height: 6),
-                    Text(
-                      petStage >= 4 ? '接下來是羈絆成長' : '再玩幾題就進化',
-                      style: const TextStyle(fontSize: 14, color: Colors.black54),
-                    ),
+                    const Text('再玩幾題就會有新變化',
+                        style: TextStyle(fontSize: 14, color: Colors.black54)),
+                    if (_showPetDetails) ...[
+                      const SizedBox(height: 8),
+                      Text('Lv $playerLevel · XP ${snapshot.totalXp}',
+                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                      Text('Bond $bond/10 · Stage $petStage · $petTypeLabel',
+                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                    ],
                     const SizedBox(height: 12),
                     SizedBox(
                       width: 220,
