@@ -514,33 +514,15 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _isJudging = false;
   bool _showFeedback = false;
   String _resultLine = '';
-  String? _lastResultLine;
   double _petBounceScale = 1.0;
   bool _showResultDialog = false;
   bool _lastIsCorrect = false;
 
   // moment texts removed
 
-  static const _correctLines = [
-    '答對了！腦袋有在轉',
-    '太強了，這題你真的懂',
-    '漂亮，直接命中',
-    '你很會欸',
-    '這題被你秒殺',
-    'Nice！又變聰明了一點',
-    '穩，繼續',
-    '這就是實力',
-  ];
-
-  static const _wrongLines = [
-    '差一點點！這題很容易誤判',
-    '可惜，但你快抓到了',
-    '沒事，記住就賺到',
-    '這題很陰，下一題扳回來',
-    '懂了就好，下一題',
-    '正常，很多人也會選錯',
-    '差一口氣，下題追回來',
-    '可惜！但你有在思考',
+  static const _correctResultTexts = [
+    '答對了！',
+    '這題你抓到了',
   ];
 
   @override
@@ -559,15 +541,9 @@ class _QuizScreenState extends State<QuizScreen> {
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
 
   String _pickResultLine(bool isCorrect) {
+    if (!isCorrect) return '沒事，這題很多人會錯';
     final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    final pool = isCorrect ? _correctLines : _wrongLines;
-    if (pool.length == 1) return pool.first;
-    String candidate = pool[rng.nextInt(pool.length)];
-    if (_lastResultLine == null) return candidate;
-    while (candidate == _lastResultLine) {
-      candidate = pool[rng.nextInt(pool.length)];
-    }
-    return candidate;
+    return _correctResultTexts[rng.nextInt(_correctResultTexts.length)];
   }
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
@@ -667,7 +643,6 @@ class _QuizScreenState extends State<QuizScreen> {
                           _isJudging = true;
                           _showFeedback = false;
                           _resultLine = _pickResultLine(isCorrect);
-                          _lastResultLine = _resultLine;
                           _lastIsCorrect = isCorrect;
                           if (isCorrect) {
                             _correctStreak += 1;
@@ -774,20 +749,22 @@ class _QuizScreenState extends State<QuizScreen> {
                     opacity: _showResultDialog ? 1.0 : 0.0,
                     duration: const Duration(milliseconds: 200),
                     child: Center(
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-                        decoration: BoxDecoration(
-                          color: _lastIsCorrect
-                              ? Colors.green.withOpacity(0.12)
-                              : Colors.red.withOpacity(0.12),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Text(
-                          _resultLine,
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800,
-                            color: _lastIsCorrect ? Colors.green : Colors.red,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.86,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+                          decoration: BoxDecoration(
+                            color: _lastIsCorrect ? Colors.green : Colors.red.shade400,
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: Text(
+                            _resultLine,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
