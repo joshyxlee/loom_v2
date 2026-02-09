@@ -250,9 +250,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         : ((snapshot.dailyTarget - snapshot.dailyAnswered) / 5).ceil();
     final isDone = remainingRounds == 0;
     final ctaLabel = isDone ? '再玩一回合' : '開始今日回合';
-    final current = widget.progressService.currentLevelXp(snapshot.level);
-    final next = widget.progressService.nextLevelXp(snapshot.level);
-    final progress = ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
+    final nextStageLevel = _nextStageLevel(petStage);
+    final progress = petStage >= 4
+        ? 1.0
+        : ((playerLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))) /
+                (nextStageLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))))
+            .clamp(0.0, 1.0);
 
     return Scaffold(
       body: SafeArea(
@@ -297,20 +300,19 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     const Text('你的學習夥伴正在成長中',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                     const SizedBox(height: 4),
-                    const Text('再玩幾題就會有新變化',
-                        style: TextStyle(fontSize: 14, color: Colors.black54)),
+                    Text(
+                      petStage >= 4 ? '再多玩幾題，羈絆就會更深' : '再玩一點就會有新變化',
+                      style: const TextStyle(fontSize: 14, color: Colors.black54),
+                    ),
                     if (_showPetDetails) ...[
                       const SizedBox(height: 8),
                       Text('Lv $playerLevel · XP ${snapshot.totalXp}',
                           style: const TextStyle(fontSize: 12, color: Colors.black54)),
                       Text('Bond $bond/10 · Stage $petStage · $petTypeLabel',
                           style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                      Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
+                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
                     ],
-                    const SizedBox(height: 12),
-                    SizedBox(
-                      width: 220,
-                      child: LinearProgressIndicator(value: progress),
-                    ),
                   ],
                 ),
               ),
@@ -326,29 +328,22 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   ),
                   const SizedBox(height: 12),
                   _CardSection(
-                    color: const Color(0xFFF1F2F4),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('累計 XP：${snapshot.totalXp}',
-                            style: const TextStyle(fontSize: 12, color: Colors.black45)),
-                        const SizedBox(height: 2),
-                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
-                            style: const TextStyle(fontSize: 12, color: Colors.black45)),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  _CardSection(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('再答幾題就會進化',
+                        const Text('再玩一點就會有變化',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         const SizedBox(height: 6),
                         Text(
-                          '你現在在 Lv $playerLevel，離下一次變化很近',
+                          petStage >= 4
+                              ? '接下來的進展會體現在你們的羈絆上'
+                              : '下一次成長就在前面',
                           style: const TextStyle(color: Colors.black54),
+                        ),
+                        const SizedBox(height: 8),
+                        SizedBox(
+                          width: double.infinity,
+                          child: LinearProgressIndicator(value: progress),
                         ),
                       ],
                     ),
