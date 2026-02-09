@@ -360,24 +360,35 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                         const Text('圖鑑',
                             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
                         const SizedBox(width: 8),
-                        Text('${widget.coreDataStore.pokedexEntries.length} collected',
-                            style: const TextStyle(color: Colors.black45, fontSize: 12)),
+                        if (playerLevel >= 40)
+                          Text('${widget.coreDataStore.pokedexEntries.length} collected',
+                              style: const TextStyle(color: Colors.black45, fontSize: 12))
+                        else
+                          const Text('Lv40 後開放',
+                              style: TextStyle(color: Colors.black45, fontSize: 12)),
                         const Spacer(),
                         TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => PokedexScreen(coreDataStore: widget.coreDataStore),
-                              ),
-                            );
-                          },
+                          onPressed: playerLevel >= 40
+                              ? () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          PokedexScreen(coreDataStore: widget.coreDataStore),
+                                    ),
+                                  );
+                                }
+                              : null,
                           child: const Text('查看', style: TextStyle(fontSize: 12)),
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 10),
+                  const Text('選擇養成方向',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12, color: Colors.black54)),
+                  const SizedBox(height: 6),
                   Wrap(
                     alignment: WrapAlignment.center,
                     spacing: 6,
@@ -389,6 +400,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                       );
                     }).toList(),
                   ),
+                  const SizedBox(height: 4),
+                  const Text('專攻一科，夥伴的樣子會跟著改變',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12, color: Colors.black45)),
                 ],
               ),
             ],
