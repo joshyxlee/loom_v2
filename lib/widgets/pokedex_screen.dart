@@ -13,23 +13,25 @@ class PokedexScreen extends StatelessWidget {
     final grouped = _groupByStage(coreDataStore.pokedexEntries);
     return Scaffold(
       appBar: AppBar(title: const Text('圖鑑')),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          for (final stage in [1, 2, 3, 4]) ...[
-            if (grouped[stage]?.isNotEmpty ?? false) ...[
-              Text('Stage $stage',
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 8),
-              ...grouped[stage]!.map((entry) => _EntryCard(
-                    entry: entry,
-                    coreDataStore: coreDataStore,
-                  )),
-              const SizedBox(height: 16),
-            ]
-          ],
-        ],
-      ),
+      body: coreDataStore.pokedexEntries.isEmpty
+          ? _EmptyState(onBack: () => Navigator.pop(context))
+          : ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                for (final stage in [1, 2, 3, 4]) ...[
+                  if (grouped[stage]?.isNotEmpty ?? false) ...[
+                    Text('Stage $stage',
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 8),
+                    ...grouped[stage]!.map((entry) => _EntryCard(
+                          entry: entry,
+                          coreDataStore: coreDataStore,
+                        )),
+                    const SizedBox(height: 16),
+                  ]
+                ],
+              ],
+            ),
     );
   }
 
@@ -41,6 +43,60 @@ class PokedexScreen extends StatelessWidget {
       map.putIfAbsent(entry.petStage, () => []).add(entry);
     }
     return map;
+  }
+}
+
+class _EmptyState extends StatelessWidget {
+  const _EmptyState({required this.onBack});
+
+  final VoidCallback onBack;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('你的圖鑑還是空的',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 10),
+            const Text('第一次進化在 Lv5', style: TextStyle(color: Colors.black54)),
+            const Text('進化後會自動收進圖鑑', style: TextStyle(color: Colors.black54)),
+            const SizedBox(height: 18),
+            const Text(
+              'Stage1@Lv5 → Stage2@Lv10 → Stage3@Lv20 → Stage4@Lv40',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.black87),
+            ),
+            const SizedBox(height: 18),
+            FilledButton(
+              onPressed: onBack,
+              child: const Text('回去開始一回合'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Chip extends StatelessWidget {
+  const _Chip({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF1F2F4),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(label, style: const TextStyle(fontSize: 12)),
+    );
   }
 }
 
@@ -72,13 +128,18 @@ class _EntryCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Type: $typeLabel', style: const TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 4),
-          Text('Top3: ${top3.join(', ')}'),
-          const SizedBox(height: 4),
+          Text('Stage ${entry.petStage} · $typeLabel',
+              style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: top3.map((label) => _Chip(label: label)).toList(),
+          ),
+          const SizedBox(height: 6),
           Text('Bond ${entry.bondLevelAtUnlock}'),
           const SizedBox(height: 4),
-          Text('Unlocked: $date', style: const TextStyle(color: Colors.black54)),
+          Text('Unlocked $date', style: const TextStyle(color: Colors.black54)),
         ],
       ),
     );

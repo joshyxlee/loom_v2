@@ -158,6 +158,42 @@ class _HomeScreenState extends State<HomeScreen> {
     return matches.isNotEmpty ? matches.first.displayName : 'Unknown';
   }
 
+  int _nextStageLevel(int stage) {
+    switch (stage) {
+      case 0:
+        return 5;
+      case 1:
+        return 10;
+      case 2:
+        return 20;
+      case 3:
+        return 40;
+      default:
+        return 40;
+    }
+  }
+
+  int _nextStageNumber(int stage) {
+    switch (stage) {
+      case 0:
+        return 1;
+      case 1:
+        return 2;
+      case 2:
+        return 3;
+      case 3:
+        return 4;
+      default:
+        return 4;
+    }
+  }
+
+  int _levelsToNextStage(int stage, int level) {
+    final target = _nextStageLevel(stage);
+    final diff = target - level;
+    return diff > 0 ? diff : 0;
+  }
+
   Future<void> _startSubject(BuildContext context, Subject subject) async {
     final questions = await widget.repository.getSession(subject: subject.key, count: 5);
     if (!context.mounted) return;
@@ -232,13 +268,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 4),
                     Text('Stage $petStage · $petTypeLabel',
                         style: const TextStyle(fontSize: 15, color: Colors.black54)),
+                    const SizedBox(height: 6),
+                    Text(
+                      petStage >= 4 ? '接下來是羈絆成長' : '再玩幾題就進化',
+                      style: const TextStyle(fontSize: 14, color: Colors.black54),
+                    ),
                     const SizedBox(height: 12),
                     SizedBox(
                       width: 220,
                       child: LinearProgressIndicator(value: progress),
                     ),
-                    const SizedBox(height: 12),
-                    const Icon(Icons.park, size: 36, color: Color(0xFF3CC77A)),
                   ],
                 ),
               ),
@@ -263,6 +302,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 4),
                         Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
                             style: const TextStyle(fontSize: 14, color: Colors.black54)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  _CardSection(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          petStage >= 4
+                              ? '已完全成長（Bond 會繼續提升）\n下一個 Bond：Lv ${playerLevel + 1}'
+                              : '下一次進化：Lv ${_nextStageLevel(petStage)} → Stage ${_nextStageNumber(petStage)}',
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          petStage >= 4
+                              ? '你目前 Lv $playerLevel'
+                              : '你目前 Lv $playerLevel（還差 ${_levelsToNextStage(petStage, playerLevel)} 級）',
+                          style: const TextStyle(color: Colors.black54),
+                        ),
+                        const SizedBox(height: 4),
+                        const Text('升級靠答題累積 XP', style: TextStyle(color: Colors.black45)),
                       ],
                     ),
                   ),
