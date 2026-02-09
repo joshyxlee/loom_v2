@@ -13,6 +13,7 @@ import 'services/seen_store.dart';
 import 'services/core_data_store.dart';
 import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
+import 'widgets/pokedex_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -143,6 +144,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String _resolvePetTypeLabel() {
+    final credits = widget.coreDataStore.creditsBySubject;
+    final total = credits.values.fold<int>(0, (sum, v) => sum + v);
+    if (total < 200) return 'Balanced';
+    if (credits.isEmpty) return 'Balanced';
+    final entries = credits.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value));
+    final top = entries.first;
+    final ratio = total == 0 ? 0.0 : top.value / total;
+    if (ratio < 0.4) return 'Balanced';
+    final matches = widget.coreDataStore.subjects.where((s) => s.subjectId == top.key).toList();
+    return matches.isNotEmpty ? matches.first.displayName : 'Unknown';
+  }
+
   Future<void> _startSubject(BuildContext context, Subject subject) async {
     final questions = await widget.repository.getSession(subject: subject.key, count: 5);
     if (!context.mounted) return;
@@ -167,8 +182,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     widget.progressService.ensureDailyState();
     final snapshot = widget.progressService.snapshot;
-    final stage = TreeGrowth.stageForLevel(snapshot.level);
     final primarySubject = subjects.first;
+    final petStage = widget.coreDataStore.activePet.currentStage;
+    final bond = widget.coreDataStore.activePet.currentBond;
+    final playerLevel = widget.coreDataStore.player.playerLevel;
+    final petTypeLabel = _resolvePetTypeLabel();
     final remainingRounds = snapshot.dailyAnswered >= snapshot.dailyTarget
         ? 0
         : ((snapshot.dailyTarget - snapshot.dailyAnswered) / 5).ceil();
@@ -177,11 +195,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final current = widget.progressService.currentLevelXp(snapshot.level);
     final next = widget.progressService.nextLevelXp(snapshot.level);
     final progress = ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
-    final nextStageHint = progress < 0.35
-        ? '再答幾題，樹就會有變化'
-        : progress < 0.7
-            ? '再走一段，就接近下一階段'
-            : '快到了，下一階段就在眼前';
 
     return Scaffold(
       body: SafeArea(
@@ -194,8 +207,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 220,
-                      height: 220,
+                      width: 200,
+                      height: 200,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
@@ -208,19 +221,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       child: const Center(
-                        child: Icon(Icons.park, size: 120, color: Color(0xFF3CC77A)),
+                        child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Text(stage.name,
-                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                    const SizedBox(height: 14),
+                    Text('Lv $playerLevel',
+                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                     const SizedBox(height: 6),
-                    Text(nextStageHint, style: const TextStyle(fontSize: 15, color: Colors.black54)),
+                    Text('Bond $bond/10', style: const TextStyle(fontSize: 15, color: Colors.black87)),
+                    const SizedBox(height: 4),
+                    Text('Stage $petStage · $petTypeLabel',
+                        style: const TextStyle(fontSize: 15, color: Colors.black54)),
                     const SizedBox(height: 12),
                     SizedBox(
                       width: 220,
                       child: LinearProgressIndicator(value: progress),
                     ),
+                    const SizedBox(height: 12),
+                    const Icon(Icons.park, size: 36, color: Color(0xFF3CC77A)),
                   ],
                 ),
               ),
@@ -245,9 +263,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 4),
                         Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
                             style: const TextStyle(fontSize: 14, color: Colors.black54)),
-                        const SizedBox(height: 4),
-                        Text('連續天數：${snapshot.streakDays} 倍率 x${snapshot.dailyBonusMultiplier.toStringAsFixed(2)}',
-                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  _CardSection(
+                    child: Row(
+                      children: [
+                        const Text('圖鑑', style: TextStyle(fontWeight: FontWeight.bold)),
+                        const SizedBox(width: 8),
+                        Text('${widget.coreDataStore.pokedexEntries.length} collected',
+                            style: const TextStyle(color: Colors.black54)),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => PokedexScreen(coreDataStore: widget.coreDataStore),
+                              ),
+                            );
+                          },
+                          child: const Text('查看'),
+                        ),
                       ],
                     ),
                   ),
@@ -410,6 +448,24 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
+  Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
+    final previousStage = widget.coreDataStore.activePet.currentStage;
+    final previousLevel = widget.coreDataStore.player.playerLevel;
+    await widget.coreDataStore.recordAnswer(subjectId: subjectId, isCorrect: isCorrect);
+    if (!mounted) return;
+    final newStage = widget.coreDataStore.activePet.currentStage;
+    final newLevel = widget.coreDataStore.player.playerLevel;
+    if (newStage > previousStage) {
+      final extra = newStage == 4 && previousLevel < 40 && newLevel >= 40
+          ? '\n你的夥伴已完全成長，但你們的關係，才正要開始。'
+          : '';
+      final content = '進化！你的夥伴進入 Stage $newStage\n圖鑑已新增一筆收藏$extra';
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(content)),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final question = widget.questions[_index];
@@ -460,49 +516,52 @@ class _QuizScreenState extends State<QuizScreen> {
                       label: option,
                       selected: selected,
                       enabled: _selected == null,
-                      onTap: () => setState(() {
-                        _selected = i;
-                        _lastLevel = widget.progressService.snapshot.level;
-                        final isCorrect = question.isCorrect(i);
-                        final result = widget.progressService.recordAnswer(
-                          isCorrect: isCorrect,
-                          difficulty: question.difficultyValue,
-                        );
-                        widget.coreDataStore.recordAnswer(
-                          subjectId: question.subject,
-                          isCorrect: isCorrect,
-                        );
-                        _lastXp = result.gainedXp;
-                        _dailyTargetJustCompleted = result.completedDailyTarget;
-                        if (isCorrect) {
-                          _correctStreak += 1;
-                          _streakJustHit = _correctStreak == 3;
-                        } else {
-                          _correctStreak = 0;
-                          _streakJustHit = false;
-                        }
-                        final leveledUp = widget.progressService.snapshot.level > _lastLevel;
-                        if (leveledUp) {
-                          _levelUpPulse = true;
-                          _progressAnimMs = 300;
-                          _levelProgress = 1.0;
-                          Future.delayed(const Duration(milliseconds: 350), () {
-                            if (!mounted) return;
-                            setState(() {
-                              _levelProgress = _currentLevelProgress();
-                              _progressAnimMs = 350;
+                      onTap: () {
+                        setState(() {
+                          _selected = i;
+                          _lastLevel = widget.progressService.snapshot.level;
+                          final isCorrect = question.isCorrect(i);
+                          final result = widget.progressService.recordAnswer(
+                            isCorrect: isCorrect,
+                            difficulty: question.difficultyValue,
+                          );
+                          _lastXp = result.gainedXp;
+                          _dailyTargetJustCompleted = result.completedDailyTarget;
+                          if (isCorrect) {
+                            _correctStreak += 1;
+                            _streakJustHit = _correctStreak == 3;
+                          } else {
+                            _correctStreak = 0;
+                            _streakJustHit = false;
+                          }
+                          final leveledUp = widget.progressService.snapshot.level > _lastLevel;
+                          if (leveledUp) {
+                            _levelUpPulse = true;
+                            _progressAnimMs = 300;
+                            _levelProgress = 1.0;
+                            Future.delayed(const Duration(milliseconds: 350), () {
+                              if (!mounted) return;
+                              setState(() {
+                                _levelProgress = _currentLevelProgress();
+                                _progressAnimMs = 350;
+                              });
                             });
-                          });
-                          Future.delayed(const Duration(milliseconds: 450), () {
-                            if (!mounted) return;
-                            setState(() => _levelUpPulse = false);
-                          });
-                        } else {
-                          _progressAnimMs = 350;
-                          _levelProgress = _currentLevelProgress();
-                        }
-                        _triggerMoment(isCorrect: isCorrect, leveledUp: leveledUp);
-                      }),
+                            Future.delayed(const Duration(milliseconds: 450), () {
+                              if (!mounted) return;
+                              setState(() => _levelUpPulse = false);
+                            });
+                          } else {
+                            _progressAnimMs = 350;
+                            _levelProgress = _currentLevelProgress();
+                          }
+                          _triggerMoment(isCorrect: isCorrect, leveledUp: leveledUp);
+                        });
+
+                        _handleCoreGrowth(
+                          subjectId: question.subject,
+                          isCorrect: question.isCorrect(i),
+                        );
+                      },
                     ),
                   );
                 }),
