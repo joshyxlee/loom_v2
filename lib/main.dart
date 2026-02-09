@@ -492,9 +492,6 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showFeedback = false;
   String _resultLine = '';
   String? _lastResultLine;
-  bool _showQuickHint = false;
-  String _quickHintText = '';
-  Color _quickHintBg = Colors.transparent;
   double _petBounceScale = 1.0;
   bool _showResultDialog = false;
   bool _lastIsCorrect = false;
@@ -598,19 +595,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 LinearProgressIndicator(
                   value: (_index + 1) / widget.questions.length,
                 ),
-                if (_showQuickHint) ...[
-                  const SizedBox(height: 8),
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: _quickHintBg,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Text(_quickHintText,
-                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                  ),
-                ],
+                // quick hint removed
                 const SizedBox(height: 8),
                 TweenAnimationBuilder<double>(
                   tween: Tween(begin: 0, end: _levelProgress),
@@ -691,29 +676,17 @@ class _QuizScreenState extends State<QuizScreen> {
                           // moment removed
                         });
 
-                        Future.delayed(const Duration(milliseconds: 350), () {
+                        setState(() {
+                          _showResultDialog = true;
+                          _lastIsCorrect = isCorrect;
+                        });
+
+                        Future.delayed(const Duration(milliseconds: 800), () {
                           if (!mounted) return;
                           setState(() {
+                            _showResultDialog = false;
                             _isJudging = false;
                             _showFeedback = true;
-                            _showQuickHint = true;
-                            _quickHintText = isCorrect ? '答對了！太強啦！' : '差一點！記住就賺到';
-                            _quickHintBg = isCorrect
-                                ? Colors.green.withOpacity(0.12)
-                                : Colors.red.withOpacity(0.12);
-                            _petBounceScale = 1.06;
-                            _showResultDialog = true;
-                          });
-                          Future.delayed(const Duration(milliseconds: 120), () {
-                            if (!mounted) return;
-                            setState(() => _petBounceScale = 1.0);
-                          });
-                          Future.delayed(const Duration(milliseconds: 900), () {
-                            if (!mounted) return;
-                            setState(() {
-                              _showQuickHint = false;
-                              _showResultDialog = false;
-                            });
                           });
                         });
 
@@ -726,13 +699,6 @@ class _QuizScreenState extends State<QuizScreen> {
                   );
                 }),
                 const SizedBox(height: 8),
-                SizedBox(
-                  height: 20,
-                  child: _isJudging
-                      ? const Text('判斷中…', style: TextStyle(color: Colors.black54))
-                      : null,
-                ),
-                const SizedBox(height: 6),
                 if (_selected != null && _showFeedback)
                   _FeedbackCard(
                     xp: _lastXp,
@@ -769,7 +735,6 @@ class _QuizScreenState extends State<QuizScreen> {
                           _levelUpPulse = false;
                           _isJudging = false;
                           _showFeedback = false;
-                          _showQuickHint = false;
                           _showResultDialog = false;
                           _petBounceScale = 1.0;
                         });
@@ -904,9 +869,6 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleColor = isCorrect ? const Color(0xFF2E7D32) : const Color(0xFF8D6E63);
-    final titleBg = isCorrect ? const Color(0xFFE7F8EE) : const Color(0xFFF6F1E9);
-
     return AnimatedScale(
       scale: levelUpPulse ? 1.04 : 1.0,
       duration: const Duration(milliseconds: 450),
