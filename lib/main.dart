@@ -492,11 +492,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _levelUpPulse = false;
   double _levelProgress = 0.0;
   int _progressAnimMs = 350;
-  bool _showMoment = false;
   bool _levelUpMoment = false;
-  String _momentText = '';
-  double _momentOpacity = 0.0;
-  Offset _momentOffset = const Offset(0, 0.1);
   bool _isJudging = false;
   bool _showFeedback = false;
   String _resultLine = '';
@@ -508,16 +504,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showResultDialog = false;
   bool _lastIsCorrect = false;
 
-  static const _correctMomentTexts = [
-    '變強了。',
-    '又更近一步。',
-    '這題有算進去。',
-  ];
-
-  static const _wrongMomentTexts = [
-    '還在累積中。',
-    '沒關係，繼續。',
-  ];
+  // moment texts removed
 
   static const _correctLines = [
     '答對了！腦袋有在轉',
@@ -554,31 +541,7 @@ class _QuizScreenState extends State<QuizScreen> {
     return ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
   }
 
-  void _triggerMoment({required bool isCorrect, required bool leveledUp}) {
-    final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    _momentText = isCorrect
-        ? _correctMomentTexts[rng.nextInt(_correctMomentTexts.length)]
-        : _wrongMomentTexts[rng.nextInt(_wrongMomentTexts.length)];
-    _showMoment = true;
-    _levelUpMoment = leveledUp;
-    _momentOpacity = 1.0;
-    _momentOffset = const Offset(0, -0.12);
-    setState(() {});
-    Future.delayed(const Duration(milliseconds: 750), () {
-      if (!mounted) return;
-      setState(() {
-        _momentOpacity = 0.0;
-      });
-    });
-    Future.delayed(const Duration(milliseconds: 900), () {
-      if (!mounted) return;
-      setState(() {
-        _showMoment = false;
-        _levelUpMoment = false;
-        _momentOffset = const Offset(0, 0.1);
-      });
-    });
-  }
+  void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
 
   String _pickResultLine(bool isCorrect) {
     final rng = Random(DateTime.now().millisecondsSinceEpoch);
@@ -730,7 +693,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             _progressAnimMs = 350;
                             _levelProgress = _currentLevelProgress();
                           }
-                          _triggerMoment(isCorrect: isCorrect, leveledUp: leveledUp);
+                          // moment removed
                         });
 
                         Future.delayed(const Duration(milliseconds: 350), () {
@@ -849,36 +812,7 @@ class _QuizScreenState extends State<QuizScreen> {
                   ),
                 ),
               ),
-            if (_showMoment)
-              Positioned.fill(
-                child: IgnorePointer(
-                  child: AnimatedOpacity(
-                    opacity: _momentOpacity,
-                    duration: const Duration(milliseconds: 200),
-                    child: AnimatedSlide(
-                      offset: _momentOffset,
-                      duration: const Duration(milliseconds: 700),
-                      curve: Curves.easeOut,
-                      child: Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (_levelUpMoment)
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 6),
-                                child: Text('升級了。',
-                                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                              ),
-                            const SizedBox(height: 6),
-                            Text(_momentText,
-                                style: const TextStyle(fontSize: 16, color: Colors.black54)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            const SizedBox.shrink(),
           ],
         ),
       ),
