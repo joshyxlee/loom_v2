@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -619,7 +621,9 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _levelUpMoment = false;
   bool _isJudging = false;
   bool _showFeedback = false;
+  String _resultLine = '';
   double _petBounceScale = 1.0;
+  bool _showResultDialog = false;
   bool _lastIsCorrect = false;
 
   // moment texts removed
@@ -643,6 +647,12 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
+
+  String _pickResultLine(bool isCorrect) {
+    if (!isCorrect) return '沒事，這題很多人會錯';
+    final rng = Random(DateTime.now().millisecondsSinceEpoch);
+    return _correctResultTexts[rng.nextInt(_correctResultTexts.length)];
+  }
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
@@ -741,6 +751,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           _dailyTargetJustCompleted = result.completedDailyTarget;
                           _isJudging = true;
                           _showFeedback = false;
+                          _resultLine = _pickResultLine(isCorrect);
                           _lastIsCorrect = isCorrect;
                           if (isCorrect) {
                             _correctStreak += 1;
@@ -772,9 +783,14 @@ class _QuizScreenState extends State<QuizScreen> {
                           // moment removed
                         });
 
-                        Future.delayed(const Duration(milliseconds: 500), () {
+                        setState(() {
+                          _showResultDialog = true;
+                        });
+
+                        Future.delayed(const Duration(milliseconds: 600), () {
                           if (!mounted) return;
                           setState(() {
+                            _showResultDialog = false;
                             _isJudging = false;
                             _showFeedback = true;
                           });
@@ -818,6 +834,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           _levelUpPulse = false;
                           _isJudging = false;
                           _showFeedback = false;
+                          _showResultDialog = false;
                           _petBounceScale = 1.0;
                         });
                       }
@@ -850,6 +867,22 @@ class _QuizScreenState extends State<QuizScreen> {
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            if (_showResultDialog)
+              Positioned.fill(
+                child: IgnorePointer(
+                  child: Center(
+                    child: LoomCard(
+                      child: Text(
+                        _resultLine,
+                        textAlign: TextAlign.center,
+                        style: LoomTypography.title.copyWith(
+                          color: _lastIsCorrect ? LoomColors.success : LoomColors.danger,
                         ),
                       ),
                     ),
