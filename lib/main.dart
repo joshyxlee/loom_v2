@@ -14,6 +14,7 @@ import 'services/core_data_store.dart';
 import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
 import 'widgets/pokedex_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -110,13 +111,63 @@ class OnboardingGate extends StatefulWidget {
 }
 
 class _OnboardingGateState extends State<OnboardingGate> {
+  static const _onboardingKey = 'onboarding_done';
   bool _showOnboarding = true;
+  bool _ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadOnboardingFlag();
+  }
+
+  Future<void> _loadOnboardingFlag() async {
+    final prefs = await SharedPreferences.getInstance();
+    final done = prefs.getBool(_onboardingKey) ?? false;
+    if (!mounted) return;
+    setState(() {
+      _showOnboarding = !done;
+      _ready = true;
+    });
+  }
+
+  Future<void> _completeOnboarding() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_onboardingKey, true);
+    if (!mounted) return;
+    setState(() => _showOnboarding = false);
+  }
+
+  Future<void> _startFirstRound(BuildContext context) async {
+    await _completeOnboarding();
+    final subject = subjects.first;
+    final questions = await widget.repository.getSession(subject: subject.key, count: 5);
+    if (!mounted) return;
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          questions: questions,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+          subjectTitle: subject.title,
+          subject: subject,
+          repository: widget.repository,
+        ),
+      ),
+    );
+    if (!mounted) return;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
+    if (!_ready) {
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
     if (_showOnboarding) {
       return OnboardingFlow(
-        onFinish: () => setState(() => _showOnboarding = false),
+        onStart: () => _startFirstRound(context),
       );
     }
     return HomeScreen(
