@@ -12,11 +12,11 @@ class OnboardingPage {
 const onboardingPages = [
   OnboardingPage(
     title: '你每天都會遇到一堆問題。\n但老實說，\n你不是真的不懂。',
-    subtitle: '只是有時候會被直覺騙一下。',
+    subtitle: '只是偶爾會被直覺帶著跑。',
   ),
   OnboardingPage(
-    title: '有些答案你其實「差一點就對了」。\n有些迷思，大家都信，但其實不太對。',
-    subtitle: 'Loom 就是拿來處理這種狀況的。',
+    title: '有些答案你其實差一點就對了。\n有些迷思，大家都信，但其實不太對。',
+    subtitle: 'Loom 就是拿來補這一點的。',
   ),
   OnboardingPage(
     title: '這不是刷題 App。\n是把「差點搞錯的地方」變成直覺。',
@@ -24,16 +24,16 @@ const onboardingPages = [
   ),
   OnboardingPage(
     title: '每天幾題就好。\n答對、答錯、差一點，都算前進。',
-    subtitle: '沒有壓力，也不用記規則。',
+    subtitle: '不用壓力，也不用想太多。',
   ),
   OnboardingPage(
-    title: '你玩的方式，\n會慢慢影響你的學習夥伴。',
-    subtitle: '玩什麼多，它就長得比較像那一型。',
+    title: '你不是只是在答題。\n你是真的會慢慢變強。',
+    subtitle: '那個變化，會反映在你的學習夥伴身上。',
     showPet: true,
   ),
   OnboardingPage(
     title: '玩久了你會發現，\n有些問題真的不用想那麼久了。',
-    subtitle: '那種感覺，很爽。',
+    subtitle: '那種感覺，其實滿爽的。',
   ),
   OnboardingPage(
     title: '好了，來玩一回合吧。',
