@@ -278,10 +278,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final knowledgeBalance = widget.progressService.snapshot.totalXp +
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
     final dailyPlus = widget.progressService.snapshot.dailyXp;
-    final dailyTargetForFlame = 5;
-    final remainingForFlame =
-        (dailyTargetForFlame - snapshot.dailyAnswered).clamp(0, dailyTargetForFlame);
-    final flameLit = snapshot.dailyAnswered >= dailyTargetForFlame;
+    final currentLevelXp = widget.progressService.currentLevelXp(snapshot.level);
+    final nextLevelXp = widget.progressService.nextLevelXp(snapshot.level);
+    final remainingToNext = (nextLevelXp - snapshot.totalXp).clamp(0, nextLevelXp);
+    final levelProgress = nextLevelXp == currentLevelXp
+        ? 1.0
+        : ((snapshot.totalXp - currentLevelXp) / (nextLevelXp - currentLevelXp))
+            .clamp(0.0, 1.0);
 
     return Scaffold(
       body: SafeArea(
@@ -297,84 +300,79 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      LoomCard(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    '今天再 5 題，火會繼續燒 🔥',
-                                    style: LoomTypography.caption
-                                        .copyWith(color: LoomColors.mutedText),
-                                  ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.5,
+                        child: LoomCard(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('我的知識存款',
+                                  style: LoomTypography.caption
+                                      .copyWith(color: LoomColors.tertiaryText)),
+                              const SizedBox(height: LoomSpacing.xs),
+                              Text(
+                                '\$${knowledgeBalance.toString()}',
+                                textAlign: TextAlign.center,
+                                style: LoomTypography.display.copyWith(
+                                  fontFeatures: const [FontFeature.tabularFigures()],
+                                  color: LoomColors.secondary,
                                 ),
-                                IconButton(
-                                  visualDensity: VisualDensity.compact,
-                                  onPressed: _resetAll,
-                                  icon: const Icon(Icons.settings, size: 18),
+                              ),
+                              const SizedBox(height: LoomSpacing.xs),
+                              Text(
+                                '今天 +\$$dailyPlus',
+                                style: LoomTypography.micro
+                                    .copyWith(color: LoomColors.mutedText),
+                              ),
+                              const SizedBox(height: LoomSpacing.sm),
+                              SizedBox(
+                                height: 2,
+                                child: LinearProgressIndicator(
+                                  value: levelProgress,
+                                  color: LoomColors.primary,
+                                  backgroundColor: LoomColors.divider,
                                 ),
-                              ],
-                            ),
-                            const SizedBox(height: LoomSpacing.xs),
-                            LoomProgressIndicator(activeIndex: 0, isActive: flameLit),
-                          ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      const SizedBox(height: LoomSpacing.md),
+                      const SizedBox(height: LoomSpacing.sm),
                       LoomCard(
-                        child: Stack(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Positioned.fill(
-                              child: Align(
-                                alignment: Alignment.centerRight,
-                                child: Icon(Icons.account_balance,
-                                    size: LoomSizes.heroWatermark,
-                                    color: Colors.black.withOpacity(0.06)),
-                              ),
+                            Text(
+                              '距離下一個里程碑還差 $remainingToNext',
+                              textAlign: TextAlign.center,
+                              style: LoomTypography.caption
+                                  .copyWith(color: LoomColors.mutedText),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text('我的知識存款',
-                                    style: LoomTypography.caption
-                                        .copyWith(color: LoomColors.tertiaryText)),
-                                const SizedBox(height: LoomSpacing.xs),
-                                Text(
-                                  '\$${knowledgeBalance.toString()}',
-                                  textAlign: TextAlign.center,
-                                  style: LoomTypography.display.copyWith(
-                                    fontFeatures: const [FontFeature.tabularFigures()],
-                                    color: LoomColors.secondary,
-                                  ),
-                                ),
-                                const SizedBox(height: LoomSpacing.xs),
-                                Text(
-                                  '今天 +\$$dailyPlus',
-                                  style: LoomTypography.micro
-                                      .copyWith(color: LoomColors.mutedText),
-                                ),
-                              ],
+                            const SizedBox(height: LoomSpacing.xs),
+                            SizedBox(
+                              height: 2,
+                              child: LinearProgressIndicator(
+                                value: levelProgress,
+                                color: LoomColors.primary,
+                                backgroundColor: LoomColors.divider,
+                              ),
                             ),
                           ],
                         ),
                       ),
                       const SizedBox(height: LoomSpacing.sm),
                       LoomPrimaryButton(
-                        label: '小試身手',
+                        label: '開始今天的 5 題',
                         onPressed: () => _startSubject(context, primarySubject),
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       Row(
                         children: [
                           Expanded(
-                            child: LoomActionCard(
-                              title: '看看你現在站在哪',
-                              subtitle: '總榜 / 本週榜',
-                              icon: Icons.emoji_events_outlined,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(LoomRadius.card),
                               onTap: () {
                                 Navigator.push(
                                   context,
@@ -385,14 +383,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
+                              child: LoomCard(
+                                child: Center(
+                                  child: Text('排行榜', style: LoomTypography.body),
+                                ),
+                              ),
                             ),
                           ),
                           const SizedBox(width: LoomSpacing.sm),
                           Expanded(
-                            child: LoomActionCard(
-                              title: '試試你能不能撐過 10 題',
-                              subtitle: '連續答題挑戰',
-                              icon: Icons.shield_outlined,
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(LoomRadius.card),
                               onTap: () {
                                 Navigator.push(
                                   context,
@@ -405,6 +406,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
+                              child: LoomCard(
+                                child: Center(
+                                  child: Text('進階挑戰', style: LoomTypography.body),
+                                ),
+                              ),
                             ),
                           ),
                         ],
