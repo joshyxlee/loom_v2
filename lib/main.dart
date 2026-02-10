@@ -378,6 +378,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           ),
                         ],
                       ),
+                      const SizedBox(height: 6),
                       ScaleTransition(
                         scale: _petBreathScale,
                         child: Container(
