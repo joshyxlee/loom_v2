@@ -10,7 +10,7 @@
       "南冰洋"
     ],
     "answerIndex": 0,
-    "explanation": "很多人會把大西洋當最大。\n實際上太平洋面積最大。",
+    "explanation": "很多人會把大西洋當最大。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -24,7 +24,7 @@
       "大洋洲"
     ],
     "answerIndex": 1,
-    "explanation": "看到亞馬遜容易選南美洲。\n其實赤道穿過非洲最多國家。",
+    "explanation": "看到亞馬遜容易選南美洲。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -38,7 +38,7 @@
       "厄瓜多"
     ],
     "answerIndex": 2,
-    "explanation": "南美多數國家都有海岸線。\n玻利維亞是少數沒有出海口的國家。",
+    "explanation": "南美多數國家都有海岸線。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -52,7 +52,7 @@
       "埃及"
     ],
     "answerIndex": 3,
-    "explanation": "很多人會先想到石油大國。\n其實人口最多的是埃及。",
+    "explanation": "很多人會先想到石油大國。這種題容易被表面印象帶走。",
     "difficulty": "hard"
   },
   {
@@ -66,7 +66,7 @@
       "塞納河"
     ],
     "answerIndex": 0,
-    "explanation": "多瑙河很有名所以常被選中。\n實際最長的是伏爾加河。",
+    "explanation": "多瑙河很有名所以常被選中。這類題常被直覺或名氣帶偏。",
     "difficulty": "hard"
   },
   {
@@ -80,7 +80,7 @@
       "阿拉伯"
     ],
     "answerIndex": 1,
-    "explanation": "沙漠常被直接聯想到熱沙。\n面積最大的是南極洲的極地沙漠。",
+    "explanation": "沙漠常被直接聯想到熱沙。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -94,7 +94,7 @@
       "摩洛哥"
     ],
     "answerIndex": 2,
-    "explanation": "歐亞分界常被忽略。\n土耳其同時跨歐洲與亞洲。",
+    "explanation": "歐亞分界常被忽略。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -108,7 +108,7 @@
       "英國"
     ],
     "answerIndex": 3,
-    "explanation": "英國看起來很歐洲化。\n英國仍大量使用英里標示里程。",
+    "explanation": "英國看起來很歐洲化。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -122,7 +122,7 @@
       "巴黎圈"
     ],
     "answerIndex": 0,
-    "explanation": "歐美都市很容易被先想到。\n人口最多的都市圈是東京圈。",
+    "explanation": "歐美都市很容易被先想到。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -136,7 +136,7 @@
       "博斯普魯斯海峽"
     ],
     "answerIndex": 1,
-    "explanation": "常把世界知名海峽混在一起。\n紅海出口是巴布曼德海峽。",
+    "explanation": "常把世界知名海峽混在一起。地名很像時容易選錯。",
     "difficulty": "hard"
   },
   {
@@ -150,7 +150,7 @@
       "挪威"
     ],
     "answerIndex": 2,
-    "explanation": "愛爾蘭常被誤放進北歐。\n它屬於西歐島國，不是北歐。",
+    "explanation": "愛爾蘭常被誤放進北歐。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -164,7 +164,7 @@
       "瑞典"
     ],
     "answerIndex": 3,
-    "explanation": "熱帶群島很容易先入為主。\n島嶼數量最多的是瑞典。",
+    "explanation": "熱帶群島很容易先入為主。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -178,7 +178,7 @@
       "坦尚尼亞湖"
     ],
     "answerIndex": 0,
-    "explanation": "貝加爾湖以深度聞名。\n面積最大的淡水湖是蘇必利爾湖。",
+    "explanation": "貝加爾湖以深度聞名。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -192,7 +192,7 @@
       "克羅埃西亞"
     ],
     "answerIndex": 1,
-    "explanation": "地中海國家常被一概而論。\n西班牙同時臨大西洋與地中海。",
+    "explanation": "地中海國家常被一概而論。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -206,7 +206,7 @@
       "比利時"
     ],
     "answerIndex": 2,
-    "explanation": "很多人會把政治爭議當線索。\n瑞士長期沒有正式首都。",
+    "explanation": "很多人會把政治爭議當線索。首都不一定是最大城市。",
     "difficulty": "medium"
   },
   {
@@ -220,7 +220,7 @@
       "烏茲別克"
     ],
     "answerIndex": 3,
-    "explanation": "內陸國很多，但雙重內陸更少。\n烏茲別克被兩層內陸國包圍。",
+    "explanation": "內陸國很多，但雙重內陸更少。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -234,7 +234,7 @@
       "巴西"
     ],
     "answerIndex": 0,
-    "explanation": "美國的時區很有存在感。\n實際橫跨最多時區的是俄羅斯。",
+    "explanation": "美國的時區很有存在感。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -248,7 +248,7 @@
       "葡萄牙"
     ],
     "answerIndex": 1,
-    "explanation": "西班牙曾很強盛所以容易被選。\n日不落帝國最常指英國。",
+    "explanation": "西班牙曾很強盛所以容易被選。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -262,7 +262,7 @@
       "黑海"
     ],
     "answerIndex": 2,
-    "explanation": "紅海黑海名字響亮。\n最大內陸海是裏海。",
+    "explanation": "紅海黑海名字響亮。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -276,7 +276,7 @@
       "中國"
     ],
     "answerIndex": 3,
-    "explanation": "俄羅斯面積大所以常被猜。\n鄰國最多的是中國。",
+    "explanation": "俄羅斯面積大所以常被猜。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -290,7 +290,7 @@
       "巴西"
     ],
     "answerIndex": 0,
-    "explanation": "南美時區容易被混為一談。\n智利主要不是 UTC-3。",
+    "explanation": "南美時區容易被混為一談。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -304,7 +304,7 @@
       "喜馬拉雅"
     ],
     "answerIndex": 1,
-    "explanation": "喜馬拉雅最高所以常被選。\n最長的是安第斯山脈。",
+    "explanation": "喜馬拉雅最高所以常被選。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -318,7 +318,7 @@
       "亞得里亞海"
     ],
     "answerIndex": 2,
-    "explanation": "名字像海所以容易被當成地中海一部分。\n里海其實是內陸海。",
+    "explanation": "名字像海所以容易被當成地中海一部分。地名很像時容易選錯。",
     "difficulty": "hard"
   },
   {
@@ -332,7 +332,7 @@
       "瑞典"
     ],
     "answerIndex": 3,
-    "explanation": "多數國旗都有紅色元素。\n瑞典國旗只有藍黃。",
+    "explanation": "多數國旗都有紅色元素。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -346,7 +346,7 @@
       "馬爾他"
     ],
     "answerIndex": 0,
-    "explanation": "常會被歐洲小國混淆。\n人口最少的是梵蒂岡。",
+    "explanation": "常會被歐洲小國混淆。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -360,7 +360,7 @@
       "日本"
     ],
     "answerIndex": 1,
-    "explanation": "名字像赤道但容易忽略地理位置。\n厄瓜多正跨赤道。",
+    "explanation": "名字像赤道但容易忽略地理位置。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -374,7 +374,7 @@
       "冰島"
     ],
     "answerIndex": 2,
-    "explanation": "常把伊瓜蘇瀑布當第一。\n最高的是委內瑞拉天使瀑布。",
+    "explanation": "常把伊瓜蘇瀑布當第一。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -388,7 +388,7 @@
       "俄羅斯"
     ],
     "answerIndex": 3,
-    "explanation": "土耳其跨洲很知名。\n實際跨歐亞最多領土的是俄羅斯。",
+    "explanation": "土耳其跨洲很知名。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -402,7 +402,7 @@
       "亞馬遜河"
     ],
     "answerIndex": 0,
-    "explanation": "尼羅河與亞馬遜名氣更大。\n實際穿越國家最多的是多瑙河。",
+    "explanation": "尼羅河與亞馬遜名氣更大。地名很像時容易選錯。",
     "difficulty": "hard"
   },
   {
@@ -416,7 +416,7 @@
       "巴林"
     ],
     "answerIndex": 1,
-    "explanation": "新加坡很小但不是最小。\n最小的主權國家是梵蒂岡。",
+    "explanation": "新加坡很小但不是最小。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -430,7 +430,7 @@
       "菲律賓"
     ],
     "answerIndex": 2,
-    "explanation": "日本很直覺所以常被選。\n人口最多的島國是印尼。",
+    "explanation": "日本很直覺所以常被選。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -444,7 +444,7 @@
       "紐西蘭"
     ],
     "answerIndex": 3,
-    "explanation": "會直覺以為島國才沒有鄰國。\n紐西蘭完全不與他國接壤。",
+    "explanation": "會直覺以為島國才沒有鄰國。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -458,7 +458,7 @@
       "法國"
     ],
     "answerIndex": 0,
-    "explanation": "地中海國家容易被混淆。\n只有土耳其同時臨地中海與黑海。",
+    "explanation": "地中海國家容易被混淆。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -472,7 +472,7 @@
       "印度與巴基斯坦"
     ],
     "answerIndex": 1,
-    "explanation": "很多人會想到衝突熱區。\n最長的和平邊界是美加邊界。",
+    "explanation": "很多人會想到衝突熱區。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -486,7 +486,7 @@
       "巴西"
     ],
     "answerIndex": 2,
-    "explanation": "瑞士曾是非會員所以容易誤判。\n目前非會員的是梵蒂岡。",
+    "explanation": "瑞士曾是非會員所以容易誤判。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -500,7 +500,7 @@
       "印尼"
     ],
     "answerIndex": 3,
-    "explanation": "日本火山很有名所以常被選。\n活火山最多的是印尼。",
+    "explanation": "日本火山很有名所以常被選。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -514,7 +514,7 @@
       "辛巴威"
     ],
     "answerIndex": 0,
-    "explanation": "地圖印象很容易混淆位置。\n非洲最南端是南非。",
+    "explanation": "地圖印象很容易混淆位置。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -528,7 +528,7 @@
       "東南亞群島"
     ],
     "answerIndex": 1,
-    "explanation": "剛果盆地也很大所以常被選。\n最大雨林是亞馬遜。",
+    "explanation": "剛果盆地也很大所以常被選。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -542,7 +542,7 @@
       "澳洲"
     ],
     "answerIndex": 2,
-    "explanation": "面積大國很容易被誤選。\n海岸線最長的是加拿大。",
+    "explanation": "面積大國很容易被誤選。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -556,7 +556,7 @@
       "菲律賓"
     ],
     "answerIndex": 3,
-    "explanation": "首都多在最大島上所以容易忽略。\n菲律賓首都馬尼拉不在最大島上。",
+    "explanation": "首都多在最大島上所以容易忽略。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -570,7 +570,7 @@
       "巴勒斯坦"
     ],
     "answerIndex": 0,
-    "explanation": "新加坡很擁擠所以常被選。\n人口密度最高的是摩納哥。",
+    "explanation": "新加坡很擁擠所以常被選。這類題常被直覺或名氣帶偏。",
     "difficulty": "hard"
   },
   {
@@ -584,7 +584,7 @@
       "智利"
     ],
     "answerIndex": 1,
-    "explanation": "很多人只想到跨時區。\n俄羅斯跨過本初子午線附近經度區域。",
+    "explanation": "很多人只想到跨時區。先想地理位置與鄰接關係。",
     "difficulty": "hard"
   },
   {
@@ -598,7 +598,7 @@
       "印度"
     ],
     "answerIndex": 2,
-    "explanation": "澳洲被誤以為三面都是海洋。\n南非同時臨大西洋與印度洋等海域。",
+    "explanation": "澳洲被誤以為三面都是海洋。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -612,7 +612,7 @@
       "加拿大"
     ],
     "answerIndex": 3,
-    "explanation": "芬蘭被稱千湖之國很容易先選。\n最多湖泊的是加拿大。",
+    "explanation": "芬蘭被稱千湖之國很容易先選。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -626,7 +626,7 @@
       "希臘"
     ],
     "answerIndex": 0,
-    "explanation": "菲律賓群島很有名所以常被選。\n最大群島國家是印尼。",
+    "explanation": "菲律賓群島很有名所以常被選。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -640,7 +640,7 @@
       "尼加拉瓜"
     ],
     "answerIndex": 1,
-    "explanation": "地中海國家容易被混淆。\n聖馬利諾被義大利完全包圍。",
+    "explanation": "地中海國家容易被混淆。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -654,7 +654,7 @@
       "祕魯"
     ],
     "answerIndex": 2,
-    "explanation": "安第斯多國首都都很高。\n玻利維亞的拉巴斯海拔超過 3,500 公尺。",
+    "explanation": "安第斯多國首都都很高。首都不一定是最大城市。",
     "difficulty": "hard"
   },
   {
@@ -668,7 +668,7 @@
       "墨西哥"
     ],
     "answerIndex": 3,
-    "explanation": "喀斯特地形容易讓人想到中國或越南。\n最長地下河在墨西哥尤卡坦。",
+    "explanation": "喀斯特地形容易讓人想到中國或越南。這類題常被直覺或名氣帶偏。",
     "difficulty": "hard"
   },
   {
@@ -682,7 +682,7 @@
       "英國"
     ],
     "answerIndex": 1,
-    "explanation": "會先想到面積最大的國家。\n含海外領地最多時區的是法國。",
+    "explanation": "會先想到面積最大的國家。先想地理位置與鄰接關係。",
     "difficulty": "hard"
   },
   {
@@ -696,7 +696,7 @@
       "美國"
     ],
     "answerIndex": 3,
-    "explanation": "多數國家使用攝氏很習慣。\n美國仍以華氏為主。",
+    "explanation": "多數國家使用攝氏很習慣。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -710,7 +710,7 @@
       "新幾內亞"
     ],
     "answerIndex": 0,
-    "explanation": "最大的是格陵蘭島，面積遠大於其他島嶼。",
+    "explanation": "最大的是格陵蘭島，面積遠大於其他島嶼。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -724,7 +724,7 @@
       "維多利亞湖"
     ],
     "answerIndex": 0,
-    "explanation": "貝加爾湖是世界最深的湖。",
+    "explanation": "貝加爾湖是世界最深的湖。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -738,7 +738,7 @@
       "洛子峰"
     ],
     "answerIndex": 0,
-    "explanation": "世界最高峰是聖母峰。",
+    "explanation": "世界最高峰是聖母峰。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -752,7 +752,7 @@
       "安那托利亞高原"
     ],
     "answerIndex": 0,
-    "explanation": "青藏高原是面積最大的高原。",
+    "explanation": "青藏高原是面積最大的高原。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -766,7 +766,7 @@
       "斯堪地那維亞半島"
     ],
     "answerIndex": 0,
-    "explanation": "阿拉伯半島是世界最大半島。",
+    "explanation": "阿拉伯半島是世界最大半島。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -780,7 +780,7 @@
       "安塔利亞"
     ],
     "answerIndex": 1,
-    "explanation": "土耳其首都是安卡拉，不是最大的城市。",
+    "explanation": "土耳其首都是安卡拉，不是最大的城市。首都不一定是最大城市。",
     "difficulty": "easy"
   },
   {
@@ -794,7 +794,7 @@
       "布里斯本"
     ],
     "answerIndex": 2,
-    "explanation": "澳洲首都是坎培拉，不是最大城市。",
+    "explanation": "澳洲首都是坎培拉，不是最大城市。首都不一定是最大城市。",
     "difficulty": "easy"
   },
   {
@@ -808,7 +808,7 @@
       "薩爾瓦多"
     ],
     "answerIndex": 2,
-    "explanation": "巴西首都是巴西利亞。",
+    "explanation": "巴西首都是巴西利亞。首都不一定是最大城市。",
     "difficulty": "easy"
   },
   {
@@ -822,7 +822,7 @@
       "日本"
     ],
     "answerIndex": 0,
-    "explanation": "非矩形國旗只有尼泊爾，形狀非常特殊！😮",
+    "explanation": "非矩形國旗只有尼泊爾，形狀非常特殊！。這種題容易被表面印象帶走。",
     "difficulty": "easy"
   },
   {
@@ -836,7 +836,7 @@
       "智利"
     ],
     "answerIndex": 0,
-    "explanation": "哥斯大黎加沒有常備軍隊，改以其他方式維持安全。",
+    "explanation": "哥斯大黎加沒有常備軍隊，改以其他方式維持安全。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -850,7 +850,7 @@
       "比利時"
     ],
     "answerIndex": 1,
-    "explanation": "南非有多達 11 種官方語言。這數字很驚人🤯",
+    "explanation": "南非有多達 11 種官方語言。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -864,7 +864,7 @@
       "西班牙"
     ],
     "answerIndex": 0,
-    "explanation": "歐洲面積最大的是俄羅斯。",
+    "explanation": "歐洲面積最大的是俄羅斯。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -878,7 +878,7 @@
       "巴林"
     ],
     "answerIndex": 0,
-    "explanation": "亞洲面積最小的國家是馬爾地夫。",
+    "explanation": "亞洲面積最小的國家是馬爾地夫。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -892,7 +892,7 @@
       "印尼"
     ],
     "answerIndex": 1,
-    "explanation": "世界人口最多的是印度。",
+    "explanation": "世界人口最多的是印度。這種題容易被表面印象帶走。",
     "difficulty": "easy"
   },
   {
@@ -906,7 +906,7 @@
       "冰島"
     ],
     "answerIndex": 0,
-    "explanation": "芬蘭因湖泊眾多而得名。",
+    "explanation": "芬蘭因湖泊眾多而得名。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -920,7 +920,7 @@
       "皇后鎮"
     ],
     "answerIndex": 2,
-    "explanation": "新西蘭首都是惠靈頓。",
+    "explanation": "新西蘭首都是惠靈頓。首都不一定是最大城市。",
     "difficulty": "easy"
   },
   {
@@ -934,7 +934,7 @@
       "哥本哈根"
     ],
     "answerIndex": 1,
-    "explanation": "冰島首都是雷克雅維克。",
+    "explanation": "冰島首都是雷克雅維克。首都不一定是最大城市。",
     "difficulty": "easy"
   },
   {
@@ -948,7 +948,7 @@
       "沙烏地與葉門"
     ],
     "answerIndex": 0,
-    "explanation": "死海位於以色列與約旦之間。",
+    "explanation": "死海位於以色列與約旦之間。地名很像時容易選錯。",
     "difficulty": "medium"
   },
   {
@@ -962,7 +962,7 @@
       "潮汐很強"
     ],
     "answerIndex": 1,
-    "explanation": "死海鹽分極高，浮力非常強。這真的很反直覺😮",
+    "explanation": "死海鹽分極高，浮力非常強。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -976,7 +976,7 @@
       "衣索比亞"
     ],
     "answerIndex": 2,
-    "explanation": "非洲人口最多的是尼日利亞。",
+    "explanation": "非洲人口最多的是尼日利亞。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -990,7 +990,7 @@
       "北美洲"
     ],
     "answerIndex": 1,
-    "explanation": "撒哈拉沙漠位於非洲北部。",
+    "explanation": "撒哈拉沙漠位於非洲北部。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -1004,7 +1004,7 @@
       "阿根廷"
     ],
     "answerIndex": 0,
-    "explanation": "智利南北狹長，跨度非常驚人。",
+    "explanation": "智利南北狹長，跨度非常驚人。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1018,7 +1018,7 @@
       "西藏（地區）"
     ],
     "answerIndex": 3,
-    "explanation": "「世界屋脊」多指青藏高原所在地。",
+    "explanation": "「世界屋脊」多指青藏高原所在地。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -1032,7 +1032,7 @@
       "阿爾及利亞"
     ],
     "answerIndex": 0,
-    "explanation": "撒哈拉以南最大的是剛果民主共和國。",
+    "explanation": "撒哈拉以南最大的是剛果民主共和國。這類題常被直覺或名氣帶偏。",
     "difficulty": "hard"
   },
   {
@@ -1046,7 +1046,7 @@
       "冰島"
     ],
     "answerIndex": 1,
-    "explanation": "世界最高瀑布是天使瀑布，位於委內瑞拉。",
+    "explanation": "世界最高瀑布是天使瀑布，位於委內瑞拉。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1060,7 +1060,7 @@
       "法國"
     ],
     "answerIndex": 1,
-    "explanation": "目前最長的跨海大橋在中國。",
+    "explanation": "目前最長的跨海大橋在中國。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1074,7 +1074,7 @@
       "泰晤士河"
     ],
     "answerIndex": 0,
-    "explanation": "巴黎位於塞納河沿岸。",
+    "explanation": "巴黎位於塞納河沿岸。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -1088,7 +1088,7 @@
       "易北河"
     ],
     "answerIndex": 0,
-    "explanation": "倫敦位於泰晤士河沿岸。",
+    "explanation": "倫敦位於泰晤士河沿岸。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -1102,7 +1102,7 @@
       "澳洲"
     ],
     "answerIndex": 1,
-    "explanation": "加拿大境內湖泊面積非常大。",
+    "explanation": "加拿大境內湖泊面積非常大。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1116,7 +1116,7 @@
       "南非"
     ],
     "answerIndex": 2,
-    "explanation": "加拿大位於北半球與西半球。",
+    "explanation": "加拿大位於北半球與西半球。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -1130,7 +1130,7 @@
       "塔克拉瑪干沙漠"
     ],
     "answerIndex": 1,
-    "explanation": "阿塔卡馬沙漠以極端乾燥著名。",
+    "explanation": "阿塔卡馬沙漠以極端乾燥著名。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -1144,7 +1144,7 @@
       "冰島"
     ],
     "answerIndex": 1,
-    "explanation": "印尼擁有大量火山島。",
+    "explanation": "印尼擁有大量火山島。先想地理位置與鄰接關係。",
     "difficulty": "medium"
   },
   {
@@ -1158,7 +1158,7 @@
       "美洲與非洲"
     ],
     "answerIndex": 0,
-    "explanation": "地中海位於歐洲與非洲之間。",
+    "explanation": "地中海位於歐洲與非洲之間。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -1172,7 +1172,7 @@
       "波羅的海"
     ],
     "answerIndex": 0,
-    "explanation": "北極點位於北冰洋海域。",
+    "explanation": "北極點位於北冰洋海域。地名很像時容易選錯。",
     "difficulty": "easy"
   },
   {
@@ -1186,7 +1186,7 @@
       "贊比西河"
     ],
     "answerIndex": 0,
-    "explanation": "非洲最長的河流是尼羅河。",
+    "explanation": "非洲最長的河流是尼羅河。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -1200,7 +1200,7 @@
       "加拉巴哥珊瑚礁"
     ],
     "answerIndex": 0,
-    "explanation": "最大的是澳洲的大堡礁。",
+    "explanation": "最大的是澳洲的大堡礁。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -1214,7 +1214,7 @@
       "日內瓦"
     ],
     "answerIndex": 0,
-    "explanation": "世界時以格林威治為基準。",
+    "explanation": "世界時以格林威治為基準。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -1228,7 +1228,7 @@
       "智利"
     ],
     "answerIndex": 2,
-    "explanation": "南美洲最大的國家是巴西。",
+    "explanation": "南美洲最大的國家是巴西。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -1242,7 +1242,7 @@
       "越南"
     ],
     "answerIndex": 1,
-    "explanation": "智利國土狹長非常明顯。",
+    "explanation": "智利國土狹長非常明顯。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -1256,7 +1256,7 @@
       "摩洛哥"
     ],
     "answerIndex": 0,
-    "explanation": "南非有三個首都分別負責不同職能。",
+    "explanation": "南非有三個首都分別負責不同職能。首都不一定是最大城市。",
     "difficulty": "hard"
   },
   {
@@ -1270,7 +1270,7 @@
       "阿爾及利亞"
     ],
     "answerIndex": 1,
-    "explanation": "人口最多的阿拉伯語國家是埃及。",
+    "explanation": "人口最多的阿拉伯語國家是埃及。這種題容易被表面印象帶走。",
     "difficulty": "medium"
   },
   {
@@ -1284,7 +1284,7 @@
       "立山"
     ],
     "answerIndex": 0,
-    "explanation": "日本最高峰是富士山。",
+    "explanation": "日本最高峰是富士山。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -1298,7 +1298,7 @@
       "菲律賓"
     ],
     "answerIndex": 1,
-    "explanation": "「翡翠之島」常指愛爾蘭。",
+    "explanation": "「翡翠之島」常指愛爾蘭。先想地理位置與鄰接關係。",
     "difficulty": "easy"
   },
   {
@@ -1312,7 +1312,7 @@
       "基爾運河"
     ],
     "answerIndex": 2,
-    "explanation": "最長的人工運河是京杭大運河。",
+    "explanation": "最長的人工運河是京杭大運河。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1326,7 +1326,7 @@
       "剛果民主共和國"
     ],
     "answerIndex": 1,
-    "explanation": "非洲面積最大的是阿爾及利亞。",
+    "explanation": "非洲面積最大的是阿爾及利亞。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1340,7 +1340,7 @@
       "阿留申海溝"
     ],
     "answerIndex": 0,
-    "explanation": "最深的海溝是馬里亞納海溝。",
+    "explanation": "最深的海溝是馬里亞納海溝。這類題常被直覺或名氣帶偏。",
     "difficulty": "easy"
   },
   {
@@ -1354,7 +1354,7 @@
       "開普敦"
     ],
     "answerIndex": 0,
-    "explanation": "最南端的首都是威靈頓。",
+    "explanation": "最南端的首都是威靈頓。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1368,7 +1368,7 @@
       "斯德哥爾摩"
     ],
     "answerIndex": 0,
-    "explanation": "最北端的首都是雷克雅維克。",
+    "explanation": "最北端的首都是雷克雅維克。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   },
   {
@@ -1382,7 +1382,7 @@
       "印尼"
     ],
     "answerIndex": 1,
-    "explanation": "由於時區位置，紐西蘭常最早迎來日出。",
+    "explanation": "由於時區位置，紐西蘭常最早迎來日出。先想地理位置與鄰接關係。",
     "difficulty": "hard"
   },
   {
@@ -1396,7 +1396,7 @@
       "幾內亞灣"
     ],
     "answerIndex": 0,
-    "explanation": "最大的是孟加拉灣。",
+    "explanation": "最大的是孟加拉灣。這類題常被直覺或名氣帶偏。",
     "difficulty": "medium"
   }
 ]
