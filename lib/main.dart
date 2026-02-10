@@ -340,56 +340,58 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           child: Column(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: IconButton(
-                        visualDensity: VisualDensity.compact,
-                        onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
-                        icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
-                      ),
-                    ),
-                    ScaleTransition(
-                      scale: _petBreathScale,
-                      child: Container(
-                        width: 200,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.06),
-                              blurRadius: 20,
-                              offset: const Offset(0, 8),
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          visualDensity: VisualDensity.compact,
+                          onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
+                          icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    const Text('你的學習夥伴正在成長中',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-                    const SizedBox(height: 4),
-                    Text(
-                      petStage >= 4 ? '再多玩幾題，羈絆就會更深' : '再玩一點就會有新變化',
-                      style: const TextStyle(fontSize: 14, color: Colors.black54),
-                    ),
-                    if (_showPetDetails) ...[
-                      const SizedBox(height: 8),
-                      Text('Lv $playerLevel · XP ${snapshot.totalXp}',
-                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
-                      Text('Bond $bond/10 · Stage $petStage · $petTypeLabel',
-                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
-                      Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
-                          style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                      ScaleTransition(
+                        scale: _petBreathScale,
+                        child: Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.06),
+                                blurRadius: 20,
+                                offset: const Offset(0, 8),
+                              ),
+                            ],
+                          ),
+                          child: const Center(
+                            child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      const Text('你的學習夥伴正在成長中',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                      const SizedBox(height: 4),
+                      Text(
+                        petStage >= 4 ? '再多玩幾題，羈絆就會更深' : '再玩一點就會有新變化',
+                        style: const TextStyle(fontSize: 14, color: Colors.black54),
+                      ),
+                      if (_showPetDetails) ...[
+                        const SizedBox(height: 8),
+                        Text('Lv $playerLevel · XP ${snapshot.totalXp}',
+                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                        Text('Bond $bond/10 · Stage $petStage · $petTypeLabel',
+                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
+                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
               ),
               Column(
