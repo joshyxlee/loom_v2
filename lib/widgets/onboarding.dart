@@ -20,11 +20,11 @@ const onboardingPages = [
     subtitle: '',
   ),
   OnboardingPage(
-    title: '每天幾題就好。\n答對、答錯、差一點，都算前進。',
+    title: '每天幾題就好。\n你的知識會留下來。',
     subtitle: '不用壓力，也不用想太多。',
   ),
   OnboardingPage(
-    title: '你不是只是在答題。\n你是真的會慢慢變強。',
+    title: '你不是在玩。\n你是在累積。',
     subtitle: '那個變化會留下來。',
   ),
   OnboardingPage(

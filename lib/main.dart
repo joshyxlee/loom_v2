@@ -194,48 +194,10 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
-  bool _showPetDetails = false;
-  bool _showDailyNarrative = false;
-  String _dailyNarrative = '';
-  late final AnimationController _petBreathController;
-  late final Animation<double> _petBreathScale;
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _petBreathController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1800),
-    )..repeat(reverse: true);
-    _petBreathScale = Tween<double>(begin: 1.0, end: 1.03).animate(
-      CurvedAnimation(parent: _petBreathController, curve: Curves.easeInOut),
-    );
-    _loadDailyNarrative();
-  }
-
-  Future<void> _loadDailyNarrative() async {
-    final prefs = await SharedPreferences.getInstance();
-    final todayKey = '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}';
-    final lastShown = prefs.getString('daily_narrative_date');
-    if (lastShown == todayKey) return;
-    final options = [
-      '今天的判斷更準了。',
-      '今天比較不會被迷思帶走。',
-      '今天反應比昨天更快。',
-    ];
-    final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    setState(() {
-      _dailyNarrative = options[rng.nextInt(options.length)];
-      _showDailyNarrative = true;
-    });
-    await prefs.setString('daily_narrative_date', todayKey);
-  }
-
-  @override
-  void dispose() {
-    _petBreathController.dispose();
-    super.dispose();
   }
 
   String _resolvePetTypeLabel() {
@@ -333,24 +295,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     final snapshot = widget.progressService.snapshot;
     final primarySubject = subjects.first;
     final petStage = widget.coreDataStore.activePet.currentStage;
-    final bond = widget.coreDataStore.activePet.currentBond;
-    final playerLevel = widget.coreDataStore.player.playerLevel;
-    final petTypeLabel = _resolvePetTypeLabel();
-    final remainingRounds = snapshot.dailyAnswered >= snapshot.dailyTarget
-        ? 0
-        : ((snapshot.dailyTarget - snapshot.dailyAnswered) / 5).ceil();
-    final isDone = remainingRounds == 0;
-    final ctaLabel = isDone ? '再玩一回合' : '開始今日回合';
-    final nextStageLevel = _nextStageLevel(petStage);
-    final progress = petStage >= 4
-        ? 1.0
-        : ((playerLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))) /
-                (nextStageLevel - (petStage == 0 ? 1 : _nextStageLevel(petStage - 1))))
-            .clamp(0.0, 1.0);
-    final dailyTargetForFlame = 5;
-    final remainingForFlame =
-        (dailyTargetForFlame - snapshot.dailyAnswered).clamp(0, dailyTargetForFlame);
-    final flameLit = snapshot.dailyAnswered >= dailyTargetForFlame;
+    // playerLevel unused in v3 home
+    final knowledgeBalance = widget.progressService.snapshot.totalXp +
+        widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
+    final dailyPlus = widget.progressService.snapshot.dailyXp;
+    // v3: CTA label fixed and progress cues removed
 
     return Scaffold(
       body: SafeArea(
@@ -361,16 +310,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          IconButton(
-                            visualDensity: VisualDensity.compact,
-                            onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
-                            icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
-                          ),
                           IconButton(
                             visualDensity: VisualDensity.compact,
                             onPressed: _resetAll,
@@ -378,174 +322,57 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           ),
                         ],
                       ),
-                      const SizedBox(height: 6),
-                      ScaleTransition(
-                        scale: _petBreathScale,
-                        child: Container(
-                          width: 200,
-                          height: 200,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.06),
-                                blurRadius: 20,
-                                offset: const Offset(0, 8),
-                              ),
-                            ],
-                          ),
-                          child: const Center(
-                            child: Icon(Icons.pets, size: 120, color: Color(0xFF3CC77A)),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      const Text('你的學習夥伴正在成長中',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                       const SizedBox(height: 4),
-                      Text(
-                        petStage >= 4 ? '再多玩幾題，羈絆就會更深' : '再玩一點就會有新變化',
-                        style: const TextStyle(fontSize: 14, color: Colors.black54),
-                      ),
-                      if (_showPetDetails) ...[
-                        const SizedBox(height: 8),
-                        Text('Lv $playerLevel · XP ${snapshot.totalXp}',
-                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
-                        Text('Bond $bond/10 · Stage $petStage · $petTypeLabel',
-                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
-                        Text('每日目標：${snapshot.dailyAnswered}/${snapshot.dailyTarget}',
-                            style: const TextStyle(fontSize: 12, color: Colors.black54)),
-                      ],
-                    ],
-                  ),
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  if (_showDailyNarrative) ...[
-                    _CardSection(
-                      color: const Color(0xFFF1F2F4),
-                      child: Text(
-                        _dailyNarrative,
-                        style: const TextStyle(fontSize: 14, color: Colors.black87),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                  ],
-                  SizedBox(
-                    height: 56,
-                    child: FilledButton(
-                      onPressed: () => _startSubject(context, primarySubject),
-                      child: Text(ctaLabel, style: const TextStyle(fontSize: 18)),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  _CardSection(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('再玩一點就會有變化',
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 6),
-                        Text(
-                          petStage >= 4
-                              ? '接下來的進展會體現在你們的羈絆上'
-                              : '下一次成長就在前面',
-                          style: const TextStyle(color: Colors.black54),
+                      SizedBox(
+                        height: 56,
+                        child: FilledButton(
+                          onPressed: () => _startSubject(context, primarySubject),
+                          child: const Text('開始今天的一回合', style: TextStyle(fontSize: 18)),
                         ),
-                        const SizedBox(height: 8),
-                        SizedBox(
-                          width: double.infinity,
-                          child: LinearProgressIndicator(value: progress),
-                        ),
-                        const SizedBox(height: 6),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      ),
+                      const SizedBox(height: 16),
+                      _CardSection(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Lv $playerLevel',
-                                style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                            const Text('我的知識資產',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 8),
                             Text(
-                              '${snapshot.totalXp} / ${widget.progressService.nextLevelXp(snapshot.level)} XP',
-                              style: const TextStyle(fontSize: 12, color: Colors.black54),
+                              knowledgeBalance.toString(),
+                              style: const TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              '今天 +$dailyPlus',
+                              style: const TextStyle(color: Colors.black54),
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  _CardSection(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('今天再 $remainingForFlame 題，就能點亮今天的火焰 🔥',
-                            style: const TextStyle(color: Colors.black54)),
-                        const SizedBox(height: 6),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: List.generate(7, (index) {
-                            final isFilled = index == 0 ? flameLit : false;
-                            return Text(isFilled ? '🔥' : '▢',
-                                style: const TextStyle(fontSize: 16));
-                          }),
+                      ),
+                      const SizedBox(height: 12),
+                      _CardSection(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('最近解鎖提示',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 6),
+                            Text(
+                              petStage >= 4
+                                  ? '再多存一點，就能解鎖新的內容'
+                                  : '再多存一點，就能解鎖下一個內容',
+                              style: const TextStyle(color: Colors.black54),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 10),
-                  _CardSection(
-                    child: Row(
-                      children: [
-                        const Text('圖鑑',
-                            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
-                        const SizedBox(width: 8),
-                        if (playerLevel >= 40)
-                          Text('${widget.coreDataStore.pokedexEntries.length} collected',
-                              style: const TextStyle(color: Colors.black45, fontSize: 12))
-                        else
-                          const Text('Lv40 後開放',
-                              style: TextStyle(color: Colors.black45, fontSize: 12)),
-                        const Spacer(),
-                        TextButton(
-                          onPressed: playerLevel >= 40
-                              ? () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) =>
-                                          PokedexScreen(coreDataStore: widget.coreDataStore),
-                                    ),
-                                  );
-                                }
-                              : null,
-                          child: const Text('查看', style: TextStyle(fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Text('選擇養成方向',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 12, color: Colors.black54)),
-                  const SizedBox(height: 6),
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    spacing: 6,
-                    children: subjects.map((subject) {
-                      return TextButton(
-                        onPressed: () => _startSubject(context, subject),
-                        child: Text(subject.title,
-                            style: const TextStyle(fontSize: 14, color: Colors.black54)),
-                      );
-                    }).toList(),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text('專攻一科，夥伴的樣子會跟著改變',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 12, color: Colors.black45)),
-                ],
+                ),
               ),
             ],
           ),
@@ -678,9 +505,9 @@ class _QuizScreenState extends State<QuizScreen> {
     final newLevel = widget.coreDataStore.player.playerLevel;
     if (newStage > previousStage) {
       final extra = newStage == 4 && previousLevel < 40 && newLevel >= 40
-          ? '\n你的夥伴已完全成長，但你們的關係，才正要開始。'
+          ? '\n你的累積已經很紮實，新的內容即將開放。'
           : '';
-      final content = '進化！你的夥伴進入 Stage $newStage\n圖鑑已新增一筆收藏$extra';
+      final content = '知識里程碑達成\n圖鑑已新增一筆收藏$extra';
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(content)),
       );

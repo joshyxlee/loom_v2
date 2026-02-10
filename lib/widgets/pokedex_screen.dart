@@ -18,7 +18,7 @@ class PokedexScreen extends StatelessWidget {
           : ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                const Text('最終成長',
+                const Text('最終里程碑',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
                 ...grouped[4]!.map((entry) => _EntryCard(
@@ -55,14 +55,14 @@ class _EmptyState extends StatelessWidget {
             const Text('你的圖鑑還是空的',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
-            const Text('現在還沒有收藏，是因為夥伴還沒第一次成長。',
+            const Text('目前還沒有收藏，因為你還沒達到第一個里程碑。',
                 style: TextStyle(color: Colors.black54),
                 textAlign: TextAlign.center),
-            const Text('等你走到第一次成長，就會出現第一筆收藏。',
+            const Text('累積到第一個里程碑，就會出現第一筆收藏。',
                 style: TextStyle(color: Colors.black54),
                 textAlign: TextAlign.center),
             const SizedBox(height: 12),
-            const Text('每個人的學習路線不同，留下的樣子也會不一樣。',
+            const Text('每個人的累積路線不同，留下的樣子也會不一樣。',
                 style: TextStyle(color: Colors.black87),
                 textAlign: TextAlign.center),
             const SizedBox(height: 18),
