@@ -459,6 +459,18 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           width: double.infinity,
                           child: LinearProgressIndicator(value: progress),
                         ),
+                        const SizedBox(height: 6),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Lv $playerLevel',
+                                style: const TextStyle(fontSize: 12, color: Colors.black54)),
+                            Text(
+                              '${snapshot.totalXp} / ${widget.progressService.nextLevelXp(snapshot.level)} XP',
+                              style: const TextStyle(fontSize: 12, color: Colors.black54),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
