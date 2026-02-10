@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -12,6 +14,8 @@ import 'services/core_data_store.dart';
 import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
 import 'widgets/pokedex_screen.dart';
+import 'widgets/design_system.dart';
+import 'widgets/loom_components.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -53,34 +57,9 @@ class _LoomV2AppState extends State<LoomV2App> {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3CC77A));
     return MaterialApp(
       title: 'Loom v2',
-      theme: ThemeData(
-        colorScheme: colorScheme,
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF7F8FA),
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          bodyMedium: TextStyle(fontSize: 16),
-        ),
-        filledButtonTheme: FilledButtonThemeData(
-          style: FilledButton.styleFrom(
-            minimumSize: const Size.fromHeight(56),
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-          ),
-        ),
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(
-            minimumSize: const Size.fromHeight(56),
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-            side: BorderSide(color: colorScheme.outlineVariant),
-          ),
-        ),
-      ),
+      theme: LoomTheme.lightTheme(),
       home: _ready
           ? OnboardingGate(
               repository: _repository,
@@ -305,7 +284,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+          padding: const EdgeInsets.fromLTRB(
+            LoomSpacing.screen,
+            LoomSpacing.sm,
+            LoomSpacing.screen,
+            LoomSpacing.md,
+          ),
           child: Column(
             children: [
               Expanded(
@@ -313,92 +297,83 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          IconButton(
-                            visualDensity: VisualDensity.compact,
-                            onPressed: _resetAll,
-                            icon: const Icon(Icons.settings, size: 18, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                      _CardSection(
+                      LoomCard(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text('今天再 5 題，火會繼續燒 🔥',
-                                style: TextStyle(color: Colors.black54)),
-                            const SizedBox(height: 8),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: List.generate(7, (index) {
-                                final isToday = index == 0;
-                                final isActive = isToday && flameLit;
-                                return Container(
-                                  width: 12,
-                                  height: 12,
-                                  decoration: BoxDecoration(
-                                    color: isActive ? Colors.orange : Colors.grey.shade300,
-                                    shape: BoxShape.circle,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '今天再 5 題，火會繼續燒 🔥',
+                                    style: LoomTypography.caption
+                                        .copyWith(color: LoomColors.mutedText),
                                   ),
-                                );
-                              }),
+                                ),
+                                IconButton(
+                                  visualDensity: VisualDensity.compact,
+                                  onPressed: _resetAll,
+                                  icon: const Icon(Icons.settings, size: 18),
+                                ),
+                              ],
                             ),
+                            const SizedBox(height: LoomSpacing.xs),
+                            LoomProgressIndicator(activeIndex: 0, isActive: flameLit),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 12),
-                      _CardSection(
+                      const SizedBox(height: LoomSpacing.md),
+                      LoomCard(
                         child: Stack(
                           children: [
                             Positioned.fill(
                               child: Align(
                                 alignment: Alignment.centerRight,
                                 child: Icon(Icons.account_balance,
-                                    size: 120, color: Colors.black.withOpacity(0.05)),
+                                    size: LoomSizes.heroWatermark,
+                                    color: Colors.black.withOpacity(0.06)),
                               ),
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const Text('我的知識存款',
-                                    style: TextStyle(fontWeight: FontWeight.bold)),
-                                const SizedBox(height: 10),
+                                Text('我的知識存款',
+                                    style: LoomTypography.caption
+                                        .copyWith(color: LoomColors.tertiaryText)),
+                                const SizedBox(height: LoomSpacing.xs),
                                 Text(
-                                  knowledgeBalance.toString(),
+                                  '\$${knowledgeBalance.toString()}',
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontSize: 56,
-                                    fontWeight: FontWeight.w800,
+                                  style: LoomTypography.display.copyWith(
+                                    fontFeatures: const [FontFeature.tabularFigures()],
+                                    color: LoomColors.secondary,
                                   ),
                                 ),
-                                const SizedBox(height: 6),
+                                const SizedBox(height: LoomSpacing.xs),
                                 Text(
-                                  '今天賺了 $dailyPlus',
-                                  style: const TextStyle(color: Colors.black54),
-                                ),
-                                const SizedBox(height: 12),
-                                SizedBox(
-                                  height: 52,
-                                  width: double.infinity,
-                                  child: FilledButton(
-                                    onPressed: () => _startSubject(context, primarySubject),
-                                    child:
-                                        const Text('小試身手', style: TextStyle(fontSize: 18)),
-                                  ),
+                                  '今天 +\$$dailyPlus',
+                                  style: LoomTypography.micro
+                                      .copyWith(color: LoomColors.mutedText),
                                 ),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: LoomSpacing.sm),
+                      LoomPrimaryButton(
+                        label: '小試身手',
+                        onPressed: () => _startSubject(context, primarySubject),
+                      ),
+                      const SizedBox(height: LoomSpacing.md),
                       Row(
                         children: [
                           Expanded(
-                            child: OutlinedButton(
-                              onPressed: () {
+                            child: LoomActionCard(
+                              title: '看看你現在站在哪',
+                              subtitle: '總榜 / 本週榜',
+                              icon: Icons.emoji_events_outlined,
+                              onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -408,13 +383,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: const Text('看看你現在站在哪 🏆'),
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          const SizedBox(width: LoomSpacing.sm),
                           Expanded(
-                            child: OutlinedButton(
-                              onPressed: () {
+                            child: LoomActionCard(
+                              title: '試試你能不能撐過 10 題',
+                              subtitle: '連續答題挑戰',
+                              icon: Icons.shield_outlined,
+                              onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -426,7 +403,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: const Text('試試你能不能撐過 10 題 ⚔️'),
                             ),
                           ),
                         ],
@@ -533,13 +509,26 @@ class LeaderboardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('看看你現在站在哪 🏆')),
       body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: const [
+        padding: const EdgeInsets.all(LoomSpacing.screen),
+        children: [
+          LoomSectionHeader(
+            title: '排行榜',
+            subtitle: '看看你目前的相對位置',
+            action: Row(
+              children: const [
+                LoomPill(label: '總榜', isActive: true),
+                SizedBox(width: 8),
+                LoomPill(label: '本週', isActive: false),
+              ],
+            ),
+          ),
+          const SizedBox(height: LoomSpacing.md),
           _LeaderboardSection(title: '總榜', entries: _fakeEntries),
-          SizedBox(height: 18),
+          const SizedBox(height: LoomSpacing.md),
           _LeaderboardSection(title: '本週', entries: _fakeEntries),
-          SizedBox(height: 18),
+          const SizedBox(height: LoomSpacing.md),
           _LeaderboardSection(title: '朋友圈', entries: _fakeEntries),
+          const SizedBox(height: LoomSpacing.lg),
         ],
       ),
     );
@@ -554,25 +543,19 @@ class _LeaderboardSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _CardSection(
+    return LoomCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 10),
+          Text(title, style: LoomTypography.body),
+          const SizedBox(height: LoomSpacing.xs),
           ...List.generate(entries.length, (index) {
             final entry = entries[index];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Row(
-                children: [
-                  Text('${index + 1}.',
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
-                  const SizedBox(width: 12),
-                  Expanded(child: Text(entry[0].toString())),
-                  Text('${entry[1]}', style: const TextStyle(color: Colors.black54)),
-                ],
-              ),
+            return LoomListRow(
+              rank: index + 1,
+              name: entry[0].toString(),
+              score: entry[1] as int,
+              isTop: index < 3,
             );
           }),
         ],
@@ -595,20 +578,26 @@ class AdvancedChallengeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('試試你能不能撐過 10 題 ⚔️')),
-      body: ListView.separated(
-        padding: const EdgeInsets.all(16),
-        itemBuilder: (context, index) {
-          final subject = subjects[index];
-          return SizedBox(
-            height: 52,
-            child: OutlinedButton(
-              onPressed: () => onStartSubject(subject),
-              child: Text(subject.title),
-            ),
-          );
-        },
-        separatorBuilder: (_, __) => const SizedBox(height: 10),
-        itemCount: subjects.length,
+      body: ListView(
+        padding: const EdgeInsets.all(LoomSpacing.screen),
+        children: [
+          LoomSectionHeader(
+            title: '選一個科目',
+            subtitle: '挑戰連續 10 題，感覺一下自己的實力',
+          ),
+          const SizedBox(height: LoomSpacing.md),
+          ...subjects.map((subject) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
+              child: LoomChallengeRow(
+                icon: Icons.auto_awesome,
+                title: subject.title,
+                subtitle: '今天想被反直覺驚到',
+                onTap: () => onStartSubject(subject),
+              ),
+            );
+          }),
+        ],
       ),
     );
   }
