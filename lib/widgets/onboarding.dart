@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'onboarding_pet_pulse.dart';
-
 class OnboardingPage {
-  const OnboardingPage({required this.title, required this.subtitle, this.showPet = false});
+  const OnboardingPage({required this.title, required this.subtitle});
   final String title;
   final String subtitle;
-  final bool showPet;
 }
 
 const onboardingPages = [
@@ -28,8 +25,7 @@ const onboardingPages = [
   ),
   OnboardingPage(
     title: '你不是只是在答題。\n你是真的會慢慢變強。',
-    subtitle: '那個變化，會反映在你的學習夥伴身上。',
-    showPet: true,
+    subtitle: '那個變化會留下來。',
   ),
   OnboardingPage(
     title: '玩久了你會發現，\n有些問題真的不用想那麼久了。',
@@ -80,10 +76,6 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                           Text(page.subtitle,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyMedium),
-                        ],
-                        if (page.showPet) ...[
-                          const SizedBox(height: 24),
-                          OnboardingPetPulse(),
                         ],
                       ],
                     ),

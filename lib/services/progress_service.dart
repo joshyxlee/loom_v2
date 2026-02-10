@@ -6,6 +6,7 @@ class ProgressSnapshot {
     required this.level,
     required this.dailyAnswered,
     required this.dailyTarget,
+    required this.dailyXp,
     required this.streakDays,
     required this.dailyBonusMultiplier,
     required this.lastActiveDate,
@@ -15,6 +16,7 @@ class ProgressSnapshot {
   final int level;
   final int dailyAnswered;
   final int dailyTarget;
+  final int dailyXp;
   final int streakDays;
   final double dailyBonusMultiplier;
   final DateTime? lastActiveDate;
@@ -41,6 +43,7 @@ class ProgressService {
 
   int _totalXp = 0;
   int _dailyAnswered = 0;
+  int _dailyXp = 0;
   int _streakDays = 0;
   double _dailyBonusMultiplier = 1.0;
   DateTime? _lastActiveDate;
@@ -50,6 +53,7 @@ class ProgressService {
         level: _levelForXp(_totalXp),
         dailyAnswered: _dailyAnswered,
         dailyTarget: dailyTarget,
+        dailyXp: _dailyXp,
         streakDays: _streakDays,
         dailyBonusMultiplier: _dailyBonusMultiplier,
         lastActiveDate: _lastActiveDate,
@@ -66,6 +70,7 @@ class ProgressService {
 
   void resetDailyProgress({required bool continuedStreak}) {
     _dailyAnswered = 0;
+    _dailyXp = 0;
     _streakDays = 0;
     _dailyBonusMultiplier = 1.0;
   }
@@ -73,6 +78,7 @@ class ProgressService {
   void resetAll() {
     _totalXp = 0;
     _dailyAnswered = 0;
+    _dailyXp = 0;
     _streakDays = 0;
     _dailyBonusMultiplier = 1.0;
     _lastActiveDate = null;
@@ -96,6 +102,7 @@ class ProgressService {
     final gained = isCorrect ? 10 : 6;
     _totalXp += gained;
     _dailyAnswered += 1;
+    _dailyXp += gained;
     _lastActiveDate = DateTime.now();
     final completedDailyTarget = _dailyAnswered == dailyTarget;
     return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);
