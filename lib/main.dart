@@ -299,7 +299,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final knowledgeBalance = widget.progressService.snapshot.totalXp +
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
     final dailyPlus = widget.progressService.snapshot.dailyXp;
-    // v3: CTA label fixed and progress cues removed
+    final dailyTargetForFlame = 5;
+    final remainingForFlame =
+        (dailyTargetForFlame - snapshot.dailyAnswered).clamp(0, dailyTargetForFlame);
+    final flameLit = snapshot.dailyAnswered >= dailyTargetForFlame;
 
     return Scaffold(
       body: SafeArea(
@@ -322,33 +325,65 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
-                      SizedBox(
-                        height: 56,
-                        child: FilledButton(
-                          onPressed: () => _startSubject(context, primarySubject),
-                          child: const Text('開始今天的一回合', style: TextStyle(fontSize: 18)),
-                        ),
-                      ),
-                      const SizedBox(height: 16),
                       _CardSection(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text('我的知識資產',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            const SizedBox(height: 8),
-                            Text(
-                              knowledgeBalance.toString(),
-                              style: const TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
+                            Text('今天再 $remainingForFlame 題，就能點亮今天的火焰 🔥',
+                                style: const TextStyle(color: Colors.black54)),
+                            const SizedBox(height: 6),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: List.generate(7, (index) {
+                                final isFilled = index == 0 ? flameLit : false;
+                                return Text(isFilled ? '🔥' : '▢',
+                                    style: const TextStyle(fontSize: 16));
+                              }),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      _CardSection(
+                        child: Stack(
+                          children: [
+                            Positioned.fill(
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Icon(Icons.account_balance,
+                                    size: 120, color: Colors.black.withOpacity(0.05)),
                               ),
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              '今天 +$dailyPlus',
-                              style: const TextStyle(color: Colors.black54),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Text('我的知識存款',
+                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                const SizedBox(height: 8),
+                                Text(
+                                  knowledgeBalance.toString(),
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 36,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  '今天 +$dailyPlus',
+                                  style: const TextStyle(color: Colors.black54),
+                                ),
+                                const SizedBox(height: 12),
+                                SizedBox(
+                                  height: 52,
+                                  width: double.infinity,
+                                  child: FilledButton(
+                                    onPressed: () => _startSubject(context, primarySubject),
+                                    child:
+                                        const Text('小試身手', style: TextStyle(fontSize: 18)),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -369,6 +404,44 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => LeaderboardScreen(
+                                      knowledgeBalance: knowledgeBalance,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: const Text('排行榜'),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => AdvancedChallengeScreen(
+                                      subjects: subjects,
+                                      onStartSubject: (subject) =>
+                                          _startSubject(context, subject),
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: const Text('進階挑戰'),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -444,6 +517,81 @@ class _SubjectButton extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(title, style: Theme.of(context).textTheme.titleMedium),
+      ),
+    );
+  }
+}
+
+class LeaderboardScreen extends StatelessWidget {
+  const LeaderboardScreen({super.key, required this.knowledgeBalance});
+
+  final int knowledgeBalance;
+
+  static const _fakeEntries = [
+    ['小宇', 12450],
+    ['阿凱', 11890],
+    ['米米', 11020],
+    ['Kevin', 10350],
+    ['雨晴', 9870],
+    ['Leo', 9450],
+    ['阿達', 9100],
+    ['小嵐', 8750],
+    ['Yuki', 8420],
+    ['阿哲', 8050],
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('排行榜')),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(16),
+        itemBuilder: (context, index) {
+          final entry = _fakeEntries[index];
+          return Row(
+            children: [
+              Text('${index + 1}.', style: const TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(width: 12),
+              Expanded(child: Text(entry[0].toString())),
+              Text('${entry[1]}', style: const TextStyle(color: Colors.black54)),
+            ],
+          );
+        },
+        separatorBuilder: (_, __) => const Divider(height: 20),
+        itemCount: _fakeEntries.length,
+      ),
+    );
+  }
+}
+
+class AdvancedChallengeScreen extends StatelessWidget {
+  const AdvancedChallengeScreen({
+    super.key,
+    required this.subjects,
+    required this.onStartSubject,
+  });
+
+  final List<Subject> subjects;
+  final void Function(Subject subject) onStartSubject;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('進階挑戰')),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(16),
+        itemBuilder: (context, index) {
+          final subject = subjects[index];
+          return SizedBox(
+            height: 52,
+            child: OutlinedButton(
+              onPressed: () => onStartSubject(subject),
+              child: Text(subject.title),
+            ),
+          );
+        },
+        separatorBuilder: (_, __) => const SizedBox(height: 10),
+        itemCount: subjects.length,
       ),
     );
   }
