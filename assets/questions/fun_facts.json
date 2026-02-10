@@ -10,7 +10,7 @@
       "四顆"
     ],
     "answerIndex": 0,
-    "explanation": "很多人以為和人一樣只有一顆。\n章魚其實有三顆心臟。",
+    "explanation": "很多人以為和人一樣只有一顆。這種題常被尺度感騙到。",
     "difficulty": "easy"
   },
   {
@@ -24,7 +24,7 @@
       "一定要冷藏保存"
     ],
     "answerIndex": 1,
-    "explanation": "結晶看起來像變質但其實無關。\n低水分加酸性讓微生物難生長。",
+    "explanation": "結晶看起來像變質但其實無關。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -38,7 +38,7 @@
       "出生後才開始長"
     ],
     "answerIndex": 2,
-    "explanation": "很多人以為是後天使用磨出來的。\n其實胎兒期生長差異就決定了指紋。",
+    "explanation": "很多人以為是後天使用磨出來的。關鍵通常在看不見的那一層。",
     "difficulty": "medium"
   },
   {
@@ -52,7 +52,7 @@
       "一頭成年大象"
     ],
     "answerIndex": 3,
-    "explanation": "容易低估體型差距。\n藍鯨舌頭重量接近一頭成年大象。",
+    "explanation": "容易低估體型差距。這種題常被尺度感騙到。",
     "difficulty": "hard"
   },
   {
@@ -66,7 +66,7 @@
       "果肉先腐爛"
     ],
     "answerIndex": 0,
-    "explanation": "變黑看起來像壞掉所以容易誤判。\n其實只是表皮細胞受冷受損變色。",
+    "explanation": "變黑看起來像壞掉所以容易誤判。關鍵通常在看不見的那一層。",
     "difficulty": "hard"
   },
   {
@@ -80,7 +80,7 @@
       "只在夜晚會忘"
     ],
     "answerIndex": 1,
-    "explanation": "三秒記憶是很常見的迷思。\n金魚其實能記住更久的事。",
+    "explanation": "三秒記憶是很常見的迷思。重點是「不是直覺就對」。",
     "difficulty": "easy"
   },
   {
@@ -94,7 +94,7 @@
       "鹽分"
     ],
     "answerIndex": 2,
-    "explanation": "很多人直覺以為是水庫。\n其實駝峰主要是脂肪儲存。",
+    "explanation": "很多人直覺以為是水庫。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -108,7 +108,7 @@
       "不正確，它是固體"
     ],
     "answerIndex": 3,
-    "explanation": "古老窗戶厚薄不一常被誤解。\n玻璃在常溫下是固體。",
+    "explanation": "古老窗戶厚薄不一常被誤解。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -122,7 +122,7 @@
       "櫻桃"
     ],
     "answerIndex": 0,
-    "explanation": "名字像莓的常被先選。\n植物學上香蕉反而是莓果。",
+    "explanation": "名字像莓的常被先選。先想規則，再選答案會更穩。",
     "difficulty": "easy"
   },
   {
@@ -136,7 +136,7 @@
       "只有冬天更高"
     ],
     "answerIndex": 1,
-    "explanation": "太陽最熱的印象很強。\n閃電瞬間溫度通常更高。",
+    "explanation": "太陽最熱的印象很強。這種題常被尺度感騙到。",
     "difficulty": "easy"
   },
   {
@@ -150,7 +150,7 @@
       "苦味"
     ],
     "answerIndex": 2,
-    "explanation": "很多人以為貓什麼都能嚐。\n貓幾乎感受不到甜味。",
+    "explanation": "很多人以為貓什麼都能嚐。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -164,7 +164,7 @@
       "比成人多"
     ],
     "answerIndex": 3,
-    "explanation": "直覺會以為長大才會變多。\n出生時骨頭數反而更多。",
+    "explanation": "直覺會以為長大才會變多。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -178,7 +178,7 @@
       "只在夜晚會變白"
     ],
     "answerIndex": 0,
-    "explanation": "直覺會覺得雪本身是白色。\n其實是散射光線讓它看起來白。",
+    "explanation": "直覺會覺得雪本身是白色。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -192,7 +192,7 @@
       "冷天會自動掉"
     ],
     "answerIndex": 1,
-    "explanation": "很多人以為只是脆弱。\n其實尾巴有預設斷裂點自保。",
+    "explanation": "很多人以為只是脆弱。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -206,7 +206,7 @@
       "只在兒童適用"
     ],
     "answerIndex": 2,
-    "explanation": "課本分區圖讓人很容易相信。\n實際上整個舌頭都能感受多種味道。",
+    "explanation": "課本分區圖讓人很容易相信。重點是「不是直覺就對」。",
     "difficulty": "easy"
   },
   {
@@ -220,7 +220,7 @@
       "能，且是少數能倒退的鳥"
     ],
     "answerIndex": 3,
-    "explanation": "很多人只記得牠會懸停。\n蜂鳥其實能倒退飛。",
+    "explanation": "很多人只記得牠會懸停。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -234,7 +234,7 @@
       "只在冬天才會南遷"
     ],
     "answerIndex": 0,
-    "explanation": "南極形象太強容易以為唯一。\n其實也有住在溫帶的企鵝。",
+    "explanation": "南極形象太強容易以為唯一。重點是「不是直覺就對」。",
     "difficulty": "easy"
   },
   {
@@ -248,7 +248,7 @@
       "對狗"
     ],
     "answerIndex": 1,
-    "explanation": "容易以為貓彼此也常喵叫。\n多數喵叫其實是對人類溝通。",
+    "explanation": "容易以為貓彼此也常喵叫。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -262,7 +262,7 @@
       "不是，是肺"
     ],
     "answerIndex": 2,
-    "explanation": "常把內臟想成更大。\n皮膚其實是最大器官。",
+    "explanation": "常把內臟想成更大。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -276,7 +276,7 @@
       "不是，牠是蛛形綱"
     ],
     "answerIndex": 3,
-    "explanation": "八隻腳很容易被當成昆蟲。\n蜘蛛屬於蛛形綱，不是昆蟲。",
+    "explanation": "八隻腳很容易被當成昆蟲。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -290,7 +290,7 @@
       "只在室外有效"
     ],
     "answerIndex": 0,
-    "explanation": "五秒規則很流行所以容易相信。\n細菌其實幾乎立刻就會沾上。",
+    "explanation": "五秒規則很流行所以容易相信。重點是「不是直覺就對」。",
     "difficulty": "medium"
   },
   {
@@ -304,7 +304,7 @@
       "透明"
     ],
     "answerIndex": 1,
-    "explanation": "毛是白的，所以皮膚也被誤以為白。\n北極熊皮膚其實是黑色。",
+    "explanation": "毛是白的，所以皮膚也被誤以為白。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -318,7 +318,7 @@
       "只有白天才需要"
     ],
     "answerIndex": 2,
-    "explanation": "這個說法很常被一概而論。\n其實不同鯊魚呼吸方式不同。",
+    "explanation": "這個說法很常被一概而論。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -332,7 +332,7 @@
       "六隻腳"
     ],
     "answerIndex": 3,
-    "explanation": "會飛或吐絲很容易被當成關鍵。\n昆蟲的必要特徵是六隻腳。",
+    "explanation": "會飛或吐絲很容易被當成關鍵。先想規則，再選答案會更穩。",
     "difficulty": "medium"
   },
   {
@@ -346,7 +346,7 @@
       "只有左撇子例外"
     ],
     "answerIndex": 0,
-    "explanation": "左右腦分工說法太好記。\n實際上多數任務都靠兩邊一起運作。",
+    "explanation": "左右腦分工說法太好記。重點是「不是直覺就對」。",
     "difficulty": "medium"
   },
   {
@@ -360,7 +360,7 @@
       "眼睛會慢半拍"
     ],
     "answerIndex": 1,
-    "explanation": "會以為是距離造成延遲。\n其實是光速比聲速快很多。",
+    "explanation": "會以為是距離造成延遲。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -374,7 +374,7 @@
       "下顎骨排列"
     ],
     "answerIndex": 2,
-    "explanation": "容易把外殼當成工具。\n蝸牛用舌頭上的小齒刮食物。",
+    "explanation": "容易把外殼當成工具。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -388,7 +388,7 @@
       "假的，多半是低頭覓食"
     ],
     "answerIndex": 3,
-    "explanation": "埋頭說法太有畫面所以常被信。\n多數其實是低頭覓食或整理羽毛。",
+    "explanation": "埋頭說法太有畫面所以常被信。重點是「不是直覺就對」。",
     "difficulty": "medium"
   },
   {
@@ -402,7 +402,7 @@
       "只在城市看不見"
     ],
     "answerIndex": 0,
-    "explanation": "超聲波讓人以為牠們看不見。\n蝙蝠其實也有視力。",
+    "explanation": "超聲波讓人以為牠們看不見。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -416,7 +416,7 @@
       "魟魚"
     ],
     "answerIndex": 1,
-    "explanation": "名字有魚就會被當成魚。\n海星其實是棘皮動物，不是魚。",
+    "explanation": "名字有魚就會被當成魚。重點是「不是直覺就對」。",
     "difficulty": "medium"
   },
   {
@@ -430,7 +430,7 @@
       "水分變少"
     ],
     "answerIndex": 2,
-    "explanation": "直覺以為骨頭變長。\n其實是脊椎間距被拉開。",
+    "explanation": "直覺以為骨頭變長。關鍵通常在看不見的那一層。",
     "difficulty": "medium"
   },
   {
@@ -444,7 +444,7 @@
       "金星"
     ],
     "answerIndex": 3,
-    "explanation": "很多人只記得它轉得慢。\n金星自轉超慢，一天比一年長。",
+    "explanation": "很多人只記得它轉得慢。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -458,7 +458,7 @@
       "眼睛乾澀"
     ],
     "answerIndex": 0,
-    "explanation": "缺氧說法很直覺。\n其實多與社會連結和同理反應有關。",
+    "explanation": "缺氧說法很直覺。關鍵通常在看不見的那一層。",
     "difficulty": "medium"
   },
   {
@@ -472,7 +472,7 @@
       "AB 型"
     ],
     "answerIndex": 1,
-    "explanation": "A 型很常見所以容易先選。\n全球最常見的是 O 型。",
+    "explanation": "A 型很常見所以容易先選。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -486,7 +486,7 @@
       "麥芽糖"
     ],
     "answerIndex": 2,
-    "explanation": "甜味常讓人想到果糖。\n乳製品主要糖是乳糖，不是果糖。",
+    "explanation": "甜味常讓人想到果糖。先想規則，再選答案會更穩。",
     "difficulty": "medium"
   },
   {
@@ -500,7 +500,7 @@
       "黑色素增加"
     ],
     "answerIndex": 3,
-    "explanation": "變厚的感覺容易誤導。\n曬黑主要是黑色素增加。",
+    "explanation": "變厚的感覺容易誤導。關鍵通常在看不見的那一層。",
     "difficulty": "medium"
   },
   {
@@ -514,7 +514,7 @@
       "撒馬爾罕"
     ],
     "answerIndex": 0,
-    "explanation": "大沙漠太有名所以常被先選。\n阿塔卡馬沙漠是極乾燥地區之一。",
+    "explanation": "大沙漠太有名所以常被先選。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -528,7 +528,7 @@
       "不到一次"
     ],
     "answerIndex": 1,
-    "explanation": "上萬次聽起來很誇張但容易被猜。\n實際大約是數百次的量級。",
+    "explanation": "上萬次聽起來很誇張但容易被猜。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -542,7 +542,7 @@
       "鴿子"
     ],
     "answerIndex": 2,
-    "explanation": "藍血常被當成比喻。\n章魚含銅血藍素，血液呈藍色。",
+    "explanation": "藍血常被當成比喻。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -556,7 +556,7 @@
       "地心引力更小"
     ],
     "answerIndex": 3,
-    "explanation": "大氣薄很直覺但不是主因。\n主要是月球重力更小。",
+    "explanation": "大氣薄很直覺但不是主因。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -570,7 +570,7 @@
       "熟成過程"
     ],
     "answerIndex": 0,
-    "explanation": "老鼠啃洞太有畫面所以常被信。\n乳酪洞主要是發酵氣體造成。",
+    "explanation": "老鼠啃洞太有畫面所以常被信。先想規則，再選答案會更穩。",
     "difficulty": "medium"
   },
   {
@@ -584,7 +584,7 @@
       "60,000Hz 左右"
     ],
     "answerIndex": 1,
-    "explanation": "高頻數字很容易被誤選。\n人耳最敏感約在 3,000Hz 附近。",
+    "explanation": "高頻數字很容易被誤選。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -598,7 +598,7 @@
       "以仰泳為主"
     ],
     "answerIndex": 2,
-    "explanation": "會以為大型動物很會游。\n河馬多在水底行走或跳躍前進。",
+    "explanation": "會以為大型動物很會游。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -612,7 +612,7 @@
       "被選中的幼蟲餵食蜂王乳"
     ],
     "answerIndex": 3,
-    "explanation": "直覺會以為是天生最大隻。\n實際上是被挑選並餵蜂王乳的幼蟲。",
+    "explanation": "直覺會以為是天生最大隻。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -626,7 +626,7 @@
       "會沉到海底"
     ],
     "answerIndex": 0,
-    "explanation": "會以為牠們乾脆不睡。\n海豚其實是半邊大腦輪流休息。",
+    "explanation": "會以為牠們乾脆不睡。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -640,7 +640,7 @@
       "海水染色"
     ],
     "answerIndex": 1,
-    "explanation": "常以為是吃到藍色東西。\n其實是含銅的血藍素造成。",
+    "explanation": "常以為是吃到藍色東西。關鍵通常在看不見的那一層。",
     "difficulty": "hard"
   },
   {
@@ -654,7 +654,7 @@
       "保持通風"
     ],
     "answerIndex": 2,
-    "explanation": "很多人以為閉眼就好。\n視覺與平衡感衝突時更容易暈。",
+    "explanation": "很多人以為閉眼就好。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -668,7 +668,7 @@
       "有時可能發生"
     ],
     "answerIndex": 3,
-    "explanation": "有時可能發生，但條件很苛刻，例如水量很少、容器開口大、環境很冷且蒸發快。一般情況還是冷水先結冰。",
+    "explanation": "有時可能發生，但條件很苛刻，例如水量很少、容器開口大、環境很冷且蒸發快。重點是「不是直覺就對」。",
     "difficulty": "hard"
   },
   {
@@ -682,7 +682,7 @@
       "產生冷氣體"
     ],
     "answerIndex": 1,
-    "explanation": "以為是鹽本身溫度低。\n其實是鹽降低冰的融點。",
+    "explanation": "以為是鹽本身溫度低。關鍵通常在看不見的那一層。",
     "difficulty": "hard"
   },
   {
@@ -696,7 +696,7 @@
       "幫自己散熱與清潔"
     ],
     "answerIndex": 3,
-    "explanation": "常被解讀成單純習慣。\n其實兼具清潔與散熱作用。",
+    "explanation": "常被解讀成單純習慣。關鍵通常在看不見的那一層。",
     "difficulty": "medium"
   },
   {
@@ -710,7 +710,7 @@
       "要看水溫"
     ],
     "answerIndex": 0,
-    "explanation": "水母沒有大腦和心臟，靠神經網運作。這真的很反直覺😮",
+    "explanation": "水母沒有大腦和心臟，靠神經網運作。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -724,7 +724,7 @@
       "看年齡"
     ],
     "answerIndex": 1,
-    "explanation": "不是，腦部各區域都有功能，並不是只用一小部分。",
+    "explanation": "不是，腦部各區域都有功能，並不是只用一小部分。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -738,7 +738,7 @@
       "約100圈"
     ],
     "answerIndex": 1,
-    "explanation": "光速非常快，大約一秒就能繞地球七圈多。這個速度很誇張🤯",
+    "explanation": "光速非常快，大約一秒就能繞地球七圈多。這種題常被尺度感騙到。",
     "difficulty": "medium"
   },
   {
@@ -752,7 +752,7 @@
       "花"
     ],
     "answerIndex": 1,
-    "explanation": "馬鈴薯其實是地下莖，不是根。",
+    "explanation": "馬鈴薯其實是地下莖，不是根。先想規則，再選答案會更穩。",
     "difficulty": "easy"
   },
   {
@@ -766,7 +766,7 @@
       "取決種類"
     ],
     "answerIndex": 1,
-    "explanation": "不會，口香糖不會被消化，但會正常排出。",
+    "explanation": "不會，口香糖不會被消化，但會正常排出。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -780,7 +780,7 @@
       "3,800萬公里"
     ],
     "answerIndex": 1,
-    "explanation": "平均距離約38萬公里，遠比想像得遠。",
+    "explanation": "平均距離約38萬公里，遠比想像得遠。這種題常被尺度感騙到。",
     "difficulty": "medium"
   },
   {
@@ -794,7 +794,7 @@
       "礦物"
     ],
     "answerIndex": 1,
-    "explanation": "蘑菇屬於真菌，不是植物。",
+    "explanation": "蘑菇屬於真菌，不是植物。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -808,7 +808,7 @@
       "只在夏天"
     ],
     "answerIndex": 1,
-    "explanation": "不會，變粗變黑多半是視覺錯覺。",
+    "explanation": "不會，變粗變黑多半是視覺錯覺。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -822,7 +822,7 @@
       "看品種"
     ],
     "answerIndex": 1,
-    "explanation": "兔子幾乎無法嘔吐，生理構造限制了這件事。",
+    "explanation": "兔子幾乎無法嘔吐，生理構造限制了這件事。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -836,7 +836,7 @@
       "腎"
     ],
     "answerIndex": 0,
-    "explanation": "人體最大的內臟是肝臟。",
+    "explanation": "人體最大的內臟是肝臟。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -850,7 +850,7 @@
       "看品種"
     ],
     "answerIndex": 0,
-    "explanation": "番茄在植物學上是水果，日常才被當成蔬菜。",
+    "explanation": "番茄在植物學上是水果，日常才被當成蔬菜。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -864,7 +864,7 @@
       "海水鹽分"
     ],
     "answerIndex": 1,
-    "explanation": "火烈鳥的粉紅色來自食物中的色素。這點很多人會驚訝😮",
+    "explanation": "火烈鳥的粉紅色來自食物中的色素。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -878,7 +878,7 @@
       "花"
     ],
     "answerIndex": 2,
-    "explanation": "仙人掌的刺其實是葉子演化而來。",
+    "explanation": "仙人掌的刺其實是葉子演化而來。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -892,7 +892,7 @@
       "角質"
     ],
     "answerIndex": 1,
-    "explanation": "鯊魚骨骼主要是軟骨，不是硬骨。",
+    "explanation": "鯊魚骨骼主要是軟骨，不是硬骨。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -906,7 +906,7 @@
       "只在高山"
     ],
     "answerIndex": 0,
-    "explanation": "會，閃電可能重複擊中同一地點。",
+    "explanation": "會，閃電可能重複擊中同一地點。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -920,7 +920,7 @@
       "只在男孩"
     ],
     "answerIndex": 1,
-    "explanation": "多數研究沒有證實糖會讓孩子更亢奮。",
+    "explanation": "多數研究沒有證實糖會讓孩子更亢奮。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -934,7 +934,7 @@
       "只在山上"
     ],
     "answerIndex": 1,
-    "explanation": "風險主要來自地形與金屬高度，撐傘本身不是關鍵。",
+    "explanation": "風險主要來自地形與金屬高度，撐傘本身不是關鍵。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -948,7 +948,7 @@
       "約3公升"
     ],
     "answerIndex": 2,
-    "explanation": "人一天大約會產生約1公升左右的唾液。",
+    "explanation": "人一天大約會產生約1公升左右的唾液。這種題常被尺度感騙到。",
     "difficulty": "medium"
   },
   {
@@ -962,7 +962,7 @@
       "約5年"
     ],
     "answerIndex": 2,
-    "explanation": "大象懷孕期約22個月，是非常長的孕期。",
+    "explanation": "大象懷孕期約22個月，是非常長的孕期。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -976,7 +976,7 @@
       "只在夏天快"
     ],
     "answerIndex": 0,
-    "explanation": "手指甲通常長得比腳趾甲快。",
+    "explanation": "手指甲通常長得比腳趾甲快。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -990,7 +990,7 @@
       "看大小"
     ],
     "answerIndex": 1,
-    "explanation": "海星是棘皮動物，不是魚類。",
+    "explanation": "海星是棘皮動物，不是魚類。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1004,7 +1004,7 @@
       "只有幼年"
     ],
     "answerIndex": 0,
-    "explanation": "會，鴨嘴獸是少數會下蛋的哺乳類。",
+    "explanation": "會，鴨嘴獸是少數會下蛋的哺乳類。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1018,7 +1018,7 @@
       "看年齡"
     ],
     "answerIndex": 1,
-    "explanation": "肝臟本身沒有痛覺受器，疼痛多來自包膜。",
+    "explanation": "肝臟本身沒有痛覺受器，疼痛多來自包膜。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -1032,7 +1032,7 @@
       "看品種"
     ],
     "answerIndex": 1,
-    "explanation": "花生其實是豆科植物，不是堅果。",
+    "explanation": "花生其實是豆科植物，不是堅果。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1046,7 +1046,7 @@
       "只在高度近視"
     ],
     "answerIndex": 1,
-    "explanation": "度數變化主要來自用眼狀況，不是因為戴眼鏡本身。",
+    "explanation": "度數變化主要來自用眼狀況，不是因為戴眼鏡本身。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1060,7 +1060,7 @@
       "只在冬天"
     ],
     "answerIndex": 1,
-    "explanation": "目前沒有證據顯示關節響會導致關節炎。",
+    "explanation": "目前沒有證據顯示關節響會導致關節炎。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1074,7 +1074,7 @@
       "只在暗處"
     ],
     "answerIndex": 1,
-    "explanation": "太近會疲勞，但不會造成永久性傷害。",
+    "explanation": "太近會疲勞，但不會造成永久性傷害。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1088,7 +1088,7 @@
       "約50公尺"
     ],
     "answerIndex": 1,
-    "explanation": "成人腸道總長約6到7公尺。",
+    "explanation": "成人腸道總長約6到7公尺。這種題常被尺度感騙到。",
     "difficulty": "medium"
   },
   {
@@ -1102,7 +1102,7 @@
       "約200次"
     ],
     "answerIndex": 1,
-    "explanation": "成人一天約呼吸兩萬次左右。",
+    "explanation": "成人一天約呼吸兩萬次左右。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1116,7 +1116,7 @@
       "只在冬天"
     ],
     "answerIndex": 0,
-    "explanation": "海獺會用石頭敲開貝類，是少數會用工具的動物。",
+    "explanation": "海獺會用石頭敲開貝類，是少數會用工具的動物。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1130,7 +1130,7 @@
       "只在沙漠"
     ],
     "answerIndex": 0,
-    "explanation": "植物的乾重主要來自空氣中的二氧化碳。這點很反直覺😮",
+    "explanation": "植物的乾重主要來自空氣中的二氧化碳。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1144,7 +1144,7 @@
       "鐵"
     ],
     "answerIndex": 1,
-    "explanation": "人體含量最多的元素是氧，來自水和有機物。",
+    "explanation": "人體含量最多的元素是氧，來自水和有機物。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1158,7 +1158,7 @@
       "背部"
     ],
     "answerIndex": 1,
-    "explanation": "蝦的心臟在頭部區域，位置很特別。",
+    "explanation": "蝦的心臟在頭部區域，位置很特別。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1172,7 +1172,7 @@
       "只有大型品種"
     ],
     "answerIndex": 0,
-    "explanation": "能，因為它們靠氣門呼吸，頭不是唯一生命關鍵。",
+    "explanation": "能，因為它們靠氣門呼吸，頭不是唯一生命關鍵。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -1186,7 +1186,7 @@
       "只在高樓"
     ],
     "answerIndex": 1,
-    "explanation": "水槽旋轉方向主要看水流與形狀，和地球自轉無關。",
+    "explanation": "水槽旋轉方向主要看水流與形狀，和地球自轉無關。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1200,7 +1200,7 @@
       "只對近視有效"
     ],
     "answerIndex": 1,
-    "explanation": "不會，紅蘿蔔有助維持視力，但不會讓視力超越正常。",
+    "explanation": "不會，紅蘿蔔有助維持視力，但不會讓視力超越正常。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1214,7 +1214,7 @@
       "只在小孩"
     ],
     "answerIndex": 1,
-    "explanation": "散熱比例取決於暴露面積，頭部不是唯一大宗。",
+    "explanation": "散熱比例取決於暴露面積，頭部不是唯一大宗。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1228,7 +1228,7 @@
       "約12公升"
     ],
     "answerIndex": 1,
-    "explanation": "成人血液量大約4到5公升。",
+    "explanation": "成人血液量大約4到5公升。這種題常被尺度感騙到。",
     "difficulty": "medium"
   },
   {
@@ -1242,7 +1242,7 @@
       "約90%"
     ],
     "answerIndex": 2,
-    "explanation": "地球表面約七成被海洋覆蓋。",
+    "explanation": "地球表面約七成被海洋覆蓋。這種題常被尺度感騙到。",
     "difficulty": "easy"
   },
   {
@@ -1256,7 +1256,7 @@
       "看品種"
     ],
     "answerIndex": 1,
-    "explanation": "大象無法跳躍，四肢結構不允許離地。",
+    "explanation": "大象無法跳躍，四肢結構不允許離地。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1270,7 +1270,7 @@
       "看體型"
     ],
     "answerIndex": 0,
-    "explanation": "鯨魚是哺乳類，需要到水面呼吸。",
+    "explanation": "鯨魚是哺乳類，需要到水面呼吸。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1284,7 +1284,7 @@
       "只在白天"
     ],
     "answerIndex": 1,
-    "explanation": "不會，大腦在睡眠中仍然活躍。",
+    "explanation": "不會，大腦在睡眠中仍然活躍。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1298,7 +1298,7 @@
       "只在冬天出現"
     ],
     "answerIndex": 2,
-    "explanation": "耳垢有保護作用，能阻擋灰塵與微生物。",
+    "explanation": "耳垢有保護作用，能阻擋灰塵與微生物。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1312,7 +1312,7 @@
       "只在冬天"
     ],
     "answerIndex": 1,
-    "explanation": "蜂巢運作靠群體，不是靠單一個體。",
+    "explanation": "蜂巢運作靠群體，不是靠單一個體。這種題容易被表面誤導。",
     "difficulty": "easy"
   },
   {
@@ -1326,7 +1326,7 @@
       "只在運動時"
     ],
     "answerIndex": 0,
-    "explanation": "骨骼會持續重塑與更新。",
+    "explanation": "骨骼會持續重塑與更新。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1340,7 +1340,7 @@
       "只在初期"
     ],
     "answerIndex": 1,
-    "explanation": "維他命C不能立刻治好感冒，但可能略減輕症狀。",
+    "explanation": "維他命C不能立刻治好感冒，但可能略減輕症狀。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1354,7 +1354,7 @@
       "只在冬天"
     ],
     "answerIndex": 0,
-    "explanation": "眼睛適應黑暗後，能看見微弱光線。",
+    "explanation": "眼睛適應黑暗後，能看見微弱光線。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1368,7 +1368,7 @@
       "只在夜晚"
     ],
     "answerIndex": 0,
-    "explanation": "海水魚會喝水，並透過鰓排出多餘鹽分。",
+    "explanation": "海水魚會喝水，並透過鰓排出多餘鹽分。這種題容易被表面誤導。",
     "difficulty": "medium"
   },
   {
@@ -1382,7 +1382,7 @@
       "看深度"
     ],
     "answerIndex": 0,
-    "explanation": "最大的火山體系在海底的洋中脊附近。",
+    "explanation": "最大的火山體系在海底的洋中脊附近。這種題容易被表面誤導。",
     "difficulty": "hard"
   },
   {
@@ -1396,7 +1396,7 @@
       "約2萬步"
     ],
     "answerIndex": 2,
-    "explanation": "一般人一天平均步數約幾千到一萬左右。",
+    "explanation": "一般人一天平均步數約幾千到一萬左右。這種題容易被表面誤導。",
     "difficulty": "medium"
   }
 ]
