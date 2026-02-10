@@ -13,23 +13,18 @@ class PokedexScreen extends StatelessWidget {
     final grouped = _groupByStage(coreDataStore.pokedexEntries);
     return Scaffold(
       appBar: AppBar(title: const Text('圖鑑')),
-      body: coreDataStore.pokedexEntries.isEmpty
+      body: grouped.isEmpty
           ? _EmptyState(onBack: () => Navigator.pop(context))
           : ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                for (final stage in [1, 2, 3, 4]) ...[
-                  if (grouped[stage]?.isNotEmpty ?? false) ...[
-                    Text('Stage $stage',
-                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 8),
-                    ...grouped[stage]!.map((entry) => _EntryCard(
-                          entry: entry,
-                          coreDataStore: coreDataStore,
-                        )),
-                    const SizedBox(height: 16),
-                  ]
-                ],
+                const Text('最終成長',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 8),
+                ...grouped[4]!.map((entry) => _EntryCard(
+                      entry: entry,
+                      coreDataStore: coreDataStore,
+                    )),
               ],
             ),
     );
@@ -37,12 +32,10 @@ class PokedexScreen extends StatelessWidget {
 
   Map<int, List<PokedexEntry>> _groupByStage(List<PokedexEntry> entries) {
     final sorted = List<PokedexEntry>.from(entries)
+      ..where((e) => e.petStage >= 4)
       ..sort((a, b) => b.unlockedAt.compareTo(a.unlockedAt));
-    final map = <int, List<PokedexEntry>>{};
-    for (final entry in sorted) {
-      map.putIfAbsent(entry.petStage, () => []).add(entry);
-    }
-    return map;
+    if (sorted.isEmpty) return {};
+    return {4: sorted};
   }
 }
 
@@ -130,18 +123,11 @@ class _EntryCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Stage ${entry.petStage} · $typeLabel',
-              style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(_learningNarrative(), style: const TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 6),
-          Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: top3.map((label) => _Chip(label: label)).toList(),
-          ),
+          Text('偏好：${top3.join(' / ')}', style: const TextStyle(color: Colors.black87)),
           const SizedBox(height: 6),
-          Text('Bond ${entry.bondLevelAtUnlock}'),
-          const SizedBox(height: 4),
-          Text('Unlocked $date', style: const TextStyle(color: Colors.black54)),
+          Text('解鎖時間：$date', style: const TextStyle(color: Colors.black54)),
         ],
       ),
     );
@@ -163,5 +149,13 @@ class _EntryCard extends StatelessWidget {
       labels.add(matches.isNotEmpty ? matches.first.displayName : 'Unknown');
     }
     return labels;
+  }
+
+  String _learningNarrative() {
+    if (entry.creditSnapshotTop3.isEmpty) return '你走的是平均路線。';
+    final top = _resolveTop3Labels();
+    if (top.length == 1) return '你明顯偏向 ${top.first} 的路線。';
+    if (top.length == 2) return '你常在 ${top[0]} 和 ${top[1]} 之間游走。';
+    return '你最常碰的是 ${top[0]}，也常走到 ${top[1]} 和 ${top[2]}。';
   }
 }

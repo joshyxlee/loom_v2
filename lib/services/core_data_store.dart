@@ -61,10 +61,8 @@ class CoreDataStore {
       currentBond: nextBond,
     );
 
-    if (nextStage > previousStage) {
-      for (var stage = previousStage + 1; stage <= nextStage; stage++) {
-        pokedexEntries.add(_buildPokedexEntry(stage));
-      }
+    if (previousStage < 4 && nextStage >= 4) {
+      pokedexEntries.add(_buildPokedexEntry(4));
     }
 
     await _savePlayer();

@@ -196,6 +196,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   bool _showPetDetails = false;
+  bool _showDailyNarrative = false;
+  String _dailyNarrative = '';
   late final AnimationController _petBreathController;
   late final Animation<double> _petBreathScale;
 
@@ -209,6 +211,25 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     _petBreathScale = Tween<double>(begin: 1.0, end: 1.03).animate(
       CurvedAnimation(parent: _petBreathController, curve: Curves.easeInOut),
     );
+    _loadDailyNarrative();
+  }
+
+  Future<void> _loadDailyNarrative() async {
+    final prefs = await SharedPreferences.getInstance();
+    final todayKey = '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}';
+    final lastShown = prefs.getString('daily_narrative_date');
+    if (lastShown == todayKey) return;
+    final options = [
+      '今天的判斷更準了。',
+      '今天比較不會被迷思帶走。',
+      '今天反應比昨天更快。',
+    ];
+    final rng = Random(DateTime.now().millisecondsSinceEpoch);
+    setState(() {
+      _dailyNarrative = options[rng.nextInt(options.length)];
+      _showDailyNarrative = true;
+    });
+    await prefs.setString('daily_narrative_date', todayKey);
   }
 
   @override
@@ -374,6 +395,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  if (_showDailyNarrative) ...[
+                    _CardSection(
+                      color: const Color(0xFFF1F2F4),
+                      child: Text(
+                        _dailyNarrative,
+                        style: const TextStyle(fontSize: 14, color: Colors.black87),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
                   SizedBox(
                     height: 56,
                     child: FilledButton(
