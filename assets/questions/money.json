@@ -10,7 +10,7 @@
       "變成零"
     ],
     "answerIndex": 0,
-    "explanation": "物價上漲讓人以為只是標價變大。\n實際上同樣的錢能買到的變少。這點很容易踩雷😅",
+    "explanation": "物價上漲讓人以為只是標價變大。現金放著會被通膨慢慢削弱。",
     "difficulty": "easy"
   },
   {
@@ -24,7 +24,7 @@
       "會自動停卡"
     ],
     "answerIndex": 1,
-    "explanation": "很多人以為最低繳款就沒事。\n其實利息會快速累積。這種地方最容易被忽略。",
+    "explanation": "很多人以為最低繳款就沒事。信用相關的使用比例會影響評分。",
     "difficulty": "easy"
   },
   {
@@ -38,7 +38,7 @@
       "規避所有風險"
     ],
     "answerIndex": 2,
-    "explanation": "常被誤會是「拿來賺更多」。\n它的核心是穩住突發支出。想清楚就不會被牽著走。",
+    "explanation": "常被誤會是「拿來賺更多」。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -52,7 +52,7 @@
       "實際是否需要"
     ],
     "answerIndex": 3,
-    "explanation": "折扣會讓人直接想「賺到」。\n真正該先問的是你是否真的需要。這種錯覺真的很常見！😮",
+    "explanation": "折扣會讓人直接想「賺到」。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "medium"
   },
   {
@@ -66,7 +66,7 @@
       "不需要利息"
     ],
     "answerIndex": 0,
-    "explanation": "低月付讓人以為負擔小。\n總期數拉長常讓總成本變高。停一下再決定就好。",
+    "explanation": "低月付讓人以為負擔小。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   },
   {
@@ -80,7 +80,7 @@
       "付款是否能分期"
     ],
     "answerIndex": 1,
-    "explanation": "促銷容易讓人多買。\n關鍵是你本來就需要兩份嗎。先算一算會更安心。",
+    "explanation": "促銷容易讓人多買。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -94,7 +94,7 @@
       "看折扣幅度"
     ],
     "answerIndex": 2,
-    "explanation": "總價很容易被包裝大小影響。\n單位價格才是公平比較。一不小心就被帶走🤯",
+    "explanation": "總價很容易被包裝大小影響。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -108,7 +108,7 @@
       "多筆分期累積失控"
     ],
     "answerIndex": 3,
-    "explanation": "每筆都小容易被低估。\n多筆分期加總後才是負擔。記住這點就不會吃虧。",
+    "explanation": "每筆都小容易被低估。關鍵在於是否會自動續費或延長付款。",
     "difficulty": "medium"
   },
   {
@@ -122,7 +122,7 @@
       "分配到不同用途"
     ],
     "answerIndex": 0,
-    "explanation": "一筆意外收入會降低自制力。\n這類錢最容易被衝動花掉。聽起來划算其實最容易失手😅",
+    "explanation": "一筆意外收入會降低自制力。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "medium"
   },
   {
@@ -136,7 +136,7 @@
       "帳單直接取消"
     ],
     "answerIndex": 1,
-    "explanation": "延期看似只是晚點付。\n多數情況會多付手續費或利息。別讓小錢把節奏帶走。",
+    "explanation": "延期看似只是晚點付。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -150,7 +150,7 @@
       "攤平"
     ],
     "answerIndex": 2,
-    "explanation": "已經花掉的錢很難割捨。\n這是典型的沉沒成本錯誤。看起來小事，其實很傷荷包😮",
+    "explanation": "已經花掉的錢很難割捨。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -164,7 +164,7 @@
       "自動續費"
     ],
     "answerIndex": 3,
-    "explanation": "免費字眼讓人放鬆警覺。\n真正風險常在自動續費。這種地方最容易被忽略。",
+    "explanation": "免費字眼讓人放鬆警覺。關鍵在於是否會自動續費或延長付款。",
     "difficulty": "easy"
   },
   {
@@ -178,7 +178,7 @@
       "信用卡張數"
     ],
     "answerIndex": 0,
-    "explanation": "收入高不等於過得輕鬆。\n固定支出才是壓力來源。想清楚就不會被牽著走。",
+    "explanation": "收入高不等於過得輕鬆。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "medium"
   },
   {
@@ -192,7 +192,7 @@
       "顏色是否好看"
     ],
     "answerIndex": 1,
-    "explanation": "保固聽起來就很安全。\n要先看故障機率與可能維修成本。這點很容易踩雷😅",
+    "explanation": "保固聽起來就很安全。重點是覆蓋範圍與重複保障，別只看安心感。",
     "difficulty": "medium"
   },
   {
@@ -206,7 +206,7 @@
       "只限白天使用"
     ],
     "answerIndex": 2,
-    "explanation": "零利率容易讓人放鬆。\n成本可能藏在手續費或原價。停一下再決定就好。",
+    "explanation": "零利率容易讓人放鬆。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   },
   {
@@ -220,7 +220,7 @@
       "是否按時還款"
     ],
     "answerIndex": 3,
-    "explanation": "很多人以為只看存款多寡。\n按時還款紀錄影響最大。先算一算會更安心。",
+    "explanation": "很多人以為只看存款多寡。信用相關的使用比例會影響評分。",
     "difficulty": "medium"
   },
   {
@@ -234,7 +234,7 @@
       "提高投資報酬"
     ],
     "answerIndex": 0,
-    "explanation": "預算常被當成束縛。\n它真正功能是設定支出上限。這種錯覺真的很常見！😮",
+    "explanation": "預算常被當成束縛。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "easy"
   },
   {
@@ -248,7 +248,7 @@
       "單次餐費"
     ],
     "answerIndex": 1,
-    "explanation": "小額很容易被忽略。\n累積後反而是大筆支出。記住這點就不會吃虧。",
+    "explanation": "小額很容易被忽略。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -262,7 +262,7 @@
       "提高收入"
     ],
     "answerIndex": 2,
-    "explanation": "很多人以為是保守。\n其實是抑制衝動消費。一不小心就被帶走🤯",
+    "explanation": "很多人以為是保守。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -276,7 +276,7 @@
       "低估實際支出"
     ],
     "answerIndex": 3,
-    "explanation": "標價看起來便宜就容易下單。\n稅費與加價才是實付金額。別讓小錢把節奏帶走。",
+    "explanation": "標價看起來便宜就容易下單。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -290,7 +290,7 @@
       "稅率會上升"
     ],
     "answerIndex": 0,
-    "explanation": "錢混在一起容易失控。\n不同目標難以追蹤進度。聽起來划算其實最容易失手😅",
+    "explanation": "錢混在一起容易失控。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -304,7 +304,7 @@
       "延後繳會有獎勵"
     ],
     "answerIndex": 1,
-    "explanation": "很多人誤以為只是晚點付。\n在寬限期內繳清才不產生利息。這種地方最容易被忽略。",
+    "explanation": "很多人誤以為只是晚點付。信用相關的使用比例會影響評分。",
     "difficulty": "medium"
   },
   {
@@ -318,7 +318,7 @@
       "它能提高信用"
     ],
     "answerIndex": 2,
-    "explanation": "折扣很吸引人。\n但手續費可能把省下的又吃掉。想清楚就不會被牽著走。",
+    "explanation": "折扣很吸引人。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -332,7 +332,7 @@
       "日常支付不會斷裂"
     ],
     "answerIndex": 3,
-    "explanation": "只看資產很容易忽略現金需求。\n沒有穩定現金流仍可能周轉困難。看起來小事，其實很傷荷包😮",
+    "explanation": "只看資產很容易忽略現金需求。現金放著會被通膨慢慢削弱。",
     "difficulty": "medium"
   },
   {
@@ -346,7 +346,7 @@
       "它不影響成本"
     ],
     "answerIndex": 0,
-    "explanation": "月利率看起來很低。\n年化才看得出實際成本。停一下再決定就好。",
+    "explanation": "月利率看起來很低。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "hard"
   },
   {
@@ -360,7 +360,7 @@
       "自動升級會員"
     ],
     "answerIndex": 1,
-    "explanation": "用滿讓人覺得剛好。\n高使用率反而可能拉低評分。先算一算會更安心。",
+    "explanation": "用滿讓人覺得剛好。信用相關的使用比例會影響評分。",
     "difficulty": "hard"
   },
   {
@@ -374,7 +374,7 @@
       "收入增加"
     ],
     "answerIndex": 2,
-    "explanation": "看不到錢立刻離開的感覺。\n會讓花費的痛感降低。這點很容易踩雷😅",
+    "explanation": "看不到錢立刻離開的感覺。關鍵在於是否會自動續費或延長付款。",
     "difficulty": "medium"
   },
   {
@@ -388,7 +388,7 @@
       "波動與不確定更大"
     ],
     "answerIndex": 3,
-    "explanation": "人很容易只看到回報。\n高報酬通常伴隨更高波動與不確定。記住這點就不會吃虧。",
+    "explanation": "人很容易只看到回報。報酬越高，風險通常也越高。",
     "difficulty": "hard"
   },
   {
@@ -402,7 +402,7 @@
       "貨運會更快"
     ],
     "answerIndex": 0,
-    "explanation": "分期把壓力分散，但總成本可能更高，還常有手續費。看月付會讓人低估總額。",
+    "explanation": "分期把壓力分散，但總成本可能更高，還常有手續費。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   },
   {
@@ -416,7 +416,7 @@
       "對沖損失"
     ],
     "answerIndex": 1,
-    "explanation": "超支後反而更難停手。\n常是沉沒成本與自我合理化。別讓小錢把節奏帶走。",
+    "explanation": "超支後反而更難停手。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "medium"
   },
   {
@@ -430,7 +430,7 @@
       "花費一定更少"
     ],
     "answerIndex": 2,
-    "explanation": "只看收入會忽略代價。\n時間與健康也是成本。一不小心就被帶走🤯",
+    "explanation": "只看收入會忽略代價。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -444,7 +444,7 @@
       "每月降低但總利息增加"
     ],
     "answerIndex": 3,
-    "explanation": "月付變少會讓人安心。\n但總利息通常會增加。這種地方最容易被忽略。",
+    "explanation": "月付變少會讓人安心。重點是看清真正成本與長期影響。",
     "difficulty": "hard"
   },
   {
@@ -458,7 +458,7 @@
       "一定比折扣好"
     ],
     "answerIndex": 0,
-    "explanation": "回饋讓人覺得在賺。\n卻可能促使花更多。想清楚就不會被牽著走。",
+    "explanation": "回饋讓人覺得在賺。回饋很容易讓人多花一點。",
     "difficulty": "medium"
   },
   {
@@ -472,7 +472,7 @@
       "只會往下"
     ],
     "answerIndex": 1,
-    "explanation": "可變聽起來彈性。\n風險是未來還款金額不確定。聽起來划算其實最容易失手😅",
+    "explanation": "可變聽起來彈性。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "hard"
   },
   {
@@ -486,7 +486,7 @@
       "縮短配送時間"
     ],
     "answerIndex": 2,
-    "explanation": "免運會變成心理目標。\n常導致多買不需要的東西。停一下再決定就好。",
+    "explanation": "免運會變成心理目標。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -500,7 +500,7 @@
       "通膨侵蝕價值"
     ],
     "answerIndex": 3,
-    "explanation": "安全感容易讓人忽略代價。\n現金會被通膨慢慢吃掉。先算一算會更安心。",
+    "explanation": "安全感容易讓人忽略代價。現金放著會被通膨慢慢削弱。",
     "difficulty": "medium"
   },
   {
@@ -514,7 +514,7 @@
       "風險控管"
     ],
     "answerIndex": 0,
-    "explanation": "買太多看似小事。\n其實是典型的浪費型支出。看起來小事，其實很傷荷包😮",
+    "explanation": "買太多看似小事。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -528,7 +528,7 @@
       "遞延效應"
     ],
     "answerIndex": 1,
-    "explanation": "原價會變成心理錨點。\n折扣看起來因此更誘人。記住這點就不會吃虧。",
+    "explanation": "原價會變成心理錨點。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "hard"
   },
   {
@@ -542,7 +542,7 @@
       "均值回歸"
     ],
     "answerIndex": 2,
-    "explanation": "把錢分成不同心理帳戶。\n因此更容易放縱消費。這點很容易踩雷😅",
+    "explanation": "把錢分成不同心理帳戶。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "medium"
   },
   {
@@ -556,7 +556,7 @@
       "年化成本"
     ],
     "answerIndex": 3,
-    "explanation": "月利率看起來很小。\n年化成本才是真正負擔。別讓小錢把節奏帶走。",
+    "explanation": "月利率看起來很小。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "hard"
   },
   {
@@ -570,7 +570,7 @@
       "當場退貨"
     ],
     "answerIndex": 0,
-    "explanation": "長期合約讓人不想承認損失。\n會更容易被沉沒成本綁住。這種錯覺真的很常見！😮",
+    "explanation": "長期合約讓人不想承認損失。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -584,7 +584,7 @@
       "法律成本為零"
     ],
     "answerIndex": 1,
-    "explanation": "往往只想到金錢本身。\n關係風險往往更大。這種地方最容易被忽略。",
+    "explanation": "往往只想到金錢本身。人情成本往往比金錢更難處理。",
     "difficulty": "medium"
   },
   {
@@ -598,7 +598,7 @@
       "會加速收入"
     ],
     "answerIndex": 2,
-    "explanation": "不只是金錢問題。\n長期分期會帶來心理與現金流壓力。想清楚就不會被牽著走。",
+    "explanation": "不只是金錢問題。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "hard"
   },
   {
@@ -612,7 +612,7 @@
       "總支出被低估"
     ],
     "answerIndex": 3,
-    "explanation": "每筆都小很容易忽略。\n累積後才發現超支。一不小心就被帶走🤯",
+    "explanation": "每筆都小很容易忽略。小額多筆累積起來常比想像大。",
     "difficulty": "easy"
   },
   {
@@ -626,7 +626,7 @@
       "不用列入預算"
     ],
     "answerIndex": 0,
-    "explanation": "可變支出看似零碎。\n但總額常被低估。停一下再決定就好。",
+    "explanation": "可變支出看似零碎。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "medium"
   },
   {
@@ -640,7 +640,7 @@
       "保障一定越多越好"
     ],
     "answerIndex": 1,
-    "explanation": "安心感會掩蓋成本。\n保費本身就是持續支出。先算一算會更安心。",
+    "explanation": "安心感會掩蓋成本。重點是覆蓋範圍與重複保障，別只看安心感。",
     "difficulty": "hard"
   },
   {
@@ -654,7 +654,7 @@
       "增加信用額度"
     ],
     "answerIndex": 2,
-    "explanation": "很多人只看每月付款壓力。\n提早還款能直接省下利息。聽起來划算其實最容易失手😅",
+    "explanation": "很多人只看每月付款壓力。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "medium"
   },
   {
@@ -668,7 +668,7 @@
       "用不到的浪費"
     ],
     "answerIndex": 3,
-    "explanation": "折扣會讓人多買。\n用不到才是最大的浪費。記住這點就不會吃虧。",
+    "explanation": "折扣會讓人多買。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -682,7 +682,7 @@
       "信用分數上升"
     ],
     "answerIndex": 1,
-    "explanation": "看似把問題延後。\n實際容易讓負債越滾越大。看起來小事，其實很傷荷包😮",
+    "explanation": "看似把問題延後。重點是看清真正成本與長期影響。",
     "difficulty": "hard"
   },
   {
@@ -696,7 +696,7 @@
       "看見真實支出"
     ],
     "answerIndex": 3,
-    "explanation": "記帳不是魔法。\n它最大的作用是看見真實支出。別讓小錢把節奏帶走。",
+    "explanation": "記帳不是魔法。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "easy"
   },
   {
@@ -710,7 +710,7 @@
       "顏色"
     ],
     "answerIndex": 0,
-    "explanation": "買太多常帶來存放與浪費成本。這點很容易踩雷😅",
+    "explanation": "買太多常帶來存放與浪費成本。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -724,7 +724,7 @@
       "顏色"
     ],
     "answerIndex": 1,
-    "explanation": "月付低不代表總成本低。這種地方最容易被忽略。",
+    "explanation": "月付低不代表總成本低。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -738,7 +738,7 @@
       "時間變多"
     ],
     "answerIndex": 1,
-    "explanation": "刷卡容易讓支出感覺不痛，累積成壓力。想清楚就不會被牽著走。",
+    "explanation": "刷卡容易讓支出感覺不痛，累積成壓力。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -752,7 +752,7 @@
       "不用比價"
     ],
     "answerIndex": 0,
-    "explanation": "回饋會讓人覺得自己省很多，但常忽略本來就不該花。這種錯覺真的很常見！😮",
+    "explanation": "回饋會讓人覺得自己省很多，但常忽略本來就不該花。回饋很容易讓人多花一點。",
     "difficulty": "easy"
   },
   {
@@ -766,7 +766,7 @@
       "利率下降"
     ],
     "answerIndex": 1,
-    "explanation": "年限拉長會讓總利息增加。停一下再決定就好。",
+    "explanation": "年限拉長會讓總利息增加。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -780,7 +780,7 @@
       "信用變高"
     ],
     "answerIndex": 1,
-    "explanation": "最常見的是買到不需要的東西。先算一算會更安心。",
+    "explanation": "最常見的是買到不需要的東西。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -794,7 +794,7 @@
       "退貨"
     ],
     "answerIndex": 1,
-    "explanation": "常會為了免運去湊單。一不小心就被帶走🤯",
+    "explanation": "常會為了免運去湊單。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -808,7 +808,7 @@
       "包裝"
     ],
     "answerIndex": 0,
-    "explanation": "折扣碼會讓人忘記原價是否合理。記住這點就不會吃虧。",
+    "explanation": "折扣碼會讓人忘記原價是否合理。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -822,7 +822,7 @@
       "保固"
     ],
     "answerIndex": 0,
-    "explanation": "零利率不代表總額小，常讓人忽略總額。聽起來划算其實最容易失手😅",
+    "explanation": "零利率不代表總額小，常讓人忽略總額。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -836,7 +836,7 @@
       "更理性"
     ],
     "answerIndex": 1,
-    "explanation": "容易導致重要事情一直拖延。別讓小錢把節奏帶走。",
+    "explanation": "容易導致重要事情一直拖延。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -850,7 +850,7 @@
       "增加投資"
     ],
     "answerIndex": 1,
-    "explanation": "預算最重要是讓你知道錢去哪裡。看起來小事，其實很傷荷包😮",
+    "explanation": "預算最重要是讓你知道錢去哪裡。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "easy"
   },
   {
@@ -864,7 +864,7 @@
       "不能退費"
     ],
     "answerIndex": 0,
-    "explanation": "小額訂閱容易忘記取消而長期扣款。這種地方最容易被忽略。",
+    "explanation": "小額訂閱容易忘記取消而長期扣款。固定扣款最常見的坑是「其實早就沒在用」。",
     "difficulty": "easy"
   },
   {
@@ -878,7 +878,7 @@
       "不影響預算"
     ],
     "answerIndex": 0,
-    "explanation": "延後付款讓人覺得好像沒花錢。想清楚就不會被牽著走。",
+    "explanation": "延後付款讓人覺得好像沒花錢。關鍵在於是否會自動續費或延長付款。",
     "difficulty": "easy"
   },
   {
@@ -892,7 +892,7 @@
       "投資太多"
     ],
     "answerIndex": 0,
-    "explanation": "多半是計畫不足，先花掉再想。這點很容易踩雷😅",
+    "explanation": "多半是計畫不足，先花掉再想。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -906,7 +906,7 @@
       "會發霉"
     ],
     "answerIndex": 1,
-    "explanation": "現金會被通膨慢慢侵蝕購買力。停一下再決定就好。",
+    "explanation": "現金會被通膨慢慢侵蝕購買力。現金放著會被通膨慢慢削弱。",
     "difficulty": "easy"
   },
   {
@@ -920,7 +920,7 @@
       "折扣碼"
     ],
     "answerIndex": 0,
-    "explanation": "稅費與運費會改變實際成本。先算一算會更安心。",
+    "explanation": "稅費與運費會改變實際成本。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -934,7 +934,7 @@
       "保單厚度"
     ],
     "answerIndex": 1,
-    "explanation": "重點是產品的故障率與保固條件。這種錯覺真的很常見！😮",
+    "explanation": "重點是產品的故障率與保固條件。重點是覆蓋範圍與重複保障，別只看安心感。",
     "difficulty": "medium"
   },
   {
@@ -948,7 +948,7 @@
       "廣告"
     ],
     "answerIndex": 1,
-    "explanation": "重點是單位價格是否真的更低。記住這點就不會吃虧。",
+    "explanation": "重點是單位價格是否真的更低。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -962,7 +962,7 @@
       "手機型號"
     ],
     "answerIndex": 0,
-    "explanation": "支出與負債決定實際壓力。一不小心就被帶走🤯",
+    "explanation": "支出與負債決定實際壓力。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -976,7 +976,7 @@
       "客服"
     ],
     "answerIndex": 0,
-    "explanation": "分期常伴隨利息或手續費。別讓小錢把節奏帶走。",
+    "explanation": "分期常伴隨利息或手續費。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -990,7 +990,7 @@
       "必要開支"
     ],
     "answerIndex": 1,
-    "explanation": "這是典型的浪費成本。聽起來划算其實最容易失手😅",
+    "explanation": "這是典型的浪費成本。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -1004,7 +1004,7 @@
       "沒時間"
     ],
     "answerIndex": 1,
-    "explanation": "容易出現重複保障與過度支出。這種地方最容易被忽略。",
+    "explanation": "容易出現重複保障與過度支出。重點是覆蓋範圍與重複保障，別只看安心感。",
     "difficulty": "medium"
   },
   {
@@ -1018,7 +1018,7 @@
       "壓力不變"
     ],
     "answerIndex": 1,
-    "explanation": "提前還款可減少利息支出。想清楚就不會被牽著走。",
+    "explanation": "提前還款可減少利息支出。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -1032,7 +1032,7 @@
       "壓力減少"
     ],
     "answerIndex": 1,
-    "explanation": "容易變成債務雪球越滾越大。看起來小事，其實很傷荷包😮",
+    "explanation": "容易變成債務雪球越滾越大。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -1046,7 +1046,7 @@
       "品牌"
     ],
     "answerIndex": 0,
-    "explanation": "折扣容易蓋過真正需求。停一下再決定就好。",
+    "explanation": "折扣容易蓋過真正需求。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -1060,7 +1060,7 @@
       "旅遊"
     ],
     "answerIndex": 1,
-    "explanation": "房租與保險等固定支出最先要清楚。先算一算會更安心。",
+    "explanation": "房租與保險等固定支出最先要清楚。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -1074,7 +1074,7 @@
       "不看帳單"
     ],
     "answerIndex": 1,
-    "explanation": "回饋常讓人多花一點。這點很容易踩雷😅",
+    "explanation": "回饋常讓人多花一點。回饋很容易讓人多花一點。",
     "difficulty": "easy"
   },
   {
@@ -1088,7 +1088,7 @@
       "保本"
     ],
     "answerIndex": 1,
-    "explanation": "高報酬通常伴隨更高風險。記住這點就不會吃虧。",
+    "explanation": "高報酬通常伴隨更高風險。報酬越高，風險通常也越高。",
     "difficulty": "easy"
   },
   {
@@ -1102,7 +1102,7 @@
       "不買東西"
     ],
     "answerIndex": 0,
-    "explanation": "可變支出最常被忽略紀錄。這種錯覺真的很常見！😮",
+    "explanation": "可變支出最常被忽略紀錄。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -1116,7 +1116,7 @@
       "店員"
     ],
     "answerIndex": 0,
-    "explanation": "分期會讓人忽略總金額。別讓小錢把節奏帶走。",
+    "explanation": "分期會讓人忽略總金額。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -1130,7 +1130,7 @@
       "樂觀偏誤"
     ],
     "answerIndex": 0,
-    "explanation": "這是沉沒成本的典型表現。一不小心就被帶走🤯",
+    "explanation": "這是沉沒成本的典型表現。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "medium"
   },
   {
@@ -1144,7 +1144,7 @@
       "口味"
     ],
     "answerIndex": 0,
-    "explanation": "百分比高不代表真的便宜。這種地方最容易被忽略。",
+    "explanation": "百分比高不代表真的便宜。先看自己是否真的需要，才不會被誘因帶著買。",
     "difficulty": "easy"
   },
   {
@@ -1158,7 +1158,7 @@
       "帳單寄到哪裡"
     ],
     "answerIndex": 1,
-    "explanation": "最常忽略的是「其實已經沒在用」。每月小額久了會變大洞。",
+    "explanation": "最常忽略的是「其實已經沒在用」。固定扣款最常見的坑是「其實早就沒在用」。",
     "difficulty": "easy"
   },
   {
@@ -1172,7 +1172,7 @@
       "顏色更多"
     ],
     "answerIndex": 1,
-    "explanation": "一次付清能減少心理負擔與長期壓力。聽起來划算其實最容易失手😅",
+    "explanation": "一次付清能減少心理負擔與長期壓力。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   },
   {
@@ -1186,7 +1186,7 @@
       "不會虧"
     ],
     "answerIndex": 0,
-    "explanation": "只聽消息容易被短線波動影響。停一下再決定就好。",
+    "explanation": "只聽消息容易被短線波動影響。報酬越高，風險通常也越高。",
     "difficulty": "medium"
   },
   {
@@ -1200,7 +1200,7 @@
       "更自由"
     ],
     "answerIndex": 1,
-    "explanation": "支出變多會讓現金流變緊。先算一算會更安心。",
+    "explanation": "支出變多會讓現金流變緊。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -1214,7 +1214,7 @@
       "回饋變多"
     ],
     "answerIndex": 1,
-    "explanation": "信用評分可能下降。看起來小事，其實很傷荷包😮",
+    "explanation": "信用評分可能下降。信用相關的使用比例會影響評分。",
     "difficulty": "easy"
   },
   {
@@ -1228,7 +1228,7 @@
       "保險"
     ],
     "answerIndex": 1,
-    "explanation": "最容易影響的是彼此關係。記住這點就不會吃虧。",
+    "explanation": "最容易影響的是彼此關係。人情成本往往比金錢更難處理。",
     "difficulty": "easy"
   },
   {
@@ -1242,7 +1242,7 @@
       "一定變便宜"
     ],
     "answerIndex": 1,
-    "explanation": "先存再買能降低衝動。這點很容易踩雷😅",
+    "explanation": "先存再買能降低衝動。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -1256,7 +1256,7 @@
       "保固太久"
     ],
     "answerIndex": 0,
-    "explanation": "月付低往往代表期數很長。別讓小錢把節奏帶走。",
+    "explanation": "月付低往往代表期數很長。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -1270,7 +1270,7 @@
       "名稱"
     ],
     "answerIndex": 1,
-    "explanation": "利率相同時，期限會影響總成本。這種錯覺真的很常見！😮",
+    "explanation": "利率相同時，期限會影響總成本。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   },
   {
@@ -1284,7 +1284,7 @@
       "只在節日"
     ],
     "answerIndex": 0,
-    "explanation": "固定收入也可能遇到突發支出。這種地方最容易被忽略。",
+    "explanation": "固定收入也可能遇到突發支出。真正的壓力多半來自固定支出與負債結構。",
     "difficulty": "easy"
   },
   {
@@ -1298,7 +1298,7 @@
       "制服"
     ],
     "answerIndex": 0,
-    "explanation": "身心負擔是常被忽略的成本。想清楚就不會被牽著走。",
+    "explanation": "身心負擔是常被忽略的成本。重點是看清真正成本與長期影響。",
     "difficulty": "medium"
   },
   {
@@ -1312,7 +1312,7 @@
       "更健康"
     ],
     "answerIndex": 0,
-    "explanation": "小額多筆累積起來非常可觀。一不小心就被帶走🤯",
+    "explanation": "小額多筆累積起來非常可觀。小額多筆累積起來常比想像大。",
     "difficulty": "easy"
   },
   {
@@ -1326,7 +1326,7 @@
       "太便宜"
     ],
     "answerIndex": 1,
-    "explanation": "衝動決定最容易買到用不到。停一下再決定就好。",
+    "explanation": "衝動決定最容易買到用不到。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -1340,7 +1340,7 @@
       "更帥"
     ],
     "answerIndex": 1,
-    "explanation": "年化利率能用同一尺度比較成本。先算一算會更安心。",
+    "explanation": "年化利率能用同一尺度比較成本。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "easy"
   },
   {
@@ -1354,7 +1354,7 @@
       "顏色不好"
     ],
     "answerIndex": 1,
-    "explanation": "只用現金會錯過建立信用紀錄。聽起來划算其實最容易失手😅",
+    "explanation": "只用現金會錯過建立信用紀錄。現金放著會被通膨慢慢削弱。",
     "difficulty": "medium"
   },
   {
@@ -1368,7 +1368,7 @@
       "保固更長"
     ],
     "answerIndex": 1,
-    "explanation": "發票能做記錄，也可能兌獎。記住這點就不會吃虧。",
+    "explanation": "發票能做記錄，也可能兌獎。重點是看清真正成本與長期影響。",
     "difficulty": "easy"
   },
   {
@@ -1382,7 +1382,7 @@
       "利率變低"
     ],
     "answerIndex": 1,
-    "explanation": "記帳讓花費變得更清楚。看起來小事，其實很傷荷包😮",
+    "explanation": "記帳讓花費變得更清楚。它們的重點是把流向看清楚，才有調整空間。",
     "difficulty": "easy"
   },
   {
@@ -1396,7 +1396,7 @@
       "變成固定"
     ],
     "answerIndex": 0,
-    "explanation": "可變利率有上升風險。別讓小錢把節奏帶走。",
+    "explanation": "可變利率有上升風險。分期看起來輕鬆，但總額與手續費才是關鍵。",
     "difficulty": "medium"
   }
 ]
