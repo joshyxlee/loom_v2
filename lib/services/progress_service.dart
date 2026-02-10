@@ -70,6 +70,14 @@ class ProgressService {
     _dailyBonusMultiplier = 1.0;
   }
 
+  void resetAll() {
+    _totalXp = 0;
+    _dailyAnswered = 0;
+    _streakDays = 0;
+    _dailyBonusMultiplier = 1.0;
+    _lastActiveDate = null;
+  }
+
   void ensureDailyState() {
     final now = DateTime.now();
     if (_lastActiveDate == null) {

@@ -308,6 +308,25 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     setState(() {});
   }
 
+  Future<void> _resetAll() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    await widget.coreDataStore.init(defaultSubjects: defaultSubjects);
+    widget.progressService.resetAll();
+    if (!mounted) return;
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (_) => OnboardingGate(
+          repository: widget.repository,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+        ),
+      ),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     widget.progressService.ensureDailyState();
@@ -344,13 +363,20 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: IconButton(
-                          visualDensity: VisualDensity.compact,
-                          onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
-                          icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            visualDensity: VisualDensity.compact,
+                            onPressed: () => setState(() => _showPetDetails = !_showPetDetails),
+                            icon: const Icon(Icons.info_outline, size: 18, color: Colors.black54),
+                          ),
+                          IconButton(
+                            visualDensity: VisualDensity.compact,
+                            onPressed: _resetAll,
+                            icon: const Icon(Icons.settings, size: 18, color: Colors.black54),
+                          ),
+                        ],
                       ),
                       ScaleTransition(
                         scale: _petBreathScale,
