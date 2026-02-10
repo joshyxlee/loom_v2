@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -329,15 +327,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('今天再 $remainingForFlame 題，就能點亮今天的火焰 🔥',
-                                style: const TextStyle(color: Colors.black54)),
-                            const SizedBox(height: 6),
+                            const Text('今天再 5 題，火會繼續燒 🔥',
+                                style: TextStyle(color: Colors.black54)),
+                            const SizedBox(height: 8),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: List.generate(7, (index) {
-                                final isFilled = index == 0 ? flameLit : false;
-                                return Text(isFilled ? '🔥' : '▢',
-                                    style: const TextStyle(fontSize: 16));
+                                final isToday = index == 0;
+                                final isActive = isToday && flameLit;
+                                return Container(
+                                  width: 12,
+                                  height: 12,
+                                  decoration: BoxDecoration(
+                                    color: isActive ? Colors.orange : Colors.grey.shade300,
+                                    shape: BoxShape.circle,
+                                  ),
+                                );
                               }),
                             ),
                           ],
@@ -359,18 +364,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 const Text('我的知識存款',
                                     style: TextStyle(fontWeight: FontWeight.bold)),
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 10),
                                 Text(
                                   knowledgeBalance.toString(),
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
-                                    fontSize: 36,
+                                    fontSize: 56,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
-                                  '今天 +$dailyPlus',
+                                  '今天賺了 $dailyPlus',
                                   style: const TextStyle(color: Colors.black54),
                                 ),
                                 const SizedBox(height: 12),
@@ -384,23 +389,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                               ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      _CardSection(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('最近解鎖提示',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            const SizedBox(height: 6),
-                            Text(
-                              petStage >= 4
-                                  ? '再多存一點，就能解鎖新的內容'
-                                  : '再多存一點，就能解鎖下一個內容',
-                              style: const TextStyle(color: Colors.black54),
                             ),
                           ],
                         ),
@@ -420,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: const Text('排行榜'),
+                              child: const Text('看看你現在站在哪 🏆'),
                             ),
                           ),
                           const SizedBox(width: 12),
@@ -438,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: const Text('進階挑戰'),
+                              child: const Text('試試你能不能撐過 10 題 ⚔️'),
                             ),
                           ),
                         ],
@@ -543,22 +531,51 @@ class LeaderboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('排行榜')),
-      body: ListView.separated(
+      appBar: AppBar(title: const Text('看看你現在站在哪 🏆')),
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        itemBuilder: (context, index) {
-          final entry = _fakeEntries[index];
-          return Row(
-            children: [
-              Text('${index + 1}.', style: const TextStyle(fontWeight: FontWeight.bold)),
-              const SizedBox(width: 12),
-              Expanded(child: Text(entry[0].toString())),
-              Text('${entry[1]}', style: const TextStyle(color: Colors.black54)),
-            ],
-          );
-        },
-        separatorBuilder: (_, __) => const Divider(height: 20),
-        itemCount: _fakeEntries.length,
+        children: const [
+          _LeaderboardSection(title: '總榜', entries: _fakeEntries),
+          SizedBox(height: 18),
+          _LeaderboardSection(title: '本週', entries: _fakeEntries),
+          SizedBox(height: 18),
+          _LeaderboardSection(title: '朋友圈', entries: _fakeEntries),
+        ],
+      ),
+    );
+  }
+}
+
+class _LeaderboardSection extends StatelessWidget {
+  const _LeaderboardSection({required this.title, required this.entries});
+
+  final String title;
+  final List<List<Object>> entries;
+
+  @override
+  Widget build(BuildContext context) {
+    return _CardSection(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+          const SizedBox(height: 10),
+          ...List.generate(entries.length, (index) {
+            final entry = entries[index];
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Row(
+                children: [
+                  Text('${index + 1}.',
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(width: 12),
+                  Expanded(child: Text(entry[0].toString())),
+                  Text('${entry[1]}', style: const TextStyle(color: Colors.black54)),
+                ],
+              ),
+            );
+          }),
+        ],
       ),
     );
   }
@@ -577,7 +594,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('進階挑戰')),
+      appBar: AppBar(title: const Text('試試你能不能撐過 10 題 ⚔️')),
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
         itemBuilder: (context, index) {
@@ -601,8 +618,10 @@ class _QuizScreenState extends State<QuizScreen> {
   int _index = 0;
   int? _selected;
   int _lastXp = 0;
+  int _sessionXp = 0;
   bool _dailyTargetJustCompleted = false;
   int _lastLevel = 1;
+  bool _showSessionReward = false;
   int _correctStreak = 0;
   bool _streakJustHit = false;
   bool _levelUpPulse = false;
@@ -611,9 +630,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _levelUpMoment = false;
   bool _isJudging = false;
   bool _showFeedback = false;
-  String _resultLine = '';
   double _petBounceScale = 1.0;
-  bool _showResultDialog = false;
   bool _lastIsCorrect = false;
 
   // moment texts removed
@@ -637,12 +654,6 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
-
-  String _pickResultLine(bool isCorrect) {
-    if (!isCorrect) return '沒事，這題很多人會錯';
-    final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    return _correctResultTexts[rng.nextInt(_correctResultTexts.length)];
-  }
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
@@ -737,10 +748,10 @@ class _QuizScreenState extends State<QuizScreen> {
                             difficulty: question.difficultyValue,
                           );
                           _lastXp = result.gainedXp;
+                          _sessionXp += result.gainedXp;
                           _dailyTargetJustCompleted = result.completedDailyTarget;
                           _isJudging = true;
                           _showFeedback = false;
-                          _resultLine = _pickResultLine(isCorrect);
                           _lastIsCorrect = isCorrect;
                           if (isCorrect) {
                             _correctStreak += 1;
@@ -772,15 +783,9 @@ class _QuizScreenState extends State<QuizScreen> {
                           // moment removed
                         });
 
-                        setState(() {
-                          _showResultDialog = true;
-                          _lastIsCorrect = isCorrect;
-                        });
-
-                        Future.delayed(const Duration(milliseconds: 800), () {
+                        Future.delayed(const Duration(milliseconds: 500), () {
                           if (!mounted) return;
                           setState(() {
-                            _showResultDialog = false;
                             _isJudging = false;
                             _showFeedback = true;
                           });
@@ -807,20 +812,13 @@ class _QuizScreenState extends State<QuizScreen> {
                     levelUpPulse: _levelUpPulse,
                     onNext: () {
                       if (_index + 1 >= widget.questions.length) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => _SessionSummaryCard(
-                              subject: widget.subject,
-                              totalQuestions: widget.questions.length,
-                              dailyAnswered: widget.progressService.snapshot.dailyAnswered,
-                              dailyTarget: widget.progressService.snapshot.dailyTarget,
-                              repository: widget.repository,
-                              progressService: widget.progressService,
-                              coreDataStore: widget.coreDataStore,
-                            ),
-                          ),
-                        );
+                        setState(() {
+                          _showSessionReward = true;
+                        });
+                        Future.delayed(const Duration(milliseconds: 700), () {
+                          if (!mounted) return;
+                          Navigator.popUntil(context, (route) => route.isFirst);
+                        });
                       } else {
                         setState(() {
                           _index += 1;
@@ -831,7 +829,6 @@ class _QuizScreenState extends State<QuizScreen> {
                           _levelUpPulse = false;
                           _isJudging = false;
                           _showFeedback = false;
-                          _showResultDialog = false;
                           _petBounceScale = 1.0;
                         });
                       }
@@ -840,29 +837,29 @@ class _QuizScreenState extends State<QuizScreen> {
                 ],
               ),
             ),
-            if (_showResultDialog)
+            if (_showSessionReward)
               Positioned.fill(
                 child: IgnorePointer(
-                  child: AnimatedOpacity(
-                    opacity: _showResultDialog ? 1.0 : 0.0,
-                    duration: const Duration(milliseconds: 200),
+                  child: Container(
+                    color: Colors.black87,
                     child: Center(
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.86,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
-                          decoration: BoxDecoration(
-                            color: _lastIsCorrect ? Colors.green : Colors.red.shade400,
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: Text(
-                            _resultLine,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
-                            ),
+                      child: TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 0.8, end: 1.0),
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.elasticOut,
+                        builder: (context, value, child) {
+                          return Transform.scale(
+                            scale: value,
+                            child: child,
+                          );
+                        },
+                        child: Text(
+                          '+$_sessionXp 知識存款',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
                           ),
                         ),
                       ),
