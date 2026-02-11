@@ -883,6 +883,20 @@ class _QuizScreenState extends State<QuizScreen> {
     return ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
   }
 
+  void _awardMilestoneTokens(int previousXp, int newXp) {
+    if (newXp <= previousXp) return;
+    final startLevel = LevelThresholds.levelForXp(previousXp);
+    final endLevel = LevelThresholds.levelForXp(newXp);
+    if (endLevel <= startLevel) return;
+    final todayKey = widget.progressService.todayKey;
+    for (var level = startLevel + 1; level <= endLevel; level++) {
+      final threshold = LevelThresholds.thresholdForLevel(level);
+      if (previousXp < threshold && newXp >= threshold) {
+        TokenService.instance.addTokenWithCap(20, todayKey);
+      }
+    }
+  }
+
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
