@@ -710,7 +710,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
         children: [
           LoomSectionHeader(
             title: '選一個科目',
-            subtitle: '挑戰連續 10 題，感覺一下自己的實力',
+            subtitle: '想要變成專家？選你喜歡的科目吧！',
           ),
           const SizedBox(height: LoomSpacing.md),
           ...subjects.map((subject) {
