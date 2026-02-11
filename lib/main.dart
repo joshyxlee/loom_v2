@@ -555,11 +555,16 @@ class _SubjectButton extends StatelessWidget {
   }
 }
 
-class LeaderboardScreen extends StatelessWidget {
+class LeaderboardScreen extends StatefulWidget {
   const LeaderboardScreen({super.key, required this.knowledgeBalance});
 
   final int knowledgeBalance;
 
+  @override
+  State<LeaderboardScreen> createState() => _LeaderboardScreenState();
+}
+
+class _LeaderboardScreenState extends State<LeaderboardScreen> {
   static const _fakeEntries = [
     ['小宇', 12450],
     ['阿凱', 11890],
@@ -573,8 +578,11 @@ class LeaderboardScreen extends StatelessWidget {
     ['阿哲', 8050],
   ];
 
+  int _tabIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    final title = _tabIndex == 0 ? '總榜' : '本週';
     return Scaffold(
       appBar: AppBar(title: const Text('看看你現在站在哪 🏆')),
       body: ListView(
@@ -588,20 +596,22 @@ class LeaderboardScreen extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: LoomSecondaryButton(label: '總榜', onPressed: () {}),
+                child: LoomSecondaryButton(
+                  label: '總榜',
+                  onPressed: () => setState(() => _tabIndex = 0),
+                ),
               ),
               const SizedBox(width: LoomSpacing.base),
               Expanded(
-                child: LoomSecondaryButton(label: '本週', onPressed: () {}),
+                child: LoomSecondaryButton(
+                  label: '本週',
+                  onPressed: () => setState(() => _tabIndex = 1),
+                ),
               ),
             ],
           ),
           const SizedBox(height: LoomSpacing.md),
-          _LeaderboardSection(title: '總榜', entries: _fakeEntries),
-          const SizedBox(height: LoomSpacing.md),
-          _LeaderboardSection(title: '本週', entries: _fakeEntries),
-          const SizedBox(height: LoomSpacing.md),
-          _LeaderboardSection(title: '朋友圈', entries: _fakeEntries),
+          _LeaderboardSection(title: title, entries: _fakeEntries),
           const SizedBox(height: LoomSpacing.lg),
         ],
       ),
