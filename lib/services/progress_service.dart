@@ -84,6 +84,7 @@ class ProgressService {
   }
 
   bool get streakSavePending => _streakSavePending;
+  bool get todayCompleted => _todayCompleted;
 
   void clearStreakSavePending() {
     _streakSavePending = false;

@@ -444,7 +444,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: LoomSpacing.base),
                             LoomProgressIndicator(
-                              activeCount: streakDays.clamp(0, 7),
+                              activeCount: (streakDays +
+                                      (widget.progressService.todayCompleted ? 1 : 0))
+                                  .clamp(0, 7),
                             ),
                           ],
                         ),
