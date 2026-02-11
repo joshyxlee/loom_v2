@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'level_thresholds.dart';
+import 'token_service.dart';
 
 class ProgressSnapshot {
   const ProgressSnapshot({
@@ -90,6 +91,7 @@ class ProgressService {
   bool get todayCompleted => _todayCompleted;
   bool get yesterdayCompleted => _yesterdayCompleted;
   int get prevStreakDays => _prevStreakDays;
+  String get todayKey => _dayKey(DateTime.now());
 
   void clearStreakSavePending() {
     _streakSavePending = false;
@@ -145,6 +147,7 @@ class ProgressService {
     final lastKey = _dayKey(_lastActiveDate!);
     final gapDays = _daysBetween(lastKey, todayKey);
 
+    TokenService.instance.resetDailyEarnedIfNeeded(todayKey);
     if (!_yesterdayCompleted && _streakDays > 0) {
       _streakSavePending = true;
       _prevStreakDays = _streakDays;
@@ -172,6 +175,7 @@ class ProgressService {
     final completedDailyTarget = _dailyAnswered == dailyTarget;
     if (completedDailyTarget && !_todayCompleted) {
       _todayCompleted = true;
+      TokenService.instance.awardDailyCompletion(todayKey);
       _saveStreakState();
     }
     return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);

@@ -21,6 +21,7 @@ import 'widgets/loom_section.dart';
 import 'widgets/streak_card.dart';
 import 'screens/shop_screen.dart';
 import 'services/token_service.dart';
+import 'services/level_thresholds.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -250,6 +251,22 @@ class _HomeScreenState extends State<HomeScreen> {
         return 40;
       default:
         return 40;
+    }
+  }
+
+  void _awardMilestoneTokens(int previousXp, int newXp) {
+    if (newXp <= previousXp) return;
+    var nextLevel = widget.coreDataStore.player.playerLevel;
+    if (nextLevel <= 1) return;
+    final startLevel = LevelThresholds.levelForXp(previousXp);
+    final endLevel = LevelThresholds.levelForXp(newXp);
+    if (endLevel <= startLevel) return;
+    final todayKey = widget.progressService.todayKey;
+    for (var level = startLevel + 1; level <= endLevel; level++) {
+      final threshold = LevelThresholds.thresholdForLevel(level);
+      if (previousXp < threshold && newXp >= threshold) {
+        TokenService.instance.addTokenWithCap(20, todayKey);
+      }
     }
   }
 
@@ -839,6 +856,8 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showSessionReward = false;
   int _correctStreak = 0;
   bool _streakJustHit = false;
+  bool _sessionBonus3Awarded = false;
+  bool _sessionBonus5Awarded = false;
   bool _levelUpPulse = false;
   double _levelProgress = 0.0;
   int _progressAnimMs = 350;
@@ -998,10 +1017,13 @@ class _QuizScreenState extends State<QuizScreen> {
                           isCorrect: isCorrect,
                           difficulty: question.difficultyValue,
                         );
+                        final prevXp = widget.coreDataStore.player.totalXp;
                         await _handleCoreGrowth(
                           subjectId: question.subject,
                           isCorrect: isCorrect,
                         );
+                        final newXp = widget.coreDataStore.player.totalXp;
+                        _awardMilestoneTokens(prevXp, newXp);
                         final leveledUp =
                             widget.coreDataStore.player.playerLevel > _lastLevel;
                         setState(() {
@@ -1015,6 +1037,17 @@ class _QuizScreenState extends State<QuizScreen> {
                           if (isCorrect) {
                             _correctStreak += 1;
                             _streakJustHit = _correctStreak == 3;
+                            final todayKey = widget.progressService.todayKey;
+                            TokenService.instance.addTokenWithCap(1, todayKey);
+                            if (_correctStreak == 3 && !_sessionBonus3Awarded) {
+                              TokenService.instance.addTokenWithCap(2, todayKey);
+                              _sessionBonus3Awarded = true;
+                              TokenService.instance.awardGolden3(todayKey);
+                            }
+                            if (_correctStreak == 5 && !_sessionBonus5Awarded) {
+                              TokenService.instance.addTokenWithCap(3, todayKey);
+                              _sessionBonus5Awarded = true;
+                            }
                           } else {
                             _correctStreak = 0;
                             _streakJustHit = false;
