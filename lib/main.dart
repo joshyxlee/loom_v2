@@ -50,6 +50,7 @@ class _LoomV2AppState extends State<LoomV2App> {
   Future<void> _bootstrap() async {
     await _seenStore.init();
     await _coreDataStore.init(defaultSubjects: defaultSubjects);
+    await TokenService.instance.init();
     setSubjects(_coreDataStore.subjects);
     _repository = RepositoryFactory(
       source: RepositorySource.local,
@@ -279,9 +280,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final creditsTotal =
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
     final tokenService = TokenService.instance;
-    if (tokenService.knowledgeToken == 0 && creditsTotal > 0) {
-      tokenService.knowledgeToken = creditsTotal;
-    }
     final totalXp = widget.coreDataStore.player.totalXp;
     final knowledgeBalance = totalXp + creditsTotal;
     final dailyPlus = widget.progressService.snapshot.dailyXp;
@@ -724,7 +722,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('試試你能不能撐過 10 題 ⚔️')),
+      appBar: AppBar(title: const Text('試試你能不能撐過 5 題 ⚔️')),
       body: ListView(
         padding: const EdgeInsets.all(LoomSpacing.screen),
         children: [
@@ -741,7 +739,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
               '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
               '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
               '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
-              _ => '選一個科目，挑戰連續 10 題',
+              _ => '選一個科目，挑戰連續 5 題',
             };
             return Padding(
               padding: const EdgeInsets.only(bottom: LoomSpacing.sm),

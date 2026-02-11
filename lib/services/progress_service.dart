@@ -34,7 +34,7 @@ class AnswerResult {
 
 class ProgressService {
   ProgressService({
-    this.dailyTarget = 10,
+    this.dailyTarget = 5,
     this.maxLevel = 50,
   });
 
