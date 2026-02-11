@@ -714,7 +714,8 @@ class AdvancedChallengeScreen extends StatelessWidget {
           ),
           const SizedBox(height: LoomSpacing.md),
           ...subjects.map((subject) {
-            final subtitle = switch (subject.title) {
+            final displayTitle = subject.title == '金錢' ? '理財' : subject.title;
+            final subtitle = switch (displayTitle) {
               '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
               '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
               '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
@@ -735,7 +736,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              subject.title,
+                              displayTitle,
                               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                             ),
                             const SizedBox(height: LoomSpacing.base),
