@@ -14,7 +14,7 @@ class ShopScreen extends StatefulWidget {
 class _ShopScreenState extends State<ShopScreen> {
   int _tabIndex = 0;
 
-  void _handlePurchase(BuildContext context, int price) {
+  void _handlePurchase(BuildContext context, int price, {bool activateShield = false}) {
     final service = TokenService.instance;
     if (!service.canAfford(price)) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -23,6 +23,9 @@ class _ShopScreenState extends State<ShopScreen> {
       return;
     }
     service.deductToken(price);
+    if (activateShield) {
+      service.activateMistakeShield();
+    }
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('購買成功')),
     );
@@ -75,6 +78,13 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
             const SizedBox(height: LoomSpacing.md),
+            ShopItemCard(
+              title: '失誤保護卡',
+              description: '第一次答錯不扣分，保住這一回合。',
+              price: 150,
+              onPurchase: () => _handlePurchase(context, 150, activateShield: true),
+            ),
+            const SizedBox(height: LoomSpacing.sm),
             ShopItemCard(
               title: '專注強化',
               description: '短時間內提升專注力的狀態加成。',

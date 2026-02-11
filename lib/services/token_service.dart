@@ -4,6 +4,7 @@ class TokenService {
   static final TokenService instance = TokenService._();
 
   int knowledgeToken = 0;
+  bool _mistakeShieldActive = false;
 
   void addToken(int amount) {
     if (amount <= 0) return;
@@ -18,5 +19,15 @@ class TokenService {
   bool canAfford(int amount) {
     if (amount <= 0) return true;
     return knowledgeToken >= amount;
+  }
+
+  void activateMistakeShield() {
+    _mistakeShieldActive = true;
+  }
+
+  bool consumeMistakeShield() {
+    if (!_mistakeShieldActive) return false;
+    _mistakeShieldActive = false;
+    return true;
   }
 }

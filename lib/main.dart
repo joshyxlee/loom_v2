@@ -19,6 +19,7 @@ import 'widgets/loom_card.dart';
 import 'widgets/loom_button.dart';
 import 'widgets/loom_section.dart';
 import 'screens/shop_screen.dart';
+import 'services/token_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -927,7 +928,13 @@ class _QuizScreenState extends State<QuizScreen> {
                       isLocked: _selected != null,
                       isCorrectOption: question.isCorrect(i),
                       onTap: () {
-                        final isCorrect = question.isCorrect(i);
+                        var isCorrect = question.isCorrect(i);
+                        if (!isCorrect) {
+                          final shieldUsed = TokenService.instance.consumeMistakeShield();
+                          if (shieldUsed) {
+                            isCorrect = true;
+                          }
+                        }
                         setState(() {
                           _selected = i;
                           _lastLevel = widget.progressService.snapshot.level;
