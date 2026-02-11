@@ -51,6 +51,7 @@ class _LoomV2AppState extends State<LoomV2App> {
     await _seenStore.init();
     await _coreDataStore.init(defaultSubjects: defaultSubjects);
     await TokenService.instance.init();
+    await _progressService.init();
     setSubjects(_coreDataStore.subjects);
     _repository = RepositoryFactory(
       source: RepositorySource.local,
@@ -177,9 +178,49 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _streakDialogShown = false;
+
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<void> _showStreakSaveDialog() async {
+    if (_streakDialogShown) return;
+    _streakDialogShown = true;
+    final tokenService = TokenService.instance;
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        final canSave = tokenService.canAfford(20);
+        return AlertDialog(
+          title: const Text('保住連續紀錄？'),
+          content: const Text('用 20 Tokens 保留你的 🔥 連續天數。'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                widget.progressService.resetStreak();
+                widget.progressService.clearStreakSavePending();
+                Navigator.pop(context);
+              },
+              child: const Text('放棄'),
+            ),
+            TextButton(
+              onPressed: canSave
+                  ? () {
+                      tokenService.deductToken(20);
+                      widget.progressService.clearStreakSavePending();
+                      Navigator.pop(context);
+                    }
+                  : null,
+              child: Text(canSave ? '保留' : 'Tokens 不夠'),
+            ),
+          ],
+        );
+      },
+    );
+    _streakDialogShown = false;
   }
 
   String _resolvePetTypeLabel() {
@@ -274,6 +315,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     widget.progressService.ensureDailyState();
+    if (widget.progressService.streakSavePending) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        _showStreakSaveDialog();
+      });
+    }
     final snapshot = widget.progressService.snapshot;
     final primarySubject = subjects.first;
     final streakDays = snapshot.streakDays;
@@ -386,10 +433,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              '今天完成 5 題 🔥',
-                              style: LoomTypography.secondary
-                                  .copyWith(color: LoomColors.textSecondary),
+                            Row(
+                              children: [
+                                Text(
+                                  '今天完成 5 題 🔥 ${snapshot.streakDays}',
+                                  style: LoomTypography.secondary
+                                      .copyWith(color: LoomColors.textSecondary),
+                                ),
+                              ],
                             ),
                             const SizedBox(height: LoomSpacing.base),
                             LoomProgressIndicator(
