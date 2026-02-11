@@ -4,7 +4,7 @@ class LoomColors {
   static const background = Color(0xFFF7F8FA);
   static const surface = Color(0xFFFFFFFF);
   static const primary = Color(0xFF3CC77A);
-  static const primaryStrong = Color(0xFF2EAE66);
+  static const primaryStrong = Color(0xFF26A75E);
   static const divider = Color(0x14000000);
   static const textPrimary = Color(0xFF111111);
   static const textSecondary = Color(0xA6000000);
@@ -17,8 +17,8 @@ class LoomColors {
 class LoomTypography {
   // Big number (deposit/XP)
   static const bigNumber = TextStyle(
-    fontSize: 56,
-    fontWeight: FontWeight.w700,
+    fontSize: 76,
+    fontWeight: FontWeight.w600,
     height: 1.05,
   );
 
@@ -72,7 +72,8 @@ class LoomElevation {
 
 class LoomSizes {
   static const buttonHeight = 56.0;
-  static const cardPadding = 20.0;
+  static const buttonRadius = 18.0;
+  static const cardPadding = 16.0;
   static const dotSize = 8.0;
 }
 

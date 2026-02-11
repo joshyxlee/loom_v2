@@ -15,7 +15,15 @@ class LoomPrimaryButton extends StatelessWidget {
       width: double.infinity,
       child: FilledButton(
         onPressed: onPressed,
-        child: Text(label, style: LoomTypography.body.copyWith(fontWeight: FontWeight.w600)),
+        style: FilledButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomSizes.buttonRadius),
+          ),
+          elevation: 0.8,
+          shadowColor: Colors.black.withOpacity(0.08),
+          textStyle: LoomTypography.body.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
+        ),
+        child: Text(label),
       ),
     );
   }

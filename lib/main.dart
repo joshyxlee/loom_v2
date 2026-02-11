@@ -369,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '今天再 5 題，火會繼續燒',
+                              '今天完成 5 題 🔥',
                               style: LoomTypography.secondary
                                   .copyWith(color: LoomColors.textSecondary),
                             ),
@@ -414,7 +414,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const SizedBox(height: LoomSpacing.base),
                               SizedBox(
-                                height: 2,
+                                height: 4,
                                 child: LinearProgressIndicator(
                                   value: levelProgress,
                                   color: LoomColors.primary,
@@ -425,9 +425,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: LoomSpacing.base),
+                      const SizedBox(height: LoomSpacing.md),
                       SizedBox(
-                        height: 64,
+                        height: LoomSizes.buttonHeight,
                         child: LoomPrimaryButton(
                           label: '開始變聰明！',
                           onPressed: () => _startSubject(context, primarySubject),

@@ -39,7 +39,9 @@ class LoomProgressIndicator extends StatelessWidget {
           height: LoomSizes.dotSize,
           margin: const EdgeInsets.only(right: LoomSpacing.base),
           decoration: BoxDecoration(
-            color: isActive ? LoomColors.primary : LoomColors.divider,
+            color: isActive
+                ? LoomColors.primary
+                : LoomColors.primary.withOpacity(0.4),
             shape: BoxShape.circle,
           ),
         );
