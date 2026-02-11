@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -17,7 +15,9 @@ import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
 import 'widgets/pokedex_screen.dart';
 import 'widgets/design_system.dart';
-import 'widgets/loom_components.dart';
+import 'widgets/loom_card.dart';
+import 'widgets/loom_button.dart';
+import 'widgets/loom_section.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -273,8 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
     widget.progressService.ensureDailyState();
     final snapshot = widget.progressService.snapshot;
     final primarySubject = subjects.first;
-    final petStage = widget.coreDataStore.activePet.currentStage;
-    // playerLevel unused in v3 home
+    final streakDays = snapshot.streakDays;
     final knowledgeBalance = widget.progressService.snapshot.totalXp +
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
     final dailyPlus = widget.progressService.snapshot.dailyXp;
@@ -302,6 +301,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      LoomCard(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '今天再 5 題，火會繼續燒',
+                                    style: LoomTypography.secondary
+                                        .copyWith(color: LoomColors.textSecondary),
+                                  ),
+                                ),
+                                IconButton(
+                                  visualDensity: VisualDensity.compact,
+                                  onPressed: _resetAll,
+                                  icon: const Icon(Icons.settings, size: 18),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: LoomSpacing.base),
+                            LoomProgressIndicator(
+                              activeCount: streakDays.clamp(0, 7),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: LoomSpacing.md),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.5,
                         child: LoomCard(
@@ -309,22 +336,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('我的知識存款',
-                                  style: LoomTypography.caption
-                                      .copyWith(color: LoomColors.tertiaryText)),
-                              const SizedBox(height: LoomSpacing.xs),
+                                  style: LoomTypography.sectionTitle
+                                      .copyWith(color: LoomColors.textSecondary)),
+                              const SizedBox(height: LoomSpacing.base),
                               Text(
                                 '\$${knowledgeBalance.toString()}',
                                 textAlign: TextAlign.center,
-                                style: LoomTypography.display.copyWith(
+                                style: LoomTypography.bigNumber.copyWith(
                                   fontFeatures: const [FontFeature.tabularFigures()],
-                                  color: LoomColors.secondary,
+                                  color: LoomColors.textPrimary,
                                 ),
                               ),
-                              const SizedBox(height: LoomSpacing.xs),
+                              const SizedBox(height: LoomSpacing.base),
                               Text(
-                                '今天 +\$$dailyPlus',
-                                style: LoomTypography.micro
-                                    .copyWith(color: LoomColors.mutedText),
+                                '今天 +$dailyPlus',
+                                style: LoomTypography.secondary
+                                    .copyWith(color: LoomColors.textSecondary),
                               ),
                               const SizedBox(height: LoomSpacing.sm),
                               SizedBox(
@@ -347,10 +374,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               '距離下一個里程碑還差 $remainingToNext',
                               textAlign: TextAlign.center,
-                              style: LoomTypography.caption
-                                  .copyWith(color: LoomColors.mutedText),
+                              style: LoomTypography.secondary
+                                  .copyWith(color: LoomColors.textSecondary),
                             ),
-                            const SizedBox(height: LoomSpacing.xs),
+                            const SizedBox(height: LoomSpacing.base),
                             SizedBox(
                               height: 2,
                               child: LinearProgressIndicator(
@@ -371,9 +398,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           Expanded(
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(LoomRadius.card),
-                              onTap: () {
+                            child: LoomTileButton(
+                              label: '排行榜',
+                              onPressed: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -383,18 +410,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: LoomCard(
-                                child: Center(
-                                  child: Text('排行榜', style: LoomTypography.body),
-                                ),
-                              ),
                             ),
                           ),
                           const SizedBox(width: LoomSpacing.sm),
                           Expanded(
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(LoomRadius.card),
-                              onTap: () {
+                            child: LoomTileButton(
+                              label: '進階挑戰',
+                              onPressed: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -406,11 +428,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 );
                               },
-                              child: LoomCard(
-                                child: Center(
-                                  child: Text('進階挑戰', style: LoomTypography.body),
-                                ),
-                              ),
                             ),
                           ),
                         ],
@@ -522,13 +539,18 @@ class LeaderboardScreen extends StatelessWidget {
           LoomSectionHeader(
             title: '排行榜',
             subtitle: '看看你目前的相對位置',
-            action: Row(
-              children: const [
-                LoomPill(label: '總榜', isActive: true),
-                SizedBox(width: 8),
-                LoomPill(label: '本週', isActive: false),
-              ],
-            ),
+          ),
+          const SizedBox(height: LoomSpacing.sm),
+          Row(
+            children: [
+              Expanded(
+                child: LoomSecondaryButton(label: '總榜', onPressed: () {}),
+              ),
+              const SizedBox(width: LoomSpacing.base),
+              Expanded(
+                child: LoomSecondaryButton(label: '本週', onPressed: () {}),
+              ),
+            ],
           ),
           const SizedBox(height: LoomSpacing.md),
           _LeaderboardSection(title: '總榜', entries: _fakeEntries),
@@ -555,15 +577,38 @@ class _LeaderboardSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: LoomTypography.body),
-          const SizedBox(height: LoomSpacing.xs),
+          Text(title, style: LoomTypography.sectionTitle),
+          const SizedBox(height: LoomSpacing.base),
           ...List.generate(entries.length, (index) {
             final entry = entries[index];
-            return LoomListRow(
-              rank: index + 1,
-              name: entry[0].toString(),
-              score: entry[1] as int,
-              isTop: index < 3,
+            final isTop = index < 3;
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: LoomSpacing.base),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 24,
+                    child: Text(
+                      '${index + 1}',
+                      style: LoomTypography.body.copyWith(
+                        color: isTop ? LoomColors.primary : LoomColors.textSecondary,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: LoomSpacing.base),
+                  Expanded(
+                    child: Text(entry[0].toString(), style: LoomTypography.body),
+                  ),
+                  Text(
+                    '${entry[1]}',
+                    style: LoomTypography.body.copyWith(
+                      color: LoomColors.textSecondary,
+                      fontWeight: FontWeight.w600,
+                      fontFeatures: const [FontFeature.tabularFigures()],
+                    ),
+                  ),
+                ],
+              ),
             );
           }),
         ],
@@ -597,11 +642,30 @@ class AdvancedChallengeScreen extends StatelessWidget {
           ...subjects.map((subject) {
             return Padding(
               padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
-              child: LoomChallengeRow(
-                icon: Icons.auto_awesome,
-                title: subject.title,
-                subtitle: '今天想被反直覺驚到',
+              child: InkWell(
+                borderRadius: BorderRadius.circular(LoomRadius.card),
                 onTap: () => onStartSubject(subject),
+                child: LoomCard(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(subject.title, style: LoomTypography.body),
+                            const SizedBox(height: LoomSpacing.base),
+                            Text(
+                              '選一個科目，挑戰連續 10 題',
+                              style: LoomTypography.secondary
+                                  .copyWith(color: LoomColors.textSecondary),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.chevron_right, color: LoomColors.textSecondary),
+                    ],
+                  ),
+                ),
               ),
             );
           }),
@@ -627,17 +691,10 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _levelUpMoment = false;
   bool _isJudging = false;
   bool _showFeedback = false;
-  String _resultLine = '';
   double _petBounceScale = 1.0;
-  bool _showResultDialog = false;
   bool _lastIsCorrect = false;
 
   // moment texts removed
-
-  static const _correctResultTexts = [
-    '答對了！',
-    '這題你抓到了',
-  ];
 
   @override
   void initState() {
@@ -653,12 +710,6 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
-
-  String _pickResultLine(bool isCorrect) {
-    if (!isCorrect) return '沒事，這題很多人會錯';
-    final rng = Random(DateTime.now().millisecondsSinceEpoch);
-    return _correctResultTexts[rng.nextInt(_correctResultTexts.length)];
-  }
 
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
@@ -732,6 +783,41 @@ class _QuizScreenState extends State<QuizScreen> {
                 Text('ID: ${question.id}',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
                 const SizedBox(height: 18),
+                if (_selected != null && _showFeedback)
+                  _FeedbackCard(
+                    xp: _lastXp,
+                    explanation: question.explanation,
+                    isCorrect: question.isCorrect(_selected!),
+                    levelUp: widget.progressService.snapshot.level > _lastLevel,
+                    streakHit: _streakJustHit,
+                    dailyHit: _dailyTargetJustCompleted,
+                    isLast: _index + 1 >= widget.questions.length,
+                    levelUpPulse: _levelUpPulse,
+                    onNext: () {
+                      if (_index + 1 >= widget.questions.length) {
+                        setState(() {
+                          _showSessionReward = true;
+                        });
+                        Future.delayed(const Duration(milliseconds: 700), () {
+                          if (!mounted) return;
+                          Navigator.popUntil(context, (route) => route.isFirst);
+                        });
+                      } else {
+                        setState(() {
+                          _index += 1;
+                          _selected = null;
+                          _lastXp = 0;
+                          _dailyTargetJustCompleted = false;
+                          _streakJustHit = false;
+                          _levelUpPulse = false;
+                          _isJudging = false;
+                          _showFeedback = false;
+                          _petBounceScale = 1.0;
+                        });
+                      }
+                    },
+                  ),
+                const SizedBox(height: LoomSpacing.sm),
                 ...List.generate(question.options.length, (i) {
                   final option = question.options[i];
                   final selected = _selected == i;
@@ -757,7 +843,6 @@ class _QuizScreenState extends State<QuizScreen> {
                           _dailyTargetJustCompleted = result.completedDailyTarget;
                           _isJudging = true;
                           _showFeedback = false;
-                          _resultLine = _pickResultLine(isCorrect);
                           _lastIsCorrect = isCorrect;
                           if (isCorrect) {
                             _correctStreak += 1;
@@ -790,16 +875,8 @@ class _QuizScreenState extends State<QuizScreen> {
                         });
 
                         setState(() {
-                          _showResultDialog = true;
-                        });
-
-                        Future.delayed(const Duration(milliseconds: 600), () {
-                          if (!mounted) return;
-                          setState(() {
-                            _showResultDialog = false;
-                            _isJudging = false;
-                            _showFeedback = true;
-                          });
+                          _isJudging = false;
+                          _showFeedback = true;
                         });
 
                         _handleCoreGrowth(
@@ -811,41 +888,6 @@ class _QuizScreenState extends State<QuizScreen> {
                   );
                 }),
                 const SizedBox(height: 8),
-                if (_selected != null && _showFeedback)
-                  _FeedbackCard(
-                    xp: _lastXp,
-                    explanation: question.explanation,
-                    isCorrect: question.isCorrect(_selected!),
-                    levelUp: widget.progressService.snapshot.level > _lastLevel,
-                    streakHit: _streakJustHit,
-                    dailyHit: _dailyTargetJustCompleted,
-                    isLast: _index + 1 >= widget.questions.length,
-                    levelUpPulse: _levelUpPulse,
-                    onNext: () {
-                      if (_index + 1 >= widget.questions.length) {
-                        setState(() {
-                          _showSessionReward = true;
-                        });
-                        Future.delayed(const Duration(milliseconds: 700), () {
-                          if (!mounted) return;
-                          Navigator.popUntil(context, (route) => route.isFirst);
-                        });
-                      } else {
-                        setState(() {
-                          _index += 1;
-                          _selected = null;
-                          _lastXp = 0;
-                          _dailyTargetJustCompleted = false;
-                          _streakJustHit = false;
-                          _levelUpPulse = false;
-                          _isJudging = false;
-                          _showFeedback = false;
-                          _showResultDialog = false;
-                          _petBounceScale = 1.0;
-                        });
-                      }
-                    },
-                  ),
                 ],
               ),
             ),
@@ -873,22 +915,6 @@ class _QuizScreenState extends State<QuizScreen> {
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            if (_showResultDialog)
-              Positioned.fill(
-                child: IgnorePointer(
-                  child: Center(
-                    child: LoomCard(
-                      child: Text(
-                        _resultLine,
-                        textAlign: TextAlign.center,
-                        style: LoomTypography.title.copyWith(
-                          color: _lastIsCorrect ? LoomColors.success : LoomColors.danger,
                         ),
                       ),
                     ),
@@ -992,46 +1018,52 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bannerColor = isCorrect ? LoomColors.success : LoomColors.danger;
     return AnimatedScale(
-      scale: levelUpPulse ? 1.04 : 1.0,
-      duration: const Duration(milliseconds: 450),
+      scale: levelUpPulse ? 1.02 : 1.0,
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(LoomSizes.cardPadding),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.08),
-              blurRadius: 12,
-              offset: const Offset(0, 6),
-            ),
-          ],
+          color: bannerColor,
+          borderRadius: BorderRadius.circular(LoomRadius.card),
+          boxShadow: LoomElevation.card,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('本題 +$xp XP', style: Theme.of(context).textTheme.bodyMedium),
+            Text(
+              isCorrect ? '答對了！' : '可惜！',
+              style: LoomTypography.sectionTitle.copyWith(color: Colors.white),
+            ),
+            const SizedBox(height: LoomSpacing.base),
+            Text(
+              isCorrect ? '繼續保持這個節奏' : '再試一次就會更穩',
+              style: LoomTypography.body.copyWith(color: Colors.white),
+            ),
+            const SizedBox(height: LoomSpacing.base),
+            Text('本題 +$xp XP',
+                style: LoomTypography.secondary.copyWith(color: Colors.white)),
             if (levelUp) ...[
-              const SizedBox(height: 6),
-              const Text('🌱 升級完成', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: LoomSpacing.base),
+              Text('升級完成', style: LoomTypography.body.copyWith(color: Colors.white)),
             ],
             if (streakHit) ...[
-              const SizedBox(height: 6),
-              const Text('🔥 連勝 x3', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: LoomSpacing.base),
+              Text('連勝 x3', style: LoomTypography.body.copyWith(color: Colors.white)),
             ],
             if (dailyHit) ...[
-              const SizedBox(height: 6),
-              const Text('🎉 今日達標', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: LoomSpacing.base),
+              Text('今日達標', style: LoomTypography.body.copyWith(color: Colors.white)),
             ],
-            const SizedBox(height: 8),
-            Text(explanation, style: Theme.of(context).textTheme.bodyMedium),
-            const SizedBox(height: 12),
-            FilledButton(
+            const SizedBox(height: LoomSpacing.sm),
+            Text(explanation, style: LoomTypography.body.copyWith(color: Colors.white)),
+            const SizedBox(height: LoomSpacing.sm),
+            LoomPrimaryButton(
+              label: isLast ? '回到主選單' : '下一題',
               onPressed: onNext,
-              child: Text(isLast ? '回到主選單' : '下一題'),
             ),
           ],
         ),
