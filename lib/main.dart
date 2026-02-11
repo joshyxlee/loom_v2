@@ -282,14 +282,19 @@ class _HomeScreenState extends State<HomeScreen> {
     if (tokenService.knowledgeToken == 0 && creditsTotal > 0) {
       tokenService.knowledgeToken = creditsTotal;
     }
-    final knowledgeBalance = widget.progressService.snapshot.totalXp + creditsTotal;
+    final totalXp = widget.coreDataStore.player.totalXp;
+    final knowledgeBalance = totalXp + creditsTotal;
     final dailyPlus = widget.progressService.snapshot.dailyXp;
-    final currentLevelXp = widget.progressService.currentLevelXp(snapshot.level);
-    final nextLevelXp = widget.progressService.nextLevelXp(snapshot.level);
-    final remainingToNext = (nextLevelXp - snapshot.totalXp).clamp(0, nextLevelXp);
+    final currentLevelXp = widget.progressService.currentLevelXp(
+      widget.coreDataStore.player.playerLevel,
+    );
+    final nextLevelXp = widget.progressService.nextLevelXp(
+      widget.coreDataStore.player.playerLevel,
+    );
+    final remainingToNext = (nextLevelXp - totalXp).clamp(0, nextLevelXp);
     final levelProgress = nextLevelXp == currentLevelXp
         ? 1.0
-        : ((snapshot.totalXp - currentLevelXp) / (nextLevelXp - currentLevelXp))
+        : ((totalXp - currentLevelXp) / (nextLevelXp - currentLevelXp))
             .clamp(0.0, 1.0);
 
     return Scaffold(
@@ -805,9 +810,10 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   double _currentLevelProgress() {
+    final level = widget.coreDataStore.player.playerLevel;
+    final current = widget.progressService.currentLevelXp(level);
+    final next = widget.progressService.nextLevelXp(level);
     final snapshot = widget.progressService.snapshot;
-    final current = widget.progressService.currentLevelXp(snapshot.level);
-    final next = widget.progressService.nextLevelXp(snapshot.level);
     return ((snapshot.totalXp - current) / (next - current)).clamp(0.0, 1.0);
   }
 
@@ -817,6 +823,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final previousStage = widget.coreDataStore.activePet.currentStage;
     final previousLevel = widget.coreDataStore.player.playerLevel;
     await widget.coreDataStore.recordAnswer(subjectId: subjectId, isCorrect: isCorrect);
+    widget.progressService.setTotalXp(widget.coreDataStore.player.totalXp);
     if (!mounted) return;
     final newStage = widget.coreDataStore.activePet.currentStage;
     final newLevel = widget.coreDataStore.player.playerLevel;
@@ -931,7 +938,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       enabled: _selected == null,
                       isLocked: _selected != null,
                       isCorrectOption: question.isCorrect(i),
-                      onTap: () {
+                      onTap: () async {
                         var isCorrect = question.isCorrect(i);
                         if (!isCorrect) {
                           final shieldUsed = TokenService.instance.consumeMistakeShield();
@@ -939,13 +946,19 @@ class _QuizScreenState extends State<QuizScreen> {
                             isCorrect = true;
                           }
                         }
+                        _lastLevel = widget.coreDataStore.player.playerLevel;
+                        final result = widget.progressService.recordAnswer(
+                          isCorrect: isCorrect,
+                          difficulty: question.difficultyValue,
+                        );
+                        await _handleCoreGrowth(
+                          subjectId: question.subject,
+                          isCorrect: isCorrect,
+                        );
+                        final leveledUp =
+                            widget.coreDataStore.player.playerLevel > _lastLevel;
                         setState(() {
                           _selected = i;
-                          _lastLevel = widget.progressService.snapshot.level;
-                          final result = widget.progressService.recordAnswer(
-                            isCorrect: isCorrect,
-                            difficulty: question.difficultyValue,
-                          );
                           _lastXp = result.gainedXp;
                           _sessionXp += result.gainedXp;
                           _dailyTargetJustCompleted = result.completedDailyTarget;
@@ -959,7 +972,6 @@ class _QuizScreenState extends State<QuizScreen> {
                             _correctStreak = 0;
                             _streakJustHit = false;
                           }
-                          final leveledUp = widget.progressService.snapshot.level > _lastLevel;
                           if (leveledUp) {
                             _levelUpPulse = true;
                             _progressAnimMs = 300;
@@ -979,18 +991,12 @@ class _QuizScreenState extends State<QuizScreen> {
                             _progressAnimMs = 350;
                             _levelProgress = _currentLevelProgress();
                           }
-                          // moment removed
                         });
 
                         setState(() {
                           _isJudging = false;
                           _showFeedback = true;
                         });
-
-                        _handleCoreGrowth(
-                          subjectId: question.subject,
-                          isCorrect: question.isCorrect(i),
-                        );
                       },
                     ),
                   );

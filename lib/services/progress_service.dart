@@ -100,12 +100,15 @@ class ProgressService {
   AnswerResult recordAnswer({required bool isCorrect, required int difficulty}) {
     ensureDailyState();
     final gained = isCorrect ? 10 : 6;
-    _totalXp += gained;
     _dailyAnswered += 1;
     _dailyXp += gained;
     _lastActiveDate = DateTime.now();
     final completedDailyTarget = _dailyAnswered == dailyTarget;
     return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);
+  }
+
+  void setTotalXp(int totalXp) {
+    _totalXp = totalXp;
   }
 
   int _levelForXp(int xp) {
