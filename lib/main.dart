@@ -466,7 +466,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.5,
+                        height: MediaQuery.of(context).size.height * 0.42,
                         child: LoomCard(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

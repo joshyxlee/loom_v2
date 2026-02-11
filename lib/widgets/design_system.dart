@@ -17,7 +17,7 @@ class LoomColors {
 class LoomTypography {
   // Big number (deposit/XP)
   static const bigNumber = TextStyle(
-    fontSize: 76,
+    fontSize: 64,
     fontWeight: FontWeight.w600,
     height: 1.05,
   );
