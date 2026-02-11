@@ -18,6 +18,7 @@ import 'widgets/design_system.dart';
 import 'widgets/loom_card.dart';
 import 'widgets/loom_button.dart';
 import 'widgets/loom_section.dart';
+import 'widgets/streak_card.dart';
 import 'screens/shop_screen.dart';
 import 'services/token_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -324,6 +325,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final snapshot = widget.progressService.snapshot;
     final primarySubject = subjects.first;
     final streakDays = snapshot.streakDays;
+    final todayAnswered = snapshot.dailyAnswered;
+    final dailyTarget = snapshot.dailyTarget;
+    final todayCompleted = widget.progressService.todayCompleted;
+    final yesterdayCompleted = widget.progressService.yesterdayCompleted;
+    final prevStreakDays = widget.progressService.prevStreakDays;
+    final streakSavePending = widget.progressService.streakSavePending;
+    final canSaveStreak = TokenService.instance.canAfford(20);
     final creditsTotal =
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
     final tokenService = TokenService.instance;
@@ -429,27 +437,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      LoomCard(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  '今天完成 5 題 🔥 ${snapshot.streakDays}',
-                                  style: LoomTypography.secondary
-                                      .copyWith(color: LoomColors.textSecondary),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: LoomSpacing.base),
-                            LoomProgressIndicator(
-                              activeCount: (streakDays +
-                                      (widget.progressService.todayCompleted ? 1 : 0))
-                                  .clamp(0, 7),
-                            ),
-                          ],
-                        ),
+                      StreakCard(
+                        streakDays: streakDays,
+                        prevStreakDays: prevStreakDays,
+                        todayAnswered: todayAnswered,
+                        dailyTarget: dailyTarget,
+                        todayCompleted: todayCompleted,
+                        yesterdayCompleted: yesterdayCompleted,
+                        streakSavePending: streakSavePending,
+                        canSaveStreak: canSaveStreak,
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(

@@ -45,6 +45,7 @@ class ProgressService {
   static const _yesterdayCompletedKey = 'loom_yesterday_completed';
   static const _todayCompletedKey = 'loom_today_completed';
   static const _streakSavePendingKey = 'loom_streak_save_pending';
+  static const _prevStreakKey = 'loom_prev_streak_days';
 
   final int dailyTarget;
   final int maxLevel;
@@ -56,6 +57,7 @@ class ProgressService {
   bool _todayCompleted = false;
   bool _yesterdayCompleted = false;
   bool _streakSavePending = false;
+  int _prevStreakDays = 0;
   double _dailyBonusMultiplier = 1.0;
   DateTime? _lastActiveDate;
   SharedPreferences? _prefs;
@@ -74,6 +76,7 @@ class ProgressService {
   Future<void> init() async {
     _prefs ??= await SharedPreferences.getInstance();
     _streakDays = _prefs?.getInt(_streakKey) ?? 0;
+    _prevStreakDays = _prefs?.getInt(_prevStreakKey) ?? 0;
     _todayCompleted = _prefs?.getBool(_todayCompletedKey) ?? false;
     _yesterdayCompleted = _prefs?.getBool(_yesterdayCompletedKey) ?? false;
     _streakSavePending = _prefs?.getBool(_streakSavePendingKey) ?? false;
@@ -85,6 +88,8 @@ class ProgressService {
 
   bool get streakSavePending => _streakSavePending;
   bool get todayCompleted => _todayCompleted;
+  bool get yesterdayCompleted => _yesterdayCompleted;
+  int get prevStreakDays => _prevStreakDays;
 
   void clearStreakSavePending() {
     _streakSavePending = false;
@@ -92,6 +97,7 @@ class ProgressService {
   }
 
   void resetStreak() {
+    _prevStreakDays = _streakDays;
     _streakDays = 0;
     _streakSavePending = false;
     _saveStreakState();
@@ -117,6 +123,7 @@ class ProgressService {
     _dailyAnswered = 0;
     _dailyXp = 0;
     _streakDays = 0;
+    _prevStreakDays = 0;
     _todayCompleted = false;
     _yesterdayCompleted = false;
     _streakSavePending = false;
@@ -140,9 +147,12 @@ class ProgressService {
 
     if (!_yesterdayCompleted && _streakDays > 0) {
       _streakSavePending = true;
+      _prevStreakDays = _streakDays;
     } else if (gapDays == 1 && _yesterdayCompleted) {
       _streakDays = _streakDays <= 0 ? 1 : _streakDays + 1;
+      _prevStreakDays = _streakDays;
     } else if (gapDays > 1) {
+      _prevStreakDays = _streakDays;
       _streakDays = 0;
     }
 
@@ -201,6 +211,7 @@ class ProgressService {
     _prefs!.setBool(_todayCompletedKey, _todayCompleted);
     _prefs!.setBool(_yesterdayCompletedKey, _yesterdayCompleted);
     _prefs!.setBool(_streakSavePendingKey, _streakSavePending);
+    _prefs!.setInt(_prevStreakKey, _prevStreakDays);
     final lastKey = lastActiveOverride ?? (_lastActiveDate != null ? _dayKey(_lastActiveDate!) : null);
     if (lastKey != null) {
       _prefs!.setString(_lastActiveKey, lastKey);
