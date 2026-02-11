@@ -18,6 +18,7 @@ import 'widgets/design_system.dart';
 import 'widgets/loom_card.dart';
 import 'widgets/loom_button.dart';
 import 'widgets/loom_section.dart';
+import 'screens/shop_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -327,6 +328,15 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (_) => LeaderboardScreen(
                 knowledgeBalance: knowledgeBalance,
               ),
+            ),
+          );
+          return;
+        }
+        if (index == 3) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const ShopScreen(),
             ),
           );
           return;
