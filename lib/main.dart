@@ -714,6 +714,14 @@ class AdvancedChallengeScreen extends StatelessWidget {
           ),
           const SizedBox(height: LoomSpacing.md),
           ...subjects.map((subject) {
+            final subtitle = switch (subject.title) {
+              '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
+              '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
+              '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
+              '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
+              '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
+              _ => '選一個科目，挑戰連續 10 題',
+            };
             return Padding(
               padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
               child: InkWell(
@@ -726,13 +734,17 @@ class AdvancedChallengeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(subject.title, style: LoomTypography.body),
+                            Text(
+                              subject.title,
+                              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
                             const SizedBox(height: LoomSpacing.base),
                             Text(
-                              '選一個科目，挑戰連續 10 題',
-                              style: LoomTypography.secondary
+                              subtitle,
+                              style: const TextStyle(fontSize: 14, height: 1.3)
                                   .copyWith(color: LoomColors.textSecondary),
                             ),
+                            const SizedBox(height: LoomSpacing.base),
                           ],
                         ),
                       ),
