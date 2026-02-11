@@ -274,8 +274,9 @@ class _HomeScreenState extends State<HomeScreen> {
     final snapshot = widget.progressService.snapshot;
     final primarySubject = subjects.first;
     final streakDays = snapshot.streakDays;
-    final knowledgeBalance = widget.progressService.snapshot.totalXp +
+    final creditsTotal =
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
+    final knowledgeBalance = widget.progressService.snapshot.totalXp + creditsTotal;
     final dailyPlus = widget.progressService.snapshot.dailyXp;
     final currentLevelXp = widget.progressService.currentLevelXp(snapshot.level);
     final nextLevelXp = widget.progressService.nextLevelXp(snapshot.level);
@@ -286,6 +287,25 @@ class _HomeScreenState extends State<HomeScreen> {
             .clamp(0.0, 1.0);
 
     return Scaffold(
+      appBar: AppBar(
+        title: null,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: LoomSpacing.screen),
+            child: TokenChip(
+              label: 'Tokens $creditsTotal',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => _PlaceholderScreen(title: '商城'),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: _HomeBottomNav(onTap: (index) {
         if (index == 0) return;
         if (index == 1) {
