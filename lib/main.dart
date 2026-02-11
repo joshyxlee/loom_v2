@@ -278,6 +278,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final streakDays = snapshot.streakDays;
     final creditsTotal =
         widget.coreDataStore.creditsBySubject.values.fold<int>(0, (sum, v) => sum + v);
+    final tokenService = TokenService.instance;
+    if (tokenService.knowledgeToken == 0 && creditsTotal > 0) {
+      tokenService.knowledgeToken = creditsTotal;
+    }
     final knowledgeBalance = widget.progressService.snapshot.totalXp + creditsTotal;
     final dailyPlus = widget.progressService.snapshot.dailyXp;
     final currentLevelXp = widget.progressService.currentLevelXp(snapshot.level);
@@ -295,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: LoomSpacing.screen),
             child: TokenChip(
-              label: '知識幣 \$$creditsTotal',
+              label: '知識幣 \$${tokenService.knowledgeToken}',
               onTap: () {
                 Navigator.push(
                   context,
