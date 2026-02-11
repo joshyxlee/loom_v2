@@ -293,7 +293,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: LoomSpacing.screen),
             child: TokenChip(
-              label: 'Tokens $creditsTotal',
+              label: '知識幣 \$$creditsTotal',
               onTap: () {
                 Navigator.push(
                   context,
@@ -387,12 +387,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('我的知識存款',
+                              Text('智慧指數',
                                   style: LoomTypography.sectionTitle
                                       .copyWith(color: LoomColors.textSecondary)),
                               const SizedBox(height: LoomSpacing.base),
                               Text(
-                                '\$${knowledgeBalance.toString()}',
+                                knowledgeBalance.toString(),
                                 textAlign: TextAlign.center,
                                 style: LoomTypography.bigNumber.copyWith(
                                   fontFeatures: const [FontFeature.tabularFigures()],
