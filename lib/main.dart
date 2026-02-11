@@ -288,6 +288,38 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       bottomNavigationBar: _HomeBottomNav(onTap: (index) {
         if (index == 0) return;
+        if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => AdvancedChallengeScreen(
+                subjects: subjects,
+                onStartSubject: (subject) => _startSubject(context, subject),
+              ),
+            ),
+          );
+          return;
+        }
+        if (index == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => LeaderboardScreen(
+                knowledgeBalance: knowledgeBalance,
+              ),
+            ),
+          );
+          return;
+        }
+        if (index == 4) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => SettingsScreen(onReset: _resetAll),
+            ),
+          );
+          return;
+        }
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -316,21 +348,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    '今天再 5 題，火會繼續燒',
-                                    style: LoomTypography.secondary
-                                        .copyWith(color: LoomColors.textSecondary),
-                                  ),
-                                ),
-                                IconButton(
-                                  visualDensity: VisualDensity.compact,
-                                  onPressed: _resetAll,
-                                  icon: const Icon(Icons.settings, size: 18),
-                                ),
-                              ],
+                            Text(
+                              '今天再 5 題，火會繼續燒',
+                              style: LoomTypography.secondary
+                                  .copyWith(color: LoomColors.textSecondary),
                             ),
                             const SizedBox(height: LoomSpacing.base),
                             LoomProgressIndicator(
@@ -384,91 +405,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: LoomSpacing.sm),
-                      LoomPrimaryButton(
-                        label: '開始今天的 5 題',
-                        onPressed: () => _startSubject(context, primarySubject),
-                      ),
-                      const SizedBox(height: LoomSpacing.md),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(LoomRadius.card),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => LeaderboardScreen(
-                                      knowledgeBalance: knowledgeBalance,
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: LoomCard(
-                                background: LoomColors.background,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Icon(Icons.emoji_events_outlined,
-                                            size: 18, color: LoomColors.textPrimary),
-                                        const SizedBox(height: LoomSpacing.base),
-                                        Text('看看你現在站在哪',
-                                            style: LoomTypography.sectionTitle),
-                                      ],
-                                    ),
-                                    const SizedBox(height: LoomSpacing.base),
-                                    Text('總榜與本週排名',
-                                        style: LoomTypography.secondary
-                                            .copyWith(color: LoomColors.textSecondary)),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: LoomSpacing.sm),
-                          Expanded(
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(LoomRadius.card),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => AdvancedChallengeScreen(
-                                      subjects: subjects,
-                                      onStartSubject: (subject) =>
-                                          _startSubject(context, subject),
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: LoomCard(
-                                background: LoomColors.background,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Icon(Icons.psychology_outlined,
-                                            size: 18, color: LoomColors.textPrimary),
-                                        const SizedBox(height: LoomSpacing.base),
-                                        Text('分科挑戰', style: LoomTypography.sectionTitle),
-                                      ],
-                                    ),
-                                    const SizedBox(height: LoomSpacing.base),
-                                    Text('選一科連續 10 題',
-                                        style: LoomTypography.secondary
-                                            .copyWith(color: LoomColors.textSecondary)),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                      const SizedBox(height: LoomSpacing.base),
+                      SizedBox(
+                        height: 64,
+                        child: LoomPrimaryButton(
+                          label: '開始變聰明！',
+                          onPressed: () => _startSubject(context, primarySubject),
+                        ),
                       ),
                     ],
                   ),
@@ -546,10 +489,10 @@ class _HomeBottomNav extends StatelessWidget {
       unselectedItemColor: LoomColors.textSecondary,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: '主線'),
-        BottomNavigationBarItem(icon: Icon(Icons.lock_outline), label: '分科'),
-        BottomNavigationBarItem(icon: Icon(Icons.lock_outline), label: '排行'),
-        BottomNavigationBarItem(icon: Icon(Icons.lock_outline), label: '商城'),
-        BottomNavigationBarItem(icon: Icon(Icons.lock_outline), label: '設定'),
+        BottomNavigationBarItem(icon: Icon(Icons.grid_view), label: '分科'),
+        BottomNavigationBarItem(icon: Icon(Icons.leaderboard), label: '排行'),
+        BottomNavigationBarItem(icon: Icon(Icons.storefront), label: '商城'),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: '設定'),
       ],
     );
   }
@@ -566,6 +509,29 @@ class _PlaceholderScreen extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: Center(
         child: Text('Soon', style: LoomTypography.body),
+      ),
+    );
+  }
+}
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key, required this.onReset});
+
+  final VoidCallback onReset;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('設定')),
+      body: Padding(
+        padding: const EdgeInsets.all(LoomSpacing.screen),
+        child: LoomPrimaryButton(
+          label: '刷新',
+          onPressed: () {
+            onReset();
+            Navigator.pop(context);
+          },
+        ),
       ),
     );
   }
