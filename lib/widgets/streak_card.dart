@@ -42,7 +42,7 @@ class StreakCard extends StatelessWidget {
 
     final activeCount = broken
         ? (prevStreakDays > 0 ? prevStreakDays.clamp(1, 7) : 3)
-        : streakDays.clamp(0, 7);
+        : (streakDays + (todayCompleted ? 1 : 0)).clamp(0, 7);
 
     return LoomCard(
       child: Column(
@@ -52,7 +52,7 @@ class StreakCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  '今天完成 $dailyTarget 題',
+                  '每日五題，讓知識的火焰傳遞下去！',
                   style: LoomTypography.secondary.copyWith(
                     color: LoomColors.textSecondary,
                   ),
