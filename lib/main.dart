@@ -410,11 +410,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Row(
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         const Icon(Icons.emoji_events_outlined,
                                             size: 18, color: LoomColors.textPrimary),
-                                        const SizedBox(width: LoomSpacing.base),
+                                        const SizedBox(height: LoomSpacing.base),
                                         Text('看看你現在站在哪',
                                             style: LoomTypography.sectionTitle),
                                       ],
@@ -449,11 +450,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Row(
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         const Icon(Icons.psychology_outlined,
                                             size: 18, color: LoomColors.textPrimary),
-                                        const SizedBox(width: LoomSpacing.base),
+                                        const SizedBox(height: LoomSpacing.base),
                                         Text('分科挑戰', style: LoomTypography.sectionTitle),
                                       ],
                                     ),
