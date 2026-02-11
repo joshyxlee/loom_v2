@@ -14,6 +14,21 @@ class ShopScreen extends StatefulWidget {
 class _ShopScreenState extends State<ShopScreen> {
   int _tabIndex = 0;
 
+  void _handlePurchase(BuildContext context, int price) {
+    final service = TokenService.instance;
+    if (!service.canAfford(price)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('知識幣不足')),
+      );
+      return;
+    }
+    service.deductToken(price);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('購買成功')),
+    );
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final token = TokenService.instance.knowledgeToken;
@@ -60,16 +75,18 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
             const SizedBox(height: LoomSpacing.md),
-            const ShopItemCard(
+            ShopItemCard(
               title: '專注強化',
               description: '短時間內提升專注力的狀態加成。',
               price: 120,
+              onPurchase: () => _handlePurchase(context, 120),
             ),
             const SizedBox(height: LoomSpacing.sm),
-            const ShopItemCard(
+            ShopItemCard(
               title: '自訂外觀',
               description: '為你的成長旅程加上一點個性。',
               price: 200,
+              onPurchase: () => _handlePurchase(context, 200),
             ),
           ],
         ),
@@ -146,11 +163,13 @@ class ShopItemCard extends StatelessWidget {
     required this.title,
     required this.description,
     required this.price,
+    required this.onPurchase,
   });
 
   final String title;
   final String description;
   final int price;
+  final VoidCallback onPurchase;
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +187,7 @@ class ShopItemCard extends StatelessWidget {
             children: [
               Text('價格 \$$price', style: LoomTypography.body),
               TextButton(
-                onPressed: () => print('purchase tapped'),
+                onPressed: onPurchase,
                 child: const Text('購買'),
               ),
             ],
