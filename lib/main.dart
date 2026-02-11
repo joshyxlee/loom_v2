@@ -1071,7 +1071,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           );
                         },
                         child: Text(
-                          '+$_sessionXp 知識存款',
+                          '智慧指數上漲$_sessionXp！',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 36,
