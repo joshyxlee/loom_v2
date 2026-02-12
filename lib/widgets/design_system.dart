@@ -158,14 +158,18 @@ class LoomTheme {
 
   static ThemeData lightTheme() {
     final colorScheme = ColorScheme.fromSeed(seedColor: LoomColors.primary).copyWith(
-      surface: LoomColors.background,
-      onSurface: LoomColors.textPrimary,
-      surfaceVariant: const Color(0xFFE9EDF2),
-      onSurfaceVariant: LoomColors.textSecondary,
-      outline: const Color(0x33000000),
-      outlineVariant: LoomColors.divider,
-      error: LoomColors.danger,
+      primary: LoomColors.primary,
+      secondary: LoomColors.primaryStrong,
       tertiary: LoomColors.success,
+      error: LoomColors.danger,
+      surface: LoomColors.background,
+      surfaceVariant: const Color(0xFFE9EDF2),
+      outlineVariant: LoomColors.divider,
+      onSurface: LoomColors.textPrimary,
+      onSurfaceVariant: LoomColors.textSecondary,
+      onPrimary: const Color(0xFFFFFFFF),
+      onTertiary: const Color(0xFFFFFFFF),
+      onError: const Color(0xFFFFFFFF),
     );
     return ThemeData(
       colorScheme: colorScheme,
@@ -208,14 +212,18 @@ class LoomTheme {
       seedColor: LoomColors.primary,
       brightness: Brightness.dark,
     ).copyWith(
+      primary: const Color(0xFF63D68B),
+      secondary: const Color(0xFF4ECF98),
+      tertiary: const Color(0xFF6AE6B2),
+      error: const Color(0xFFFF7A7A),
       surface: const Color(0xFF121416),
-      onSurface: const Color(0xFFEAEAEA),
       surfaceVariant: const Color(0xFF1C1F23),
-      onSurfaceVariant: const Color(0xFFB8B8B8),
-      outline: const Color(0x33FFFFFF),
       outlineVariant: const Color(0x26FFFFFF),
-      error: const Color(0xFFE06B6B),
-      tertiary: const Color(0xFF63D68B),
+      onSurface: const Color(0xFFEAEAEA),
+      onSurfaceVariant: const Color(0xFFB8B8B8),
+      onPrimary: const Color(0xFF0E0E0E),
+      onTertiary: const Color(0xFF0E0E0E),
+      onError: const Color(0xFF0E0E0E),
     );
     return ThemeData(
       colorScheme: colorScheme,
@@ -260,14 +268,18 @@ class LoomTheme {
 
   static ThemeData oceanTheme() {
     final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3A8FD6)).copyWith(
+      primary: const Color(0xFF3A8FD6),
+      secondary: const Color(0xFF2F7BBC),
+      tertiary: const Color(0xFF2F9F9C),
+      error: const Color(0xFFE06F66),
       surface: const Color(0xFFF4F8FB),
-      onSurface: LoomColors.textPrimary,
       surfaceVariant: const Color(0xFFE6F0F7),
-      onSurfaceVariant: LoomColors.textSecondary,
-      outline: LoomColors.divider,
       outlineVariant: LoomColors.divider,
-      error: LoomColors.danger,
-      tertiary: LoomColors.success,
+      onSurface: LoomColors.textPrimary,
+      onSurfaceVariant: LoomColors.textSecondary,
+      onPrimary: const Color(0xFFFFFFFF),
+      onTertiary: const Color(0xFFFFFFFF),
+      onError: const Color(0xFFFFFFFF),
     );
     return ThemeData(
       colorScheme: colorScheme,
@@ -308,14 +320,18 @@ class LoomTheme {
 
   static ThemeData warmTheme() {
     final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFFE07A4F)).copyWith(
+      primary: const Color(0xFFE07A4F),
+      secondary: const Color(0xFFD56C44),
+      tertiary: const Color(0xFF9C8A3C),
+      error: const Color(0xFFC85A4A),
       surface: const Color(0xFFFFF7F1),
-      onSurface: LoomColors.textPrimary,
       surfaceVariant: const Color(0xFFFBE8DB),
-      onSurfaceVariant: LoomColors.textSecondary,
-      outline: LoomColors.divider,
       outlineVariant: LoomColors.divider,
-      error: LoomColors.danger,
-      tertiary: LoomColors.success,
+      onSurface: LoomColors.textPrimary,
+      onSurfaceVariant: LoomColors.textSecondary,
+      onPrimary: const Color(0xFFFFFFFF),
+      onTertiary: const Color(0xFFFFFFFF),
+      onError: const Color(0xFFFFFFFF),
     );
     return ThemeData(
       colorScheme: colorScheme,

@@ -646,18 +646,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
                         height: LoomSizes.buttonHeight + 8,
-                        child: LoomPrimaryButton(
-                          label: '開始變聰明！',
-                          onPressed: () => _startSubject(context, primarySubject),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              LoomColors.primaryStrong,
-                              LoomTheme.accent(context),
-                            ],
-                          ),
-                          shadowColor: LoomTheme.shadow(context).withOpacity(0.15),
+                        child: Builder(
+                          builder: (context) {
+                            final scheme = Theme.of(context).colorScheme;
+                            return LoomPrimaryButton(
+                              label: '開始變聰明！',
+                              onPressed: () => _startSubject(context, primarySubject),
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  scheme.primary,
+                                  scheme.primary.withOpacity(0.85),
+                                ],
+                              ),
+                              shadowColor: scheme.primary.withOpacity(0.18),
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(height: LoomSpacing.md),
@@ -733,8 +738,8 @@ class _HomeBottomNav extends StatelessWidget {
       currentIndex: 0,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: LoomColors.primary,
-      unselectedItemColor: LoomColors.textSecondary,
+      selectedItemColor: Theme.of(context).colorScheme.primary,
+      unselectedItemColor: Theme.of(context).colorScheme.onSurfaceVariant,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: '主線'),
         BottomNavigationBarItem(icon: Icon(Icons.grid_view), label: '分科'),
@@ -893,7 +898,9 @@ class _LeaderboardSection extends StatelessWidget {
                     child: Text(
                       '${index + 1}',
                       style: LoomTypography.body.copyWith(
-                        color: isTop ? LoomColors.primary : LoomColors.textSecondary,
+                        color: isTop
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ),
@@ -904,7 +911,7 @@ class _LeaderboardSection extends StatelessWidget {
                   Text(
                     '${entry[1]}',
                     style: LoomTypography.body.copyWith(
-                      color: LoomColors.textSecondary,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       fontWeight: FontWeight.w600,
                       fontFeatures: const [FontFeature.tabularFigures()],
                     ),
@@ -987,8 +994,9 @@ class AdvancedChallengeScreen extends StatelessWidget {
                                   const SizedBox(width: 8),
                                   Text(
                                     '已解鎖',
-                                    style: LoomTypography.secondary
-                                        .copyWith(color: LoomColors.primary),
+                                    style: LoomTypography.secondary.copyWith(
+                                      color: Theme.of(context).colorScheme.primary,
+                                    ),
                                   ),
                                 ],
                               ],
@@ -996,14 +1004,18 @@ class AdvancedChallengeScreen extends StatelessWidget {
                             const SizedBox(height: LoomSpacing.base),
                             Text(
                               subtitle,
-                              style: const TextStyle(fontSize: 14, height: 1.3)
-                                  .copyWith(color: LoomColors.textSecondary),
+                              style: const TextStyle(fontSize: 14, height: 1.3).copyWith(
+                                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                              ),
                             ),
                             const SizedBox(height: LoomSpacing.base),
                           ],
                         ),
                       ),
-                      const Icon(Icons.chevron_right, color: LoomColors.textSecondary),
+                      Icon(
+                        Icons.chevron_right,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
                     ],
                   ),
                 ),
