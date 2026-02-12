@@ -78,8 +78,95 @@ class LoomSizes {
 }
 
 class LoomTheme {
+  static Color bg(BuildContext context) {
+    return Theme.of(context).colorScheme.surface;
+  }
+
+  static Color surface(BuildContext context) {
+    return Theme.of(context).colorScheme.surface;
+  }
+
+  static Color card(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return scheme.surfaceVariant;
+  }
+
+  static Color border(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return scheme.outlineVariant ?? scheme.outline;
+  }
+
+  static Color textPrimary(BuildContext context) {
+    return Theme.of(context).colorScheme.onSurface;
+  }
+
+  static Color textSecondary(BuildContext context) {
+    return Theme.of(context).colorScheme.onSurfaceVariant;
+  }
+
+  static Color accent(BuildContext context) {
+    return Theme.of(context).colorScheme.primary;
+  }
+
+  static Color positive(BuildContext context) {
+    return Theme.of(context).colorScheme.tertiary;
+  }
+
+  static Color negative(BuildContext context) {
+    return Theme.of(context).colorScheme.error;
+  }
+
+  static Color disabled(BuildContext context) {
+    return Theme.of(context).colorScheme.onSurface.withOpacity(0.38);
+  }
+
+  static Color shadow(BuildContext context) {
+    return Theme.of(context).shadowColor.withOpacity(0.08);
+  }
+
+  static Color chipBgSelected(BuildContext context) {
+    return accent(context).withOpacity(0.12);
+  }
+
+  static Color chipBg(BuildContext context) {
+    return surface(context);
+  }
+
+  static Color badgeBgActive(BuildContext context) {
+    return accent(context).withOpacity(0.12);
+  }
+
+  static Color badgeBgNeutral(BuildContext context) {
+    return Theme.of(context).colorScheme.surfaceVariant;
+  }
+
+  static TextStyle h1(BuildContext context) {
+    return Theme.of(context).textTheme.titleLarge ?? LoomTypography.screenTitle;
+  }
+
+  static TextStyle h2(BuildContext context) {
+    return Theme.of(context).textTheme.titleMedium ?? LoomTypography.sectionTitle;
+  }
+
+  static TextStyle body(BuildContext context) {
+    return Theme.of(context).textTheme.bodyMedium ?? LoomTypography.body;
+  }
+
+  static TextStyle caption(BuildContext context) {
+    return Theme.of(context).textTheme.bodySmall ?? LoomTypography.secondary;
+  }
+
   static ThemeData lightTheme() {
-    final colorScheme = ColorScheme.fromSeed(seedColor: LoomColors.primary);
+    final colorScheme = ColorScheme.fromSeed(seedColor: LoomColors.primary).copyWith(
+      surface: LoomColors.background,
+      onSurface: LoomColors.textPrimary,
+      surfaceVariant: const Color(0xFFE9EDF2),
+      onSurfaceVariant: LoomColors.textSecondary,
+      outline: const Color(0x33000000),
+      outlineVariant: LoomColors.divider,
+      error: LoomColors.danger,
+      tertiary: LoomColors.success,
+    );
     return ThemeData(
       colorScheme: colorScheme,
       useMaterial3: true,
@@ -120,6 +207,15 @@ class LoomTheme {
     final colorScheme = ColorScheme.fromSeed(
       seedColor: LoomColors.primary,
       brightness: Brightness.dark,
+    ).copyWith(
+      surface: const Color(0xFF121416),
+      onSurface: const Color(0xFFEAEAEA),
+      surfaceVariant: const Color(0xFF1C1F23),
+      onSurfaceVariant: const Color(0xFFB8B8B8),
+      outline: const Color(0x33FFFFFF),
+      outlineVariant: const Color(0x26FFFFFF),
+      error: const Color(0xFFE06B6B),
+      tertiary: const Color(0xFF63D68B),
     );
     return ThemeData(
       colorScheme: colorScheme,
@@ -163,7 +259,16 @@ class LoomTheme {
   }
 
   static ThemeData oceanTheme() {
-    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3A8FD6));
+    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3A8FD6)).copyWith(
+      surface: const Color(0xFFF4F8FB),
+      onSurface: LoomColors.textPrimary,
+      surfaceVariant: const Color(0xFFE6F0F7),
+      onSurfaceVariant: LoomColors.textSecondary,
+      outline: LoomColors.divider,
+      outlineVariant: LoomColors.divider,
+      error: LoomColors.danger,
+      tertiary: LoomColors.success,
+    );
     return ThemeData(
       colorScheme: colorScheme,
       useMaterial3: true,
@@ -202,7 +307,16 @@ class LoomTheme {
   }
 
   static ThemeData warmTheme() {
-    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFFE07A4F));
+    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFFE07A4F)).copyWith(
+      surface: const Color(0xFFFFF7F1),
+      onSurface: LoomColors.textPrimary,
+      surfaceVariant: const Color(0xFFFBE8DB),
+      onSurfaceVariant: LoomColors.textSecondary,
+      outline: LoomColors.divider,
+      outlineVariant: LoomColors.divider,
+      error: LoomColors.danger,
+      tertiary: LoomColors.success,
+    );
     return ThemeData(
       colorScheme: colorScheme,
       useMaterial3: true,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'design_system.dart';
+
 class OnboardingPage {
   const OnboardingPage({required this.title, required this.subtitle});
   final String title;
@@ -92,7 +94,9 @@ class _OnboardingFlowState extends State<OnboardingFlow> {
                   height: 8,
                   margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                   decoration: BoxDecoration(
-                    color: i == _index ? Colors.green : Colors.grey.shade300,
+                    color: i == _index
+                        ? LoomTheme.accent(context)
+                        : LoomTheme.border(context),
                     shape: BoxShape.circle,
                   ),
                 ),

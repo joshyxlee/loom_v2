@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'design_system.dart';
 
 class LoomCard extends StatelessWidget {
-  const LoomCard({super.key, required this.child, this.background});
+  const LoomCard({
+    super.key,
+    required this.child,
+    this.background,
+    this.borderColor,
+  });
 
   final Widget child;
   final Color? background;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class LoomCard extends StatelessWidget {
         color: background ?? LoomColors.surface,
         borderRadius: BorderRadius.circular(LoomRadius.card),
         boxShadow: LoomElevation.card,
-        border: Border.all(color: LoomColors.divider),
+        border: Border.all(color: borderColor ?? LoomColors.divider),
       ),
       child: child,
     );

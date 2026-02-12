@@ -20,7 +20,7 @@ class LoomPrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(LoomSizes.buttonRadius),
           ),
           elevation: 0.8,
-          shadowColor: Colors.black.withOpacity(0.08),
+          shadowColor: LoomTheme.shadow(context),
           textStyle: LoomTypography.body.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
         ),
         child: Text(label),

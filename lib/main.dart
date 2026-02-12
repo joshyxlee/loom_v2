@@ -587,11 +587,11 @@ class _CardSection extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: color ?? Colors.white,
+        color: color ?? LoomTheme.surface(context),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: LoomTheme.shadow(context),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -1174,8 +1174,8 @@ class _QuizScreenState extends State<QuizScreen> {
                     return LinearProgressIndicator(
                       value: value,
                       minHeight: 6,
-                      color: const Color(0xFF3CC77A),
-                      backgroundColor: Colors.green.withOpacity(0.12),
+                      color: LoomTheme.accent(context),
+                      backgroundColor: LoomTheme.accent(context).withOpacity(0.12),
                     );
                   },
                 ),
@@ -1185,8 +1185,12 @@ class _QuizScreenState extends State<QuizScreen> {
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 22),
                 ),
                 const SizedBox(height: 6),
-                Text('ID: ${question.id}',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey)),
+                Text(
+                  'ID: ${question.id}',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: LoomTheme.textSecondary(context),
+                      ),
+                ),
                 const SizedBox(height: 18),
                 if (_selected != null && _showFeedback)
                   _FeedbackCard(
@@ -1363,7 +1367,7 @@ class _QuizScreenState extends State<QuizScreen> {
               Positioned.fill(
                 child: IgnorePointer(
                   child: Container(
-                    color: Colors.black87,
+                    color: Theme.of(context).shadowColor.withOpacity(0.8),
                     child: Center(
                       child: TweenAnimationBuilder<double>(
                         tween: Tween(begin: 0.8, end: 1.0),
@@ -1378,10 +1382,10 @@ class _QuizScreenState extends State<QuizScreen> {
                         child: Text(
                           '智慧指數上漲$_sessionXp！',
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 36,
                             fontWeight: FontWeight.w800,
-                            color: Colors.white,
+                            color: LoomTheme.textPrimary(context),
                           ),
                         ),
                       ),
@@ -1496,6 +1500,9 @@ class _FeedbackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bannerColor =
         isCorrect ? LoomTheme.positive(context) : LoomTheme.negative(context);
+    final textColor = isCorrect
+        ? Theme.of(context).colorScheme.onTertiary
+        : Theme.of(context).colorScheme.onError;
     return AnimatedScale(
       scale: levelUpPulse ? 1.02 : 1.0,
       duration: const Duration(milliseconds: 300),
@@ -1513,30 +1520,32 @@ class _FeedbackCard extends StatelessWidget {
           children: [
             Text(
               isCorrect ? '答對了！' : '可惜！',
-              style: LoomTypography.sectionTitle.copyWith(color: Colors.white),
+              style: LoomTypography.sectionTitle.copyWith(color: textColor),
             ),
             const SizedBox(height: LoomSpacing.base),
             Text(
               isCorrect ? '繼續保持這個節奏' : '再試一次就會更穩',
-              style: LoomTypography.body.copyWith(color: Colors.white),
+              style: LoomTypography.body.copyWith(color: textColor),
             ),
             const SizedBox(height: LoomSpacing.base),
-            Text('本題 +$xp XP',
-                style: LoomTypography.secondary.copyWith(color: Colors.white)),
+            Text(
+              '本題 +$xp XP',
+              style: LoomTypography.secondary.copyWith(color: textColor),
+            ),
             if (levelUp) ...[
               const SizedBox(height: LoomSpacing.base),
-              Text('升級完成', style: LoomTypography.body.copyWith(color: Colors.white)),
+              Text('升級完成', style: LoomTypography.body.copyWith(color: textColor)),
             ],
             if (streakHit) ...[
               const SizedBox(height: LoomSpacing.base),
-              Text('連勝 x3', style: LoomTypography.body.copyWith(color: Colors.white)),
+              Text('連勝 x3', style: LoomTypography.body.copyWith(color: textColor)),
             ],
             if (dailyHit) ...[
               const SizedBox(height: LoomSpacing.base),
-              Text('今日達標', style: LoomTypography.body.copyWith(color: Colors.white)),
+              Text('今日達標', style: LoomTypography.body.copyWith(color: textColor)),
             ],
             const SizedBox(height: LoomSpacing.sm),
-            Text(explanation, style: LoomTypography.body.copyWith(color: Colors.white)),
+            Text(explanation, style: LoomTypography.body.copyWith(color: textColor)),
             const SizedBox(height: LoomSpacing.sm),
             LoomPrimaryButton(
               label: isLast ? '回到主選單' : '下一題',

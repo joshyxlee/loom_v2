@@ -65,7 +65,7 @@ class TokenChip extends StatelessWidget {
         height: 30,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         decoration: BoxDecoration(
-          color: LoomColors.primary.withOpacity(0.12),
+          color: LoomTheme.accent(context).withOpacity(0.12),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
@@ -75,7 +75,7 @@ class TokenChip extends StatelessWidget {
               width: 8,
               height: 8,
               decoration: BoxDecoration(
-                color: LoomColors.primary.withOpacity(0.6),
+                color: LoomTheme.accent(context).withOpacity(0.6),
                 shape: BoxShape.circle,
               ),
             ),
@@ -84,7 +84,7 @@ class TokenChip extends StatelessWidget {
               label,
               style: LoomTypography.body.copyWith(
                 fontWeight: FontWeight.w400,
-                color: LoomColors.textSecondary,
+                color: LoomTheme.textSecondary(context),
               ),
             ),
           ],

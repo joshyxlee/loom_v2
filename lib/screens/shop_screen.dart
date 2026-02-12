@@ -293,7 +293,7 @@ class _ShopScreenState extends State<ShopScreen> {
           titleIcon = Icon(
             isOwned ? Icons.check_circle : Icons.lock_outline,
             size: 16,
-            color: isOwned ? LoomColors.primary : LoomColors.textSecondary,
+            color: isOwned ? LoomTheme.accent(context) : LoomTheme.textSecondary(context),
           );
         }
         return Padding(
@@ -555,6 +555,8 @@ class _MyItemsCard extends StatelessWidget {
       _ => '預設',
     };
     return LoomCard(
+      background: LoomTheme.card(context),
+      borderColor: LoomTheme.border(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -591,7 +593,7 @@ class _TokenBadge extends StatelessWidget {
       height: 30,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: LoomColors.primary.withOpacity(0.12),
+        color: LoomTheme.accent(context).withOpacity(0.12),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Center(
@@ -599,7 +601,7 @@ class _TokenBadge extends StatelessWidget {
           '知識幣 \$$tokens',
           style: LoomTypography.body.copyWith(
             fontWeight: FontWeight.w400,
-            color: LoomColors.textSecondary,
+            color: LoomTheme.textSecondary(context),
           ),
         ),
       ),
@@ -626,15 +628,17 @@ class _TabButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
         decoration: BoxDecoration(
-          color: isActive ? LoomColors.primary.withOpacity(0.12) : LoomColors.surface,
+          color: isActive
+              ? LoomTheme.accent(context).withOpacity(0.12)
+              : LoomTheme.surface(context),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: LoomColors.divider),
+          border: Border.all(color: LoomTheme.border(context)),
         ),
         child: Text(
           label,
           style: LoomTypography.body.copyWith(
             fontWeight: FontWeight.w600,
-            color: isActive ? LoomColors.primary : LoomColors.textSecondary,
+            color: isActive ? LoomTheme.accent(context) : LoomTheme.textSecondary(context),
           ),
         ),
       ),
@@ -681,6 +685,8 @@ class ShopItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LoomCard(
+      background: LoomTheme.card(context),
+      borderColor: LoomTheme.border(context),
       child: Stack(
         children: [
           Column(
@@ -697,26 +703,30 @@ class ShopItemCard extends StatelessWidget {
               ),
               const SizedBox(height: LoomSpacing.base),
               Text(description,
-                  style: LoomTypography.body.copyWith(color: LoomColors.textSecondary)),
+                  style: LoomTypography.body.copyWith(color: LoomTheme.textSecondary(context))),
               if (infoText != null) ...[
                 const SizedBox(height: LoomSpacing.base),
                 Text(
                   infoText!,
-                  style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary),
+                  style: LoomTypography.secondary.copyWith(
+                    color: LoomTheme.textSecondary(context),
+                  ),
                 ),
               ],
               if (statusText != null) ...[
                 const SizedBox(height: LoomSpacing.sm),
                 Text(
                   statusText!,
-                  style: LoomTypography.body.copyWith(color: LoomColors.primary),
+                  style: LoomTypography.body.copyWith(color: LoomTheme.accent(context)),
                 ),
               ],
               if (helperText != null) ...[
                 const SizedBox(height: LoomSpacing.sm),
                 Text(
                   helperText!,
-                  style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary),
+                  style: LoomTypography.secondary.copyWith(
+                    color: LoomTheme.textSecondary(context),
+                  ),
                 ),
               ],
               const SizedBox(height: LoomSpacing.sm),
@@ -748,14 +758,16 @@ class ShopItemCard extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: LoomColors.primary.withOpacity(0.12),
+                  color: badgeText == '使用中'
+                      ? LoomTheme.badgeBgActive(context)
+                      : LoomTheme.badgeBgNeutral(context),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   badgeText ?? '持有 x$badgeCount',
                   style: LoomTypography.body.copyWith(
                     fontSize: 12,
-                    color: LoomColors.textSecondary,
+                    color: LoomTheme.textSecondary(context),
                   ),
                 ),
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/core_data_store.dart';
 import '../models/pokedex_entry.dart';
+import 'design_system.dart';
 
 class PokedexScreen extends StatelessWidget {
   const PokedexScreen({super.key, required this.coreDataStore});
@@ -55,16 +56,22 @@ class _EmptyState extends StatelessWidget {
             const Text('你的圖鑑還是空的',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
-            const Text('目前還沒有收藏，因為你還沒達到第一個里程碑。',
-                style: TextStyle(color: Colors.black54),
-                textAlign: TextAlign.center),
-            const Text('累積到第一個里程碑，就會出現第一筆收藏。',
-                style: TextStyle(color: Colors.black54),
-                textAlign: TextAlign.center),
+            Text(
+              '目前還沒有收藏，因為你還沒達到第一個里程碑。',
+              style: TextStyle(color: LoomTheme.textSecondary(context)),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              '累積到第一個里程碑，就會出現第一筆收藏。',
+              style: TextStyle(color: LoomTheme.textSecondary(context)),
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 12),
-            const Text('每個人的累積路線不同，留下的樣子也會不一樣。',
-                style: TextStyle(color: Colors.black87),
-                textAlign: TextAlign.center),
+            Text(
+              '每個人的累積路線不同，留下的樣子也會不一樣。',
+              style: TextStyle(color: LoomTheme.textPrimary(context)),
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 18),
             FilledButton(
               onPressed: onBack,
@@ -87,8 +94,9 @@ class _Chip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: const Color(0xFFF1F2F4),
+        color: LoomTheme.surface(context),
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: LoomTheme.border(context)),
       ),
       child: Text(label, style: const TextStyle(fontSize: 12)),
     );
@@ -110,11 +118,12 @@ class _EntryCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: LoomTheme.card(context),
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: LoomTheme.border(context)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: LoomTheme.shadow(context),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -125,9 +134,15 @@ class _EntryCard extends StatelessWidget {
         children: [
           Text(_learningNarrative(), style: const TextStyle(fontWeight: FontWeight.bold)),
           const SizedBox(height: 6),
-          Text('偏好：${top3.join(' / ')}', style: const TextStyle(color: Colors.black87)),
+          Text(
+            '偏好：${top3.join(' / ')}',
+            style: TextStyle(color: LoomTheme.textPrimary(context)),
+          ),
           const SizedBox(height: 6),
-          Text('解鎖時間：$date', style: const TextStyle(color: Colors.black54)),
+          Text(
+            '解鎖時間：$date',
+            style: TextStyle(color: LoomTheme.textSecondary(context)),
+          ),
         ],
       ),
     );
