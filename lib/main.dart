@@ -524,7 +524,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.42,
+                        height: MediaQuery.of(context).size.height * 0.38,
                         child: LoomCard(
                           background: LoomTheme.card(context),
                           borderColor: LoomTheme.border(context),
@@ -539,8 +539,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const SizedBox(height: LoomSpacing.base),
                               SizedBox(
-                                width: 140,
-                                height: 140,
+                                width: 120,
+                                height: 120,
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
@@ -557,7 +557,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       textAlign: TextAlign.center,
                                       style: LoomTypography.bigNumber.copyWith(
                                         fontFeatures: const [FontFeature.tabularFigures()],
-                                        fontSize: 80,
+                                        fontSize: 72,
                                         fontWeight: FontWeight.w700,
                                         color: LoomTheme.accent(context),
                                       ),
@@ -565,7 +565,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(height: LoomSpacing.base),
+                              const SizedBox(height: LoomSpacing.sm),
                               Container(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 10,
@@ -620,6 +620,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           shadowColor: LoomTheme.shadow(context).withOpacity(0.15),
                         ),
                       ),
+                      const SizedBox(height: LoomSpacing.md),
                     ],
                   ),
                 ),

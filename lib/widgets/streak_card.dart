@@ -101,24 +101,19 @@ class StreakCard extends StatelessWidget {
               children: List.generate(7, (index) {
                 final isActive = index < activeCount;
                 final isFrozenSlot = frozen && index == activeCount;
-                final decoration = BoxDecoration(
-                  color: isActive
-                      ? LoomTheme.accent(context).withOpacity(0.3)
-                      : isFrozenSlot
-                          ? LoomTheme.negative(context).withOpacity(0.2)
-                          : Colors.transparent,
-                  borderRadius: BorderRadius.circular(6),
-                  border: isActive
-                      ? null
-                      : Border.all(color: Theme.of(context).colorScheme.outlineVariant),
-                );
+                final icon = isActive
+                    ? Icons.local_fire_department
+                    : isFrozenSlot
+                        ? Icons.ac_unit
+                        : Icons.crop_square;
+                final color = isActive
+                    ? LoomTheme.accent(context)
+                    : isFrozenSlot
+                        ? LoomTheme.negative(context)
+                        : Theme.of(context).colorScheme.outlineVariant;
                 return Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: Container(
-                    width: 26,
-                    height: 26,
-                    decoration: decoration,
-                  ),
+                  child: Icon(icon, size: 22, color: color),
                 );
               }),
             ),
