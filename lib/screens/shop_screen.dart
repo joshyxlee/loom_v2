@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../services/token_service.dart';
 import '../services/inventory_service.dart';
@@ -17,11 +20,71 @@ class ShopScreen extends StatefulWidget {
 
 class _ShopScreenState extends State<ShopScreen> {
   int _tabIndex = 0;
+  bool _limitedReady = false;
+  Map<String, int> _limitedEnds = {};
+
+  static const _limitedKey = 'loom_shop_limited_v1';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimitedOffers();
+  }
+
+  Future<void> _loadLimitedOffers() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_limitedKey);
+    final now = DateTime.now().millisecondsSinceEpoch;
+    if (raw == null || raw.isEmpty) {
+      final endsAt = now + const Duration(hours: 24).inMilliseconds;
+      _limitedEnds = {
+        'starterEndsAt': endsAt,
+        'boosterEndsAt': endsAt,
+      };
+      await prefs.setString(_limitedKey, jsonEncode(_limitedEnds));
+    } else {
+      try {
+        final decoded = jsonDecode(raw);
+        if (decoded is Map) {
+          _limitedEnds = decoded.map((key, value) {
+            final parsed = value is int ? value : int.tryParse(value.toString()) ?? 0;
+            return MapEntry(key.toString(), parsed);
+          });
+        }
+      } catch (_) {
+        _limitedEnds = {};
+      }
+      if (_limitedEnds.isEmpty) {
+        final endsAt = now + const Duration(hours: 24).inMilliseconds;
+        _limitedEnds = {
+          'starterEndsAt': endsAt,
+          'boosterEndsAt': endsAt,
+        };
+        await prefs.setString(_limitedKey, jsonEncode(_limitedEnds));
+      }
+    }
+    if (mounted) {
+      setState(() {
+        _limitedReady = true;
+      });
+    }
+  }
+
+  bool _isLimitedActive(String bundleId) {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final endKey = bundleId == 'limited_bundle_starter' ? 'starterEndsAt' : 'boosterEndsAt';
+    final endsAt = _limitedEnds[endKey] ?? 0;
+    return now < endsAt;
+  }
 
   Future<void> _handlePurchase(BuildContext context, ShopItem item) async {
     if (!item.isEnabled) return;
     final shopState = ShopStateService.instance;
-    if (item.kind == ShopItemKind.equipable && shopState.isOwned(item.id)) {
+    if ((item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) &&
+        shopState.isOwned(item.id)) {
+      return;
+    }
+    if (item.category == ShopCategory.limited && !_isLimitedActive(item.id)) {
       return;
     }
     final confirmed = await showDialog<bool>(
@@ -49,8 +112,12 @@ class _ShopScreenState extends State<ShopScreen> {
       );
       return;
     }
+    if (item.category == ShopCategory.limited) {
+      await _purchaseBundle(item.id, item.priceTokens);
+      return;
+    }
     service.deductToken(item.priceTokens);
-    if (item.kind == ShopItemKind.equipable) {
+    if (item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) {
       await shopState.addOwned(item.id);
     } else {
       await InventoryService.instance.add(item.id, 1);
@@ -140,9 +207,13 @@ class _ShopScreenState extends State<ShopScreen> {
             shopState.effectRemaining(ShopStateService.xpBurstRemainingKey);
         final doubleRemaining =
             shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
-        final isOwned = item.kind == ShopItemKind.equipable && shopState.isOwned(item.id);
-        final isEquipped =
-            item.kind == ShopItemKind.equipable && shopState.equippedFor('theme') == item.id;
+        final isOwned =
+            (item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) &&
+                shopState.isOwned(item.id);
+        final isEquipped = item.kind == ShopItemKind.equipable &&
+            shopState.equippedFor('theme') == item.id;
+        final isLimited = item.category == ShopCategory.limited;
+        final limitedActive = isLimited ? _isLimitedActive(item.id) : false;
         String? statusText;
         if (item.id == 'boost_xp_burst' && burstRemaining > 0) {
           statusText = '啟用中：剩餘 $burstRemaining/3';
@@ -152,6 +223,9 @@ class _ShopScreenState extends State<ShopScreen> {
         }
         if (item.effect == ShopEffect.doubleToken && doubleRemaining > 0) {
           statusText = '啟用中：剩餘 $doubleRemaining/3';
+        }
+        if (isLimited) {
+          statusText = limitedActive ? '今日限時' : '已結束';
         }
         String? badgeText;
         if (isEquipped) {
@@ -172,14 +246,22 @@ class _ShopScreenState extends State<ShopScreen> {
             item.effect == ShopEffect.doubleToken ||
             item.id == 'boost_xp_burst' ||
             item.kind == ShopItemKind.equipable;
-        final actionLabel = item.kind == ShopItemKind.equipable
-            ? (isOwned ? (isEquipped ? '使用中' : '使用') : '購買')
-            : item.isEnabled
-                ? '購買'
-                : '即將推出';
-        final actionEnabled = item.kind == ShopItemKind.equipable
-            ? !isEquipped
-            : item.isEnabled;
+        final actionLabel = isLimited
+            ? (limitedActive ? '購買' : '已結束')
+            : item.kind == ShopItemKind.equipable
+                ? (isOwned ? (isEquipped ? '使用中' : '使用') : '購買')
+                : item.kind == ShopItemKind.owned
+                    ? (isOwned ? '已擁有' : '購買')
+                    : item.isEnabled
+                        ? '購買'
+                        : '即將推出';
+        final actionEnabled = isLimited
+            ? limitedActive
+            : item.kind == ShopItemKind.equipable
+                ? !isEquipped
+                : item.kind == ShopItemKind.owned
+                    ? !isOwned
+                    : item.isEnabled;
         final secondaryActionLabel =
             item.kind == ShopItemKind.equipable ? '' : (showUse ? '使用' : '');
         final actionHandler = item.kind == ShopItemKind.equipable && isOwned && !isEquipped
@@ -194,10 +276,25 @@ class _ShopScreenState extends State<ShopScreen> {
           helperText = '不計次、不扣分';
         } else if (item.id == 'util_hint_reveal') {
           helperText = '排除錯誤選項';
-        } else if (item.id == 'cosmetic_theme_night') {
+        } else if (item.id == 'cosmetic_theme_night' ||
+            item.id == 'cosmetic_theme_ocean' ||
+            item.id == 'cosmetic_theme_warm') {
           helperText = '永久擁有，可隨時切換';
+        } else if (item.category == ShopCategory.unlock) {
+          helperText = '解鎖後可選進階題庫';
+        } else if (item.category == ShopCategory.limited) {
+          helperText = '購買後直接入庫';
         } else if (item.kind == ShopItemKind.consumable) {
           helperText = '購買後會先存起來';
+        }
+        final infoText = isLimited ? _bundleContentText(item.id) : null;
+        Widget? titleIcon;
+        if (item.category == ShopCategory.unlock) {
+          titleIcon = Icon(
+            isOwned ? Icons.check_circle : Icons.lock_outline,
+            size: 16,
+            color: isOwned ? LoomColors.primary : LoomColors.textSecondary,
+          );
         }
         return Padding(
           padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
@@ -209,6 +306,8 @@ class _ShopScreenState extends State<ShopScreen> {
             badgeText: badgeText,
             statusText: statusText,
             helperText: helperText,
+            infoText: infoText,
+            titleIcon: titleIcon,
             actionLabel: actionLabel,
             actionEnabled: actionEnabled,
             secondaryActionLabel: secondaryActionLabel,
@@ -255,12 +354,81 @@ class _ShopScreenState extends State<ShopScreen> {
     }
   }
 
+  Map<String, int> _bundleContents(String bundleId) {
+    switch (bundleId) {
+      case 'limited_bundle_starter':
+        return {
+          'boost_mistake_shield': 2,
+          'util_skip_question': 2,
+          'boost_focus_xp': 1,
+        };
+      case 'limited_bundle_booster':
+        return {
+          'boost_mistake_shield': 3,
+          'util_reroll_question': 3,
+          'boost_xp_burst': 1,
+          'boost_double_token': 1,
+        };
+      default:
+        return {};
+    }
+  }
+
+  String _bundleContentText(String bundleId) {
+    final contents = _bundleContents(bundleId);
+    if (contents.isEmpty) return '';
+    final parts = <String>[];
+    contents.forEach((key, value) {
+      switch (key) {
+        case 'boost_mistake_shield':
+          parts.add('失誤保護卡×$value');
+          break;
+        case 'util_skip_question':
+          parts.add('跳題券×$value');
+          break;
+        case 'boost_focus_xp':
+          parts.add('專注強化×$value');
+          break;
+        case 'util_reroll_question':
+          parts.add('換題券×$value');
+          break;
+        case 'boost_xp_burst':
+          parts.add('爆發加成×$value');
+          break;
+        case 'boost_double_token':
+          parts.add('雙倍獎勵×$value');
+          break;
+      }
+    });
+    return '內容物：${parts.join('、')}';
+  }
+
+  Future<void> _purchaseBundle(String bundleId, int price) async {
+    final service = TokenService.instance;
+    if (!service.canAfford(price)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('知識幣不足')),
+      );
+      return;
+    }
+    service.deductToken(price);
+    final contents = _bundleContents(bundleId);
+    for (final entry in contents.entries) {
+      await InventoryService.instance.add(entry.key, entry.value);
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('已購買限時組合')),
+    );
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final token = TokenService.instance.knowledgeToken;
     final inventory = InventoryService.instance;
     final shopState = ShopStateService.instance;
-    if (!inventory.isReady || !shopState.isReady) {
+    if (!inventory.isReady || !shopState.isReady || !_limitedReady) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
       );
@@ -367,7 +535,12 @@ class _MyItemsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hasActive = focusRemaining > 0 || doubleRemaining > 0;
-    final themeLabel = themeId == 'cosmetic_theme_night' ? '夜間（使用中）' : '預設';
+    final themeLabel = switch (themeId) {
+      'cosmetic_theme_night' => '夜間（使用中）',
+      'cosmetic_theme_ocean' => '海洋（使用中）',
+      'cosmetic_theme_warm' => '暖陽（使用中）',
+      _ => '預設',
+    };
     return LoomCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -472,6 +645,8 @@ class ShopItemCard extends StatelessWidget {
     this.badgeText,
     this.statusText,
     this.helperText,
+    this.infoText,
+    this.titleIcon,
   });
 
   final String title;
@@ -487,6 +662,8 @@ class ShopItemCard extends StatelessWidget {
   final String? badgeText;
   final String? statusText;
   final String? helperText;
+  final String? infoText;
+  final Widget? titleIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -496,10 +673,25 @@ class ShopItemCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: LoomTypography.sectionTitle),
+              Row(
+                children: [
+                  if (titleIcon != null) ...[
+                    titleIcon!,
+                    const SizedBox(width: 6),
+                  ],
+                  Text(title, style: LoomTypography.sectionTitle),
+                ],
+              ),
               const SizedBox(height: LoomSpacing.base),
               Text(description,
                   style: LoomTypography.body.copyWith(color: LoomColors.textSecondary)),
+              if (infoText != null) ...[
+                const SizedBox(height: LoomSpacing.base),
+                Text(
+                  infoText!,
+                  style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary),
+                ),
+              ],
               if (statusText != null) ...[
                 const SizedBox(height: LoomSpacing.sm),
                 Text(

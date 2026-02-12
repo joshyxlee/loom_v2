@@ -74,12 +74,15 @@ class _LoomV2AppState extends State<LoomV2App> {
     return ValueListenableBuilder<String?>(
       valueListenable: shopState.themeNotifier,
       builder: (context, themeId, _) {
-        final isNight = themeId == 'cosmetic_theme_night';
+        final themeData = switch (themeId) {
+          'cosmetic_theme_night' => LoomTheme.nightTheme(),
+          'cosmetic_theme_ocean' => LoomTheme.oceanTheme(),
+          'cosmetic_theme_warm' => LoomTheme.warmTheme(),
+          _ => LoomTheme.lightTheme(),
+        };
         return MaterialApp(
           title: 'Loom v2',
-          theme: LoomTheme.lightTheme(),
-          darkTheme: LoomTheme.nightTheme(),
-          themeMode: isNight ? ThemeMode.dark : ThemeMode.light,
+          theme: themeData,
           home: _ready
               ? OnboardingGate(
                   repository: _repository,
@@ -801,6 +804,18 @@ class AdvancedChallengeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shopState = ShopStateService.instance;
+    final extraSubjects = <Subject>[];
+    if (shopState.isOwned('unlock_subject_pack_world_plus')) {
+      extraSubjects.add(const Subject(subjectId: 'world', displayName: '世界＋'));
+    }
+    if (shopState.isOwned('unlock_subject_pack_science_plus')) {
+      extraSubjects.add(const Subject(subjectId: 'science', displayName: '科學＋'));
+    }
+    if (shopState.isOwned('unlock_subject_pack_finance_plus')) {
+      extraSubjects.add(const Subject(subjectId: 'money', displayName: '理財＋'));
+    }
+    final allSubjects = [...subjects, ...extraSubjects];
     return Scaffold(
       appBar: AppBar(title: const Text('試試你能不能撐過 5 題 ⚔️')),
       body: ListView(
@@ -811,9 +826,9 @@ class AdvancedChallengeScreen extends StatelessWidget {
             subtitle: '想要變成專家？選你喜歡的科目吧！',
           ),
           const SizedBox(height: LoomSpacing.md),
-          ...subjects.map((subject) {
+          ...allSubjects.map((subject) {
             final displayTitle = subject.title == '金錢' ? '理財' : subject.title;
-            final subtitle = switch (displayTitle) {
+            final subtitle = switch (displayTitle.replaceAll('＋', '')) {
               '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
               '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
               '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
@@ -821,6 +836,7 @@ class AdvancedChallengeScreen extends StatelessWidget {
               '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
               _ => '選一個科目，挑戰連續 5 題',
             };
+            final isPlus = displayTitle.contains('＋');
             return Padding(
               padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
               child: InkWell(
@@ -833,9 +849,22 @@ class AdvancedChallengeScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              displayTitle,
-                              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                            Row(
+                              children: [
+                                Text(
+                                  displayTitle,
+                                  style: const TextStyle(
+                                      fontSize: 18, fontWeight: FontWeight.w600),
+                                ),
+                                if (isPlus) ...[
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    '已解鎖',
+                                    style: LoomTypography.secondary
+                                        .copyWith(color: LoomColors.primary),
+                                  ),
+                                ],
+                              ],
                             ),
                             const SizedBox(height: LoomSpacing.base),
                             Text(

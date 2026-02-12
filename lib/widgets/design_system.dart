@@ -161,4 +161,82 @@ class LoomTheme {
       ),
     );
   }
+
+  static ThemeData oceanTheme() {
+    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF3A8FD6));
+    return ThemeData(
+      colorScheme: colorScheme,
+      useMaterial3: true,
+      scaffoldBackgroundColor: const Color(0xFFF4F8FB),
+      cardColor: LoomColors.surface,
+      textTheme: const TextTheme(
+        titleLarge: LoomTypography.screenTitle,
+        bodyMedium: LoomTypography.body,
+        bodySmall: LoomTypography.secondary,
+      ),
+      dividerColor: LoomColors.divider,
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          padding: const EdgeInsets.symmetric(
+            vertical: LoomSpacing.sm,
+            horizontal: LoomSpacing.screen,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          side: const BorderSide(color: LoomColors.divider),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+    );
+  }
+
+  static ThemeData warmTheme() {
+    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFFE07A4F));
+    return ThemeData(
+      colorScheme: colorScheme,
+      useMaterial3: true,
+      scaffoldBackgroundColor: const Color(0xFFFFF7F1),
+      cardColor: LoomColors.surface,
+      textTheme: const TextTheme(
+        titleLarge: LoomTypography.screenTitle,
+        bodyMedium: LoomTypography.body,
+        bodySmall: LoomTypography.secondary,
+      ),
+      dividerColor: LoomColors.divider,
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          padding: const EdgeInsets.symmetric(
+            vertical: LoomSpacing.sm,
+            horizontal: LoomSpacing.screen,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          side: const BorderSide(color: LoomColors.divider),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+    );
+  }
 }
