@@ -6,6 +6,7 @@ import '../models/subject.dart';
 import '../models/active_pet.dart';
 import '../models/pokedex_entry.dart';
 import 'level_thresholds.dart';
+import 'shop_state_service.dart';
 
 class CoreDataStore {
   static const _playerKey = 'core_player';
@@ -43,7 +44,18 @@ class CoreDataStore {
   Future<void> recordAnswer({required String subjectId, required bool isCorrect}) async {
     _ensureCreditsForSubjects([Subject(subjectId: subjectId, displayName: '')]);
 
-    final gainedXp = isCorrect ? 10 : 6;
+    var gainedXp = isCorrect ? 10 : 6;
+    final shopState = ShopStateService.instance;
+    if (shopState.isReady) {
+      final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+      if (remaining > 0) {
+        gainedXp = (gainedXp * 1.2).floor();
+        shopState.setEffectRemaining(
+          ShopStateService.focusXpRemainingKey,
+          remaining - 1,
+        );
+      }
+    }
     player = player.copyWith(
       totalXp: player.totalXp + gainedXp,
       playerLevel: LevelThresholds.levelForXp(player.totalXp + gainedXp),

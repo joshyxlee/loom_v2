@@ -7,6 +7,9 @@ class ShopStateService {
 
   static final ShopStateService instance = ShopStateService._();
 
+  static const focusXpRemainingKey = 'focus_xp_remaining_questions';
+  static const doubleTokenRemainingKey = 'double_token_remaining_correct';
+
   static const _effectsKey = 'loom_shop_effects_v1';
   static const _ownedKey = 'loom_shop_owned_v1';
   static const _equippedKey = 'loom_shop_equipped_v1';

@@ -1,5 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'shop_state_service.dart';
+
 class TokenService {
   TokenService._();
 
@@ -42,11 +44,22 @@ class TokenService {
     }
   }
 
-  void addTokenWithCap(int amount, String todayKey) {
+  void addTokenWithCap(int amount, String todayKey, {String source = 'generic'}) {
     if (amount <= 0) return;
     resetDailyEarnedIfNeeded(todayKey);
+    var finalAmount = amount;
+    if (source == 'answer_correct') {
+      final shopState = ShopStateService.instance;
+      if (shopState.isReady) {
+        final remaining = shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
+        if (remaining > 0) {
+          finalAmount = amount * 2;
+          shopState.setEffectRemaining(ShopStateService.doubleTokenRemainingKey, remaining - 1);
+        }
+      }
+    }
     if (_earnedToday >= _dailyCap) return;
-    final allowed = (_dailyCap - _earnedToday).clamp(0, amount);
+    final allowed = (_dailyCap - _earnedToday).clamp(0, finalAmount);
     if (allowed == 0) return;
     knowledgeToken += allowed;
     _earnedToday += allowed;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/token_service.dart';
 import '../services/inventory_service.dart';
+import '../services/shop_state_service.dart';
 import '../shop/shop_catalog.dart';
 import '../shop/shop_models.dart';
 import '../widgets/design_system.dart';
@@ -54,11 +55,40 @@ class _ShopScreenState extends State<ShopScreen> {
     }
   }
 
+  Future<void> _handleUse(BuildContext context, ShopItem item) async {
+    final inventory = InventoryService.instance;
+    final shopState = ShopStateService.instance;
+    final count = inventory.count(item.id);
+    if (count <= 0) return;
+    if (item.effect == ShopEffect.focusXp &&
+        shopState.effectRemaining(ShopStateService.focusXpRemainingKey) > 0) {
+      return;
+    }
+    if (item.effect == ShopEffect.doubleToken &&
+        shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey) > 0) {
+      return;
+    }
+    final consumed = await inventory.consume(item.id);
+    if (!consumed) return;
+    if (item.effect == ShopEffect.focusXp) {
+      await shopState.setEffectRemaining(ShopStateService.focusXpRemainingKey, 5);
+    }
+    if (item.effect == ShopEffect.doubleToken) {
+      await shopState.setEffectRemaining(ShopStateService.doubleTokenRemainingKey, 3);
+    }
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('已啟用：${item.titleZh}')),
+    );
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final token = TokenService.instance.knowledgeToken;
     final inventory = InventoryService.instance;
-    if (!inventory.isReady) {
+    final shopState = ShopStateService.instance;
+    if (!inventory.isReady || !shopState.isReady) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
       );
@@ -110,6 +140,24 @@ class _ShopScreenState extends State<ShopScreen> {
               final count = item.kind == ShopItemKind.consumable
                   ? inventory.count(item.id)
                   : 0;
+              final focusRemaining =
+                  shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+              final doubleRemaining =
+                  shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
+              String? statusText;
+              if (item.effect == ShopEffect.focusXp && focusRemaining > 0) {
+                statusText = '啟用中：剩餘 $focusRemaining/5';
+              }
+              if (item.effect == ShopEffect.doubleToken && doubleRemaining > 0) {
+                statusText = '啟用中：剩餘 $doubleRemaining/3';
+              }
+              final canUse = item.effect == ShopEffect.focusXp
+                  ? count > 0 && focusRemaining == 0
+                  : item.effect == ShopEffect.doubleToken
+                      ? count > 0 && doubleRemaining == 0
+                      : false;
+              final showUse = item.effect == ShopEffect.focusXp ||
+                  item.effect == ShopEffect.doubleToken;
               return Padding(
                 padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
                 child: ShopItemCard(
@@ -117,9 +165,13 @@ class _ShopScreenState extends State<ShopScreen> {
                   description: item.subtitleZh,
                   price: item.priceTokens,
                   badgeCount: item.kind == ShopItemKind.consumable ? count : null,
+                  statusText: statusText,
                   actionLabel: item.isEnabled ? '購買' : '即將推出',
                   actionEnabled: item.isEnabled,
+                  secondaryActionLabel: showUse ? '使用' : '',
+                  secondaryActionEnabled: canUse,
                   onPurchase: () => _handlePurchase(context, item),
+                  onSecondaryAction: () => _handleUse(context, item),
                 ),
               );
             }),
@@ -201,7 +253,11 @@ class ShopItemCard extends StatelessWidget {
     required this.onPurchase,
     required this.actionLabel,
     required this.actionEnabled,
+    required this.secondaryActionLabel,
+    required this.secondaryActionEnabled,
+    required this.onSecondaryAction,
     this.badgeCount,
+    this.statusText,
   });
 
   final String title;
@@ -210,7 +266,11 @@ class ShopItemCard extends StatelessWidget {
   final VoidCallback onPurchase;
   final String actionLabel;
   final bool actionEnabled;
+  final String secondaryActionLabel;
+  final bool secondaryActionEnabled;
+  final VoidCallback onSecondaryAction;
   final int? badgeCount;
+  final String? statusText;
 
   @override
   Widget build(BuildContext context) {
@@ -224,14 +284,30 @@ class ShopItemCard extends StatelessWidget {
               const SizedBox(height: LoomSpacing.base),
               Text(description,
                   style: LoomTypography.body.copyWith(color: LoomColors.textSecondary)),
+              if (statusText != null) ...[
+                const SizedBox(height: LoomSpacing.sm),
+                Text(
+                  statusText!,
+                  style: LoomTypography.body.copyWith(color: LoomColors.primary),
+                ),
+              ],
               const SizedBox(height: LoomSpacing.sm),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('價格 \$$price', style: LoomTypography.body),
-                  TextButton(
-                    onPressed: actionEnabled ? onPurchase : null,
-                    child: Text(actionLabel),
+                  Row(
+                    children: [
+                      if (secondaryActionLabel.isNotEmpty)
+                        TextButton(
+                          onPressed: secondaryActionEnabled ? onSecondaryAction : null,
+                          child: Text(secondaryActionLabel),
+                        ),
+                      TextButton(
+                        onPressed: actionEnabled ? onPurchase : null,
+                        child: Text(actionLabel),
+                      ),
+                    ],
                   ),
                 ],
               ),

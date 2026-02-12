@@ -1067,7 +1067,11 @@ class _QuizScreenState extends State<QuizScreen> {
                             _correctStreak += 1;
                             _streakJustHit = _correctStreak == 3;
                             final todayKey = widget.progressService.todayKey;
-                            TokenService.instance.addTokenWithCap(1, todayKey);
+                            TokenService.instance.addTokenWithCap(
+                              1,
+                              todayKey,
+                              source: 'answer_correct',
+                            );
                             if (_correctStreak == 3 && !_sessionBonus3Awarded) {
                               TokenService.instance.addTokenWithCap(2, todayKey);
                               _sessionBonus3Awarded = true;

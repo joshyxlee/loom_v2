@@ -2,6 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'level_thresholds.dart';
 import 'token_service.dart';
+import 'shop_state_service.dart';
 
 class ProgressSnapshot {
   const ProgressSnapshot({
@@ -168,7 +169,14 @@ class ProgressService {
 
   AnswerResult recordAnswer({required bool isCorrect, required int difficulty}) {
     ensureDailyState();
-    final gained = isCorrect ? 10 : 6;
+    var gained = isCorrect ? 10 : 6;
+    final shopState = ShopStateService.instance;
+    if (shopState.isReady) {
+      final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+      if (remaining > 0) {
+        gained = (gained * 1.2).floor();
+      }
+    }
     _dailyAnswered += 1;
     _dailyXp += gained;
     _lastActiveDate = DateTime.now();

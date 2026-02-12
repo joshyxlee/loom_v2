@@ -2,7 +2,7 @@ enum ShopCategory { boost, utility, cosmetic }
 
 enum ShopItemKind { consumable, owned, equipable }
 
-enum ShopEffect { mistakeShield }
+enum ShopEffect { mistakeShield, focusXp, doubleToken }
 
 class ShopItem {
   const ShopItem({
