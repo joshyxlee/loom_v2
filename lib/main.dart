@@ -481,6 +481,31 @@ class _HomeScreenState extends State<HomeScreen> {
                         streakSavePending: streakSavePending,
                         canSaveStreak: canSaveStreak,
                       ),
+                      const SizedBox(height: LoomSpacing.sm),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('今日知識幣', style: LoomTypography.secondary),
+                              Text(
+                                '${tokenService.dailyTokenEarned}/10',
+                                style: LoomTypography.secondary,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 6),
+                          LinearProgressIndicator(
+                            value:
+                                (tokenService.dailyTokenEarned / 10).clamp(0.0, 1.0),
+                            minHeight: 4,
+                            color: Theme.of(context).colorScheme.primary,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.outlineVariant,
+                          ),
+                        ],
+                      ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.42,
@@ -1279,6 +1304,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       isCorrectOption: question.isCorrect(i),
                       onTap: () async {
                         var isCorrect = question.isCorrect(i);
+                        final tokenBefore = TokenService.instance.knowledgeToken;
                         final shopState = ShopStateService.instance;
                         final burstBefore = shopState.effectRemaining(
                           ShopStateService.xpBurstRemainingKey,
@@ -1340,8 +1366,23 @@ class _QuizScreenState extends State<QuizScreen> {
                         final leveledUp = newLevel > _lastLevel;
                         if (leveledUp) {
                           TokenService.instance.addToken(3);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('+3 知識幣（升級）')),
+                          );
                           if (newLevel % 10 == 0) {
                             TokenService.instance.addToken(15);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('+15 知識幣（里程碑）')),
+                            );
+                          }
+                        }
+                        if (result.completedDailyTarget) {
+                          final tokenAfterDaily =
+                              TokenService.instance.knowledgeToken;
+                          if (tokenAfterDaily - tokenBefore >= 5) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('+5 知識幣（今日完成）')),
+                            );
                           }
                         }
                         if (result.completedDailyTarget && newLevel == 1) {
@@ -1360,6 +1401,13 @@ class _QuizScreenState extends State<QuizScreen> {
                             _streakJustHit = _correctStreak == 3;
                             final todayKey = widget.progressService.todayKey;
                             TokenService.instance.addTokenFromAnswer(1);
+                            final tokenAfterAnswer =
+                                TokenService.instance.knowledgeToken;
+                            if (tokenAfterAnswer > tokenBefore) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('+1 知識幣')),
+                              );
+                            }
                             if (_correctStreak == 3 && !_sessionBonus3Awarded) {
                               TokenService.instance.addTokenWithCap(2, todayKey);
                               _sessionBonus3Awarded = true;

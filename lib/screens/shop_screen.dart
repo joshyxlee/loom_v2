@@ -354,6 +354,67 @@ class _ShopScreenState extends State<ShopScreen> {
     }
   }
 
+  String? _firstUsableItemLabel(InventoryService inventory) {
+    final candidates = [
+      'boost_mistake_shield',
+      'boost_focus_xp',
+      'boost_double_token',
+      'boost_xp_burst',
+      'util_skip_question',
+      'util_reroll_question',
+      'util_hint_reveal',
+    ];
+    for (final id in candidates) {
+      if (inventory.count(id) > 0) {
+        return switch (id) {
+          'boost_mistake_shield' => '失誤保護卡',
+          'boost_focus_xp' => '專注強化',
+          'boost_double_token' => '雙倍獎勵',
+          'boost_xp_burst' => '爆發加成',
+          'util_skip_question' => '跳題券',
+          'util_reroll_question' => '換題券',
+          'util_hint_reveal' => '提示券',
+          _ => null,
+        };
+      }
+    }
+    return null;
+  }
+
+  int _firstUsableItemCount(InventoryService inventory) {
+    final candidates = [
+      'boost_mistake_shield',
+      'boost_focus_xp',
+      'boost_double_token',
+      'boost_xp_burst',
+      'util_skip_question',
+      'util_reroll_question',
+      'util_hint_reveal',
+    ];
+    for (final id in candidates) {
+      final count = inventory.count(id);
+      if (count > 0) return count;
+    }
+    return 0;
+  }
+
+  void _jumpToRecommended(InventoryService inventory) {
+    if (inventory.count('boost_mistake_shield') > 0 ||
+        inventory.count('boost_focus_xp') > 0 ||
+        inventory.count('boost_double_token') > 0 ||
+        inventory.count('boost_xp_burst') > 0) {
+      setState(() => _tabIndex = 0);
+      return;
+    }
+    if (inventory.count('util_skip_question') > 0 ||
+        inventory.count('util_reroll_question') > 0 ||
+        inventory.count('util_hint_reveal') > 0) {
+      setState(() => _tabIndex = 1);
+      return;
+    }
+    setState(() => _tabIndex = 0);
+  }
+
   Map<String, int> _bundleContents(String bundleId) {
     switch (bundleId) {
       case 'limited_bundle_starter':
@@ -512,6 +573,32 @@ class _ShopScreenState extends State<ShopScreen> {
                       rerollCount: inventory.count('util_reroll_question'),
                       themeId: shopState.equippedFor('theme'),
                     ),
+                    const SizedBox(height: LoomSpacing.sm),
+                    _TodayRecommendCard(
+                      boostActive: shopState.effectRemaining(
+                            ShopStateService.focusXpRemainingKey,
+                          ) >
+                          0,
+                      boostLabel: shopState.effectRemaining(
+                                ShopStateService.focusXpRemainingKey,
+                              ) >
+                              0
+                          ? '專注強化（剩餘 ${shopState.effectRemaining(ShopStateService.focusXpRemainingKey)}/5）'
+                          : shopState.effectRemaining(
+                                    ShopStateService.doubleTokenRemainingKey,
+                                  ) >
+                                  0
+                              ? '雙倍獎勵（剩餘 ${shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey)}/3）'
+                              : shopState.effectRemaining(
+                                        ShopStateService.xpBurstRemainingKey,
+                                      ) >
+                                      0
+                                  ? '爆發加成（剩餘 ${shopState.effectRemaining(ShopStateService.xpBurstRemainingKey)}/3）'
+                                  : null,
+                      usableItemLabel: _firstUsableItemLabel(inventory),
+                      usableItemCount: _firstUsableItemCount(inventory),
+                      onTapGo: () => _jumpToRecommended(inventory),
+                    ),
                     const SizedBox(height: LoomSpacing.md),
                     ..._buildSection(
                       _selectedCategoryLabel(),
@@ -523,6 +610,63 @@ class _ShopScreenState extends State<ShopScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _TodayRecommendCard extends StatelessWidget {
+  const _TodayRecommendCard({
+    required this.boostActive,
+    required this.boostLabel,
+    required this.usableItemLabel,
+    required this.usableItemCount,
+    required this.onTapGo,
+  });
+
+  final bool boostActive;
+  final String? boostLabel;
+  final String? usableItemLabel;
+  final int usableItemCount;
+  final VoidCallback onTapGo;
+
+  @override
+  Widget build(BuildContext context) {
+    String content;
+    String buttonLabel;
+    if (boostActive && boostLabel != null) {
+      content = '加成啟用中：$boostLabel';
+      buttonLabel = '查看';
+    } else if (usableItemLabel != null && usableItemCount > 0) {
+      content = '你有可用道具：$usableItemLabel（持有 x$usableItemCount）';
+      buttonLabel = '去使用';
+    } else {
+      content = '推薦：失誤保護卡 / 專注強化';
+      buttonLabel = '去看看';
+    }
+
+    return LoomCard(
+      background: LoomTheme.card(context),
+      borderColor: LoomTheme.border(context),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('今日推薦', style: LoomTypography.sectionTitle),
+                const SizedBox(height: 6),
+                Text(
+                  content,
+                  style: LoomTypography.secondary.copyWith(
+                    color: LoomTheme.textSecondary(context),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          TextButton(onPressed: onTapGo, child: Text(buttonLabel)),
+        ],
       ),
     );
   }

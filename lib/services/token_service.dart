@@ -20,6 +20,7 @@ class TokenService {
   int knowledgeToken = 0;
   int _earnedToday = 0;
   int _dailyTokenEarned = 0;
+  int get dailyTokenEarned => _dailyTokenEarned;
   String? _earnedDate;
   bool _mistakeShieldActive = false;
   SharedPreferences? _prefs;
