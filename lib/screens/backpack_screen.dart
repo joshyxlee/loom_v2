@@ -17,6 +17,20 @@ import 'package:loom_v2/main.dart' show QuizScreen, AdvancedChallengeScreen;
 
 enum BackpackSection { boost, utility, cosmetic }
 
+enum BoostActivationKind { focus, burst, doubleToken }
+
+class BoostActivationResult {
+  const BoostActivationResult({
+    required this.title,
+    required this.remaining,
+    required this.kind,
+  });
+
+  final String title;
+  final int remaining;
+  final BoostActivationKind kind;
+}
+
 class BackpackScreen extends StatefulWidget {
   const BackpackScreen({
     super.key,
@@ -25,6 +39,7 @@ class BackpackScreen extends StatefulWidget {
     required this.coreDataStore,
     this.focusSection,
     this.focusItemId,
+    this.returnToQuizOnBoostUse = false,
   });
 
   final String? focusItemId;
@@ -33,6 +48,7 @@ class BackpackScreen extends StatefulWidget {
   final ProgressService progressService;
   final CoreDataStore coreDataStore;
   final BackpackSection? focusSection;
+  final bool returnToQuizOnBoostUse;
 
   @override
   State<BackpackScreen> createState() => _BackpackScreenState();
@@ -153,7 +169,13 @@ class _BackpackScreenState extends State<BackpackScreen> {
                 .map(
                   (item) => _KeyedItem(
                     key: _itemKeys[item.id],
-                    child: _BoostItemCard(item: item, inventory: inventory),
+                    child: _BoostItemCard(
+                      item: item,
+                      inventory: inventory,
+                      onActivated: widget.returnToQuizOnBoostUse
+                          ? (activation) => Navigator.pop(context, activation)
+                          : null,
+                    ),
                   ),
                 )
                 .toList(),
@@ -265,10 +287,15 @@ class _SectionBlock extends StatelessWidget {
 }
 
 class _BoostItemCard extends StatelessWidget {
-  const _BoostItemCard({required this.item, required this.inventory});
+  const _BoostItemCard({
+    required this.item,
+    required this.inventory,
+    this.onActivated,
+  });
 
   final ShopItem item;
   final InventoryService inventory;
+  final ValueChanged<BoostActivationResult>? onActivated;
 
   @override
   Widget build(BuildContext context) {
@@ -348,17 +375,37 @@ class _BoostItemCard extends StatelessWidget {
                       }
                       final consumed = await inventory.consume(item.id);
                       if (!consumed) return;
+                      BoostActivationResult? activationResult;
                       if (item.effect == ShopEffect.focusXp) {
                         await shopState.setEffectRemaining(
                             ShopStateService.focusXpRemainingKey, 5);
+                        activationResult = const BoostActivationResult(
+                          title: '專注強化',
+                          remaining: 5,
+                          kind: BoostActivationKind.focus,
+                        );
                       }
                       if (item.effect == ShopEffect.doubleToken) {
                         await shopState.setEffectRemaining(
                             ShopStateService.doubleTokenRemainingKey, 3);
+                        activationResult = const BoostActivationResult(
+                          title: '雙倍獎勵',
+                          remaining: 3,
+                          kind: BoostActivationKind.doubleToken,
+                        );
                       }
                       if (item.id == 'boost_xp_burst') {
                         await shopState.setEffectRemaining(
                             ShopStateService.xpBurstRemainingKey, 3);
+                        activationResult = const BoostActivationResult(
+                          title: '爆發加成',
+                          remaining: 3,
+                          kind: BoostActivationKind.burst,
+                        );
+                      }
+                      if (activationResult != null && onActivated != null) {
+                        onActivated!(activationResult);
+                        return;
                       }
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('已啟用：${item.titleZh}')),

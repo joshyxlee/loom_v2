@@ -1061,6 +1061,8 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showFeedback = false;
   double _petBounceScale = 1.0;
   bool _lastIsCorrect = false;
+  bool _showBoostBanner = false;
+  String _boostBannerText = '';
   late final List<Question> _sessionQuestions;
   final Set<String> _recentQuestionIds = {};
   final Set<int> _disabledOptionIndexes = {};
@@ -1096,6 +1098,20 @@ class _QuizScreenState extends State<QuizScreen> {
         TokenService.instance.addTokenWithCap(20, todayKey);
       }
     }
+  }
+
+  void _handleBoostActivationResult(Object? result) {
+    if (result is! BoostActivationResult) return;
+    final suffix = result.kind == BoostActivationKind.doubleToken ? '次' : '題';
+    setState(() {
+      _boostBannerText =
+          '${result.title}已啟動（剩餘 ${result.remaining} $suffix）';
+      _showBoostBanner = true;
+    });
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
+      setState(() => _showBoostBanner = false);
+    });
   }
 
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
@@ -1349,17 +1365,19 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           BackpackEntryButton(
             totalUsable: _totalUsableInventory(),
-            onTap: () {
-              Navigator.push(
+            onTap: () async {
+              final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => BackpackScreen(
                     repository: widget.repository,
                     progressService: widget.progressService,
                     coreDataStore: widget.coreDataStore,
+                    returnToQuizOnBoostUse: true,
                   ),
                 ),
               );
+              _handleBoostActivationResult(result);
             },
           ),
           const SizedBox(width: 4),
@@ -1398,6 +1416,52 @@ class _QuizScreenState extends State<QuizScreen> {
                       backgroundColor: LoomTheme.accent(context).withOpacity(0.12),
                     );
                   },
+                ),
+                if (_showBoostBanner)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: AnimatedSlide(
+                      duration: const Duration(milliseconds: 240),
+                      offset: _showBoostBanner
+                          ? const Offset(0, 0)
+                          : const Offset(0, -0.1),
+                      child: AnimatedOpacity(
+                        duration: const Duration(milliseconds: 240),
+                        opacity: _showBoostBanner ? 1 : 0,
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .tertiary
+                                .withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),
+                          ),
+                          child: Text(
+                            _boostBannerText,
+                            style: LoomTypography.body.copyWith(
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                const SizedBox(height: 8),
+                _BoostCounterChip(
+                  focusRemaining: ShopStateService.instance.effectRemaining(
+                    ShopStateService.focusXpRemainingKey,
+                  ),
+                  burstRemaining: ShopStateService.instance.effectRemaining(
+                    ShopStateService.xpBurstRemainingKey,
+                  ),
                 ),
                 const SizedBox(height: 12),
                 Text(
@@ -1643,6 +1707,43 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             const SizedBox.shrink(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BoostCounterChip extends StatelessWidget {
+  const _BoostCounterChip({
+    required this.focusRemaining,
+    required this.burstRemaining,
+  });
+
+  final int focusRemaining;
+  final int burstRemaining;
+
+  @override
+  Widget build(BuildContext context) {
+    String? label;
+    if (focusRemaining > 0) {
+      label = '專注 x$focusRemaining';
+    } else if (burstRemaining > 0) {
+      label = '爆發 x$burstRemaining';
+    }
+    if (label == null) return const SizedBox.shrink();
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(
+          color: LoomTheme.accent(context).withOpacity(0.12),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(
+          label,
+          style: LoomTypography.secondary.copyWith(
+            color: LoomTheme.accent(context),
+          ),
         ),
       ),
     );
