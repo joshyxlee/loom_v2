@@ -23,6 +23,7 @@ import 'screens/shop_screen.dart';
 import 'services/token_service.dart';
 import 'services/level_thresholds.dart';
 import 'services/inventory_service.dart';
+import 'services/shop_state_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -55,6 +56,7 @@ class _LoomV2AppState extends State<LoomV2App> {
     await _coreDataStore.init(defaultSubjects: defaultSubjects);
     await TokenService.instance.init();
     await InventoryService.instance.init();
+    await ShopStateService.instance.init();
     await _progressService.init();
     setSubjects(_coreDataStore.subjects);
     _repository = RepositoryFactory(
