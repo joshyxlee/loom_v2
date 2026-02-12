@@ -83,6 +83,56 @@ class _ShopScreenState extends State<ShopScreen> {
     setState(() {});
   }
 
+  List<Widget> _buildSection(String title, ShopCategory category) {
+    final inventory = InventoryService.instance;
+    final shopState = ShopStateService.instance;
+    final items = buildShopCatalog().where((item) => item.category == category).toList();
+    if (items.isEmpty) return [];
+    return [
+      Text(title, style: LoomTypography.sectionTitle),
+      const SizedBox(height: LoomSpacing.sm),
+      ...items.map((item) {
+        final count = item.kind == ShopItemKind.consumable
+            ? inventory.count(item.id)
+            : 0;
+        final focusRemaining =
+            shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+        final doubleRemaining =
+            shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
+        String? statusText;
+        if (item.effect == ShopEffect.focusXp && focusRemaining > 0) {
+          statusText = '啟用中：剩餘 $focusRemaining/5';
+        }
+        if (item.effect == ShopEffect.doubleToken && doubleRemaining > 0) {
+          statusText = '啟用中：剩餘 $doubleRemaining/3';
+        }
+        final canUse = item.effect == ShopEffect.focusXp
+            ? count > 0 && focusRemaining == 0
+            : item.effect == ShopEffect.doubleToken
+                ? count > 0 && doubleRemaining == 0
+                : false;
+        final showUse = item.effect == ShopEffect.focusXp ||
+            item.effect == ShopEffect.doubleToken;
+        return Padding(
+          padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
+          child: ShopItemCard(
+            title: item.titleZh,
+            description: item.subtitleZh,
+            price: item.priceTokens,
+            badgeCount: item.kind == ShopItemKind.consumable ? count : null,
+            statusText: statusText,
+            actionLabel: item.isEnabled ? '購買' : '即將推出',
+            actionEnabled: item.isEnabled,
+            secondaryActionLabel: showUse ? '使用' : '',
+            secondaryActionEnabled: canUse,
+            onPurchase: () => _handlePurchase(context, item),
+            onSecondaryAction: () => _handleUse(context, item),
+          ),
+        );
+      }),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final token = TokenService.instance.knowledgeToken;
@@ -136,45 +186,9 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
             const SizedBox(height: LoomSpacing.md),
-            ...buildShopCatalog().map((item) {
-              final count = item.kind == ShopItemKind.consumable
-                  ? inventory.count(item.id)
-                  : 0;
-              final focusRemaining =
-                  shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
-              final doubleRemaining =
-                  shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
-              String? statusText;
-              if (item.effect == ShopEffect.focusXp && focusRemaining > 0) {
-                statusText = '啟用中：剩餘 $focusRemaining/5';
-              }
-              if (item.effect == ShopEffect.doubleToken && doubleRemaining > 0) {
-                statusText = '啟用中：剩餘 $doubleRemaining/3';
-              }
-              final canUse = item.effect == ShopEffect.focusXp
-                  ? count > 0 && focusRemaining == 0
-                  : item.effect == ShopEffect.doubleToken
-                      ? count > 0 && doubleRemaining == 0
-                      : false;
-              final showUse = item.effect == ShopEffect.focusXp ||
-                  item.effect == ShopEffect.doubleToken;
-              return Padding(
-                padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
-                child: ShopItemCard(
-                  title: item.titleZh,
-                  description: item.subtitleZh,
-                  price: item.priceTokens,
-                  badgeCount: item.kind == ShopItemKind.consumable ? count : null,
-                  statusText: statusText,
-                  actionLabel: item.isEnabled ? '購買' : '即將推出',
-                  actionEnabled: item.isEnabled,
-                  secondaryActionLabel: showUse ? '使用' : '',
-                  secondaryActionEnabled: canUse,
-                  onPurchase: () => _handlePurchase(context, item),
-                  onSecondaryAction: () => _handleUse(context, item),
-                ),
-              );
-            }),
+            ..._buildSection('強化', ShopCategory.boost),
+            ..._buildSection('實用', ShopCategory.utility),
+            ..._buildSection('個性', ShopCategory.cosmetic),
           ],
         ),
       ),

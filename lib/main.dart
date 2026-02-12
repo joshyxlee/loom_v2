@@ -870,12 +870,16 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _showFeedback = false;
   double _petBounceScale = 1.0;
   bool _lastIsCorrect = false;
+  late final List<Question> _sessionQuestions;
+  final Set<String> _recentQuestionIds = {};
 
   // moment texts removed
 
   @override
   void initState() {
     super.initState();
+    _sessionQuestions = List<Question>.from(widget.questions);
+    _recentQuestionIds.addAll(_sessionQuestions.map((q) => q.id));
     _levelProgress = _currentLevelProgress();
   }
 
@@ -903,6 +907,110 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _triggerMoment({required bool isCorrect, required bool leveledUp}) {}
 
+  void _resetQuestionState() {
+    _selected = null;
+    _lastXp = 0;
+    _dailyTargetJustCompleted = false;
+    _streakJustHit = false;
+    _levelUpPulse = false;
+    _isJudging = false;
+    _showFeedback = false;
+    _petBounceScale = 1.0;
+  }
+
+  Future<Question> _fetchReplacementQuestion({String? avoidId}) async {
+    Question? fallback;
+    for (var i = 0; i < 10; i++) {
+      final session = await widget.repository.getSession(
+        subject: widget.subject.key,
+        count: 1,
+      );
+      if (session.isEmpty) continue;
+      final candidate = session.first;
+      fallback ??= candidate;
+      if (candidate.id == avoidId) continue;
+      if (_recentQuestionIds.contains(candidate.id)) continue;
+      return candidate;
+    }
+    return fallback ?? _sessionQuestions[_index];
+  }
+
+  Future<void> _useSkip() async {
+    final inventory = InventoryService.instance;
+    final remaining = inventory.count('util_skip_question');
+    if (remaining <= 0) return;
+    final confirmed = await _confirmUse(
+      '消耗 1 張跳題券，直接跳到下一題。',
+    );
+    if (!confirmed) return;
+    final consumed = await inventory.consume('util_skip_question');
+    if (!consumed) return;
+    if (_index + 1 < _sessionQuestions.length) {
+      setState(() {
+        _index += 1;
+        _resetQuestionState();
+      });
+    } else {
+      final nextQuestion = await _fetchReplacementQuestion(avoidId: _sessionQuestions[_index].id);
+      setState(() {
+        _sessionQuestions.add(nextQuestion);
+        _recentQuestionIds.add(nextQuestion.id);
+        _index += 1;
+        _resetQuestionState();
+      });
+    }
+    if (!mounted) return;
+    final left = inventory.count('util_skip_question');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('已跳過（剩餘 x$left）')),
+    );
+  }
+
+  Future<void> _useReroll() async {
+    final inventory = InventoryService.instance;
+    final remaining = inventory.count('util_reroll_question');
+    if (remaining <= 0) return;
+    final confirmed = await _confirmUse(
+      '消耗 1 張換題券，換一題新的。',
+    );
+    if (!confirmed) return;
+    final consumed = await inventory.consume('util_reroll_question');
+    if (!consumed) return;
+    final replacement =
+        await _fetchReplacementQuestion(avoidId: _sessionQuestions[_index].id);
+    setState(() {
+      _sessionQuestions[_index] = replacement;
+      _recentQuestionIds.add(replacement.id);
+      _resetQuestionState();
+    });
+    if (!mounted) return;
+    final left = inventory.count('util_reroll_question');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('已換題（剩餘 x$left）')),
+    );
+  }
+
+  Future<bool> _confirmUse(String body) async {
+    final result = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('使用道具？'),
+        content: Text(body),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('取消'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('使用'),
+          ),
+        ],
+      ),
+    );
+    return result == true;
+  }
+
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
     final previousLevel = widget.coreDataStore.player.playerLevel;
@@ -924,9 +1032,29 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final question = widget.questions[_index];
+    final question = _sessionQuestions[_index];
+    final inventory = InventoryService.instance;
+    final skipCount = inventory.count('util_skip_question');
+    final rerollCount = inventory.count('util_reroll_question');
     return Scaffold(
-      appBar: AppBar(title: Text(widget.subjectTitle)),
+      appBar: AppBar(
+        title: Text(widget.subjectTitle),
+        actions: [
+          if (skipCount > 0)
+            TextButton.icon(
+              onPressed: _useSkip,
+              icon: const Icon(Icons.skip_next, size: 16),
+              label: const Text('跳過'),
+            ),
+          if (rerollCount > 0)
+            TextButton.icon(
+              onPressed: _useReroll,
+              icon: const Icon(Icons.shuffle, size: 16),
+              label: const Text('換一題'),
+            ),
+          const SizedBox(width: 8),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Stack(
@@ -944,13 +1072,13 @@ class _QuizScreenState extends State<QuizScreen> {
                       child: const Icon(Icons.pets, size: 18, color: Color(0xFF3CC77A)),
                     ),
                     const SizedBox(width: 6),
-                    Text('題目 ${_index + 1} / ${widget.questions.length}',
+                    Text('題目 ${_index + 1} / ${_sessionQuestions.length}',
                         style: Theme.of(context).textTheme.titleMedium),
                   ],
                 ),
                 const SizedBox(height: 6),
                 LinearProgressIndicator(
-                  value: (_index + 1) / widget.questions.length,
+                  value: (_index + 1) / _sessionQuestions.length,
                 ),
                 // quick hint removed
                 const SizedBox(height: 8),
@@ -984,10 +1112,10 @@ class _QuizScreenState extends State<QuizScreen> {
                     levelUp: widget.progressService.snapshot.level > _lastLevel,
                     streakHit: _streakJustHit,
                     dailyHit: _dailyTargetJustCompleted,
-                    isLast: _index + 1 >= widget.questions.length,
+                    isLast: _index + 1 >= _sessionQuestions.length,
                     levelUpPulse: _levelUpPulse,
                     onNext: () {
-                      if (_index + 1 >= widget.questions.length) {
+                      if (_index + 1 >= _sessionQuestions.length) {
                         setState(() {
                           _showSessionReward = true;
                         });
