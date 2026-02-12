@@ -482,6 +482,11 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: SingleChildScrollView(
+                  padding: EdgeInsets.only(
+                    bottom: kBottomNavigationBarHeight +
+                        MediaQuery.of(context).viewPadding.bottom +
+                        LoomSpacing.md,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -502,9 +507,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('今日知識幣', style: LoomTypography.secondary),
+                              Expanded(
+                                child: Text('今日知識幣', style: LoomTypography.secondary),
+                              ),
                               Text(
                                 '${tokenService.dailyTokenEarned}/10',
                                 style: LoomTypography.secondary,
@@ -552,14 +558,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                           .colorScheme
                                           .outlineVariant,
                                     ),
-                                    Text(
-                                      knowledgeBalance.toString(),
-                                      textAlign: TextAlign.center,
-                                      style: LoomTypography.bigNumber.copyWith(
-                                        fontFeatures: const [FontFeature.tabularFigures()],
-                                        fontSize: 72,
-                                        fontWeight: FontWeight.w700,
-                                        color: LoomTheme.accent(context),
+                                    FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        knowledgeBalance.toString(),
+                                        maxLines: 1,
+                                        softWrap: false,
+                                        overflow: TextOverflow.visible,
+                                        textAlign: TextAlign.center,
+                                        style: LoomTypography.bigNumber.copyWith(
+                                          fontFeatures: const [FontFeature.tabularFigures()],
+                                          fontSize: 72,
+                                          fontWeight: FontWeight.w700,
+                                          color: LoomTheme.accent(context),
+                                        ),
                                       ),
                                     ),
                                   ],
