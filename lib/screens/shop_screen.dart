@@ -227,9 +227,18 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
             const SizedBox(height: LoomSpacing.md),
-            ..._buildSection('強化', ShopCategory.boost),
-            ..._buildSection('實用', ShopCategory.utility),
-            ..._buildSection('個性', ShopCategory.cosmetic),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ..._buildSection('強化', ShopCategory.boost),
+                    ..._buildSection('實用', ShopCategory.utility),
+                    ..._buildSection('個性', ShopCategory.cosmetic),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
