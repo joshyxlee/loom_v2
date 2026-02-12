@@ -21,6 +21,7 @@ import 'widgets/loom_button.dart';
 import 'widgets/loom_section.dart';
 import 'widgets/streak_card.dart';
 import 'screens/shop_screen.dart';
+import 'screens/backpack_screen.dart';
 import 'services/token_service.dart';
 import 'services/level_thresholds.dart';
 import 'services/inventory_service.dart';
@@ -402,6 +403,21 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: null,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.inventory_2_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => BackpackScreen(
+                    repository: widget.repository,
+                    progressService: widget.progressService,
+                    coreDataStore: widget.coreDataStore,
+                  ),
+                ),
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(right: LoomSpacing.screen),
             child: TokenChip(
@@ -410,7 +426,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => _PlaceholderScreen(title: '商城'),
+                    builder: (_) => ShopScreen(
+                      repository: widget.repository,
+                      progressService: widget.progressService,
+                      coreDataStore: widget.coreDataStore,
+                    ),
                   ),
                 );
               },
@@ -459,7 +479,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => const ShopScreen(),
+              builder: (_) => ShopScreen(
+                repository: widget.repository,
+                progressService: widget.progressService,
+                coreDataStore: widget.coreDataStore,
+              ),
             ),
           );
           return;

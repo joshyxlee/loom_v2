@@ -10,9 +10,22 @@ import '../shop/shop_catalog.dart';
 import '../shop/shop_models.dart';
 import '../widgets/design_system.dart';
 import '../widgets/loom_card.dart';
+import 'backpack_screen.dart';
+import '../repositories/question_repository.dart';
+import '../services/progress_service.dart';
+import '../services/core_data_store.dart';
 
 class ShopScreen extends StatefulWidget {
-  const ShopScreen({super.key});
+  const ShopScreen({
+    super.key,
+    required this.repository,
+    required this.progressService,
+    required this.coreDataStore,
+  });
+
+  final QuestionRepository repository;
+  final ProgressService progressService;
+  final CoreDataStore coreDataStore;
 
   @override
   State<ShopScreen> createState() => _ShopScreenState();
@@ -399,20 +412,28 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 
   void _jumpToRecommended(InventoryService inventory) {
-    if (inventory.count('boost_mistake_shield') > 0 ||
+    final hasBoost = inventory.count('boost_mistake_shield') > 0 ||
         inventory.count('boost_focus_xp') > 0 ||
         inventory.count('boost_double_token') > 0 ||
-        inventory.count('boost_xp_burst') > 0) {
-      setState(() => _tabIndex = 0);
-      return;
-    }
-    if (inventory.count('util_skip_question') > 0 ||
-        inventory.count('util_reroll_question') > 0 ||
-        inventory.count('util_hint_reveal') > 0) {
-      setState(() => _tabIndex = 1);
-      return;
-    }
-    setState(() => _tabIndex = 0);
+        inventory.count('boost_xp_burst') > 0;
+    final focusSection = hasBoost
+        ? BackpackSection.boost
+        : inventory.count('util_skip_question') > 0 ||
+                inventory.count('util_reroll_question') > 0 ||
+                inventory.count('util_hint_reveal') > 0
+            ? BackpackSection.utility
+            : BackpackSection.boost;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => BackpackScreen(
+          repository: widget.repository,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+          focusSection: focusSection,
+        ),
+      ),
+    );
   }
 
   Map<String, int> _bundleContents(String bundleId) {
@@ -511,6 +532,21 @@ class _ShopScreenState extends State<ShopScreen> {
       appBar: AppBar(
         title: const Text('商城'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.inventory_2_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => BackpackScreen(
+                    repository: widget.repository,
+                    progressService: widget.progressService,
+                    coreDataStore: widget.coreDataStore,
+                  ),
+                ),
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(right: LoomSpacing.screen),
             child: _TokenBadge(tokens: token),
