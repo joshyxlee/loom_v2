@@ -22,6 +22,7 @@ import 'widgets/streak_card.dart';
 import 'screens/shop_screen.dart';
 import 'services/token_service.dart';
 import 'services/level_thresholds.dart';
+import 'services/inventory_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -53,6 +54,7 @@ class _LoomV2AppState extends State<LoomV2App> {
     await _seenStore.init();
     await _coreDataStore.init(defaultSubjects: defaultSubjects);
     await TokenService.instance.init();
+    await InventoryService.instance.init();
     await _progressService.init();
     setSubjects(_coreDataStore.subjects);
     _repository = RepositoryFactory(
@@ -1021,9 +1023,20 @@ class _QuizScreenState extends State<QuizScreen> {
                       onTap: () async {
                         var isCorrect = question.isCorrect(i);
                         if (!isCorrect) {
-                          final shieldUsed = TokenService.instance.consumeMistakeShield();
-                          if (shieldUsed) {
-                            isCorrect = true;
+                          final inventory = InventoryService.instance;
+                          if (inventory.isReady) {
+                            final used = await inventory.consume('boost_mistake_shield');
+                            if (used) {
+                              isCorrect = true;
+                              final remaining = inventory.count('boost_mistake_shield');
+                              if (mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('失誤保護卡已使用（剩餘 x$remaining）'),
+                                  ),
+                                );
+                              }
+                            }
                           }
                         }
                         _lastLevel = widget.coreDataStore.player.playerLevel;
