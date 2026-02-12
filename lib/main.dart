@@ -739,7 +739,7 @@ class _CardSection extends StatelessWidget {
   }
 }
 
-class _BackpackIconButton extends StatelessWidget {
+class _BackpackIconButton extends StatefulWidget {
   const _BackpackIconButton({
     required this.totalUsable,
     required this.onTap,
@@ -749,27 +749,86 @@ class _BackpackIconButton extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
+  State<_BackpackIconButton> createState() => _BackpackIconButtonState();
+}
+
+class _BackpackIconButtonState extends State<_BackpackIconButton>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _scale;
+  int _lastSeen = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _lastSeen = widget.totalUsable;
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 220),
+    );
+    _scale = Tween<double>(begin: 1.0, end: 1.08).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant _BackpackIconButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.totalUsable > _lastSeen) {
+      _controller.forward(from: 0).then((_) => _controller.reverse());
+    }
+    _lastSeen = widget.totalUsable;
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        IconButton(
-          icon: const Icon(Icons.inventory_2_outlined),
-          onPressed: onTap,
+        ScaleTransition(
+          scale: _scale,
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: scheme.surfaceVariant.withOpacity(0.6),
+              border: Border.all(
+                color: scheme.outlineVariant.withOpacity(0.8),
+              ),
+              boxShadow: _controller.isAnimating
+                  ? [
+                      BoxShadow(
+                        color: scheme.primary.withOpacity(0.2),
+                        blurRadius: 10,
+                        spreadRadius: 1,
+                      ),
+                    ]
+                  : null,
+            ),
+            child: IconButton(
+              icon: const Icon(Icons.inventory_2_rounded, size: 22),
+              onPressed: widget.onTap,
+            ),
+          ),
         ),
-        if (totalUsable > 0)
+        if (widget.totalUsable > 0)
           Positioned(
-            right: 6,
-            top: 6,
+            right: 2,
+            top: 2,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 color: scheme.primary,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                '$totalUsable',
+                '${widget.totalUsable}',
                 style: LoomTypography.secondary.copyWith(
                   color: scheme.onPrimary,
                   fontSize: 10,
