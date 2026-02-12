@@ -1108,20 +1108,31 @@ class _QuizScreenState extends State<QuizScreen> {
   Future<void> _useSkip() async {
     final inventory = InventoryService.instance;
     final remaining = inventory.count('util_skip_question');
-    if (remaining <= 0) return;
+    if (remaining <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     final confirmed = await _confirmUse(
       '消耗 1 張跳題券，直接跳到下一題。',
     );
     if (!confirmed) return;
     final consumed = await inventory.consume('util_skip_question');
-    if (!consumed) return;
+    if (!consumed) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     if (_index + 1 < _sessionQuestions.length) {
       setState(() {
         _index += 1;
         _resetQuestionState();
       });
     } else {
-      final nextQuestion = await _fetchReplacementQuestion(avoidId: _sessionQuestions[_index].id);
+      final nextQuestion =
+          await _fetchReplacementQuestion(avoidId: _sessionQuestions[_index].id);
       setState(() {
         _sessionQuestions.add(nextQuestion);
         _recentQuestionIds.add(nextQuestion.id);
@@ -1132,20 +1143,30 @@ class _QuizScreenState extends State<QuizScreen> {
     if (!mounted) return;
     final left = inventory.count('util_skip_question');
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已跳過（剩餘 x$left）')),
+      SnackBar(content: Text('跳題券已使用（剩餘 x$left）')),
     );
   }
 
   Future<void> _useReroll() async {
     final inventory = InventoryService.instance;
     final remaining = inventory.count('util_reroll_question');
-    if (remaining <= 0) return;
+    if (remaining <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     final confirmed = await _confirmUse(
       '消耗 1 張換題券，換一題新的。',
     );
     if (!confirmed) return;
     final consumed = await inventory.consume('util_reroll_question');
-    if (!consumed) return;
+    if (!consumed) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     final replacement =
         await _fetchReplacementQuestion(avoidId: _sessionQuestions[_index].id);
     setState(() {
@@ -1156,21 +1177,36 @@ class _QuizScreenState extends State<QuizScreen> {
     if (!mounted) return;
     final left = inventory.count('util_reroll_question');
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已換題（剩餘 x$left）')),
+      SnackBar(content: Text('換題券已使用（剩餘 x$left）')),
     );
   }
 
   Future<void> _useHint() async {
     final inventory = InventoryService.instance;
-    if (_selected != null || _hintUsed) return;
+    if (_selected != null || _hintUsed) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('本題已使用提示')),
+      );
+      return;
+    }
     final remaining = inventory.count('util_hint_reveal');
-    if (remaining <= 0) return;
+    if (remaining <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     final confirmed = await _confirmUse(
       '消耗 1 張提示券，排除兩個錯誤選項。',
     );
     if (!confirmed) return;
     final consumed = await inventory.consume('util_hint_reveal');
-    if (!consumed) return;
+    if (!consumed) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('道具不足')),
+      );
+      return;
+    }
     final question = _sessionQuestions[_index];
     // Question uses answerIndex as the correct option index.
     final correctIndex = question.answerIndex;
@@ -1189,7 +1225,7 @@ class _QuizScreenState extends State<QuizScreen> {
     if (!mounted) return;
     final left = inventory.count('util_hint_reveal');
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已提示（剩餘 x$left）')),
+      SnackBar(content: Text('提示券已使用（剩餘 x$left）')),
     );
   }
 
@@ -1244,25 +1280,57 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: Text(widget.subjectTitle),
         actions: [
+          if (hintCount > 0)
+            IconButton(
+              tooltip: '提示',
+              onPressed: _useHint,
+              icon: Icon(
+                Icons.lightbulb_outline,
+                color: Theme.of(context).colorScheme.primary,
+                size: 20,
+              ),
+            ),
           if (skipCount > 0)
-            TextButton.icon(
+            IconButton(
+              tooltip: '跳過',
               onPressed: _useSkip,
-              icon: const Icon(Icons.skip_next, size: 16),
-              label: const Text('跳過'),
+              icon: Icon(
+                Icons.skip_next,
+                color: Theme.of(context).colorScheme.primary,
+                size: 20,
+              ),
             ),
           if (rerollCount > 0)
-            TextButton.icon(
+            IconButton(
+              tooltip: '換一題',
               onPressed: _useReroll,
-              icon: const Icon(Icons.shuffle, size: 16),
-              label: const Text('換一題'),
+              icon: Icon(
+                Icons.shuffle,
+                color: Theme.of(context).colorScheme.primary,
+                size: 20,
+              ),
             ),
-          if (hintCount > 0 && _selected == null && !_hintUsed)
-            TextButton.icon(
-              onPressed: _useHint,
-              icon: const Icon(Icons.lightbulb_outline, size: 16),
-              label: const Text('提示'),
+          IconButton(
+            tooltip: '背包',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => BackpackScreen(
+                    repository: widget.repository,
+                    progressService: widget.progressService,
+                    coreDataStore: widget.coreDataStore,
+                  ),
+                ),
+              );
+            },
+            icon: Icon(
+              Icons.inventory_2_outlined,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              size: 20,
             ),
-          const SizedBox(width: 8),
+          ),
+          const SizedBox(width: 4),
         ],
       ),
       body: Padding(
