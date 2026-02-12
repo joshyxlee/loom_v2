@@ -36,7 +36,7 @@ class StreakCard extends StatelessWidget {
     final status = frozen
         ? '連勝冰封（完成 5 題解凍）'
         : '連續 $streakDays 天';
-    final statusIcon = frozen ? Icons.ac_unit : Icons.local_fire_department;
+    final statusIcon = frozen ? '🧊' : '🔥';
 
     final headline = frozen
         ? '連勝已冰封，今天完成可解凍'
@@ -77,10 +77,9 @@ class StreakCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 6),
-                    Icon(
+                    Text(
                       statusIcon,
-                      size: 19,
-                      color: LoomTheme.accent(context),
+                      style: const TextStyle(fontSize: 20),
                     ),
                   ],
                 ),
@@ -101,19 +100,14 @@ class StreakCard extends StatelessWidget {
               children: List.generate(7, (index) {
                 final isActive = index < activeCount;
                 final isFrozenSlot = frozen && index == activeCount;
-                final icon = isActive
-                    ? Icons.local_fire_department
+                final symbol = isActive
+                    ? '🔥'
                     : isFrozenSlot
-                        ? Icons.ac_unit
-                        : Icons.crop_square;
-                final color = isActive
-                    ? LoomTheme.accent(context)
-                    : isFrozenSlot
-                        ? LoomTheme.negative(context)
-                        : Theme.of(context).colorScheme.outlineVariant;
+                        ? '🧊'
+                        : '◻︎';
                 return Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: Icon(icon, size: 22, color: color),
+                  child: Text(symbol, style: const TextStyle(fontSize: 22)),
                 );
               }),
             ),
