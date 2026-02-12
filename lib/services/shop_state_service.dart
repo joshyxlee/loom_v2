@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ShopStateService {
@@ -19,6 +20,7 @@ class ShopStateService {
   Set<String> _owned = {};
   Map<String, String> _equipped = {};
   bool _ready = false;
+  final ValueNotifier<String?> themeNotifier = ValueNotifier<String?>(null);
 
   bool get isReady => _ready;
 
@@ -27,6 +29,7 @@ class ShopStateService {
     _effects = _loadEffects();
     _owned = _loadOwned();
     _equipped = _loadEquipped();
+    themeNotifier.value = _equipped['theme'];
     _ready = true;
   }
 
@@ -52,6 +55,9 @@ class ShopStateService {
 
   Future<void> equip(String slot, String itemId) async {
     _equipped[slot] = itemId;
+    if (slot == 'theme') {
+      themeNotifier.value = itemId;
+    }
     await _saveEquipped();
   }
 

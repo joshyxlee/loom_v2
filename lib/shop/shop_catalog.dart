@@ -53,6 +53,15 @@ List<ShopItem> buildShopCatalog() {
       isEnabled: true,
     ),
     ShopItem(
+      id: 'cosmetic_theme_night',
+      titleZh: '夜間主題',
+      subtitleZh: '更舒服的暗色介面',
+      category: ShopCategory.cosmetic,
+      priceTokens: 200,
+      kind: ShopItemKind.equipable,
+      isEnabled: true,
+    ),
+    ShopItem(
       id: 'cosmetic_custom',
       titleZh: '自訂外觀',
       subtitleZh: '為你的成長旅程加上一點個性。',

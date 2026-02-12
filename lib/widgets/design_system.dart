@@ -115,4 +115,50 @@ class LoomTheme {
       ),
     );
   }
+
+  static ThemeData nightTheme() {
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: LoomColors.primary,
+      brightness: Brightness.dark,
+    );
+    return ThemeData(
+      colorScheme: colorScheme,
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: const Color(0xFF121416),
+      cardColor: const Color(0xFF1C1F23),
+      textTheme: const TextTheme(
+        titleLarge: LoomTypography.screenTitle,
+        bodyMedium: LoomTypography.body,
+        bodySmall: LoomTypography.secondary,
+      ).apply(
+        bodyColor: const Color(0xFFEAEAEA),
+        displayColor: const Color(0xFFEAEAEA),
+      ),
+      dividerColor: const Color(0x26FFFFFF),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          padding: const EdgeInsets.symmetric(
+            vertical: LoomSpacing.sm,
+            horizontal: LoomSpacing.screen,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          minimumSize: const Size.fromHeight(LoomSizes.buttonHeight),
+          side: const BorderSide(color: Color(0x26FFFFFF)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(LoomRadius.button),
+          ),
+          textStyle: LoomTypography.body.copyWith(fontWeight: FontWeight.w600),
+        ),
+      ),
+    );
+  }
 }

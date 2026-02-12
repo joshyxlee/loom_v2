@@ -69,16 +69,25 @@ class _LoomV2AppState extends State<LoomV2App> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Loom v2',
-      theme: LoomTheme.lightTheme(),
-      home: _ready
-          ? OnboardingGate(
-              repository: _repository,
-              progressService: _progressService,
-              coreDataStore: _coreDataStore,
-            )
-          : const Scaffold(body: Center(child: CircularProgressIndicator())),
+    final shopState = ShopStateService.instance;
+    return ValueListenableBuilder<String?>(
+      valueListenable: shopState.themeNotifier,
+      builder: (context, themeId, _) {
+        final isNight = themeId == 'cosmetic_theme_night';
+        return MaterialApp(
+          title: 'Loom v2',
+          theme: LoomTheme.lightTheme(),
+          darkTheme: LoomTheme.nightTheme(),
+          themeMode: isNight ? ThemeMode.dark : ThemeMode.light,
+          home: _ready
+              ? OnboardingGate(
+                  repository: _repository,
+                  progressService: _progressService,
+                  coreDataStore: _coreDataStore,
+                )
+              : const Scaffold(body: Center(child: CircularProgressIndicator())),
+        );
+      },
     );
   }
 }

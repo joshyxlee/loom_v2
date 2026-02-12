@@ -20,6 +20,10 @@ class _ShopScreenState extends State<ShopScreen> {
 
   Future<void> _handlePurchase(BuildContext context, ShopItem item) async {
     if (!item.isEnabled) return;
+    final shopState = ShopStateService.instance;
+    if (item.kind == ShopItemKind.equipable && shopState.isOwned(item.id)) {
+      return;
+    }
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -46,9 +50,13 @@ class _ShopScreenState extends State<ShopScreen> {
       return;
     }
     service.deductToken(item.priceTokens);
-    await InventoryService.instance.add(item.id, 1);
+    if (item.kind == ShopItemKind.equipable) {
+      await shopState.addOwned(item.id);
+    } else {
+      await InventoryService.instance.add(item.id, 1);
+    }
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已購買：${item.titleZh}（+1）')),
+      SnackBar(content: Text('已購買：${item.titleZh}')),
     );
     if (mounted) {
       setState(() {});
@@ -58,6 +66,13 @@ class _ShopScreenState extends State<ShopScreen> {
   Future<void> _handleUse(BuildContext context, ShopItem item) async {
     final inventory = InventoryService.instance;
     final shopState = ShopStateService.instance;
+    if (item.kind == ShopItemKind.equipable) {
+      await shopState.equip('theme', item.id);
+      if (mounted) {
+        setState(() {});
+      }
+      return;
+    }
     final count = inventory.count(item.id);
     if (count <= 0) return;
     if (item.effect == ShopEffect.focusXp &&
@@ -99,6 +114,9 @@ class _ShopScreenState extends State<ShopScreen> {
             shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
         final doubleRemaining =
             shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
+        final isOwned = item.kind == ShopItemKind.equipable && shopState.isOwned(item.id);
+        final isEquipped =
+            item.kind == ShopItemKind.equipable && shopState.equippedFor('theme') == item.id;
         String? statusText;
         if (item.effect == ShopEffect.focusXp && focusRemaining > 0) {
           statusText = '啟用中：剩餘 $focusRemaining/5';
@@ -106,13 +124,35 @@ class _ShopScreenState extends State<ShopScreen> {
         if (item.effect == ShopEffect.doubleToken && doubleRemaining > 0) {
           statusText = '啟用中：剩餘 $doubleRemaining/3';
         }
+        String? badgeText;
+        if (isEquipped) {
+          badgeText = '使用中';
+        } else if (isOwned) {
+          badgeText = '已擁有';
+        }
         final canUse = item.effect == ShopEffect.focusXp
             ? count > 0 && focusRemaining == 0
             : item.effect == ShopEffect.doubleToken
                 ? count > 0 && doubleRemaining == 0
-                : false;
+                : item.kind == ShopItemKind.equipable
+                    ? isOwned && !isEquipped
+                    : false;
         final showUse = item.effect == ShopEffect.focusXp ||
-            item.effect == ShopEffect.doubleToken;
+            item.effect == ShopEffect.doubleToken ||
+            item.kind == ShopItemKind.equipable;
+        final actionLabel = item.kind == ShopItemKind.equipable
+            ? (isOwned ? (isEquipped ? '使用中' : '使用') : '購買')
+            : item.isEnabled
+                ? '購買'
+                : '即將推出';
+        final actionEnabled = item.kind == ShopItemKind.equipable
+            ? !isEquipped
+            : item.isEnabled;
+        final secondaryActionLabel =
+            item.kind == ShopItemKind.equipable ? '' : (showUse ? '使用' : '');
+        final actionHandler = item.kind == ShopItemKind.equipable && isOwned && !isEquipped
+            ? () => _handleUse(context, item)
+            : () => _handlePurchase(context, item);
         return Padding(
           padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
           child: ShopItemCard(
@@ -120,12 +160,13 @@ class _ShopScreenState extends State<ShopScreen> {
             description: item.subtitleZh,
             price: item.priceTokens,
             badgeCount: item.kind == ShopItemKind.consumable ? count : null,
+            badgeText: badgeText,
             statusText: statusText,
-            actionLabel: item.isEnabled ? '購買' : '即將推出',
-            actionEnabled: item.isEnabled,
-            secondaryActionLabel: showUse ? '使用' : '',
-            secondaryActionEnabled: canUse,
-            onPurchase: () => _handlePurchase(context, item),
+            actionLabel: actionLabel,
+            actionEnabled: actionEnabled,
+            secondaryActionLabel: secondaryActionLabel,
+            secondaryActionEnabled: item.kind == ShopItemKind.equipable ? false : canUse,
+            onPurchase: actionHandler,
             onSecondaryAction: () => _handleUse(context, item),
           ),
         );
@@ -271,6 +312,7 @@ class ShopItemCard extends StatelessWidget {
     required this.secondaryActionEnabled,
     required this.onSecondaryAction,
     this.badgeCount,
+    this.badgeText,
     this.statusText,
   });
 
@@ -284,6 +326,7 @@ class ShopItemCard extends StatelessWidget {
   final bool secondaryActionEnabled;
   final VoidCallback onSecondaryAction;
   final int? badgeCount;
+  final String? badgeText;
   final String? statusText;
 
   @override
@@ -327,7 +370,7 @@ class ShopItemCard extends StatelessWidget {
               ),
             ],
           ),
-          if (badgeCount != null)
+          if (badgeCount != null || badgeText != null)
             Positioned(
               top: 0,
               right: 0,
@@ -338,7 +381,7 @@ class ShopItemCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  '持有 x$badgeCount',
+                  badgeText ?? '持有 x$badgeCount',
                   style: LoomTypography.body.copyWith(
                     fontSize: 12,
                     color: LoomColors.textSecondary,
