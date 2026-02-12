@@ -19,10 +19,11 @@ class LoomCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(LoomSizes.cardPadding),
       decoration: BoxDecoration(
-        color: background ?? LoomColors.surface,
+        color: background ?? Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(LoomRadius.card),
         boxShadow: LoomElevation.card,
-        border: Border.all(color: borderColor ?? LoomColors.divider),
+        border:
+            Border.all(color: borderColor ?? Theme.of(context).colorScheme.outlineVariant),
       ),
       child: child,
     );

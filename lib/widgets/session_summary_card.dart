@@ -36,11 +36,11 @@ class SessionSummaryCard extends StatelessWidget {
           width: 320,
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Theme.of(context).shadowColor.withOpacity(0.08),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
@@ -52,8 +52,12 @@ class SessionSummaryCard extends StatelessWidget {
             children: [
               Text('你完成了一回合', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 6),
-              const Text('你已經補起一些容易搞錯的點',
-                  style: TextStyle(color: Colors.black54)),
+              Text(
+                '你已經補起一些容易搞錯的點',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
               const SizedBox(height: 8),
               Text('科目：${subject.title}'),
               Text('題數：$totalQuestions 題'),
@@ -94,7 +98,12 @@ class SessionSummaryCard extends StatelessWidget {
                 child: const Text('先到這裡'),
               ),
               const SizedBox(height: 6),
-              const Text('明天再來一點就會更穩', style: TextStyle(color: Colors.black54)),
+              Text(
+                '明天再來一點就會更穩',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
             ],
           ),
         ),
