@@ -418,6 +418,18 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      floatingActionButton: kDebugMode
+          ? FloatingActionButton(
+              onPressed: () {
+                TokenService.instance.addToken(5000);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('DEBUG: +5000 tokens added')),
+                );
+                setState(() {});
+              },
+              child: const Icon(Icons.attach_money),
+            )
+          : null,
       bottomNavigationBar: _HomeBottomNav(onTap: (index) {
         if (index == 0) return;
         if (index == 1) {
