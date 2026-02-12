@@ -20,6 +20,7 @@ import 'widgets/loom_card.dart';
 import 'widgets/loom_button.dart';
 import 'widgets/loom_section.dart';
 import 'widgets/streak_card.dart';
+import 'widgets/backpack_entry_button.dart';
 import 'screens/shop_screen.dart';
 import 'screens/backpack_screen.dart';
 import 'services/token_service.dart';
@@ -415,7 +416,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: null,
         actions: [
-          _BackpackIconButton(
+          BackpackEntryButton(
             totalUsable: _totalUsableItems(),
             onTap: () {
               Navigator.push(
@@ -735,109 +736,6 @@ class _CardSection extends StatelessWidget {
         ],
       ),
       child: child,
-    );
-  }
-}
-
-class _BackpackIconButton extends StatefulWidget {
-  const _BackpackIconButton({
-    required this.totalUsable,
-    required this.onTap,
-  });
-
-  final int totalUsable;
-  final VoidCallback onTap;
-
-  @override
-  State<_BackpackIconButton> createState() => _BackpackIconButtonState();
-}
-
-class _BackpackIconButtonState extends State<_BackpackIconButton>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-  late final Animation<double> _scale;
-  int _lastSeen = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _lastSeen = widget.totalUsable;
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 220),
-    );
-    _scale = Tween<double>(begin: 1.0, end: 1.08).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
-    );
-  }
-
-  @override
-  void didUpdateWidget(covariant _BackpackIconButton oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.totalUsable > _lastSeen) {
-      _controller.forward(from: 0).then((_) => _controller.reverse());
-    }
-    _lastSeen = widget.totalUsable;
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        ScaleTransition(
-          scale: _scale,
-          child: Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: scheme.surfaceVariant.withOpacity(0.6),
-              border: Border.all(
-                color: scheme.outlineVariant.withOpacity(0.8),
-              ),
-              boxShadow: _controller.isAnimating
-                  ? [
-                      BoxShadow(
-                        color: scheme.primary.withOpacity(0.2),
-                        blurRadius: 10,
-                        spreadRadius: 1,
-                      ),
-                    ]
-                  : null,
-            ),
-            child: IconButton(
-              icon: const Icon(Icons.inventory_2_rounded, size: 22),
-              onPressed: widget.onTap,
-            ),
-          ),
-        ),
-        if (widget.totalUsable > 0)
-          Positioned(
-            right: 2,
-            top: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
-                color: scheme.primary,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                '${widget.totalUsable}',
-                style: LoomTypography.secondary.copyWith(
-                  color: scheme.onPrimary,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
-      ],
     );
   }
 }
@@ -1377,6 +1275,18 @@ class _QuizScreenState extends State<QuizScreen> {
     return result == true;
   }
 
+  int _totalUsableInventory() {
+    final inventory = InventoryService.instance;
+    return inventory.count('boost_mistake_shield') +
+        inventory.count('boost_focus_xp') +
+        inventory.count('boost_double_token') +
+        inventory.count('boost_xp_burst') +
+        inventory.count('boost_streak_saver') +
+        inventory.count('util_skip_question') +
+        inventory.count('util_reroll_question') +
+        inventory.count('util_hint_reveal');
+  }
+
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
     final previousLevel = widget.coreDataStore.player.playerLevel;
@@ -1437,9 +1347,9 @@ class _QuizScreenState extends State<QuizScreen> {
                 size: 20,
               ),
             ),
-          IconButton(
-            tooltip: '背包',
-            onPressed: () {
+          BackpackEntryButton(
+            totalUsable: _totalUsableInventory(),
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -1451,11 +1361,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               );
             },
-            icon: Icon(
-              Icons.inventory_2_outlined,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
-              size: 20,
-            ),
           ),
           const SizedBox(width: 4),
         ],
