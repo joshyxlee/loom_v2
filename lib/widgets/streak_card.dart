@@ -34,7 +34,7 @@ class StreakCard extends StatelessWidget {
     final status = broken
         ? '已中斷'
         : '連續 $streakDays 天';
-    final statusIcon = broken ? '🧊' : '🔥';
+    final statusIcon = broken ? Icons.ac_unit : Icons.local_fire_department;
 
     final headline = broken
         ? (showSaveHint ? '昨天差一點，還能用知識幣保住 🔥' : '昨天沒完成，火熄了 🧊')
@@ -45,6 +45,8 @@ class StreakCard extends StatelessWidget {
         : (streakDays + (todayCompleted ? 1 : 0)).clamp(0, 7);
 
     return LoomCard(
+      background: LoomTheme.card(context),
+      borderColor: LoomTheme.border(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -54,21 +56,30 @@ class StreakCard extends StatelessWidget {
                 child: Text(
                   '每日五題，讓知識的火焰傳遞下去！',
                   style: LoomTypography.secondary.copyWith(
-                    color: LoomColors.textSecondary,
+                    color: LoomTheme.textSecondary(context),
                   ),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: LoomColors.background,
+                  color: LoomTheme.accent(context).withOpacity(0.15),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Row(
                   children: [
-                    Text(status, style: LoomTypography.secondary),
+                    Text(
+                      status,
+                      style: LoomTypography.secondary.copyWith(
+                        color: LoomTheme.accent(context),
+                      ),
+                    ),
                     const SizedBox(width: 6),
-                    Text(statusIcon, style: const TextStyle(fontSize: 16)),
+                    Icon(
+                      statusIcon,
+                      size: 19,
+                      color: LoomTheme.accent(context),
+                    ),
                   ],
                 ),
               ),
@@ -77,7 +88,9 @@ class StreakCard extends StatelessWidget {
           const SizedBox(height: LoomSpacing.base),
           Text(
             headline,
-            style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary),
+            style: LoomTypography.secondary.copyWith(
+              color: LoomTheme.textSecondary(context),
+            ),
           ),
           const SizedBox(height: LoomSpacing.sm),
           SizedBox(
@@ -85,12 +98,21 @@ class StreakCard extends StatelessWidget {
             child: Row(
               children: List.generate(7, (index) {
                 final isActive = index < activeCount;
-                final emoji = broken ? '🧊' : '🔥';
+                final decoration = BoxDecoration(
+                  color: isActive
+                      ? LoomTheme.accent(context).withOpacity(0.3)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(6),
+                  border: isActive
+                      ? null
+                      : Border.all(color: Theme.of(context).colorScheme.outlineVariant),
+                );
                 return Padding(
                   padding: const EdgeInsets.only(right: 10),
-                  child: Text(
-                    isActive ? emoji : '◻︎',
-                    style: const TextStyle(fontSize: 26),
+                  child: Container(
+                    width: 26,
+                    height: 26,
+                    decoration: decoration,
                   ),
                 );
               }),

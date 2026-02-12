@@ -497,19 +497,48 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               const SizedBox(height: LoomSpacing.base),
-                              Text(
-                                knowledgeBalance.toString(),
-                                textAlign: TextAlign.center,
-                                style: LoomTypography.bigNumber.copyWith(
-                                  fontFeatures: const [FontFeature.tabularFigures()],
-                                  color: LoomTheme.accent(context),
+                              SizedBox(
+                                width: 140,
+                                height: 140,
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    CircularProgressIndicator(
+                                      value: levelProgress,
+                                      strokeWidth: 6,
+                                      color: LoomTheme.accent(context),
+                                      backgroundColor: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
+                                    ),
+                                    Text(
+                                      knowledgeBalance.toString(),
+                                      textAlign: TextAlign.center,
+                                      style: LoomTypography.bigNumber.copyWith(
+                                        fontFeatures: const [FontFeature.tabularFigures()],
+                                        fontSize: 80,
+                                        fontWeight: FontWeight.w700,
+                                        color: LoomTheme.accent(context),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               const SizedBox(height: LoomSpacing.base),
-                              Text(
-                                '今天 +$dailyPlus',
-                                style: LoomTypography.secondary.copyWith(
-                                  color: LoomTheme.textSecondary(context),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: LoomTheme.accent(context).withOpacity(0.12),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Text(
+                                  '今天 +$dailyPlus',
+                                  style: LoomTypography.secondary.copyWith(
+                                    color: LoomTheme.accent(context),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: LoomSpacing.sm),
@@ -535,10 +564,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
-                        height: LoomSizes.buttonHeight,
+                        height: LoomSizes.buttonHeight + 8,
                         child: LoomPrimaryButton(
                           label: '開始變聰明！',
                           onPressed: () => _startSubject(context, primarySubject),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              LoomColors.primaryStrong,
+                              LoomTheme.accent(context),
+                            ],
+                          ),
+                          shadowColor: LoomTheme.shadow(context).withOpacity(0.15),
                         ),
                       ),
                     ],
@@ -1298,8 +1336,17 @@ class _QuizScreenState extends State<QuizScreen> {
                             'burstLeft=$burstAfter focusLeft=$focusAfter',
                           );
                         }
-                        final leveledUp =
-                            widget.coreDataStore.player.playerLevel > _lastLevel;
+                        final newLevel = widget.coreDataStore.player.playerLevel;
+                        final leveledUp = newLevel > _lastLevel;
+                        if (leveledUp) {
+                          TokenService.instance.addToken(3);
+                          if (newLevel % 10 == 0) {
+                            TokenService.instance.addToken(15);
+                          }
+                        }
+                        if (result.completedDailyTarget && newLevel == 1) {
+                          TokenService.instance.grantFirstDayBonus();
+                        }
                         setState(() {
                           _selected = i;
                           _lastXp = result.gainedXp;
@@ -1312,11 +1359,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             _correctStreak += 1;
                             _streakJustHit = _correctStreak == 3;
                             final todayKey = widget.progressService.todayKey;
-                            TokenService.instance.addTokenWithCap(
-                              1,
-                              todayKey,
-                              source: 'answer_correct',
-                            );
+                            TokenService.instance.addTokenFromAnswer(1);
                             if (_correctStreak == 3 && !_sessionBonus3Awarded) {
                               TokenService.instance.addTokenWithCap(2, todayKey);
                               _sessionBonus3Awarded = true;

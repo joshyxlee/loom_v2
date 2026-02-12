@@ -149,6 +149,7 @@ class ProgressService {
     final gapDays = _daysBetween(lastKey, todayKey);
 
     TokenService.instance.resetDailyEarnedIfNeeded(todayKey);
+    TokenService.instance.resetDailyToken();
     if (!_yesterdayCompleted && _streakDays > 0) {
       _streakSavePending = true;
       _prevStreakDays = _streakDays;
@@ -190,6 +191,7 @@ class ProgressService {
     if (completedDailyTarget && !_todayCompleted) {
       _todayCompleted = true;
       TokenService.instance.awardDailyCompletion(todayKey);
+      TokenService.instance.addToken(5);
       _saveStreakState();
     }
     return AnswerResult(gainedXp: gained, completedDailyTarget: completedDailyTarget);

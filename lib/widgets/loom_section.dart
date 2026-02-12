@@ -16,8 +16,12 @@ class LoomSectionHeader extends StatelessWidget {
         Text(title, style: LoomTypography.screenTitle),
         if (subtitle != null) ...[
           const SizedBox(height: LoomSpacing.base),
-          Text(subtitle!,
-              style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary)),
+          Text(
+            subtitle!,
+            style: LoomTypography.secondary.copyWith(
+              color: LoomTheme.textSecondary(context),
+            ),
+          ),
         ],
       ],
     );
@@ -40,8 +44,8 @@ class LoomProgressIndicator extends StatelessWidget {
           margin: const EdgeInsets.only(right: LoomSpacing.base),
           decoration: BoxDecoration(
             color: isActive
-                ? LoomColors.primary
-                : LoomColors.primary.withOpacity(0.4),
+                ? LoomTheme.accent(context)
+                : LoomTheme.accent(context).withOpacity(0.4),
             shape: BoxShape.circle,
           ),
         );
