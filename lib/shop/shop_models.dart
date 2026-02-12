@@ -1,4 +1,4 @@
-enum ShopCategory { boost, utility, cosmetic }
+enum ShopCategory { boost, utility, cosmetic, unlock, limited }
 
 enum ShopItemKind { consumable, owned, equipable }
 

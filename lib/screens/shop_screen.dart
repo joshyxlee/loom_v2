@@ -102,7 +102,13 @@ class _ShopScreenState extends State<ShopScreen> {
     final inventory = InventoryService.instance;
     final shopState = ShopStateService.instance;
     final items = buildShopCatalog().where((item) => item.category == category).toList();
-    if (items.isEmpty) return [];
+    if (items.isEmpty) {
+      return [
+        Text(title, style: LoomTypography.sectionTitle),
+        const SizedBox(height: LoomSpacing.sm),
+        Text('此分類暫無商品', style: LoomTypography.body),
+      ];
+    }
     return [
       Text(title, style: LoomTypography.sectionTitle),
       const SizedBox(height: LoomSpacing.sm),
@@ -185,6 +191,40 @@ class _ShopScreenState extends State<ShopScreen> {
     ];
   }
 
+  ShopCategory _selectedCategory() {
+    switch (_tabIndex) {
+      case 0:
+        return ShopCategory.boost;
+      case 1:
+        return ShopCategory.utility;
+      case 2:
+        return ShopCategory.cosmetic;
+      case 3:
+        return ShopCategory.unlock;
+      case 4:
+        return ShopCategory.limited;
+      default:
+        return ShopCategory.boost;
+    }
+  }
+
+  String _selectedCategoryLabel() {
+    switch (_tabIndex) {
+      case 0:
+        return '強化';
+      case 1:
+        return '實用';
+      case 2:
+        return '個性';
+      case 3:
+        return '解鎖';
+      case 4:
+        return '限時';
+      default:
+        return '強化';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final token = TokenService.instance.knowledgeToken;
@@ -219,21 +259,27 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 const SizedBox(width: LoomSpacing.base),
                 _TabButton(
-                  label: '個性',
+                  label: '實用',
                   isActive: _tabIndex == 1,
                   onTap: () => setState(() => _tabIndex = 1),
                 ),
                 const SizedBox(width: LoomSpacing.base),
                 _TabButton(
-                  label: '解鎖',
+                  label: '個性',
                   isActive: _tabIndex == 2,
                   onTap: () => setState(() => _tabIndex = 2),
                 ),
                 const SizedBox(width: LoomSpacing.base),
                 _TabButton(
-                  label: '限時',
+                  label: '解鎖',
                   isActive: _tabIndex == 3,
                   onTap: () => setState(() => _tabIndex = 3),
+                ),
+                const SizedBox(width: LoomSpacing.base),
+                _TabButton(
+                  label: '限時',
+                  isActive: _tabIndex == 4,
+                  onTap: () => setState(() => _tabIndex = 4),
                 ),
               ],
             ),
@@ -256,9 +302,10 @@ class _ShopScreenState extends State<ShopScreen> {
                       themeId: shopState.equippedFor('theme'),
                     ),
                     const SizedBox(height: LoomSpacing.md),
-                    ..._buildSection('強化', ShopCategory.boost),
-                    ..._buildSection('實用', ShopCategory.utility),
-                    ..._buildSection('個性', ShopCategory.cosmetic),
+                    ..._buildSection(
+                      _selectedCategoryLabel(),
+                      _selectedCategory(),
+                    ),
                   ],
                 ),
               ),

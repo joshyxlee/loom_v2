@@ -61,14 +61,5 @@ List<ShopItem> buildShopCatalog() {
       kind: ShopItemKind.equipable,
       isEnabled: true,
     ),
-    ShopItem(
-      id: 'cosmetic_custom',
-      titleZh: '自訂外觀',
-      subtitleZh: '為你的成長旅程加上一點個性。',
-      category: ShopCategory.cosmetic,
-      priceTokens: 200,
-      kind: ShopItemKind.owned,
-      isEnabled: false,
-    ),
   ];
 }
