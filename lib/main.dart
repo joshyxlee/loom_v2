@@ -550,14 +550,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
-                                    CircularProgressIndicator(
-                                      value: levelProgress,
-                                      strokeWidth: 6,
-                                      color: LoomTheme.accent(context),
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .outlineVariant,
-                                    ),
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
                                       child: Text(
