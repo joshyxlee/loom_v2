@@ -83,6 +83,21 @@ class _ShopScreenState extends State<ShopScreen> {
         shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey) > 0) {
       return;
     }
+    if (item.id == 'boost_xp_burst') {
+      final focusActive =
+          shopState.effectRemaining(ShopStateService.focusXpRemainingKey) > 0;
+      if (focusActive) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('已啟用專注強化，結束後再使用')),
+        );
+        return;
+      }
+      final burstActive =
+          shopState.effectRemaining(ShopStateService.xpBurstRemainingKey) > 0;
+      if (burstActive) {
+        return;
+      }
+    }
     final consumed = await inventory.consume(item.id);
     if (!consumed) return;
     if (item.effect == ShopEffect.focusXp) {
@@ -90,6 +105,9 @@ class _ShopScreenState extends State<ShopScreen> {
     }
     if (item.effect == ShopEffect.doubleToken) {
       await shopState.setEffectRemaining(ShopStateService.doubleTokenRemainingKey, 3);
+    }
+    if (item.id == 'boost_xp_burst') {
+      await shopState.setEffectRemaining(ShopStateService.xpBurstRemainingKey, 3);
     }
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
@@ -118,12 +136,17 @@ class _ShopScreenState extends State<ShopScreen> {
             : 0;
         final focusRemaining =
             shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+        final burstRemaining =
+            shopState.effectRemaining(ShopStateService.xpBurstRemainingKey);
         final doubleRemaining =
             shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
         final isOwned = item.kind == ShopItemKind.equipable && shopState.isOwned(item.id);
         final isEquipped =
             item.kind == ShopItemKind.equipable && shopState.equippedFor('theme') == item.id;
         String? statusText;
+        if (item.id == 'boost_xp_burst' && burstRemaining > 0) {
+          statusText = '啟用中：剩餘 $burstRemaining/3';
+        }
         if (item.effect == ShopEffect.focusXp && focusRemaining > 0) {
           statusText = '啟用中：剩餘 $focusRemaining/5';
         }
@@ -140,11 +163,14 @@ class _ShopScreenState extends State<ShopScreen> {
             ? count > 0 && focusRemaining == 0
             : item.effect == ShopEffect.doubleToken
                 ? count > 0 && doubleRemaining == 0
-                : item.kind == ShopItemKind.equipable
-                    ? isOwned && !isEquipped
-                    : false;
+                : item.id == 'boost_xp_burst'
+                    ? count > 0 && burstRemaining == 0
+                    : item.kind == ShopItemKind.equipable
+                        ? isOwned && !isEquipped
+                        : false;
         final showUse = item.effect == ShopEffect.focusXp ||
             item.effect == ShopEffect.doubleToken ||
+            item.id == 'boost_xp_burst' ||
             item.kind == ShopItemKind.equipable;
         final actionLabel = item.kind == ShopItemKind.equipable
             ? (isOwned ? (isEquipped ? '使用中' : '使用') : '購買')
@@ -162,8 +188,12 @@ class _ShopScreenState extends State<ShopScreen> {
         String? helperText;
         if (item.effect == ShopEffect.focusXp || item.effect == ShopEffect.doubleToken) {
           helperText = '啟用後會自動倒數';
+        } else if (item.id == 'boost_xp_burst') {
+          helperText = '啟用後會自動倒數';
         } else if (item.id == 'util_skip_question' || item.id == 'util_reroll_question') {
           helperText = '不計次、不扣分';
+        } else if (item.id == 'util_hint_reveal') {
+          helperText = '排除錯誤選項';
         } else if (item.id == 'cosmetic_theme_night') {
           helperText = '永久擁有，可隨時切換';
         } else if (item.kind == ShopItemKind.consumable) {

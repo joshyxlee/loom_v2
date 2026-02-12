@@ -172,9 +172,15 @@ class ProgressService {
     var gained = isCorrect ? 10 : 6;
     final shopState = ShopStateService.instance;
     if (shopState.isReady) {
-      final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
-      if (remaining > 0) {
-        gained = (gained * 1.2).floor();
+      final burstRemaining =
+          shopState.effectRemaining(ShopStateService.xpBurstRemainingKey);
+      if (burstRemaining > 0) {
+        gained = (gained * 1.5).floor();
+      } else {
+        final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+        if (remaining > 0) {
+          gained = (gained * 1.2).floor();
+        }
       }
     }
     _dailyAnswered += 1;

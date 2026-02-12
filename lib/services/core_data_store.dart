@@ -47,13 +47,23 @@ class CoreDataStore {
     var gainedXp = isCorrect ? 10 : 6;
     final shopState = ShopStateService.instance;
     if (shopState.isReady) {
-      final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
-      if (remaining > 0) {
-        gainedXp = (gainedXp * 1.2).floor();
+      final burstRemaining =
+          shopState.effectRemaining(ShopStateService.xpBurstRemainingKey);
+      if (burstRemaining > 0) {
+        gainedXp = (gainedXp * 1.5).floor();
         shopState.setEffectRemaining(
-          ShopStateService.focusXpRemainingKey,
-          remaining - 1,
+          ShopStateService.xpBurstRemainingKey,
+          burstRemaining - 1,
         );
+      } else {
+        final remaining = shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+        if (remaining > 0) {
+          gainedXp = (gainedXp * 1.2).floor();
+          shopState.setEffectRemaining(
+            ShopStateService.focusXpRemainingKey,
+            remaining - 1,
+          );
+        }
       }
     }
     player = player.copyWith(

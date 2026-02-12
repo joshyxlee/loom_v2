@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'models/question.dart';
@@ -881,6 +882,8 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _lastIsCorrect = false;
   late final List<Question> _sessionQuestions;
   final Set<String> _recentQuestionIds = {};
+  final Set<int> _disabledOptionIndexes = {};
+  bool _hintUsed = false;
 
   // moment texts removed
 
@@ -925,6 +928,8 @@ class _QuizScreenState extends State<QuizScreen> {
     _isJudging = false;
     _showFeedback = false;
     _petBounceScale = 1.0;
+    _disabledOptionIndexes.clear();
+    _hintUsed = false;
   }
 
   Future<Question> _fetchReplacementQuestion({String? avoidId}) async {
@@ -999,6 +1004,39 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
+  Future<void> _useHint() async {
+    final inventory = InventoryService.instance;
+    if (_selected != null || _hintUsed) return;
+    final remaining = inventory.count('util_hint_reveal');
+    if (remaining <= 0) return;
+    final confirmed = await _confirmUse(
+      '消耗 1 張提示券，排除兩個錯誤選項。',
+    );
+    if (!confirmed) return;
+    final consumed = await inventory.consume('util_hint_reveal');
+    if (!consumed) return;
+    final question = _sessionQuestions[_index];
+    // Question uses answerIndex as the correct option index.
+    final correctIndex = question.answerIndex;
+    final wrongIndexes = <int>[];
+    for (var i = 0; i < question.options.length; i++) {
+      if (i != correctIndex) {
+        wrongIndexes.add(i);
+      }
+    }
+    wrongIndexes.shuffle();
+    final removeCount = question.options.length <= 3 ? 1 : 2;
+    setState(() {
+      _disabledOptionIndexes.addAll(wrongIndexes.take(removeCount));
+      _hintUsed = true;
+    });
+    if (!mounted) return;
+    final left = inventory.count('util_hint_reveal');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('已提示（剩餘 x$left）')),
+    );
+  }
+
   Future<bool> _confirmUse(String body) async {
     final result = await showDialog<bool>(
       context: context,
@@ -1045,6 +1083,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final inventory = InventoryService.instance;
     final skipCount = inventory.count('util_skip_question');
     final rerollCount = inventory.count('util_reroll_question');
+    final hintCount = inventory.count('util_hint_reveal');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.subjectTitle),
@@ -1060,6 +1099,12 @@ class _QuizScreenState extends State<QuizScreen> {
               onPressed: _useReroll,
               icon: const Icon(Icons.shuffle, size: 16),
               label: const Text('換一題'),
+            ),
+          if (hintCount > 0 && _selected == null && !_hintUsed)
+            TextButton.icon(
+              onPressed: _useHint,
+              icon: const Icon(Icons.lightbulb_outline, size: 16),
+              label: const Text('提示'),
             ),
           const SizedBox(width: 8),
         ],
@@ -1151,16 +1196,30 @@ class _QuizScreenState extends State<QuizScreen> {
                 ...List.generate(question.options.length, (i) {
                   final option = question.options[i];
                   final selected = _selected == i;
+                  final disabledByHint = _disabledOptionIndexes.contains(i);
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 12),
                     child: _AnswerOption(
                       label: option,
                       selected: selected,
-                      enabled: _selected == null,
-                      isLocked: _selected != null,
+                      enabled: _selected == null && !disabledByHint,
+                      isLocked: _selected != null || disabledByHint,
                       isCorrectOption: question.isCorrect(i),
                       onTap: () async {
                         var isCorrect = question.isCorrect(i);
+                        final shopState = ShopStateService.instance;
+                        final burstBefore = shopState.effectRemaining(
+                          ShopStateService.xpBurstRemainingKey,
+                        );
+                        final focusBefore = shopState.effectRemaining(
+                          ShopStateService.focusXpRemainingKey,
+                        );
+                        final baseXp = isCorrect ? 10 : 6;
+                        final appliedMultiplier = burstBefore > 0
+                            ? 1.5
+                            : focusBefore > 0
+                                ? 1.2
+                                : 1.0;
                         if (!isCorrect) {
                           final inventory = InventoryService.instance;
                           if (inventory.isReady) {
@@ -1190,6 +1249,21 @@ class _QuizScreenState extends State<QuizScreen> {
                         );
                         final newXp = widget.coreDataStore.player.totalXp;
                         _awardMilestoneTokens(prevXp, newXp);
+                        if (kDebugMode) {
+                          final burstAfter = shopState.effectRemaining(
+                            ShopStateService.xpBurstRemainingKey,
+                          );
+                          final focusAfter = shopState.effectRemaining(
+                            ShopStateService.focusXpRemainingKey,
+                          );
+                          final finalXpWritten = newXp - prevXp;
+                          final finalXpShown = result.gainedXp;
+                          debugPrint(
+                            '[XP_AUDIT] base=$baseXp mult=$appliedMultiplier '
+                            'written=$finalXpWritten shown=$finalXpShown '
+                            'burstLeft=$burstAfter focusLeft=$focusAfter',
+                          );
+                        }
                         final leveledUp =
                             widget.coreDataStore.player.playerLevel > _lastLevel;
                         setState(() {
