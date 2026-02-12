@@ -387,6 +387,34 @@ class _ShopScreenState extends State<ShopScreen> {
     }
   }
 
+  int _totalUsableItems(InventoryService inventory) {
+    return inventory.count('boost_mistake_shield') +
+        inventory.count('boost_focus_xp') +
+        inventory.count('boost_double_token') +
+        inventory.count('boost_xp_burst') +
+        inventory.count('boost_streak_saver') +
+        inventory.count('util_skip_question') +
+        inventory.count('util_reroll_question') +
+        inventory.count('util_hint_reveal');
+  }
+
+  String? _firstUsableItemId(InventoryService inventory) {
+    final candidates = [
+      'boost_mistake_shield',
+      'boost_focus_xp',
+      'boost_double_token',
+      'boost_xp_burst',
+      'boost_streak_saver',
+      'util_skip_question',
+      'util_reroll_question',
+      'util_hint_reveal',
+    ];
+    for (final id in candidates) {
+      if (inventory.count(id) > 0) return id;
+    }
+    return null;
+  }
+
   String? _firstUsableItemLabel(InventoryService inventory) {
     final candidates = [
       'boost_mistake_shield',
@@ -432,43 +460,28 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 
   void _jumpToRecommended(InventoryService inventory) {
-    final boostOrder = [
-      'boost_mistake_shield',
-      'boost_focus_xp',
-      'boost_double_token',
-      'boost_xp_burst',
-      'boost_streak_saver',
-    ];
-    String? recommendedId;
-    for (final id in boostOrder) {
-      if (inventory.count(id) > 0) {
-        recommendedId = id;
-        break;
-      }
-    }
-    recommendedId ??= 'boost_mistake_shield';
+    final recommendedId = _firstUsableItemId(inventory) ?? 'boost_mistake_shield';
     final category = buildShopCatalog()
         .firstWhere((item) => item.id == recommendedId)
         .category;
-    final tabIndex = switch (category) {
-      ShopCategory.boost => 0,
-      ShopCategory.utility => 1,
-      ShopCategory.cosmetic => 2,
-      ShopCategory.unlock => 3,
-      ShopCategory.limited => 4,
+    final section = switch (category) {
+      ShopCategory.boost => BackpackSection.boost,
+      ShopCategory.utility => BackpackSection.utility,
+      ShopCategory.cosmetic => BackpackSection.cosmetic,
+      _ => BackpackSection.boost,
     };
-    setState(() => _tabIndex = tabIndex);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final key = _itemKeys[recommendedId!];
-      final context = key?.currentContext;
-      if (context != null) {
-        Scrollable.ensureVisible(
-          context,
-          duration: const Duration(milliseconds: 250),
-          curve: Curves.easeOut,
-        );
-      }
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => BackpackScreen(
+          repository: widget.repository,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+          focusSection: section,
+          focusItemId: recommendedId,
+        ),
+      ),
+    );
   }
 
   Map<String, int> _bundleContents(String bundleId) {
@@ -597,9 +610,9 @@ class _ShopScreenState extends State<ShopScreen> {
       appBar: AppBar(
         title: const Text('商城'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.inventory_2_outlined),
-            onPressed: () {
+          _BackpackIconButton(
+            totalUsable: _totalUsableItems(inventory),
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -873,6 +886,50 @@ class _TokenBadge extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _BackpackIconButton extends StatelessWidget {
+  const _BackpackIconButton({
+    required this.totalUsable,
+    required this.onTap,
+  });
+
+  final int totalUsable;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.inventory_2_outlined),
+          onPressed: onTap,
+        ),
+        if (totalUsable > 0)
+          Positioned(
+            right: 6,
+            top: 6,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+              decoration: BoxDecoration(
+                color: scheme.primary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                '$totalUsable',
+                style: LoomTypography.secondary.copyWith(
+                  color: scheme.onPrimary,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

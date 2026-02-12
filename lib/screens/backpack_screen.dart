@@ -24,7 +24,10 @@ class BackpackScreen extends StatefulWidget {
     required this.progressService,
     required this.coreDataStore,
     this.focusSection,
+    this.focusItemId,
   });
+
+  final String? focusItemId;
 
   final QuestionRepository repository;
   final ProgressService progressService;
@@ -40,11 +43,35 @@ class _BackpackScreenState extends State<BackpackScreen> {
   final _boostKey = GlobalKey();
   final _utilityKey = GlobalKey();
   final _cosmeticKey = GlobalKey();
+  final Map<String, GlobalKey> _itemKeys = {
+    'boost_mistake_shield': GlobalKey(),
+    'boost_focus_xp': GlobalKey(),
+    'boost_double_token': GlobalKey(),
+    'boost_xp_burst': GlobalKey(),
+    'boost_streak_saver': GlobalKey(),
+    'util_skip_question': GlobalKey(),
+    'util_hint_reveal': GlobalKey(),
+    'util_reroll_question': GlobalKey(),
+    'cosmetic_theme_night': GlobalKey(),
+    'cosmetic_theme_ocean': GlobalKey(),
+    'cosmetic_theme_warm': GlobalKey(),
+  };
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      final focusKey = widget.focusItemId != null
+          ? _itemKeys[widget.focusItemId!]
+          : null;
+      if (focusKey?.currentContext != null) {
+        Scrollable.ensureVisible(
+          focusKey!.currentContext!,
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeOut,
+        );
+        return;
+      }
       final targetKey = switch (widget.focusSection) {
         BackpackSection.boost => _boostKey,
         BackpackSection.utility => _utilityKey,
@@ -123,7 +150,12 @@ class _BackpackScreenState extends State<BackpackScreen> {
             subtitle: '一次只能啟用一種加成',
             children: items
                 .where((item) => item.category == ShopCategory.boost)
-                .map((item) => _BoostItemCard(item: item, inventory: inventory))
+                .map(
+                  (item) => _KeyedItem(
+                    key: _itemKeys[item.id],
+                    child: _BoostItemCard(item: item, inventory: inventory),
+                  ),
+                )
                 .toList(),
           ),
           const SizedBox(height: LoomSpacing.md),
@@ -133,7 +165,12 @@ class _BackpackScreenState extends State<BackpackScreen> {
             subtitle: '回合中右上角可用',
             children: items
                 .where((item) => item.category == ShopCategory.utility)
-                .map((item) => _UtilityItemCard(item: item, inventory: inventory))
+                .map(
+                  (item) => _KeyedItem(
+                    key: _itemKeys[item.id],
+                    child: _UtilityItemCard(item: item, inventory: inventory),
+                  ),
+                )
                 .toList(),
             footer: Align(
               alignment: Alignment.centerLeft,
@@ -150,7 +187,12 @@ class _BackpackScreenState extends State<BackpackScreen> {
             subtitle: null,
             children: items
                 .where((item) => item.category == ShopCategory.cosmetic)
-                .map((item) => _ThemeItemCard(item: item))
+                .map(
+                  (item) => _KeyedItem(
+                    key: _itemKeys[item.id],
+                    child: _ThemeItemCard(item: item),
+                  ),
+                )
                 .toList(),
           ),
         ],
@@ -177,6 +219,17 @@ class _BackpackScreenState extends State<BackpackScreen> {
       'cosmetic_theme_warm' => '暖陽（使用中）',
       _ => '預設',
     };
+  }
+}
+
+class _KeyedItem extends StatelessWidget {
+  const _KeyedItem({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return child;
   }
 }
 

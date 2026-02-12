@@ -288,6 +288,18 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  int _totalUsableItems() {
+    final inventory = InventoryService.instance;
+    return inventory.count('boost_mistake_shield') +
+        inventory.count('boost_focus_xp') +
+        inventory.count('boost_double_token') +
+        inventory.count('boost_xp_burst') +
+        inventory.count('boost_streak_saver') +
+        inventory.count('util_skip_question') +
+        inventory.count('util_reroll_question') +
+        inventory.count('util_hint_reveal');
+  }
+
   int _nextStageNumber(int stage) {
     switch (stage) {
       case 0:
@@ -403,9 +415,9 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: null,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.inventory_2_outlined),
-            onPressed: () {
+          _BackpackIconButton(
+            totalUsable: _totalUsableItems(),
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -723,6 +735,50 @@ class _CardSection extends StatelessWidget {
         ],
       ),
       child: child,
+    );
+  }
+}
+
+class _BackpackIconButton extends StatelessWidget {
+  const _BackpackIconButton({
+    required this.totalUsable,
+    required this.onTap,
+  });
+
+  final int totalUsable;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.inventory_2_outlined),
+          onPressed: onTap,
+        ),
+        if (totalUsable > 0)
+          Positioned(
+            right: 6,
+            top: 6,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+              decoration: BoxDecoration(
+                color: scheme.primary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                '$totalUsable',
+                style: LoomTypography.secondary.copyWith(
+                  color: scheme.onPrimary,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
