@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'level_thresholds.dart';
 import 'token_service.dart';
 import 'shop_state_service.dart';
+import 'inventory_service.dart';
 
 class ProgressSnapshot {
   const ProgressSnapshot({
@@ -49,6 +50,12 @@ class ProgressService {
   static const _streakSavePendingKey = 'loom_streak_save_pending';
   static const _prevStreakKey = 'loom_prev_streak_days';
 
+  static const _streakDaysKey = 'loom_streak_days_v1';
+  static const _streakLastCompletedKey = 'loom_streak_last_completed_ymd_v1';
+  static const _streakFrozenKey = 'loom_streak_frozen_v1';
+  static const _streakMissedKey = 'loom_streak_missed_ymd_v1';
+  static const _streakLastSavedKey = 'loom_streak_last_saved_ymd_v1';
+
   final int dailyTarget;
   final int maxLevel;
 
@@ -64,6 +71,13 @@ class ProgressService {
   DateTime? _lastActiveDate;
   SharedPreferences? _prefs;
 
+  String? _lastCompletedYmd;
+  bool _streakFrozen = false;
+  String? _streakMissedYmd;
+  String? _lastSavedYmd;
+  bool _justUsedSaver = false;
+  bool _justFrozen = false;
+
   ProgressSnapshot get snapshot => ProgressSnapshot(
         totalXp: _totalXp,
         level: _levelForXp(_totalXp),
@@ -77,11 +91,15 @@ class ProgressService {
 
   Future<void> init() async {
     _prefs ??= await SharedPreferences.getInstance();
-    _streakDays = _prefs?.getInt(_streakKey) ?? 0;
+    _streakDays = _prefs?.getInt(_streakDaysKey) ?? (_prefs?.getInt(_streakKey) ?? 0);
     _prevStreakDays = _prefs?.getInt(_prevStreakKey) ?? 0;
     _todayCompleted = _prefs?.getBool(_todayCompletedKey) ?? false;
     _yesterdayCompleted = _prefs?.getBool(_yesterdayCompletedKey) ?? false;
     _streakSavePending = _prefs?.getBool(_streakSavePendingKey) ?? false;
+    _lastCompletedYmd = _prefs?.getString(_streakLastCompletedKey);
+    _streakFrozen = _prefs?.getBool(_streakFrozenKey) ?? false;
+    _streakMissedYmd = _prefs?.getString(_streakMissedKey);
+    _lastSavedYmd = _prefs?.getString(_streakLastSavedKey);
     final lastRaw = _prefs?.getString(_lastActiveKey);
     if (lastRaw != null && lastRaw.isNotEmpty) {
       _lastActiveDate = DateTime.tryParse(lastRaw);
@@ -93,6 +111,15 @@ class ProgressService {
   bool get yesterdayCompleted => _yesterdayCompleted;
   int get prevStreakDays => _prevStreakDays;
   String get todayKey => _dayKey(DateTime.now());
+  bool get streakFrozen => _streakFrozen;
+  String? get streakMissedYmd => _streakMissedYmd;
+  bool get justUsedSaver => _justUsedSaver;
+  bool get justFrozen => _justFrozen;
+
+  void clearStreakNotices() {
+    _justUsedSaver = false;
+    _justFrozen = false;
+  }
 
   void clearStreakSavePending() {
     _streakSavePending = false;
@@ -138,6 +165,8 @@ class ProgressService {
   void ensureDailyState() {
     final now = DateTime.now();
     final todayKey = _dayKey(now);
+    _justUsedSaver = false;
+    _justFrozen = false;
     if (_lastActiveDate == null) {
       _lastActiveDate = now;
       _saveStreakState(lastActiveOverride: todayKey);
@@ -145,20 +174,26 @@ class ProgressService {
     }
     if (_isSameDay(_lastActiveDate!, now)) return;
 
-    final lastKey = _dayKey(_lastActiveDate!);
-    final gapDays = _daysBetween(lastKey, todayKey);
-
     TokenService.instance.resetDailyEarnedIfNeeded(todayKey);
     TokenService.instance.resetDailyToken();
-    if (!_yesterdayCompleted && _streakDays > 0) {
-      _streakSavePending = true;
-      _prevStreakDays = _streakDays;
-    } else if (gapDays == 1 && _yesterdayCompleted) {
-      _streakDays = _streakDays <= 0 ? 1 : _streakDays + 1;
-      _prevStreakDays = _streakDays;
-    } else if (gapDays > 1) {
-      _prevStreakDays = _streakDays;
-      _streakDays = 0;
+
+    if (_lastCompletedYmd != null && _lastCompletedYmd!.isNotEmpty) {
+      final gap = _daysBetween(_lastCompletedYmd!, todayKey);
+      if (gap >= 2 && !_streakFrozen) {
+        final saverCount = InventoryService.instance.count('boost_streak_saver');
+        if (saverCount > 0 && _lastSavedYmd != todayKey) {
+          InventoryService.instance.consume('boost_streak_saver');
+          _lastSavedYmd = todayKey;
+          _justUsedSaver = true;
+          _streakFrozen = false;
+          _streakMissedYmd = null;
+          _lastCompletedYmd = _dayKey(now.subtract(const Duration(days: 1)));
+        } else {
+          _streakFrozen = true;
+          _streakMissedYmd = _dayKey(now.subtract(const Duration(days: 1)));
+          _justFrozen = true;
+        }
+      }
     }
 
     _yesterdayCompleted = _todayCompleted;
@@ -190,6 +225,12 @@ class ProgressService {
     final completedDailyTarget = _dailyAnswered == dailyTarget;
     if (completedDailyTarget && !_todayCompleted) {
       _todayCompleted = true;
+      if (_lastCompletedYmd != todayKey) {
+        _streakDays = _streakDays + 1;
+        _streakFrozen = false;
+        _streakMissedYmd = null;
+        _lastCompletedYmd = todayKey;
+      }
       TokenService.instance.awardDailyCompletion(todayKey);
       TokenService.instance.addToken(5);
       _saveStreakState();
@@ -228,10 +269,19 @@ class ProgressService {
   void _saveStreakState({String? lastActiveOverride}) {
     if (_prefs == null) return;
     _prefs!.setInt(_streakKey, _streakDays);
+    _prefs!.setInt(_streakDaysKey, _streakDays);
     _prefs!.setBool(_todayCompletedKey, _todayCompleted);
     _prefs!.setBool(_yesterdayCompletedKey, _yesterdayCompleted);
     _prefs!.setBool(_streakSavePendingKey, _streakSavePending);
     _prefs!.setInt(_prevStreakKey, _prevStreakDays);
+    _prefs!.setString(_streakLastCompletedKey, _lastCompletedYmd ?? '');
+    _prefs!.setBool(_streakFrozenKey, _streakFrozen);
+    if (_streakMissedYmd != null) {
+      _prefs!.setString(_streakMissedKey, _streakMissedYmd!);
+    }
+    if (_lastSavedYmd != null) {
+      _prefs!.setString(_streakLastSavedKey, _lastSavedYmd!);
+    }
     final lastKey = lastActiveOverride ?? (_lastActiveDate != null ? _dayKey(_lastActiveDate!) : null);
     if (lastKey != null) {
       _prefs!.setString(_lastActiveKey, lastKey);

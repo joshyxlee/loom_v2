@@ -44,6 +44,15 @@ List<ShopItem> buildShopCatalog() {
       isEnabled: true,
     ),
     ShopItem(
+      id: 'boost_streak_saver',
+      titleZh: '連勝保護卡',
+      subtitleZh: '錯過一天也能保住連勝',
+      category: ShopCategory.boost,
+      priceTokens: 200,
+      kind: ShopItemKind.consumable,
+      isEnabled: true,
+    ),
+    ShopItem(
       id: 'util_skip_question',
       titleZh: '跳題券',
       subtitleZh: '跳過這題，不扣分、不計次',

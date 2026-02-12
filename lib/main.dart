@@ -384,6 +384,20 @@ class _HomeScreenState extends State<HomeScreen> {
         : ((totalXp - currentLevelXp) / (nextLevelXp - currentLevelXp))
             .clamp(0.0, 1.0);
 
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.progressService.justUsedSaver) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('已使用連勝保護卡，連勝保住了！')),
+        );
+        widget.progressService.clearStreakNotices();
+      } else if (widget.progressService.justFrozen) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('連勝冰封了 🧊 今天完成 5 題就能解凍！')),
+        );
+        widget.progressService.clearStreakNotices();
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: null,
@@ -480,6 +494,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         yesterdayCompleted: yesterdayCompleted,
                         streakSavePending: streakSavePending,
                         canSaveStreak: canSaveStreak,
+                        streakFrozen: widget.progressService.streakFrozen,
+                        streakMissedYmd: widget.progressService.streakMissedYmd,
                       ),
                       const SizedBox(height: LoomSpacing.sm),
                       Column(

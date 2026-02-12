@@ -14,6 +14,8 @@ class StreakCard extends StatelessWidget {
     required this.yesterdayCompleted,
     required this.streakSavePending,
     required this.canSaveStreak,
+    required this.streakFrozen,
+    required this.streakMissedYmd,
   });
 
   final int streakDays;
@@ -24,24 +26,24 @@ class StreakCard extends StatelessWidget {
   final bool yesterdayCompleted;
   final bool streakSavePending;
   final bool canSaveStreak;
+  final bool streakFrozen;
+  final String? streakMissedYmd;
 
   @override
   Widget build(BuildContext context) {
-    final broken = streakDays == 0 &&
-        (streakSavePending || (!yesterdayCompleted && prevStreakDays > 0));
-    final showSaveHint = broken && streakSavePending && canSaveStreak;
+    final frozen = streakFrozen;
 
-    final status = broken
-        ? '已中斷'
+    final status = frozen
+        ? '連勝冰封（完成 5 題解凍）'
         : '連續 $streakDays 天';
-    final statusIcon = broken ? Icons.ac_unit : Icons.local_fire_department;
+    final statusIcon = frozen ? Icons.ac_unit : Icons.local_fire_department;
 
-    final headline = broken
-        ? (showSaveHint ? '昨天差一點，還能用知識幣保住 🔥' : '昨天沒完成，火熄了 🧊')
+    final headline = frozen
+        ? '連勝已冰封，今天完成可解凍'
         : (todayCompleted ? '今天達標 ✅ 火焰續命' : '今天完成 $todayAnswered/$dailyTarget 題，火會繼續燒');
 
-    final activeCount = broken
-        ? (prevStreakDays > 0 ? prevStreakDays.clamp(1, 7) : 3)
+    final activeCount = frozen
+        ? streakDays.clamp(0, 7)
         : (streakDays + (todayCompleted ? 1 : 0)).clamp(0, 7);
 
     return LoomCard(
@@ -98,10 +100,13 @@ class StreakCard extends StatelessWidget {
             child: Row(
               children: List.generate(7, (index) {
                 final isActive = index < activeCount;
+                final isFrozenSlot = frozen && index == activeCount;
                 final decoration = BoxDecoration(
                   color: isActive
                       ? LoomTheme.accent(context).withOpacity(0.3)
-                      : Colors.transparent,
+                      : isFrozenSlot
+                          ? LoomTheme.negative(context).withOpacity(0.2)
+                          : Colors.transparent,
                   borderRadius: BorderRadius.circular(6),
                   border: isActive
                       ? null
@@ -118,6 +123,16 @@ class StreakCard extends StatelessWidget {
               }),
             ),
           ),
+          if (frozen)
+            Padding(
+              padding: const EdgeInsets.only(top: LoomSpacing.sm),
+              child: Text(
+                '完成 5 題可解凍',
+                style: LoomTypography.secondary.copyWith(
+                  color: LoomTheme.textSecondary(context),
+                ),
+              ),
+            ),
         ],
       ),
     );
