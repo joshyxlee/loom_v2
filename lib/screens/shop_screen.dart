@@ -153,6 +153,16 @@ class _ShopScreenState extends State<ShopScreen> {
         final actionHandler = item.kind == ShopItemKind.equipable && isOwned && !isEquipped
             ? () => _handleUse(context, item)
             : () => _handlePurchase(context, item);
+        String? helperText;
+        if (item.effect == ShopEffect.focusXp || item.effect == ShopEffect.doubleToken) {
+          helperText = '啟用後會自動倒數';
+        } else if (item.id == 'util_skip_question' || item.id == 'util_reroll_question') {
+          helperText = '不計次、不扣分';
+        } else if (item.id == 'cosmetic_theme_night') {
+          helperText = '永久擁有，可隨時切換';
+        } else if (item.kind == ShopItemKind.consumable) {
+          helperText = '購買後會先存起來';
+        }
         return Padding(
           padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
           child: ShopItemCard(
@@ -162,6 +172,7 @@ class _ShopScreenState extends State<ShopScreen> {
             badgeCount: item.kind == ShopItemKind.consumable ? count : null,
             badgeText: badgeText,
             statusText: statusText,
+            helperText: helperText,
             actionLabel: actionLabel,
             actionEnabled: actionEnabled,
             secondaryActionLabel: secondaryActionLabel,
@@ -232,6 +243,19 @@ class _ShopScreenState extends State<ShopScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    _MyItemsCard(
+                      focusRemaining: shopState.effectRemaining(
+                        ShopStateService.focusXpRemainingKey,
+                      ),
+                      doubleRemaining: shopState.effectRemaining(
+                        ShopStateService.doubleTokenRemainingKey,
+                      ),
+                      shieldCount: inventory.count('boost_mistake_shield'),
+                      skipCount: inventory.count('util_skip_question'),
+                      rerollCount: inventory.count('util_reroll_question'),
+                      themeId: shopState.equippedFor('theme'),
+                    ),
+                    const SizedBox(height: LoomSpacing.md),
                     ..._buildSection('強化', ShopCategory.boost),
                     ..._buildSection('實用', ShopCategory.utility),
                     ..._buildSection('個性', ShopCategory.cosmetic),
@@ -241,6 +265,53 @@ class _ShopScreenState extends State<ShopScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _MyItemsCard extends StatelessWidget {
+  const _MyItemsCard({
+    required this.focusRemaining,
+    required this.doubleRemaining,
+    required this.shieldCount,
+    required this.skipCount,
+    required this.rerollCount,
+    required this.themeId,
+  });
+
+  final int focusRemaining;
+  final int doubleRemaining;
+  final int shieldCount;
+  final int skipCount;
+  final int rerollCount;
+  final String? themeId;
+
+  @override
+  Widget build(BuildContext context) {
+    final hasActive = focusRemaining > 0 || doubleRemaining > 0;
+    final themeLabel = themeId == 'cosmetic_theme_night' ? '夜間（使用中）' : '預設';
+    return LoomCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('我的道具', style: LoomTypography.sectionTitle),
+          const SizedBox(height: LoomSpacing.base),
+          if (hasActive) ...[
+            if (focusRemaining > 0)
+              Text('專注強化：剩餘 $focusRemaining/5 題', style: LoomTypography.body),
+            if (doubleRemaining > 0)
+              Text('雙倍獎勵：剩餘 $doubleRemaining/3 次答對', style: LoomTypography.body),
+          ] else
+            Text('目前沒有啟用中的加成', style: LoomTypography.body),
+          const SizedBox(height: LoomSpacing.base),
+          Text(
+            '失誤保護卡 x$shieldCount · 跳題券 x$skipCount · 換題券 x$rerollCount',
+            style: LoomTypography.body,
+          ),
+          const SizedBox(height: LoomSpacing.base),
+          Text('主題：$themeLabel', style: LoomTypography.body),
+        ],
       ),
     );
   }
@@ -323,6 +394,7 @@ class ShopItemCard extends StatelessWidget {
     this.badgeCount,
     this.badgeText,
     this.statusText,
+    this.helperText,
   });
 
   final String title;
@@ -337,6 +409,7 @@ class ShopItemCard extends StatelessWidget {
   final int? badgeCount;
   final String? badgeText;
   final String? statusText;
+  final String? helperText;
 
   @override
   Widget build(BuildContext context) {
@@ -355,6 +428,13 @@ class ShopItemCard extends StatelessWidget {
                 Text(
                   statusText!,
                   style: LoomTypography.body.copyWith(color: LoomColors.primary),
+                ),
+              ],
+              if (helperText != null) ...[
+                const SizedBox(height: LoomSpacing.sm),
+                Text(
+                  helperText!,
+                  style: LoomTypography.secondary.copyWith(color: LoomColors.textSecondary),
                 ),
               ],
               const SizedBox(height: LoomSpacing.sm),
