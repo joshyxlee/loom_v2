@@ -179,15 +179,22 @@ class ProgressService {
 
     if (_lastCompletedYmd != null && _lastCompletedYmd!.isNotEmpty) {
       final gap = _daysBetween(_lastCompletedYmd!, todayKey);
-      if (gap >= 2 && !_streakFrozen) {
+      if (gap <= 0) {
+        // Device time rollback or parse issue: ignore streak transitions.
+      } else if (gap == 1) {
+        // Normal continuity: no freeze or saver consumption.
+      } else if (gap >= 2 && !_streakFrozen) {
         final saverCount = InventoryService.instance.count('boost_streak_saver');
         if (saverCount > 0 && _lastSavedYmd != todayKey) {
-          InventoryService.instance.consume('boost_streak_saver');
-          _lastSavedYmd = todayKey;
-          _justUsedSaver = true;
-          _streakFrozen = false;
-          _streakMissedYmd = null;
-          _lastCompletedYmd = _dayKey(now.subtract(const Duration(days: 1)));
+          final consumed =
+              InventoryService.instance.consume('boost_streak_saver');
+          if (consumed == true) {
+            _lastSavedYmd = todayKey;
+            _justUsedSaver = true;
+            _streakFrozen = false;
+            _streakMissedYmd = null;
+            _lastCompletedYmd = _dayKey(now.subtract(const Duration(days: 1)));
+          }
         } else {
           _streakFrozen = true;
           _streakMissedYmd = _dayKey(now.subtract(const Duration(days: 1)));
@@ -261,8 +268,11 @@ class ProgressService {
   }
 
   int _daysBetween(String from, String to) {
-    final fromDate = DateTime.tryParse(from) ?? DateTime.now();
-    final toDate = DateTime.tryParse(to) ?? DateTime.now();
+    final fromDate = DateTime.tryParse(from);
+    final toDate = DateTime.tryParse(to);
+    if (fromDate == null || toDate == null) {
+      return 0;
+    }
     return toDate.difference(fromDate).inDays;
   }
 
