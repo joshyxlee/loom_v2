@@ -485,41 +485,48 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.42,
                         child: LoomCard(
+                          background: LoomTheme.card(context),
+                          borderColor: LoomTheme.border(context),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('智慧指數',
-                                  style: LoomTypography.sectionTitle
-                                      .copyWith(color: LoomColors.textSecondary)),
+                              Text(
+                                '智慧指數',
+                                style: LoomTypography.sectionTitle.copyWith(
+                                  color: LoomTheme.textSecondary(context),
+                                ),
+                              ),
                               const SizedBox(height: LoomSpacing.base),
                               Text(
                                 knowledgeBalance.toString(),
                                 textAlign: TextAlign.center,
                                 style: LoomTypography.bigNumber.copyWith(
                                   fontFeatures: const [FontFeature.tabularFigures()],
-                                  color: LoomColors.primaryStrong,
+                                  color: LoomTheme.accent(context),
                                 ),
                               ),
                               const SizedBox(height: LoomSpacing.base),
                               Text(
                                 '今天 +$dailyPlus',
-                                style: LoomTypography.secondary
-                                    .copyWith(color: LoomColors.textSecondary),
+                                style: LoomTypography.secondary.copyWith(
+                                  color: LoomTheme.textSecondary(context),
+                                ),
                               ),
                               const SizedBox(height: LoomSpacing.sm),
                               Text(
                                 '距離下一個里程碑還差 $remainingToNext',
                                 textAlign: TextAlign.center,
-                                style: LoomTypography.secondary
-                                    .copyWith(color: LoomColors.textSecondary),
+                                style: LoomTypography.secondary.copyWith(
+                                  color: LoomTheme.textSecondary(context),
+                                ),
                               ),
                               const SizedBox(height: LoomSpacing.base),
                               SizedBox(
                                 height: 4,
                                 child: LinearProgressIndicator(
                                   value: levelProgress,
-                                  color: LoomColors.primary,
-                                  backgroundColor: LoomColors.divider,
+                                  color: LoomTheme.accent(context),
+                                  backgroundColor: LoomTheme.border(context),
                                 ),
                               ),
                             ],
@@ -1149,12 +1156,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 children: [
                 Row(
                   children: [
-                    AnimatedScale(
-                      scale: _petBounceScale,
-                      duration: const Duration(milliseconds: 140),
-                      child: const Icon(Icons.pets, size: 18, color: Color(0xFF3CC77A)),
-                    ),
-                    const SizedBox(width: 6),
                     Text('題目 ${_index + 1} / ${_sessionQuestions.length}',
                         style: Theme.of(context).textTheme.titleMedium),
                   ],
@@ -1417,16 +1418,23 @@ class _AnswerOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final showCorrect = isLocked && isCorrectOption;
     final showWrong = isLocked && selected && !isCorrectOption;
+    final baseBg = LoomTheme.surface(context);
+    final baseBorder = LoomTheme.border(context);
+    final disabledHint = !enabled && !showCorrect && !showWrong;
     final bgColor = showCorrect
-        ? Colors.green.shade100
+        ? LoomTheme.positive(context).withOpacity(0.12)
         : showWrong
-            ? Colors.red.shade100
-            : Colors.white;
+            ? LoomTheme.negative(context).withOpacity(0.12)
+            : disabledHint
+                ? baseBg.withOpacity(0.6)
+                : baseBg;
     final borderColor = showCorrect
-        ? Colors.green.shade400
+        ? LoomTheme.positive(context)
         : showWrong
-            ? Colors.red.shade400
-            : Colors.grey.shade300;
+            ? LoomTheme.negative(context)
+            : disabledHint
+                ? baseBorder.withOpacity(0.6)
+                : baseBorder;
 
     return OutlinedButton(
       onPressed: enabled ? onTap : null,
@@ -1441,6 +1449,7 @@ class _AnswerOption extends StatelessWidget {
           style: TextStyle(
             fontSize: 18,
             fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            color: enabled ? LoomTheme.textPrimary(context) : LoomTheme.disabled(context),
           ),
         ),
       ),
@@ -1485,7 +1494,8 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bannerColor = isCorrect ? LoomColors.success : LoomColors.danger;
+    final bannerColor =
+        isCorrect ? LoomTheme.positive(context) : LoomTheme.negative(context);
     return AnimatedScale(
       scale: levelUpPulse ? 1.02 : 1.0,
       duration: const Duration(milliseconds: 300),
