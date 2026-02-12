@@ -96,10 +96,27 @@ class _BackpackScreenState extends State<BackpackScreen> {
         controller: _scrollController,
         padding: const EdgeInsets.all(LoomSpacing.screen),
         children: [
+          LoomCard(
+            background: LoomTheme.card(context),
+            borderColor: LoomTheme.border(context),
+            child: Row(
+              children: [
+                Icon(Icons.info_outline, size: 16, color: LoomTheme.accent(context)),
+                const SizedBox(width: LoomSpacing.base),
+                Expanded(
+                  child: Text(
+                    '提示：回合中到右上角使用 跳題/換題/提示',
+                    style: LoomTypography.secondary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: LoomSpacing.md),
           LoomSectionHeader(
             title: '目前主題：${_themeLabel(shopState.equippedFor('theme'))}',
           ),
-          const SizedBox(height: LoomSpacing.md),
+          const SizedBox(height: LoomSpacing.sm),
           _SectionBlock(
             key: _boostKey,
             title: '強化',
@@ -231,22 +248,40 @@ class _BoostItemCard extends StatelessWidget {
       child: LoomCard(
         background: LoomTheme.card(context),
         borderColor: LoomTheme.border(context),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Text(item.titleZh, style: LoomTypography.sectionTitle),
-            const SizedBox(height: LoomSpacing.base),
-            Text(
-              item.subtitleZh,
-              style: LoomTypography.body.copyWith(color: LoomTheme.textSecondary(context)),
+            Icon(Icons.flash_on, size: 18, color: LoomTheme.accent(context)),
+            const SizedBox(width: LoomSpacing.base),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(item.titleZh, style: LoomTypography.body),
+                  const SizedBox(height: 2),
+                  Text(
+                    item.subtitleZh,
+                    style: LoomTypography.secondary.copyWith(
+                      color: LoomTheme.textSecondary(context),
+                    ),
+                  ),
+                  if (activeText != null) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      activeText,
+                      style: LoomTypography.secondary.copyWith(
+                        color: LoomTheme.accent(context),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
             ),
-            const SizedBox(height: LoomSpacing.base),
-            if (activeText != null)
-              Text(activeText, style: LoomTypography.secondary.copyWith(color: LoomTheme.accent(context))),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const SizedBox(width: LoomSpacing.base),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('持有 x$count', style: LoomTypography.body),
+                _CountBadge(count: count),
+                const SizedBox(height: 4),
                 if (activeText != null)
                   TextButton(onPressed: null, child: const Text('啟用中'))
                 else if (canUse)
@@ -278,27 +313,15 @@ class _BoostItemCard extends StatelessWidget {
                     },
                     child: const Text('使用'),
                   )
-                else if (count == 0)
-                  TextButton(onPressed: null, child: const Text('0'))
                 else
+                  TextButton(onPressed: null, child: const Text('使用')),
+                if (count == 0)
                   TextButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('此道具會在需要時自動使用')),
-                      );
-                    },
-                    child: const Text('使用'),
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('去商城'),
                   ),
               ],
             ),
-            if (count == 0)
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('去商城'),
-                ),
-              ),
           ],
         ),
       ),
@@ -320,28 +343,59 @@ class _UtilityItemCard extends StatelessWidget {
       child: LoomCard(
         background: LoomTheme.card(context),
         borderColor: LoomTheme.border(context),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Text(item.titleZh, style: LoomTypography.sectionTitle),
-            const SizedBox(height: LoomSpacing.base),
-            Text(
-              item.subtitleZh,
-              style: LoomTypography.body.copyWith(color: LoomTheme.textSecondary(context)),
-            ),
-            const SizedBox(height: LoomSpacing.base),
-            Text('持有 x$count', style: LoomTypography.body),
-            if (count == 0)
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('去商城'),
-                ),
+            Icon(Icons.handyman_outlined, size: 18, color: LoomTheme.accent(context)),
+            const SizedBox(width: LoomSpacing.base),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(item.titleZh, style: LoomTypography.body),
+                  const SizedBox(height: 2),
+                  Text(
+                    '回合中右上角可用',
+                    style: LoomTypography.secondary.copyWith(
+                      color: LoomTheme.textSecondary(context),
+                    ),
+                  ),
+                ],
               ),
+            ),
+            const SizedBox(width: LoomSpacing.base),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                _CountBadge(count: count),
+                if (count == 0)
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text('去商城'),
+                  ),
+              ],
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _CountBadge extends StatelessWidget {
+  const _CountBadge({required this.count});
+
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      decoration: BoxDecoration(
+        color: LoomTheme.card(context),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: LoomTheme.border(context)),
+      ),
+      child: Text('x$count', style: LoomTypography.secondary),
     );
   }
 }
@@ -361,20 +415,30 @@ class _ThemeItemCard extends StatelessWidget {
       child: LoomCard(
         background: LoomTheme.card(context),
         borderColor: LoomTheme.border(context),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            Text(item.titleZh, style: LoomTypography.sectionTitle),
-            const SizedBox(height: LoomSpacing.base),
-            Text(
-              item.subtitleZh,
-              style: LoomTypography.body.copyWith(color: LoomTheme.textSecondary(context)),
+            Icon(Icons.palette_outlined, size: 18, color: LoomTheme.accent(context)),
+            const SizedBox(width: LoomSpacing.base),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(item.titleZh, style: LoomTypography.body),
+                  const SizedBox(height: 2),
+                  Text(
+                    item.subtitleZh,
+                    style: LoomTypography.secondary.copyWith(
+                      color: LoomTheme.textSecondary(context),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: LoomSpacing.base),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const SizedBox(width: LoomSpacing.base),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(isOwned ? '已擁有' : '未擁有', style: LoomTypography.body),
+                Text(isOwned ? '已擁有' : '未擁有', style: LoomTypography.secondary),
                 TextButton(
                   onPressed: !isOwned
                       ? null

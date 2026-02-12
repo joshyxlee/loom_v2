@@ -35,6 +35,25 @@ class _ShopScreenState extends State<ShopScreen> {
   int _tabIndex = 0;
   bool _limitedReady = false;
   Map<String, int> _limitedEnds = {};
+  final _scrollController = ScrollController();
+  final Map<String, GlobalKey> _itemKeys = {
+    'boost_mistake_shield': GlobalKey(),
+    'boost_focus_xp': GlobalKey(),
+    'boost_double_token': GlobalKey(),
+    'boost_xp_burst': GlobalKey(),
+    'boost_streak_saver': GlobalKey(),
+    'util_skip_question': GlobalKey(),
+    'util_reroll_question': GlobalKey(),
+    'util_hint_reveal': GlobalKey(),
+    'cosmetic_theme_night': GlobalKey(),
+    'cosmetic_theme_ocean': GlobalKey(),
+    'cosmetic_theme_warm': GlobalKey(),
+    'unlock_subject_pack_world_plus': GlobalKey(),
+    'unlock_subject_pack_science_plus': GlobalKey(),
+    'unlock_subject_pack_finance_plus': GlobalKey(),
+    'limited_bundle_starter': GlobalKey(),
+    'limited_bundle_booster': GlobalKey(),
+  };
 
   static const _limitedKey = 'loom_shop_limited_v1';
 
@@ -310,6 +329,7 @@ class _ShopScreenState extends State<ShopScreen> {
           );
         }
         return Padding(
+          key: _itemKeys[item.id],
           padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
           child: ShopItemCard(
             title: item.titleZh,
@@ -412,28 +432,43 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 
   void _jumpToRecommended(InventoryService inventory) {
-    final hasBoost = inventory.count('boost_mistake_shield') > 0 ||
-        inventory.count('boost_focus_xp') > 0 ||
-        inventory.count('boost_double_token') > 0 ||
-        inventory.count('boost_xp_burst') > 0;
-    final focusSection = hasBoost
-        ? BackpackSection.boost
-        : inventory.count('util_skip_question') > 0 ||
-                inventory.count('util_reroll_question') > 0 ||
-                inventory.count('util_hint_reveal') > 0
-            ? BackpackSection.utility
-            : BackpackSection.boost;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => BackpackScreen(
-          repository: widget.repository,
-          progressService: widget.progressService,
-          coreDataStore: widget.coreDataStore,
-          focusSection: focusSection,
-        ),
-      ),
-    );
+    final boostOrder = [
+      'boost_mistake_shield',
+      'boost_focus_xp',
+      'boost_double_token',
+      'boost_xp_burst',
+      'boost_streak_saver',
+    ];
+    String? recommendedId;
+    for (final id in boostOrder) {
+      if (inventory.count(id) > 0) {
+        recommendedId = id;
+        break;
+      }
+    }
+    recommendedId ??= 'boost_mistake_shield';
+    final category = buildShopCatalog()
+        .firstWhere((item) => item.id == recommendedId)
+        .category;
+    final tabIndex = switch (category) {
+      ShopCategory.boost => 0,
+      ShopCategory.utility => 1,
+      ShopCategory.cosmetic => 2,
+      ShopCategory.unlock => 3,
+      ShopCategory.limited => 4,
+    };
+    setState(() => _tabIndex = tabIndex);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final key = _itemKeys[recommendedId!];
+      final context = key?.currentContext;
+      if (context != null) {
+        Scrollable.ensureVisible(
+          context,
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   Map<String, int> _bundleContents(String bundleId) {
@@ -528,6 +563,36 @@ class _ShopScreenState extends State<ShopScreen> {
         body: Center(child: CircularProgressIndicator()),
       );
     }
+    final focusRemaining =
+        shopState.effectRemaining(ShopStateService.focusXpRemainingKey);
+    final burstRemaining =
+        shopState.effectRemaining(ShopStateService.xpBurstRemainingKey);
+    final doubleRemaining =
+        shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey);
+    final activeBuffText = focusRemaining > 0
+        ? '專注 $focusRemaining'
+        : burstRemaining > 0
+            ? '爆發 $burstRemaining'
+            : doubleRemaining > 0
+                ? '雙倍 $doubleRemaining'
+                : null;
+    final activeBuffSubtitle = focusRemaining > 0
+        ? '專注（剩 $focusRemaining/5）'
+        : burstRemaining > 0
+            ? '爆發（剩 $burstRemaining/3）'
+            : doubleRemaining > 0
+                ? '雙倍（剩 $doubleRemaining/3）'
+                : null;
+    final themeLabel = switch (shopState.equippedFor('theme')) {
+      'cosmetic_theme_night' => '夜間',
+      'cosmetic_theme_ocean' => '海洋',
+      'cosmetic_theme_warm' => '暖陽',
+      _ => '預設',
+    };
+    final subtitle = activeBuffSubtitle == null
+        ? '加成中：無｜主題：$themeLabel'
+        : '加成中：$activeBuffSubtitle｜主題：$themeLabel';
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('商城'),
@@ -547,10 +612,6 @@ class _ShopScreenState extends State<ShopScreen> {
               );
             },
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: LoomSpacing.screen),
-            child: _TokenBadge(tokens: token),
-          ),
         ],
       ),
       body: Padding(
@@ -558,6 +619,57 @@ class _ShopScreenState extends State<ShopScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              children: [
+                if (activeBuffText != null)
+                  _HudChip(
+                    icon: Icons.flash_on,
+                    label: activeBuffText,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => BackpackScreen(
+                            repository: widget.repository,
+                            progressService: widget.progressService,
+                            coreDataStore: widget.coreDataStore,
+                            focusSection: BackpackSection.boost,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                if (activeBuffText != null) const SizedBox(width: LoomSpacing.base),
+                _HudChip(
+                  icon: Icons.inventory_2_outlined,
+                  label:
+                      '跳 x${inventory.count('util_skip_question')}  換 x${inventory.count('util_reroll_question')}  提 x${inventory.count('util_hint_reveal')}',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => BackpackScreen(
+                          repository: widget.repository,
+                          progressService: widget.progressService,
+                          coreDataStore: widget.coreDataStore,
+                          focusSection: BackpackSection.utility,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const Spacer(),
+                _TokenBadge(tokens: token),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              subtitle,
+              style: LoomTypography.secondary.copyWith(
+                color: LoomTheme.textSecondary(context),
+              ),
+            ),
+            const SizedBox(height: LoomSpacing.md),
             Row(
               children: [
                 _TabButton(
@@ -591,45 +703,21 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
               ],
             ),
-            const SizedBox(height: LoomSpacing.md),
+            const SizedBox(height: LoomSpacing.sm),
             Expanded(
               child: SingleChildScrollView(
+                controller: _scrollController,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _MyItemsCard(
-                      focusRemaining: shopState.effectRemaining(
-                        ShopStateService.focusXpRemainingKey,
-                      ),
-                      doubleRemaining: shopState.effectRemaining(
-                        ShopStateService.doubleTokenRemainingKey,
-                      ),
-                      shieldCount: inventory.count('boost_mistake_shield'),
-                      skipCount: inventory.count('util_skip_question'),
-                      rerollCount: inventory.count('util_reroll_question'),
-                      themeId: shopState.equippedFor('theme'),
-                    ),
-                    const SizedBox(height: LoomSpacing.sm),
                     _TodayRecommendCard(
-                      boostActive: shopState.effectRemaining(
-                            ShopStateService.focusXpRemainingKey,
-                          ) >
-                          0,
-                      boostLabel: shopState.effectRemaining(
-                                ShopStateService.focusXpRemainingKey,
-                              ) >
-                              0
-                          ? '專注強化（剩餘 ${shopState.effectRemaining(ShopStateService.focusXpRemainingKey)}/5）'
-                          : shopState.effectRemaining(
-                                    ShopStateService.doubleTokenRemainingKey,
-                                  ) >
-                                  0
-                              ? '雙倍獎勵（剩餘 ${shopState.effectRemaining(ShopStateService.doubleTokenRemainingKey)}/3）'
-                              : shopState.effectRemaining(
-                                        ShopStateService.xpBurstRemainingKey,
-                                      ) >
-                                      0
-                                  ? '爆發加成（剩餘 ${shopState.effectRemaining(ShopStateService.xpBurstRemainingKey)}/3）'
+                      boostActive: focusRemaining > 0 || burstRemaining > 0 || doubleRemaining > 0,
+                      boostLabel: focusRemaining > 0
+                          ? '專注強化（剩餘 $focusRemaining/5）'
+                          : burstRemaining > 0
+                              ? '爆發加成（剩餘 $burstRemaining/3）'
+                              : doubleRemaining > 0
+                                  ? '雙倍獎勵（剩餘 $doubleRemaining/3）'
                                   : null,
                       usableItemLabel: _firstUsableItemLabel(inventory),
                       usableItemCount: _firstUsableItemCount(inventory),
@@ -783,6 +871,42 @@ class _TokenBadge extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: LoomTheme.textSecondary(context),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _HudChip extends StatelessWidget {
+  const _HudChip({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(18),
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: LoomTheme.card(context),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: LoomTheme.border(context)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 14, color: LoomTheme.accent(context)),
+            const SizedBox(width: 4),
+            Text(label, style: LoomTypography.secondary),
+          ],
         ),
       ),
     );
