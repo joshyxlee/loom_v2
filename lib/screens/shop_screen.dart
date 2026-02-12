@@ -411,11 +411,24 @@ class _ShopScreenState extends State<ShopScreen> {
       );
       return;
     }
-    service.deductToken(price);
     final contents = _bundleContents(bundleId);
+    if (contents.isEmpty) return;
+    final inventory = InventoryService.instance;
+    final before = inventory.snapshot();
+    final next = Map<String, int>.from(before);
     for (final entry in contents.entries) {
-      await InventoryService.instance.add(entry.key, entry.value);
+      next[entry.key] = (next[entry.key] ?? 0) + entry.value;
     }
+    try {
+      await inventory.setAll(next);
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('購買失敗，請稍後再試')),
+      );
+      return;
+    }
+    service.deductToken(price);
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('已購買限時組合')),

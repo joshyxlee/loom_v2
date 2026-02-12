@@ -24,6 +24,16 @@ class InventoryService {
     return _inventory[itemId] ?? 0;
   }
 
+  Map<String, int> snapshot() {
+    return Map<String, int>.from(_inventory);
+  }
+
+  Future<void> setAll(Map<String, int> next) async {
+    _inventory = Map<String, int>.from(next)
+      ..removeWhere((key, value) => value <= 0);
+    await _save();
+  }
+
   Future<void> add(String itemId, int qty) async {
     if (qty <= 0) return;
     final current = _inventory[itemId] ?? 0;
