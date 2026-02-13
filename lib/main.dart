@@ -426,6 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     repository: widget.repository,
                     progressService: widget.progressService,
                     coreDataStore: widget.coreDataStore,
+                    entrySource: BackpackEntrySource.home,
                   ),
                 ),
               );
@@ -700,6 +701,7 @@ class QuizScreen extends StatefulWidget {
     required this.subjectTitle,
     required this.subject,
     required this.repository,
+    this.initialBoostActivation,
   });
 
   final List<Question> questions;
@@ -708,6 +710,7 @@ class QuizScreen extends StatefulWidget {
   final String subjectTitle;
   final Subject subject;
   final QuestionRepository repository;
+  final BoostActivationResult? initialBoostActivation;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -1076,6 +1079,12 @@ class _QuizScreenState extends State<QuizScreen> {
     _sessionQuestions = List<Question>.from(widget.questions);
     _recentQuestionIds.addAll(_sessionQuestions.map((q) => q.id));
     _levelProgress = _currentLevelProgress();
+    if (widget.initialBoostActivation != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        _handleBoostActivationResult(widget.initialBoostActivation);
+      });
+    }
   }
 
   double _currentLevelProgress() {
@@ -1373,7 +1382,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     repository: widget.repository,
                     progressService: widget.progressService,
                     coreDataStore: widget.coreDataStore,
-                    returnToQuizOnBoostUse: true,
+                    entrySource: BackpackEntrySource.quiz,
                   ),
                 ),
               );

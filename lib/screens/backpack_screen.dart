@@ -17,6 +17,8 @@ import 'package:loom_v2/main.dart' show QuizScreen, AdvancedChallengeScreen;
 
 enum BackpackSection { boost, utility, cosmetic }
 
+enum BackpackEntrySource { home, shop, quiz }
+
 enum BoostActivationKind { focus, burst, doubleToken }
 
 class BoostActivationResult {
@@ -37,9 +39,9 @@ class BackpackScreen extends StatefulWidget {
     required this.repository,
     required this.progressService,
     required this.coreDataStore,
+    required this.entrySource,
     this.focusSection,
     this.focusItemId,
-    this.returnToQuizOnBoostUse = false,
   });
 
   final String? focusItemId;
@@ -47,8 +49,8 @@ class BackpackScreen extends StatefulWidget {
   final QuestionRepository repository;
   final ProgressService progressService;
   final CoreDataStore coreDataStore;
+  final BackpackEntrySource entrySource;
   final BackpackSection? focusSection;
-  final bool returnToQuizOnBoostUse;
 
   @override
   State<BackpackScreen> createState() => _BackpackScreenState();
@@ -127,6 +129,33 @@ class _BackpackScreenState extends State<BackpackScreen> {
     setState(() {});
   }
 
+  Future<void> _handleBoostActivated(BoostActivationResult activation) async {
+    if (widget.entrySource == BackpackEntrySource.quiz) {
+      Navigator.pop(context, activation);
+      return;
+    }
+    final subject = subjects.first;
+    final questions = await widget.repository.getSession(
+      subject: subject.key,
+      count: 5,
+    );
+    if (!mounted) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          questions: questions,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+          subjectTitle: subject.title,
+          subject: subject,
+          repository: widget.repository,
+          initialBoostActivation: activation,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final inventory = InventoryService.instance;
@@ -172,9 +201,7 @@ class _BackpackScreenState extends State<BackpackScreen> {
                     child: _BoostItemCard(
                       item: item,
                       inventory: inventory,
-                      onActivated: widget.returnToQuizOnBoostUse
-                          ? (activation) => Navigator.pop(context, activation)
-                          : null,
+                      onActivated: (activation) => _handleBoostActivated(activation),
                     ),
                   ),
                 )
