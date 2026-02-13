@@ -33,18 +33,20 @@ class StreakCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final frozen = streakFrozen;
 
+    final totalStreakDays =
+        streakDays + ((todayCompleted && !frozen) ? 1 : 0);
     final status = frozen
-        ? '連勝冰封（完成 5 題解凍）'
-        : '連續 $streakDays 天';
-    final statusIcon = frozen ? '🧊' : '🔥';
+        ? '連勝 $totalStreakDays 天（已冰封 🧊）'
+        : '連續 $totalStreakDays 天 🔥';
 
     final headline = frozen
         ? '連勝已冰封，今天完成可解凍'
-        : (todayCompleted ? '今天達標 ✅ 火焰續命' : '今天完成 $todayAnswered/$dailyTarget 題，火會繼續燒');
+        : (todayCompleted
+            ? '今天達標 ✅ 火焰續命'
+            : '今天完成 $todayAnswered/$dailyTarget 題，火會繼續燒');
 
-    final activeCount = frozen
-        ? streakDays.clamp(0, 7)
-        : (streakDays + (todayCompleted ? 1 : 0)).clamp(0, 7);
+    final visibleFlames = totalStreakDays > 7 ? 7 : totalStreakDays;
+    final showIce = frozen;
 
     return LoomCard(
       background: LoomTheme.card(context),
@@ -76,11 +78,6 @@ class StreakCard extends StatelessWidget {
                         color: LoomTheme.accent(context),
                       ),
                     ),
-                    const SizedBox(width: 6),
-                    Text(
-                      statusIcon,
-                      style: const TextStyle(fontSize: 20),
-                    ),
                   ],
                 ),
               ),
@@ -97,19 +94,21 @@ class StreakCard extends StatelessWidget {
           SizedBox(
             height: 28,
             child: Row(
-              children: List.generate(7, (index) {
-                final isActive = index < activeCount;
-                final isFrozenSlot = frozen && index == activeCount;
-                final symbol = isActive
-                    ? '🔥'
-                    : isFrozenSlot
-                        ? '🧊'
-                        : '◻︎';
-                return Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Text(symbol, style: const TextStyle(fontSize: 22)),
-                );
-              }),
+              children: [
+                ...List.generate(7, (index) {
+                  final isActive = index < visibleFlames;
+                  final symbol = isActive ? '🔥' : '◻︎';
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Text(symbol, style: const TextStyle(fontSize: 22)),
+                  );
+                }),
+                if (showIce)
+                  const Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Text('🧊', style: TextStyle(fontSize: 22)),
+                  ),
+              ],
             ),
           ),
           if (frozen)
