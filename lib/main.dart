@@ -1376,6 +1376,31 @@ class _QuizScreenState extends State<QuizScreen> {
         inventory.count('util_hint_reveal');
   }
 
+  Future<void> _startNextRound() async {
+    final questions = await widget.repository.getSession(
+      subject: widget.subject.key,
+      count: 5,
+    );
+    if (!mounted) return;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          questions: questions,
+          progressService: widget.progressService,
+          coreDataStore: widget.coreDataStore,
+          subjectTitle: widget.subjectTitle,
+          subject: widget.subject,
+          repository: widget.repository,
+        ),
+      ),
+    );
+  }
+
+  void _exitToMain() {
+    Navigator.popUntil(context, (route) => route.isFirst);
+  }
+
   Future<void> _handleCoreGrowth({required String subjectId, required bool isCorrect}) async {
     final previousStage = widget.coreDataStore.activePet.currentStage;
     final previousLevel = widget.coreDataStore.player.playerLevel;
@@ -1550,28 +1575,20 @@ class _QuizScreenState extends State<QuizScreen> {
                     isLast: _index + 1 >= _sessionQuestions.length,
                     levelUpPulse: _levelUpPulse,
                     onNext: () {
-                      if (_index + 1 >= _sessionQuestions.length) {
-                        setState(() {
-                          _showSessionReward = true;
-                        });
-                        Future.delayed(const Duration(milliseconds: 700), () {
-                          if (!mounted) return;
-                          Navigator.popUntil(context, (route) => route.isFirst);
-                        });
-                      } else {
-                        setState(() {
-                          _index += 1;
-                          _selected = null;
-                          _lastXp = 0;
-                          _dailyTargetJustCompleted = false;
-                          _streakJustHit = false;
-                          _levelUpPulse = false;
-                          _isJudging = false;
-                          _showFeedback = false;
-                          _petBounceScale = 1.0;
-                        });
-                      }
+                      setState(() {
+                        _index += 1;
+                        _selected = null;
+                        _lastXp = 0;
+                        _dailyTargetJustCompleted = false;
+                        _streakJustHit = false;
+                        _levelUpPulse = false;
+                        _isJudging = false;
+                        _showFeedback = false;
+                        _petBounceScale = 1.0;
+                      });
                     },
+                    onContinue: _startNextRound,
+                    onExit: _exitToMain,
                   ),
                 const SizedBox(height: LoomSpacing.sm),
                 ...List.generate(question.options.length, (i) {
@@ -1907,6 +1924,8 @@ class _FeedbackCard extends StatelessWidget {
     required this.dailyHit,
     required this.isLast,
     required this.onNext,
+    required this.onContinue,
+    required this.onExit,
     required this.levelUpPulse,
   });
 
@@ -1918,6 +1937,8 @@ class _FeedbackCard extends StatelessWidget {
   final bool dailyHit;
   final bool isLast;
   final VoidCallback onNext;
+  final VoidCallback onContinue;
+  final VoidCallback onExit;
   final bool levelUpPulse;
 
   @override
@@ -1971,10 +1992,21 @@ class _FeedbackCard extends StatelessWidget {
             const SizedBox(height: LoomSpacing.sm),
             Text(explanation, style: LoomTypography.body.copyWith(color: textColor)),
             const SizedBox(height: LoomSpacing.sm),
-            LoomPrimaryButton(
-              label: isLast ? '回到主選單' : '下一題',
-              onPressed: onNext,
-            ),
+            if (isLast) ...[
+              LoomPrimaryButton(
+                label: '繼續挑戰！',
+                onPressed: onContinue,
+              ),
+              const SizedBox(height: LoomSpacing.base),
+              LoomSecondaryButton(
+                label: '回到主選單',
+                onPressed: onExit,
+              ),
+            ] else
+              LoomPrimaryButton(
+                label: '下一題',
+                onPressed: onNext,
+              ),
           ],
         ),
       ),
