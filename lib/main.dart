@@ -1160,18 +1160,14 @@ class _QuizScreenState extends State<QuizScreen> {
     final remaining = inventory.count('util_skip_question');
     if (remaining <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('道具不足')),
+        const SnackBar(content: Text('目前沒有跳過券')),
       );
       return;
     }
-    final confirmed = await _confirmUse(
-      '消耗 1 張跳題券，直接跳到下一題。',
-    );
-    if (!confirmed) return;
     final consumed = await inventory.consume('util_skip_question');
     if (!consumed) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('道具不足')),
+        const SnackBar(content: Text('目前沒有跳過券')),
       );
       return;
     }
@@ -1190,11 +1186,6 @@ class _QuizScreenState extends State<QuizScreen> {
         _resetQuestionState();
       });
     }
-    if (!mounted) return;
-    final left = inventory.count('util_skip_question');
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('跳題券已使用（剩餘 x$left）')),
-    );
   }
 
   Future<void> _useReroll() async {
@@ -1348,16 +1339,6 @@ class _QuizScreenState extends State<QuizScreen> {
               onPressed: _useHint,
               icon: Icon(
                 Icons.lightbulb_outline,
-                color: Theme.of(context).colorScheme.primary,
-                size: 20,
-              ),
-            ),
-          if (skipCount > 0)
-            IconButton(
-              tooltip: '跳過',
-              onPressed: _useSkip,
-              icon: Icon(
-                Icons.skip_next,
                 color: Theme.of(context).colorScheme.primary,
                 size: 20,
               ),
@@ -1680,6 +1661,18 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   );
                 }),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                    onPressed: _useSkip,
+                    style: TextButton.styleFrom(
+                      foregroundColor: skipCount > 0
+                          ? Theme.of(context).colorScheme.onSurfaceVariant
+                          : LoomTheme.disabled(context),
+                    ),
+                    child: const Text('跳過本題'),
+                  ),
+                ),
                 const SizedBox(height: 8),
                 ],
               ),
