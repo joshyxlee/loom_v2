@@ -942,6 +942,22 @@ class _LeaderboardSection extends StatelessWidget {
   }
 }
 
+class _TopicPackMeta {
+  const _TopicPackMeta({
+    required this.subjectId,
+    required this.ownedId,
+    required this.title,
+    required this.subtitle,
+    required this.accent,
+  });
+
+  final String subjectId;
+  final String ownedId;
+  final String title;
+  final String subtitle;
+  final Color accent;
+}
+
 class AdvancedChallengeScreen extends StatelessWidget {
   const AdvancedChallengeScreen({
     super.key,
@@ -955,17 +971,42 @@ class AdvancedChallengeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shopState = ShopStateService.instance;
-    final extraSubjects = <Subject>[];
-    if (shopState.isOwned('unlock_subject_pack_world_plus')) {
-      extraSubjects.add(const Subject(subjectId: 'world', displayName: '世界＋'));
-    }
-    if (shopState.isOwned('unlock_subject_pack_science_plus')) {
-      extraSubjects.add(const Subject(subjectId: 'science', displayName: '科學＋'));
-    }
-    if (shopState.isOwned('unlock_subject_pack_finance_plus')) {
-      extraSubjects.add(const Subject(subjectId: 'money', displayName: '理財＋'));
-    }
-    final allSubjects = [...subjects, ...extraSubjects];
+    final scheme = Theme.of(context).colorScheme;
+    final topicPacks = <_TopicPackMeta>[
+      _TopicPackMeta(
+        subjectId: 'ai',
+        ownedId: 'pack_ai',
+        title: 'AI 世代',
+        subtitle: '關於人工智慧、科技巨頭與未來想像。從 ChatGPT 到科技革命，你準備好了嗎？',
+        accent: scheme.primary,
+      ),
+      _TopicPackMeta(
+        subjectId: 'kpop',
+        ownedId: 'pack_kpop',
+        title: '韓流現象',
+        subtitle: 'K-Pop、韓劇與娛樂產業背後的故事。流行之外，你知道多少？',
+        accent: scheme.tertiary,
+      ),
+      _TopicPackMeta(
+        subjectId: 'nba',
+        ownedId: 'pack_nba',
+        title: 'NBA 焦點',
+        subtitle: '球星、紀錄與經典時刻。每一次得分，都有故事。',
+        accent: scheme.secondary,
+      ),
+      _TopicPackMeta(
+        subjectId: 'business',
+        ownedId: 'pack_business',
+        title: '商業與品牌',
+        subtitle: '品牌為什麼成功？決策如何改變世界？商業，比你想像的更有趣。',
+        accent: scheme.primary.withOpacity(0.8),
+      ),
+    ];
+    final unlockedPacks = topicPacks
+        .where((pack) => shopState.isOwned(pack.ownedId))
+        .map((pack) => Subject(subjectId: pack.subjectId, displayName: pack.title))
+        .toList();
+    final allSubjects = [...unlockedPacks, ...subjects];
     return Scaffold(
       appBar: AppBar(title: const Text('試試你能不能撐過 5 題 ⚔️')),
       body: ListView(
@@ -977,22 +1018,35 @@ class AdvancedChallengeScreen extends StatelessWidget {
           ),
           const SizedBox(height: LoomSpacing.md),
           ...allSubjects.map((subject) {
-            final displayTitle = subject.title == '金錢' ? '理財' : subject.title;
-            final subtitle = switch (displayTitle.replaceAll('＋', '')) {
-              '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
-              '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
-              '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
-              '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
-              '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
-              _ => '選一個科目，挑戰連續 5 題',
-            };
+            _TopicPackMeta? packMeta;
+            for (final pack in topicPacks) {
+              if (pack.subjectId == subject.subjectId) {
+                packMeta = pack;
+                break;
+              }
+            }
+            final isPack = packMeta != null;
+            final displayTitle = packMeta?.title ??
+                (subject.title == '金錢' ? '理財' : subject.title);
+            final subtitle = packMeta?.subtitle ??
+                switch (displayTitle.replaceAll('＋', '')) {
+                  '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
+                  '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
+                  '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
+                  '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
+                  '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
+                  _ => '選一個科目，挑戰連續 5 題',
+                };
             final isPlus = displayTitle.contains('＋');
+            final accent = packMeta?.accent;
             return Padding(
               padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
               child: InkWell(
                 borderRadius: BorderRadius.circular(LoomRadius.card),
                 onTap: () => onStartSubject(subject),
                 child: LoomCard(
+                  background: accent?.withOpacity(0.12),
+                  borderColor: accent?.withOpacity(0.35),
                   child: Row(
                     children: [
                       Expanded(
@@ -1006,7 +1060,26 @@ class AdvancedChallengeScreen extends StatelessWidget {
                                   style: const TextStyle(
                                       fontSize: 18, fontWeight: FontWeight.w600),
                                 ),
-                                if (isPlus) ...[
+                                if (isPack) ...[
+                                  const SizedBox(width: 8),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                      vertical: 2,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: accent?.withOpacity(0.18),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Text(
+                                      'NEW',
+                                      style: LoomTypography.secondary.copyWith(
+                                        color: accent,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ] else if (isPlus) ...[
                                   const SizedBox(width: 8),
                                   Text(
                                     '已解鎖',

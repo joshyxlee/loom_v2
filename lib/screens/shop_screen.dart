@@ -49,9 +49,10 @@ class _ShopScreenState extends State<ShopScreen> {
     'cosmetic_theme_night': GlobalKey(),
     'cosmetic_theme_ocean': GlobalKey(),
     'cosmetic_theme_warm': GlobalKey(),
-    'unlock_subject_pack_world_plus': GlobalKey(),
-    'unlock_subject_pack_science_plus': GlobalKey(),
-    'unlock_subject_pack_finance_plus': GlobalKey(),
+    'pack_ai': GlobalKey(),
+    'pack_kpop': GlobalKey(),
+    'pack_nba': GlobalKey(),
+    'pack_business': GlobalKey(),
     'limited_bundle_starter': GlobalKey(),
     'limited_bundle_booster': GlobalKey(),
   };
@@ -155,8 +156,11 @@ class _ShopScreenState extends State<ShopScreen> {
     } else {
       await InventoryService.instance.add(item.id, 1);
     }
+    final message = item.category == ShopCategory.unlock
+        ? '已解鎖：${item.titleZh}'
+        : '已購買：${item.titleZh}';
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('已購買：${item.titleZh}')),
+      SnackBar(content: Text(message)),
     );
     if (mounted) {
       setState(() {});
@@ -314,7 +318,7 @@ class _ShopScreenState extends State<ShopScreen> {
             item.id == 'cosmetic_theme_warm') {
           helperText = '永久擁有，可隨時切換';
         } else if (item.category == ShopCategory.unlock) {
-          helperText = '解鎖後可選進階題庫';
+          helperText = '解鎖後可在分科測驗中使用';
         } else if (item.category == ShopCategory.limited) {
           helperText = '購買後直接入庫';
         } else if (item.kind == ShopItemKind.consumable) {
@@ -323,10 +327,11 @@ class _ShopScreenState extends State<ShopScreen> {
         final infoText = isLimited ? _bundleContentText(item.id) : null;
         Widget? titleIcon;
         if (item.category == ShopCategory.unlock) {
+          final accent = _unlockAccent(item.id, context);
           titleIcon = Icon(
             isOwned ? Icons.check_circle : Icons.lock_outline,
             size: 16,
-            color: isOwned ? LoomTheme.accent(context) : LoomTheme.textSecondary(context),
+            color: isOwned ? accent : accent.withOpacity(0.6),
           );
         }
         return Padding(
@@ -484,6 +489,22 @@ class _ShopScreenState extends State<ShopScreen> {
         ),
       ),
     );
+  }
+
+  Color _unlockAccent(String itemId, BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    switch (itemId) {
+      case 'pack_ai':
+        return scheme.primary;
+      case 'pack_kpop':
+        return scheme.tertiary;
+      case 'pack_nba':
+        return scheme.secondary;
+      case 'pack_business':
+        return scheme.primary.withOpacity(0.8);
+      default:
+        return scheme.primary;
+    }
   }
 
   Map<String, int> _bundleContents(String bundleId) {

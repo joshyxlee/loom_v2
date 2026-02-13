@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ai_v1_0001",
+    "subject": "ai",
+    "prompt": "ChatGPT 類型模型最核心的能力是？",
+    "options": [
+      "理解並生成自然語言",
+      "即時監控網路流量",
+      "控制機器人硬體",
+      "解密所有加密協議"
+    ],
+    "answerIndex": 0,
+    "explanation": "它的本質是語言模型，擅長理解與生成文字內容。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ai_v1_0002",
+    "subject": "ai",
+    "prompt": "「模型訓練」這個步驟主要在做什麼？",
+    "options": [
+      "讓模型學會從資料中找規律",
+      "替模型安裝作業系統",
+      "把模型變成手機 App",
+      "讓模型自動更新硬體"
+    ],
+    "answerIndex": 0,
+    "explanation": "訓練是用大量資料調整參數，讓模型擬合模式。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ai_v1_0003",
+    "subject": "ai",
+    "prompt": "以下哪一項最像 AI 的「推論」階段？",
+    "options": [
+      "模型在收到問題後產生答案",
+      "工程師蒐集新資料",
+      "為模型重新標註資料",
+      "重新設計模型架構"
+    ],
+    "answerIndex": 0,
+    "explanation": "推論是已訓練模型在使用時給出結果的過程。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ai_v1_0004",
+    "subject": "ai",
+    "prompt": "AI 產品最常被提醒要注意的是？",
+    "options": [
+      "偏見與錯誤輸出",
+      "字體不夠漂亮",
+      "一定要離線使用",
+      "只能用在遊戲"
+    ],
+    "answerIndex": 0,
+    "explanation": "模型可能放大資料偏見，也可能產生不準確內容。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ai_v1_0005",
+    "subject": "ai",
+    "prompt": "「資料品質」對 AI 的影響為何？",
+    "options": [
+      "品質越好，模型表現通常越穩定",
+      "只影響介面，不影響模型",
+      "與模型表現無關",
+      "只會影響顏色顯示"
+    ],
+    "answerIndex": 0,
+    "explanation": "資料是模型的養分，品質差會影響準確度與穩定性。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ai_v1_0006",
+    "subject": "ai",
+    "prompt": "哪一項最能描述「生成式 AI」？",
+    "options": [
+      "能產生新的文字或圖像",
+      "只能做分類判斷",
+      "只處理數字資料",
+      "只會照本宣科"
+    ],
+    "answerIndex": 0,
+    "explanation": "生成式 AI 的特徵是能創造內容，而非只做分類。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ai_v1_0007",
+    "subject": "ai",
+    "prompt": "為何 AI 模型需要「評測」？",
+    "options": [
+      "確認模型在不同情境的表現",
+      "讓模型變更大",
+      "讓模型只用單一資料",
+      "避免更新任何內容"
+    ],
+    "answerIndex": 0,
+    "explanation": "評測用來衡量模型的可靠性、偏誤與風險。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ai_v1_0008",
+    "subject": "ai",
+    "prompt": "AI 產品「對齊」(alignment) 的目的最接近？",
+    "options": [
+      "讓模型行為符合人類價值與安全需求",
+      "讓模型跑得更快",
+      "讓模型改成只輸出數字",
+      "讓模型移除訓練資料"
+    ],
+    "answerIndex": 0,
+    "explanation": "對齊是為了安全與價值一致，減少不當輸出。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ai_v1_0009",
+    "subject": "ai",
+    "prompt": "以下哪一項最可能是「AI 幻覺」？",
+    "options": [
+      "模型編造不存在的引用來源",
+      "模型拒絕回答問題",
+      "模型回答變慢",
+      "模型顯示錯字"
+    ],
+    "answerIndex": 0,
+    "explanation": "幻覺指模型自信輸出不真實內容。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ai_v1_0010",
+    "subject": "ai",
+    "prompt": "企業導入 AI 最常見的第一步是？",
+    "options": [
+      "找出高價值應用場景與資料來源",
+      "一次性購買所有模型",
+      "全面替換所有員工",
+      "直接改寫所有流程"
+    ],
+    "answerIndex": 0,
+    "explanation": "先找場景與資料，才能判斷技術可行性與效益。",
+    "difficulty": "medium"
+  }
+]

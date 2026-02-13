@@ -1,0 +1,142 @@
+[
+  {
+    "id": "nba_v1_0001",
+    "subject": "nba",
+    "prompt": "NBA 正常比賽時間（不含延長）是？",
+    "options": [
+      "48 分鐘",
+      "40 分鐘",
+      "60 分鐘",
+      "36 分鐘"
+    ],
+    "answerIndex": 0,
+    "explanation": "NBA 為 4 節各 12 分鐘。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "nba_v1_0002",
+    "subject": "nba",
+    "prompt": "「大三元」最常指的是？",
+    "options": [
+      "三項主要數據達到雙位數",
+      "三分球命中三次",
+      "三節比賽都得分",
+      "連續三場勝利"
+    ],
+    "answerIndex": 0,
+    "explanation": "得分、籃板、助攻等三項達雙位數即大三元。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "nba_v1_0003",
+    "subject": "nba",
+    "prompt": "NBA 的「樂透區」指的是？",
+    "options": [
+      "未進季後賽的抽籤順位",
+      "球隊訓練營",
+      "全明星投票",
+      "季中交易市場"
+    ],
+    "answerIndex": 0,
+    "explanation": "樂透抽籤決定高順位選秀權歸屬。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "nba_v1_0004",
+    "subject": "nba",
+    "prompt": "NBA 一般球隊名單上限為多少人？",
+    "options": [
+      "15 人",
+      "12 人",
+      "18 人",
+      "20 人"
+    ],
+    "answerIndex": 0,
+    "explanation": "標準名單最多 15 人，另有雙向合約。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "nba_v1_0005",
+    "subject": "nba",
+    "prompt": "「三分線」與「中距離」最大的差別是？",
+    "options": [
+      "投進得分不同",
+      "只能特定位置出手",
+      "有時間限制",
+      "只在主場計算"
+    ],
+    "answerIndex": 0,
+    "explanation": "三分線外得 3 分，中距離得 2 分。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "nba_v1_0006",
+    "subject": "nba",
+    "prompt": "NBA 的「salary cap」主要目的為？",
+    "options": [
+      "維持聯盟競爭平衡",
+      "限制球員訓練時間",
+      "規定球館座位數",
+      "限制主場賽程"
+    ],
+    "answerIndex": 0,
+    "explanation": "薪資上限避免少數球隊囤積太多球星。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "nba_v1_0007",
+    "subject": "nba",
+    "prompt": "「Play-in」賽制的作用是？",
+    "options": [
+      "讓更多球隊有機會進季後賽",
+      "增加全明星賽數量",
+      "縮短賽季",
+      "取消季後賽"
+    ],
+    "answerIndex": 0,
+    "explanation": "附加賽讓排名邊緣球隊仍有晉級機會。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "nba_v1_0008",
+    "subject": "nba",
+    "prompt": "NBA 交易截止日的重要性是？",
+    "options": [
+      "球隊在此之前可調整陣容",
+      "決定選秀順位",
+      "安排總冠軍賽",
+      "只有新秀可交易"
+    ],
+    "answerIndex": 0,
+    "explanation": "交易截止日前是補強陣容的關鍵窗口。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "nba_v1_0009",
+    "subject": "nba",
+    "prompt": "「防守三秒」規則的目的最接近？",
+    "options": [
+      "防止長時間霸占禁區",
+      "限制三分出手",
+      "禁止包夾",
+      "縮短進攻時間"
+    ],
+    "answerIndex": 0,
+    "explanation": "避免防守者長時間停在禁區影響進攻流暢。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "nba_v1_0010",
+    "subject": "nba",
+    "prompt": "NBA 球隊主場優勢通常來自？",
+    "options": [
+      "熟悉場地與球迷支持",
+      "裁判固定偏袒",
+      "客隊禁止訓練",
+      "一定有更高薪資"
+    ],
+    "answerIndex": 0,
+    "explanation": "主場熟悉度與球迷氛圍是主要優勢來源。",
+    "difficulty": "easy"
+  }
+]

@@ -25,6 +25,10 @@ class RepositoryFactory {
             'assets/questions/history.json',
             'assets/questions/science.json',
             'assets/questions/money.json',
+            'assets/questions/ai.json',
+            'assets/questions/kpop.json',
+            'assets/questions/nba.json',
+            'assets/questions/business.json',
           ],
           seenStore: seenStore,
         );

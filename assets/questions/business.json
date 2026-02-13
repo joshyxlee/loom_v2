@@ -1,0 +1,142 @@
+[
+  {
+    "id": "biz_v1_0001",
+    "subject": "business",
+    "prompt": "品牌最核心的價值通常是？",
+    "options": [
+      "消費者的信任與記憶",
+      "廣告預算的大小",
+      "門市數量",
+      "包裝的顏色"
+    ],
+    "answerIndex": 0,
+    "explanation": "品牌的本質是消費者心中的信任與印象。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "biz_v1_0002",
+    "subject": "business",
+    "prompt": "「商業模式」指的是？",
+    "options": [
+      "企業如何創造與獲取價值",
+      "公司制服規定",
+      "只有產品價格",
+      "辦公室裝潢"
+    ],
+    "answerIndex": 0,
+    "explanation": "商業模式涵蓋收入來源、成本結構與價值主張。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "biz_v1_0003",
+    "subject": "business",
+    "prompt": "「差異化」策略的目的最接近？",
+    "options": [
+      "讓產品與競爭對手有所區隔",
+      "讓產品變得更便宜",
+      "只做同質化產品",
+      "完全不行銷"
+    ],
+    "answerIndex": 0,
+    "explanation": "差異化用來建立獨特價值與市場辨識度。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "biz_v1_0004",
+    "subject": "business",
+    "prompt": "「品牌延伸」的風險之一是？",
+    "options": [
+      "核心形象被稀釋",
+      "一定會提高利潤",
+      "只會增加知名度",
+      "完全沒有風險"
+    ],
+    "answerIndex": 0,
+    "explanation": "延伸過度可能讓品牌定位變模糊。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "biz_v1_0005",
+    "subject": "business",
+    "prompt": "「客戶終身價值」（LTV）主要衡量？",
+    "options": [
+      "一位客戶帶來的長期收益",
+      "單次交易金額",
+      "廣告曝光次數",
+      "門市租金"
+    ],
+    "answerIndex": 0,
+    "explanation": "LTV 衡量客戶整體貢獻，而非單筆收入。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "biz_v1_0006",
+    "subject": "business",
+    "prompt": "「品牌定位」的關鍵是？",
+    "options": [
+      "清楚定義目標客群與價值主張",
+      "只做最低價策略",
+      "完全跟隨競品",
+      "不停改變品牌風格"
+    ],
+    "answerIndex": 0,
+    "explanation": "定位明確才能在市場中被記住與選擇。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "biz_v1_0007",
+    "subject": "business",
+    "prompt": "「毛利率」高通常代表？",
+    "options": [
+      "產品有定價能力或成本控制好",
+      "產品一定賣得多",
+      "公司不需要行銷",
+      "一定代表壟斷"
+    ],
+    "answerIndex": 0,
+    "explanation": "毛利率反映定價與成本結構，與銷量不一定相關。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "biz_v1_0008",
+    "subject": "business",
+    "prompt": "「品牌一致性」的重要性在於？",
+    "options": [
+      "建立穩定辨識度與信任",
+      "讓內容更複雜",
+      "降低顧客回購",
+      "增加內部成本"
+    ],
+    "answerIndex": 0,
+    "explanation": "一致性讓顧客更容易記住品牌並建立信任。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "biz_v1_0009",
+    "subject": "business",
+    "prompt": "「品牌故事」的作用最接近？",
+    "options": [
+      "強化情感連結與記憶點",
+      "替代產品品質",
+      "讓價格變便宜",
+      "只為了內部員工"
+    ],
+    "answerIndex": 0,
+    "explanation": "好的故事能提升情感共鳴，強化品牌記憶。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "biz_v1_0010",
+    "subject": "business",
+    "prompt": "「市場區隔」的目的最接近？",
+    "options": [
+      "找到更適合服務的族群",
+      "讓所有人都買同樣產品",
+      "取消競爭",
+      "只靠降價"
+    ],
+    "answerIndex": 0,
+    "explanation": "區隔能讓品牌更聚焦，溝通更精準。",
+    "difficulty": "easy"
+  }
+]

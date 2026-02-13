@@ -1,0 +1,142 @@
+[
+  {
+    "id": "kpop_v1_0001",
+    "subject": "kpop",
+    "prompt": "K-Pop 團體常見的「回歸」(comeback) 指的是？",
+    "options": [
+      "推出新作品並展開宣傳",
+      "宣布解散",
+      "更換公司名字",
+      "停止活動"
+    ],
+    "answerIndex": 0,
+    "explanation": "回歸是指發新歌或專輯並開啟一輪宣傳期。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kpop_v1_0002",
+    "subject": "kpop",
+    "prompt": "韓劇常說的「OST」是什麼？",
+    "options": [
+      "原聲帶",
+      "劇本大綱",
+      "片尾字幕",
+      "宣傳海報"
+    ],
+    "answerIndex": 0,
+    "explanation": "OST 是 Original Soundtrack 的縮寫。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kpop_v1_0003",
+    "subject": "kpop",
+    "prompt": "偶像產業裡的「練習生」主要在做什麼？",
+    "options": [
+      "接受唱跳與舞台訓練",
+      "專門負責後勤物流",
+      "只學作曲不表演",
+      "負責電視台剪輯"
+    ],
+    "answerIndex": 0,
+    "explanation": "練習生制度是培養出道能力的核心機制。",
+    "difficulty": "easy"
+  },
+  {
+    "id": "kpop_v1_0004",
+    "subject": "kpop",
+    "prompt": "韓流擴散全球的重要推力之一是？",
+    "options": [
+      "社群平台的即時傳播",
+      "完全不對外宣傳",
+      "只在本地電視播放",
+      "限制海外觀看"
+    ],
+    "answerIndex": 0,
+    "explanation": "YouTube、社群平台讓內容快速跨國流通。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kpop_v1_0005",
+    "subject": "kpop",
+    "prompt": "偶像團體的「應援文化」最主要的作用是？",
+    "options": [
+      "建立粉絲與藝人的連結",
+      "替代正式宣傳",
+      "避免現場表演",
+      "降低音樂品質"
+    ],
+    "answerIndex": 0,
+    "explanation": "應援是一種互動，強化粉絲社群與支持感。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kpop_v1_0006",
+    "subject": "kpop",
+    "prompt": "韓劇製作常見的「先播後拍」模式可能帶來？",
+    "options": [
+      "劇情可依觀眾反應調整",
+      "完全無法改動內容",
+      "一定成本更低",
+      "只剩剪接工作"
+    ],
+    "answerIndex": 0,
+    "explanation": "播出中仍拍攝，劇情可以回應市場反饋。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kpop_v1_0007",
+    "subject": "kpop",
+    "prompt": "K-Pop 練習生合約常被關注的原因是？",
+    "options": [
+      "合約年限與條款可能過長",
+      "一定沒有收入",
+      "只能演戲不能唱歌",
+      "只跟國外公司合作"
+    ],
+    "answerIndex": 0,
+    "explanation": "合約條款牽涉權利與分潤，因此常引發討論。",
+    "difficulty": "medium"
+  },
+  {
+    "id": "kpop_v1_0008",
+    "subject": "kpop",
+    "prompt": "韓流能持續擴散的關鍵策略之一是？",
+    "options": [
+      "多平台內容與跨界合作",
+      "限制曲風單一",
+      "只做單一市場",
+      "完全不做海外宣傳"
+    ],
+    "answerIndex": 0,
+    "explanation": "跨平台與跨界合作讓內容更容易擴散。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "kpop_v1_0009",
+    "subject": "kpop",
+    "prompt": "粉絲經濟對娛樂產業的影響最貼近？",
+    "options": [
+      "形成長期支持與穩定收益",
+      "只靠一次性消費",
+      "讓作品完全不需要宣傳",
+      "與內容品質無關"
+    ],
+    "answerIndex": 0,
+    "explanation": "粉絲社群可提供長期支持與多元收益。",
+    "difficulty": "hard"
+  },
+  {
+    "id": "kpop_v1_0010",
+    "subject": "kpop",
+    "prompt": "韓劇與 K-Pop 的共同優勢之一是？",
+    "options": [
+      "強故事性與情感共鳴",
+      "一定靠名人代言",
+      "只用一種語言",
+      "固定拍攝手法"
+    ],
+    "answerIndex": 0,
+    "explanation": "強烈的情感與敘事能力讓內容跨文化傳播。",
+    "difficulty": "easy"
+  }
+]
