@@ -1,142 +1,1562 @@
 [
-  {
-    "id": "biz_v1_0001",
-    "subject": "business",
-    "prompt": "品牌最核心的價值通常是？",
-    "options": [
-      "消費者的信任與記憶",
-      "廣告預算的大小",
-      "門市數量",
-      "包裝的顏色"
-    ],
-    "answerIndex": 0,
-    "explanation": "品牌的本質是消費者心中的信任與印象。",
-    "difficulty": "easy"
-  },
-  {
-    "id": "biz_v1_0002",
-    "subject": "business",
-    "prompt": "「商業模式」指的是？",
-    "options": [
-      "企業如何創造與獲取價值",
-      "公司制服規定",
-      "只有產品價格",
-      "辦公室裝潢"
-    ],
-    "answerIndex": 0,
-    "explanation": "商業模式涵蓋收入來源、成本結構與價值主張。",
-    "difficulty": "easy"
-  },
-  {
-    "id": "biz_v1_0003",
-    "subject": "business",
-    "prompt": "「差異化」策略的目的最接近？",
-    "options": [
-      "讓產品與競爭對手有所區隔",
-      "讓產品變得更便宜",
-      "只做同質化產品",
-      "完全不行銷"
-    ],
-    "answerIndex": 0,
-    "explanation": "差異化用來建立獨特價值與市場辨識度。",
-    "difficulty": "easy"
-  },
-  {
-    "id": "biz_v1_0004",
-    "subject": "business",
-    "prompt": "「品牌延伸」的風險之一是？",
-    "options": [
-      "核心形象被稀釋",
-      "一定會提高利潤",
-      "只會增加知名度",
-      "完全沒有風險"
-    ],
-    "answerIndex": 0,
-    "explanation": "延伸過度可能讓品牌定位變模糊。",
-    "difficulty": "medium"
-  },
-  {
-    "id": "biz_v1_0005",
-    "subject": "business",
-    "prompt": "「客戶終身價值」（LTV）主要衡量？",
-    "options": [
-      "一位客戶帶來的長期收益",
-      "單次交易金額",
-      "廣告曝光次數",
-      "門市租金"
-    ],
-    "answerIndex": 0,
-    "explanation": "LTV 衡量客戶整體貢獻，而非單筆收入。",
-    "difficulty": "medium"
-  },
-  {
-    "id": "biz_v1_0006",
-    "subject": "business",
-    "prompt": "「品牌定位」的關鍵是？",
-    "options": [
-      "清楚定義目標客群與價值主張",
-      "只做最低價策略",
-      "完全跟隨競品",
-      "不停改變品牌風格"
-    ],
-    "answerIndex": 0,
-    "explanation": "定位明確才能在市場中被記住與選擇。",
-    "difficulty": "medium"
-  },
-  {
-    "id": "biz_v1_0007",
-    "subject": "business",
-    "prompt": "「毛利率」高通常代表？",
-    "options": [
-      "產品有定價能力或成本控制好",
-      "產品一定賣得多",
-      "公司不需要行銷",
-      "一定代表壟斷"
-    ],
-    "answerIndex": 0,
-    "explanation": "毛利率反映定價與成本結構，與銷量不一定相關。",
-    "difficulty": "hard"
-  },
-  {
-    "id": "biz_v1_0008",
-    "subject": "business",
-    "prompt": "「品牌一致性」的重要性在於？",
-    "options": [
-      "建立穩定辨識度與信任",
-      "讓內容更複雜",
-      "降低顧客回購",
-      "增加內部成本"
-    ],
-    "answerIndex": 0,
-    "explanation": "一致性讓顧客更容易記住品牌並建立信任。",
-    "difficulty": "medium"
-  },
-  {
-    "id": "biz_v1_0009",
-    "subject": "business",
-    "prompt": "「品牌故事」的作用最接近？",
-    "options": [
-      "強化情感連結與記憶點",
-      "替代產品品質",
-      "讓價格變便宜",
-      "只為了內部員工"
-    ],
-    "answerIndex": 0,
-    "explanation": "好的故事能提升情感共鳴，強化品牌記憶。",
-    "difficulty": "medium"
-  },
-  {
-    "id": "biz_v1_0010",
-    "subject": "business",
-    "prompt": "「市場區隔」的目的最接近？",
-    "options": [
-      "找到更適合服務的族群",
-      "讓所有人都買同樣產品",
-      "取消競爭",
-      "只靠降價"
-    ],
-    "answerIndex": 0,
-    "explanation": "區隔能讓品牌更聚焦，溝通更精準。",
-    "difficulty": "easy"
-  }
+    {
+        "id": "business_v3_0001",
+        "question": "What is a value proposition?",
+        "options": [
+            "A clear statement of the benefit a customer will get",
+            "A list of all product features",
+            "The legal terms of sale",
+            "The company\u2019s internal mission only"
+        ],
+        "answerIndex": 0,
+        "explanation": "A value proposition explains the specific problem you solve and why your offer is better for that customer. It focuses on outcomes, not a feature dump, so buyers quickly see the benefit.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0002",
+        "question": "Which statement best defines a target market?",
+        "options": [
+            "Everyone who might ever buy the product",
+            "The specific group of customers you aim to serve first",
+            "Only customers who buy during a discount",
+            "Competitors in the same industry"
+        ],
+        "answerIndex": 1,
+        "explanation": "A target market is the specific group you choose to focus on based on needs, behavior, or demographics. It is not the entire world; it\u2019s the group you can serve most effectively.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0003",
+        "question": "What does positioning mean in marketing?",
+        "options": [
+            "Where the product sits on a store shelf",
+            "How the product is perceived compared to competitors",
+            "The order of features in a roadmap",
+            "The price you paid for inventory"
+        ],
+        "answerIndex": 1,
+        "explanation": "Positioning is the place your product occupies in a customer\u2019s mind relative to alternatives. Good positioning makes the choice simple by highlighting a unique benefit or audience fit.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0004",
+        "question": "What is a brand promise?",
+        "options": [
+            "A legal warranty document",
+            "A commitment to deliver a specific experience or benefit",
+            "A list of future product ideas",
+            "A statement only employees see"
+        ],
+        "answerIndex": 1,
+        "explanation": "A brand promise is the commitment a company makes to customers about what they can consistently expect. It sets expectations for experience and value, not just product specs.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0005",
+        "question": "What does brand equity refer to?",
+        "options": [
+            "The amount of cash in the company bank account",
+            "The value added by a recognized and trusted brand name",
+            "A legal ownership stake in a brand",
+            "A coupon program"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand equity is the added value a well-known and trusted brand brings to a product. It often lets a company charge more or win customers faster because trust is already built.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0006",
+        "question": "Customer lifetime value (CLV) is best described as:",
+        "options": [
+            "The revenue from a customer\u2019s first purchase",
+            "The total profit you expect from a customer over time",
+            "The cost to acquire a single customer",
+            "The average discount given to a customer"
+        ],
+        "answerIndex": 1,
+        "explanation": "CLV estimates the total profit a customer will generate over the entire relationship. It helps decide how much you can spend to win and retain that customer.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0007",
+        "question": "What does CAC stand for?",
+        "options": [
+            "Customer Average Cost",
+            "Customer Acquisition Cost",
+            "Customer Activity Count",
+            "Corporate Asset Cost"
+        ],
+        "answerIndex": 1,
+        "explanation": "CAC is the cost to acquire a new customer, including marketing and sales expenses. It\u2019s commonly compared with CLV to judge if growth is profitable.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0008",
+        "question": "What is a break-even point?",
+        "options": [
+            "When revenue equals total costs",
+            "When a product runs out of stock",
+            "When sales double month over month",
+            "When a company gets its first investor"
+        ],
+        "answerIndex": 0,
+        "explanation": "Break-even is when total revenue covers total costs and profit is zero. It tells you the minimum sales volume needed to stop losing money.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0009",
+        "question": "Gross margin is calculated as:",
+        "options": [
+            "(Revenue - Cost of Goods Sold) / Revenue",
+            "Revenue / Cost of Goods Sold",
+            "Net profit / Revenue",
+            "Revenue - Operating expenses"
+        ],
+        "answerIndex": 0,
+        "explanation": "Gross margin measures how much of each sales dollar remains after paying direct production costs. It shows how efficiently you produce and price the product.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0010",
+        "question": "Which is an example of a fixed cost?",
+        "options": [
+            "Raw materials",
+            "Sales commissions",
+            "Monthly office rent",
+            "Shipping per order"
+        ],
+        "answerIndex": 2,
+        "explanation": "Fixed costs stay the same regardless of how many units you sell, like rent or salaried staff. Variable costs rise with volume, like materials or shipping.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0011",
+        "question": "What is penetration pricing?",
+        "options": [
+            "Setting a low price to enter a market and gain share",
+            "Setting the highest possible price at launch",
+            "Pricing the same as competitors",
+            "Pricing based on production cost only"
+        ],
+        "answerIndex": 0,
+        "explanation": "Penetration pricing uses a low initial price to attract customers quickly and build market share. It\u2019s often used when buyers are price sensitive or switching costs are low.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0012",
+        "question": "What is price skimming?",
+        "options": [
+            "Launching with a high price, then lowering it over time",
+            "Setting prices below cost for every sale",
+            "Always matching the lowest competitor price",
+            "Charging the same price in every country"
+        ],
+        "answerIndex": 0,
+        "explanation": "Price skimming starts high to capture customers willing to pay more, then lowers the price to reach broader segments. It is common with new tech or premium products.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0013",
+        "question": "What does freemium mean?",
+        "options": [
+            "A product that is free forever with no paid option",
+            "A free basic version with paid upgrades",
+            "A one-time free trial only",
+            "A paid product with coupons"
+        ],
+        "answerIndex": 1,
+        "explanation": "Freemium offers a free basic version while charging for premium features or capacity. The free tier drives adoption and the paid tier funds the business.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0014",
+        "question": "Bundling in pricing means:",
+        "options": [
+            "Selling products only one at a time",
+            "Combining multiple products or services for one price",
+            "Raising the price every month",
+            "Selling through third parties"
+        ],
+        "answerIndex": 1,
+        "explanation": "Bundling packages multiple products or services together for a single price. It can increase average order value and make comparisons harder for competitors.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0015",
+        "question": "A direct distribution channel is:",
+        "options": [
+            "Selling through a wholesaler",
+            "Selling through a retailer",
+            "Selling directly to customers via your website",
+            "Selling through a distributor and reseller"
+        ],
+        "answerIndex": 2,
+        "explanation": "Direct distribution means the company sells straight to the end customer, such as through its own website or store. This gives more control over pricing and customer data.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0016",
+        "question": "Which stage comes first in a typical marketing funnel?",
+        "options": [
+            "Purchase",
+            "Awareness",
+            "Loyalty",
+            "Advocacy"
+        ],
+        "answerIndex": 1,
+        "explanation": "Awareness is the first step because people must know you exist before they can consider or buy. Later stages focus on evaluation, purchase, and loyalty.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0017",
+        "question": "Lead qualification is the process of:",
+        "options": [
+            "Deciding which leads are likely to become customers",
+            "Writing ad copy",
+            "Discounting prices for new buyers",
+            "Creating social media posts"
+        ],
+        "answerIndex": 0,
+        "explanation": "Lead qualification assesses which prospects fit your ideal customer and have intent to buy. This helps sales teams focus on the highest-potential leads.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0018",
+        "question": "Conversion rate measures:",
+        "options": [
+            "How many people visit your website",
+            "The percentage of visitors who take a desired action",
+            "The number of products in inventory",
+            "The cost of advertising"
+        ],
+        "answerIndex": 1,
+        "explanation": "Conversion rate is the share of visitors who complete a goal like buying, signing up, or requesting a demo. It shows how effective your funnel and messaging are.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0019",
+        "question": "What does NPS stand for?",
+        "options": [
+            "Net Profit Score",
+            "Net Promoter Score",
+            "New Product Strategy",
+            "Net Purchase Share"
+        ],
+        "answerIndex": 1,
+        "explanation": "Net Promoter Score measures how likely customers are to recommend you to others. It is a quick indicator of loyalty and overall satisfaction.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0020",
+        "question": "Churn refers to:",
+        "options": [
+            "Customers who stop buying or cancel",
+            "New customers joining each month",
+            "The cost of producing goods",
+            "The number of ads you run"
+        ],
+        "answerIndex": 0,
+        "explanation": "Churn is the rate at which customers leave or stop using a product. Keeping churn low is critical for subscription and repeat-purchase businesses.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0021",
+        "question": "Product-market fit means:",
+        "options": [
+            "A product that can be made cheaply",
+            "A product that strongly meets a real customer need",
+            "A product with the most features",
+            "A product that has no competitors"
+        ],
+        "answerIndex": 1,
+        "explanation": "Product-market fit is when customers are clearly willing to buy and keep using your product because it solves a real problem. It often shows up as strong retention and word-of-mouth.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0022",
+        "question": "What is an MVP?",
+        "options": [
+            "Most Valuable Product",
+            "Minimum Viable Product",
+            "Market Value Plan",
+            "Main Version Prototype"
+        ],
+        "answerIndex": 1,
+        "explanation": "An MVP is the simplest version of a product that still solves the core problem for early customers. It lets you test demand quickly without overbuilding.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0023",
+        "question": "A product roadmap is:",
+        "options": [
+            "A list of customers who bought last month",
+            "A plan showing upcoming product improvements and timing",
+            "A legal compliance document",
+            "A public stock price chart"
+        ],
+        "answerIndex": 1,
+        "explanation": "A roadmap outlines what features or improvements are planned and when. It helps align teams and set expectations with customers or stakeholders.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0024",
+        "question": "Why do companies run customer interviews?",
+        "options": [
+            "To raise prices immediately",
+            "To understand customer needs and pain points",
+            "To replace market research",
+            "To avoid building prototypes"
+        ],
+        "answerIndex": 1,
+        "explanation": "Customer interviews reveal how people actually experience a problem and what outcomes they want. This helps teams build features that matter instead of guessing.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0025",
+        "question": "What is A/B testing?",
+        "options": [
+            "Testing two versions to see which performs better",
+            "A legal audit of suppliers",
+            "A way to set product prices",
+            "A method to measure inventory"
+        ],
+        "answerIndex": 0,
+        "explanation": "A/B testing compares two versions of a page, email, or feature to see which drives better results. It uses real user behavior to guide decisions.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0026",
+        "question": "Market segmentation is:",
+        "options": [
+            "Selling to the largest possible audience",
+            "Dividing the market into groups with similar needs",
+            "Choosing a company logo",
+            "Reducing product quality to save costs"
+        ],
+        "answerIndex": 1,
+        "explanation": "Segmentation groups customers by shared needs, behaviors, or characteristics. This lets you tailor messaging and offers more effectively than broad targeting.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0027",
+        "question": "A customer persona is:",
+        "options": [
+            "A real employee who buys the product",
+            "A fictional profile representing a key customer type",
+            "A competitor profile",
+            "A product prototype"
+        ],
+        "answerIndex": 1,
+        "explanation": "A persona is a fictional, research-based profile of a key customer segment. It keeps teams focused on real user goals and constraints.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0028",
+        "question": "USP stands for:",
+        "options": [
+            "Unique Selling Proposition",
+            "User Satisfaction Plan",
+            "United Sales Program",
+            "Universal Service Policy"
+        ],
+        "answerIndex": 0,
+        "explanation": "A Unique Selling Proposition is the specific, clear reason a buyer should choose you over others. It highlights a unique benefit or advantage.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0029",
+        "question": "Differentiation in business means:",
+        "options": [
+            "Reducing the number of products",
+            "Creating meaningful differences versus competitors",
+            "Matching competitor features exactly",
+            "Only cutting prices"
+        ],
+        "answerIndex": 1,
+        "explanation": "Differentiation is about standing out in ways customers care about, such as quality, service, or design. It helps avoid competing solely on price.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0030",
+        "question": "A SWOT analysis includes:",
+        "options": [
+            "Sales, Weather, Operations, Timing",
+            "Strengths, Weaknesses, Opportunities, Threats",
+            "Supply, Workload, Output, Team",
+            "Strategy, Workforce, Organization, Targets"
+        ],
+        "answerIndex": 1,
+        "explanation": "SWOT identifies internal strengths and weaknesses and external opportunities and threats. It\u2019s a quick way to assess where to compete and what to fix.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0031",
+        "question": "What is TAM in market sizing?",
+        "options": [
+            "Total Addressable Market",
+            "Top Advertising Metric",
+            "Technical Asset Map",
+            "Tactical Audience Model"
+        ],
+        "answerIndex": 0,
+        "explanation": "TAM is the total potential demand for a product if you captured 100% of the market. It gives a ceiling on growth opportunity.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0032",
+        "question": "Economies of scale mean:",
+        "options": [
+            "Costs per unit rise as volume increases",
+            "Costs per unit fall as volume increases",
+            "Prices must always decrease",
+            "Quality must drop with growth"
+        ],
+        "answerIndex": 1,
+        "explanation": "Economies of scale occur when producing more units lowers the cost per unit. Fixed costs are spread across more output, and purchasing power often improves.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0033",
+        "question": "Cash flow is different from profit because:",
+        "options": [
+            "Cash flow tracks actual cash in and out, profit uses accounting rules",
+            "Cash flow only includes salaries",
+            "Profit ignores revenue",
+            "They are the same thing"
+        ],
+        "answerIndex": 0,
+        "explanation": "Cash flow measures actual cash moving in and out, while profit includes non-cash items like depreciation. A company can be profitable on paper but still run out of cash.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0034",
+        "question": "Working capital is:",
+        "options": [
+            "Cash you use to build factories",
+            "Current assets minus current liabilities",
+            "Long-term debt",
+            "Total revenue"
+        ],
+        "answerIndex": 1,
+        "explanation": "Working capital is the money available for day-to-day operations, calculated as current assets minus current liabilities. It shows short-term financial health.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0035",
+        "question": "Inventory turnover measures:",
+        "options": [
+            "How fast inventory sells and is replaced",
+            "The total value of inventory",
+            "How many items are returned",
+            "The number of suppliers you use"
+        ],
+        "answerIndex": 0,
+        "explanation": "Inventory turnover shows how quickly inventory is sold and replenished. A higher turnover often means strong sales or efficient inventory management.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0036",
+        "question": "What is a KPI?",
+        "options": [
+            "Key Performance Indicator",
+            "Known Profit Increase",
+            "Key Product Idea",
+            "Keeper Price Index"
+        ],
+        "answerIndex": 0,
+        "explanation": "A KPI is a metric that tracks progress toward a business goal. Good KPIs are specific and tied to decisions, not vanity numbers.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0037",
+        "question": "SMART goals are:",
+        "options": [
+            "Specific, Measurable, Achievable, Relevant, Time-bound",
+            "Small, Measurable, Active, Repeatable, Trackable",
+            "Simple, Marketable, Affordable, Reachable, Timely",
+            "Strategic, Minimal, Accurate, Rapid, Tactical"
+        ],
+        "answerIndex": 0,
+        "explanation": "SMART goals define clear expectations by making objectives specific and time-bound. This reduces confusion and makes progress easy to track.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0038",
+        "question": "Cost-plus pricing means:",
+        "options": [
+            "Pricing below cost to grow users",
+            "Setting price by adding a margin to the cost",
+            "Matching the highest competitor price",
+            "Setting price based only on perceived value"
+        ],
+        "answerIndex": 1,
+        "explanation": "Cost-plus pricing adds a fixed margin on top of the product\u2019s cost. It\u2019s simple but can ignore what customers are willing to pay.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0039",
+        "question": "Value-based pricing focuses on:",
+        "options": [
+            "What competitors charge",
+            "Customer\u2019s perceived value and outcomes",
+            "Production cost only",
+            "A fixed industry average"
+        ],
+        "answerIndex": 1,
+        "explanation": "Value-based pricing sets prices based on the benefit customers receive, such as time saved or revenue gained. It often supports higher margins when the value is clear.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0040",
+        "question": "Psychological pricing often uses:",
+        "options": [
+            "Random prices",
+            "Prices ending in .99 to appear lower",
+            "Prices that increase daily",
+            "Prices set only by suppliers"
+        ],
+        "answerIndex": 1,
+        "explanation": "Psychological pricing uses cues like $9.99 to make a price feel lower. It affects perception even when the actual difference is small.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0041",
+        "question": "A loss leader is:",
+        "options": [
+            "A product sold at a loss to attract customers",
+            "A product with the highest profit",
+            "A product that is always free",
+            "A product sold only to employees"
+        ],
+        "answerIndex": 0,
+        "explanation": "A loss leader is priced below cost to bring customers in, hoping they buy other profitable items. Grocery stores often use this tactic on staples.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0042",
+        "question": "Brand architecture describes:",
+        "options": [
+            "The layout of a retail store",
+            "How a company organizes its brands and sub-brands",
+            "The color palette of a logo",
+            "The legal structure of a company"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand architecture is the system that shows how parent brands, sub-brands, and products relate. It helps customers understand the portfolio and prevents confusion.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0043",
+        "question": "Co-branding is:",
+        "options": [
+            "Two brands working together on a product or campaign",
+            "A company changing its logo",
+            "Selling private label products",
+            "Reducing prices across the board"
+        ],
+        "answerIndex": 0,
+        "explanation": "Co-branding is a partnership where two brands appear together on a product or campaign. It can expand reach by combining trust and audiences.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0044",
+        "question": "Brand consistency matters because it:",
+        "options": [
+            "Reduces the need for customer service",
+            "Builds recognition and trust over time",
+            "Lets you avoid quality control",
+            "Makes pricing irrelevant"
+        ],
+        "answerIndex": 1,
+        "explanation": "Consistency in visuals and tone helps customers recognize your brand quickly. Repeated, reliable signals build trust and make marketing more efficient.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0045",
+        "question": "A brand voice is:",
+        "options": [
+            "The audio volume in ads",
+            "The distinct style and tone used in communication",
+            "The name of a spokesperson only",
+            "The typeface on a website"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand voice is the consistent tone and style you use in writing and speaking. It shapes how people feel about your brand, like friendly, expert, or playful.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0046",
+        "question": "Social proof in marketing refers to:",
+        "options": [
+            "A legal requirement",
+            "Evidence that others trust or use your product",
+            "A type of discount",
+            "A shipping method"
+        ],
+        "answerIndex": 1,
+        "explanation": "Social proof includes reviews, testimonials, and customer counts that show others have chosen you. It reduces buyer risk by signaling credibility.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0047",
+        "question": "Content marketing is best described as:",
+        "options": [
+            "Creating helpful content to attract and engage customers",
+            "Only running paid ads",
+            "Selling through wholesalers",
+            "Reducing product features"
+        ],
+        "answerIndex": 0,
+        "explanation": "Content marketing focuses on helpful articles, videos, or tools that solve problems for your audience. It builds trust and brings in leads over time.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0048",
+        "question": "SEO stands for:",
+        "options": [
+            "Sales Efficiency Output",
+            "Search Engine Optimization",
+            "Systematic Expense Overview",
+            "Strategic Engagement Offering"
+        ],
+        "answerIndex": 1,
+        "explanation": "Search Engine Optimization is the practice of improving your site so it ranks higher in search results. Strong SEO brings steady traffic without paying for each click.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0049",
+        "question": "CTR in digital ads means:",
+        "options": [
+            "Click-through rate",
+            "Customer turnover ratio",
+            "Cost to revenue",
+            "Conversion time rate"
+        ],
+        "answerIndex": 0,
+        "explanation": "Click-through rate is the percentage of people who click an ad after seeing it. It shows how compelling the ad is to the audience.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0050",
+        "question": "A landing page is:",
+        "options": [
+            "The home page of a website only",
+            "A page designed to drive a specific action",
+            "A page listing company history",
+            "A customer support page"
+        ],
+        "answerIndex": 1,
+        "explanation": "A landing page is built to convert visitors by focusing on one clear action, like signing up or buying. It avoids distractions to improve conversion rates.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0051",
+        "question": "A call to action (CTA) is:",
+        "options": [
+            "A business loan",
+            "A prompt telling users what to do next",
+            "A shipping label",
+            "A competitor announcement"
+        ],
+        "answerIndex": 1,
+        "explanation": "A CTA is a clear prompt like \u201cStart free trial\u201d that guides the next step. It reduces confusion and increases the chance of conversion.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0052",
+        "question": "The 4Ps of marketing are:",
+        "options": [
+            "Product, Price, Place, Promotion",
+            "People, Process, Profit, Policy",
+            "Planning, Production, Profit, Publicity",
+            "Position, Price, Performance, People"
+        ],
+        "answerIndex": 0,
+        "explanation": "The 4Ps are Product, Price, Place, and Promotion. Together they describe what you sell, how much it costs, where it is sold, and how it is promoted.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0053",
+        "question": "The product lifecycle usually includes:",
+        "options": [
+            "Design, Build, Close",
+            "Intro, Growth, Maturity, Decline",
+            "Hire, Train, Fire",
+            "Plan, Launch, Win"
+        ],
+        "answerIndex": 1,
+        "explanation": "Products typically move through introduction, growth, maturity, and decline. Each stage needs different marketing and investment choices.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0054",
+        "question": "The adoption curve includes early adopters who:",
+        "options": [
+            "Wait until a product is everywhere",
+            "Try new products before the majority",
+            "Never buy new products",
+            "Only buy at clearance prices"
+        ],
+        "answerIndex": 1,
+        "explanation": "Early adopters are willing to try new products before most people. They often influence others through reviews and word-of-mouth.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0055",
+        "question": "Network effects occur when:",
+        "options": [
+            "Prices fall every month",
+            "A product becomes more valuable as more people use it",
+            "Costs rise with volume",
+            "A company shuts down a product line"
+        ],
+        "answerIndex": 1,
+        "explanation": "Network effects mean the value of a product increases as more users join, like messaging apps or marketplaces. They create strong competitive advantages.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0056",
+        "question": "Unit economics refer to:",
+        "options": [
+            "Company-wide annual profit",
+            "The profitability of a single unit or customer",
+            "The size of the total market",
+            "Marketing brand awareness only"
+        ],
+        "answerIndex": 1,
+        "explanation": "Unit economics measure revenue and costs per unit or per customer. Healthy unit economics mean each sale contributes positively to profit.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0057",
+        "question": "Contribution margin is:",
+        "options": [
+            "Revenue minus variable costs",
+            "Revenue minus fixed costs",
+            "Total profit after taxes",
+            "The same as gross margin in all cases"
+        ],
+        "answerIndex": 0,
+        "explanation": "Contribution margin is revenue left after variable costs, which then contributes to covering fixed costs. It helps evaluate pricing and product viability.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0058",
+        "question": "Payback period is:",
+        "options": [
+            "The time it takes to recover an investment",
+            "The annual profit percentage",
+            "The length of a sales call",
+            "The product warranty length"
+        ],
+        "answerIndex": 0,
+        "explanation": "Payback period is how long it takes for profits or cash flows to recoup an initial investment. Shorter payback lowers risk.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0059",
+        "question": "A common formula for break-even volume is:",
+        "options": [
+            "Fixed costs / (Price - Variable cost per unit)",
+            "Revenue - Fixed costs",
+            "Price + Variable cost per unit",
+            "Fixed costs \u00d7 Price"
+        ],
+        "answerIndex": 0,
+        "explanation": "Break-even volume is found by dividing fixed costs by contribution margin per unit. It shows the number of units needed to cover fixed costs.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0060",
+        "question": "Localization in business means:",
+        "options": [
+            "Only translating words",
+            "Adapting a product or marketing to local culture and needs",
+            "Opening a warehouse",
+            "Reducing prices globally"
+        ],
+        "answerIndex": 1,
+        "explanation": "Localization goes beyond translation to adapt design, messaging, and features for local preferences. It can include currency, images, regulations, and customer habits.",
+        "difficulty": "easy"
+    },
+    {
+        "id": "business_v3_0061",
+        "question": "Customer retention is important because:",
+        "options": [
+            "It always reduces product quality",
+            "Keeping customers is usually cheaper than acquiring new ones",
+            "It eliminates marketing costs entirely",
+            "It makes pricing irrelevant"
+        ],
+        "answerIndex": 1,
+        "explanation": "Retention matters because acquiring new customers often costs more than keeping existing ones. Loyal customers also tend to buy more over time.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0062",
+        "question": "A service recovery is:",
+        "options": [
+            "A plan to fix a customer issue after a failure",
+            "A method to raise prices",
+            "A sales training program",
+            "A product recall"
+        ],
+        "answerIndex": 0,
+        "explanation": "Service recovery is how a company responds when something goes wrong, such as a late delivery or defective product. A fast, sincere fix can restore trust and even increase loyalty.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0063",
+        "question": "Why do warranties matter in marketing?",
+        "options": [
+            "They remove all legal risk",
+            "They reduce perceived risk for buyers",
+            "They always lower costs",
+            "They replace customer support"
+        ],
+        "answerIndex": 1,
+        "explanation": "Warranties signal confidence in quality and reduce the fear of wasting money. This can increase conversion, especially for higher-priced products.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0064",
+        "question": "Why do subscription businesses often push annual plans?",
+        "options": [
+            "They reduce customer support to zero",
+            "They improve cash flow and reduce churn",
+            "They make products cheaper to build",
+            "They eliminate marketing"
+        ],
+        "answerIndex": 1,
+        "explanation": "Annual plans provide more cash upfront and keep customers committed longer, which lowers churn. Many companies offer a discount to encourage the longer commitment.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0065",
+        "question": "Pricing tiers are used to:",
+        "options": [
+            "Serve different customer needs and budgets",
+            "Hide the real price",
+            "Avoid customer feedback",
+            "Limit product adoption"
+        ],
+        "answerIndex": 0,
+        "explanation": "Tiered pricing offers different feature sets or usage levels so customers can choose what fits them. It captures more value without alienating smaller customers.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0066",
+        "question": "Feature creep is:",
+        "options": [
+            "Gradually adding too many features and complexity",
+            "Cutting features to reduce costs",
+            "Testing new designs",
+            "Scaling production"
+        ],
+        "answerIndex": 0,
+        "explanation": "Feature creep happens when extra features are added without clear customer value. It can make a product harder to use and slower to build or maintain.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0067",
+        "question": "RICE scoring helps teams:",
+        "options": [
+            "Price products based on ingredients",
+            "Prioritize product ideas using Reach, Impact, Confidence, Effort",
+            "Forecast demand only",
+            "Build legal contracts"
+        ],
+        "answerIndex": 1,
+        "explanation": "RICE uses four factors to prioritize work: how many people it affects, how much it helps, how confident you are, and the effort required. It makes tradeoffs more transparent.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0068",
+        "question": "The Kano model is used to:",
+        "options": [
+            "Measure the size of a market",
+            "Understand which features delight vs. are basic expectations",
+            "Set product pricing based on cost",
+            "Plan factory layouts"
+        ],
+        "answerIndex": 1,
+        "explanation": "The Kano model separates features into basics, performance drivers, and delighters. It helps teams avoid overinvesting in features customers already expect.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0069",
+        "question": "Quality assurance (QA) is:",
+        "options": [
+            "Testing and processes to prevent defects",
+            "A one-time marketing launch",
+            "A finance review",
+            "A customer loyalty program"
+        ],
+        "answerIndex": 0,
+        "explanation": "QA focuses on building processes to prevent defects before products reach customers. It differs from fixing problems after the fact.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0070",
+        "question": "Regulatory compliance in business means:",
+        "options": [
+            "Following relevant laws and industry rules",
+            "Only paying taxes on time",
+            "Copying a competitor\u2019s processes",
+            "Stopping all innovation"
+        ],
+        "answerIndex": 0,
+        "explanation": "Compliance means meeting the laws and regulations that apply to your industry, such as safety or data rules. Failing to comply can result in fines and loss of trust.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0071",
+        "question": "Why is data privacy important for a brand?",
+        "options": [
+            "It makes ads cheaper",
+            "It builds trust and avoids legal penalties",
+            "It removes the need for security",
+            "It increases inventory"
+        ],
+        "answerIndex": 1,
+        "explanation": "Protecting customer data builds trust and reduces the risk of breaches or legal action. Brands that handle data poorly can lose customers quickly.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0072",
+        "question": "Channel conflict happens when:",
+        "options": [
+            "A company changes its logo",
+            "Different sales channels compete against each other",
+            "A product sells out too quickly",
+            "Marketing stops running ads"
+        ],
+        "answerIndex": 1,
+        "explanation": "Channel conflict occurs when channels like direct online sales and retail partners undercut each other. It can hurt relationships and reduce overall sales.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0073",
+        "question": "Reseller margin is:",
+        "options": [
+            "The profit a reseller keeps between wholesale and retail price",
+            "The tax rate for retailers",
+            "The cost of shipping to resellers",
+            "A government subsidy"
+        ],
+        "answerIndex": 0,
+        "explanation": "Reseller margin is the difference between what the reseller pays and what they sell for. It must be large enough to motivate them to promote your product.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0074",
+        "question": "A franchise model allows:",
+        "options": [
+            "Independent owners to operate under your brand and system",
+            "Free public use of your logo",
+            "Employees to buy stock only",
+            "Competitors to access your trade secrets"
+        ],
+        "answerIndex": 0,
+        "explanation": "Franchising lets others operate a business using your brand, processes, and support in exchange for fees and royalties. It can speed expansion with less capital.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0075",
+        "question": "Licensing in business means:",
+        "options": [
+            "Selling your company",
+            "Allowing others to use your IP for a fee",
+            "Giving products away for free",
+            "Outsourcing all manufacturing"
+        ],
+        "answerIndex": 1,
+        "explanation": "Licensing lets another party use your brand, technology, or content in exchange for royalties or fees. It generates revenue without directly operating that business.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0076",
+        "question": "A trademark protects:",
+        "options": [
+            "A brand name, logo, or slogan",
+            "A manufacturing process",
+            "A music recording",
+            "A business\u2019s cash balance"
+        ],
+        "answerIndex": 0,
+        "explanation": "Trademarks protect brand identifiers like names and logos. They prevent competitors from using confusingly similar marks.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0077",
+        "question": "A patent protects:",
+        "options": [
+            "A secret recipe with no disclosure",
+            "An invention or novel technical solution",
+            "A brand name",
+            "A marketing slogan"
+        ],
+        "answerIndex": 1,
+        "explanation": "Patents grant exclusive rights to an invention for a limited time in exchange for public disclosure. This protects novel technical ideas from direct copying.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0078",
+        "question": "First-mover advantage means:",
+        "options": [
+            "Entering a market early can create lasting benefits",
+            "The first company always wins",
+            "Late entrants are illegal",
+            "Only large firms can enter new markets"
+        ],
+        "answerIndex": 0,
+        "explanation": "Being early can help a company build brand recognition, lock in customers, or set standards. It doesn\u2019t guarantee success, but it can make competition harder for followers.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0079",
+        "question": "Switching costs are:",
+        "options": [
+            "Taxes on new products",
+            "Time, money, or hassle to change to another provider",
+            "The cost to develop a new product",
+            "Shipping fees"
+        ],
+        "answerIndex": 1,
+        "explanation": "Switching costs are the effort or expense a customer faces to move to another option. High switching costs can reduce churn and protect market share.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0080",
+        "question": "A competitive moat is:",
+        "options": [
+            "A temporary price cut",
+            "A durable advantage that keeps competitors at bay",
+            "A marketing campaign only",
+            "A product recall"
+        ],
+        "answerIndex": 1,
+        "explanation": "A moat is a long-term advantage like brand strength, network effects, or high switching costs. It makes it harder for competitors to take your customers.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0081",
+        "question": "Upselling means:",
+        "options": [
+            "Selling a higher-end version or add-on",
+            "Selling a cheaper option",
+            "Offering refunds to all buyers",
+            "Selling to wholesalers only"
+        ],
+        "answerIndex": 0,
+        "explanation": "Upselling encourages customers to choose a higher-priced option or upgrade. It increases average revenue per customer when done with clear added value.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0082",
+        "question": "Cross-selling is:",
+        "options": [
+            "Selling related products to an existing customer",
+            "Reducing prices after purchase",
+            "Only selling to new customers",
+            "Launching a new brand"
+        ],
+        "answerIndex": 0,
+        "explanation": "Cross-selling offers complementary products that make the original purchase more useful. It works best when the added item solves a related need.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0083",
+        "question": "A referral program aims to:",
+        "options": [
+            "Reward customers for bringing in new customers",
+            "Increase product defects",
+            "Reduce customer support",
+            "Raise prices quickly"
+        ],
+        "answerIndex": 0,
+        "explanation": "Referral programs incentivize existing customers to recommend the product. Word-of-mouth often converts at a higher rate and lower cost.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0084",
+        "question": "A loyalty program primarily seeks to:",
+        "options": [
+            "Encourage repeat purchases",
+            "Eliminate marketing spend",
+            "Reduce product quality",
+            "Avoid customer feedback"
+        ],
+        "answerIndex": 0,
+        "explanation": "Loyalty programs reward repeat behavior with points, discounts, or perks. They are designed to increase retention and customer lifetime value.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0085",
+        "question": "Price discrimination is:",
+        "options": [
+            "Charging different prices to different segments for the same product",
+            "Charging one fixed price forever",
+            "Giving everything away for free",
+            "Only charging cash"
+        ],
+        "answerIndex": 0,
+        "explanation": "Price discrimination sets different prices based on customer segments or willingness to pay, like student discounts or premium seating. It can increase revenue when done legally and transparently.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0086",
+        "question": "Geographic pricing adjusts prices based on:",
+        "options": [
+            "Time of day",
+            "Location-related costs and market conditions",
+            "Competitor salaries",
+            "Employee performance"
+        ],
+        "answerIndex": 1,
+        "explanation": "Geographic pricing reflects differences in shipping costs, taxes, or local demand. It helps keep margins stable across regions.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0087",
+        "question": "COGS stands for:",
+        "options": [
+            "Cost of Goods Sold",
+            "Cost of Growth Strategy",
+            "Cash on Gross Sales",
+            "Customer Order Gross Sum"
+        ],
+        "answerIndex": 0,
+        "explanation": "COGS is the direct cost to produce the goods you sell, such as materials and labor. It does not include marketing or administrative expenses.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0088",
+        "question": "Gross profit is:",
+        "options": [
+            "Revenue minus COGS",
+            "Revenue minus all expenses",
+            "Operating expenses minus revenue",
+            "Cash flow minus taxes"
+        ],
+        "answerIndex": 0,
+        "explanation": "Gross profit is what remains after subtracting direct production costs from revenue. It indicates how much money is available to cover operating expenses and profit.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0089",
+        "question": "Operating leverage refers to:",
+        "options": [
+            "Using debt to fund growth",
+            "The share of fixed costs in your cost structure",
+            "The number of products you sell",
+            "How often you update pricing"
+        ],
+        "answerIndex": 1,
+        "explanation": "Operating leverage is high when fixed costs are a large part of total costs. That means profits can rise quickly with sales, but losses can also deepen if sales drop.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0090",
+        "question": "Seasonality planning helps a business:",
+        "options": [
+            "Ignore slow periods",
+            "Prepare for predictable demand swings",
+            "Stop marketing during holidays",
+            "Eliminate inventory"
+        ],
+        "answerIndex": 1,
+        "explanation": "Many businesses experience predictable peaks and dips, like holidays or weather changes. Planning for seasonality helps manage inventory, staffing, and cash flow.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0091",
+        "question": "Demand forecasting is used to:",
+        "options": [
+            "Guess customer preferences without data",
+            "Predict future sales to plan inventory and resources",
+            "Set employee salaries",
+            "Select brand colors"
+        ],
+        "answerIndex": 1,
+        "explanation": "Forecasting uses past data and market signals to estimate future demand. This guides inventory, staffing, and production decisions.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0092",
+        "question": "A customer cohort analysis groups users by:",
+        "options": [
+            "Favorite color",
+            "The time or event when they started using the product",
+            "Their current location only",
+            "Their credit score"
+        ],
+        "answerIndex": 1,
+        "explanation": "Cohort analysis groups customers by a shared start date or event, like signup month. It helps reveal retention trends and the impact of changes over time.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0093",
+        "question": "Why do businesses track reasons for churn?",
+        "options": [
+            "To reduce product quality",
+            "To identify fixable problems driving cancellations",
+            "To increase customer support costs",
+            "To avoid product updates"
+        ],
+        "answerIndex": 1,
+        "explanation": "Churn reasons reveal specific problems like pricing, missing features, or poor support. Fixing those issues can improve retention and profitability.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0094",
+        "question": "Why does customer support impact brand perception?",
+        "options": [
+            "It does not affect brand perception",
+            "It shapes how customers feel after problems occur",
+            "It only affects shipping speed",
+            "It changes product materials"
+        ],
+        "answerIndex": 1,
+        "explanation": "Support often happens when customers are frustrated, so the response has outsized impact. Helpful, respectful service can turn a problem into loyalty.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0095",
+        "question": "Rebranding carries risk mainly because:",
+        "options": [
+            "It always reduces sales",
+            "Customers may not recognize or trust the new identity",
+            "It eliminates marketing costs",
+            "It increases production speed"
+        ],
+        "answerIndex": 1,
+        "explanation": "Rebranding can confuse existing customers who associate the old look or name with trust. If the change is abrupt or unclear, it can reduce recognition and loyalty.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0096",
+        "question": "What is the main goal of crisis communication?",
+        "options": [
+            "Hide problems from customers",
+            "Protect trust by responding quickly and transparently",
+            "Increase ad spend",
+            "Delay legal action"
+        ],
+        "answerIndex": 1,
+        "explanation": "Crisis communication aims to protect trust by acknowledging the issue, explaining what happened, and stating how it will be fixed. Speed and honesty matter more than perfect wording.",
+        "difficulty": "medium"
+    },
+    {
+        "id": "business_v3_0097",
+        "question": "Trade dress protection applies to:",
+        "options": [
+            "The overall look and feel of a product or packaging",
+            "A company\u2019s financial statements",
+            "A product\u2019s technical invention",
+            "A website\u2019s domain name only"
+        ],
+        "answerIndex": 0,
+        "explanation": "Trade dress protects distinctive visual elements that identify the source of a product, like a unique bottle shape or store layout. It helps prevent confusingly similar designs.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0098",
+        "question": "When is a two-sided market most likely to face a chicken-and-egg problem?",
+        "options": [
+            "When one side can get value without the other",
+            "When both sides need each other to see value",
+            "When pricing is very low",
+            "When the product is physical"
+        ],
+        "answerIndex": 1,
+        "explanation": "Two-sided markets like marketplaces need enough buyers to attract sellers and enough sellers to attract buyers. This interdependence makes early growth difficult without seeding one side.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0099",
+        "question": "What is the primary risk of heavy discounting as a long-term strategy?",
+        "options": [
+            "Higher brand trust",
+            "Customer price expectations become anchored low",
+            "Lower customer acquisition cost",
+            "Simpler operations"
+        ],
+        "answerIndex": 1,
+        "explanation": "Frequent discounts train customers to wait for sales and perceive the regular price as too high. This can erode margins and make it hard to return to full pricing.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0100",
+        "question": "A business with high operating leverage is most sensitive to:",
+        "options": [
+            "Small changes in sales volume",
+            "Small changes in employee count",
+            "Small changes in supplier count",
+            "Small changes in logo design"
+        ],
+        "answerIndex": 0,
+        "explanation": "High operating leverage means a large share of fixed costs. Small drops in sales can quickly turn profits into losses because those fixed costs remain.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0101",
+        "question": "Which metric best indicates if paid growth is sustainable?",
+        "options": [
+            "Impressions",
+            "CLV to CAC ratio",
+            "Website visits",
+            "Social media followers"
+        ],
+        "answerIndex": 1,
+        "explanation": "CLV to CAC compares the lifetime value of a customer to the cost of acquiring them. A ratio well above 1 suggests paid growth can be profitable.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0102",
+        "question": "What is the key purpose of a brand architecture decision when launching new products?",
+        "options": [
+            "To lower manufacturing costs",
+            "To decide whether to use the parent brand or create a new sub-brand",
+            "To select shipping providers",
+            "To set employee salaries"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand architecture choices determine whether new products leverage the parent brand or stand alone. This affects customer trust transfer, marketing efficiency, and risk to the core brand.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0103",
+        "question": "A high churn rate in a subscription business most directly hurts:",
+        "options": [
+            "Logo recognition",
+            "Customer lifetime value",
+            "Manufacturing speed",
+            "Shipping cost"
+        ],
+        "answerIndex": 1,
+        "explanation": "Churn shortens how long customers stay, which reduces lifetime value. That makes it harder to recover acquisition costs and grow profitably.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0104",
+        "question": "If a company\u2019s gross margin is strong but net profit is negative, a likely issue is:",
+        "options": [
+            "Low production quality",
+            "High operating expenses",
+            "Too much inventory turnover",
+            "Too many returns only"
+        ],
+        "answerIndex": 1,
+        "explanation": "Strong gross margin means the product is priced well relative to direct costs. Negative net profit often comes from high operating expenses like marketing, R&D, or overhead.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0105",
+        "question": "What is the main benefit of value-based pricing compared to cost-plus?",
+        "options": [
+            "It always lowers prices",
+            "It captures more of the value created for customers",
+            "It guarantees customer loyalty",
+            "It eliminates competition"
+        ],
+        "answerIndex": 1,
+        "explanation": "Value-based pricing aligns price with the customer\u2019s perceived benefit rather than just production cost. This can increase margins when your product delivers significant outcomes.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0106",
+        "question": "In a marketplace business, why might subsidizing one side be effective?",
+        "options": [
+            "It reduces legal compliance",
+            "It helps build liquidity by attracting the other side",
+            "It lowers product quality",
+            "It eliminates marketing"
+        ],
+        "answerIndex": 1,
+        "explanation": "Subsidizing one side, like offering free listings to sellers, can increase supply and attract buyers. Once both sides are active, the marketplace becomes more valuable and can monetize.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0107",
+        "question": "Why can expanding into too many segments at once be risky?",
+        "options": [
+            "It increases brand clarity",
+            "It spreads resources thin and weakens positioning",
+            "It always reduces costs",
+            "It simplifies operations"
+        ],
+        "answerIndex": 1,
+        "explanation": "Serving many segments at once can dilute the product message and stretch teams across conflicting needs. Focus often leads to a stronger fit and faster growth.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0108",
+        "question": "What is the main danger of ignoring cohort retention curves?",
+        "options": [
+            "You might miss product quality issues",
+            "You might overestimate long-term revenue",
+            "You might increase ad CTR",
+            "You might lower inventory costs"
+        ],
+        "answerIndex": 1,
+        "explanation": "Cohort curves show whether new users stick around. If retention drops, revenue projections based on averages can be overly optimistic.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0109",
+        "question": "Why do companies track contribution margin by product?",
+        "options": [
+            "To reduce customer feedback",
+            "To see which products actually fund fixed costs and profit",
+            "To decide brand colors",
+            "To measure market size"
+        ],
+        "answerIndex": 1,
+        "explanation": "Contribution margin by product shows which items generate cash after variable costs. It helps decide what to promote, improve, or discontinue.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0110",
+        "question": "If a brand changes its logo and loses recognition, the main lost asset is:",
+        "options": [
+            "Physical inventory",
+            "Brand equity",
+            "Patents",
+            "Supply contracts"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand equity is the trust and recognition built over time. Sudden changes can weaken mental availability and reduce the advantage that brand equity provides.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0111",
+        "question": "In pricing, elasticity refers to:",
+        "options": [
+            "How customers react to price changes",
+            "How fast products are shipped",
+            "How often ads are shown",
+            "How many suppliers you have"
+        ],
+        "answerIndex": 0,
+        "explanation": "Price elasticity measures how demand changes when price changes. If demand drops sharply with a small price increase, it\u2019s highly elastic.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0112",
+        "question": "A brand extension can fail when:",
+        "options": [
+            "The new product is closely related",
+            "The new product conflicts with the brand\u2019s core meaning",
+            "The brand is already trusted",
+            "The price is slightly higher"
+        ],
+        "answerIndex": 1,
+        "explanation": "Brand extensions work best when the new product fits the brand\u2019s existing promise. A mismatch can confuse customers and weaken trust in the core brand.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0113",
+        "question": "Why can over-reliance on one acquisition channel be risky?",
+        "options": [
+            "It makes messaging clearer",
+            "A channel change can suddenly cut growth",
+            "It always reduces CAC",
+            "It improves brand trust"
+        ],
+        "answerIndex": 1,
+        "explanation": "If one channel changes rules, prices, or algorithms, growth can collapse quickly. Diversifying channels reduces this single-point-of-failure risk.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0114",
+        "question": "A pricing strategy that maximizes revenue in high-elasticity markets should:",
+        "options": [
+            "Raise prices as much as possible",
+            "Keep prices competitive or lower",
+            "Set one premium price only",
+            "Ignore competitor prices"
+        ],
+        "answerIndex": 1,
+        "explanation": "When demand is highly elastic, small price increases can cause large drops in sales. Competitive pricing helps maintain volume and total revenue.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0115",
+        "question": "Which situation is most suited to skimming pricing?",
+        "options": [
+            "Commodity products with many substitutes",
+            "A novel product with early adopters willing to pay more",
+            "A price-sensitive mass market",
+            "Products with no differentiation"
+        ],
+        "answerIndex": 1,
+        "explanation": "Skimming works when early adopters value novelty and are willing to pay a premium. As competition grows, the price can be lowered to reach broader segments.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0116",
+        "question": "Why might a company choose to sell direct-to-consumer instead of through retailers?",
+        "options": [
+            "To give up control of brand experience",
+            "To capture more margin and customer data",
+            "To increase channel conflict intentionally",
+            "To reduce marketing responsibility"
+        ],
+        "answerIndex": 1,
+        "explanation": "Direct-to-consumer channels allow a company to keep more of the profit and own the customer relationship. It also provides better data for product and marketing decisions.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0117",
+        "question": "A business with negative working capital can still be healthy if:",
+        "options": [
+            "It pays suppliers faster than customers pay it",
+            "Customers pay quickly and suppliers offer long payment terms",
+            "It has no inventory",
+            "It has no marketing expenses"
+        ],
+        "answerIndex": 1,
+        "explanation": "Some businesses collect cash from customers before paying suppliers, like subscription or fast-turn retail. This can create negative working capital while still generating strong cash flow.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0118",
+        "question": "What is the most practical use of a PESTEL analysis?",
+        "options": [
+            "To set day-to-day sales targets",
+            "To scan external factors like regulation, economy, and technology",
+            "To design a logo",
+            "To calculate gross margin"
+        ],
+        "answerIndex": 1,
+        "explanation": "PESTEL helps teams assess external forces such as political changes, economic trends, and new technologies. It is useful for strategic planning and risk assessment.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0119",
+        "question": "Which outcome best indicates strong product-market fit?",
+        "options": [
+            "High ad impressions",
+            "Customers would be very disappointed if the product disappeared",
+            "Large social media following only",
+            "High website bounce rate"
+        ],
+        "answerIndex": 1,
+        "explanation": "A classic signal of product-market fit is that customers find the product essential and would be upset to lose it. This usually shows up as strong retention and referrals.",
+        "difficulty": "hard"
+    },
+    {
+        "id": "business_v3_0120",
+        "question": "Why is gross margin a key metric when deciding on new customer acquisition spend?",
+        "options": [
+            "It tells you the brand color",
+            "It shows how much revenue is left to cover marketing costs",
+            "It measures inventory accuracy",
+            "It replaces CAC calculations"
+        ],
+        "answerIndex": 1,
+        "explanation": "Gross margin indicates the dollars available after production costs to pay for marketing and overhead. If margins are thin, aggressive acquisition can quickly become unprofitable.",
+        "difficulty": "hard"
+    }
 ]

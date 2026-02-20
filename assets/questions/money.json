@@ -2,1401 +2,1681 @@
   {
     "id": "money_v3_0001",
     "subject": "money",
-    "prompt": "通膨上升時，錢的購買力通常？",
     "options": [
-      "下降",
-      "上升",
-      "不變",
-      "變成零"
+      "能分散進場時點降低波動風險",
+      "一定能買到最低點",
+      "保證每年固定報酬",
+      "可以避開市場下跌"
     ],
     "answerIndex": 0,
-    "explanation": "物價上漲讓人以為只是標價變大。現金放著會被通膨慢慢削弱。",
+    "explanation": "定期定額透過分批投入分散進場時點，降低一次買在高點的風險。它並不保證最低點或固定報酬，但能平滑成本。",
+    "prompt": "定期定額買台股ETF的主要優點是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0002",
     "subject": "money",
-    "prompt": "信用卡只繳最低金額，最常見的結果是？",
     "options": [
-      "等於全額繳清",
-      "利息累積變快",
-      "不會產生費用",
-      "會自動停卡"
+      "股價可能上漲或下跌，沒有保證",
+      "一定比定存安全",
+      "只要長期一定獲利",
+      "只要分散就不會虧損"
     ],
-    "answerIndex": 1,
-    "explanation": "很多人以為最低繳款就沒事。信用相關的使用比例會影響評分。",
+    "answerIndex": 0,
+    "explanation": "股票價格受市場影響，上下波動沒有保證。長期與分散能降低風險，但不能保證不虧損。",
+    "prompt": "下列哪一項最能描述股票投資的風險？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0003",
     "subject": "money",
-    "prompt": "緊急預備金的主要用途是？",
     "options": [
-      "提高炫耀性消費",
-      "追求高報酬",
-      "應付突發支出",
-      "規避所有風險"
+      "美股指數ETF",
+      "單一成長股",
+      "高槓桿商品",
+      "短線當沖"
     ],
-    "answerIndex": 2,
-    "explanation": "常被誤會是「拿來賺更多」。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "美股指數ETF涵蓋多家公司，分散風險且入門簡單。單一股票與槓桿更集中與高風險。",
+    "prompt": "新手想投資美股，最常用且分散的工具是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0004",
     "subject": "money",
-    "prompt": "看到折扣時，最容易忽略的是？",
     "options": [
-      "折扣百分比",
-      "商品外觀",
-      "付款方式",
-      "實際是否需要"
+      "殖利率與配息穩定性",
+      "本益比越高越好",
+      "交易量越大越好",
+      "題材越熱越好"
     ],
-    "answerIndex": 3,
-    "explanation": "折扣會讓人直接想「賺到」。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "領息重視配息金額與穩定性，殖利率能衡量回饋。熱門題材不等於穩定配息。",
+    "prompt": "若你買股票的目的主要是領股息，應更重視哪個指標？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0005",
     "subject": "money",
-    "prompt": "「月付很低」最常掩蓋的是？",
     "options": [
-      "總成本變高",
-      "品質更好",
-      "保固變長",
-      "不需要利息"
+      "股價會扣除股息金額",
+      "公司一定賺錢",
+      "股價一定上漲",
+      "投資人現金增加但股價不變"
     ],
     "answerIndex": 0,
-    "explanation": "低月付讓人以為負擔小。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "explanation": "除息會讓股價扣除相應股息金額。現金入帳但股價調整，資產總值不一定增加。",
+    "prompt": "台股配息季常見的除息指的是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0006",
     "subject": "money",
-    "prompt": "買一送一看起來划算，真正關鍵是？",
     "options": [
-      "店員態度是否好",
-      "是否本來就會買兩份",
-      "包裝是否好看",
-      "付款是否能分期"
+      "領到股息後再買回股票",
+      "股息直接變成現金不投資",
+      "只買高股息股",
+      "用融資買股票"
     ],
-    "answerIndex": 1,
-    "explanation": "促銷容易讓人多買。先看自己是否真的需要，才不會被誘因帶著買。",
+    "answerIndex": 0,
+    "explanation": "股息再投資是把股息再投入買股，增加持股數。這有利於長期複利。",
+    "prompt": "美股投資人常提到的\"股息再投資\"是指？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0007",
     "subject": "money",
-    "prompt": "同樣商品兩個包裝，怎麼比價最準？",
     "options": [
-      "看總價",
-      "看品牌",
-      "看單位價格",
-      "看折扣幅度"
+      "同時持有不同產業與市場的標的",
+      "只買同一家公司不同時點",
+      "只挑當紅概念股",
+      "全部資金放一檔ETF"
     ],
-    "answerIndex": 2,
-    "explanation": "總價很容易被包裝大小影響。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "分散投資要跨產業與市場，降低單一事件風險。只集中在一家公司或概念並非分散。",
+    "prompt": "下列哪一項是分散投資的正確做法？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0008",
     "subject": "money",
-    "prompt": "「先買後付」最常見的隱形風險是？",
     "options": [
-      "不會影響現金流",
-      "一定比刷卡便宜",
-      "自動降低消費",
-      "多筆分期累積失控"
+      "股價相對獲利較便宜",
+      "公司一定更好",
+      "股價一定會漲",
+      "風險一定更低"
     ],
-    "answerIndex": 3,
-    "explanation": "每筆都小容易被低估。關鍵在於是否會自動續費或延長付款。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "本益比低表示相對獲利便宜，可能有價值或市場擔憂。不能保證更好或一定上漲。",
+    "prompt": "本益比（P/E）較低通常代表？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0009",
     "subject": "money",
-    "prompt": "臨時收入（獎金/退稅）最容易發生的錯誤是？",
     "options": [
-      "當成「意外之財」亂花",
-      "全部拿去儲蓄",
-      "先還必要支出",
-      "分配到不同用途"
+      "避免臨時用錢被迫賣股",
+      "保證投資獲利",
+      "提高股票報酬率",
+      "可以預測市場"
     ],
     "answerIndex": 0,
-    "explanation": "一筆意外收入會降低自制力。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "medium"
+    "explanation": "緊急預備金可應對突發支出，避免在低點被迫賣出。它不影響市場預測或保證獲利。",
+    "prompt": "投資前先建立緊急預備金的原因是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0010",
     "subject": "money",
-    "prompt": "延期繳款最直接的代價常是？",
     "options": [
-      "本金自動減少",
-      "額外手續費或利息",
-      "信用分數提高",
-      "帳單直接取消"
+      "影響換回台幣時的報酬",
+      "影響美股公司股本",
+      "影響配息次數",
+      "影響除息日"
     ],
-    "answerIndex": 1,
-    "explanation": "延期看似只是晚點付。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "美股報酬換回台幣會受匯率影響。匯率不改變公司股本或除息規則。",
+    "prompt": "美元匯率變動對美股投資人最直接的影響是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0011",
     "subject": "money",
-    "prompt": "「已經花了就要繼續用」最像哪種錯誤？",
     "options": [
-      "套利",
-      "對沖",
-      "沉沒成本",
-      "攤平"
+      "成分股與費用率",
+      "公司英文名稱",
+      "成交張數最小",
+      "股價一定要低"
     ],
-    "answerIndex": 2,
-    "explanation": "已經花掉的錢很難割捨。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "ETF的成分與費用率影響長期表現。股價高低不是唯一重點。",
+    "prompt": "台股投資人買ETF時，最需要注意的是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0012",
     "subject": "money",
-    "prompt": "「免費試用」最常讓人忽略的是？",
     "options": [
-      "功能不夠用",
-      "品牌知名度",
-      "安裝步驟",
-      "自動續費"
+      "高殖利率可能來自股價下跌",
+      "殖利率越高風險越低",
+      "殖利率一定代表成長",
+      "高殖利率一定可持續"
     ],
-    "answerIndex": 3,
-    "explanation": "免費字眼讓人放鬆警覺。關鍵在於是否會自動續費或延長付款。",
+    "answerIndex": 0,
+    "explanation": "殖利率高可能是股價下跌造成，未必代表好公司。配息能否持續更重要。",
+    "prompt": "為何不能只看殖利率就選股？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0013",
     "subject": "money",
-    "prompt": "只看年收入卻忽略什麼會讓生活壓力變大？",
     "options": [
-      "固定支出",
-      "生日月份",
-      "銀行名稱",
-      "信用卡張數"
+      "30%",
+      "5%",
+      "10%",
+      "0%"
     ],
     "answerIndex": 0,
-    "explanation": "收入高不等於過得輕鬆。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "medium"
+    "explanation": "美股股息通常會被預扣30%稅。這會降低實際領到的股息。",
+    "prompt": "投資美股時，稅務上常見的股息預扣稅比例是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0014",
     "subject": "money",
-    "prompt": "「延長保固」最常被忽略的評估點是？",
     "options": [
-      "品牌廣告量",
-      "故障機率與維修成本",
-      "店員推薦語",
-      "顏色是否好看"
+      "追蹤市場整體表現",
+      "挑選單一熱門股",
+      "只投資高股息公司",
+      "短線交易波段"
     ],
-    "answerIndex": 1,
-    "explanation": "保固聽起來就很安全。重點是覆蓋範圍與重複保障，別只看安心感。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "指數型投資目標是跟隨市場平均報酬。它不靠選股或短線操作。",
+    "prompt": "下列哪一項最能描述指數型投資？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0015",
     "subject": "money",
-    "prompt": "「零利率分期」最常見的誤區是？",
     "options": [
-      "付款期數太少",
-      "商品無法退貨",
-      "以為完全沒有成本",
-      "只限白天使用"
+      "費用率與追蹤誤差",
+      "每日股價波動",
+      "網路熱門話題",
+      "隔日沖效果"
     ],
-    "answerIndex": 2,
-    "explanation": "零利率容易讓人放鬆。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "長期投資時費用率與追蹤誤差會累積影響報酬。短期波動與話題不一定重要。",
+    "prompt": "若你長期投資美股ETF，應更重視？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0016",
     "subject": "money",
-    "prompt": "信用評分最常被什麼影響？",
     "options": [
-      "手機品牌",
-      "薪水多寡",
-      "存款顏色",
-      "是否按時還款"
+      "定期配息、成分股偏成熟企業",
+      "只投資新創公司",
+      "配息每天發放",
+      "保證本金"
     ],
-    "answerIndex": 3,
-    "explanation": "很多人以為只看存款多寡。信用相關的使用比例會影響評分。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "高股息ETF多選成熟企業並定期配息。並不保證本金或每日配息。",
+    "prompt": "下列何者屬於台股常見的高股息ETF特點？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0017",
     "subject": "money",
-    "prompt": "「預算」最核心的用途是？",
     "options": [
-      "讓支出有上限",
-      "讓錢自動增加",
-      "避免所有花費",
-      "提高投資報酬"
+      "美國股市開盤時段",
+      "台股開盤時段",
+      "24小時全天候",
+      "週末也可交易"
     ],
     "answerIndex": 0,
-    "explanation": "預算常被當成束縛。它們的重點是把流向看清楚，才有調整空間。",
+    "explanation": "美股ETF在美國股市開盤時交易。非24小時，也不在週末交易。",
+    "prompt": "投資美股時，ETF的交易時間通常是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0018",
     "subject": "money",
-    "prompt": "以下哪一種最容易造成「看不見的花費」？",
     "options": [
-      "一次性大筆支出",
-      "小額訂閱累積",
-      "固定房租",
-      "單次餐費"
+      "買進被低估且基本面穩健的公司",
+      "只追逐短期題材",
+      "買進股價創新高的股票",
+      "只看技術線型操作"
     ],
-    "answerIndex": 1,
-    "explanation": "小額很容易被忽略。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "價值投資重視基本面與合理估值。短期題材與純技術操作不是核心。",
+    "prompt": "下列哪一項最符合價值投資的概念？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0019",
     "subject": "money",
-    "prompt": "「先買需要，再買想要」在理財上最主要是？",
     "options": [
-      "增加炫耀價值",
-      "提升信用評分",
-      "控制衝動消費",
-      "提高收入"
+      "降低整體波動",
+      "追求最高報酬",
+      "放大槓桿",
+      "完全避免匯率影響"
     ],
-    "answerIndex": 2,
-    "explanation": "很多人以為是保守。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "債券波動通常小於股票，可降低組合波動。它不代表最高報酬或避開匯率。",
+    "prompt": "投資組合中加入債券的主要目的通常是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0020",
     "subject": "money",
-    "prompt": "當你只看標價、不看稅費時，容易發生？",
     "options": [
-      "提高折扣",
-      "減少手續費",
-      "獲得更多回饋",
-      "低估實際支出"
+      "一張（1000股）",
+      "一股",
+      "一百股",
+      "一萬股"
     ],
-    "answerIndex": 3,
-    "explanation": "標價看起來便宜就容易下單。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "台股一張為1000股，常用張為單位。零股可買賣但傳統單位是張。",
+    "prompt": "台股買賣股票常見的交易單位是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0021",
     "subject": "money",
-    "prompt": "「把所有錢放在同一個帳戶」最常見的問題是？",
     "options": [
-      "目標被混在一起難追蹤",
-      "利息會變成負數",
-      "銀行會拒絕服務",
-      "稅率會上升"
+      "公司股價×流通股數",
+      "公司淨利",
+      "公司營收",
+      "公司現金"
     ],
     "answerIndex": 0,
-    "explanation": "錢混在一起容易失控。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "explanation": "市值等於股價乘以流通股數。營收與淨利是不同的財務指標。",
+    "prompt": "美股投資人看重的\"市值\"是指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0022",
     "subject": "money",
-    "prompt": "信用卡「寬限期」真正代表的是？",
     "options": [
-      "按時繳清可免利息",
-      "可以永遠不繳",
-      "延後繳會有獎勵",
-      "刷卡就等於現金"
+      "分批買入",
+      "一次梭哈",
+      "短線當沖",
+      "只在消息面操作"
     ],
     "answerIndex": 0,
-    "explanation": "寬限期是「到期前繳清可免利息」的時間窗。超過就會計息，且使用比率也會影響信用評分。",
-    "difficulty": "medium"
+    "explanation": "分批買入可降低單次進場時點風險。一次梭哈風險較高。",
+    "prompt": "當你長期看好一家美股公司，但擔心短期波動，較合適的做法是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0023",
     "subject": "money",
-    "prompt": "「手續費」常讓人忽略的是？",
     "options": [
-      "它不會影響成本",
-      "它一定很小",
-      "它會吃掉折扣好處",
-      "它能提高信用"
+      "ETF可在股市即時交易",
+      "ETF一定保本",
+      "基金手續費一定低",
+      "ETF無費用率"
     ],
-    "answerIndex": 2,
-    "explanation": "折扣很吸引人。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "ETF像股票一樣即時交易，共同基金通常以淨值申贖。ETF也有費用率且不保本。",
+    "prompt": "ETF與共同基金最大的差別之一是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0024",
     "subject": "money",
-    "prompt": "為什麼「現金流為正」比單看資產更重要？",
     "options": [
-      "看起來比較有錢",
-      "稅率會比較低",
-      "利率會自動上升",
-      "日常支付不會斷裂"
+      "ETF或股票",
+      "定存五年期",
+      "封閉式不動產",
+      "長期壽險"
     ],
-    "answerIndex": 3,
-    "explanation": "只看資產很容易忽略現金需求。現金放著會被通膨慢慢削弱。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "ETF與股票可在市場交易，流動性較高。長期定存或保單流動性較低。",
+    "prompt": "如果你重視資金流動性，哪種投資工具較佳？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0025",
     "subject": "money",
-    "prompt": "「年化利率」之所以重要，是因為？",
     "options": [
-      "不同期間利率才能公平比較",
-      "年化一定比月化高",
-      "只有銀行用得到",
-      "它不影響成本"
+      "除息前一天（最後買進日）",
+      "除息日",
+      "填息日",
+      "配息日"
     ],
     "answerIndex": 0,
-    "explanation": "月利率看起來很低。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "hard"
+    "explanation": "要在除息日前買進才能領股息，通常是除息前一天。除息日買進已無配息權。",
+    "prompt": "台股企業發放現金股利後，除息前最後買進能領股息的日子稱為？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0026",
     "subject": "money",
-    "prompt": "「信用額度用滿」最可能帶來的影響是？",
     "options": [
-      "現金流變多",
-      "信用評分被拉低",
-      "年費會消失",
-      "自動升級會員"
+      "美國500大上市公司指數",
+      "台灣50指數",
+      "全球科技指數",
+      "小型股指數"
     ],
-    "answerIndex": 1,
-    "explanation": "用滿讓人覺得剛好。信用相關的使用比例會影響評分。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "S&P 500是美國大型公司指數，代表美股重要市場表現。",
+    "prompt": "美股投資中常見的\"S&P 500\"代表？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0027",
     "subject": "money",
-    "prompt": "「延後付款」最容易讓人做出什麼錯覺？",
     "options": [
-      "實際成本下降",
-      "費用自動消失",
-      "當下花費感降低",
-      "收入增加"
+      "可接受虧損與波動的程度",
+      "保證不虧錢",
+      "能預測市場能力",
+      "短期獲利目標"
     ],
-    "answerIndex": 2,
-    "explanation": "看不到錢立刻離開的感覺。關鍵在於是否會自動續費或延長付款。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "風險承受度是能承受的波動與虧損程度。不是預測市場或保證不虧。",
+    "prompt": "投資人常說的\"風險承受度\"是指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0028",
     "subject": "money",
-    "prompt": "「高報酬」常伴隨的真實狀況是？",
     "options": [
-      "風險一定更小",
-      "回本一定更快",
-      "時間一定更短",
-      "波動與不確定更大"
+      "同時配置台股與美股",
+      "只買台股大盤",
+      "只買美股單一股",
+      "只買同產業股票"
     ],
-    "answerIndex": 3,
-    "explanation": "人很容易只看到回報。報酬越高，風險通常也越高。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "跨市場配置可分散單一市場風險。集中在單一市場或產業風險較高。",
+    "prompt": "若想降低單一市場風險，較好的方式是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0029",
     "subject": "money",
-    "prompt": "「網購分期付款」最容易被忽略的是？",
     "options": [
-      "總成本可能更高",
-      "商品會變更好",
-      "保固會更長",
-      "貨運會更快"
+      "利息或報酬再投入產生滾雪球效果",
+      "每年固定利息",
+      "只適用短期投資",
+      "只對定存有效"
     ],
     "answerIndex": 0,
-    "explanation": "分期把壓力分散，但總成本可能更高，還常有手續費。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "explanation": "複利是把收益再投入，讓收益再生收益。它需要時間且不只限定存。",
+    "prompt": "投資人常提到的\"複利\"概念是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0030",
     "subject": "money",
-    "prompt": "「預算超支」後還繼續買的心理是？",
     "options": [
-      "風險分散",
-      "沉沒成本在作祟",
-      "套利行為",
-      "對沖損失"
+      "ETF表現與指數的差距",
+      "ETF一定比指數好",
+      "ETF固定配息比例",
+      "ETF交易量"
     ],
-    "answerIndex": 1,
-    "explanation": "超支後反而更難停手。它們的重點是把流向看清楚，才有調整空間。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "追蹤誤差是ETF與指數表現的差距。它不代表一定更好或配息比例。",
+    "prompt": "下列何者最能描述ETF的追蹤誤差？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0031",
     "subject": "money",
-    "prompt": "「高薪但高壓」的工作最容易忽略的成本是？",
     "options": [
-      "必定能升遷",
-      "稅率一定更低",
-      "時間與健康代價",
-      "花費一定更少"
+      "股價回到除息前水準",
+      "股價一定大漲",
+      "公司一定配更多",
+      "投資人一定賺錢"
     ],
-    "answerIndex": 2,
-    "explanation": "只看收入會忽略代價。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "填息是股價回到除息前，補回除息缺口。是否發生不確定，也不保證獲利。",
+    "prompt": "台股投資人常說的\"填息\"是指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0032",
     "subject": "money",
-    "prompt": "「延長貸款年限」最直接的影響是？",
     "options": [
-      "總利息降低",
-      "本金自動減少",
-      "利率自動變低",
-      "每月降低但總利息增加"
+      "獲利與營收快速成長的公司",
+      "股息發放很高的公司",
+      "政府公債",
+      "股價便宜的公司"
     ],
-    "answerIndex": 3,
-    "explanation": "月付變少會讓人安心。重點是看清真正成本與長期影響。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "成長股重視營收與獲利成長。它不一定高股息或股價便宜。",
+    "prompt": "美股投資中，\"成長股\"通常指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0033",
     "subject": "money",
-    "prompt": "「現金回饋」最容易造成的錯覺是？",
     "options": [
-      "花更多才覺得划算",
-      "等於省下本金",
-      "完全不需比較",
-      "一定比折扣好"
+      "淨利",
+      "股價",
+      "成交量",
+      "殖利率"
     ],
     "answerIndex": 0,
-    "explanation": "回饋讓人覺得在賺。回饋很容易讓人多花一點。",
-    "difficulty": "medium"
+    "explanation": "淨利反映公司是否有賺錢。股價與成交量是市場結果，不能代表獲利。",
+    "prompt": "如果你想了解一家公司賺不賺錢，應先看哪個指標？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0034",
     "subject": "money",
-    "prompt": "「貸款利率可變」的主要風險是？",
     "options": [
-      "一定比固定低",
-      "未來還款金額不確定",
-      "不用看合約",
-      "只會往下"
+      "在美國交易的海外公司存託憑證",
+      "美國政府公債",
+      "美股指數ETF",
+      "美國定存"
     ],
-    "answerIndex": 1,
-    "explanation": "可變聽起來彈性。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "ADR是海外公司在美國交易的存託憑證。它不是公債或指數ETF。",
+    "prompt": "投資美股時，\"ADR\"是指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0035",
     "subject": "money",
-    "prompt": "「免運門檻」最常讓人做的事是？",
     "options": [
-      "節省配送成本",
-      "降低總花費",
-      "多買不需要的東西",
-      "縮短配送時間"
+      "保留流動性並降低波動",
+      "保證報酬最大化",
+      "完全避免虧損",
+      "可以免稅"
     ],
-    "answerIndex": 2,
-    "explanation": "免運會變成心理目標。先看自己是否真的需要，才不會被誘因帶著買。",
+    "answerIndex": 0,
+    "explanation": "現金提供流動性，降低整體波動。並不保證報酬或免稅。",
+    "prompt": "投資組合中，將股票與現金同時持有的好處是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0036",
     "subject": "money",
-    "prompt": "「現金放床底下很安全」的最大問題是？",
     "options": [
-      "不會被偷",
-      "利息自動增加",
-      "可以避稅",
-      "通膨侵蝕價值"
+      "一年配息四次",
+      "每季調整股價",
+      "三個月一定漲",
+      "每季發行新股"
     ],
-    "answerIndex": 3,
-    "explanation": "安全感容易讓人忽略代價。現金放著會被通膨慢慢削弱。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "季配息就是一年配息四次。它不代表每季股價上漲。",
+    "prompt": "台股常見的「季配息」ETF是指？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0037",
     "subject": "money",
-    "prompt": "「買太多食物最後丟掉」在理財上屬於？",
     "options": [
-      "浪費型支出",
-      "必要支出",
-      "資產配置",
-      "風險控管"
+      "買進不同產業ETF",
+      "全押單一科技股",
+      "只買熱門話題股",
+      "只看股價高低"
     ],
     "answerIndex": 0,
-    "explanation": "買太多看似小事。重點是看清真正成本與長期影響。",
+    "explanation": "不同產業ETF能降低單一產業風險。集中單一股票風險高。",
+    "prompt": "美股投資人若想分散風險，較合理的做法是？",
     "difficulty": "easy"
   },
   {
     "id": "money_v3_0038",
     "subject": "money",
-    "prompt": "「看到原價再打折」容易造成的心理是？",
     "options": [
-      "現金流量",
-      "錨定效應",
-      "利息效應",
-      "遞延效應"
+      "設定投資目標與期限",
+      "每天追漲殺跌",
+      "聽小道消息",
+      "忽略風險"
     ],
-    "answerIndex": 1,
-    "explanation": "原價會變成心理錨點。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "清楚目標與期限有助選擇合適工具。追漲殺跌與忽略風險容易出錯。",
+    "prompt": "下列何者屬於投資前應完成的步驟？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0039",
     "subject": "money",
-    "prompt": "「薪水一到就想犒賞自己」最接近哪種偏誤？",
     "options": [
-      "風險分散",
-      "對沖心理",
-      "心理帳戶",
-      "均值回歸"
+      "遵守計畫、避免恐慌賣出",
+      "立刻清倉",
+      "加倍槓桿",
+      "停止學習"
     ],
-    "answerIndex": 2,
-    "explanation": "把錢分成不同心理帳戶。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "長期投資重視紀律，避免恐慌賣出。過度槓桿會放大風險。",
+    "prompt": "當市場大跌時，長期投資者較合適的心態是？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0040",
     "subject": "money",
-    "prompt": "「只看每月利率」最容易低估的是？",
     "options": [
-      "當月支出",
-      "帳戶餘額",
-      "利率上限",
-      "年化成本"
+      "加權指數",
+      "個股漲跌",
+      "成交量",
+      "券商廣告"
     ],
-    "answerIndex": 3,
-    "explanation": "月利率看起來很小。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "加權指數反映台股整體表現。單一個股或成交量不足以代表整體。",
+    "prompt": "下列哪項最能代表台股市場的整體表現？",
+    "difficulty": "easy"
   },
   {
     "id": "money_v3_0041",
     "subject": "money",
-    "prompt": "「已經買了就繼續付」更容易發生在？",
     "options": [
-      "長期合約與訂閱",
-      "一次性付清",
-      "現金付款",
-      "當場退貨"
+      "市場規模大且公司多元",
+      "完全沒有風險",
+      "一定比台股高報酬",
+      "免稅"
     ],
     "answerIndex": 0,
-    "explanation": "長期合約讓人不想承認損失。重點是看清真正成本與長期影響。",
+    "explanation": "美股市場規模大、公司多元，提供分散機會。並非無風險或免稅。",
+    "prompt": "美股長期投資常見的優勢之一是？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0042",
     "subject": "money",
-    "prompt": "「借錢給朋友」最容易忽略的風險是？",
     "options": [
-      "一定會多賺利息",
-      "關係受損的可能",
-      "對方一定先還",
-      "法律成本為零"
+      "追蹤哪個指數",
+      "是否有新聞熱度",
+      "股價是否最低",
+      "是否有人推薦"
     ],
-    "answerIndex": 1,
-    "explanation": "往往只想到金錢本身。人情成本往往比金錢更難處理。",
+    "answerIndex": 0,
+    "explanation": "要確認ETF追蹤的指數與成分。新聞熱度與推薦不代表適合。",
+    "prompt": "你想買台股ETF，最基本要確認的是？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0043",
     "subject": "money",
-    "prompt": "「一次付清」比「分期」更安全的原因常是？",
     "options": [
-      "一定更便宜",
-      "會提高信用",
-      "避免長期心理負擔",
-      "會加速收入"
+      "承受下跌壓力",
+      "一定上漲",
+      "完全不變",
+      "一定填息"
     ],
-    "answerIndex": 2,
-    "explanation": "不只是金錢問題。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "長期虧損會影響市場信心，股價易下跌。並不會一定上漲或填息。",
+    "prompt": "若公司長期虧損，股價可能？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0044",
     "subject": "money",
-    "prompt": "「小額多筆」累積造成的問題是？",
     "options": [
-      "總支出自動減少",
-      "更容易記帳",
-      "利息自動消失",
-      "總支出被低估"
+      "透過海外券商或複委託",
+      "只能現場到美國開戶",
+      "只能用現金買賣",
+      "必須買一整張"
     ],
-    "answerIndex": 3,
-    "explanation": "每筆都小很容易忽略。小額多筆累積起來常比想像大。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "可用海外券商或台灣複委託開戶。美股可買零股，不必一張。",
+    "prompt": "投資美股時常見的開戶方式是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0045",
     "subject": "money",
-    "prompt": "「可變支出」最常見的錯誤是？",
     "options": [
-      "低估彈性支出的總額",
-      "它一定不重要",
-      "永遠固定不變",
-      "不用列入預算"
+      "交易時間與幣別不同",
+      "一定有不同報酬",
+      "台股免稅美股免稅",
+      "台股沒有ETF"
     ],
     "answerIndex": 0,
-    "explanation": "可變支出看似零碎。真正的壓力多半來自固定支出與負債結構。",
+    "explanation": "交易時間與計價幣別不同是主要差異。兩者都有ETF且報酬不保證。",
+    "prompt": "台股與美股投資最大的差異之一是？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0046",
     "subject": "money",
-    "prompt": "「保險全買最安心」的最大盲點是？",
     "options": [
-      "保險一定賺錢",
-      "保費本身也是成本",
-      "理賠一定成功",
-      "保障一定越多越好"
+      "確認可投入的資金與風險",
+      "保證投資獲利",
+      "預測市場高低",
+      "提高短期報酬"
     ],
-    "answerIndex": 1,
-    "explanation": "安心感會掩蓋成本。重點是覆蓋範圍與重複保障，別只看安心感。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "了解現金流可判斷可投入資金與風險承受度。它不保證獲利。",
+    "prompt": "投資前檢視自己的現金流主要是為了？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0047",
     "subject": "money",
-    "prompt": "「提早還清負債」最直接的好處常是？",
     "options": [
-      "馬上提高收入",
-      "保證升薪",
-      "減少利息支出",
-      "增加信用額度"
+      "平衡風險與報酬",
+      "追求單一最高報酬",
+      "完全避免虧損",
+      "只買熱門股"
     ],
-    "answerIndex": 2,
-    "explanation": "很多人只看每月付款壓力。真正的壓力多半來自固定支出與負債結構。",
+    "answerIndex": 0,
+    "explanation": "資產配置透過不同資產平衡風險與報酬。並不能保證不虧。",
+    "prompt": "長期投資中，\"資產配置\"的主要目的為何？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0048",
     "subject": "money",
-    "prompt": "「看到折扣就囤貨」最常忽略的成本是？",
     "options": [
-      "一定不會壞",
-      "保鮮零成本",
-      "轉手更好賣",
-      "用不到的浪費"
+      "小額也可投資",
+      "保證賺錢",
+      "免手續費",
+      "每天配息"
     ],
-    "answerIndex": 3,
-    "explanation": "折扣會讓人多買。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "零股交易讓小額資金也能買股票。它不保證獲利或免手續費。",
+    "prompt": "台股零股交易的主要好處是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0049",
     "subject": "money",
-    "prompt": "「借新還舊」最常見的風險是？",
     "options": [
-      "利率一定下降",
-      "負債雪球變大",
-      "壓力立刻消失",
-      "信用分數上升"
+      "季配息",
+      "每天配息",
+      "每週配息",
+      "不可能配息"
     ],
-    "answerIndex": 1,
-    "explanation": "看似把問題延後。重點是看清真正成本與長期影響。",
-    "difficulty": "hard"
+    "answerIndex": 0,
+    "explanation": "美股ETF多為季配息或半年配息。並非每天或每週配息。",
+    "prompt": "美股ETF常見的配息頻率是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0050",
     "subject": "money",
-    "prompt": "「記帳」最主要帶來的改變是？",
     "options": [
-      "收入自動增加",
-      "稅負自動降低",
-      "支出一定歸零",
-      "看見真實支出"
+      "投資指數型或成長型標的",
+      "只買高股息股",
+      "短線頻繁交易",
+      "只買低價股"
     ],
-    "answerIndex": 3,
-    "explanation": "記帳不是魔法。它們的重點是把流向看清楚，才有調整空間。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "長期成長常透過指數或成長型標的參與市場成長。短線操作不適合長期策略。",
+    "prompt": "若你重視長期成長，較常見的策略是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0051",
     "subject": "money",
-    "prompt": "「買越多越省」最容易忽略的是？",
     "options": [
-      "存放成本",
-      "運氣",
-      "品牌",
-      "顏色"
+      "負債比率",
+      "每日開盤價",
+      "市場傳言",
+      "券商廣告"
     ],
     "answerIndex": 0,
-    "explanation": "買太多常帶來存放與浪費成本。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "explanation": "負債比率可反映財務槓桿與穩健度。傳言與廣告不具可靠性。",
+    "prompt": "台股投資人想評估公司財務健康，常會看？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0052",
     "subject": "money",
-    "prompt": "「只看月付」最容易忽略的是？",
     "options": [
-      "利率",
-      "總成本",
-      "產品評價",
-      "顏色"
+      "市場願意出更高的價格",
+      "公司一定賺更多",
+      "風險一定更低",
+      "一定會回檔"
     ],
-    "answerIndex": 1,
-    "explanation": "月付低不代表總成本低。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "創新高只是市場價格現象，不保證公司獲利或風險。也不一定回檔。",
+    "prompt": "美股投資中，\"股價創新高\"意味著？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0053",
     "subject": "money",
-    "prompt": "「想用就刷卡」最容易造成的問題是？",
     "options": [
-      "記錄變少",
-      "現金流壓力",
-      "社交壓力",
-      "時間變多"
+      "同時持有台股、美股與債券",
+      "只買熱門股",
+      "只買一檔ETF",
+      "只買定存"
     ],
-    "answerIndex": 1,
-    "explanation": "刷卡容易讓支出感覺不痛，累積成壓力。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "跨市場與資產配置能有效分散風險。單一標的或定存不足以分散。",
+    "prompt": "投資人常說的\"風險分散\"最接近哪種做法？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0054",
     "subject": "money",
-    "prompt": "「現金回饋」最常造成的錯覺是？",
     "options": [
-      "好像省很多",
-      "一定賺",
-      "可以無限刷",
-      "不用比價"
+      "判斷公司未來成長性",
+      "保證短線獲利",
+      "代替風險管理",
+      "避免任何下跌"
     ],
     "answerIndex": 0,
-    "explanation": "回饋會讓人覺得自己省很多，但常忽略本來就不該花。回饋很容易讓人多花一點。",
-    "difficulty": "easy"
+    "explanation": "產業趨勢有助判斷成長性，但不保證短期獲利或避免下跌。",
+    "prompt": "買股票前了解公司的產業趨勢，主要是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0055",
     "subject": "money",
-    "prompt": "「延長貸款年限」最直接的影響是？",
     "options": [
-      "每月變高",
-      "總利息變多",
-      "本金變少",
-      "利率下降"
+      "ETF會定期更換持股",
+      "ETF保證績效",
+      "ETF停止交易",
+      "ETF完全不變"
     ],
-    "answerIndex": 1,
-    "explanation": "年限拉長會讓總利息增加。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "指數調整時ETF會跟著更換成分股。這不保證績效。",
+    "prompt": "台股ETF的\"成分股調整\"通常代表？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0056",
     "subject": "money",
-    "prompt": "「先買再說」最容易踩到的問題是？",
     "options": [
-      "忘記付款",
-      "買到不需要",
-      "收入變多",
-      "信用變高"
+      "分批換匯與定期投入",
+      "一次大量換匯",
+      "只投資單一公司",
+      "完全不換匯"
     ],
-    "answerIndex": 1,
-    "explanation": "最常見的是買到不需要的東西。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "分批換匯可分散匯率波動。一次大量換匯風險較集中。",
+    "prompt": "美股投資人若想降低匯率風險，較可能的做法是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0057",
     "subject": "money",
-    "prompt": "「免運門檻」最容易讓人？",
     "options": [
-      "少買",
-      "湊單",
-      "不買",
-      "退貨"
+      "限制單筆虧損擴大",
+      "保證一定獲利",
+      "提高股息",
+      "免除稅負"
     ],
-    "answerIndex": 1,
-    "explanation": "常會為了免運去湊單。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "停損用於控制虧損擴大。它不保證獲利或免稅。",
+    "prompt": "投資股票時，\"停損\"的主要目的為？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0058",
     "subject": "money",
-    "prompt": "「折扣碼」最容易讓人忽略的是？",
     "options": [
-      "原價是否合理",
-      "商品顏色",
-      "出貨速度",
-      "包裝"
+      "公司發放股票給股東",
+      "公司發現金",
+      "公司買回股票",
+      "公司減資"
     ],
     "answerIndex": 0,
-    "explanation": "折扣碼會讓人忘記原價是否合理。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "explanation": "配股是以股票形式分配給股東。與現金股利不同。",
+    "prompt": "台股配股是指？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0059",
     "subject": "money",
-    "prompt": "「分期零利率」最容易忽略的是？",
     "options": [
-      "總額大小",
-      "利率",
-      "品牌",
-      "保固"
+      "規模大且穩定的公司",
+      "新創小公司",
+      "高槓桿公司",
+      "虧損公司"
     ],
     "answerIndex": 0,
-    "explanation": "零利率不代表總額小，常讓人忽略總額。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "explanation": "藍籌股是規模大、經營穩定的公司。通常風險較新創低。",
+    "prompt": "美股投資中，\"藍籌股\"通常指？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0060",
     "subject": "money",
-    "prompt": "「下次再說」常造成的結果是？",
     "options": [
-      "衝動購買",
-      "延遲行動",
-      "多存錢",
-      "更理性"
+      "成分股是否集中於單一產業",
+      "股息發放時間",
+      "股價高低",
+      "名稱好不好聽"
     ],
-    "answerIndex": 1,
-    "explanation": "容易導致重要事情一直拖延。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "高股息ETF可能集中某些產業，需注意風險。股價或名稱不代表品質。",
+    "prompt": "投資人選擇高股息ETF時，最容易忽略的是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0061",
     "subject": "money",
-    "prompt": "「預算」最重要的功能是？",
     "options": [
-      "讓人省錢",
-      "知道錢去哪裡",
-      "讓收入變多",
-      "增加投資"
+      "產業波動與估值變化",
+      "一定能高報酬",
+      "沒有匯率影響",
+      "不用繳稅"
     ],
-    "answerIndex": 1,
-    "explanation": "預算最重要是讓你知道錢去哪裡。它們的重點是把流向看清楚，才有調整空間。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "科技股估值波動較大，產業變化快。仍會受匯率與稅務影響。",
+    "prompt": "若你投資美股科技公司，最直接的風險是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0062",
     "subject": "money",
-    "prompt": "「小額訂閱」最大的風險是？",
     "options": [
-      "忘記取消",
-      "付款太慢",
-      "折扣太少",
-      "不能退費"
+      "營收、獲利、財務結構",
+      "技術線型",
+      "市場謠言",
+      "短期波動"
     ],
     "answerIndex": 0,
-    "explanation": "小額訂閱容易忘記取消而長期扣款。固定扣款最常見的坑是「其實早就沒在用」。",
-    "difficulty": "easy"
+    "explanation": "基本面主要看營收、獲利與財務結構。線型與謠言不屬於基本面。",
+    "prompt": "台股投資人常用的「基本面」包含？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0063",
     "subject": "money",
-    "prompt": "「延後付款」最容易產生的錯覺是？",
     "options": [
-      "好像沒花",
-      "一定划算",
-      "不用還",
-      "不影響預算"
+      "股息÷股價",
+      "股價÷股息",
+      "成交量÷股價",
+      "淨利÷股價"
     ],
     "answerIndex": 0,
-    "explanation": "延後付款讓人覺得好像沒花錢。關鍵在於是否會自動續費或延長付款。",
-    "difficulty": "easy"
+    "explanation": "殖利率=股息/股價，用來衡量股息回報。不是股價除以股息。",
+    "prompt": "美股投資中，\"股息殖利率\"是指？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0064",
     "subject": "money",
-    "prompt": "「薪水一到就花」最接近的問題是？",
     "options": [
-      "計畫不足",
-      "時間不夠",
-      "收入不穩",
-      "投資太多"
+      "長期報酬被費用侵蝕",
+      "一定賺更多",
+      "風險更低",
+      "追蹤誤差更小"
     ],
     "answerIndex": 0,
-    "explanation": "多半是計畫不足，先花掉再想。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "explanation": "費用率會持續扣除，長期侵蝕報酬。高費用不代表更好。",
+    "prompt": "投資台股ETF時，若費用率較高，可能？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0065",
     "subject": "money",
-    "prompt": "「現金放家裡最安全」的問題是？",
     "options": [
-      "被偷",
-      "通膨侵蝕",
-      "太重",
-      "會發霉"
+      "拉長時間並穩定投入",
+      "短期暴利",
+      "頻繁換股",
+      "全部押單一股"
     ],
-    "answerIndex": 1,
-    "explanation": "現金會被通膨慢慢侵蝕購買力。現金放著會被通膨慢慢削弱。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "退休投資重視時間與紀律，透過長期穩定投入。短期暴利與集中風險高。",
+    "prompt": "當你想規劃退休投資，最重要的是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0066",
     "subject": "money",
-    "prompt": "「只看標價」最容易忽略的是？",
     "options": [
-      "稅費與運費",
-      "品牌",
-      "顏色",
-      "折扣碼"
+      "降低單股價格但市值不變",
+      "讓公司更賺錢",
+      "讓股息翻倍",
+      "讓股價一定上漲"
     ],
     "answerIndex": 0,
-    "explanation": "稅費與運費會改變實際成本。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "explanation": "分割股票只是調整股數與單價，總市值不變。並不保證獲利或股價上漲。",
+    "prompt": "美股投資中，\"分割股票\"通常會？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0067",
     "subject": "money",
-    "prompt": "「延長保固」最應先看的是？",
     "options": [
-      "價格",
-      "故障率",
-      "顏色",
-      "保單厚度"
+      "配股導致股價調整",
+      "公司發放現金",
+      "公司減資退錢",
+      "公司停止交易"
     ],
-    "answerIndex": 1,
-    "explanation": "重點是產品的故障率與保固條件。重點是覆蓋範圍與重複保障，別只看安心感。",
+    "answerIndex": 0,
+    "explanation": "除權是因配股而調整股價。與現金股利不同。",
+    "prompt": "台股投資人常說的\"除權\"是指？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0068",
     "subject": "money",
-    "prompt": "「買一送一」真正該看的重點是？",
     "options": [
-      "品牌",
-      "單位價格",
-      "包裝",
-      "廣告"
+      "高股息或配息型標的",
+      "高波動成長股",
+      "短線題材股",
+      "無現金流的新創"
     ],
-    "answerIndex": 1,
-    "explanation": "重點是單位價格是否真的更低。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "配息型標的較可能提供穩定現金流。高波動成長股現金流不穩定。",
+    "prompt": "若你偏好穩定現金流，較可能選擇？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0069",
     "subject": "money",
-    "prompt": "「只看年收入」最容易忽略的是？",
     "options": [
-      "支出與負債",
-      "朋友",
-      "工作地點",
-      "手機型號"
+      "營收與獲利增長率",
+      "股價高低",
+      "成交量大小",
+      "新聞熱度"
     ],
     "answerIndex": 0,
-    "explanation": "支出與負債決定實際壓力。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "explanation": "營收與獲利成長率能反映公司成長。新聞熱度不代表實質成長。",
+    "prompt": "美股投資人評估一家公司是否成長，常看？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0070",
     "subject": "money",
-    "prompt": "「信用卡分期」最容易忽略的是？",
     "options": [
-      "利息與手續費",
-      "卡面設計",
-      "點數",
-      "客服"
+      "回到原本的資產配置比例",
+      "追求短期最大獲利",
+      "避免任何下跌",
+      "提高槓桿"
     ],
     "answerIndex": 0,
-    "explanation": "分期常伴隨利息或手續費。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "explanation": "再平衡是把比例調回原設定，控制風險。不是為了短期最大獲利。",
+    "prompt": "投資組合定期再平衡的目的為？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0071",
     "subject": "money",
-    "prompt": "「買太多食物最後丟掉」在理財上屬於？",
     "options": [
-      "投資",
-      "浪費成本",
-      "儲蓄",
-      "必要開支"
+      "台灣50",
+      "費城半導體",
+      "道瓊指數",
+      "上證指數"
     ],
-    "answerIndex": 1,
-    "explanation": "這是典型的浪費成本。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "台灣50追蹤台股大型公司表現。其他指數屬於海外市場。",
+    "prompt": "台股投資人若想追蹤台灣大型公司，常用指數是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0072",
     "subject": "money",
-    "prompt": "「保險買好買滿」最大的盲點是？",
     "options": [
-      "安心",
-      "可能重複保障",
-      "一定划算",
-      "沒時間"
+      "費用率會長期降低報酬",
+      "費用率只是一次性",
+      "費用率只影響短線",
+      "費用率會保證績效"
     ],
-    "answerIndex": 1,
-    "explanation": "容易出現重複保障與過度支出。重點是覆蓋範圍與重複保障，別只看安心感。",
+    "answerIndex": 0,
+    "explanation": "費用率會每年扣除，長期侵蝕報酬。不是一次性或績效保證。",
+    "prompt": "美股投資時，若持有ETF，為何仍需關注費用率？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0073",
     "subject": "money",
-    "prompt": "「提前還款」最直接的好處是？",
     "options": [
-      "信用變好",
-      "利息支出變少",
-      "收入變多",
-      "壓力不變"
+      "影響短期股價波動",
+      "決定公司長期獲利",
+      "保證股價上漲",
+      "完全無影響"
     ],
-    "answerIndex": 1,
-    "explanation": "提前還款可減少利息支出。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "市場情緒會影響短期價格，但不改變公司長期基本面。",
+    "prompt": "投資人常說的\"市場情緒\"可能會？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0074",
     "subject": "money",
-    "prompt": "「借新還舊」最常見的風險是？",
     "options": [
-      "利率變低",
-      "債務雪球",
-      "信用變好",
-      "壓力減少"
+      "買入ETF或多檔股票",
+      "只買一檔龍頭股",
+      "只看熱門股",
+      "只買最低價股"
     ],
-    "answerIndex": 1,
-    "explanation": "容易變成債務雪球越滾越大。重點是看清真正成本與長期影響。",
+    "answerIndex": 0,
+    "explanation": "ETF或多檔股票能分散單一公司風險。集中單一股風險更高。",
+    "prompt": "台股投資人想降低單一公司風險，較常用？",
     "difficulty": "medium"
   },
   {
     "id": "money_v3_0075",
     "subject": "money",
-    "prompt": "「只看折扣」最容易忽略的是？",
     "options": [
-      "實際需求",
-      "顏色",
-      "包裝",
-      "品牌"
+      "平均成本、降低時點風險",
+      "一定獲利",
+      "完全無波動",
+      "保證匯率不變"
     ],
     "answerIndex": 0,
-    "explanation": "折扣容易蓋過真正需求。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "explanation": "定期定額可平滑成本，分散時點風險。並不保證獲利或匯率穩定。",
+    "prompt": "美股投資時，\"定期定額\"最大的好處之一是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0076",
     "subject": "money",
-    "prompt": "「固定支出」最需要先被記清楚的是？",
     "options": [
-      "娛樂",
-      "房租與保險",
-      "零食",
-      "旅遊"
+      "不一定，取決於獲利與政策",
+      "一定會",
+      "只要股價高就會",
+      "政府規定一定要"
     ],
-    "answerIndex": 1,
-    "explanation": "房租與保險等固定支出最先要清楚。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "配息取決於公司獲利與配息政策。並非所有公司每年都配息。",
+    "prompt": "台股上市公司每年一定會配息嗎？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0077",
     "subject": "money",
-    "prompt": "「現金回饋」最容易讓人？",
     "options": [
-      "更節省",
-      "多花一點",
-      "不比較",
-      "不看帳單"
+      "同時持有台幣與美元資產",
+      "只換成美元",
+      "只買單一公司",
+      "完全不投資"
     ],
-    "answerIndex": 1,
-    "explanation": "回饋常讓人多花一點。回饋很容易讓人多花一點。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "同時持有不同幣別資產可分散匯率風險。全部換美元風險集中。",
+    "prompt": "美股投資人想降低單一貨幣風險，可考慮？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0078",
     "subject": "money",
-    "prompt": "「高報酬」常伴隨的真實狀況是？",
     "options": [
-      "更穩定",
-      "更高風險",
-      "更省心",
-      "保本"
+      "了解公司營運狀況",
+      "預測短線股價",
+      "找內線消息",
+      "確認一定獲利"
     ],
-    "answerIndex": 1,
-    "explanation": "高報酬通常伴隨更高風險。報酬越高，風險通常也越高。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "年報提供營運與財務資訊，幫助判斷基本面。不能保證短線獲利。",
+    "prompt": "投資前閱讀公司年報的主要目的為？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0079",
     "subject": "money",
-    "prompt": "「可變支出」最常見的錯誤是？",
     "options": [
-      "不記錄",
-      "記太多",
-      "不花錢",
-      "不買東西"
+      "一個發現金、一個發股票",
+      "兩者都發現金",
+      "兩者都發股票",
+      "完全沒有差別"
     ],
     "answerIndex": 0,
-    "explanation": "可變支出最常被忽略紀錄。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "explanation": "現金股利是發現金，股票股利是配股。兩者性質不同。",
+    "prompt": "台股投資中，\"現金股利\"與\"股票股利\"差異是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0080",
     "subject": "money",
-    "prompt": "「分期付款」最常讓人忽略的是？",
     "options": [
-      "總金額",
-      "顏色",
-      "保固",
-      "店員"
+      "本益比",
+      "股息率",
+      "股價波動率",
+      "成交量比"
     ],
     "answerIndex": 0,
-    "explanation": "分期會讓人忽略總金額。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "explanation": "市盈率即本益比，衡量股價相對獲利。不是股息率或成交量。",
+    "prompt": "美股投資中，\"市盈率\"就是？",
+    "difficulty": "medium"
   },
   {
     "id": "money_v3_0081",
     "subject": "money",
-    "prompt": "「預算超支後還繼續買」常見心理是？",
     "options": [
-      "沉沒成本",
-      "利多效應",
-      "從眾",
-      "樂觀偏誤"
+      "制定並遵守投資計畫",
+      "每天盯盤",
+      "追隨社群熱點",
+      "頻繁換股"
     ],
     "answerIndex": 0,
-    "explanation": "這是沉沒成本的典型表現。它們的重點是把流向看清楚，才有調整空間。",
-    "difficulty": "medium"
+    "explanation": "有計畫並遵守可避免情緒化交易。過度盯盤容易追高殺低。",
+    "prompt": "投資人想避免過度交易，最好的方法是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0082",
     "subject": "money",
-    "prompt": "「只看折扣百分比」最容易忽略的是？",
     "options": [
-      "原價高低",
-      "品牌",
-      "顏色",
-      "口味"
+      "向券商借錢買股",
+      "用現金買股",
+      "公司增資",
+      "配息發放"
     ],
     "answerIndex": 0,
-    "explanation": "百分比高不代表真的便宜。先看自己是否真的需要，才不會被誘因帶著買。",
-    "difficulty": "easy"
+    "explanation": "融資是向券商借錢買股，會放大風險。不是現金買股或增資。",
+    "prompt": "台股投資中，\"融資\"代表？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0083",
     "subject": "money",
-    "prompt": "「每月固定扣款」最需要注意的是？",
     "options": [
-      "內容是否變更",
-      "是否仍在使用",
-      "付款日是哪天",
-      "帳單寄到哪裡"
+      "交易時間與資訊發布時間不同",
+      "會影響公司獲利",
+      "會改變稅率",
+      "會改變股息"
     ],
-    "answerIndex": 1,
-    "explanation": "最常忽略的是「其實已經沒在用」。固定扣款最常見的坑是「其實早就沒在用」。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "時區影響交易與財報消息時間。公司獲利與稅率不因時區改變。",
+    "prompt": "美股投資人為何要注意時區差異？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0084",
     "subject": "money",
-    "prompt": "「一次付清」比「分期」更安心的原因常是？",
     "options": [
-      "價格更低",
-      "心理負擔少",
-      "保固更長",
-      "顏色更多"
+      "減少短期波動干擾",
+      "保證一定獲利",
+      "完全不需研究",
+      "可以忽略風險"
     ],
-    "answerIndex": 1,
-    "explanation": "一次付清能減少心理負擔與長期壓力。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "長期持有可降低短期波動影響，但仍需研究與風險管理。",
+    "prompt": "投資人常提到\"長期持有\"的好處是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0085",
     "subject": "money",
-    "prompt": "「投資只聽消息」最容易踩到的是？",
     "options": [
-      "短線波動",
-      "長期穩定",
-      "保本",
-      "不會虧"
+      "毛利率或淨利率",
+      "成交量",
+      "股價高低",
+      "除息日"
     ],
     "answerIndex": 0,
-    "explanation": "只聽消息容易被短線波動影響。報酬越高，風險通常也越高。",
-    "difficulty": "medium"
+    "explanation": "毛利率與淨利率反映獲利能力。成交量與除息日不是獲利指標。",
+    "prompt": "台股投資人想衡量公司獲利能力，常看？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0086",
     "subject": "money",
-    "prompt": "「薪水不變但支出變多」最直接的結果是？",
     "options": [
-      "壓力變小",
-      "現金流變緊",
-      "存款變多",
-      "更自由"
+      "市場系統性下跌",
+      "完全沒有風險",
+      "保證獲利",
+      "匯率不影響"
     ],
-    "answerIndex": 1,
-    "explanation": "支出變多會讓現金流變緊。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "ETF分散個股風險，但仍受市場整體下跌影響。匯率也可能影響報酬。",
+    "prompt": "美股投資人持有ETF，仍可能有的風險是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0087",
     "subject": "money",
-    "prompt": "「信用額度用滿」最可能帶來的影響是？",
     "options": [
-      "利率變低",
-      "信用評分下降",
-      "免年費",
-      "回饋變多"
+      "紀錄投資理由與交易紀律",
+      "完全不看財報",
+      "只聽朋友建議",
+      "每天換股"
     ],
-    "answerIndex": 1,
-    "explanation": "信用評分可能下降。信用相關的使用比例會影響評分。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "記錄投資理由與紀律可檢討與降低錯誤。只靠他人建議易偏誤。",
+    "prompt": "投資人想要降低操作錯誤，較好的做法是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0088",
     "subject": "money",
-    "prompt": "「借錢給朋友」最容易忽略的風險是？",
     "options": [
-      "忘記",
-      "關係受損",
-      "利率太高",
-      "保險"
+      "市值大、權重高",
+      "公司一定成長",
+      "股價一定高",
+      "成交量一定低"
     ],
-    "answerIndex": 1,
-    "explanation": "最容易影響的是彼此關係。人情成本往往比金錢更難處理。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "權值股市值大，對指數權重高，所以影響大盤。並不代表一定成長。",
+    "prompt": "台股中「大型權值股」對大盤影響較大，是因為？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0089",
     "subject": "money",
-    "prompt": "「想買再存」最常見的好處是？",
     "options": [
-      "省時間",
-      "衝動變少",
-      "更多折扣",
-      "一定變便宜"
+      "追蹤的指數與費用率",
+      "公司名稱好聽",
+      "股價最低",
+      "成交量最小"
     ],
-    "answerIndex": 1,
-    "explanation": "先存再買能降低衝動。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "追蹤指數與費用率影響投資效果。股價低不代表更好。",
+    "prompt": "美股投資人選擇指數ETF時，最常參考的是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0090",
     "subject": "money",
-    "prompt": "「月付很低」最常掩蓋的是？",
     "options": [
-      "總期數很長",
-      "商品太好",
-      "品牌太大",
-      "保固太久"
+      "分散投資",
+      "集中投資",
+      "短線交易",
+      "停止投資"
     ],
     "answerIndex": 0,
-    "explanation": "月付低往往代表期數很長。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "explanation": "這句話指分散投資，降低單一事件風險。集中投資反而相反。",
+    "prompt": "投資人常說\"不要把雞蛋放同一個籃子\"是指？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0091",
     "subject": "money",
-    "prompt": "「只看利率」最容易忽略的是？",
     "options": [
-      "風險",
-      "期限",
-      "保單",
-      "名稱"
+      "看好長期基本面",
+      "想短線賺快錢",
+      "跟風操作",
+      "無法賣出"
     ],
-    "answerIndex": 1,
-    "explanation": "利率相同時，期限會影響總成本。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "長期投資者重視基本面，短期下跌不代表價值消失。跟風與無法賣出不是正當理由。",
+    "prompt": "台股投資人若遇到股市下跌，仍持有優質股的理由是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0092",
     "subject": "money",
-    "prompt": "「固定收入」就不需要緊急預備金嗎？",
     "options": [
-      "需要",
-      "不需要",
-      "只在失業",
-      "只在節日"
+      "單一產業波動影響較大",
+      "一定報酬更高",
+      "完全無風險",
+      "股息更穩定"
     ],
     "answerIndex": 0,
-    "explanation": "固定收入也可能遇到突發支出。真正的壓力多半來自固定支出與負債結構。",
-    "difficulty": "easy"
+    "explanation": "成分股集中會讓特定產業波動影響更大。報酬與風險不一定更好。",
+    "prompt": "美股投資中，\"成分股集中\"的ETF風險是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0093",
     "subject": "money",
-    "prompt": "「高薪但高壓」最容易忽略的成本是？",
     "options": [
-      "身心負擔",
-      "交通費",
-      "午餐",
-      "制服"
+      "建立紀律、避免情緒化交易",
+      "保證獲利",
+      "消除市場風險",
+      "提高股息"
     ],
     "answerIndex": 0,
-    "explanation": "身心負擔是常被忽略的成本。重點是看清真正成本與長期影響。",
-    "difficulty": "medium"
+    "explanation": "停利停損能建立紀律與風險控管。無法消除市場風險或保證獲利。",
+    "prompt": "投資前設定停利與停損的主要目的為？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0094",
     "subject": "money",
-    "prompt": "「小額多筆」最容易造成的問題是？",
     "options": [
-      "累積變大",
-      "不影響",
-      "只會省錢",
-      "更健康"
+      "公司配息紀錄與盈餘穩定性",
+      "股價每天漲跌",
+      "短期題材",
+      "股價最低"
     ],
     "answerIndex": 0,
-    "explanation": "小額多筆累積起來非常可觀。小額多筆累積起來常比想像大。",
-    "difficulty": "easy"
+    "explanation": "長期領息要看配息是否穩定與公司盈餘。短期題材不一定持續。",
+    "prompt": "台股投資人想長期領息，較需注意？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0095",
     "subject": "money",
-    "prompt": "「買到用不到」最常見原因是？",
     "options": [
-      "看評價",
-      "衝動決定",
-      "沒有優惠",
-      "太便宜"
+      "產業報告或公司財報",
+      "股價短期波動",
+      "成交量",
+      "社群留言"
     ],
-    "answerIndex": 1,
-    "explanation": "衝動決定最容易買到用不到。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "產業報告與財報能反映市占率變化。短期股價或留言不可靠。",
+    "prompt": "美股投資人想了解公司市占率變化，較可能看？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0096",
     "subject": "money",
-    "prompt": "「年化利率」重要的原因是？",
     "options": [
-      "看起來大",
-      "能比較成本",
-      "更好記",
-      "更帥"
+      "實質報酬被侵蝕",
+      "一定賺更多",
+      "風險降低",
+      "資產變多"
     ],
-    "answerIndex": 1,
-    "explanation": "年化利率能用同一尺度比較成本。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "通膨會侵蝕購買力，忽略通膨可能高估實質報酬。",
+    "prompt": "投資人若忽略通膨，可能產生的問題是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0097",
     "subject": "money",
-    "prompt": "「只靠現金」的最大缺點是？",
     "options": [
-      "不安全",
-      "錯過信用紀錄",
-      "太麻煩",
-      "顏色不好"
+      "分散在多檔不同產業股票",
+      "全部投入單一股",
+      "只投資最便宜股",
+      "只投資股價最高股"
     ],
-    "answerIndex": 1,
-    "explanation": "只用現金會錯過建立信用紀錄。現金放著會被通膨慢慢削弱。",
-    "difficulty": "medium"
+    "answerIndex": 0,
+    "explanation": "多檔不同產業分散可降低單一公司風險。集中單一股風險較高。",
+    "prompt": "台股投資人想避免單一公司風險，較合理的資金分配是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0098",
     "subject": "money",
-    "prompt": "「保留發票」最大的意義是？",
     "options": [
-      "好看",
-      "可記錄與兌獎",
-      "變有錢",
-      "保固更長"
+      "成分集中於科技公司",
+      "完全不受景氣影響",
+      "保證高股息",
+      "風險極低"
     ],
-    "answerIndex": 1,
-    "explanation": "發票能做記錄，也可能兌獎。重點是看清真正成本與長期影響。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "大型科技ETF成分集中於科技公司，景氣與估值波動可能較大。",
+    "prompt": "美股投資中，\"大型科技ETF\"的特點是？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0099",
     "subject": "money",
-    "prompt": "「記帳」最直接帶來的改變是？",
     "options": [
-      "收入變高",
-      "花費更清楚",
-      "不再花錢",
-      "利率變低"
+      "資金放著未投資的機會成本",
+      "交易手續費",
+      "稅負成本",
+      "保管費"
     ],
-    "answerIndex": 1,
-    "explanation": "記帳讓花費變得更清楚。它們的重點是把流向看清楚，才有調整空間。",
-    "difficulty": "easy"
+    "answerIndex": 0,
+    "explanation": "閒置資金未投入有機會成本。它不是手續費或稅負。",
+    "prompt": "投資人常說的\"資金閒置成本\"指？",
+    "difficulty": "hard"
   },
   {
     "id": "money_v3_0100",
     "subject": "money",
-    "prompt": "「可變利率」的主要風險是？",
     "options": [
-      "利率上升",
-      "利率下降",
-      "沒有變化",
-      "變成固定"
+      "追蹤加權指數的ETF",
+      "單一小型股",
+      "海外債券",
+      "房地產"
     ],
     "answerIndex": 0,
-    "explanation": "可變利率有上升風險。分期看起來輕鬆，但總額與手續費才是關鍵。",
-    "difficulty": "medium"
+    "explanation": "追蹤加權指數的ETF可跟隨大盤。單一小型股無法代表大盤。",
+    "prompt": "台股投資人若想跟隨大盤表現，較可能選擇？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0101",
+    "subject": "money",
+    "options": [
+      "股價下跌或配息不可持續",
+      "一定更安全",
+      "一定成長快",
+      "完全沒風險"
+    ],
+    "answerIndex": 0,
+    "explanation": "高股息率可能因股價下跌或配息不可持續。需看基本面。",
+    "prompt": "美股投資中，\"股息率很高\"的公司可能隱含？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0102",
+    "subject": "money",
+    "options": [
+      "定期定額或分批買入",
+      "只看短線消息",
+      "頻繁交易",
+      "全押熱門股"
+    ],
+    "answerIndex": 0,
+    "explanation": "定期定額或分批買入可減少情緒化追高殺低。頻繁交易易被情緒影響。",
+    "prompt": "投資人想避免追高殺低，較好的做法是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0103",
+    "subject": "money",
+    "options": [
+      "減少過度交易",
+      "每天買賣",
+      "追逐短線波段",
+      "頻繁換股"
+    ],
+    "answerIndex": 0,
+    "explanation": "交易次數越多成本越高，減少過度交易可降低成本。",
+    "prompt": "台股投資人若想降低交易成本，較可能？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0104",
+    "subject": "money",
+    "options": [
+      "現金流量表",
+      "損益表",
+      "資產負債表",
+      "股價走勢圖"
+    ],
+    "answerIndex": 0,
+    "explanation": "現金流量表反映現金進出狀況。股價走勢不等於現金流。",
+    "prompt": "美股投資人若關心公司現金流，常看哪種報表？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0105",
+    "subject": "money",
+    "options": [
+      "營收與淨利趨勢",
+      "一天的股價變化",
+      "短期成交量",
+      "市場情緒"
+    ],
+    "answerIndex": 0,
+    "explanation": "營收與淨利趨勢可看出獲利持續性。短期股價變化不代表長期獲利。",
+    "prompt": "投資人想衡量公司是否賺錢持續，較常看？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0106",
+    "subject": "money",
+    "options": [
+      "公司增資或配股",
+      "公司一定更好",
+      "股價一定上漲",
+      "股息一定增加"
+    ],
+    "answerIndex": 0,
+    "explanation": "股本增加可能因增資或配股。並不保證股價或股息一定上升。",
+    "prompt": "台股投資中，\"股本\"增加通常表示？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0107",
+    "subject": "money",
+    "options": [
+      "廣泛指數ETF",
+      "單一成長股",
+      "熱門題材股",
+      "高波動股票"
+    ],
+    "answerIndex": 0,
+    "explanation": "廣泛指數ETF涵蓋多家公司，分散單一公司風險。",
+    "prompt": "美股投資人想避免單一公司風險，較可選？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0108",
+    "subject": "money",
+    "options": [
+      "選擇適合的投資工具",
+      "保證報酬",
+      "避免任何虧損",
+      "提高短線獲利"
+    ],
+    "answerIndex": 0,
+    "explanation": "投資期限影響工具選擇與風險承受度。不能保證報酬或避免虧損。",
+    "prompt": "投資前設定投資期限的主要好處是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0109",
+    "subject": "money",
+    "options": [
+      "市占率與產品競爭力",
+      "股價高低",
+      "成交量大小",
+      "新聞八卦"
+    ],
+    "answerIndex": 0,
+    "explanation": "市占率與產品競爭力反映公司地位。股價與八卦不代表競爭力。",
+    "prompt": "台股投資人若想關注公司競爭力，較可能看？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0110",
+    "subject": "money",
+    "options": [
+      "加速複利效果",
+      "保證短期獲利",
+      "避免股價下跌",
+      "免除稅負"
+    ],
+    "answerIndex": 0,
+    "explanation": "收益再投資可加速複利，但不能保證短期獲利或免稅。",
+    "prompt": "美股投資中，\"收益再投資\"的好處是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0111",
+    "subject": "money",
+    "options": [
+      "指數型ETF",
+      "短線交易",
+      "頻繁換股",
+      "高槓桿操作"
+    ],
+    "answerIndex": 0,
+    "explanation": "指數型ETF省去選股時間且分散風險。短線交易需要大量研究。",
+    "prompt": "投資人若沒有時間研究個股，較適合？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0112",
+    "subject": "money",
+    "options": [
+      "配息是否來自穩定盈餘",
+      "配息一定永久不變",
+      "股價越低越好",
+      "配息越多越安全"
+    ],
+    "answerIndex": 0,
+    "explanation": "配息是否有穩定盈餘支撐很重要。高配息不一定持續或安全。",
+    "prompt": "台股投資人持有高股息股，最需要注意？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0113",
+    "subject": "money",
+    "options": [
+      "買進大型科技ETF或龍頭股",
+      "只買小型股",
+      "只買高股息股",
+      "不研究直接買"
+    ],
+    "answerIndex": 0,
+    "explanation": "大型科技ETF或龍頭股是常見方式，ETF可分散風險。盲目買入不建議。",
+    "prompt": "美股投資人若想投資科技龍頭公司，較常見方式是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0114",
+    "subject": "money",
+    "options": [
+      "忽略長期風險與費用",
+      "一定找到最好標的",
+      "完全無風險",
+      "保證賺錢"
+    ],
+    "answerIndex": 0,
+    "explanation": "只看短期績效容易忽略長期風險與費用影響。短期好不代表長期好。",
+    "prompt": "投資人若只看短期績效選擇基金或ETF，可能？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0115",
+    "subject": "money",
+    "options": [
+      "獲利下降或保留資金",
+      "公司一定更好",
+      "股價一定上漲",
+      "配息政策固定不變"
+    ],
+    "answerIndex": 0,
+    "explanation": "股利減少常因獲利下降或公司保留資金投資。並不代表股價一定上漲。",
+    "prompt": "台股投資人若遇到公司現金股利減少，合理原因可能是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0116",
+    "subject": "money",
+    "options": [
+      "造成股價波動增加",
+      "保證股價上漲",
+      "完全不影響市場",
+      "讓股息翻倍"
+    ],
+    "answerIndex": 0,
+    "explanation": "財報發布會影響市場預期，股價波動常增加。並不保證上漲。",
+    "prompt": "美股投資中，\"財報季\"通常會？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0117",
+    "subject": "money",
+    "options": [
+      "降低情緒影響、維持紀律",
+      "保證買在最低點",
+      "完全無風險",
+      "提高短線獲利"
+    ],
+    "answerIndex": 0,
+    "explanation": "自動定期投入可維持紀律，減少情緒干擾。它不保證最低點或無風險。",
+    "prompt": "投資人建立自動轉帳定期投入的目的為？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0118",
+    "subject": "money",
+    "options": [
+      "營收年增率",
+      "股價高低",
+      "除息日",
+      "成交量"
+    ],
+    "answerIndex": 0,
+    "explanation": "營收年增率可反映成長性。股價高低與成交量不等於成長。",
+    "prompt": "台股投資人若想衡量公司成長性，較常看？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0119",
+    "subject": "money",
+    "options": [
+      "降低單一公司風險",
+      "保證獲利",
+      "完全無波動",
+      "免除稅負"
+    ],
+    "answerIndex": 0,
+    "explanation": "持有多檔股票可分散單一公司風險。仍可能有市場波動與稅負。",
+    "prompt": "美股投資人若持有多檔股票，主要好處是？",
+    "difficulty": "hard"
+  },
+  {
+    "id": "money_v3_0120",
+    "subject": "money",
+    "options": [
+      "了解自己的目標與風險承受度",
+      "只看朋友推薦",
+      "追逐熱門題材",
+      "每天盯盤"
+    ],
+    "answerIndex": 0,
+    "explanation": "了解目標與風險承受度能選擇合適策略。只靠推薦容易偏離需求。",
+    "prompt": "投資人想確保投資方向符合自身需求，最重要的是？",
+    "difficulty": "hard"
   }
 ]

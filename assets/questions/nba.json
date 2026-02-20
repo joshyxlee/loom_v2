@@ -1,142 +1,1682 @@
 [
   {
-    "id": "nba_v1_0001",
-    "subject": "nba",
-    "prompt": "NBA 正常比賽時間（不含延長）是？",
+    "id": "nba_v3_0001",
+    "prompt": "一場 NBA 比賽的每節正規時間為幾分鐘？",
     "options": [
-      "48 分鐘",
-      "40 分鐘",
-      "60 分鐘",
-      "36 分鐘"
+      "10 分鐘",
+      "12 分鐘",
+      "15 分鐘",
+      "8 分鐘"
     ],
-    "answerIndex": 0,
-    "explanation": "NBA 為 4 節各 12 分鐘。",
-    "difficulty": "easy"
+    "answerIndex": 1,
+    "explanation": "NBA 正規賽每節是 12 分鐘，共四節。國際賽（FIBA）才是每節 10 分鐘。這是最基本的規則之一。",
+    "difficulty": "easy",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0002",
-    "subject": "nba",
-    "prompt": "「大三元」最常指的是？",
+    "id": "nba_v3_0002",
+    "prompt": "NBA 球場標準三分線頂端距離籃框約為幾英尺？",
     "options": [
-      "三項主要數據達到雙位數",
-      "三分球命中三次",
-      "三節比賽都得分",
-      "連續三場勝利"
+      "22 英尺",
+      "23 英尺 9 英吋",
+      "24 英尺 6 英吋",
+      "21 英尺 6 英吋"
     ],
-    "answerIndex": 0,
-    "explanation": "得分、籃板、助攻等三項達雙位數即大三元。",
-    "difficulty": "easy"
+    "answerIndex": 1,
+    "explanation": "NBA 三分線在頂端是 23 英尺 9 英吋。底角則較近，約 22 英尺。這也是底角三分常見的原因之一。",
+    "difficulty": "easy",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0003",
-    "subject": "nba",
-    "prompt": "NBA 的「樂透區」指的是？",
+    "id": "nba_v3_0003",
+    "prompt": "一次罰球命中可得幾分？",
     "options": [
-      "未進季後賽的抽籤順位",
-      "球隊訓練營",
-      "全明星投票",
-      "季中交易市場"
+      "1 分",
+      "2 分",
+      "3 分",
+      "0 分"
     ],
     "answerIndex": 0,
-    "explanation": "樂透抽籤決定高順位選秀權歸屬。",
-    "difficulty": "medium"
+    "explanation": "罰球每球 1 分。若被犯規時正在投兩分或三分，會有對應的罰球次數。技術犯規通常也是 1 次罰球。",
+    "difficulty": "easy",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0004",
-    "subject": "nba",
-    "prompt": "NBA 一般球隊名單上限為多少人？",
+    "id": "nba_v3_0004",
+    "prompt": "NBA 球員被判第幾次犯規會畢業？",
     "options": [
-      "15 人",
+      "5 次",
+      "6 次",
+      "7 次",
+      "4 次"
+    ],
+    "answerIndex": 1,
+    "explanation": "NBA 球員 6 次犯規會被罰出場。FIBA 規則則是 5 次。這是 NBA 與國際賽的常見差異。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0005",
+    "prompt": "NBA 例行賽每隊共有幾場比賽？",
+    "options": [
+      "72 場",
+      "82 場",
+      "80 場",
+      "76 場"
+    ],
+    "answerIndex": 1,
+    "explanation": "NBA 例行賽標準是 82 場。疫情期間曾短暫縮短，但常態仍是 82 場。這樣的場次安排也是賽程密集的原因。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0006",
+    "prompt": "以下哪一隊位於洛杉磯？",
+    "options": [
+      "湖人",
+      "熱火",
+      "尼克",
+      "塞爾提克"
+    ],
+    "answerIndex": 0,
+    "explanation": "湖人隊（Lakers）位於洛杉磯。熱火在邁阿密、尼克在紐約、塞爾提克在波士頓。城市與球隊常是基本題。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0007",
+    "prompt": "NBA 的「三分球」命中可得幾分？",
+    "options": [
+      "1 分",
+      "2 分",
+      "3 分",
+      "4 分"
+    ],
+    "answerIndex": 2,
+    "explanation": "三分線外投進就是 3 分。這是現代 NBA 最重要的得分方式之一。許多球隊也因此強調外線投射。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0008",
+    "prompt": "NBA 總決賽系列賽通常採幾戰幾勝制？",
+    "options": [
+      "3 戰 2 勝",
+      "5 戰 3 勝",
+      "7 戰 4 勝",
+      "9 戰 5 勝"
+    ],
+    "answerIndex": 2,
+    "explanation": "NBA 總決賽採 7 戰 4 勝制。季後賽各輪也都是 7 戰 4 勝。這種賽制有助於降低偶然性。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0009",
+    "prompt": "球員運球時雙手同時拍球違反哪一項規則？",
+    "options": [
+      "走步",
+      "兩次運球（雙運）",
+      "防守三秒",
+      "回場違例"
+    ],
+    "answerIndex": 1,
+    "explanation": "雙手同時拍球或停球後再運球屬於雙運。裁判會吹違例，球權轉換。這是基本的控球規則。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0010",
+    "prompt": "進攻方在後場過半場的時間限制是幾秒？",
+    "options": [
+      "5 秒",
+      "8 秒",
+      "10 秒",
+      "12 秒"
+    ],
+    "answerIndex": 1,
+    "explanation": "NBA 有 8 秒過半場規定。若 8 秒內未將球帶過中線就算違例。這加快了比賽節奏。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0011",
+    "prompt": "NBA 一隊上場同時可有幾名球員？",
+    "options": [
+      "4 名",
+      "5 名",
+      "6 名",
+      "7 名"
+    ],
+    "answerIndex": 1,
+    "explanation": "每隊同時在場上是 5 名球員。通常包含 1 名控衛、2 名側翼、2 名內線或不同變形。這是籃球的標準人數。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0012",
+    "prompt": "「三秒區」指的是哪一個區域？",
+    "options": [
+      "籃框正下方的禁區",
+      "中場圓圈",
+      "三分線外",
+      "邊線外側"
+    ],
+    "answerIndex": 0,
+    "explanation": "三秒區是籃框下方的長方形禁區。進攻球員不能在此停留超過 3 秒（不含持球者投籃動作）。這規則避免禁區站樁。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0013",
+    "prompt": "NBA 的「空中接力」通常指什麼？",
+    "options": [
+      "高吊傳球給隊友空中接球灌籃",
+      "後場長傳給自己",
+      "把球打板再撿回",
+      "防守方封阻傳球"
+    ],
+    "answerIndex": 0,
+    "explanation": "空中接力（Alley-oop）是把球拋到空中讓隊友在空中接球直接灌籃或放進。常見於快速反擊或擋拆配合。視覺效果很精彩。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0014",
+    "prompt": "「助攻」在數據上代表什麼？",
+    "options": [
+      "自己得分",
+      "傳球讓隊友直接得分",
+      "封阻對手投籃",
+      "搶到進攻籃板"
+    ],
+    "answerIndex": 1,
+    "explanation": "助攻是傳球後隊友立刻完成得分。它反映球員的組織與視野。控衛通常是助攻數較高的位置。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0015",
+    "prompt": "NBA「明星賽」通常在什麼時候舉行？",
+    "options": [
+      "例行賽開季前",
+      "例行賽中段",
+      "季後賽期間",
+      "總決賽結束後"
+    ],
+    "answerIndex": 1,
+    "explanation": "明星賽在例行賽中段，通常是二月左右。這是一個週末活動，包含技巧挑戰與扣籃大賽。也讓球員有短暫休息。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0016",
+    "prompt": "NBA「籃板」是指什麼數據？",
+    "options": [
+      "成功傳球次數",
+      "投籃失手後搶到球",
+      "抄截次數",
+      "罰球次數"
+    ],
+    "answerIndex": 1,
+    "explanation": "籃板是投籃未進後搶到球的次數。分為進攻籃板和防守籃板。控制籃板通常意味著控制比賽節奏。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0017",
+    "prompt": "哪一個位置通常負責控球與組織進攻？",
+    "options": [
+      "中鋒",
+      "大前鋒",
+      "控球後衛",
+      "小前鋒"
+    ],
+    "answerIndex": 2,
+    "explanation": "控球後衛是場上的指揮官，主要任務是控球與組織進攻。需要良好的視野和決策能力。經典例子像魔術強森與 Chris Paul。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0018",
+    "prompt": "下列哪一項屬於防守數據？",
+    "options": [
+      "抄截",
+      "得分",
+      "助攻",
+      "罰球命中"
+    ],
+    "answerIndex": 0,
+    "explanation": "抄截是防守方搶走對手球權的行為。它直接影響比賽節奏與轉換進攻。得分與助攻屬於進攻數據。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0019",
+    "prompt": "球員投籃被對手碰到但球仍進，通常如何計分？",
+    "options": [
+      "不算分",
+      "算分且可能加罰",
+      "只算 1 分",
+      "改判進攻犯規"
+    ],
+    "answerIndex": 1,
+    "explanation": "如果投籃進球，即使被犯規也算得分。裁判會給「And-1」加罰機會。這是比賽中常見的加罰情境。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0020",
+    "prompt": "NBA 的「灌籃」是指哪一種得分方式？",
+    "options": [
+      "跳投命中",
+      "把球扣進籃框",
+      "勾射命中",
+      "上籃命中"
+    ],
+    "answerIndex": 1,
+    "explanation": "灌籃是把球直接扣進籃框。通常需要彈跳力與身體對抗能力。灌籃常能帶動球隊士氣。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0021",
+    "prompt": "NBA 球隊每次進攻有幾秒的 24 秒時限？",
+    "options": [
+      "18 秒",
+      "20 秒",
+      "24 秒",
+      "30 秒"
+    ],
+    "answerIndex": 2,
+    "explanation": "NBA 設有 24 秒進攻時限。若未在 24 秒內出手就違例。這規則提升了比賽節奏。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0022",
+    "prompt": "「背靠背」賽程指的是什麼？",
+    "options": [
+      "兩隊連打兩場同一對手",
+      "連續兩天比賽",
+      "一場主場一場客場",
+      "連續兩節加時"
+    ],
+    "answerIndex": 1,
+    "explanation": "背靠背指的是連續兩天出賽。這對球員體力消耗大，也是輪休常見原因。球迷常討論背靠背對戰績的影響。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0023",
+    "prompt": "「快攻」通常指什麼進攻方式？",
+    "options": [
+      "半場慢打",
+      "快速推進反擊得分",
+      "固定戰術跑位",
+      "單打時間拖久"
+    ],
+    "answerIndex": 1,
+    "explanation": "快攻是防守成功後快速推進，在對手未站好陣地前得分。這種進攻速度快、效率高。常由控衛或側翼帶球完成。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0024",
+    "prompt": "NBA 每隊名單通常有多少名球員？",
+    "options": [
+      "10 人",
       "12 人",
-      "18 人",
-      "20 人"
+      "15 人",
+      "18 人"
     ],
-    "answerIndex": 0,
-    "explanation": "標準名單最多 15 人，另有雙向合約。",
-    "difficulty": "medium"
+    "answerIndex": 2,
+    "explanation": "NBA 球隊標準名單是 15 人。實際上每場比賽可登錄的活躍名額較少。雙向合約球員另外計算。",
+    "difficulty": "easy",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0005",
-    "subject": "nba",
-    "prompt": "「三分線」與「中距離」最大的差別是？",
+    "id": "nba_v3_0025",
+    "prompt": "下列哪一項不是 NBA 常見位置名稱？",
     "options": [
-      "投進得分不同",
-      "只能特定位置出手",
-      "有時間限制",
-      "只在主場計算"
+      "控球後衛",
+      "小前鋒",
+      "中鋒",
+      "邊鋒守門員"
     ],
-    "answerIndex": 0,
-    "explanation": "三分線外得 3 分，中距離得 2 分。",
-    "difficulty": "easy"
+    "answerIndex": 3,
+    "explanation": "「邊鋒守門員」不是籃球位置，而是足球用語。NBA 常見位置有控衛、得分後衛、小前鋒、大前鋒與中鋒。這是基本概念題。",
+    "difficulty": "easy",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0006",
-    "subject": "nba",
-    "prompt": "NBA 的「salary cap」主要目的為？",
+    "id": "nba_v3_0026",
+    "prompt": "「抄截」對比賽有何直接影響？",
     "options": [
+      "增加進攻時間",
+      "讓球權轉換到防守方",
+      "增加罰球次數",
+      "讓比賽暫停"
+    ],
+    "answerIndex": 1,
+    "explanation": "抄截會讓球權立刻轉到防守方。這常能製造快攻得分機會。對手失誤也會記入統計。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0027",
+    "prompt": "以下哪支隊伍屬於東區？",
+    "options": [
+      "勇士",
+      "湖人",
+      "塞爾提克",
+      "太陽"
+    ],
+    "answerIndex": 2,
+    "explanation": "塞爾提克在東區，其他三隊屬西區。東西區是 NBA 例行賽與季後賽的重要分組。分區影響賽程與排名。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0028",
+    "prompt": "「封阻」是指防守方做了什麼？",
+    "options": [
+      "擋住對方傳球路線",
+      "在對方出手時把球拍掉",
+      "用身體卡位",
+      "逼迫對方走步"
+    ],
+    "answerIndex": 1,
+    "explanation": "封阻（Block）是在對手出手時把球拍掉或改變球路。這是防守數據之一。內線球員通常封阻數較多。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0029",
+    "prompt": "NBA 的「季後賽」通常由每區前幾名進入？",
+    "options": [
+      "4 名",
+      "6 名",
+      "8 名",
+      "10 名"
+    ],
+    "answerIndex": 2,
+    "explanation": "傳統上每區前 8 名進入季後賽。近年加入附加賽機制，但正式季後賽仍是 8 支球隊。排名影響主場優勢。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0030",
+    "prompt": "下列哪一項屬於進攻犯規的情況？",
+    "options": [
+      "防守者打手",
+      "進攻者肘擊推人",
+      "防守者站在禁區",
+      "對手踩到邊線"
+    ],
+    "answerIndex": 1,
+    "explanation": "進攻者用肘擊或推人屬於進攻犯規。這會造成球權轉換。防守犯規則會給對手罰球或發球。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0031",
+    "prompt": "NBA 賽季最終冠軍被稱為什麼？",
+    "options": [
+      "世界冠軍",
+      "聯盟冠軍",
+      "NBA 總冠軍",
+      "分區冠軍"
+    ],
+    "answerIndex": 2,
+    "explanation": "最終勝者稱為 NBA 總冠軍。球隊會贏得總冠軍獎盃（Larry O'Brien Trophy）。分區冠軍只是通往總冠軍的階段。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0032",
+    "prompt": "「板凳球員」通常指哪一類球員？",
+    "options": [
+      "先發球員",
+      "替補上場的球員",
+      "受傷球員",
+      "教練團成員"
+    ],
+    "answerIndex": 1,
+    "explanation": "板凳球員就是替補球員。優秀的板凳深度可以讓主力休息並維持戰力。最佳第六人就是表揚優秀替補。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0033",
+    "prompt": "「走步」違例通常在什麼情況發生？",
+    "options": [
+      "球員移動時未運球",
+      "球員傳球過高",
+      "球員罰球未進",
+      "球員防守三秒"
+    ],
+    "answerIndex": 0,
+    "explanation": "走步是指球員持球移動而未合法運球。裁判會判違例並交換球權。這是籃球基本規則之一。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0034",
+    "prompt": "NBA 比賽中「加時賽」每節幾分鐘？",
+    "options": [
+      "3 分鐘",
+      "5 分鐘",
+      "6 分鐘",
+      "8 分鐘"
+    ],
+    "answerIndex": 1,
+    "explanation": "NBA 加時賽每節 5 分鐘。若平手會再加時，直到分出勝負。加時很考驗體力與關鍵球能力。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0035",
+    "prompt": "在比賽中「違例」通常會導致什麼結果？",
+    "options": [
+      "比賽結束",
+      "球權轉換",
+      "直接判負",
+      "追加罰球給犯規方"
+    ],
+    "answerIndex": 1,
+    "explanation": "違例通常會造成球權轉換。不同於犯規，違例不會累積團隊犯規。常見違例如走步、回場、8 秒。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0036",
+    "prompt": "下列哪一項是 NBA 的比賽用球品牌？",
+    "options": [
+      "Wilson",
+      "Nike",
+      "Adidas",
+      "Puma"
+    ],
+    "answerIndex": 0,
+    "explanation": "NBA 官方比賽用球品牌是 Wilson。過去長期由 Spalding 提供，2021 起更換為 Wilson。這是聯盟的官方合作。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0037",
+    "prompt": "NBA 的「例行賽」指的是什麼？",
+    "options": [
+      "全明星賽",
+      "季後賽",
+      "常規賽程",
+      "夏季聯賽"
+    ],
+    "answerIndex": 2,
+    "explanation": "例行賽是常規賽程，決定排名與季後賽席位。全明星賽與夏季聯賽是不同活動。季後賽則在例行賽後進行。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0038",
+    "prompt": "「球權」在籃球中代表什麼？",
+    "options": [
+      "球迷投票權",
+      "持球進攻的權利",
+      "球隊選秀權",
+      "媒體轉播權"
+    ],
+    "answerIndex": 1,
+    "explanation": "球權指的是哪一隊持球進攻的權利。違例、犯規或籃板都會影響球權。球權控制影響比賽節奏與得分機會。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0039",
+    "prompt": "「投籃命中率」通常怎麼計算？",
+    "options": [
+      "命中球數 / 出手次數",
+      "得分 / 助攻",
+      "罰球數 / 犯規數",
+      "籃板 / 抄截"
+    ],
+    "answerIndex": 0,
+    "explanation": "投籃命中率是命中球數除以出手次數。命中率越高代表得分效率越好。三分球與罰球有各自的命中率。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0040",
+    "prompt": "「回場違例」指的是什麼？",
+    "options": [
+      "球回到自己後場",
+      "球出界",
+      "球碰到裁判",
+      "球被封阻"
+    ],
+    "answerIndex": 0,
+    "explanation": "回場違例是球已過半場後又回到後場並由進攻方觸球。這是為了防止刻意拖延。判違例後球權交給對手。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0041",
+    "prompt": "NBA 的「主場優勢」通常指什麼？",
+    "options": [
+      "擁有更多替補球員",
+      "在主場比賽場次較多",
+      "可改變籃框高度",
+      "比賽時間可延長"
+    ],
+    "answerIndex": 1,
+    "explanation": "主場優勢指系列賽中排名較高者擁有較多主場場次。主場球迷與熟悉場地常被視為優勢。這在季後賽特別重要。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0042",
+    "prompt": "「禁區」在籃球中通常指哪裡？",
+    "options": [
+      "球場外圍",
+      "籃框附近的油漆區",
+      "中場線",
+      "三分線外"
+    ],
+    "answerIndex": 1,
+    "explanation": "禁區就是籃框附近的油漆區。這裡常是內線攻防的主要戰場。得分效率通常比外線更高。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0043",
+    "prompt": "NBA 球員在比賽中穿著的號碼稱為什麼？",
+    "options": [
+      "名牌",
+      "背號",
+      "胸章",
+      "隊徽"
+    ],
+    "answerIndex": 1,
+    "explanation": "球員號碼稱為背號。背號常與球員形象連結，如 23 號、24 號等。球隊通常會退役傳奇球員背號。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0044",
+    "prompt": "「罰球線」距離籃框的距離約為幾英尺？",
+    "options": [
+      "10 英尺",
+      "12 英尺",
+      "15 英尺",
+      "18 英尺"
+    ],
+    "answerIndex": 2,
+    "explanation": "罰球線距離籃框 15 英尺。這是標準固定的距離。罰球命中率反映球員的基本投籃穩定度。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0045",
+    "prompt": "下列哪一項屬於「團隊犯規」的影響？",
+    "options": [
+      "超過限制後對手罰球",
+      "直接取消得分",
+      "球員被停賽",
+      "改判回場違例"
+    ],
+    "answerIndex": 0,
+    "explanation": "團隊犯規超過一定次數後，對手會獲得罰球。這讓防守過於粗暴會付出代價。NBA 常見是單節 4 次後進入加罰。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0046",
+    "prompt": "「籃球之神」通常指哪位球員？",
+    "options": [
+      "Michael Jordan",
+      "LeBron James",
+      "Kobe Bryant",
+      "Magic Johnson"
+    ],
+    "answerIndex": 0,
+    "explanation": "Michael Jordan 被廣泛稱為「籃球之神」。他帶領公牛拿下 6 座總冠軍並獲多次 MVP。影響力在全球籃球界極大。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0047",
+    "prompt": "下列哪一隊以紫金配色聞名？",
+    "options": [
+      "湖人",
+      "勇士",
+      "公牛",
+      "塞爾提克"
+    ],
+    "answerIndex": 0,
+    "explanation": "洛杉磯湖人的經典配色是紫金。其他隊伍如公牛是紅黑、塞爾提克是綠白。配色常成為球隊品牌的一部分。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0048",
+    "prompt": "「抄截王」是指哪一類表現最佳的球員？",
+    "options": [
+      "抄截最多",
+      "得分最多",
+      "助攻最多",
+      "籃板最多"
+    ],
+    "answerIndex": 0,
+    "explanation": "抄截王是賽季平均抄截數最高的球員。這代表他在防守端極具侵略性。抄截常能直接轉化為快攻。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0049",
+    "prompt": "「最佳第六人」獎項主要表揚哪類球員？",
+    "options": [
+      "首發球員",
+      "替補球員",
+      "新秀球員",
+      "總冠軍球員"
+    ],
+    "answerIndex": 1,
+    "explanation": "最佳第六人是表揚替補球員的獎項。此球員通常是替補中最具影響力的得分或節奏改變者。這獎項強調板凳深度的重要性。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0050",
+    "prompt": "「主場」比賽的優勢不包含哪一項？",
+    "options": [
+      "球迷加油助威",
+      "熟悉場地環境",
+      "裁判必定偏袒",
+      "減少旅途疲勞"
+    ],
+    "answerIndex": 2,
+    "explanation": "裁判不應該偏袒任何一方，這不屬於主場優勢。主場優勢主要來自球迷、熟悉場地與減少旅途。這是對比賽公平性的基本要求。",
+    "difficulty": "easy",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0051",
+    "prompt": "「交易截止日」對球隊策略最主要的影響是什麼？",
+    "options": [
+      "只能簽新人",
+      "最後調整陣容的時間點",
+      "強制賣出球員",
+      "球員薪資歸零"
+    ],
+    "answerIndex": 1,
+    "explanation": "交易截止日是球隊在例行賽中最後能交易球員的時間點。球隊常藉此補強或重建。過了期限就無法再交易。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0052",
+    "prompt": "「選秀順位」通常如何決定？",
+    "options": [
+      "由上季戰績與樂透抽籤決定",
+      "由球迷投票",
+      "由球員薪資決定",
+      "由教練投票決定"
+    ],
+    "answerIndex": 0,
+    "explanation": "選秀順位主要依上季戰績與樂透抽籤制度決定。戰績較差的球隊有較高機率獲得前段順位。這制度旨在維持聯盟平衡。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0053",
+    "prompt": "「雙向合約」球員的特色是什麼？",
+    "options": [
+      "可同時在 NBA 與發展聯盟出賽",
+      "可以自由轉隊不需交易",
+      "薪資不計入上限",
+      "季後賽必定先發"
+    ],
+    "answerIndex": 0,
+    "explanation": "雙向合約允許球員在 NBA 與 G League 之間移動。這讓球隊能培養新人並補足輪替。雙向球員有出賽場次限制。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0054",
+    "prompt": "「擋拆」戰術中，通常由哪兩名球員配合？",
+    "options": [
+      "控衛與內線",
+      "兩名中鋒",
+      "兩名射手",
+      "大前鋒與小前鋒"
+    ],
+    "answerIndex": 0,
+    "explanation": "擋拆通常是控衛持球，內線做掩護。掩護後內線可以順下或外拆。這是 NBA 最常見的進攻戰術之一。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0055",
+    "prompt": "「薪資上限」制度主要目的為何？",
+    "options": [
+      "限制球員個人收入",
       "維持聯盟競爭平衡",
-      "限制球員訓練時間",
-      "規定球館座位數",
-      "限制主場賽程"
+      "讓球隊不必付稅",
+      "讓球星集中到大市場"
     ],
-    "answerIndex": 0,
-    "explanation": "薪資上限避免少數球隊囤積太多球星。",
-    "difficulty": "medium"
+    "answerIndex": 1,
+    "explanation": "薪資上限主要用來維持聯盟競爭平衡。它限制球隊總薪資，避免財力強的球隊壟斷球星。雖有各種特例，但仍是重要機制。",
+    "difficulty": "medium",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0007",
-    "subject": "nba",
-    "prompt": "「Play-in」賽制的作用是？",
+    "id": "nba_v3_0056",
+    "prompt": "「豪華稅」通常在什麼情況下被觸發？",
     "options": [
-      "讓更多球隊有機會進季後賽",
-      "增加全明星賽數量",
-      "縮短賽季",
-      "取消季後賽"
+      "球隊薪資超過上限特定門檻",
+      "球隊勝場太多",
+      "球隊更換教練",
+      "球隊交易超過 5 人"
     ],
     "answerIndex": 0,
-    "explanation": "附加賽讓排名邊緣球隊仍有晉級機會。",
-    "difficulty": "medium"
+    "explanation": "豪華稅是球隊薪資超過特定門檻時需繳交的稅款。它讓超支變得更昂貴。這是控制支出的另一層制度。",
+    "difficulty": "medium",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0008",
-    "subject": "nba",
-    "prompt": "NBA 交易截止日的重要性是？",
+    "id": "nba_v3_0057",
+    "prompt": "「附加賽（Play-In）」的目的為何？",
     "options": [
-      "球隊在此之前可調整陣容",
-      "決定選秀順位",
-      "安排總冠軍賽",
-      "只有新秀可交易"
+      "選秀抽籤",
+      "決定第 7-10 名的季後賽席位",
+      "決定總冠軍",
+      "決定主場優勢"
     ],
-    "answerIndex": 0,
-    "explanation": "交易截止日前是補強陣容的關鍵窗口。",
-    "difficulty": "medium"
+    "answerIndex": 1,
+    "explanation": "附加賽用來決定第 7 到第 10 名的季後賽席位。這增加了例行賽末段的競爭性。球迷也能看到更多關鍵戰役。",
+    "difficulty": "medium",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0009",
-    "subject": "nba",
-    "prompt": "「防守三秒」規則的目的最接近？",
+    "id": "nba_v3_0058",
+    "prompt": "「球隊文化」對戰績的影響通常是什麼？",
     "options": [
-      "防止長時間霸占禁區",
-      "限制三分出手",
-      "禁止包夾",
-      "縮短進攻時間"
+      "完全無關",
+      "影響凝聚力與穩定性",
+      "只影響票房",
+      "只影響裁判尺度"
     ],
-    "answerIndex": 0,
-    "explanation": "避免防守者長時間停在禁區影響進攻流暢。",
-    "difficulty": "hard"
+    "answerIndex": 1,
+    "explanation": "良好的球隊文化能提升凝聚力與穩定性。球員更願意接受角色並互相支持。長期來看常對勝場有正向影響。",
+    "difficulty": "medium",
+    "subject": "nba"
   },
   {
-    "id": "nba_v1_0010",
-    "subject": "nba",
-    "prompt": "NBA 球隊主場優勢通常來自？",
+    "id": "nba_v3_0059",
+    "prompt": "「防守三秒」規則主要是為了什麼？",
     "options": [
-      "熟悉場地與球迷支持",
-      "裁判固定偏袒",
-      "客隊禁止訓練",
-      "一定有更高薪資"
+      "防止球員站樁守在禁區",
+      "讓比賽節奏變慢",
+      "鼓勵更多灌籃",
+      "避免進攻犯規"
     ],
     "answerIndex": 0,
-    "explanation": "主場熟悉度與球迷氛圍是主要優勢來源。",
-    "difficulty": "easy"
+    "explanation": "防守三秒限制防守者長時間站在禁區。目的是避免內線站樁，讓進攻有更多空間。這讓外線投射更具影響力。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0060",
+    "prompt": "「防守籃板」對比賽有何直接意義？",
+    "options": [
+      "讓對手獲得二次進攻",
+      "終結對手進攻並發動反擊",
+      "增加犯規次數",
+      "降低投籃命中率"
+    ],
+    "answerIndex": 1,
+    "explanation": "防守籃板能終結對手的進攻回合。搶下後可快速發動反擊。控制防守籃板通常與勝利高度相關。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0061",
+    "prompt": "「球員效率值」通常用來評估什麼？",
+    "options": [
+      "球員綜合影響力",
+      "球員身高臂展",
+      "球迷人氣",
+      "球隊市值"
+    ],
+    "answerIndex": 0,
+    "explanation": "球員效率值（如 PER）用來衡量球員在場上的綜合影響。它結合得分、籃板、助攻等數據。雖非完美，但提供整體參考。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0062",
+    "prompt": "「三分球命中率」與「真實命中率」差別是什麼？",
+    "options": [
+      "真實命中率包含罰球影響",
+      "真實命中率只算三分球",
+      "三分命中率包含罰球",
+      "兩者完全相同"
+    ],
+    "answerIndex": 0,
+    "explanation": "真實命中率（TS%）把兩分、三分與罰球都納入效率計算。三分命中率只看三分出手。TS% 更能反映整體得分效率。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0063",
+    "prompt": "「選秀樂透」主要影響哪一類球隊？",
+    "options": [
+      "戰績最佳球隊",
+      "未進季後賽的球隊",
+      "總冠軍球隊",
+      "新擴編球隊"
+    ],
+    "answerIndex": 1,
+    "explanation": "選秀樂透主要影響未進季後賽的球隊。戰績越差中籤機率越高，但仍有隨機性。這是防止刻意擺爛的設計之一。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0064",
+    "prompt": "「自由球員」在 NBA 中通常指什麼？",
+    "options": [
+      "合約到期可自由簽約的球員",
+      "只能打客場的球員",
+      "必須替補上場的球員",
+      "新秀限定球員"
+    ],
+    "answerIndex": 0,
+    "explanation": "自由球員是合約到期後可自由與其他球隊簽約的球員。分為受限制與完全自由球員。自由市場對球隊補強影響很大。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0065",
+    "prompt": "「先發五人」的意義是什麼？",
+    "options": [
+      "球隊名單前五名薪資",
+      "每場比賽開場上場的五名球員",
+      "季後賽固定五人",
+      "最年輕的五名球員"
+    ],
+    "answerIndex": 1,
+    "explanation": "先發五人是每場比賽開場上場的球員。教練會依對戰、戰術與球員狀態決定先發。先發不一定代表出場時間最多。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0066",
+    "prompt": "「球隊核心」通常指哪類球員？",
+    "options": [
+      "上場時間最少",
+      "戰術與未來規劃的中心",
+      "只打垃圾時間",
+      "合約最短"
+    ],
+    "answerIndex": 1,
+    "explanation": "球隊核心是戰術與未來建隊的中心人物。球隊會圍繞其特點補強陣容。核心球員通常也是人氣與票房焦點。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0067",
+    "prompt": "「輪休」的主要原因是什麼？",
+    "options": [
+      "避免球員過度疲勞",
+      "讓球迷看不到球星",
+      "規定每週必須休息",
+      "增加票房收入"
+    ],
+    "answerIndex": 0,
+    "explanation": "輪休通常是為了避免球員過度疲勞與受傷風險。賽程密集時更常見。球隊會在長期健康與短期勝負間做權衡。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0068",
+    "prompt": "「交易例外（Trade Exception）」的用途是什麼？",
+    "options": [
+      "讓球隊可在未送出等值薪資下交易",
+      "增加球隊選秀權",
+      "免除豪華稅",
+      "自動獲得明星球員"
+    ],
+    "answerIndex": 0,
+    "explanation": "交易例外允許球隊在一定金額內吸收薪資而不需送出等值薪資。這提供交易彈性。例外有使用期限。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0069",
+    "prompt": "「掩護後外拆」通常指什麼戰術動作？",
+    "options": [
+      "掩護者向外線移動接球",
+      "掩護者直切籃下",
+      "掩護者回到後場",
+      "掩護者站在禁區不動"
+    ],
+    "answerIndex": 0,
+    "explanation": "外拆是掩護者完成掩護後往外線移動。這常製造空檔投籃機會，尤其是會投三分的大個子。與順下形成不同的選擇。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0070",
+    "prompt": "「球員選項（Player Option）」意味著什麼？",
+    "options": [
+      "球員可在合約最後一年選擇是否留隊",
+      "球隊可強制延長合約",
+      "球員不得被交易",
+      "球員必須打先發"
+    ],
+    "answerIndex": 0,
+    "explanation": "球員選項表示合約最後一年由球員決定是否執行。若不執行就成為自由球員。這讓球員在市場上有更多主動權。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0071",
+    "prompt": "「團隊協防」的主要目標是什麼？",
+    "options": [
+      "限制對方球星得分",
+      "讓比賽節奏變慢",
+      "增加自己得分",
+      "避免犯規"
+    ],
+    "answerIndex": 0,
+    "explanation": "團隊協防重點是限制對方核心或球星。透過輪轉、包夾與補位形成防守網。有效的協防能迫使對手失誤或投低效出手。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0072",
+    "prompt": "「第四節關鍵球」通常指什麼情境？",
+    "options": [
+      "比賽一開始的第一球",
+      "比賽末段影響勝負的進攻",
+      "垃圾時間的投籃",
+      "罰球訓練"
+    ],
+    "answerIndex": 1,
+    "explanation": "關鍵球通常發生在比賽末段，會直接影響勝負。許多球星以關鍵球能力著稱。這類回合常考驗心理素質與決策。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0073",
+    "prompt": "「球員進步獎」的意義是什麼？",
+    "options": [
+      "得分王",
+      "防守最佳球員",
+      "整體表現進步最多的球員",
+      "最佳新人"
+    ],
+    "answerIndex": 2,
+    "explanation": "進步獎表揚整體表現進步最明顯的球員。通常是從角色球員成長為主力。這獎項反映努力與成長曲線。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0074",
+    "prompt": "「投籃選擇」對進攻效率有何影響？",
+    "options": [
+      "影響很小",
+      "高價值出手能提高效率",
+      "只影響防守",
+      "只影響籃板"
+    ],
+    "answerIndex": 1,
+    "explanation": "高價值出手（如籃下或空檔三分）能提高進攻效率。低效率的中距離或勉強出手會拉低命中率。現代 NBA 極重視投籃選擇。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0075",
+    "prompt": "「擋拆換防」的風險是什麼？",
+    "options": [
+      "容易形成錯位",
+      "完全沒有風險",
+      "會自動判犯規",
+      "會讓球員不能投籃"
+    ],
+    "answerIndex": 0,
+    "explanation": "換防可能導致小個子對上大個子或慢速大個對上快速後衛的錯位。若無法及時補防就容易失分。球隊會依對手特性決定是否換防。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0076",
+    "prompt": "「二次進攻得分」通常來自哪裡？",
+    "options": [
+      "防守籃板",
+      "進攻籃板",
+      "快攻",
+      "罰球"
+    ],
+    "answerIndex": 1,
+    "explanation": "二次進攻得分通常來自進攻籃板後的再出手。進攻籃板能延長進攻回合。這對體型與拚搶能力要求高。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0077",
+    "prompt": "「控球失誤」最常導致什麼結果？",
+    "options": [
+      "球隊得分增加",
+      "球權轉換並可能被快攻",
+      "比賽暫停",
+      "立即補罰球"
+    ],
+    "answerIndex": 1,
+    "explanation": "控球失誤會讓球權轉換，對手可能直接快攻得分。失誤數多會影響勝負。教練通常要求降低失誤率。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0078",
+    "prompt": "「防守效率」數據主要衡量什麼？",
+    "options": [
+      "每 100 回合失分",
+      "每場得分",
+      "三分命中率",
+      "球迷上座率"
+    ],
+    "answerIndex": 0,
+    "explanation": "防守效率通常用每 100 回合失分衡量。數值越低代表防守越好。它比單場失分更能比較不同節奏的球隊。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0079",
+    "prompt": "「選秀狀元」指的是什麼？",
+    "options": [
+      "選秀第一順位",
+      "選秀最後一順位",
+      "球迷票選最愛",
+      "新人得分王"
+    ],
+    "answerIndex": 0,
+    "explanation": "選秀狀元是選秀第一順位球員。通常被視為最具潛力的新秀。球隊會以他作為建隊核心培養。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0080",
+    "prompt": "「球隊化學效應」指的是什麼？",
+    "options": [
+      "球員間默契與合作程度",
+      "球衣材質",
+      "球場地板保養",
+      "觀眾音量大小"
+    ],
+    "answerIndex": 0,
+    "explanation": "化學效應指球員間的默契與合作程度。良好化學效應能提升戰術執行與團隊防守。即使球星多，若默契不足也可能成效不佳。",
+    "difficulty": "medium",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0081",
+    "prompt": "NBA 史上單場得分紀錄由誰保持？",
+    "options": [
+      "Kobe Bryant",
+      "Wilt Chamberlain",
+      "Michael Jordan",
+      "James Harden"
+    ],
+    "answerIndex": 1,
+    "explanation": "Wilt Chamberlain 在 1962 年對尼克單場拿下 100 分。Kobe Bryant 的 81 分是現代第二高。這紀錄至今仍無人打破。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0082",
+    "prompt": "NBA 史上單季三分命中最多的球員是誰？",
+    "options": [
+      "Stephen Curry",
+      "Klay Thompson",
+      "James Harden",
+      "Ray Allen"
+    ],
+    "answerIndex": 0,
+    "explanation": "Stephen Curry 保持單季三分命中紀錄，2015-16 賽季投進 402 顆。這一季他也全票當選 MVP。Curry 改變了聯盟投射風格。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0083",
+    "prompt": "NBA 史上單場助攻最高紀錄是幾次？",
+    "options": [
+      "25 次",
+      "28 次",
+      "30 次",
+      "35 次"
+    ],
+    "answerIndex": 2,
+    "explanation": "單場助攻紀錄是 30 次，由 Scott Skiles 在 1990 年創下。這仍是 NBA 紀錄。助攻 30 次代表極高的組織能力與球隊投籃效率。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0084",
+    "prompt": "NBA 史上單場籃板最高紀錄由誰保持？",
+    "options": [
+      "Bill Russell",
+      "Wilt Chamberlain",
+      "Dennis Rodman",
+      "Nate Thurmond"
+    ],
+    "answerIndex": 1,
+    "explanation": "Wilt Chamberlain 單場抓下 55 個籃板，是歷史紀錄。比賽發生在 1960 年代。那個年代節奏快、出手多，籃板數也更驚人。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0085",
+    "prompt": "NBA 史上單場抄截最多紀錄是幾次？",
+    "options": [
+      "10 次",
+      "11 次",
+      "12 次",
+      "14 次"
+    ],
+    "answerIndex": 2,
+    "explanation": "單場抄截紀錄是 12 次，由 Larry Kenon 與 Kendall Gill 並列保持。抄截 10 次以上就極為罕見。這紀錄維持多年未被破。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0086",
+    "prompt": "NBA 史上單場封阻最多紀錄是幾次？",
+    "options": [
+      "11 次",
+      "12 次",
+      "13 次",
+      "17 次"
+    ],
+    "answerIndex": 3,
+    "explanation": "單場封阻紀錄是 17 次，由 Elmore Smith 在 1973 年創下。封阻統計是 1973-74 賽季才開始正式記錄。這紀錄至今未被打破。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0087",
+    "prompt": "NBA 史上最年輕的 MVP 得主是誰？",
+    "options": [
+      "Derrick Rose",
+      "LeBron James",
+      "Kevin Durant",
+      "Giannis Antetokounmpo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Derrick Rose 在 2010-11 賽季成為最年輕 MVP（22 歲）。他帶領公牛拿下聯盟最佳戰績。此紀錄至今仍保持。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0088",
+    "prompt": "NBA 史上總冠軍次數最多的球隊是哪一支？",
+    "options": [
+      "湖人",
+      "塞爾提克",
+      "勇士",
+      "馬刺"
+    ],
+    "answerIndex": 1,
+    "explanation": "塞爾提克是總冠軍次數最多的球隊。與湖人競爭激烈，但塞爾提克仍略占上風。傳統豪門地位穩固。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0089",
+    "prompt": "「三雙」的定義是哪一項？",
+    "options": [
+      "三項數據達到 10 以上",
+      "三分球命中 10 顆",
+      "單節得 30 分",
+      "三場連勝"
+    ],
+    "answerIndex": 0,
+    "explanation": "三雙是指得分、籃板、助攻、抄截、封阻中任三項達到 10 以上。最常見是得分、籃板、助攻。這代表球員全能表現。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0090",
+    "prompt": "NBA 史上助攻王是誰？",
+    "options": [
+      "Jason Kidd",
+      "John Stockton",
+      "Magic Johnson",
+      "Steve Nash"
+    ],
+    "answerIndex": 1,
+    "explanation": "John Stockton 是 NBA 史上助攻王，生涯助攻 15,806 次。這是極難被超越的紀錄。Stockton 也是抄截王。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0091",
+    "prompt": "NBA 史上抄截王是誰？",
+    "options": [
+      "John Stockton",
+      "Gary Payton",
+      "Michael Jordan",
+      "Allen Iverson"
+    ],
+    "answerIndex": 0,
+    "explanation": "John Stockton 同時是 NBA 史上抄截王，生涯抄截 3,265 次。這也顯示他在防守端的穩定性。很少球員能在助攻與抄截都登頂。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0092",
+    "prompt": "NBA 單季例行賽最多勝場的球隊是哪一支？",
+    "options": [
+      "2015-16 勇士",
+      "1995-96 公牛",
+      "2013-14 馬刺",
+      "2007-08 塞爾提克"
+    ],
+    "answerIndex": 0,
+    "explanation": "2015-16 勇士拿下 73 勝 9 敗，史上最佳例行賽戰績。1995-96 公牛 72 勝曾是長期紀錄。勇士後來在總決賽失利。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0093",
+    "prompt": "NBA 歷史上首位全票 MVP 是誰？",
+    "options": [
+      "Stephen Curry",
+      "Shaquille O'Neal",
+      "LeBron James",
+      "Tim Duncan"
+    ],
+    "answerIndex": 0,
+    "explanation": "Stephen Curry 在 2015-16 賽季成為首位全票 MVP。這賽季他帶領勇士創造 73 勝紀錄。全票代表每位投票者都認可。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0094",
+    "prompt": "NBA 史上單季場均得分最高的是誰？",
+    "options": [
+      "Michael Jordan",
+      "Wilt Chamberlain",
+      "Kobe Bryant",
+      "James Harden"
+    ],
+    "answerIndex": 1,
+    "explanation": "Wilt Chamberlain 在 1961-62 賽季場均 50.4 分。這是單季場均得分最高紀錄。至今仍無人接近這個數字。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0095",
+    "prompt": "NBA 史上最年長的 MVP 得主是誰？",
+    "options": [
+      "Karl Malone",
+      "Michael Jordan",
+      "LeBron James",
+      "Kareem Abdul-Jabbar"
+    ],
+    "answerIndex": 0,
+    "explanation": "Karl Malone 在 1998-99 賽季以 35 歲成為最年長 MVP。這顯示他在生涯後期仍維持頂尖表現。Kareem 與 Jordan 都未超過這年齡。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0096",
+    "prompt": "NBA 史上單季場均大三元紀錄由誰保持？",
+    "options": [
+      "Oscar Robertson",
+      "Russell Westbrook",
+      "Nikola Jokić",
+      "LeBron James"
+    ],
+    "answerIndex": 1,
+    "explanation": "Russell Westbrook 在 2016-17 賽季場均大三元。此後他也多次完成賽季大三元。Oscar Robertson是首位達成者。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0097",
+    "prompt": "NBA 史上單場三分球命中紀錄是幾顆？",
+    "options": [
+      "11 顆",
+      "12 顆",
+      "14 顆",
+      "15 顆"
+    ],
+    "answerIndex": 2,
+    "explanation": "單場三分命中紀錄為 14 顆，由 Klay Thompson 並列保持。這類紀錄多在近年三分盛行時出現。命中數高也顯示投射爆發力。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0098",
+    "prompt": "NBA 史上最年輕得分破萬的球員是誰？",
+    "options": [
+      "LeBron James",
+      "Kevin Durant",
+      "Kobe Bryant",
+      "Luka Dončić"
+    ],
+    "answerIndex": 0,
+    "explanation": "LeBron James 是最年輕達成生涯 10,000 分的球員。他在 2008 年達成此里程碑。此紀錄展現他的長期穩定得分。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0099",
+    "prompt": "NBA 史上生涯總得分王是誰？",
+    "options": [
+      "Kareem Abdul-Jabbar",
+      "LeBron James",
+      "Karl Malone",
+      "Michael Jordan"
+    ],
+    "answerIndex": 1,
+    "explanation": "LeBron James 已成為 NBA 史上生涯總得分王。此前紀錄由 Kareem Abdul-Jabbar 保持多年。LeBron 的長期健康與持續得分能力是關鍵。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0100",
+    "prompt": "NBA 史上單季「全票入選第一隊」最常見的前鋒組合類型是什麼？",
+    "options": [
+      "兩名純控衛",
+      "兩名前鋒或前鋒+中鋒",
+      "兩名中鋒",
+      "兩名得分後衛"
+    ],
+    "answerIndex": 1,
+    "explanation": "全 NBA 第一隊通常包含兩名後衛、兩名前鋒與一名中鋒。前鋒組合最常見是兩名前鋒或前鋒+中鋒的配置。這反映了傳統位置分配。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0101",
+    "prompt": "NBA 史上單場罰球命中最多紀錄是幾球？",
+    "options": [
+      "24 球",
+      "26 球",
+      "28 球",
+      "30 球"
+    ],
+    "answerIndex": 2,
+    "explanation": "單場罰球命中紀錄為 28 球，由 Wilt Chamberlain 創下。這發生在高出手年代。罰球數爆量通常與犯規戰術有關。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0102",
+    "prompt": "NBA 史上最長連勝紀錄由哪隊保持？",
+    "options": [
+      "湖人",
+      "熱火",
+      "勇士",
+      "公牛"
+    ],
+    "answerIndex": 0,
+    "explanation": "湖人在 1971-72 賽季創下 33 連勝紀錄。這是 NBA 史上最長連勝。至今仍無球隊打破。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0103",
+    "prompt": "NBA 史上單季平均籃板最高的球員是誰？",
+    "options": [
+      "Bill Russell",
+      "Wilt Chamberlain",
+      "Moses Malone",
+      "Dennis Rodman"
+    ],
+    "answerIndex": 1,
+    "explanation": "Wilt Chamberlain 單季場均籃板最高，1960-61 賽季場均 27.2 個。這是歷史最高紀錄。當時節奏快、出手多，籃板數也極高。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0104",
+    "prompt": "NBA 史上最年輕的總冠軍 MVP 得主是誰？",
+    "options": [
+      "Magic Johnson",
+      "Kobe Bryant",
+      "Tim Duncan",
+      "Larry Bird"
+    ],
+    "answerIndex": 0,
+    "explanation": "Magic Johnson 在 1980 年以新秀身分獲得總冠軍 MVP，當時 20 歲。這是最年輕的總冠軍 MVP。這也奠定他傳奇的生涯起點。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0105",
+    "prompt": "NBA 史上單季三分出手最多的球員是誰？",
+    "options": [
+      "Stephen Curry",
+      "James Harden",
+      "Klay Thompson",
+      "Damian Lillard"
+    ],
+    "answerIndex": 1,
+    "explanation": "James Harden 在 2018-19 賽季創下單季三分出手紀錄。那一季他場均得分也極高。高出手量反映球隊戰術設計。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0106",
+    "prompt": "NBA 史上單場三分出手最多紀錄是幾次？",
+    "options": [
+      "20 次",
+      "24 次",
+      "28 次",
+      "30 次"
+    ],
+    "answerIndex": 2,
+    "explanation": "單場三分出手紀錄為 28 次，由 Klay Thompson 所創。三分出手量極高需要特別戰術。這也顯示現代 NBA 外線依賴度。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0107",
+    "prompt": "NBA 史上單場抄截與封阻雙雙上雙的球員有何特殊稱呼？",
+    "options": [
+      "四雙",
+      "三雙",
+      "雙十",
+      "大三元"
+    ],
+    "answerIndex": 0,
+    "explanation": "抄截與封阻都上雙，且加上得分與籃板或助攻，就可能是四雙。四雙是極罕見的紀錄。歷史上正式承認的四雙很少。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0108",
+    "prompt": "NBA 史上單季 MVP 與最佳防守球員同年獲得的球員是誰？",
+    "options": [
+      "Hakeem Olajuwon",
+      "Kevin Garnett",
+      "Giannis Antetokounmpo",
+      "Tim Duncan"
+    ],
+    "answerIndex": 2,
+    "explanation": "Giannis 在 2019-20 賽季同時獲得 MVP 與最佳防守球員。這是非常少見的成就。它代表他在攻防兩端都具統治力。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0109",
+    "prompt": "NBA 史上「總冠軍三連霸」最近的一支球隊是哪隊？",
+    "options": [
+      "公牛",
+      "湖人",
+      "勇士",
+      "馬刺"
+    ],
+    "answerIndex": 1,
+    "explanation": "最近一次三連霸是 2000-2002 年的洛杉磯湖人。公牛的三連霸更早。三連霸需要極高的穩定與深度。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0110",
+    "prompt": "NBA 史上唯一在季後賽平均大三元的球員是誰？",
+    "options": [
+      "LeBron James",
+      "Russell Westbrook",
+      "Nikola Jokić",
+      "Oscar Robertson"
+    ],
+    "answerIndex": 1,
+    "explanation": "Russell Westbrook 在 2017 年季後賽曾達成系列賽平均大三元。這在季後賽強度下非常罕見。雖然系列賽短，但仍是驚人的數據。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0111",
+    "prompt": "NBA 史上最年輕全明星先發球員是誰？",
+    "options": [
+      "LeBron James",
+      "Kobe Bryant",
+      "Magic Johnson",
+      "Kevin Durant"
+    ],
+    "answerIndex": 1,
+    "explanation": "Kobe Bryant 是史上最年輕的全明星先發球員（19 歲）。他在 1998 年入選。這也顯示他年輕時就有極高人氣與實力。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0112",
+    "prompt": "NBA 史上唯一以「場均大三元」奪得 MVP 的球員是誰？",
+    "options": [
+      "Oscar Robertson",
+      "Russell Westbrook",
+      "LeBron James",
+      "Magic Johnson"
+    ],
+    "answerIndex": 1,
+    "explanation": "Russell Westbrook 在 2016-17 賽季場均大三元並獲得 MVP。Oscar Robertson 也曾場均大三元，但當年未拿 MVP。Westbrook 的賽季表現極具歷史意義。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0113",
+    "prompt": "NBA 史上「單季總助攻」最高紀錄由誰保持？",
+    "options": [
+      "Magic Johnson",
+      "John Stockton",
+      "Isiah Thomas",
+      "Chris Paul"
+    ],
+    "answerIndex": 1,
+    "explanation": "John Stockton 在 1990-91 賽季單季助攻 1,164 次，為歷史最高。這展現他長期穩定的組織能力。至今仍無人突破千次級距。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0114",
+    "prompt": "NBA 史上單季「三分命中率」最高的球員是誰？",
+    "options": [
+      "Steve Kerr",
+      "Kyle Korver",
+      "Stephen Curry",
+      "Ray Allen"
+    ],
+    "answerIndex": 0,
+    "explanation": "Steve Kerr 保持單季三分命中率最高紀錄（45.4%，1995-96）。這是歷史上的頂尖效率。雖然出手量不如現代球員，但命中率極高。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0115",
+    "prompt": "NBA 史上「總冠軍 MVP」次數最多的球員是誰？",
+    "options": [
+      "LeBron James",
+      "Michael Jordan",
+      "Magic Johnson",
+      "Tim Duncan"
+    ],
+    "answerIndex": 1,
+    "explanation": "Michael Jordan 擁有 6 座總冠軍 MVP，為史上最多。他帶領公牛六次奪冠且每次都拿下 FMVP。這凸顯他在總決賽的統治力。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0116",
+    "prompt": "NBA 史上「單場失誤」最多紀錄是幾次？",
+    "options": [
+      "12 次",
+      "13 次",
+      "14 次",
+      "15 次"
+    ],
+    "answerIndex": 1,
+    "explanation": "單場失誤紀錄為 13 次。這紀錄由多位球員共同保持。失誤高通常與持球量大或防守壓力大有關。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0117",
+    "prompt": "NBA 史上「單季平均抄截」最高的球員是誰？",
+    "options": [
+      "Alvin Robertson",
+      "John Stockton",
+      "Gary Payton",
+      "Michael Jordan"
+    ],
+    "answerIndex": 0,
+    "explanation": "Alvin Robertson 以單季場均 3.67 抄截保持紀錄（1985-86）。這是非常驚人的防守數據。現代 NBA 很難達到這樣的數字。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0118",
+    "prompt": "NBA 史上「單季平均封阻」最高的球員是誰？",
+    "options": [
+      "Mark Eaton",
+      "Dikembe Mutombo",
+      "Hakeem Olajuwon",
+      "David Robinson"
+    ],
+    "answerIndex": 0,
+    "explanation": "Mark Eaton 在 1984-85 賽季場均 5.56 次封阻，是歷史最高。這是極高的防守統治力。現代 NBA 節奏與打法變化，難以再現。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0119",
+    "prompt": "NBA 史上「最長連續出賽」紀錄由誰保持？",
+    "options": [
+      "AC Green",
+      "John Stockton",
+      "Michael Jordan",
+      "Kareem Abdul-Jabbar"
+    ],
+    "answerIndex": 0,
+    "explanation": "AC Green 保持最長連續出賽紀錄，連續 1,192 場。這代表極高的耐久與健康狀態。這項紀錄極難被超越。",
+    "difficulty": "hard",
+    "subject": "nba"
+  },
+  {
+    "id": "nba_v3_0120",
+    "prompt": "NBA 史上「單季平均上場時間」最高的球員是誰？",
+    "options": [
+      "Wilt Chamberlain",
+      "Oscar Robertson",
+      "Michael Jordan",
+      "LeBron James"
+    ],
+    "answerIndex": 0,
+    "explanation": "Wilt Chamberlain 在 1961-62 賽季場均上場 48.5 分鐘，是歷史最高。這甚至超過正常 48 分鐘，因為他幾乎打滿每場加時。這紀錄反映他驚人的體能。",
+    "difficulty": "hard",
+    "subject": "nba"
   }
 ]

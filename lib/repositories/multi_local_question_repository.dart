@@ -12,6 +12,15 @@ class MultiLocalQuestionRepository implements QuestionRepository {
   final List<String> assetPaths;
   final SeenStore seenStore;
   final Map<String, List<Question>> _cache = {};
+  final Set<String> _justDepletedSubjects = {};
+
+  bool consumeDepletedNotice(String subject) {
+    if (_justDepletedSubjects.contains(subject)) {
+      _justDepletedSubjects.remove(subject);
+      return true;
+    }
+    return false;
+  }
 
   @override
   Future<void> init() async {
@@ -33,12 +42,14 @@ class MultiLocalQuestionRepository implements QuestionRepository {
 
     final seen = seenStore.load(subject);
     var unseen = pool.where((q) => q.id.isNotEmpty && !seen.contains(q.id)).toList();
-    if (unseen.length < count) {
+    if (unseen.isEmpty) {
+      _justDepletedSubjects.add(subject);
       await seenStore.reset(subject);
       unseen = pool;
     }
 
     final rng = Random(DateTime.now().millisecondsSinceEpoch);
+    final targetCount = unseen.length < count ? unseen.length : count;
     final easy = unseen.where((q) => q.difficulty == 'easy').toList()..shuffle(rng);
     final medium = unseen.where((q) => q.difficulty == 'medium').toList()..shuffle(rng);
     final hard = unseen.where((q) => q.difficulty == 'hard').toList()..shuffle(rng);
@@ -49,29 +60,29 @@ class MultiLocalQuestionRepository implements QuestionRepository {
     }
 
     final session = <Question>[];
-    final first = takeOne(easy) ?? takeOne(medium) ?? takeOne(hard);
-    if (first != null) session.add(first);
-
-    for (var i = 0; i < 2; i++) {
-      final pick = takeOne(medium) ?? takeOne(easy) ?? takeOne(hard);
-      if (pick != null) session.add(pick);
+    while (session.length < targetCount) {
+      Question? pick;
+      if (session.isEmpty) {
+        pick = takeOne(easy) ?? takeOne(medium) ?? takeOne(hard);
+      } else if (session.length < 3) {
+        pick = takeOne(medium) ?? takeOne(easy) ?? takeOne(hard);
+      } else {
+        pick = takeOne(hard) ?? takeOne(medium) ?? takeOne(easy);
+      }
+      if (pick == null) break;
+      session.add(pick);
     }
 
-    for (var i = 0; i < 2; i++) {
-      final pick = takeOne(hard) ?? takeOne(medium) ?? takeOne(easy);
-      if (pick != null) session.add(pick);
-    }
-
-    if (session.length < count) {
+    if (session.length < targetCount) {
       final fallback = List<Question>.from(unseen)..shuffle(rng);
       for (final q in fallback) {
-        if (session.length >= count) break;
+        if (session.length >= targetCount) break;
         if (session.any((e) => e.id == q.id)) continue;
         session.add(q);
       }
     }
 
-    final ordered = session.take(count).map((q) => q.shuffled(rng)).toList();
+    final ordered = session.take(targetCount).map((q) => q.shuffled(rng)).toList();
     await seenStore.save(subject, ordered.map((q) => q.id));
     return ordered;
   }

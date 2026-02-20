@@ -8,13 +8,14 @@ import 'models/subject.dart';
 import 'data/subjects.dart';
 import 'repositories/repository_factory.dart';
 import 'repositories/question_repository.dart';
+import 'repositories/multi_local_question_repository.dart';
 import 'services/progress_service.dart';
 import 'services/tree_growth.dart';
 import 'services/seen_store.dart';
 import 'services/core_data_store.dart';
 import 'widgets/session_summary_card.dart';
 import 'widgets/onboarding.dart';
-import 'widgets/pokedex_screen.dart';
+// pokedex removed
 import 'widgets/design_system.dart';
 import 'widgets/loom_card.dart';
 import 'widgets/loom_button.dart';
@@ -325,6 +326,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _startSubject(BuildContext context, Subject subject) async {
     final questions = await widget.repository.getSession(subject: subject.key, count: 5);
     if (!context.mounted) return;
+    if (widget.repository is MultiLocalQuestionRepository) {
+      final repo = widget.repository as MultiLocalQuestionRepository;
+      if (repo.consumeDepletedNotice(subject.key)) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('你已完成本題庫一輪，開始複習')),
+        );
+      }
+    }
     await Navigator.push(
       context,
       MaterialPageRoute(
@@ -386,13 +395,16 @@ class _HomeScreenState extends State<HomeScreen> {
     final totalXp = widget.coreDataStore.player.totalXp;
     final knowledgeBalance = totalXp + creditsTotal;
     final dailyPlus = widget.progressService.snapshot.dailyXp;
+    final currentLevel = widget.coreDataStore.player.playerLevel;
     final currentLevelXp = widget.progressService.currentLevelXp(
-      widget.coreDataStore.player.playerLevel,
+      currentLevel,
     );
     final nextLevelXp = widget.progressService.nextLevelXp(
-      widget.coreDataStore.player.playerLevel,
+      currentLevel,
     );
     final remainingToNext = (nextLevelXp - totalXp).clamp(0, nextLevelXp);
+    final nextLevel = currentLevel + 1;
+    final nextLevelReward = 3 + (nextLevel % 10 == 0 ? 15 : 0);
     final levelProgress = nextLevelXp == currentLevelXp
         ? 1.0
         : ((totalXp - currentLevelXp) / (nextLevelXp - currentLevelXp))
@@ -559,15 +571,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             children: [
                               Expanded(
-                                child: Text('今日知識幣', style: LoomTypography.secondary),
+                                child: Text(
+                                  '今日知識幣',
+                                  style: LoomTypography.secondary.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                               ),
                               Text(
                                 '${tokenService.dailyTokenEarned}/10',
-                                style: LoomTypography.secondary,
+                                style: LoomTypography.secondary.copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 6),
+                          const SizedBox(height: 8),
                           LinearProgressIndicator(
                             value:
                                 (tokenService.dailyTokenEarned / 10).clamp(0.0, 1.0),
@@ -580,7 +601,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: LoomSpacing.md),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.38,
+                        height: MediaQuery.of(context).size.height * 0.40,
                         child: LoomCard(
                           background: LoomTheme.card(context),
                           borderColor: LoomTheme.border(context),
@@ -590,10 +611,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 '智慧指數',
                                 style: LoomTypography.sectionTitle.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
                                   color: LoomTheme.textSecondary(context),
                                 ),
                               ),
-                              const SizedBox(height: LoomSpacing.base),
+                              const SizedBox(height: LoomSpacing.md),
                               SizedBox(
                                 width: 120,
                                 height: 120,
@@ -610,7 +633,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         textAlign: TextAlign.center,
                                         style: LoomTypography.bigNumber.copyWith(
                                           fontFeatures: const [FontFeature.tabularFigures()],
-                                          fontSize: 72,
+                                          fontSize: 80,
                                           fontWeight: FontWeight.w700,
                                           color: LoomTheme.accent(context),
                                         ),
@@ -632,26 +655,44 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text(
                                   '今天 +$dailyPlus',
                                   style: LoomTypography.secondary.copyWith(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
                                     color: LoomTheme.accent(context),
                                   ),
                                 ),
                               ),
                               const SizedBox(height: LoomSpacing.sm),
                               Text(
-                                '距離下一個里程碑還差 $remainingToNext',
+                                '再 $remainingToNext 就可升等並拿到 $nextLevelReward 元知識幣！',
                                 textAlign: TextAlign.center,
                                 style: LoomTypography.secondary.copyWith(
+                                  fontSize: 15,
                                   color: LoomTheme.textSecondary(context),
                                 ),
                               ),
-                              const SizedBox(height: LoomSpacing.base),
-                              SizedBox(
-                                height: 4,
-                                child: LinearProgressIndicator(
-                                  value: levelProgress,
-                                  color: LoomTheme.accent(context),
-                                  backgroundColor: LoomTheme.border(context),
-                                ),
+                              const SizedBox(height: LoomSpacing.md),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 4,
+                                      child: LinearProgressIndicator(
+                                        value: levelProgress,
+                                        color: LoomTheme.accent(context),
+                                        backgroundColor: LoomTheme.border(context),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Lv $currentLevel',
+                                    style: LoomTypography.secondary.copyWith(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: LoomTheme.textSecondary(context),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -794,16 +835,167 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('設定')),
       body: Padding(
         padding: const EdgeInsets.all(LoomSpacing.screen),
-        child: LoomPrimaryButton(
-          label: '刷新',
-          onPressed: () {
-            onReset();
-            Navigator.pop(context);
-          },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            LoomPrimaryButton(
+              label: '刷新',
+              onPressed: () {
+                onReset();
+                Navigator.pop(context);
+              },
+            ),
+            const SizedBox(height: LoomSpacing.sm),
+            LoomPrimaryButton(
+              label: '主題',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ThemeSettingsScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+class ThemeSettingsScreen extends StatelessWidget {
+  const ThemeSettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final shopState = ShopStateService.instance;
+    return ValueListenableBuilder<String?>(
+      valueListenable: shopState.themeNotifier,
+      builder: (context, themeId, _) {
+        final currentTheme = themeId ?? 'default';
+        final themes = <_ThemeOption>[
+          const _ThemeOption(
+            id: 'default',
+            title: '預設',
+            color: LoomColors.primary,
+            isOwned: true,
+          ),
+          _ThemeOption(
+            id: 'cosmetic_theme_ocean',
+            title: '海洋',
+            color: const Color(0xFF3A8FD6),
+            isOwned: shopState.isOwned('cosmetic_theme_ocean'),
+          ),
+          _ThemeOption(
+            id: 'cosmetic_theme_night',
+            title: '夜間',
+            color: const Color(0xFF8C8F96),
+            isOwned: shopState.isOwned('cosmetic_theme_night'),
+          ),
+          _ThemeOption(
+            id: 'cosmetic_theme_warm',
+            title: '暖陽',
+            color: const Color(0xFFE07A4F),
+            isOwned: shopState.isOwned('cosmetic_theme_warm'),
+          ),
+        ];
+
+        return Scaffold(
+          appBar: AppBar(title: const Text('主題')),
+          body: ListView.separated(
+            padding: const EdgeInsets.all(LoomSpacing.screen),
+            itemCount: themes.length,
+            separatorBuilder: (context, index) => const SizedBox(height: LoomSpacing.sm),
+            itemBuilder: (context, index) {
+              final theme = themes[index];
+              final isActive = currentTheme == theme.id;
+              final canUse = theme.isOwned;
+              final cardColor = theme.isOwned
+                  ? theme.color.withOpacity(0.12)
+                  : theme.color.withOpacity(0.06);
+              final titleColor = theme.isOwned
+                  ? theme.color
+                  : theme.color.withOpacity(0.45);
+
+              return Stack(
+                children: [
+                  LoomCard(
+                    background: cardColor,
+                    borderColor: LoomTheme.border(context),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: theme.color,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        const SizedBox(width: LoomSpacing.base),
+                        Expanded(
+                          child: Text(
+                            theme.title,
+                            style: LoomTypography.body.copyWith(color: titleColor),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: !canUse || isActive
+                              ? null
+                              : () async {
+                                  await shopState.equip('theme', theme.id);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text('已使用：${theme.title}')),
+                                  );
+                                },
+                          child: Text(isActive ? '使用中' : '使用'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (!theme.isOwned)
+                    Positioned(
+                      right: 12,
+                      top: 10,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: LoomTheme.textSecondary(context).withOpacity(0.15),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          '尚未解鎖',
+                          style: LoomTypography.secondary.copyWith(
+                            color: Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white
+                                : LoomTheme.textSecondary(context),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _ThemeOption {
+  const _ThemeOption({
+    required this.id,
+    required this.title,
+    required this.color,
+    required this.isOwned,
+  });
+
+  final String id;
+  final String title;
+  final Color color;
+  final bool isOwned;
 }
 
 class _SubjectButton extends StatelessWidget {
@@ -971,148 +1163,153 @@ class AdvancedChallengeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shopState = ShopStateService.instance;
-    final scheme = Theme.of(context).colorScheme;
-    final topicPacks = <_TopicPackMeta>[
-      _TopicPackMeta(
-        subjectId: 'ai',
-        ownedId: 'pack_ai',
-        title: 'AI 世代',
-        subtitle: '關於人工智慧、科技巨頭與未來想像。從 ChatGPT 到科技革命，你準備好了嗎？',
-        accent: scheme.primary,
-      ),
-      _TopicPackMeta(
-        subjectId: 'kpop',
-        ownedId: 'pack_kpop',
-        title: '韓流現象',
-        subtitle: 'K-Pop、韓劇與娛樂產業背後的故事。流行之外，你知道多少？',
-        accent: scheme.tertiary,
-      ),
-      _TopicPackMeta(
-        subjectId: 'nba',
-        ownedId: 'pack_nba',
-        title: 'NBA 焦點',
-        subtitle: '球星、紀錄與經典時刻。每一次得分，都有故事。',
-        accent: scheme.secondary,
-      ),
-      _TopicPackMeta(
-        subjectId: 'business',
-        ownedId: 'pack_business',
-        title: '商業與品牌',
-        subtitle: '品牌為什麼成功？決策如何改變世界？商業，比你想像的更有趣。',
-        accent: scheme.primary.withOpacity(0.8),
-      ),
-    ];
-    final unlockedPacks = topicPacks
-        .where((pack) => shopState.isOwned(pack.ownedId))
-        .map((pack) => Subject(subjectId: pack.subjectId, displayName: pack.title))
-        .toList();
-    final allSubjects = [...unlockedPacks, ...subjects];
-    return Scaffold(
-      appBar: AppBar(title: const Text('試試你能不能撐過 5 題 ⚔️')),
-      body: ListView(
-        padding: const EdgeInsets.all(LoomSpacing.screen),
-        children: [
-          LoomSectionHeader(
-            title: '選一個科目',
-            subtitle: '想要變成專家？選你喜歡的科目吧！',
+    return ValueListenableBuilder<int>(
+      valueListenable: shopState.ownedRevision,
+      builder: (context, value, child) {
+        final scheme = Theme.of(context).colorScheme;
+        final topicPacks = <_TopicPackMeta>[
+          _TopicPackMeta(
+            subjectId: 'ai',
+            ownedId: 'pack_ai',
+            title: 'AI 世代',
+            subtitle: '關於人工智慧、科技巨頭與未來想像。從 ChatGPT 到科技革命，你準備好了嗎？',
+            accent: scheme.primary,
           ),
-          const SizedBox(height: LoomSpacing.md),
-          ...allSubjects.map((subject) {
-            _TopicPackMeta? packMeta;
-            for (final pack in topicPacks) {
-              if (pack.subjectId == subject.subjectId) {
-                packMeta = pack;
-                break;
-              }
-            }
-            final isPack = packMeta != null;
-            final displayTitle = packMeta?.title ??
-                (subject.title == '金錢' ? '理財' : subject.title);
-            final subtitle = packMeta?.subtitle ??
-                switch (displayTitle.replaceAll('＋', '')) {
-                  '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
-                  '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
-                  '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
-                  '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
-                  '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
-                  _ => '選一個科目，挑戰連續 5 題',
-                };
-            final isPlus = displayTitle.contains('＋');
-            final accent = packMeta?.accent;
-            return Padding(
-              padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(LoomRadius.card),
-                onTap: () => onStartSubject(subject),
-                child: LoomCard(
-                  background: accent?.withOpacity(0.12),
-                  borderColor: accent?.withOpacity(0.35),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
+          _TopicPackMeta(
+            subjectId: 'kpop',
+            ownedId: 'pack_kpop',
+            title: '韓流現象',
+            subtitle: 'K-Pop、韓劇與娛樂產業背後的故事。流行之外，你知道多少？',
+            accent: scheme.tertiary,
+          ),
+          _TopicPackMeta(
+            subjectId: 'nba',
+            ownedId: 'pack_nba',
+            title: 'NBA 焦點',
+            subtitle: '球星、紀錄與經典時刻。每一次得分，都有故事。',
+            accent: scheme.secondary,
+          ),
+          _TopicPackMeta(
+            subjectId: 'business',
+            ownedId: 'pack_business',
+            title: '商業與品牌',
+            subtitle: '品牌為什麼成功？決策如何改變世界？商業，比你想像的更有趣。',
+            accent: scheme.primary.withOpacity(0.8),
+          ),
+        ];
+        final unlockedPacks = topicPacks
+            .where((pack) => shopState.isOwned(pack.ownedId))
+            .map((pack) => Subject(subjectId: pack.subjectId, displayName: pack.title))
+            .toList();
+        final allSubjects = [...unlockedPacks, ...subjects];
+        return Scaffold(
+          appBar: AppBar(title: const Text('試試你能不能撐過 5 題 ⚔️')),
+          body: ListView(
+            padding: const EdgeInsets.all(LoomSpacing.screen),
+            children: [
+              LoomSectionHeader(
+                title: '選一個科目',
+                subtitle: '想要變成專家？選你喜歡的科目吧！',
+              ),
+              const SizedBox(height: LoomSpacing.md),
+              ...allSubjects.map((subject) {
+                _TopicPackMeta? packMeta;
+                for (final pack in topicPacks) {
+                  if (pack.subjectId == subject.subjectId) {
+                    packMeta = pack;
+                    break;
+                  }
+                }
+                final isPack = packMeta != null;
+                final displayTitle = packMeta?.title ??
+                    (subject.title == '金錢' ? '理財' : subject.title);
+                final subtitle = packMeta?.subtitle ??
+                    switch (displayTitle.replaceAll('＋', '')) {
+                      '冷知識' => '變成朋友裡最聰明的那個。\n（隨時丟出一個沒人知道的答案 😏）',
+                      '世界' => '世界比想像中還要有趣。\n（地理、文化、奇聞一次補齊 🌍）',
+                      '歷史' => '古人其實沒那麼無聊。\n（事情怎麼變成現在這樣？📜）',
+                      '科學' => '原來日常都有科學在偷跑。\n（為什麼會這樣？現在就搞懂 ⚗️）',
+                      '理財' => '聰明的人，不讓錢亂跑。\n（少踩幾個坑，錢就會慢慢多起來 💰）',
+                      _ => '選一個科目，挑戰連續 5 題',
+                    };
+                final isPlus = displayTitle.contains('＋');
+                final accent = packMeta?.accent;
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: LoomSpacing.sm),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(LoomRadius.card),
+                    onTap: () => onStartSubject(subject),
+                    child: LoomCard(
+                      background: accent?.withOpacity(0.12),
+                      borderColor: accent?.withOpacity(0.35),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  displayTitle,
-                                  style: const TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.w600),
-                                ),
-                                if (isPack) ...[
-                                  const SizedBox(width: 8),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 6,
-                                      vertical: 2,
+                                Row(
+                                  children: [
+                                    Text(
+                                      displayTitle,
+                                      style: const TextStyle(
+                                          fontSize: 18, fontWeight: FontWeight.w600),
                                     ),
-                                    decoration: BoxDecoration(
-                                      color: accent?.withOpacity(0.18),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Text(
-                                      'NEW',
-                                      style: LoomTypography.secondary.copyWith(
-                                        color: accent,
-                                        fontWeight: FontWeight.w600,
+                                    if (isPack) ...[
+                                      const SizedBox(width: 8),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 6,
+                                          vertical: 2,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: accent?.withOpacity(0.18),
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        child: Text(
+                                          'NEW',
+                                          style: LoomTypography.secondary.copyWith(
+                                            color: accent,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ] else if (isPlus) ...[
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        '已解鎖',
+                                        style: LoomTypography.secondary.copyWith(
+                                          color: Theme.of(context).colorScheme.primary,
+                                        ),
+                                      ),
+                                    ],
+                                  ],
+                                ),
+                                const SizedBox(height: LoomSpacing.base),
+                                Text(
+                                  subtitle,
+                                  style: const TextStyle(fontSize: 14, height: 1.3).copyWith(
+                                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   ),
-                                ] else if (isPlus) ...[
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    '已解鎖',
-                                    style: LoomTypography.secondary.copyWith(
-                                      color: Theme.of(context).colorScheme.primary,
-                                    ),
-                                  ),
-                                ],
+                                ),
+                                const SizedBox(height: LoomSpacing.base),
                               ],
                             ),
-                            const SizedBox(height: LoomSpacing.base),
-                            Text(
-                              subtitle,
-                              style: const TextStyle(fontSize: 14, height: 1.3).copyWith(
-                                color: Theme.of(context).colorScheme.onSurfaceVariant,
-                              ),
-                            ),
-                            const SizedBox(height: LoomSpacing.base),
-                          ],
-                        ),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          ),
+                        ],
                       ),
-                      Icon(
-                        Icons.chevron_right,
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
-            );
-          }),
-        ],
-      ),
+                );
+              }),
+            ],
+          ),
+        );
+      },
     );
   }
 }

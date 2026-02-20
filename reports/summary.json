@@ -1,0 +1,74 @@
+{
+  "ai.json": {
+    "total_questions": 120,
+    "flagged": 104,
+    "flag_rate": 0.8667,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 0,
+    "hollow_count": 64
+  },
+  "business.json": {
+    "total_questions": 120,
+    "flagged": 0,
+    "flag_rate": 0.0,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 0,
+    "hollow_count": 0
+  },
+  "fun_facts.json": {
+    "total_questions": 100,
+    "flagged": 84,
+    "flag_rate": 0.84,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 0,
+    "hollow_count": 67
+  },
+  "history.json": {
+    "total_questions": 100,
+    "flagged": 74,
+    "flag_rate": 0.74,
+    "duplicates_count": 58,
+    "forbidden_hits_count": 0,
+    "hollow_count": 34
+  },
+  "kpop.json": {
+    "total_questions": 120,
+    "flagged": 51,
+    "flag_rate": 0.425,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 0,
+    "hollow_count": 51
+  },
+  "money.json": {
+    "total_questions": 120,
+    "flagged": 120,
+    "flag_rate": 1.0,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 0,
+    "hollow_count": 119
+  },
+  "nba.json": {
+    "total_questions": 120,
+    "flagged": 49,
+    "flag_rate": 0.4083,
+    "duplicates_count": 2,
+    "forbidden_hits_count": 0,
+    "hollow_count": 3
+  },
+  "science.json": {
+    "total_questions": 100,
+    "flagged": 13,
+    "flag_rate": 0.13,
+    "duplicates_count": 4,
+    "forbidden_hits_count": 5,
+    "hollow_count": 10
+  },
+  "world.json": {
+    "total_questions": 100,
+    "flagged": 100,
+    "flag_rate": 1.0,
+    "duplicates_count": 0,
+    "forbidden_hits_count": 51,
+    "hollow_count": 100
+  }
+}

@@ -6,6 +6,8 @@ final List<Subject> defaultSubjects = [
   Subject(subjectId: 'history', displayName: '歷史'),
   Subject(subjectId: 'science', displayName: '科學'),
   Subject(subjectId: 'money', displayName: '理財'),
+  Subject(subjectId: 'ai', displayName: '人工智慧'),
+  Subject(subjectId: 'nba', displayName: 'NBA'),
 ];
 
 List<Subject> subjects = List<Subject>.from(defaultSubjects);

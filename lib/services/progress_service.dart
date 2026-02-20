@@ -111,7 +111,7 @@ class ProgressService {
   bool get yesterdayCompleted => _yesterdayCompleted;
   int get prevStreakDays => _prevStreakDays;
   String get todayKey => _dayKey(DateTime.now());
-  bool get streakFrozen => _streakFrozen;
+  bool get streakFrozen => _streakDays > 0 && _streakFrozen;
   String? get streakMissedYmd => _streakMissedYmd;
   bool get justUsedSaver => _justUsedSaver;
   bool get justFrozen => _justFrozen;
@@ -177,7 +177,10 @@ class ProgressService {
     TokenService.instance.resetDailyEarnedIfNeeded(todayKey);
     TokenService.instance.resetDailyToken();
 
-    if (_lastCompletedYmd != null && _lastCompletedYmd!.isNotEmpty) {
+    if (_streakDays == 0) {
+      _streakFrozen = false;
+      _streakMissedYmd = null;
+    } else if (_lastCompletedYmd != null && _lastCompletedYmd!.isNotEmpty) {
       final gap = _daysBetween(_lastCompletedYmd!, todayKey);
       if (gap <= 0) {
         // Device time rollback or parse issue: ignore streak transitions.

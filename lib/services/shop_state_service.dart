@@ -22,6 +22,7 @@ class ShopStateService {
   Map<String, String> _equipped = {};
   bool _ready = false;
   final ValueNotifier<String?> themeNotifier = ValueNotifier<String?>(null);
+  final ValueNotifier<int> ownedRevision = ValueNotifier<int>(0);
 
   bool get isReady => _ready;
 
@@ -48,7 +49,10 @@ class ShopStateService {
   bool isOwned(String itemId) => _owned.contains(itemId);
 
   Future<void> addOwned(String itemId) async {
-    _owned.add(itemId);
+    final added = _owned.add(itemId);
+    if (added) {
+      ownedRevision.value = ownedRevision.value + 1;
+    }
     await _saveOwned();
   }
 

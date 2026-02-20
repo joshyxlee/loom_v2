@@ -37,6 +37,7 @@ class _ShopScreenState extends State<ShopScreen> {
   bool _limitedReady = false;
   Map<String, int> _limitedEnds = {};
   final _scrollController = ScrollController();
+  final Set<String> _purchaseLocks = {};
   final Map<String, GlobalKey> _itemKeys = {
     'boost_mistake_shield': GlobalKey(),
     'boost_focus_xp': GlobalKey(),
@@ -111,13 +112,24 @@ class _ShopScreenState extends State<ShopScreen> {
     return now < endsAt;
   }
 
+  void _showOwnedFeedback(BuildContext context, ShopItem item) {
+    final message = item.category == ShopCategory.unlock
+        ? '已解鎖'
+        : item.kind == ShopItemKind.equipable
+            ? '已擁有，可於設定使用'
+            : '已購買';
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
   Future<void> _handlePurchase(BuildContext context, ShopItem item) async {
     if (!item.isEnabled) return;
     final shopState = ShopStateService.instance;
     if ((item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) &&
         shopState.isOwned(item.id)) {
+      _showOwnedFeedback(context, item);
       return;
     }
+    if (_purchaseLocks.contains(item.id)) return;
     if (item.category == ShopCategory.limited && !_isLimitedActive(item.id)) {
       return;
     }
@@ -142,28 +154,33 @@ class _ShopScreenState extends State<ShopScreen> {
     final service = TokenService.instance;
     if (!service.canAfford(item.priceTokens)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('知識幣不足')),
+        const SnackBar(content: Text('金幣不足')),
       );
       return;
     }
-    if (item.category == ShopCategory.limited) {
-      await _purchaseBundle(item.id, item.priceTokens);
-      return;
-    }
-    service.deductToken(item.priceTokens);
-    if (item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) {
-      await shopState.addOwned(item.id);
-    } else {
-      await InventoryService.instance.add(item.id, 1);
-    }
-    final message = item.category == ShopCategory.unlock
-        ? '已解鎖：${item.titleZh}'
-        : '已購買：${item.titleZh}';
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
-    if (mounted) {
-      setState(() {});
+    _purchaseLocks.add(item.id);
+    try {
+      if (item.category == ShopCategory.limited) {
+        await _purchaseBundle(item.id, item.priceTokens);
+        return;
+      }
+      service.deductToken(item.priceTokens);
+      if (item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) {
+        await shopState.addOwned(item.id);
+      } else {
+        await InventoryService.instance.add(item.id, 1);
+      }
+      final message = item.category == ShopCategory.unlock
+          ? '已擁有：${item.titleZh}'
+          : '已購買：${item.titleZh}';
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
+      if (mounted) {
+        setState(() {});
+      }
+    } finally {
+      _purchaseLocks.remove(item.id);
     }
   }
 
@@ -276,34 +293,32 @@ class _ShopScreenState extends State<ShopScreen> {
                 ? count > 0 && doubleRemaining == 0
                 : item.id == 'boost_xp_burst'
                     ? count > 0 && burstRemaining == 0
-                    : item.kind == ShopItemKind.equipable
-                        ? isOwned && !isEquipped
-                        : false;
+                    : false;
         final showUse = item.effect == ShopEffect.focusXp ||
             item.effect == ShopEffect.doubleToken ||
-            item.id == 'boost_xp_burst' ||
-            item.kind == ShopItemKind.equipable;
+            item.id == 'boost_xp_burst';
+        final isOwnedItem =
+            (item.kind == ShopItemKind.equipable || item.kind == ShopItemKind.owned) &&
+                isOwned;
         final actionLabel = isLimited
             ? (limitedActive ? '購買' : '已結束')
-            : item.kind == ShopItemKind.equipable
-                ? (isOwned ? (isEquipped ? '使用中' : '使用') : '購買')
-                : item.kind == ShopItemKind.owned
-                    ? (isOwned ? '已擁有' : '購買')
-                    : item.isEnabled
+            : isOwnedItem
+                ? '已購買'
+                : item.kind == ShopItemKind.equipable
+                    ? '購買'
+                    : item.kind == ShopItemKind.owned
                         ? '購買'
-                        : '即將推出';
+                        : item.isEnabled
+                            ? '購買'
+                            : '即將推出';
         final actionEnabled = isLimited
             ? limitedActive
-            : item.kind == ShopItemKind.equipable
-                ? !isEquipped
-                : item.kind == ShopItemKind.owned
-                    ? !isOwned
-                    : item.isEnabled;
-        final secondaryActionLabel =
-            item.kind == ShopItemKind.equipable ? '' : (showUse ? '使用' : '');
-        final actionHandler = item.kind == ShopItemKind.equipable && isOwned && !isEquipped
-            ? () => _handleUse(context, item)
-            : () => _handlePurchase(context, item);
+            : isOwnedItem
+                ? true
+                : item.isEnabled;
+        final actionLooksDisabled = isOwnedItem || !actionEnabled;
+        final secondaryActionLabel = showUse ? '使用' : '';
+        void actionHandler() => _handlePurchase(context, item);
         String? helperText;
         if (item.effect == ShopEffect.focusXp || item.effect == ShopEffect.doubleToken) {
           helperText = '啟用後會自動倒數';
@@ -318,7 +333,7 @@ class _ShopScreenState extends State<ShopScreen> {
             item.id == 'cosmetic_theme_warm') {
           helperText = '永久擁有，可隨時切換';
         } else if (item.category == ShopCategory.unlock) {
-          helperText = '解鎖後可在分科測驗中使用';
+          helperText = '購買後可在分科測驗中使用';
         } else if (item.category == ShopCategory.limited) {
           helperText = '購買後直接入庫';
         } else if (item.kind == ShopItemKind.consumable) {
@@ -349,6 +364,7 @@ class _ShopScreenState extends State<ShopScreen> {
             titleIcon: titleIcon,
             actionLabel: actionLabel,
             actionEnabled: actionEnabled,
+            actionLooksDisabled: actionLooksDisabled,
             secondaryActionLabel: secondaryActionLabel,
             secondaryActionEnabled: item.kind == ShopItemKind.equipable ? false : canUse,
             onPurchase: actionHandler,
@@ -385,7 +401,7 @@ class _ShopScreenState extends State<ShopScreen> {
       case 2:
         return '個性';
       case 3:
-        return '解鎖';
+        return '題庫';
       case 4:
         return '限時';
       default:
@@ -560,7 +576,7 @@ class _ShopScreenState extends State<ShopScreen> {
     final service = TokenService.instance;
     if (!service.canAfford(price)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('知識幣不足')),
+        const SnackBar(content: Text('金幣不足')),
       );
       return;
     }
@@ -730,7 +746,7 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 const SizedBox(width: LoomSpacing.base),
                 _TabButton(
-                  label: '解鎖',
+                  label: '題庫',
                   isActive: _tabIndex == 3,
                   onTap: () => setState(() => _tabIndex = 3),
                 ),
@@ -998,6 +1014,7 @@ class ShopItemCard extends StatelessWidget {
     required this.onPurchase,
     required this.actionLabel,
     required this.actionEnabled,
+    required this.actionLooksDisabled,
     required this.secondaryActionLabel,
     required this.secondaryActionEnabled,
     required this.onSecondaryAction,
@@ -1015,6 +1032,7 @@ class ShopItemCard extends StatelessWidget {
   final VoidCallback onPurchase;
   final String actionLabel;
   final bool actionEnabled;
+  final bool actionLooksDisabled;
   final String secondaryActionLabel;
   final bool secondaryActionEnabled;
   final VoidCallback onSecondaryAction;
@@ -1086,6 +1104,11 @@ class ShopItemCard extends StatelessWidget {
                         ),
                       TextButton(
                         onPressed: actionEnabled ? onPurchase : null,
+                        style: actionLooksDisabled
+                            ? TextButton.styleFrom(
+                                foregroundColor: LoomTheme.textSecondary(context),
+                              )
+                            : null,
                         child: Text(actionLabel),
                       ),
                     ],

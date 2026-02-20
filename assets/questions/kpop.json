@@ -1,142 +1,1682 @@
 [
   {
-    "id": "kpop_v1_0001",
-    "subject": "kpop",
-    "prompt": "K-Pop 團體常見的「回歸」(comeback) 指的是？",
+    "id": "kpop_v3_0001",
+    "prompt": "BTS 的出道年份是？",
     "options": [
-      "推出新作品並展開宣傳",
-      "宣布解散",
-      "更換公司名字",
-      "停止活動"
+      "2011",
+      "2013",
+      "2015",
+      "2017"
     ],
-    "answerIndex": 0,
-    "explanation": "回歸是指發新歌或專輯並開啟一輪宣傳期。",
-    "difficulty": "easy"
+    "answerIndex": 1,
+    "explanation": "BTS 於 2013 年 6 月以《No More Dream》正式出道。出道專輯為《2 Cool 4 Skool》。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0002",
-    "subject": "kpop",
-    "prompt": "韓劇常說的「OST」是什麼？",
+    "id": "kpop_v3_0002",
+    "prompt": "BLACKPINK 於 2016 年以哪張單曲專輯出道？",
     "options": [
-      "原聲帶",
-      "劇本大綱",
-      "片尾字幕",
-      "宣傳海報"
+      "Square One",
+      "Square Two",
+      "Kill This Love",
+      "DDU-DU DDU-DU"
     ],
     "answerIndex": 0,
-    "explanation": "OST 是 Original Soundtrack 的縮寫。",
-    "difficulty": "easy"
+    "explanation": "BLACKPINK 2016 年 8 月以單曲專輯《Square One》出道。主打為〈BOOMBAYAH〉與〈Whistle〉。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0003",
-    "subject": "kpop",
-    "prompt": "偶像產業裡的「練習生」主要在做什麼？",
+    "id": "kpop_v3_0003",
+    "prompt": "EXO 的首張正規專輯名稱是？",
     "options": [
-      "接受唱跳與舞台訓練",
-      "專門負責後勤物流",
-      "只學作曲不表演",
-      "負責電視台剪輯"
+      "XOXO",
+      "EXODUS",
+      "The War",
+      "Obsession"
     ],
     "answerIndex": 0,
-    "explanation": "練習生制度是培養出道能力的核心機制。",
-    "difficulty": "easy"
+    "explanation": "EXO 2013 年推出首張正規專輯《XOXO》。收錄〈Wolf〉與改版加收的〈Growl〉。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0004",
-    "subject": "kpop",
-    "prompt": "韓流擴散全球的重要推力之一是？",
+    "id": "kpop_v3_0004",
+    "prompt": "TWICE 的官方粉絲名是？",
     "options": [
-      "社群平台的即時傳播",
-      "完全不對外宣傳",
-      "只在本地電視播放",
-      "限制海外觀看"
+      "Blink",
+      "Once",
+      "Reveluv",
+      "Midzy"
     ],
-    "answerIndex": 0,
-    "explanation": "YouTube、社群平台讓內容快速跨國流通。",
-    "difficulty": "medium"
+    "answerIndex": 1,
+    "explanation": "TWICE 的官方粉絲名為 ONCE。該名稱在 2015 年出道後公布。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0005",
-    "subject": "kpop",
-    "prompt": "偶像團體的「應援文化」最主要的作用是？",
+    "id": "kpop_v3_0005",
+    "prompt": "SEVENTEEN 的單位「Vocal Team」不包含哪位成員？",
     "options": [
-      "建立粉絲與藝人的連結",
-      "替代正式宣傳",
-      "避免現場表演",
-      "降低音樂品質"
+      "Woozi",
+      "Seungkwan",
+      "DK",
+      "Hoshi"
     ],
-    "answerIndex": 0,
-    "explanation": "應援是一種互動，強化粉絲社群與支持感。",
-    "difficulty": "medium"
+    "answerIndex": 3,
+    "explanation": "Hoshi 屬於 Performance Team。Vocal Team 成員包含 Woozi、Jeonghan、Joshua、DK、Seungkwan。",
+    "difficulty": "medium",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0006",
-    "subject": "kpop",
-    "prompt": "韓劇製作常見的「先播後拍」模式可能帶來？",
+    "id": "kpop_v3_0006",
+    "prompt": "Red Velvet 的出道曲是？",
     "options": [
-      "劇情可依觀眾反應調整",
-      "完全無法改動內容",
-      "一定成本更低",
-      "只剩剪接工作"
+      "Ice Cream Cake",
+      "Happiness",
+      "Red Flavor",
+      "Dumb Dumb"
     ],
-    "answerIndex": 0,
-    "explanation": "播出中仍拍攝，劇情可以回應市場反饋。",
-    "difficulty": "medium"
+    "answerIndex": 1,
+    "explanation": "Red Velvet 於 2014 年以〈Happiness〉出道。當時團體成員為四人組，後來加入 Yeri。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0007",
-    "subject": "kpop",
-    "prompt": "K-Pop 練習生合約常被關注的原因是？",
+    "id": "kpop_v3_0007",
+    "prompt": "IU 的本名是？",
     "options": [
-      "合約年限與條款可能過長",
-      "一定沒有收入",
-      "只能演戲不能唱歌",
-      "只跟國外公司合作"
+      "李知恩",
+      "金智秀",
+      "朴彩英",
+      "孫娜恩"
     ],
     "answerIndex": 0,
-    "explanation": "合約條款牽涉權利與分潤，因此常引發討論。",
-    "difficulty": "medium"
+    "explanation": "IU 的本名是李知恩。她 2008 年以〈迷兒〉出道。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0008",
-    "subject": "kpop",
-    "prompt": "韓流能持續擴散的關鍵策略之一是？",
+    "id": "kpop_v3_0008",
+    "prompt": "SHINee 的出道曲是？",
     "options": [
-      "多平台內容與跨界合作",
-      "限制曲風單一",
-      "只做單一市場",
-      "完全不做海外宣傳"
+      "Replay",
+      "Ring Ding Dong",
+      "Sherlock",
+      "View"
     ],
     "answerIndex": 0,
-    "explanation": "跨平台與跨界合作讓內容更容易擴散。",
-    "difficulty": "hard"
+    "explanation": "SHINee 於 2008 年以〈Replay〉出道。該曲被稱為「出道神曲」之一。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0009",
-    "subject": "kpop",
-    "prompt": "粉絲經濟對娛樂產業的影響最貼近？",
+    "id": "kpop_v3_0009",
+    "prompt": "BIGBANG 的經紀公司是？",
     "options": [
-      "形成長期支持與穩定收益",
-      "只靠一次性消費",
-      "讓作品完全不需要宣傳",
-      "與內容品質無關"
+      "SM娛樂",
+      "YG娛樂",
+      "JYP娛樂",
+      "Starship"
     ],
-    "answerIndex": 0,
-    "explanation": "粉絲社群可提供長期支持與多元收益。",
-    "difficulty": "hard"
+    "answerIndex": 1,
+    "explanation": "BIGBANG 由 YG 娛樂打造。該公司也旗下有 2NE1、BLACKPINK 等。",
+    "difficulty": "easy",
+    "subject": "kpop"
   },
   {
-    "id": "kpop_v1_0010",
-    "subject": "kpop",
-    "prompt": "韓劇與 K-Pop 的共同優勢之一是？",
+    "id": "kpop_v3_0010",
+    "prompt": "少女時代的出道年份是？",
     "options": [
-      "強故事性與情感共鳴",
-      "一定靠名人代言",
-      "只用一種語言",
-      "固定拍攝手法"
+      "2005",
+      "2007",
+      "2009",
+      "2011"
+    ],
+    "answerIndex": 1,
+    "explanation": "少女時代於 2007 年出道。出道曲為〈Into the New World〉。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0011",
+    "prompt": "NCT 的概念核心之一是？",
+    "options": [
+      "固定成員",
+      "無限成員與城市擴張",
+      "只在日本活動",
+      "只發行單曲"
+    ],
+    "answerIndex": 1,
+    "explanation": "NCT 以「無限成員」與「城市擴張」為概念。旗下有 NCT 127、NCT DREAM、WayV 等單位。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0012",
+    "prompt": "IVE 的出道曲是？",
+    "options": [
+      "ELEVEN",
+      "LOVE DIVE",
+      "After LIKE",
+      "I AM"
     ],
     "answerIndex": 0,
-    "explanation": "強烈的情感與敘事能力讓內容跨文化傳播。",
-    "difficulty": "easy"
+    "explanation": "IVE 於 2021 年以〈ELEVEN〉出道。歌曲在韓國音源榜成績亮眼。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0013",
+    "prompt": "Stray Kids 的出道年份是？",
+    "options": [
+      "2016",
+      "2017",
+      "2018",
+      "2019"
+    ],
+    "answerIndex": 2,
+    "explanation": "Stray Kids 於 2018 年以迷你專輯《I am NOT》出道。主打歌為〈District 9〉。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0014",
+    "prompt": "ITZY 的出道曲是？",
+    "options": [
+      "WANNABE",
+      "DALLA DALLA",
+      "ICY",
+      "LOCO"
+    ],
+    "answerIndex": 1,
+    "explanation": "ITZY 2019 年以〈DALLA DALLA〉出道。該曲獲得多個音樂節目一位。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0015",
+    "prompt": "LE SSERAFIM 的經紀公司是？",
+    "options": [
+      "HYBE/Source Music",
+      "SM娛樂",
+      "YG娛樂",
+      "Cube"
+    ],
+    "answerIndex": 0,
+    "explanation": "LE SSERAFIM 由 HYBE 旗下 Source Music 推出。團體於 2022 年出道。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0016",
+    "prompt": "aespa 的世界觀核心關鍵詞是？",
+    "options": [
+      "魔法少女",
+      "SAVAGE",
+      "AI 與 Avatar",
+      "時間旅行"
+    ],
+    "answerIndex": 2,
+    "explanation": "aespa 以 AI 與 Avatar（ae）為世界觀核心。故事線貫穿多首歌曲與 MV。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0017",
+    "prompt": "GOT7 的官方粉絲名是？",
+    "options": [
+      "Ahgase",
+      "ELF",
+      "EXO-L",
+      "Moa"
+    ],
+    "answerIndex": 0,
+    "explanation": "GOT7 粉絲名為 Ahgase（아가새）。該名稱源自韓語「小鳥」的諧音。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0018",
+    "prompt": "MAMAMOO 的成員數為？",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answerIndex": 1,
+    "explanation": "MAMAMOO 為四人女團。成員為 Solar、Moonbyul、Wheein、Hwasa。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0019",
+    "prompt": "2NE1 的出道曲是？",
+    "options": [
+      "Fire",
+      "I Am the Best",
+      "Lonely",
+      "Go Away"
+    ],
+    "answerIndex": 0,
+    "explanation": "2NE1 於 2009 年以〈Fire〉出道。她們以強烈舞台魅力聞名。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0020",
+    "prompt": "少女時代的代表曲之一〈Gee〉發行於哪一年？",
+    "options": [
+      "2007",
+      "2008",
+      "2009",
+      "2010"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Gee〉於 2009 年發行。該曲在音樂節目獲得長期一位成績。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0021",
+    "prompt": "SEVENTEEN 的出道曲是？",
+    "options": [
+      "Adore U",
+      "Mansae",
+      "Pretty U",
+      "Very Nice"
+    ],
+    "answerIndex": 0,
+    "explanation": "SEVENTEEN 於 2015 年以〈Adore U〉出道。出道迷你專輯為《17 Carat》。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0022",
+    "prompt": "TWICE 的出道方式是？",
+    "options": [
+      "電視劇 OST",
+      "選秀節目《SIXTEEN》",
+      "舞團比賽",
+      "地下網路翻唱"
+    ],
+    "answerIndex": 1,
+    "explanation": "TWICE 由 JYP 選秀節目《SIXTEEN》選出。節目於 2015 年播出並確定最終成員。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0023",
+    "prompt": "EXO 的粉絲名為？",
+    "options": [
+      "EXO-L",
+      "Eri",
+      "EXO-M",
+      "XOXO"
+    ],
+    "answerIndex": 0,
+    "explanation": "EXO 的官方粉絲名為 EXO-L。L 代表 EXO-K 與 EXO-M 之間的字母。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0024",
+    "prompt": "BTS 的官方粉絲名是？",
+    "options": [
+      "Army",
+      "Once",
+      "Stay",
+      "Carat"
+    ],
+    "answerIndex": 0,
+    "explanation": "BTS 粉絲名為 ARMY。該名稱與團名「防彈少年團」相呼應。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0025",
+    "prompt": "Red Velvet 的成員 Yeri 於哪一年加入？",
+    "options": [
+      "2014",
+      "2015",
+      "2016",
+      "2017"
+    ],
+    "answerIndex": 1,
+    "explanation": "Yeri 於 2015 年加入 Red Velvet。她首次參與的作品為《Ice Cream Cake》活動。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0026",
+    "prompt": "NCT 127 的「127」指的是？",
+    "options": [
+      "成員數",
+      "首爾經度",
+      "首爾緯度",
+      "出道年份"
+    ],
+    "answerIndex": 1,
+    "explanation": "NCT 127 的「127」指首爾的經度約 127。團名象徵以首爾為據點的全球擴張。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0027",
+    "prompt": "BLACKPINK 的官方粉絲名是？",
+    "options": [
+      "Blink",
+      "Reveluv",
+      "Moa",
+      "Neverland"
+    ],
+    "answerIndex": 0,
+    "explanation": "BLACKPINK 粉絲名為 BLINK。該名結合了 BLACK 與 PINK。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0028",
+    "prompt": "BTS 的歌曲〈Dynamite〉屬於哪種語言主導的單曲？",
+    "options": [
+      "韓語",
+      "日語",
+      "英語",
+      "中文"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Dynamite〉是 BTS 以英語演唱的單曲。於 2020 年發布並獲得全球關注。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0029",
+    "prompt": "IU 以哪首歌在 2017 年大獲成功？",
+    "options": [
+      "Palette",
+      "Blueming",
+      "Eight",
+      "Lilac"
+    ],
+    "answerIndex": 0,
+    "explanation": "IU 在 2017 年推出〈Palette〉，與 G-Dragon 合作。該曲長期佔據音源榜前列。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0030",
+    "prompt": "SHINee 的團名寓意較接近哪一項？",
+    "options": [
+      "星星閃耀",
+      "發光的少年",
+      "守護者",
+      "舞台之王"
+    ],
+    "answerIndex": 1,
+    "explanation": "SHINee 源自「shine」與「ee」的結合，意指「發光的人」。團名象徵閃耀的少年。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0031",
+    "prompt": "IVE 的成員安俞真出身於哪個團體？",
+    "options": [
+      "IZ*ONE",
+      "fromis_9",
+      "WJSN",
+      "GFRIEND"
+    ],
+    "answerIndex": 0,
+    "explanation": "安俞真曾在 IZ*ONE 活動。IVE 於 2021 年出道後重新組成新團體。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0032",
+    "prompt": "Stray Kids 的粉絲名是？",
+    "options": [
+      "Stay",
+      "Moa",
+      "Atiny",
+      "Neverland"
+    ],
+    "answerIndex": 0,
+    "explanation": "Stray Kids 粉絲名為 STAY。該名稱象徵粉絲與團體一起停留在彼此身邊。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0033",
+    "prompt": "ITZY 的團名含義更接近哪一項？",
+    "options": [
+      "我要有趣",
+      "就在這裡/有這些",
+      "夢想成真",
+      "勇敢前進"
+    ],
+    "answerIndex": 1,
+    "explanation": "ITZY 在韓文發音與「있지」相近，意思是「有、在這裡」。團名表達女孩們擁有想要的一切。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0034",
+    "prompt": "LE SSERAFIM 的出道曲是？",
+    "options": [
+      "FEARLESS",
+      "ANTIFRAGILE",
+      "UNFORGIVEN",
+      "Eve, Psyche & The Bluebeard’s wife"
+    ],
+    "answerIndex": 0,
+    "explanation": "LE SSERAFIM 於 2022 年以〈FEARLESS〉出道。該曲收錄於同名迷你專輯。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0035",
+    "prompt": "aespa 的出道曲是？",
+    "options": [
+      "Black Mamba",
+      "Next Level",
+      "Savage",
+      "Girls"
+    ],
+    "answerIndex": 0,
+    "explanation": "aespa 於 2020 年以〈Black Mamba〉出道。歌曲奠定其世界觀概念。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0036",
+    "prompt": "GOT7 的出道曲是？",
+    "options": [
+      "Girls Girls Girls",
+      "Just Right",
+      "If You Do",
+      "Hard Carry"
+    ],
+    "answerIndex": 0,
+    "explanation": "GOT7 於 2014 年以〈Girls Girls Girls〉出道。該曲屬於出道迷你專輯《Got It?》。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0037",
+    "prompt": "MAMAMOO 的出道曲是？",
+    "options": [
+      "Mr. Ambiguous",
+      "Um Oh Ah Yeh",
+      "Decalcomanie",
+      "HIP"
+    ],
+    "answerIndex": 0,
+    "explanation": "MAMAMOO 於 2014 年以〈Mr. Ambiguous〉出道。她們以現場唱功著稱。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0038",
+    "prompt": "2NE1 的代表曲〈I Am the Best〉發行於？",
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2013"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈I Am the Best〉於 2011 年發行。該曲成為 2NE1 的代表作之一。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0039",
+    "prompt": "EXO 的〈Growl〉最初收錄於哪張專輯？",
+    "options": [
+      "XOXO",
+      "EXODUS",
+      "The War",
+      "Overdose"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Growl〉收錄於《XOXO》改版專輯。該曲助 EXO 大幅提升人氣。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0040",
+    "prompt": "BTS 的〈Spring Day〉發行年份是？",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Spring Day〉於 2017 年發行。該曲以長期在榜表現著稱。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0041",
+    "prompt": "BLACKPINK 的〈DDU-DU DDU-DU〉屬於哪張迷你專輯？",
+    "options": [
+      "KILL THIS LOVE",
+      "SQUARE UP",
+      "THE ALBUM",
+      "BORN PINK"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈DDU-DU DDU-DU〉收錄於 2018 年迷你專輯《SQUARE UP》。該曲 MV 也獲得大量觀看。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0042",
+    "prompt": "TWICE 的〈Cheer Up〉發行於？",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Cheer Up〉於 2016 年推出。這首歌被視為 TWICE 早期的代表作。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0043",
+    "prompt": "Red Velvet 的〈Red Flavor〉屬於哪一年？",
+    "options": [
+      "2016",
+      "2017",
+      "2018",
+      "2019"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Red Flavor〉於 2017 年發行。歌曲是夏日風格代表曲之一。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0044",
+    "prompt": "NCT DREAM 最初以什麼概念出道？",
+    "options": [
+      "年齡限制與畢業制",
+      "固定成年成員",
+      "只在海外活動",
+      "只發行 OST"
+    ],
+    "answerIndex": 0,
+    "explanation": "NCT DREAM 初期採年齡限制與畢業制。後來 2020 年改為固定成員制。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0045",
+    "prompt": "SEVENTEEN 的官方粉絲名為？",
+    "options": [
+      "Carat",
+      "Stay",
+      "Moa",
+      "ELF"
+    ],
+    "answerIndex": 0,
+    "explanation": "SEVENTEEN 粉絲名為 CARAT。名稱與團體別名「鑽石」概念呼應。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0046",
+    "prompt": "IVE 的〈LOVE DIVE〉發行於？",
+    "options": [
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈LOVE DIVE〉於 2022 年發行。該曲在多個頒獎典禮獲得年度歌曲獎項。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0047",
+    "prompt": "Stray Kids 以哪首歌首次獲得音樂節目一位？",
+    "options": [
+      "God’s Menu",
+      "MIROH",
+      "Back Door",
+      "Levanter"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈MIROH〉於 2019 年為 Stray Kids 帶來首個音樂節目一位。該曲收錄於《Clé 1 : MIROH》。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0048",
+    "prompt": "ITZY 的〈WANNABE〉中著名的舞蹈重點是？",
+    "options": [
+      "肩膀舞",
+      "手指舞",
+      "腳步滑步",
+      "轉圈舞"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈WANNABE〉的招牌動作是肩膀舞。該舞蹈成為當年熱門挑戰之一。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0049",
+    "prompt": "LE SSERAFIM 的〈ANTIFRAGILE〉發行於？",
+    "options": [
+      "2022",
+      "2023",
+      "2024",
+      "2021"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈ANTIFRAGILE〉於 2022 年推出。歌曲融合拉丁節奏元素。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0050",
+    "prompt": "aespa 的〈Next Level〉最初改編自哪裡的作品？",
+    "options": [
+      "電影原聲",
+      "電玩 OST",
+      "廣告曲",
+      "童謠"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Next Level〉改編自電影《Fast & Furious: Hobbs & Shaw》的原聲歌曲。SM 重新製作並加入 aespa 世界觀。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0051",
+    "prompt": "GOT7 的〈Just Right〉以哪一年發行？",
+    "options": [
+      "2014",
+      "2015",
+      "2016",
+      "2017"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Just Right〉於 2015 年發行。歌詞主題是自信與自我肯定。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0052",
+    "prompt": "MAMAMOO 的〈HIP〉發行於？",
+    "options": [
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈HIP〉於 2019 年發行。這首歌在音樂節目獲得多個一位。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0053",
+    "prompt": "2NE1 的〈Lonely〉屬於哪一年？",
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2013"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Lonely〉於 2011 年發行。歌曲呈現抒情搖滾風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0054",
+    "prompt": "IU 的〈Good Day〉以哪個高音段落著名？",
+    "options": [
+      "2 段高音",
+      "3 段高音",
+      "4 段高音",
+      "5 段高音"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Good Day〉以三段高音聞名。歌曲於 2010 年發行。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0055",
+    "prompt": "SHINee 的〈Ring Ding Dong〉發行於哪一年？",
+    "options": [
+      "2008",
+      "2009",
+      "2010",
+      "2011"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Ring Ding Dong〉於 2009 年發行。該曲成為 SHINee 的代表作之一。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0056",
+    "prompt": "BIGBANG 的〈Bang Bang Bang〉發行於？",
+    "options": [
+      "2013",
+      "2014",
+      "2015",
+      "2016"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Bang Bang Bang〉於 2015 年發行。歌曲收錄於《MADE》系列。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0057",
+    "prompt": "少女時代的〈The Boys〉主要宣傳版本之一是？",
+    "options": [
+      "英文版",
+      "日文版",
+      "中文版",
+      "西班牙文版"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈The Boys〉有英文版作為海外宣傳版本。該曲於 2011 年發行。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0058",
+    "prompt": "NCT 127 的出道曲是？",
+    "options": [
+      "Fire Truck",
+      "Limitless",
+      "Cherry Bomb",
+      "Regular"
+    ],
+    "answerIndex": 0,
+    "explanation": "NCT 127 於 2016 年以〈Fire Truck〉出道。該曲收錄於首張迷你專輯。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0059",
+    "prompt": "TWICE 的〈TT〉發行於？",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈TT〉於 2016 年發行。歌曲中的 TT 手勢成為流行動作。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0060",
+    "prompt": "BLACKPINK 的首張正規專輯是？",
+    "options": [
+      "SQUARE UP",
+      "THE ALBUM",
+      "BORN PINK",
+      "KILL THIS LOVE"
+    ],
+    "answerIndex": 1,
+    "explanation": "BLACKPINK 於 2020 年推出首張正規專輯《THE ALBUM》。專輯包含〈Lovesick Girls〉等歌曲。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0061",
+    "prompt": "BTS 的〈Boy With Luv〉合作歌手是？",
+    "options": [
+      "Halsey",
+      "Ariana Grande",
+      "Sia",
+      "Dua Lipa"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Boy With Luv〉與 Halsey 合作。歌曲收錄於 2019 年專輯《MAP OF THE SOUL : PERSONA》。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0062",
+    "prompt": "EXO 的〈Call Me Baby〉屬於哪張專輯？",
+    "options": [
+      "EXODUS",
+      "XOXO",
+      "The War",
+      "Love Shot"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Call Me Baby〉收錄於 2015 年專輯《EXODUS》。該曲亦推出韓中雙版本。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0063",
+    "prompt": "Red Velvet 的〈Psycho〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Psycho〉於 2019 年發行。歌曲展現 Red Velvet 的 Velvet 風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0064",
+    "prompt": "SEVENTEEN 的〈Aju Nice〉韓文原曲名是？",
+    "options": [
+      "예쁘다",
+      "아주 NICE",
+      "박수",
+      "울고 싶지 않아"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Aju Nice〉的韓文原名為〈아주 NICE〉。歌曲於 2016 年發行。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0065",
+    "prompt": "Stray Kids 的〈God’s Menu〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈God’s Menu〉於 2020 年發行。歌曲以強烈節奏與廚房意象著稱。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0066",
+    "prompt": "IVE 的〈After LIKE〉取樣自哪首經典歌曲？",
+    "options": [
+      "I Will Survive",
+      "I Will Always Love You",
+      "Dancing Queen",
+      "I Will Survive (Gloria Gaynor)"
+    ],
+    "answerIndex": 3,
+    "explanation": "〈After LIKE〉取樣 Gloria Gaynor 的〈I Will Survive〉。歌曲於 2022 年發布。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0067",
+    "prompt": "LE SSERAFIM 的團名為哪種拼法遊戲？",
+    "options": [
+      "法文縮寫",
+      "字母重排",
+      "韓文縮寫",
+      "日文羅馬字"
+    ],
+    "answerIndex": 1,
+    "explanation": "LE SSERAFIM 是「IM FEARLESS」的字母重排。團名象徵無畏與自信。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0068",
+    "prompt": "aespa 的〈Savage〉屬於哪年發行？",
+    "options": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Savage〉於 2021 年發行。歌曲收錄於同名迷你專輯。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0069",
+    "prompt": "GOT7 的成員人數是？",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answerIndex": 2,
+    "explanation": "GOT7 為 7 人男團。成員包含 JB、Mark、Jackson、Jinyoung、Youngjae、BamBam、Yugyeom。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0070",
+    "prompt": "MAMAMOO 的團名含義較接近？",
+    "options": [
+      "音符",
+      "嬰兒牙牙學語",
+      "星座",
+      "季節"
+    ],
+    "answerIndex": 1,
+    "explanation": "MAMAMOO 取自嬰兒牙牙學語的擬聲。象徵自然、親近的音樂風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0071",
+    "prompt": "2NE1 的成員 CL 全名是？",
+    "options": [
+      "李彩麟",
+      "朴春",
+      "孔敏智",
+      "李彩英"
+    ],
+    "answerIndex": 0,
+    "explanation": "CL 的本名為李彩麟。她是 2NE1 的隊長。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0072",
+    "prompt": "IU 的〈Blueming〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Blueming〉於 2019 年發行。歌曲融合合成器流行風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0073",
+    "prompt": "SHINee 的〈View〉屬於哪年發行？",
+    "options": [
+      "2014",
+      "2015",
+      "2016",
+      "2017"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈View〉於 2015 年發行。該曲呈現深屋（deep house）風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0074",
+    "prompt": "BIGBANG 的成員太陽英文名是？",
+    "options": [
+      "Taeyang",
+      "Daesung",
+      "TOP",
+      "G-Dragon"
+    ],
+    "answerIndex": 0,
+    "explanation": "太陽的英文藝名是 Taeyang。其名在韓語中意為「太陽」。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0075",
+    "prompt": "少女時代小分隊「TTS」成員不包含誰？",
+    "options": [
+      "太妍",
+      "蒂芬妮",
+      "徐玄",
+      "潤娥"
+    ],
+    "answerIndex": 3,
+    "explanation": "TTS 成員為太妍、蒂芬妮、徐玄。潤娥不在此分隊。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0076",
+    "prompt": "NCT DREAM 的〈Candy〉是翻唱自哪個前輩團體？",
+    "options": [
+      "H.O.T.",
+      "g.o.d",
+      "Shinhwa",
+      "TVXQ"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Candy〉原曲為 H.O.T. 1996 年的代表作。NCT DREAM 於 2022 年翻唱發行。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0077",
+    "prompt": "TWICE 的〈Feel Special〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Feel Special〉於 2019 年推出。該曲以感謝與支持為主題。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0078",
+    "prompt": "BLACKPINK 的〈How You Like That〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈How You Like That〉於 2020 年發行。該曲為《THE ALBUM》前導單曲。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0079",
+    "prompt": "BTS 的〈FAKE LOVE〉屬於哪張專輯？",
+    "options": [
+      "WINGS",
+      "LOVE YOURSELF 轉 ‘Tear’",
+      "MAP OF THE SOUL : 7",
+      "BE"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈FAKE LOVE〉收錄於 2018 年專輯《LOVE YOURSELF 轉 ‘Tear’》。該曲也是專輯主打。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0080",
+    "prompt": "EXO 的〈Love Shot〉發行於？",
+    "options": [
+      "2016",
+      "2017",
+      "2018",
+      "2019"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Love Shot〉於 2018 年發行。歌曲收錄於《DON’T MESS UP MY TEMPO》改版專輯。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0081",
+    "prompt": "Red Velvet 的〈Bad Boy〉發行於？",
+    "options": [
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Bad Boy〉於 2018 年發行。該曲展現團體的 R&B 風格。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0082",
+    "prompt": "SEVENTEEN 的〈Don’t Wanna Cry〉發行於？",
+    "options": [
+      "2016",
+      "2017",
+      "2018",
+      "2019"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Don’t Wanna Cry〉於 2017 年發行。歌曲融合 EDM 與抒情元素。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0083",
+    "prompt": "Stray Kids 的〈Back Door〉發行於？",
+    "options": [
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Back Door〉於 2020 年發行。該曲收錄於正規專輯《IN生》。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0084",
+    "prompt": "IVE 的〈I AM〉發行於？",
+    "options": [
+      "2022",
+      "2023",
+      "2024",
+      "2021"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈I AM〉於 2023 年發行。這首歌是 IVE 首張正規專輯主打。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0085",
+    "prompt": "LE SSERAFIM 的〈UNFORGIVEN〉合作歌手是？",
+    "options": [
+      "Nile Rodgers",
+      "Anderson .Paak",
+      "SZA",
+      "Doja Cat"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈UNFORGIVEN〉邀請 Nile Rodgers 參與。歌曲於 2023 年發行。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0086",
+    "prompt": "aespa 的〈Girls〉發行於？",
+    "options": [
+      "2021",
+      "2022",
+      "2023",
+      "2020"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Girls〉於 2022 年發行。收錄於同名迷你專輯。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0087",
+    "prompt": "GOT7 的〈Hard Carry〉發行於？",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Hard Carry〉於 2016 年發行。歌曲以強烈節奏與表演聞名。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0088",
+    "prompt": "MAMAMOO 的〈Starry Night〉發行於？",
+    "options": [
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Starry Night〉於 2018 年發行。MV 於紐西蘭取景。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0089",
+    "prompt": "2NE1 的正式解散年份是？",
+    "options": [
+      "2014",
+      "2015",
+      "2016",
+      "2017"
+    ],
+    "answerIndex": 2,
+    "explanation": "2NE1 於 2016 年宣布解散。最後發布的歌曲為〈Goodbye〉。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0090",
+    "prompt": "IU 的〈Eight〉合作歌手是？",
+    "options": [
+      "SUGA",
+      "RM",
+      "G-Dragon",
+      "ZICO"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Eight〉由 IU 與 BTS 的 SUGA 合作並由他參與製作。歌曲於 2020 年發行。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0091",
+    "prompt": "SHINee 的成員 Onew 本名是？",
+    "options": [
+      "李珍基",
+      "金起範",
+      "崔珉豪",
+      "李泰民"
+    ],
+    "answerIndex": 0,
+    "explanation": "Onew 的本名是李珍基。其為 SHINee 隊長。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0092",
+    "prompt": "BIGBANG 的〈Haru Haru〉發行於？",
+    "options": [
+      "2007",
+      "2008",
+      "2009",
+      "2010"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Haru Haru〉於 2008 年發行。歌曲是 BIGBANG 早期代表作。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0093",
+    "prompt": "少女時代的日文出道年份是？",
+    "options": [
+      "2009",
+      "2010",
+      "2011",
+      "2012"
+    ],
+    "answerIndex": 1,
+    "explanation": "少女時代於 2010 年在日本正式出道。日文出道單曲為〈GENIE〉日文版。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0094",
+    "prompt": "NCT 的首個整體企劃專輯是？",
+    "options": [
+      "NCT 2018 EMPATHY",
+      "NCT 2020 Resonance",
+      "NCT 2021 Universe",
+      "NCT 127 Regular"
+    ],
+    "answerIndex": 0,
+    "explanation": "NCT 2018 年推出首張全體企劃《NCT 2018 EMPATHY》。該專輯集合多個單位。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0095",
+    "prompt": "TWICE 的〈Fancy〉發行於？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈Fancy〉於 2019 年發行。歌曲標誌 TWICE 形象走向成熟。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0096",
+    "prompt": "BLACKPINK 成員 Rosé 的本名為？",
+    "options": [
+      "朴彩英",
+      "金智秀",
+      "李彩麟",
+      "孫彩英"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rosé 的本名為朴彩英。她在 2021 年以〈On The Ground〉個人出道。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0097",
+    "prompt": "BTS 的〈Mic Drop〉與哪個製作人合作混音？",
+    "options": [
+      "Steve Aoki",
+      "Marshmello",
+      "Zedd",
+      "Kygo"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Mic Drop〉有與 Steve Aoki 合作的混音版本。該版本在國際市場表現出色。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0098",
+    "prompt": "EXO 成員 D.O. 的本名是？",
+    "options": [
+      "都敬秀",
+      "金珉錫",
+      "邊伯賢",
+      "張藝興"
+    ],
+    "answerIndex": 0,
+    "explanation": "D.O. 的本名是都敬秀。除了音樂活動，他也參與多部影視作品。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0099",
+    "prompt": "Red Velvet 的小分隊 Irene & Seulgi 出道曲是？",
+    "options": [
+      "Naughty",
+      "Monster",
+      "Automatic",
+      "Power Up"
+    ],
+    "answerIndex": 1,
+    "explanation": "Irene & Seulgi 以〈Monster〉出道。該曲於 2020 年發行。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0100",
+    "prompt": "SEVENTEEN 的〈HOME;RUN〉是在哪年發行？",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈HOME;RUN〉於 2020 年發行。歌曲以復古大樂隊風格為特色。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0101",
+    "prompt": "Stray Kids 的成員 Bang Chan 擔任的團內職位是？",
+    "options": [
+      "主唱",
+      "隊長",
+      "忙內",
+      "主舞"
+    ],
+    "answerIndex": 1,
+    "explanation": "Bang Chan 是 Stray Kids 的隊長。團體由他與 3RACHA 參與製作。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0102",
+    "prompt": "IVE 的經紀公司是？",
+    "options": [
+      "Starship",
+      "Cube",
+      "SM",
+      "JYP"
+    ],
+    "answerIndex": 0,
+    "explanation": "IVE 由 Starship 娛樂推出。Starship 也擁有 MONSTA X 等團體。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0103",
+    "prompt": "LE SSERAFIM 成員中，來自日本的成員是？",
+    "options": [
+      "宮脇咲良與中村一葉",
+      "許允真與金采源",
+      "洪恩採與金采源",
+      "宮脇咲良與許允真"
+    ],
+    "answerIndex": 0,
+    "explanation": "LE SSERAFIM 的日本成員為宮脇咲良（Sakura）與中村一葉（Kazuha）。兩人皆有海外成長背景。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0104",
+    "prompt": "aespa 的成員 Karina 本名是？",
+    "options": [
+      "劉知珉",
+      "金旼炡",
+      "寧寧",
+      "朴智旻"
+    ],
+    "answerIndex": 0,
+    "explanation": "Karina 的本名為劉知珉。她是 aespa 的隊長。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0105",
+    "prompt": "GOT7 成員 Jackson 的國籍是？",
+    "options": [
+      "韓國",
+      "日本",
+      "香港",
+      "台灣"
+    ],
+    "answerIndex": 2,
+    "explanation": "Jackson Wang 來自香港。出道前為香港劍擊代表隊成員。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0106",
+    "prompt": "MAMAMOO 成員 Moonbyul 在團內主要擔任？",
+    "options": [
+      "主唱",
+      "主饒舌",
+      "主舞",
+      "忙內"
+    ],
+    "answerIndex": 1,
+    "explanation": "Moonbyul 是 MAMAMOO 的主饒舌。她也常參與詞曲創作。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0107",
+    "prompt": "2NE1 成員 Dara 的國籍背景最接近？",
+    "options": [
+      "韓國與菲律賓背景",
+      "韓國與日本背景",
+      "韓國與美國背景",
+      "韓國與中國背景"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dara 曾在菲律賓發展演藝事業並成名。她之後回到韓國以 2NE1 出道。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0108",
+    "prompt": "IU 於 2008 年的出道曲是？",
+    "options": [
+      "迷兒",
+      "Boo",
+      "Good Day",
+      "You & I"
+    ],
+    "answerIndex": 0,
+    "explanation": "IU 以〈迷兒〉出道。該曲收錄於迷你專輯《Lost and Found》。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0109",
+    "prompt": "SHINee 的成員 Key 本名是？",
+    "options": [
+      "金起範",
+      "李泰民",
+      "崔珉豪",
+      "李珍基"
+    ],
+    "answerIndex": 0,
+    "explanation": "Key 的本名為金起範。其於 2008 年以 SHINee 成員身分出道。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0110",
+    "prompt": "BIGBANG 的隊長是？",
+    "options": [
+      "G-Dragon",
+      "T.O.P",
+      "太陽",
+      "大聲"
+    ],
+    "answerIndex": 0,
+    "explanation": "BIGBANG 的隊長為 G-Dragon。其亦以作曲與製作著稱。",
+    "difficulty": "easy",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0111",
+    "prompt": "少女時代成員太妍的個人出道年份是？",
+    "options": [
+      "2013",
+      "2014",
+      "2015",
+      "2016"
+    ],
+    "answerIndex": 2,
+    "explanation": "太妍於 2015 年發行個人首張迷你專輯《I》。主打歌〈I〉為其個人出道曲。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0112",
+    "prompt": "NCT DREAM 的〈Hot Sauce〉發行於？",
+    "options": [
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+    ],
+    "answerIndex": 2,
+    "explanation": "〈Hot Sauce〉於 2021 年發行。該曲為 NCT DREAM 首張正規專輯主打。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0113",
+    "prompt": "TWICE 的〈What is Love?〉發行於？",
+    "options": [
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "answerIndex": 1,
+    "explanation": "〈What is Love?〉於 2018 年發行。MV 以多部經典電影致敬為特色。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0114",
+    "prompt": "BLACKPINK 成員 Jisoo 的出道前職涯之一是？",
+    "options": [
+      "模特與演員活動",
+      "電台 DJ",
+      "地下饒舌",
+      "舞團比賽"
+    ],
+    "answerIndex": 0,
+    "explanation": "Jisoo 在出道前曾參與廣告與演員相關活動。她後來在 2016 年以 BLACKPINK 出道。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0115",
+    "prompt": "BTS 的〈Permission to Dance〉與哪位製作人合作？",
+    "options": [
+      "Ed Sheeran",
+      "Charlie Puth",
+      "Coldplay",
+      "Bruno Mars"
+    ],
+    "answerIndex": 0,
+    "explanation": "〈Permission to Dance〉由 Ed Sheeran 參與詞曲創作。歌曲於 2021 年發行。",
+    "difficulty": "hard",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0116",
+    "prompt": "EXO 的單位 EXO-CBX 成員不包含誰？",
+    "options": [
+      "Chen",
+      "Baekhyun",
+      "Xiumin",
+      "Suho"
+    ],
+    "answerIndex": 3,
+    "explanation": "EXO-CBX 由 Chen、Baekhyun、Xiumin 組成。Suho 是 EXO 的隊長但不在該小分隊。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0117",
+    "prompt": "Red Velvet 的第一個小分隊是？",
+    "options": [
+      "Irene & Seulgi",
+      "Seulgi & Wendy",
+      "Irene & Wendy",
+      "Joy & Yeri"
+    ],
+    "answerIndex": 0,
+    "explanation": "Red Velvet 首個小分隊為 Irene & Seulgi。她們於 2020 年推出《Monster》。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0118",
+    "prompt": "SEVENTEEN 的團內自製特質最著名的是？",
+    "options": [
+      "自製歌曲與編舞",
+      "只翻唱前輩歌曲",
+      "只做舞台劇",
+      "只發行 OST"
+    ],
+    "answerIndex": 0,
+    "explanation": "SEVENTEEN 以自製歌曲與編舞聞名，成員參與製作與舞蹈設計。該特質使他們被稱為「自製偶像」。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0119",
+    "prompt": "Stray Kids 的 3RACHA 成員不包含誰？",
+    "options": [
+      "Bang Chan",
+      "Changbin",
+      "Han",
+      "Felix"
+    ],
+    "answerIndex": 3,
+    "explanation": "3RACHA 成員為 Bang Chan、Changbin、Han。Felix 不是該小分隊成員。",
+    "difficulty": "medium",
+    "subject": "kpop"
+  },
+  {
+    "id": "kpop_v3_0120",
+    "prompt": "IVE 的成員張員瑛出身於哪個團體？",
+    "options": [
+      "IZ*ONE",
+      "WJSN",
+      "fromis_9",
+      "GFRIEND"
+    ],
+    "answerIndex": 0,
+    "explanation": "張員瑛曾在 IZ*ONE 活動。IVE 於 2021 年出道後重新展開團體活動。",
+    "difficulty": "medium",
+    "subject": "kpop"
   }
 ]
