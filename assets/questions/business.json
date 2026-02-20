@@ -1,1562 +1,1562 @@
 [
   {
     "id": "business_v3_0001",
-    "question": "What is a value proposition?",
+    "question": "什麼是價值主張？",
     "options": [
-      "A clear statement of the benefit a customer will get",
-      "A list of all product features",
-      "The legal terms of sale",
-      "The company’s internal mission only"
+      "清楚說明客戶能得到的好處",
+      "所有產品功能清單",
+      "銷售的法律條款",
+      "公司內部使命而已"
     ],
     "answerIndex": 0,
-    "explanation": "A clear statement of the benefit a customer will get 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "價值主張說明你解決的具體問題，以及為何你的方案對該客群更好。重點在成果與利益，而不是堆疊功能，讓買方快速理解價值。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0002",
-    "question": "Which statement best defines a target market?",
+    "question": "哪個敘述最能定義目標市場？",
     "options": [
-      "Everyone who might ever buy the product",
-      "The specific group of customers you aim to serve first",
-      "Only customers who buy during a discount",
-      "Competitors in the same industry"
+      "所有可能買的人",
+      "優先要服務的特定客群",
+      "只在折扣時購買的人",
+      "同產業競爭者"
     ],
     "answerIndex": 1,
-    "explanation": "The specific group of customers you aim to serve first 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "目標市場是依需求、行為或人口特徵所選定的特定族群。它不是全世界，而是你最能有效服務且願意付費的那一群人。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0003",
-    "question": "What does positioning mean in marketing?",
+    "question": "行銷中的定位是什麼意思？",
     "options": [
-      "Where the product sits on a store shelf",
-      "How the product is perceived compared to competitors",
-      "The order of features in a roadmap",
-      "The price you paid for inventory"
+      "商品在貨架上的位置",
+      "相對競品的心智印象",
+      "功能路線圖的排序",
+      "存貨的購買價格"
     ],
     "answerIndex": 1,
-    "explanation": "How the product is perceived compared to competitors 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "定位是產品在顧客心中相對於替代方案的印象與位置。好的定位凸顯獨特利益或受眾契合度，讓選擇變得簡單。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0004",
-    "question": "What is a brand promise?",
+    "question": "什麼是品牌承諾？",
     "options": [
-      "A legal warranty document",
-      "A commitment to deliver a specific experience or benefit",
-      "A list of future product ideas",
-      "A statement only employees see"
+      "法律保固文件",
+      "對特定體驗或利益的承諾",
+      "未來產品點子清單",
+      "只有員工看的聲明"
     ],
     "answerIndex": 1,
-    "explanation": "A commitment to deliver a specific experience or benefit 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌承諾是企業對顧客長期一致交付的體驗與價值保證。它設定顧客期待，重在感受與結果，而不只是產品規格。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0005",
-    "question": "What does brand equity refer to?",
+    "question": "品牌資產指的是什麼？",
     "options": [
-      "The amount of cash in the company bank account",
-      "The value added by a recognized and trusted brand name",
-      "A legal ownership stake in a brand",
-      "A coupon program"
+      "公司帳戶現金",
+      "可信品牌名稱帶來的附加價值",
+      "品牌的法律持股",
+      "折價券方案"
     ],
     "answerIndex": 1,
-    "explanation": "The value added by a recognized and trusted brand name 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌資產是知名且被信任的品牌所帶來的加值。它能讓企業更容易被選擇、縮短購買決策，甚至支撐較高的價格。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0006",
-    "question": "Customer lifetime value (CLV) is best described as:",
+    "question": "顧客終身價值（CLV）最貼切的描述是：",
     "options": [
-      "The revenue from a customer’s first purchase",
-      "The total profit you expect from a customer over time",
-      "The cost to acquire a single customer",
-      "The average discount given to a customer"
+      "顧客第一次購買的收入",
+      "與顧客長期關係中的總獲利",
+      "取得單一顧客的成本",
+      "給顧客的平均折扣"
     ],
     "answerIndex": 1,
-    "explanation": "The total profit you expect from a customer over time 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "CLV估算顧客在整段關係中帶來的總獲利，用來判斷可以花多少成本去獲客與留客，也能衡量長期價值貢獻。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0007",
-    "question": "What does CAC stand for?",
+    "question": "CAC 代表什麼？",
     "options": [
-      "Customer Average Cost",
-      "Customer Acquisition Cost",
-      "Customer Activity Count",
-      "Corporate Asset Cost"
+      "顧客平均成本",
+      "顧客取得成本",
+      "顧客活動次數",
+      "企業資產成本"
     ],
     "answerIndex": 1,
-    "explanation": "Customer Acquisition Cost 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "CAC是取得新顧客的成本，包含行銷與銷售支出。常與CLV比較，判斷成長是否具備長期獲利能力。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0008",
-    "question": "What is a break-even point?",
+    "question": "什麼是損益兩平點？",
     "options": [
-      "When revenue equals total costs",
-      "When a product runs out of stock",
-      "When sales double month over month",
-      "When a company gets its first investor"
+      "營收等於總成本",
+      "產品賣到缺貨",
+      "月銷售倍增",
+      "公司獲得首位投資人"
     ],
     "answerIndex": 0,
-    "explanation": "When revenue equals total costs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "損益兩平是總營收剛好覆蓋總成本、獲利為零的時點。它告訴你至少要賣多少，才能停止虧損。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0009",
-    "question": "Gross margin is calculated as:",
+    "question": "毛利率的計算是：",
     "options": [
-      "(Revenue - Cost of Goods Sold) / Revenue",
-      "Revenue / Cost of Goods Sold",
-      "Net profit / Revenue",
-      "Revenue - Operating expenses"
+      "(營收 - 銷貨成本) / 營收",
+      "營收 / 銷貨成本",
+      "淨利 / 營收",
+      "營收 - 營運費用"
     ],
     "answerIndex": 0,
-    "explanation": "(Revenue - Cost of Goods Sold) / Revenue 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "毛利率衡量每一元營收在扣除直接生產成本後還剩多少。它反映生產效率與定價能力，是評估產品獲利的重要指標。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0010",
-    "question": "Which is an example of a fixed cost?",
+    "question": "以下哪個是固定成本？",
     "options": [
-      "Raw materials",
-      "Sales commissions",
-      "Monthly office rent",
-      "Shipping per order"
+      "原物料",
+      "業務佣金",
+      "每月辦公室租金",
+      "每單運費"
     ],
     "answerIndex": 2,
-    "explanation": "Monthly office rent 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "固定成本不會隨銷量變動而大幅改變，例如租金或固定薪資。變動成本則會隨產量增加而提高，如材料或運輸。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0011",
-    "question": "What is penetration pricing?",
+    "question": "什麼是滲透定價？",
     "options": [
-      "Setting a low price to enter a market and gain share",
-      "Setting the highest possible price at launch",
-      "Pricing the same as competitors",
-      "Pricing based on production cost only"
+      "以低價進入市場搶占市占",
+      "上市即開最高價",
+      "與競品同價",
+      "只看成本定價"
     ],
     "answerIndex": 0,
-    "explanation": "Setting a low price to enter a market and gain share 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "滲透定價用較低的初始價格吸引顧客、快速擴大市占。特別適合價格敏感或轉換成本低的市場。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0012",
-    "question": "What is price skimming?",
+    "question": "什麼是撇脂定價（高價撇脂）？",
     "options": [
-      "Launching with a high price, then lowering it over time",
-      "Setting prices below cost for every sale",
-      "Always matching the lowest competitor price",
-      "Charging the same price in every country"
+      "先高價再逐步降價",
+      "每筆都低於成本",
+      "永遠跟最低價",
+      "各國都同一價格"
     ],
     "answerIndex": 0,
-    "explanation": "Launching with a high price, then lowering it over time 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "撇脂定價先以高價鎖定願意多付費的早期客群，再逐步下調價格以擴大市場。常見於新科技或高端產品。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0013",
-    "question": "What does freemium mean?",
+    "question": "什麼是免費增值（Freemium）？",
     "options": [
-      "A product that is free forever with no paid option",
-      "A free basic version with paid upgrades",
-      "A one-time free trial only",
-      "A paid product with coupons"
+      "永遠免費且沒有付費版",
+      "提供免費基本版、付費升級",
+      "只有一次免費試用",
+      "付費產品搭配折價"
     ],
     "answerIndex": 1,
-    "explanation": "A free basic version with paid upgrades 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "免費增值提供可用的基本版本吸引用戶，進階功能或容量則收費。免費層帶來採用與口碑，付費層支撐營收。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0014",
-    "question": "Bundling in pricing means:",
+    "question": "定價中的綑綁（Bundling）是指：",
     "options": [
-      "Selling products only one at a time",
-      "Combining multiple products or services for one price",
-      "Raising the price every month",
-      "Selling through third parties"
+      "一次只賣一個產品",
+      "多個產品或服務合併一口價",
+      "每月都調漲價格",
+      "透過第三方販售"
     ],
     "answerIndex": 1,
-    "explanation": "Combining multiple products or services for one price 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "綑綁是把多項產品或服務打包成單一價格出售。可提高客單價，也讓競品比較變得不那麼直接。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0015",
-    "question": "A direct distribution channel is:",
+    "question": "直接通路是指：",
     "options": [
-      "Selling through a wholesaler",
-      "Selling through a retailer",
-      "Selling directly to customers via your website",
-      "Selling through a distributor and reseller"
+      "透過批發商銷售",
+      "透過零售商銷售",
+      "透過官網直接賣給顧客",
+      "經由經銷商與轉售商"
     ],
     "answerIndex": 2,
-    "explanation": "Selling directly to customers via your website 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "直接通路是企業直接面向終端顧客銷售，例如官網或自營門市。這能掌握定價、品牌體驗與顧客數據。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0016",
-    "question": "Which stage comes first in a typical marketing funnel?",
+    "question": "典型行銷漏斗最先的階段是？",
     "options": [
-      "Purchase",
-      "Awareness",
-      "Loyalty",
-      "Advocacy"
+      "購買",
+      "認知",
+      "忠誠",
+      "倡議"
     ],
     "answerIndex": 1,
-    "explanation": "Awareness 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "認知是第一步，因為顧客必須先知道你存在，才可能進一步比較與購買。之後才是評估、成交與忠誠。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0017",
-    "question": "Lead qualification is the process of:",
+    "question": "潛在客戶資格評估是指：",
     "options": [
-      "Deciding which leads are likely to become customers",
-      "Writing ad copy",
-      "Discounting prices for new buyers",
-      "Creating social media posts"
+      "判斷哪些線索更可能成交",
+      "撰寫廣告文案",
+      "給新客戶折扣",
+      "做社群貼文"
     ],
     "answerIndex": 0,
-    "explanation": "Deciding which leads are likely to become customers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "資格評估用來辨識最符合目標客群且有購買意圖的線索，讓業務資源集中在高機率成交的對象上。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0018",
-    "question": "Conversion rate measures:",
+    "question": "轉換率衡量的是：",
     "options": [
-      "How many people visit your website",
-      "The percentage of visitors who take a desired action",
-      "The number of products in inventory",
-      "The cost of advertising"
+      "網站訪客數",
+      "完成目標行為的比例",
+      "庫存數量",
+      "廣告成本"
     ],
     "answerIndex": 1,
-    "explanation": "The percentage of visitors who take a desired action 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "轉換率是訪客中完成特定行動（購買、註冊、試用）的比例。它反映漏斗與訊息是否有效。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0019",
-    "question": "What does NPS stand for?",
+    "question": "NPS 代表什麼？",
     "options": [
-      "Net Profit Score",
-      "Net Promoter Score",
-      "New Product Strategy",
-      "Net Purchase Share"
+      "淨利分數",
+      "淨推薦值",
+      "新產品策略",
+      "淨購買份額"
     ],
     "answerIndex": 1,
-    "explanation": "Net Promoter Score 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "淨推薦值衡量顧客願意推薦的程度，是忠誠度與滿意度的快速指標，能反映口碑與長期留存。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0020",
-    "question": "Churn refers to:",
+    "question": "流失（Churn）指的是：",
     "options": [
-      "Customers who stop buying or cancel",
-      "New customers joining each month",
-      "The cost of producing goods",
-      "The number of ads you run"
+      "停止購買或取消的顧客",
+      "每月新增顧客",
+      "生產成本",
+      "投放廣告數量"
     ],
     "answerIndex": 0,
-    "explanation": "Customers who stop buying or cancel 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "流失是顧客停止使用或取消的比例。訂閱或重複購買型商業模式特別依賴低流失來維持成長與獲利。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0021",
-    "question": "Product-market fit means:",
+    "question": "產品市場適配（PMF）是指：",
     "options": [
-      "A product that can be made cheaply",
-      "A product that strongly meets a real customer need",
-      "A product with the most features",
-      "A product that has no competitors"
+      "產品便宜好做",
+      "產品強力滿足真實需求",
+      "產品功能最多",
+      "產品沒有競爭者"
     ],
     "answerIndex": 1,
-    "explanation": "A product that strongly meets a real customer need 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "當顧客願意持續使用並願意付費，代表產品解決了真實痛點，這就是產品市場適配。常見跡象是高留存與口碑推薦。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0022",
-    "question": "What is an MVP?",
+    "question": "什麼是 MVP？",
     "options": [
-      "Most Valuable Product",
-      "Minimum Viable Product",
-      "Market Value Plan",
-      "Main Version Prototype"
+      "最有價值的產品",
+      "最小可行產品",
+      "市場價值計畫",
+      "主要版本原型"
     ],
     "answerIndex": 1,
-    "explanation": "Minimum Viable Product 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "最小可行產品是能解決核心問題的最簡版本，用於快速驗證需求與學習，不需一開始就做完整功能。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0023",
-    "question": "A product roadmap is:",
+    "question": "產品路線圖是：",
     "options": [
-      "A list of customers who bought last month",
-      "A plan showing upcoming product improvements and timing",
-      "A legal compliance document",
-      "A public stock price chart"
+      "上月購買客戶清單",
+      "顯示未來改善與時間的計畫",
+      "法規遵循文件",
+      "股價走勢圖"
     ],
     "answerIndex": 1,
-    "explanation": "A plan showing upcoming product improvements and timing 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "路線圖說明未來要做哪些功能或改進以及大致時程。它用來協調內部團隊與對外利害關係人的期待。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0024",
-    "question": "Why do companies run customer interviews?",
+    "question": "公司為何要做顧客訪談？",
     "options": [
-      "To raise prices immediately",
-      "To understand customer needs and pain points",
-      "To replace market research",
-      "To avoid building prototypes"
+      "立即調高價格",
+      "理解需求與痛點",
+      "取代市場研究",
+      "避免做原型"
     ],
     "answerIndex": 1,
-    "explanation": "To understand customer needs and pain points 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "顧客訪談能了解真實情境中的需求、痛點與期待成果，幫助團隊做出更符合使用者價值的功能，而不是猜測。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0025",
-    "question": "What is A/B testing?",
+    "question": "什麼是 A/B 測試？",
     "options": [
-      "Testing two versions to see which performs better",
-      "A legal audit of suppliers",
-      "A way to set product prices",
-      "A method to measure inventory"
+      "比較兩個版本的成效",
+      "供應商的法務稽核",
+      "設定產品價格的方法",
+      "測量庫存的方法"
     ],
     "answerIndex": 0,
-    "explanation": "Testing two versions to see which performs better 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "A/B測試把兩個版本同時給不同使用者，觀察哪個帶來更好結果。它用真實行為數據來支持決策。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0026",
-    "question": "Market segmentation is:",
+    "question": "市場區隔是：",
     "options": [
-      "Selling to the largest possible audience",
-      "Dividing the market into groups with similar needs",
-      "Choosing a company logo",
-      "Reducing product quality to save costs"
+      "賣給最大範圍的人",
+      "把市場分成需求相似的群組",
+      "挑選公司標誌",
+      "降低產品品質"
     ],
     "answerIndex": 1,
-    "explanation": "Dividing the market into groups with similar needs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "市場區隔是依需求、行為或特徵把顧客分組，讓行銷訊息與產品方案更精準，而非泛泛地對所有人訴求。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0027",
-    "question": "A customer persona is:",
+    "question": "顧客人物誌是：",
     "options": [
-      "A real employee who buys the product",
-      "A fictional profile representing a key customer type",
-      "A competitor profile",
-      "A product prototype"
+      "真實員工購買者",
+      "代表關鍵客群的虛構輪廓",
+      "競品資料",
+      "產品原型"
     ],
     "answerIndex": 1,
-    "explanation": "A fictional profile representing a key customer type 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "人物誌是依研究建立的典型客群角色，描述目標、行為與限制。它讓團隊聚焦在真實用戶需求與情境。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0028",
-    "question": "USP stands for:",
+    "question": "USP 代表什麼？",
     "options": [
-      "Unique Selling Proposition",
-      "User Satisfaction Plan",
-      "United Sales Program",
-      "Universal Service Policy"
+      "獨特銷售主張",
+      "使用者滿意計畫",
+      "聯合銷售方案",
+      "通用服務政策"
     ],
     "answerIndex": 0,
-    "explanation": "Unique Selling Proposition 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "獨特銷售主張是顧客選擇你的明確理由，通常是競品沒有或做得更好的價值。它讓品牌更容易被記住。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0029",
-    "question": "Differentiation in business means:",
+    "question": "商業上的差異化是指：",
     "options": [
-      "Reducing the number of products",
-      "Creating meaningful differences versus competitors",
-      "Matching competitor features exactly",
-      "Only cutting prices"
+      "減少產品數量",
+      "創造相對競品有意義的差別",
+      "完全複製競品功能",
+      "只靠降價競爭"
     ],
     "answerIndex": 1,
-    "explanation": "Creating meaningful differences versus competitors 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "差異化是在顧客在意的面向上建立不同，例如品質、服務或設計。它能避免只靠價格競爭並提升品牌價值。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0030",
-    "question": "A SWOT analysis includes:",
+    "question": "SWOT 分析包含：",
     "options": [
-      "Sales, Weather, Operations, Timing",
-      "Strengths, Weaknesses, Opportunities, Threats",
-      "Supply, Workload, Output, Team",
-      "Strategy, Workforce, Organization, Targets"
+      "銷售、天氣、營運、時機",
+      "優勢、劣勢、機會、威脅",
+      "供應、工作量、產出、團隊",
+      "策略、人力、組織、目標"
     ],
     "answerIndex": 1,
-    "explanation": "Strengths, Weaknesses, Opportunities, Threats 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "SWOT用來檢視內部優勢與劣勢，以及外部機會與威脅。它能快速釐清競爭位置與需要補強的問題。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0031",
-    "question": "What is TAM in market sizing?",
+    "question": "市場規模中的 TAM 是什麼？",
     "options": [
-      "Total Addressable Market",
-      "Top Advertising Metric",
-      "Technical Asset Map",
-      "Tactical Audience Model"
+      "總可服務市場",
+      "頂尖廣告指標",
+      "技術資產地圖",
+      "戰術受眾模型"
     ],
     "answerIndex": 0,
-    "explanation": "Total Addressable Market 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "TAM指理論上可涵蓋的總市場需求，假設你拿到100%市占的天花板。它用來評估成長上限與機會大小。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0032",
-    "question": "Economies of scale mean:",
+    "question": "規模經濟是指：",
     "options": [
-      "Costs per unit rise as volume increases",
-      "Costs per unit fall as volume increases",
-      "Prices must always decrease",
-      "Quality must drop with growth"
+      "產量越高單位成本越高",
+      "產量越高單位成本越低",
+      "價格必須一直下降",
+      "成長必須犧牲品質"
     ],
     "answerIndex": 1,
-    "explanation": "Costs per unit fall as volume increases 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "規模經濟是產量增加後單位成本下降，因固定成本被分攤、採購議價力提高等因素，讓整體成本效率提升。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0033",
-    "question": "Cash flow is different from profit because:",
+    "question": "現金流與獲利不同，因為：",
     "options": [
-      "Cash flow tracks actual cash in and out, profit uses accounting rules",
-      "Cash flow only includes salaries",
-      "Profit ignores revenue",
-      "They are the same thing"
+      "現金流看實際收支，獲利遵循會計規則",
+      "現金流只包含薪資",
+      "獲利不算營收",
+      "兩者完全相同"
     ],
     "answerIndex": 0,
-    "explanation": "Cash flow tracks actual cash in and out, profit uses accounting rules 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "現金流是實際現金流入流出，獲利則包含折舊等非現金項目。公司帳面賺錢也可能因現金不足而出問題。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0034",
-    "question": "Working capital is:",
+    "question": "營運資金是：",
     "options": [
-      "Cash you use to build factories",
-      "Current assets minus current liabilities",
-      "Long-term debt",
-      "Total revenue"
+      "蓋工廠用的現金",
+      "流動資產減流動負債",
+      "長期負債",
+      "總營收"
     ],
     "answerIndex": 1,
-    "explanation": "Current assets minus current liabilities 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "營運資金等於流動資產減流動負債，代表企業日常運作的短期資金餘裕，反映短期財務健康度。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0035",
-    "question": "Inventory turnover measures:",
+    "question": "存貨週轉率衡量：",
     "options": [
-      "How fast inventory sells and is replaced",
-      "The total value of inventory",
-      "How many items are returned",
-      "The number of suppliers you use"
+      "存貨銷售與補貨速度",
+      "存貨總價值",
+      "退貨數量",
+      "供應商數量"
     ],
     "answerIndex": 0,
-    "explanation": "How fast inventory sells and is replaced 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "存貨週轉率顯示存貨銷售與補貨的速度。較高週轉率通常代表銷售強或庫存管理有效，資金不易被壓在庫存。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0036",
-    "question": "What is a KPI?",
+    "question": "KPI 是什麼？",
     "options": [
-      "Key Performance Indicator",
-      "Known Profit Increase",
-      "Key Product Idea",
-      "Keeper Price Index"
+      "關鍵績效指標",
+      "已知利潤成長",
+      "關鍵產品構想",
+      "保留價格指數"
     ],
     "answerIndex": 0,
-    "explanation": "Key Performance Indicator 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "KPI是衡量是否達成目標的關鍵指標，應該與決策和成果直接相關，而不是只好看的表面數字。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0037",
-    "question": "SMART goals are:",
+    "question": "SMART 目標是：",
     "options": [
-      "Specific, Measurable, Achievable, Relevant, Time-bound",
-      "Small, Measurable, Active, Repeatable, Trackable",
-      "Simple, Marketable, Affordable, Reachable, Timely",
-      "Strategic, Minimal, Accurate, Rapid, Tactical"
+      "具體、可衡量、可達成、相關、時限",
+      "小型、可衡量、主動、可重複、可追蹤",
+      "簡單、可行、可負擔、可達、即時",
+      "策略、最小、精確、快速、戰術"
     ],
     "answerIndex": 0,
-    "explanation": "Specific, Measurable, Achievable, Relevant, Time-bound 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "SMART讓目標具體且有期限，使團隊對成果有共同理解，也更容易追蹤進度與調整行動。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0038",
-    "question": "Cost-plus pricing means:",
+    "question": "成本加成定價是指：",
     "options": [
-      "Pricing below cost to grow users",
-      "Setting price by adding a margin to the cost",
-      "Matching the highest competitor price",
-      "Setting price based only on perceived value"
+      "低於成本定價",
+      "在成本上加上固定毛利",
+      "跟最高競品定價",
+      "只看感知價值"
     ],
     "answerIndex": 1,
-    "explanation": "Setting price by adding a margin to the cost 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "成本加成定價是在成本上加固定利潤率，方式簡單，但可能忽略顧客願意支付的價值與市場需求。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0039",
-    "question": "Value-based pricing focuses on:",
+    "question": "價值定價著重於：",
     "options": [
-      "What competitors charge",
-      "Customer’s perceived value and outcomes",
-      "Production cost only",
-      "A fixed industry average"
+      "競品價格",
+      "顧客感知的價值與成果",
+      "只看生產成本",
+      "固定產業平均"
     ],
     "answerIndex": 1,
-    "explanation": "Customer’s perceived value and outcomes 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "價值定價依顧客獲得的利益或成果來定價，例如節省時間或創造收入。當價值清楚時，通常能支撐較高毛利。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0040",
-    "question": "Psychological pricing often uses:",
+    "question": "心理定價常用：",
     "options": [
-      "Random prices",
-      "Prices ending in .99 to appear lower",
-      "Prices that increase daily",
-      "Prices set only by suppliers"
+      "隨機價格",
+      "以 .99 結尾的價格",
+      "每天調漲",
+      "由供應商決定"
     ],
     "answerIndex": 1,
-    "explanation": "Prices ending in .99 to appear lower 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "心理定價用價格線索影響感受，例如 9.99 讓人覺得更便宜。雖然差異很小，卻會影響購買感知。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0041",
-    "question": "A loss leader is:",
+    "question": "虧損領導品是：",
     "options": [
-      "A product sold at a loss to attract customers",
-      "A product with the highest profit",
-      "A product that is always free",
-      "A product sold only to employees"
+      "虧本賣來吸引客戶的商品",
+      "最高毛利產品",
+      "永遠免費的產品",
+      "只賣給員工的產品"
     ],
     "answerIndex": 0,
-    "explanation": "A product sold at a loss to attract customers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "虧損領導品以低於成本吸引顧客進店，期待顧客再購買其他高毛利商品。超市常用此策略拉動客流。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0042",
-    "question": "Brand architecture describes:",
+    "question": "品牌架構描述的是：",
     "options": [
-      "The layout of a retail store",
-      "How a company organizes its brands and sub-brands",
-      "The color palette of a logo",
-      "The legal structure of a company"
+      "門市動線布局",
+      "公司品牌與子品牌的組織方式",
+      "標誌配色",
+      "公司的法律結構"
     ],
     "answerIndex": 1,
-    "explanation": "How a company organizes its brands and sub-brands 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌架構是企業如何安排母品牌、子品牌與產品的關係，幫助顧客理解品牌組合並降低混淆。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0043",
-    "question": "Co-branding is:",
+    "question": "聯名（共品牌）是指：",
     "options": [
-      "Two brands working together on a product or campaign",
-      "A company changing its logo",
-      "Selling private label products",
-      "Reducing prices across the board"
+      "兩個品牌一起推出產品或活動",
+      "公司改標誌",
+      "賣自有品牌商品",
+      "全面降價"
     ],
     "answerIndex": 0,
-    "explanation": "Two brands working together on a product or campaign 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "聯名是兩個品牌共同出現在產品或行銷活動中，借助彼此的信任與受眾來擴大影響力與覆蓋面。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0044",
-    "question": "Brand consistency matters because it:",
+    "question": "品牌一致性重要，因為它：",
     "options": [
-      "Reduces the need for customer service",
-      "Builds recognition and trust over time",
-      "Lets you avoid quality control",
-      "Makes pricing irrelevant"
+      "降低客服需求",
+      "累積辨識度與信任",
+      "讓品質控管可有可無",
+      "使價格無關緊要"
     ],
     "answerIndex": 1,
-    "explanation": "Builds recognition and trust over time 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "一致的視覺與語氣讓顧客快速辨識品牌，長期累積信任與熟悉感，也能提升行銷效率與溝通效果。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0045",
-    "question": "A brand voice is:",
+    "question": "品牌語調（Brand Voice）是：",
     "options": [
-      "The audio volume in ads",
-      "The distinct style and tone used in communication",
-      "The name of a spokesperson only",
-      "The typeface on a website"
+      "廣告音量",
+      "溝通中的固定風格與語氣",
+      "代言人的名字",
+      "網站字體"
     ],
     "answerIndex": 1,
-    "explanation": "The distinct style and tone used in communication 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌語調是對外溝通的一致風格與語氣，可能友善、專業或幽默。它影響顧客對品牌的情感與印象。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0046",
-    "question": "Social proof in marketing refers to:",
+    "question": "行銷中的社會認同指的是：",
     "options": [
-      "A legal requirement",
-      "Evidence that others trust or use your product",
-      "A type of discount",
-      "A shipping method"
+      "法律要求",
+      "他人信任或使用的證據",
+      "折扣類型",
+      "運送方式"
     ],
     "answerIndex": 1,
-    "explanation": "Evidence that others trust or use your product 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "社會認同包含評價、見證或使用人數等訊號，顯示他人已選擇你。這能降低購買風險並提升可信度。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0047",
-    "question": "Content marketing is best described as:",
+    "question": "內容行銷最貼切的描述是：",
     "options": [
-      "Creating helpful content to attract and engage customers",
-      "Only running paid ads",
-      "Selling through wholesalers",
-      "Reducing product features"
+      "製作有用內容吸引並互動",
+      "只投放付費廣告",
+      "透過批發商銷售",
+      "減少產品功能"
     ],
     "answerIndex": 0,
-    "explanation": "Creating helpful content to attract and engage customers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "內容行銷透過文章、影片或工具解決受眾問題，建立信任與專業形象，長期帶來自然流量與潛在客戶。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0048",
-    "question": "SEO stands for:",
+    "question": "SEO 代表：",
     "options": [
-      "Sales Efficiency Output",
-      "Search Engine Optimization",
-      "Systematic Expense Overview",
-      "Strategic Engagement Offering"
+      "銷售效率產出",
+      "搜尋引擎最佳化",
+      "系統性費用總覽",
+      "策略互動方案"
     ],
     "answerIndex": 1,
-    "explanation": "Search Engine Optimization 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "搜尋引擎最佳化是提升網站在搜尋結果中排名的做法。良好的SEO能帶來穩定流量，不必每次點擊都付費。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0049",
-    "question": "CTR in digital ads means:",
+    "question": "數位廣告中的 CTR 是：",
     "options": [
-      "Click-through rate",
-      "Customer turnover ratio",
-      "Cost to revenue",
-      "Conversion time rate"
+      "點擊率",
+      "顧客週轉比",
+      "成本對營收",
+      "轉換時間率"
     ],
     "answerIndex": 0,
-    "explanation": "Click-through rate 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "點擊率是看見廣告後點擊的比例，用來衡量廣告對受眾的吸引力與文案、素材是否有效。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0050",
-    "question": "A landing page is:",
+    "question": "著陸頁是：",
     "options": [
-      "The home page of a website only",
-      "A page designed to drive a specific action",
-      "A page listing company history",
-      "A customer support page"
+      "只有首頁",
+      "為特定行動設計的頁面",
+      "公司歷史頁",
+      "客服頁"
     ],
     "answerIndex": 1,
-    "explanation": "A page designed to drive a specific action 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "著陸頁聚焦單一目標行動，如註冊或購買，減少干擾以提高轉換率，常搭配廣告或活動導流。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0051",
-    "question": "A call to action (CTA) is:",
+    "question": "行動呼籲（CTA）是：",
     "options": [
-      "A business loan",
-      "A prompt telling users what to do next",
-      "A shipping label",
-      "A competitor announcement"
+      "商業貸款",
+      "提示使用者下一步動作",
+      "出貨標籤",
+      "競品公告"
     ],
     "answerIndex": 1,
-    "explanation": "A prompt telling users what to do next 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "CTA是清楚的下一步提示，如「立即試用」或「加入購物車」。它降低疑惑，提升完成目標行為的機率。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0052",
-    "question": "The 4Ps of marketing are:",
+    "question": "行銷 4P 是：",
     "options": [
-      "Product, Price, Place, Promotion",
-      "People, Process, Profit, Policy",
-      "Planning, Production, Profit, Publicity",
-      "Position, Price, Performance, People"
+      "產品、價格、通路、促銷",
+      "人員、流程、利潤、政策",
+      "計畫、生產、利潤、公關",
+      "定位、價格、績效、人員"
     ],
     "answerIndex": 0,
-    "explanation": "Product, Price, Place, Promotion 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "4P指產品、價格、通路、促銷，描述你賣什麼、賣多少、在哪裡賣，以及如何推廣，構成基本行銷策略框架。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0053",
-    "question": "The product lifecycle usually includes:",
+    "question": "產品生命週期通常包括：",
     "options": [
-      "Design, Build, Close",
-      "Intro, Growth, Maturity, Decline",
-      "Hire, Train, Fire",
-      "Plan, Launch, Win"
+      "設計、製造、結束",
+      "導入、成長、成熟、衰退",
+      "招募、訓練、解雇",
+      "計畫、上市、勝利"
     ],
     "answerIndex": 1,
-    "explanation": "Intro, Growth, Maturity, Decline 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "產品多會經歷導入、成長、成熟、衰退等階段。不同階段需採取不同的行銷與投資策略。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0054",
-    "question": "The adoption curve includes early adopters who:",
+    "question": "採用曲線中的早期採用者：",
     "options": [
-      "Wait until a product is everywhere",
-      "Try new products before the majority",
-      "Never buy new products",
-      "Only buy at clearance prices"
+      "等到產品普及才買",
+      "在大眾之前嘗試新產品",
+      "從不買新產品",
+      "只買出清品"
     ],
     "answerIndex": 1,
-    "explanation": "Try new products before the majority 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "早期採用者願意在多數人之前嘗試新產品，常透過評論與口碑影響其他人，是產品擴散的重要推力。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0055",
-    "question": "Network effects occur when:",
+    "question": "網路效應發生在：",
     "options": [
-      "Prices fall every month",
-      "A product becomes more valuable as more people use it",
-      "Costs rise with volume",
-      "A company shuts down a product line"
+      "價格每月下降",
+      "使用者越多越有價值",
+      "成本隨量上升",
+      "公司關閉產品線"
     ],
     "answerIndex": 1,
-    "explanation": "A product becomes more valuable as more people use it 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "網路效應指產品的價值會隨使用者增加而提升，例如通訊軟體或市集平台。它能形成強大的競爭優勢。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0056",
-    "question": "Unit economics refer to:",
+    "question": "單位經濟指的是：",
     "options": [
-      "Company-wide annual profit",
-      "The profitability of a single unit or customer",
-      "The size of the total market",
-      "Marketing brand awareness only"
+      "全公司年獲利",
+      "單一單位或顧客的獲利性",
+      "總市場大小",
+      "品牌知名度"
     ],
     "answerIndex": 1,
-    "explanation": "The profitability of a single unit or customer 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "單位經濟衡量每一單位或每位顧客的收入與成本，若每筆交易都有正貢獻，才能支撐可持續的成長。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0057",
-    "question": "Contribution margin is:",
+    "question": "貢獻毛利是：",
     "options": [
-      "Revenue minus variable costs",
-      "Revenue minus fixed costs",
-      "Total profit after taxes",
-      "The same as gross margin in all cases"
+      "營收減變動成本",
+      "營收減固定成本",
+      "稅後總獲利",
+      "所有情況都等同毛利"
     ],
     "answerIndex": 0,
-    "explanation": "Revenue minus variable costs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "貢獻毛利是扣除變動成本後剩下的收入，用於支付固定成本並形成獲利。它有助評估定價與產品可行性。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0058",
-    "question": "Payback period is:",
+    "question": "投資回收期是：",
     "options": [
-      "The time it takes to recover an investment",
-      "The annual profit percentage",
-      "The length of a sales call",
-      "The product warranty length"
+      "回收投資所需時間",
+      "年度獲利率",
+      "銷售通話長度",
+      "產品保固期限"
     ],
     "answerIndex": 0,
-    "explanation": "The time it takes to recover an investment 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "回收期指投資所需多久可由現金流或獲利回本。回收期越短，風險越低、資金周轉越快。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0059",
-    "question": "A common formula for break-even volume is:",
+    "question": "損益兩平量的常見公式是：",
     "options": [
-      "Fixed costs / (Price - Variable cost per unit)",
-      "Revenue - Fixed costs",
-      "Price + Variable cost per unit",
-      "Fixed costs × Price"
+      "固定成本 /（價格 - 單位變動成本）",
+      "營收 - 固定成本",
+      "價格 + 單位變動成本",
+      "固定成本 × 價格"
     ],
     "answerIndex": 0,
-    "explanation": "Fixed costs / (Price - Variable cost per unit) 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "損益兩平量是固定成本除以單位貢獻毛利，計算需要賣出多少量才能覆蓋固定成本並達到損益兩平。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0060",
-    "question": "Localization in business means:",
+    "question": "商業上的在地化是指：",
     "options": [
-      "Only translating words",
-      "Adapting a product or marketing to local culture and needs",
-      "Opening a warehouse",
-      "Reducing prices globally"
+      "只翻譯文字",
+      "依在地文化與需求調整產品或行銷",
+      "開設倉庫",
+      "全球降價"
     ],
     "answerIndex": 1,
-    "explanation": "Adapting a product or marketing to local culture and needs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "在地化不只是翻譯，還包含設計、訊息、功能與法規的調整，以符合當地文化、貨幣、習慣與需求。",
     "difficulty": "easy"
   },
   {
     "id": "business_v3_0061",
-    "question": "Customer retention is important because:",
+    "question": "為什麼顧客留存重要？",
     "options": [
-      "It always reduces product quality",
-      "Keeping customers is usually cheaper than acquiring new ones",
-      "It eliminates marketing costs entirely",
-      "It makes pricing irrelevant"
+      "會降低產品品質",
+      "留住顧客通常比獲客更便宜",
+      "完全消除行銷成本",
+      "讓定價無關緊要"
     ],
     "answerIndex": 1,
-    "explanation": "Keeping customers is usually cheaper than acquiring new ones 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "留存重要因為獲取新客戶通常成本更高，老客戶也更可能持續購買與提高客單價，能拉高顧客終身價值。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0062",
-    "question": "A service recovery is:",
+    "question": "服務補救是：",
     "options": [
-      "A plan to fix a customer issue after a failure",
-      "A method to raise prices",
-      "A sales training program",
-      "A product recall"
+      "發生問題後的處理與修復方案",
+      "調高價格的方法",
+      "業務訓練計畫",
+      "產品召回"
     ],
     "answerIndex": 0,
-    "explanation": "A plan to fix a customer issue after a failure 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "服務補救是當出錯時的回應與修復，例如延遲或瑕疵處理。快速且誠懇的補救能挽回信任，甚至提高忠誠度。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0063",
-    "question": "Why do warranties matter in marketing?",
+    "question": "保固在行銷上為何重要？",
     "options": [
-      "They remove all legal risk",
-      "They reduce perceived risk for buyers",
-      "They always lower costs",
-      "They replace customer support"
+      "消除所有法律風險",
+      "降低買方感知風險",
+      "一定能降低成本",
+      "取代客服"
     ],
     "answerIndex": 1,
-    "explanation": "They reduce perceived risk for buyers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "保固代表對品質有信心，能降低消費者擔心踩雷的心理風險，特別是高單價產品，往往能提升轉換意願。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0064",
-    "question": "Why do subscription businesses often push annual plans?",
+    "question": "訂閱型業務常推年繳方案的原因是：",
     "options": [
-      "They reduce customer support to zero",
-      "They improve cash flow and reduce churn",
-      "They make products cheaper to build",
-      "They eliminate marketing"
+      "把客服降到零",
+      "改善現金流並降低流失",
+      "讓產品更容易開發",
+      "消除行銷"
     ],
     "answerIndex": 1,
-    "explanation": "They improve cash flow and reduce churn 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "年繳能一次收回較多現金並提高顧客承諾時間，流失率通常較低。公司常以折扣鼓勵長期方案以穩定收入。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0065",
-    "question": "Pricing tiers are used to:",
+    "question": "價格分級的用途是：",
     "options": [
-      "Serve different customer needs and budgets",
-      "Hide the real price",
-      "Avoid customer feedback",
-      "Limit product adoption"
+      "服務不同需求與預算",
+      "隱藏真實價格",
+      "避免客戶回饋",
+      "限制產品採用"
     ],
     "answerIndex": 0,
-    "explanation": "Serve different customer needs and budgets 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "分級定價用不同功能或用量對應不同客群，讓小客戶不被拒於門外，大客戶也能為更高價值付費。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0066",
-    "question": "Feature creep is:",
+    "question": "功能膨脹是指：",
     "options": [
-      "Gradually adding too many features and complexity",
-      "Cutting features to reduce costs",
-      "Testing new designs",
-      "Scaling production"
+      "不斷增加過多功能與複雜度",
+      "刪減功能降低成本",
+      "測試新設計",
+      "擴大生產"
     ],
     "answerIndex": 0,
-    "explanation": "Gradually adding too many features and complexity 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "功能膨脹是添加了許多不具明確價值的功能，導致產品更難用、開發維護更慢，反而影響核心體驗。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0067",
-    "question": "RICE scoring helps teams:",
+    "question": "RICE 評分用來：",
     "options": [
-      "Price products based on ingredients",
-      "Prioritize product ideas using Reach, Impact, Confidence, Effort",
-      "Forecast demand only",
-      "Build legal contracts"
+      "依食材定價",
+      "用觸及、影響、信心、投入來排序想法",
+      "只做需求預測",
+      "撰寫法務合約"
     ],
     "answerIndex": 1,
-    "explanation": "Prioritize product ideas using Reach, Impact, Confidence, Effort 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "RICE用觸及人數、影響程度、信心程度與投入成本四項指標來排序工作，讓取捨更透明、資源配置更合理。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0068",
-    "question": "The Kano model is used to:",
+    "question": "Kano 模型用來：",
     "options": [
-      "Measure the size of a market",
-      "Understand which features delight vs. are basic expectations",
-      "Set product pricing based on cost",
-      "Plan factory layouts"
+      "衡量市場大小",
+      "理解哪些功能是基本、性能或驚喜",
+      "用成本定價",
+      "規劃工廠動線"
     ],
     "answerIndex": 1,
-    "explanation": "Understand which features delight vs. are basic expectations 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "Kano模型將功能分成基本需求、性能需求與驚喜需求，幫助團隊避免在顧客已視為理所當然的功能上過度投資。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0069",
-    "question": "Quality assurance (QA) is:",
+    "question": "品質保證（QA）是：",
     "options": [
-      "Testing and processes to prevent defects",
-      "A one-time marketing launch",
-      "A finance review",
-      "A customer loyalty program"
+      "用測試與流程預防瑕疵",
+      "一次性的行銷上市",
+      "財務審查",
+      "顧客忠誠方案"
     ],
     "answerIndex": 0,
-    "explanation": "Testing and processes to prevent defects 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "QA著重建立流程與測試以預防瑕疵在出貨前發生，重點是事前防範，而非事後修補問題。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0070",
-    "question": "Regulatory compliance in business means:",
+    "question": "商業中的法規遵循是指：",
     "options": [
-      "Following relevant laws and industry rules",
-      "Only paying taxes on time",
-      "Copying a competitor’s processes",
-      "Stopping all innovation"
+      "遵守相關法律與產業規範",
+      "只要準時繳稅",
+      "複製競品流程",
+      "停止所有創新"
     ],
     "answerIndex": 0,
-    "explanation": "Following relevant laws and industry rules 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "法規遵循是遵守適用的法律與產業規範，如安全或資料規定。違反可能導致罰款與信任崩解。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0071",
-    "question": "Why is data privacy important for a brand?",
+    "question": "為何資料隱私對品牌重要？",
     "options": [
-      "It makes ads cheaper",
-      "It builds trust and avoids legal penalties",
-      "It removes the need for security",
-      "It increases inventory"
+      "讓廣告更便宜",
+      "建立信任並避免法律處罰",
+      "不需要資安",
+      "增加庫存"
     ],
     "answerIndex": 1,
-    "explanation": "It builds trust and avoids legal penalties 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "保護顧客資料能建立信任並降低外洩風險與法律責任。若處理不當，顧客流失與品牌傷害會很快發生。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0072",
-    "question": "Channel conflict happens when:",
+    "question": "通路衝突發生在：",
     "options": [
-      "A company changes its logo",
-      "Different sales channels compete against each other",
-      "A product sells out too quickly",
-      "Marketing stops running ads"
+      "公司改標誌",
+      "不同銷售通路彼此競爭",
+      "產品賣太快",
+      "停止投放廣告"
     ],
     "answerIndex": 1,
-    "explanation": "Different sales channels compete against each other 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "通路衝突是例如直營線上與零售夥伴互相削價，造成關係緊張與銷售受損，需要清楚的通路策略來平衡。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0073",
-    "question": "Reseller margin is:",
+    "question": "經銷毛利是：",
     "options": [
-      "The profit a reseller keeps between wholesale and retail price",
-      "The tax rate for retailers",
-      "The cost of shipping to resellers",
-      "A government subsidy"
+      "批發與零售價的差額利潤",
+      "零售稅率",
+      "運送成本",
+      "政府補助"
     ],
     "answerIndex": 0,
-    "explanation": "The profit a reseller keeps between wholesale and retail price 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "經銷毛利是經銷商買進價格與售出價格之間的差額。利潤要足夠才能激勵經銷商積極推廣。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0074",
-    "question": "A franchise model allows:",
+    "question": "加盟模式允許：",
     "options": [
-      "Independent owners to operate under your brand and system",
-      "Free public use of your logo",
-      "Employees to buy stock only",
-      "Competitors to access your trade secrets"
+      "獨立業主用你的品牌與系統經營",
+      "免費使用你的標誌",
+      "員工只能買股票",
+      "競品取得機密"
     ],
     "answerIndex": 0,
-    "explanation": "Independent owners to operate under your brand and system 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "加盟讓他人以你的品牌、流程與支援來營運，並支付加盟金與權利金。它能用較少資本快速擴張。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0075",
-    "question": "Licensing in business means:",
+    "question": "商業中的授權是指：",
     "options": [
-      "Selling your company",
-      "Allowing others to use your IP for a fee",
-      "Giving products away for free",
-      "Outsourcing all manufacturing"
+      "出售公司",
+      "允許他人付費使用你的智慧財產",
+      "免費送產品",
+      "外包所有製造"
     ],
     "answerIndex": 1,
-    "explanation": "Allowing others to use your IP for a fee 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "授權讓他人使用你的品牌、技術或內容並支付授權金。你不必親自經營該業務，也能取得收入。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0076",
-    "question": "A trademark protects:",
+    "question": "商標保護的是：",
     "options": [
-      "A brand name, logo, or slogan",
-      "A manufacturing process",
-      "A music recording",
-      "A business’s cash balance"
+      "品牌名稱、標誌或口號",
+      "製造流程",
+      "音樂錄音",
+      "公司現金"
     ],
     "answerIndex": 0,
-    "explanation": "A brand name, logo, or slogan 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "商標保護品牌識別元素如名稱與標誌，避免他人使用相似標識造成混淆，維護品牌獨特性與信任。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0077",
-    "question": "A patent protects:",
+    "question": "專利保護的是：",
     "options": [
-      "A secret recipe with no disclosure",
-      "An invention or novel technical solution",
-      "A brand name",
-      "A marketing slogan"
+      "不公開的秘方",
+      "發明或新的技術方案",
+      "品牌名稱",
+      "行銷口號"
     ],
     "answerIndex": 1,
-    "explanation": "An invention or novel technical solution 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "專利以公開換取一定期間的專有權，保護新穎的技術或發明不被直接仿冒，是研發投資的重要保障。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0078",
-    "question": "First-mover advantage means:",
+    "question": "先行者優勢是指：",
     "options": [
-      "Entering a market early can create lasting benefits",
-      "The first company always wins",
-      "Late entrants are illegal",
-      "Only large firms can enter new markets"
+      "早進市場可帶來持續利益",
+      "第一家永遠會贏",
+      "晚進者違法",
+      "只有大企業能進入"
     ],
     "answerIndex": 0,
-    "explanation": "Entering a market early can create lasting benefits 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "先行者能更早建立品牌認知、鎖定顧客或制定標準，提升競爭門檻。雖不保證成功，但可增加防守優勢。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0079",
-    "question": "Switching costs are:",
+    "question": "轉換成本是：",
     "options": [
-      "Taxes on new products",
-      "Time, money, or hassle to change to another provider",
-      "The cost to develop a new product",
-      "Shipping fees"
+      "新產品稅金",
+      "改用其他供應商的時間、金錢或麻煩",
+      "開發新產品成本",
+      "運費"
     ],
     "answerIndex": 1,
-    "explanation": "Time, money, or hassle to change to another provider 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "轉換成本是顧客從你轉向其他方案所需的時間、費用或心力。成本越高，流失越低，市場更容易被守住。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0080",
-    "question": "A competitive moat is:",
+    "question": "競爭護城河是：",
     "options": [
-      "A temporary price cut",
-      "A durable advantage that keeps competitors at bay",
-      "A marketing campaign only",
-      "A product recall"
+      "短期降價",
+      "能長期阻擋競品的優勢",
+      "單一行銷活動",
+      "產品召回"
     ],
     "answerIndex": 1,
-    "explanation": "A durable advantage that keeps competitors at bay 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "護城河是能長期維持競爭力的優勢，例如品牌、網路效應或高轉換成本，使競品更難搶走顧客。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0081",
-    "question": "Upselling means:",
+    "question": "向上銷售（Upselling）是：",
     "options": [
-      "Selling a higher-end version or add-on",
-      "Selling a cheaper option",
-      "Offering refunds to all buyers",
-      "Selling to wholesalers only"
+      "賣更高階版本或加購",
+      "賣更便宜的選項",
+      "對所有客戶退款",
+      "只賣給批發商"
     ],
     "answerIndex": 0,
-    "explanation": "Selling a higher-end version or add-on 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "向上銷售鼓勵顧客選擇更高價的版本或加購方案，只要新增價值清楚，就能提升每位顧客的平均營收。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0082",
-    "question": "Cross-selling is:",
+    "question": "交叉銷售是：",
     "options": [
-      "Selling related products to an existing customer",
-      "Reducing prices after purchase",
-      "Only selling to new customers",
-      "Launching a new brand"
+      "賣相關商品給既有客戶",
+      "購買後降價",
+      "只賣給新客戶",
+      "推出新品牌"
     ],
     "answerIndex": 0,
-    "explanation": "Selling related products to an existing customer 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "交叉銷售是推薦互補商品，讓原本的購買更完整或更好用。當附加品能解決相關需求時最有效。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0083",
-    "question": "A referral program aims to:",
+    "question": "推薦計畫的目的在於：",
     "options": [
-      "Reward customers for bringing in new customers",
-      "Increase product defects",
-      "Reduce customer support",
-      "Raise prices quickly"
+      "獎勵顧客帶來新顧客",
+      "增加產品瑕疵",
+      "降低客服",
+      "快速漲價"
     ],
     "answerIndex": 0,
-    "explanation": "Reward customers for bringing in new customers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "推薦計畫鼓勵現有顧客分享與推薦，口碑帶來的新客戶通常成本更低且轉換率更高，有助提升成長效率。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0084",
-    "question": "A loyalty program primarily seeks to:",
+    "question": "忠誠計畫主要目的在於：",
     "options": [
-      "Encourage repeat purchases",
-      "Eliminate marketing spend",
-      "Reduce product quality",
-      "Avoid customer feedback"
+      "鼓勵重複購買",
+      "消除行銷支出",
+      "降低產品品質",
+      "避免顧客回饋"
     ],
     "answerIndex": 0,
-    "explanation": "Encourage repeat purchases 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "忠誠計畫以點數、折扣或特權獎勵回購，提升留存與顧客終身價值，讓關係更穩定。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0085",
-    "question": "Price discrimination is:",
+    "question": "差別定價是：",
     "options": [
-      "Charging different prices to different segments for the same product",
-      "Charging one fixed price forever",
-      "Giving everything away for free",
-      "Only charging cash"
+      "對不同客群收取不同價格",
+      "永遠固定單一價格",
+      "全部免費",
+      "只收現金"
     ],
     "answerIndex": 0,
-    "explanation": "Charging different prices to different segments for the same product 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "差別定價依客群或願付程度設定不同價格，例如學生票或高級座位。合法且透明時可提升總營收。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0086",
-    "question": "Geographic pricing adjusts prices based on:",
+    "question": "地區定價是依據：",
     "options": [
-      "Time of day",
-      "Location-related costs and market conditions",
-      "Competitor salaries",
-      "Employee performance"
+      "一天中的時間",
+      "地點成本與市場狀況",
+      "競品薪資",
+      "員工績效"
     ],
     "answerIndex": 1,
-    "explanation": "Location-related costs and market conditions 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "地區定價反映不同地點的運輸成本、稅負與需求狀況，以維持各地區的毛利與市場適配度。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0087",
-    "question": "COGS stands for:",
+    "question": "COGS 是什麼？",
     "options": [
-      "Cost of Goods Sold",
-      "Cost of Growth Strategy",
-      "Cash on Gross Sales",
-      "Customer Order Gross Sum"
+      "銷貨成本",
+      "成長策略成本",
+      "總銷售現金",
+      "顧客訂單總和"
     ],
     "answerIndex": 0,
-    "explanation": "Cost of Goods Sold 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "銷貨成本是生產商品的直接成本，如材料與直接人工，不包含行銷或行政費用。它影響毛利與定價空間。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0088",
-    "question": "Gross profit is:",
+    "question": "毛利是：",
     "options": [
-      "Revenue minus COGS",
-      "Revenue minus all expenses",
-      "Operating expenses minus revenue",
-      "Cash flow minus taxes"
+      "營收減銷貨成本",
+      "營收減所有費用",
+      "營運費用減營收",
+      "現金流減稅"
     ],
     "answerIndex": 0,
-    "explanation": "Revenue minus COGS 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "毛利是營收扣除直接生產成本後的金額，用來支付營運費用並形成最終獲利，是評估產品獲利結構的基礎。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0089",
-    "question": "Operating leverage refers to:",
+    "question": "營運槓桿指的是：",
     "options": [
-      "Using debt to fund growth",
-      "The share of fixed costs in your cost structure",
-      "The number of products you sell",
-      "How often you update pricing"
+      "用負債支撐成長",
+      "成本結構中固定成本的比例",
+      "產品數量",
+      "調價頻率"
     ],
     "answerIndex": 1,
-    "explanation": "The share of fixed costs in your cost structure 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "營運槓桿高表示固定成本占比大，銷售增加時獲利放大，但銷售下降時虧損也會快速擴大。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0090",
-    "question": "Seasonality planning helps a business:",
+    "question": "季節性規劃能幫助企業：",
     "options": [
-      "Ignore slow periods",
-      "Prepare for predictable demand swings",
-      "Stop marketing during holidays",
-      "Eliminate inventory"
+      "忽略淡季",
+      "預先因應可預測的需求波動",
+      "假期停止行銷",
+      "消除庫存"
     ],
     "answerIndex": 1,
-    "explanation": "Prepare for predictable demand swings 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "許多產業會有淡旺季變化，季節性規劃能協助備貨、人力與現金流安排，降低供需失衡的風險。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0091",
-    "question": "Demand forecasting is used to:",
+    "question": "需求預測用於：",
     "options": [
-      "Guess customer preferences without data",
-      "Predict future sales to plan inventory and resources",
-      "Set employee salaries",
-      "Select brand colors"
+      "不靠數據猜測偏好",
+      "預測未來銷售以規劃資源",
+      "設定員工薪資",
+      "選品牌色"
     ],
     "answerIndex": 1,
-    "explanation": "Predict future sales to plan inventory and resources 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "需求預測透過歷史數據與市場訊號推估未來銷售，協助安排庫存、產能與人力，降低缺貨或過剩風險。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0092",
-    "question": "A customer cohort analysis groups users by:",
+    "question": "顧客同期群（Cohort）分析是按什麼分組？",
     "options": [
-      "Favorite color",
-      "The time or event when they started using the product",
-      "Their current location only",
-      "Their credit score"
+      "最愛顏色",
+      "開始使用的時間或事件",
+      "只有當前地點",
+      "信用分數"
     ],
     "answerIndex": 1,
-    "explanation": "The time or event when they started using the product 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "同期群分析依共同的開始時間或事件分組，例如註冊月份。這能觀察留存變化與策略調整帶來的影響。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0093",
-    "question": "Why do businesses track reasons for churn?",
+    "question": "企業為何追蹤流失原因？",
     "options": [
-      "To reduce product quality",
-      "To identify fixable problems driving cancellations",
-      "To increase customer support costs",
-      "To avoid product updates"
+      "降低產品品質",
+      "找出可改善的取消原因",
+      "增加客服成本",
+      "避免更新"
     ],
     "answerIndex": 1,
-    "explanation": "To identify fixable problems driving cancellations 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "追蹤流失原因能找出價格、功能缺口或服務問題等可修正因素。改善後可降低流失、提高留存與長期獲利。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0094",
-    "question": "Why does customer support impact brand perception?",
+    "question": "為何客服會影響品牌印象？",
     "options": [
-      "It does not affect brand perception",
-      "It shapes how customers feel after problems occur",
-      "It only affects shipping speed",
-      "It changes product materials"
+      "不影響",
+      "問題發生時的感受會被放大",
+      "只影響配送速度",
+      "會改變產品材質"
     ],
     "answerIndex": 1,
-    "explanation": "It shapes how customers feel after problems occur 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "客服多在顧客有問題或不滿時發生，回應的態度與速度會被放大感受。良好的服務能把負面轉為信任。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0095",
-    "question": "Rebranding carries risk mainly because:",
+    "question": "重新品牌化的主要風險是：",
     "options": [
-      "It always reduces sales",
-      "Customers may not recognize or trust the new identity",
-      "It eliminates marketing costs",
-      "It increases production speed"
+      "一定會降銷",
+      "顧客可能不認得或不信任新形象",
+      "消除行銷成本",
+      "提升生產速度"
     ],
     "answerIndex": 1,
-    "explanation": "Customers may not recognize or trust the new identity 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "改版可能讓既有顧客失去熟悉感，若變化過大或溝通不足，會降低辨識度與信任，影響忠誠與銷售。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0096",
-    "question": "What is the main goal of crisis communication?",
+    "question": "危機溝通的主要目標是：",
     "options": [
-      "Hide problems from customers",
-      "Protect trust by responding quickly and transparently",
-      "Increase ad spend",
-      "Delay legal action"
+      "隱瞞問題",
+      "快速透明回應以保護信任",
+      "增加廣告支出",
+      "延後法律行動"
     ],
     "answerIndex": 1,
-    "explanation": "Protect trust by responding quickly and transparently 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "危機溝通著重快速且透明地回應，說明發生什麼事與如何改善，以維護信任。速度與誠意比華麗措辭更關鍵。",
     "difficulty": "medium"
   },
   {
     "id": "business_v3_0097",
-    "question": "Trade dress protection applies to:",
+    "question": "商業外觀保護（Trade Dress）適用於：",
     "options": [
-      "The overall look and feel of a product or packaging",
-      "A company’s financial statements",
-      "A product’s technical invention",
-      "A website’s domain name only"
+      "產品或包裝的整體外觀",
+      "公司財務報表",
+      "技術發明",
+      "網站網域"
     ],
     "answerIndex": 0,
-    "explanation": "The overall look and feel of a product or packaging 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "商業外觀保護產品或包裝的獨特視覺識別，例如瓶身形狀或店面配置。它防止他人仿造造成混淆。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0098",
-    "question": "When is a two-sided market most likely to face a chicken-and-egg problem?",
+    "question": "雙邊市場最容易遇到雞生蛋問題的情況是？",
     "options": [
-      "When one side can get value without the other",
-      "When both sides need each other to see value",
-      "When pricing is very low",
-      "When the product is physical"
+      "單邊可在沒有另一邊時獲值",
+      "雙邊都需要對方才有價值",
+      "價格很低",
+      "產品是實體的"
     ],
     "answerIndex": 1,
-    "explanation": "When both sides need each other to see value 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "雙邊市場如平台或市集，需要足夠買方才吸引賣方，賣方不足也吸引不了買方。互相依賴使初期成長困難。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0099",
-    "question": "What is the primary risk of heavy discounting as a long-term strategy?",
+    "question": "長期大量折扣的主要風險是：",
     "options": [
-      "Higher brand trust",
-      "Customer price expectations become anchored low",
-      "Lower customer acquisition cost",
-      "Simpler operations"
+      "品牌信任更高",
+      "顧客價格期待被鎖在低位",
+      "獲客成本降低",
+      "營運更簡單"
     ],
     "answerIndex": 1,
-    "explanation": "Customer price expectations become anchored low 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "長期折扣會讓顧客習慣等特價，覺得原價太貴，導致毛利被侵蝕且難以回到正常定價。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0100",
-    "question": "A business with high operating leverage is most sensitive to:",
+    "question": "高營運槓桿的企業最敏感於：",
     "options": [
-      "Small changes in sales volume",
-      "Small changes in employee count",
-      "Small changes in supplier count",
-      "Small changes in logo design"
+      "銷售量的小幅變動",
+      "員工數小變動",
+      "供應商數小變動",
+      "標誌設計小變動"
     ],
     "answerIndex": 0,
-    "explanation": "Small changes in sales volume 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "固定成本占比高時，銷售量稍微下滑就可能讓獲利迅速轉為虧損，因為固定成本仍需支付。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0101",
-    "question": "Which metric best indicates if paid growth is sustainable?",
+    "question": "哪個指標最能判斷付費成長是否可持續？",
     "options": [
-      "Impressions",
-      "CLV to CAC ratio",
-      "Website visits",
-      "Social media followers"
+      "曝光數",
+      "CLV 與 CAC 比例",
+      "網站訪問量",
+      "社群粉絲數"
     ],
     "answerIndex": 1,
-    "explanation": "CLV to CAC ratio 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "CLV/CAC衡量顧客終身價值相對取得成本的比例。比值明顯高於1代表付費成長能帶來正向獲利。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0102",
-    "question": "What is the key purpose of a brand architecture decision when launching new products?",
+    "question": "推出新產品時做品牌架構決策的核心目的為何？",
     "options": [
-      "To lower manufacturing costs",
-      "To decide whether to use the parent brand or create a new sub-brand",
-      "To select shipping providers",
-      "To set employee salaries"
+      "降低製造成本",
+      "決定沿用母品牌或新子品牌",
+      "選擇物流商",
+      "設定員工薪資"
     ],
     "answerIndex": 1,
-    "explanation": "To decide whether to use the parent brand or create a new sub-brand 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌架構決定新產品是否承接母品牌或獨立子品牌，影響信任移轉、行銷效率與對核心品牌的風險。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0103",
-    "question": "A high churn rate in a subscription business most directly hurts:",
+    "question": "訂閱業務的高流失率最直接傷害：",
     "options": [
-      "Logo recognition",
-      "Customer lifetime value",
-      "Manufacturing speed",
-      "Shipping cost"
+      "標誌辨識度",
+      "顧客終身價值",
+      "製造速度",
+      "運費"
     ],
     "answerIndex": 1,
-    "explanation": "Customer lifetime value 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "流失率高代表顧客停留時間變短，顧客終身價值下降，使得獲客成本更難回收，成長也更不穩定。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0104",
-    "question": "If a company’s gross margin is strong but net profit is negative, a likely issue is:",
+    "question": "若毛利強但淨利為負，可能的問題是：",
     "options": [
-      "Low production quality",
-      "High operating expenses",
-      "Too much inventory turnover",
-      "Too many returns only"
+      "生產品質太低",
+      "營運費用過高",
+      "庫存週轉過高",
+      "退貨太多"
     ],
     "answerIndex": 1,
-    "explanation": "High operating expenses 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "毛利強代表產品定價與直接成本合理，但淨利為負常因行銷、研發或管理費用過高，侵蝕整體獲利。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0105",
-    "question": "What is the main benefit of value-based pricing compared to cost-plus?",
+    "question": "相較成本加成，價值定價的主要好處是：",
     "options": [
-      "It always lowers prices",
-      "It captures more of the value created for customers",
-      "It guarantees customer loyalty",
-      "It eliminates competition"
+      "一定會降價",
+      "能抓住顧客感知價值",
+      "保證顧客忠誠",
+      "消除競爭"
     ],
     "answerIndex": 1,
-    "explanation": "It captures more of the value created for customers 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "價值定價把價格與顧客得到的成果對齊，而非只看成本，因此能更充分反映價值並提高毛利空間。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0106",
-    "question": "In a marketplace business, why might subsidizing one side be effective?",
+    "question": "在市集平台中補貼單邊為何可能有效？",
     "options": [
-      "It reduces legal compliance",
-      "It helps build liquidity by attracting the other side",
-      "It lowers product quality",
-      "It eliminates marketing"
+      "降低法規遵循",
+      "吸引另一邊以建立流動性",
+      "降低產品品質",
+      "消除行銷"
     ],
     "answerIndex": 1,
-    "explanation": "It helps build liquidity by attracting the other side 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "補貼其中一邊（如賣家免費）可快速增加供給或需求，帶動另一邊加入，建立雙邊市場的流動性與網路效應。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0107",
-    "question": "Why can expanding into too many segments at once be risky?",
+    "question": "同時擴張太多客群的主要風險是：",
     "options": [
-      "It increases brand clarity",
-      "It spreads resources thin and weakens positioning",
-      "It always reduces costs",
-      "It simplifies operations"
+      "品牌更清晰",
+      "資源分散、定位變弱",
+      "成本一定下降",
+      "營運更簡單"
     ],
     "answerIndex": 1,
-    "explanation": "It spreads resources thin and weakens positioning 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "同時服務太多客群容易讓訊息模糊、資源被拉散，產品與行銷難以聚焦，反而降低產品市場適配與成長速度。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0108",
-    "question": "What is the main danger of ignoring cohort retention curves?",
+    "question": "忽略同期群留存曲線的主要危險是：",
     "options": [
-      "You might miss product quality issues",
-      "You might overestimate long-term revenue",
-      "You might increase ad CTR",
-      "You might lower inventory costs"
+      "忽略品質問題",
+      "高估長期營收",
+      "提高點擊率",
+      "降低庫存成本"
     ],
     "answerIndex": 1,
-    "explanation": "You might overestimate long-term revenue 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "同期群留存曲線揭示新用戶是否持續留下。若留存下滑而仍用平均值預估，容易高估長期收入。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0109",
-    "question": "Why do companies track contribution margin by product?",
+    "question": "為何要按產品追蹤貢獻毛利？",
     "options": [
-      "To reduce customer feedback",
-      "To see which products actually fund fixed costs and profit",
-      "To decide brand colors",
-      "To measure market size"
+      "降低顧客回饋",
+      "了解哪些產品真的在支付固定成本與利潤",
+      "決定品牌顏色",
+      "衡量市場大小"
     ],
     "answerIndex": 1,
-    "explanation": "To see which products actually fund fixed costs and profit 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "按產品看貢獻毛利能判斷哪些品項真正產生現金、支撐固定成本與利潤，做為推廣或淘汰決策依據。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0110",
-    "question": "If a brand changes its logo and loses recognition, the main lost asset is:",
+    "question": "品牌改標誌而失去辨識度，主要損失的是：",
     "options": [
-      "Physical inventory",
-      "Brand equity",
-      "Patents",
-      "Supply contracts"
+      "實體庫存",
+      "品牌資產",
+      "專利",
+      "供應合約"
     ],
     "answerIndex": 1,
-    "explanation": "Brand equity 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌資產是長期累積的信任與辨識度。突然改變標誌會削弱心智可得性，讓既有優勢流失。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0111",
-    "question": "In pricing, elasticity refers to:",
+    "question": "定價中的彈性指的是：",
     "options": [
-      "How customers react to price changes",
-      "How fast products are shipped",
-      "How often ads are shown",
-      "How many suppliers you have"
+      "顧客對價格變動的反應",
+      "出貨速度",
+      "廣告曝光頻率",
+      "供應商數量"
     ],
     "answerIndex": 0,
-    "explanation": "How customers react to price changes 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "價格彈性衡量價格變動時需求的敏感度。若小幅漲價就導致需求大幅下滑，表示需求高度彈性。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0112",
-    "question": "A brand extension can fail when:",
+    "question": "品牌延伸可能失敗的情況是：",
     "options": [
-      "The new product is closely related",
-      "The new product conflicts with the brand’s core meaning",
-      "The brand is already trusted",
-      "The price is slightly higher"
+      "新產品高度相關",
+      "新產品與品牌核心意涵衝突",
+      "品牌已被信任",
+      "價格稍高"
     ],
     "answerIndex": 1,
-    "explanation": "The new product conflicts with the brand’s core meaning 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "品牌延伸若與既有品牌承諾不符，會讓顧客困惑並削弱信任。延伸應符合品牌核心意義與期待。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0113",
-    "question": "Why can over-reliance on one acquisition channel be risky?",
+    "question": "過度依賴單一獲客通路為何危險？",
     "options": [
-      "It makes messaging clearer",
-      "A channel change can suddenly cut growth",
-      "It always reduces CAC",
-      "It improves brand trust"
+      "訊息更清楚",
+      "通路規則一變就可能斷崖式下滑",
+      "一定降低CAC",
+      "提升品牌信任"
     ],
     "answerIndex": 1,
-    "explanation": "A channel change can suddenly cut growth 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "若通路演算法或價格變動，流量與成長可能瞬間崩跌。分散通路可降低單點失效風險，維持穩定成長。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0114",
-    "question": "A pricing strategy that maximizes revenue in high-elasticity markets should:",
+    "question": "在高彈性市場中要最大化營收的定價策略應該：",
     "options": [
-      "Raise prices as much as possible",
-      "Keep prices competitive or lower",
-      "Set one premium price only",
-      "Ignore competitor prices"
+      "能漲就漲",
+      "保持競爭性或較低價格",
+      "只設一個高價",
+      "忽略競品價格"
     ],
     "answerIndex": 1,
-    "explanation": "Keep prices competitive or lower 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "需求高度彈性時，價格稍升就會大幅減少銷量。維持具競爭力的價格有助保住量，提升總營收。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0115",
-    "question": "Which situation is most suited to skimming pricing?",
+    "question": "最適合撇脂定價的情境是：",
     "options": [
-      "Commodity products with many substitutes",
-      "A novel product with early adopters willing to pay more",
-      "A price-sensitive mass market",
-      "Products with no differentiation"
+      "同質商品且替代品多",
+      "新穎產品且早期採用者願意高付費",
+      "價格敏感的大眾市場",
+      "毫無差異化的產品"
     ],
     "answerIndex": 1,
-    "explanation": "A novel product with early adopters willing to pay more 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "撇脂定價適合新穎產品，早期採用者重視新奇且願付高價。隨競爭擴大再降價以擴展到更廣客群。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0116",
-    "question": "Why might a company choose to sell direct-to-consumer instead of through retailers?",
+    "question": "為何公司可能選擇直面消費者而非零售商？",
     "options": [
-      "To give up control of brand experience",
-      "To capture more margin and customer data",
-      "To increase channel conflict intentionally",
-      "To reduce marketing responsibility"
+      "放棄品牌體驗控制",
+      "取得更高毛利與顧客數據",
+      "刻意增加通路衝突",
+      "降低行銷責任"
     ],
     "answerIndex": 1,
-    "explanation": "To capture more margin and customer data 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "直面消費者能保留更多利潤並掌握顧客關係與數據，有助產品與行銷決策，也能更完整控管品牌體驗。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0117",
-    "question": "A business with negative working capital can still be healthy if:",
+    "question": "企業即使營運資金為負，仍可能健康的原因是：",
     "options": [
-      "It pays suppliers faster than customers pay it",
-      "Customers pay quickly and suppliers offer long payment terms",
-      "It has no inventory",
-      "It has no marketing expenses"
+      "比顧客更快付錢給供應商",
+      "顧客先付款，供應商給較長付款期",
+      "沒有庫存",
+      "沒有行銷費"
     ],
     "answerIndex": 1,
-    "explanation": "Customers pay quickly and suppliers offer long payment terms 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "若顧客先付費而供應商付款期長，企業可先收現金再付款，形成負營運資金但現金流良好，如訂閱或快轉零售。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0118",
-    "question": "What is the most practical use of a PESTEL analysis?",
+    "question": "PESTEL 分析最實用的用途是：",
     "options": [
-      "To set day-to-day sales targets",
-      "To scan external factors like regulation, economy, and technology",
-      "To design a logo",
-      "To calculate gross margin"
+      "設定日常銷售目標",
+      "掃描外部因素如法規、經濟與科技",
+      "設計標誌",
+      "計算毛利"
     ],
     "answerIndex": 1,
-    "explanation": "To scan external factors like regulation, economy, and technology 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "PESTEL用來評估政治、經濟、社會、科技、環境與法律等外部因素，適合做策略規劃與風險評估。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0119",
-    "question": "Which outcome best indicates strong product-market fit?",
+    "question": "最能顯示產品市場適配強的結果是：",
     "options": [
-      "High ad impressions",
-      "Customers would be very disappointed if the product disappeared",
-      "Large social media following only",
-      "High website bounce rate"
+      "廣告曝光高",
+      "顧客會非常失望若產品消失",
+      "只有社群粉絲數高",
+      "網站跳出率高"
     ],
     "answerIndex": 1,
-    "explanation": "Customers would be very disappointed if the product disappeared 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "當顧客覺得產品不可或缺、失去會很失望，代表產品真正解決痛點。這通常伴隨高留存與自然推薦。",
     "difficulty": "hard"
   },
   {
     "id": "business_v3_0120",
-    "question": "Why is gross margin a key metric when deciding on new customer acquisition spend?",
+    "question": "為何在決定獲客支出時毛利很關鍵？",
     "options": [
-      "It tells you the brand color",
-      "It shows how much revenue is left to cover marketing costs",
-      "It measures inventory accuracy",
-      "It replaces CAC calculations"
+      "用來決定品牌顏色",
+      "顯示可用於行銷的收入餘額",
+      "衡量庫存準確度",
+      "取代CAC計算"
     ],
     "answerIndex": 1,
-    "explanation": "It shows how much revenue is left to cover marketing costs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "毛利代表扣除生產成本後可用於行銷與營運的金額。若毛利薄，過度獲客支出容易導致整體虧損。",
     "difficulty": "hard"
   }
 ]

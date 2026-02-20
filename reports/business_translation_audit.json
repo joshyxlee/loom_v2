@@ -1,0 +1,235 @@
+{
+  "modified_count": 120,
+  "samples": [
+    {
+      "id": "business_v3_0001",
+      "before": {
+        "question": "What is a value proposition?",
+        "options": [
+          "A clear statement of the benefit a customer will get",
+          "A list of all product features",
+          "The legal terms of sale",
+          "The company’s internal mission only"
+        ],
+        "explanation": "A clear statement of the benefit a customer will get 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "什麼是價值主張？",
+        "options": [
+          "清楚說明客戶能得到的好處",
+          "所有產品功能清單",
+          "銷售的法律條款",
+          "公司內部使命而已"
+        ],
+        "explanation": "價值主張說明你解決的具體問題，以及為何你的方案對該客群更好。重點在成果與利益，而不是堆疊功能，讓買方快速理解價值。"
+      }
+    },
+    {
+      "id": "business_v3_0008",
+      "before": {
+        "question": "What is a break-even point?",
+        "options": [
+          "When revenue equals total costs",
+          "When a product runs out of stock",
+          "When sales double month over month",
+          "When a company gets its first investor"
+        ],
+        "explanation": "When revenue equals total costs 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "什麼是損益兩平點？",
+        "options": [
+          "營收等於總成本",
+          "產品賣到缺貨",
+          "月銷售倍增",
+          "公司獲得首位投資人"
+        ],
+        "explanation": "損益兩平是總營收剛好覆蓋總成本、獲利為零的時點。它告訴你至少要賣多少，才能停止虧損。"
+      }
+    },
+    {
+      "id": "business_v3_0013",
+      "before": {
+        "question": "What does freemium mean?",
+        "options": [
+          "A product that is free forever with no paid option",
+          "A free basic version with paid upgrades",
+          "A one-time free trial only",
+          "A paid product with coupons"
+        ],
+        "explanation": "A free basic version with paid upgrades 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "什麼是免費增值（Freemium）？",
+        "options": [
+          "永遠免費且沒有付費版",
+          "提供免費基本版、付費升級",
+          "只有一次免費試用",
+          "付費產品搭配折價"
+        ],
+        "explanation": "免費增值提供可用的基本版本吸引用戶，進階功能或容量則收費。免費層帶來採用與口碑，付費層支撐營收。"
+      }
+    },
+    {
+      "id": "business_v3_0025",
+      "before": {
+        "question": "What is A/B testing?",
+        "options": [
+          "Testing two versions to see which performs better",
+          "A legal audit of suppliers",
+          "A way to set product prices",
+          "A method to measure inventory"
+        ],
+        "explanation": "Testing two versions to see which performs better 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "什麼是 A/B 測試？",
+        "options": [
+          "比較兩個版本的成效",
+          "供應商的法務稽核",
+          "設定產品價格的方法",
+          "測量庫存的方法"
+        ],
+        "explanation": "A/B測試把兩個版本同時給不同使用者，觀察哪個帶來更好結果。它用真實行為數據來支持決策。"
+      }
+    },
+    {
+      "id": "business_v3_0033",
+      "before": {
+        "question": "Cash flow is different from profit because:",
+        "options": [
+          "Cash flow tracks actual cash in and out, profit uses accounting rules",
+          "Cash flow only includes salaries",
+          "Profit ignores revenue",
+          "They are the same thing"
+        ],
+        "explanation": "Cash flow tracks actual cash in and out, profit uses accounting rules 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "現金流與獲利不同，因為：",
+        "options": [
+          "現金流看實際收支，獲利遵循會計規則",
+          "現金流只包含薪資",
+          "獲利不算營收",
+          "兩者完全相同"
+        ],
+        "explanation": "現金流是實際現金流入流出，獲利則包含折舊等非現金項目。公司帳面賺錢也可能因現金不足而出問題。"
+      }
+    },
+    {
+      "id": "business_v3_0046",
+      "before": {
+        "question": "Social proof in marketing refers to:",
+        "options": [
+          "A legal requirement",
+          "Evidence that others trust or use your product",
+          "A type of discount",
+          "A shipping method"
+        ],
+        "explanation": "Evidence that others trust or use your product 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "行銷中的社會認同指的是：",
+        "options": [
+          "法律要求",
+          "他人信任或使用的證據",
+          "折扣類型",
+          "運送方式"
+        ],
+        "explanation": "社會認同包含評價、見證或使用人數等訊號，顯示他人已選擇你。這能降低購買風險並提升可信度。"
+      }
+    },
+    {
+      "id": "business_v3_0062",
+      "before": {
+        "question": "A service recovery is:",
+        "options": [
+          "A plan to fix a customer issue after a failure",
+          "A method to raise prices",
+          "A sales training program",
+          "A product recall"
+        ],
+        "explanation": "A plan to fix a customer issue after a failure 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "服務補救是：",
+        "options": [
+          "發生問題後的處理與修復方案",
+          "調高價格的方法",
+          "業務訓練計畫",
+          "產品召回"
+        ],
+        "explanation": "服務補救是當出錯時的回應與修復，例如延遲或瑕疵處理。快速且誠懇的補救能挽回信任，甚至提高忠誠度。"
+      }
+    },
+    {
+      "id": "business_v3_0077",
+      "before": {
+        "question": "A patent protects:",
+        "options": [
+          "A secret recipe with no disclosure",
+          "An invention or novel technical solution",
+          "A brand name",
+          "A marketing slogan"
+        ],
+        "explanation": "An invention or novel technical solution 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "專利保護的是：",
+        "options": [
+          "不公開的秘方",
+          "發明或新的技術方案",
+          "品牌名稱",
+          "行銷口號"
+        ],
+        "explanation": "專利以公開換取一定期間的專有權，保護新穎的技術或發明不被直接仿冒，是研發投資的重要保障。"
+      }
+    },
+    {
+      "id": "business_v3_0098",
+      "before": {
+        "question": "When is a two-sided market most likely to face a chicken-and-egg problem?",
+        "options": [
+          "When one side can get value without the other",
+          "When both sides need each other to see value",
+          "When pricing is very low",
+          "When the product is physical"
+        ],
+        "explanation": "When both sides need each other to see value 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "雙邊市場最容易遇到雞生蛋問題的情況是？",
+        "options": [
+          "單邊可在沒有另一邊時獲值",
+          "雙邊都需要對方才有價值",
+          "價格很低",
+          "產品是實體的"
+        ],
+        "explanation": "雙邊市場如平台或市集，需要足夠買方才吸引賣方，賣方不足也吸引不了買方。互相依賴使初期成長困難。"
+      }
+    },
+    {
+      "id": "business_v3_0117",
+      "before": {
+        "question": "A business with negative working capital can still be healthy if:",
+        "options": [
+          "It pays suppliers faster than customers pay it",
+          "Customers pay quickly and suppliers offer long payment terms",
+          "It has no inventory",
+          "It has no marketing expenses"
+        ],
+        "explanation": "Customers pay quickly and suppliers offer long payment terms 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。"
+      },
+      "after": {
+        "question": "企業即使營運資金為負，仍可能健康的原因是：",
+        "options": [
+          "比顧客更快付錢給供應商",
+          "顧客先付款，供應商給較長付款期",
+          "沒有庫存",
+          "沒有行銷費"
+        ],
+        "explanation": "若顧客先付費而供應商付款期長，企業可先收現金再付款，形成負營運資金但現金流良好，如訂閱或快轉零售。"
+      }
+    }
+  ]
+}
