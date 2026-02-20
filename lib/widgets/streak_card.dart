@@ -36,11 +36,11 @@ class StreakCard extends StatelessWidget {
     final totalStreakDays =
         streakDays + ((todayCompleted && !frozen) ? 1 : 0);
     final status = frozen
-        ? '連勝 $totalStreakDays 天（已冰封 🧊）'
+        ? '連勝 $totalStreakDays 天（已冰封🧊）'
         : '連續 $totalStreakDays 天 🔥';
 
     final headline = frozen
-        ? '連勝已冰封，今天完成可解凍'
+        ? '今天完成可解凍'
         : (todayCompleted
             ? '今天達標 ✅ 火焰續命'
             : '今天完成 $todayAnswered/$dailyTarget 題，火會繼續燒');
@@ -93,34 +93,40 @@ class StreakCard extends StatelessWidget {
           const SizedBox(height: LoomSpacing.sm),
           SizedBox(
             height: 28,
-            child: Row(
+            child: Stack(
+              alignment: Alignment.centerLeft,
               children: [
-                ...List.generate(7, (index) {
-                  final isActive = index < visibleFlames;
-                  final symbol = isActive ? '🔥' : '◻︎';
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: Text(symbol, style: const TextStyle(fontSize: 22)),
-                  );
-                }),
+                Row(
+                  children: [
+                    ...List.generate(7, (index) {
+                      final isActive = index < visibleFlames;
+                      final symbol = isActive ? '🔥' : '◻︎';
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Text(symbol, style: const TextStyle(fontSize: 22)),
+                      );
+                    }),
+                  ],
+                ),
                 if (showIce)
-                  const Padding(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Text('🧊', style: TextStyle(fontSize: 22)),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: LoomTheme.surface(context).withOpacity(0.85),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: LoomTheme.border(context),
+                        ),
+                      ),
+                      child: const Text('🧊', style: TextStyle(fontSize: 16)),
+                    ),
                   ),
               ],
             ),
           ),
-          if (frozen)
-            Padding(
-              padding: const EdgeInsets.only(top: LoomSpacing.sm),
-              child: Text(
-                '完成 5 題可解凍',
-                style: LoomTypography.secondary.copyWith(
-                  color: LoomTheme.textSecondary(context),
-                ),
-              ),
-            ),
         ],
       ),
     );
