@@ -2,6 +2,7 @@
 import json
 import sys
 import os
+import hashlib
 from pathlib import Path
 from html import escape
 from datetime import datetime
@@ -65,13 +66,17 @@ def main():
                     issues.append(f"banned_phrase:{phrase}")
                     banned_hits.append({"id": qid, "phrase": phrase})
 
+            hash_input = f"{qid or ''}{prompt}{explanation}".encode("utf-8")
+            sha256 = hashlib.sha256(hash_input).hexdigest()
             all_rows.append({
                 "pack": path.name,
+                "source_file": path.name,
                 "id": qid,
-                "prompt": prompt,
+                "question": prompt,
                 "options": options,
                 "answer": f"{answer_index} - {answer_text}",
                 "explanation": explanation,
+                "sha256": sha256,
                 "issues": issues,
             })
 
@@ -107,21 +112,23 @@ def main():
         options_html = "<ol>" + "".join(f"<li>{escape(str(opt))}</li>" for opt in row["options"]) + "</ol>"
         rows_html.append(
             "<tr class='row {cls}'>"
-            "<td>{pack}</td>"
+            "<td>{source}</td>"
             "<td>{qid}</td>"
-            "<td>{prompt}</td>"
+            "<td>{question}</td>"
             "<td>{options}</td>"
             "<td>{answer}</td>"
             "<td>{explanation}</td>"
+            "<td>{sha256}</td>"
             "<td>{issues}</td>"
             "</tr>".format(
                 cls=issue_class,
-                pack=escape(str(row["pack"])),
+                source=escape(str(row["source_file"])),
                 qid=escape(str(row["id"])),
-                prompt=escape(str(row["prompt"])),
+                question=escape(str(row["question"])),
                 options=options_html,
                 answer=escape(str(row["answer"])),
                 explanation=escape(str(row["explanation"])),
+                sha256=escape(str(row["sha256"])),
                 issues=escape(issues_text),
             )
         )
@@ -150,12 +157,13 @@ def main():
   <table>
     <thead>
       <tr>
-        <th>Pack</th>
+        <th>Source File</th>
         <th>ID</th>
-        <th>Prompt</th>
+        <th>Question</th>
         <th>Options</th>
         <th>Answer</th>
         <th>Explanation</th>
+        <th>SHA256</th>
         <th>Issues</th>
       </tr>
     </thead>

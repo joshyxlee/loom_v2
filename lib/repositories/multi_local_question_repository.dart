@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/question.dart';
@@ -24,12 +25,24 @@ class MultiLocalQuestionRepository implements QuestionRepository {
 
   @override
   Future<void> init() async {
+    if (kDebugMode) {
+      debugPrint('QBank assets: ${assetPaths.join(', ')}');
+    }
     for (final path in assetPaths) {
       final raw = await rootBundle.loadString(path);
       final data = json.decode(raw);
       if (data is! List) continue;
       final questions = data.map((e) => Question.fromJson(e as Map<String, dynamic>)).toList();
       for (final q in questions) {
+        if (kDebugMode && q.id == 'fun_v3_0012') {
+          final qPreview = q.prompt.length > 40 ? q.prompt.substring(0, 40) : q.prompt;
+          final ePreview = q.explanation.length > 40
+              ? q.explanation.substring(0, 40)
+              : q.explanation;
+          debugPrint('QBank fun_v3_0012 source=$path');
+          debugPrint('QBank fun_v3_0012 question=$qPreview');
+          debugPrint('QBank fun_v3_0012 explanation=$ePreview');
+        }
         _cache.putIfAbsent(q.subject, () => []).add(q);
       }
     }
