@@ -1535,9 +1535,19 @@
       "大聲"
     ],
     "answerIndex": 0,
-    "explanation": "G-Dragon 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "BIGBANG 的隊長是 G-Dragon（權志龍），他是團體的核心成員之一，長期以領導與創作能力著稱。",
     "difficulty": "easy",
-    "subject": "kpop"
+    "subject": "kpop",
+    "asOf": "2026-02-20",
+    "expiryDays": 90,
+    "sources": [
+      "https://en.wikipedia.org/wiki/G-Dragon"
+    ],
+    "tags": [
+      "time-sensitive",
+      "people-role",
+      "kpop"
+    ]
   },
   {
     "id": "kpop_v3_0111",

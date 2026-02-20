@@ -1521,9 +1521,19 @@
       "馬刺"
     ],
     "answerIndex": 1,
-    "explanation": "湖人 描述的是核心定義，重點在於界定主要特徵與作用，讓人理解該概念如何運作並產生影響。這樣的說明能補足背景知識，幫助在實務情境中做出一致的判斷與應用。",
+    "explanation": "湖人於 2000–2002 年連續三年奪冠，完成三連霸。此後尚無球隊再度完成三連霸，因此湖人仍是最近一次達成者。",
     "difficulty": "hard",
-    "subject": "nba"
+    "subject": "nba",
+    "asOf": "2026-02-20",
+    "expiryDays": 14,
+    "sources": [
+      "https://en.wikipedia.org/wiki/Los_Angeles_Lakers"
+    ],
+    "tags": [
+      "time-sensitive",
+      "nba",
+      "championships"
+    ]
   },
   {
     "id": "nba_v3_0110",
