@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-20T17:07:21",
+  "generated_at": "2026-02-21T10:24:38",
   "total_packs": 9,
   "total_questions": 1000,
-  "issues_count": 5,
+  "issues_count": 1000,
   "duplicate_ids": [],
   "duplicate_prompts": [
     "「二戰後歐洲快速重建」的關鍵因素之一是？",
@@ -30,12 +30,16 @@
     "為什麼高山上的水較難煮熟食物？",
     "美國獨立革命的主因之一是？"
   ],
-  "short_explanations": [
-    "business_v3_0049",
-    "business_v3_0053",
-    "business_v3_0058",
-    "business_v3_0084",
-    "business_v3_0099"
-  ],
-  "banned_phrase_hits": []
+  "banned_by_pack": {},
+  "hollow_by_pack": {
+    "ai.json": 120,
+    "business.json": 120,
+    "fun_facts.json": 100,
+    "history.json": 100,
+    "kpop.json": 120,
+    "money.json": 120,
+    "nba.json": 120,
+    "science.json": 100,
+    "world.json": 100
+  }
 }
