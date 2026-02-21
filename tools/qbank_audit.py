@@ -6,10 +6,10 @@ Usage:
 Outputs:
   reports/qbank_audit.html
   reports/qbank_audit.md
-  reports/qbank_audit_summary.json
+  reports/qbank_audit.json
 
 Quick run+commit:
-  python3 tools/qbank_audit.py && git add reports/qbank_audit.html reports/qbank_audit.md reports/qbank_audit_summary.json && git commit -m "audit: update qbank reports" && git push
+  python3 tools/qbank_audit.py && git add reports/qbank_audit.html reports/qbank_audit.md reports/qbank_audit.json && git commit -m "audit: update qbank reports" && git push
 """
 import json
 import sys
@@ -154,8 +154,8 @@ def main():
         "hollow_by_pack": dict(hollow_by_pack),
     }
 
-    summary_path = reports_dir / "qbank_audit_summary.json"
-    summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_path = reports_dir / "qbank_audit.json"
+    json_path.write_text(json.dumps(all_rows, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # HTML report
     rows_html = []
@@ -314,7 +314,7 @@ def main():
         print(f"ERROR: Duplicate IDs found: {duplicate_ids}", file=sys.stderr)
         sys.exit(1)
 
-    print("Done. Next: python3 tools/qbank_audit.py && git add reports/qbank_audit.html reports/qbank_audit.md reports/qbank_audit_summary.json && git commit -m \"audit: update qbank reports\" && git push")
+    print("Done. Next: python3 tools/qbank_audit.py && git add reports/qbank_audit.html reports/qbank_audit.md reports/qbank_audit.json && git commit -m \"audit: update qbank reports\" && git push")
 
 
 if __name__ == "__main__":
