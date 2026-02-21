@@ -1,6 +1,6 @@
 # QBank Audit 摘要
 
-- 產生時間：2026-02-21T13:38:18
+- 產生時間：2026-02-21T13:43:39
 - 題目數：1000
 - banned phrase 命中：0
 - restatement 失敗：0
@@ -13,42 +13,30 @@
 
 ## Catchphrase 統計
 - ai.json
-  - 重點: 14 (WARN)
-  - 想成: 4 (OK)
-  - 對味: 4 (OK)
-  - 登場: 4 (OK)
+  - 重點: 1 (OK)
+  - 登場: 1 (OK)
 - business.json
-  - 登場: 13 (WARN)
-  - 想成: 5 (OK)
-  - 對味: 5 (OK)
-- fun_facts.json
-  - 想成: 6 (OK)
-  - 對味: 6 (OK)
-- history.json
-  - 想成: 5 (OK)
-  - 對味: 5 (OK)
-- kpop.json
-  - 想成: 3 (OK)
-  - 對味: 3 (OK)
-- money.json
+  - 登場: 6 (OK)
   - 想成: 1 (OK)
   - 對味: 1 (OK)
-  - 重點: 1 (OK)
-  - 關鍵: 1 (OK)
-- nba.json
-  - 想成: 4 (OK)
-  - 對味: 4 (OK)
-- science.json
-  - 重點: 10 (WARN)
 
 ## Opening Repeat
+- ai.json
+  - WARN：提到「下列何者屬於」 (3)
 - fun_facts.json
   - WARN：不會屬於冷知識常見說 (3)
-  - WARN：這件事說的就是不會， (4)
+  - WARN：不會在冷知識裡很常見 (3)
 - kpop.json
+  - WARN：提到「BIGBAN」 (3)
   - WARN：2022屬於韓流文化 (3)
+  - WARN：提到「SEVENT」 (3)
+- money.json
+  - WARN：在投資的語境裡，「台 (4)
 - nba.json
-  - WARN：這件事說的就是Wil (3)
+  - WARN：在籃球的語境裡，「「 (3)
+  - WARN：Wilt Chamb (4)
+  - WARN：John Stock (3)
+  - WARN：Russell We (3)
 - world.json
   - WARN：題目提到「下列哪個國 (3)
 
@@ -58,7 +46,6 @@
   - ai_v3_0007 / ai_v3_0029: 0.755
   - ai_v3_0017 / ai_v3_0058: 0.745
   - ai_v3_0052 / ai_v3_0058: 0.745
-  - ai_v3_0035 / ai_v3_0072: 0.741
   - ai_v3_0058 / ai_v3_0075: 0.727
   - ai_v3_0007 / ai_v3_0025: 0.725
   - ai_v3_0025 / ai_v3_0029: 0.725
@@ -66,15 +53,15 @@
   - ai_v3_0017 / ai_v3_0050: 0.719
   - ai_v3_0019 / ai_v3_0058: 0.702
   - ai_v3_0052 / ai_v3_0075: 0.702
-  - ai_v3_0035 / ai_v3_0037: 0.692
   - ai_v3_0019 / ai_v3_0075: 0.69
   - ai_v3_0058 / ai_v3_0060: 0.69
   - ai_v3_0056 / ai_v3_0063: 0.684
   - ai_v3_0019 / ai_v3_0052: 0.678
   - ai_v3_0017 / ai_v3_0021: 0.672
   - ai_v3_0021 / ai_v3_0050: 0.672
+  - ai_v3_0033 / ai_v3_0047: 0.667
   - ai_v3_0050 / ai_v3_0060: 0.667
-  - ai_v3_0071 / ai_v3_0102: 0.667
+  - ai_v3_0055 / ai_v3_0093: 0.667
   - ai_v3_0017 / ai_v3_0041: 0.656
   - ai_v3_0041 / ai_v3_0050: 0.656
   - ai_v3_0050 / ai_v3_0058: 0.655
@@ -84,40 +71,41 @@
   - ai_v3_0010 / ai_v3_0050: 0.645
   - ai_v3_0015 / ai_v3_0017: 0.645
   - ai_v3_0015 / ai_v3_0050: 0.645
+  - ai_v3_0017 / ai_v3_0075: 0.644
 - business.json
   - business_v3_0007 / business_v3_0019: 0.636
   - business_v3_0031 / business_v3_0049: 0.607
 - fun_facts.json
-  - fun_v3_0055 / fun_v3_0086: 1.0
-  - fun_v3_0066 / fun_v3_0090: 1.0
-  - fun_v3_0067 / fun_v3_0092: 1.0
-  - fun_v3_0080 / fun_v3_0095: 1.0
-  - fun_v3_0091 / fun_v3_0099: 1.0
-  - fun_v3_0055 / fun_v3_0072: 0.714
-  - fun_v3_0072 / fun_v3_0086: 0.714
-  - fun_v3_0052 / fun_v3_0084: 0.697
-  - fun_v3_0019 / fun_v3_0036: 0.688
+  - fun_v3_0030 / fun_v3_0041: 0.864
   - fun_v3_0009 / fun_v3_0061: 0.686
   - fun_v3_0058 / fun_v3_0075: 0.686
   - fun_v3_0058 / fun_v3_0077: 0.686
   - fun_v3_0075 / fun_v3_0077: 0.686
-  - fun_v3_0039 / fun_v3_0051: 0.684
-  - fun_v3_0051 / fun_v3_0060: 0.684
-  - fun_v3_0051 / fun_v3_0066: 0.684
-  - fun_v3_0051 / fun_v3_0090: 0.684
-  - fun_v3_0067 / fun_v3_0085: 0.683
-  - fun_v3_0085 / fun_v3_0092: 0.683
   - fun_v3_0054 / fun_v3_0061: 0.68
   - fun_v3_0038 / fun_v3_0079: 0.679
   - fun_v3_0078 / fun_v3_0082: 0.673
   - fun_v3_0058 / fun_v3_0065: 0.667
   - fun_v3_0065 / fun_v3_0075: 0.667
   - fun_v3_0065 / fun_v3_0077: 0.667
-  - fun_v3_0001 / fun_v3_0052: 0.657
-  - fun_v3_0001 / fun_v3_0084: 0.657
-  - fun_v3_0030 / fun_v3_0052: 0.657
-  - fun_v3_0030 / fun_v3_0084: 0.657
-  - fun_v3_0034 / fun_v3_0052: 0.657
+  - fun_v3_0067 / fun_v3_0092: 0.667
+  - fun_v3_0055 / fun_v3_0086: 0.66
+  - fun_v3_0066 / fun_v3_0090: 0.66
+  - fun_v3_0080 / fun_v3_0095: 0.66
+  - fun_v3_0009 / fun_v3_0054: 0.654
+  - fun_v3_0038 / fun_v3_0082: 0.654
+  - fun_v3_0054 / fun_v3_0065: 0.647
+  - fun_v3_0054 / fun_v3_0082: 0.647
+  - fun_v3_0061 / fun_v3_0065: 0.647
+  - fun_v3_0061 / fun_v3_0082: 0.647
+  - fun_v3_0065 / fun_v3_0082: 0.647
+  - fun_v3_0095 / fun_v3_0097: 0.646
+  - fun_v3_0079 / fun_v3_0082: 0.642
+  - fun_v3_0030 / fun_v3_0074: 0.64
+  - fun_v3_0012 / fun_v3_0019: 0.638
+  - fun_v3_0055 / fun_v3_0072: 0.638
+  - fun_v3_0072 / fun_v3_0086: 0.638
+  - fun_v3_0091 / fun_v3_0099: 0.636
+  - fun_v3_0054 / fun_v3_0058: 0.635
 - history.json
   - history_v3_0040 / history_v3_0056: 0.863
   - history_v3_0038 / history_v3_0074: 0.854
@@ -125,41 +113,38 @@
   - history_v3_0036 / history_v3_0094: 0.83
   - history_v3_0017 / history_v3_0064: 0.778
   - history_v3_0020 / history_v3_0066: 0.778
-  - history_v3_0047 / history_v3_0082: 0.769
+  - history_v3_0047 / history_v3_0082: 0.756
   - history_v3_0046 / history_v3_0068: 0.712
   - history_v3_0049 / history_v3_0084: 0.712
-  - history_v3_0089 / history_v3_0097: 0.686
   - history_v3_0046 / history_v3_0056: 0.685
   - history_v3_0046 / history_v3_0094: 0.685
   - history_v3_0028 / history_v3_0046: 0.679
   - history_v3_0056 / history_v3_0094: 0.673
+  - history_v3_0089 / history_v3_0097: 0.667
   - history_v3_0023 / history_v3_0046: 0.661
+  - history_v3_0085 / history_v3_0092: 0.653
   - history_v3_0040 / history_v3_0046: 0.649
   - history_v3_0046 / history_v3_0053: 0.648
   - history_v3_0034 / history_v3_0100: 0.644
-  - history_v3_0001 / history_v3_0005: 0.643
-  - history_v3_0005 / history_v3_0031: 0.643
   - history_v3_0068 / history_v3_0100: 0.643
   - history_v3_0028 / history_v3_0056: 0.638
   - history_v3_0028 / history_v3_0094: 0.638
   - history_v3_0040 / history_v3_0094: 0.638
   - history_v3_0007 / history_v3_0068: 0.636
-  - history_v3_0018 / history_v3_0099: 0.636
   - history_v3_0053 / history_v3_0056: 0.636
   - history_v3_0053 / history_v3_0094: 0.636
   - history_v3_0056 / history_v3_0068: 0.636
   - history_v3_0068 / history_v3_0086: 0.636
+  - history_v3_0068 / history_v3_0094: 0.636
+  - history_v3_0028 / history_v3_0068: 0.632
 - kpop.json
   - kpop_v3_0025 / kpop_v3_0063: 0.885
   - kpop_v3_0042 / kpop_v3_0077: 0.882
-  - kpop_v3_0091 / kpop_v3_0109: 0.87
   - kpop_v3_0025 / kpop_v3_0081: 0.865
   - kpop_v3_0063 / kpop_v3_0081: 0.865
-  - kpop_v3_0055 / kpop_v3_0091: 0.833
-  - kpop_v3_0055 / kpop_v3_0109: 0.833
   - kpop_v3_0047 / kpop_v3_0065: 0.83
   - kpop_v3_0056 / kpop_v3_0092: 0.83
-  - kpop_v3_0043 / kpop_v3_0099: 0.784
+  - kpop_v3_0082 / kpop_v3_0100: 0.795
   - kpop_v3_0006 / kpop_v3_0081: 0.772
   - kpop_v3_0016 / kpop_v3_0086: 0.772
   - kpop_v3_0027 / kpop_v3_0114: 0.772
@@ -170,57 +155,63 @@
   - kpop_v3_0010 / kpop_v3_0057: 0.759
   - kpop_v3_0035 / kpop_v3_0086: 0.759
   - kpop_v3_0057 / kpop_v3_0093: 0.759
-  - kpop_v3_0018 / kpop_v3_0037: 0.75
   - kpop_v3_0049 / kpop_v3_0085: 0.746
   - kpop_v3_0010 / kpop_v3_0093: 0.745
   - kpop_v3_0017 / kpop_v3_0069: 0.745
-  - kpop_v3_0051 / kpop_v3_0053: 0.722
-  - kpop_v3_0051 / kpop_v3_0082: 0.722
-  - kpop_v3_0051 / kpop_v3_0095: 0.722
-  - kpop_v3_0053 / kpop_v3_0082: 0.722
-  - kpop_v3_0053 / kpop_v3_0095: 0.722
-  - kpop_v3_0082 / kpop_v3_0095: 0.722
+  - kpop_v3_0046 / kpop_v3_0049: 0.714
+  - kpop_v3_0046 / kpop_v3_0086: 0.714
+  - kpop_v3_0049 / kpop_v3_0086: 0.714
+  - kpop_v3_0025 / kpop_v3_0056: 0.702
+  - kpop_v3_0042 / kpop_v3_0089: 0.702
+  - kpop_v3_0063 / kpop_v3_0077: 0.702
+  - kpop_v3_0080 / kpop_v3_0081: 0.702
+  - kpop_v3_0016 / kpop_v3_0035: 0.698
+  - kpop_v3_0059 / kpop_v3_0087: 0.692
+  - kpop_v3_0012 / kpop_v3_0046: 0.678
 - money.json
   - money_v3_0104 / money_v3_0119: 0.75
-  - money_v3_0063 / money_v3_0080: 0.714
   - money_v3_0071 / money_v3_0103: 0.7
   - money_v3_0091 / money_v3_0100: 0.7
-  - money_v3_0011 / money_v3_0051: 0.692
+  - money_v3_0095 / money_v3_0107: 0.692
   - money_v3_0091 / money_v3_0104: 0.69
   - money_v3_0104 / money_v3_0113: 0.689
-  - money_v3_0109 / money_v3_0115: 0.679
   - money_v3_0052 / money_v3_0101: 0.667
+  - money_v3_0063 / money_v3_0080: 0.667
   - money_v3_0113 / money_v3_0119: 0.667
+  - money_v3_0027 / money_v3_0073: 0.661
+  - money_v3_0011 / money_v3_0051: 0.659
+  - money_v3_0109 / money_v3_0115: 0.654
   - money_v3_0021 / money_v3_0104: 0.65
-  - money_v3_0080 / money_v3_0098: 0.648
   - money_v3_0006 / money_v3_0104: 0.639
   - money_v3_0091 / money_v3_0119: 0.639
   - money_v3_0100 / money_v3_0104: 0.639
   - money_v3_0100 / money_v3_0111: 0.639
-  - money_v3_0051 / money_v3_0109: 0.636
-  - money_v3_0051 / money_v3_0115: 0.636
-  - money_v3_0080 / money_v3_0092: 0.636
+  - money_v3_0085 / money_v3_0118: 0.636
   - money_v3_0049 / money_v3_0104: 0.632
-  - money_v3_0051 / money_v3_0077: 0.632
-  - money_v3_0056 / money_v3_0080: 0.63
   - money_v3_0021 / money_v3_0119: 0.629
-  - money_v3_0063 / money_v3_0098: 0.625
-  - money_v3_0013 / money_v3_0040: 0.622
   - money_v3_0006 / money_v3_0119: 0.619
   - money_v3_0062 / money_v3_0091: 0.619
   - money_v3_0100 / money_v3_0119: 0.619
+  - money_v3_0074 / money_v3_0107: 0.618
   - money_v3_0006 / money_v3_0049: 0.617
-  - money_v3_0011 / money_v3_0109: 0.614
+  - money_v3_0052 / money_v3_0104: 0.613
+  - money_v3_0049 / money_v3_0119: 0.61
+  - money_v3_0006 / money_v3_0021: 0.609
+  - money_v3_0080 / money_v3_0098: 0.609
+  - money_v3_0083 / money_v3_0104: 0.609
 - nba.json
   - nba_v3_0084 / nba_v3_0120: 0.877
   - nba_v3_0083 / nba_v3_0085: 0.818
   - nba_v3_0097 / nba_v3_0100: 0.764
   - nba_v3_0046 / nba_v3_0115: 0.746
   - nba_v3_0021 / nba_v3_0043: 0.745
+  - nba_v3_0088 / nba_v3_0107: 0.733
+  - nba_v3_0118 / nba_v3_0119: 0.731
   - nba_v3_0007 / nba_v3_0011: 0.725
   - nba_v3_0007 / nba_v3_0043: 0.725
   - nba_v3_0011 / nba_v3_0043: 0.725
   - nba_v3_0030 / nba_v3_0047: 0.722
+  - nba_v3_0082 / nba_v3_0107: 0.72
   - nba_v3_0025 / nba_v3_0047: 0.717
   - nba_v3_0007 / nba_v3_0021: 0.712
   - nba_v3_0007 / nba_v3_0097: 0.712
@@ -229,6 +220,7 @@
   - nba_v3_0043 / nba_v3_0097: 0.712
   - nba_v3_0029 / nba_v3_0109: 0.702
   - nba_v3_0021 / nba_v3_0097: 0.698
+  - nba_v3_0086 / nba_v3_0101: 0.689
   - nba_v3_0005 / nba_v3_0029: 0.688
   - nba_v3_0005 / nba_v3_0109: 0.688
   - nba_v3_0102 / nba_v3_0111: 0.686
@@ -238,10 +230,6 @@
   - nba_v3_0109 / nba_v3_0120: 0.679
   - nba_v3_0029 / nba_v3_0031: 0.66
   - nba_v3_0031 / nba_v3_0109: 0.66
-  - nba_v3_0083 / nba_v3_0105: 0.66
-  - nba_v3_0085 / nba_v3_0105: 0.66
-  - nba_v3_0006 / nba_v3_0107: 0.65
-  - nba_v3_0005 / nba_v3_0031: 0.647
 - science.json
   - science_v3_0013 / science_v3_0058: 0.767
   - science_v3_0018 / science_v3_0055: 0.705
@@ -251,11 +239,13 @@
   - science_v3_0076 / science_v3_0087: 0.667
   - science_v3_0076 / science_v3_0093: 0.667
   - science_v3_0054 / science_v3_0064: 0.659
+  - science_v3_0051 / science_v3_0094: 0.653
   - science_v3_0071 / science_v3_0097: 0.653
   - science_v3_0074 / science_v3_0097: 0.653
   - science_v3_0076 / science_v3_0078: 0.653
   - science_v3_0087 / science_v3_0097: 0.653
   - science_v3_0093 / science_v3_0097: 0.653
+  - science_v3_0067 / science_v3_0094: 0.646
   - science_v3_0071 / science_v3_0074: 0.64
   - science_v3_0071 / science_v3_0087: 0.64
   - science_v3_0071 / science_v3_0093: 0.64
@@ -263,21 +253,21 @@
   - science_v3_0074 / science_v3_0093: 0.64
   - science_v3_0078 / science_v3_0097: 0.64
   - science_v3_0087 / science_v3_0093: 0.64
-  - science_v3_0059 / science_v3_0066: 0.638
-  - science_v3_0014 / science_v3_0088: 0.63
+  - science_v3_0051 / science_v3_0067: 0.633
+  - science_v3_0067 / science_v3_0091: 0.633
+  - science_v3_0067 / science_v3_0096: 0.633
   - science_v3_0071 / science_v3_0078: 0.627
   - science_v3_0074 / science_v3_0078: 0.627
   - science_v3_0078 / science_v3_0087: 0.627
   - science_v3_0078 / science_v3_0093: 0.627
-  - science_v3_0014 / science_v3_0079: 0.623
   - science_v3_0039 / science_v3_0060: 0.623
-  - science_v3_0062 / science_v3_0079: 0.623
-  - science_v3_0079 / science_v3_0088: 0.623
 - world.json
   - world_v3_0072 / world_v3_0076: 0.909
   - world_v3_0030 / world_v3_0037: 0.884
   - world_v3_0032 / world_v3_0037: 0.884
   - world_v3_0009 / world_v3_0031: 0.881
+  - world_v3_0020 / world_v3_0044: 0.878
+  - world_v3_0040 / world_v3_0050: 0.875
   - world_v3_0003 / world_v3_0043: 0.87
   - world_v3_0030 / world_v3_0032: 0.864
   - world_v3_0014 / world_v3_0080: 0.86
@@ -289,6 +279,7 @@
   - world_v3_0006 / world_v3_0072: 0.771
   - world_v3_0006 / world_v3_0076: 0.771
   - world_v3_0028 / world_v3_0033: 0.767
+  - world_v3_0008 / world_v3_0050: 0.762
   - world_v3_0015 / world_v3_0016: 0.762
   - world_v3_0012 / world_v3_0043: 0.75
   - world_v3_0017 / world_v3_0046: 0.75
@@ -296,11 +287,8 @@
   - world_v3_0017 / world_v3_0028: 0.727
   - world_v3_0011 / world_v3_0093: 0.723
   - world_v3_0003 / world_v3_0012: 0.72
-  - world_v3_0062 / world_v3_0095: 0.714
   - world_v3_0006 / world_v3_0034: 0.712
+  - world_v3_0020 / world_v3_0026: 0.711
+  - world_v3_0051 / world_v3_0094: 0.708
+  - world_v3_0008 / world_v3_0040: 0.705
   - world_v3_0049 / world_v3_0073: 0.704
-  - world_v3_0019 / world_v3_0064: 0.692
-  - world_v3_0008 / world_v3_0050: 0.684
-  - world_v3_0004 / world_v3_0091: 0.674
-  - world_v3_0051 / world_v3_0099: 0.674
-  - world_v3_0025 / world_v3_0030: 0.673

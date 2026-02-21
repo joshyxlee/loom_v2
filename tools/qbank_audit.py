@@ -59,21 +59,25 @@ LIMITS = {
 EMOJI_RE = re.compile(r"[\U0001F300-\U0001FAFF]")
 
 KNOWLEDGE_HINTS = [
-    "是",
-    "指",
-    "代表",
-    "描述",
-    "用來",
     "因為",
     "所以",
-    "規則",
-    "機制",
     "例如",
     "比如",
     "像",
+    "規則",
+    "制度",
+    "機制",
+    "流程",
+    "指標",
+    "單位",
+    "年",
+    "公里",
+    "公尺",
+    "秒",
+    "%",
 ]
 
-CONNECTORS = ["就是", "其實", "也就是", "答案是", "代表", "指的是", "等於", "為", "為了"]
+CONNECTORS = ["就是", "其實", "也就是", "答案是", "代表", "指的是", "等於", "為", "為了", "說的就是", "主角是"]
 
 
 def load_questions(path: Path):
@@ -133,21 +137,41 @@ def restatement_fail(answer: str, explanation: str) -> bool:
     e = re.sub(r"[\W_]+", "", explanation)
     if not e:
         return True
+
+    # explicit restatement patterns
+    for pat in ["主角是", "這件事說的就是", "本身就是例子", "重點就是"]:
+        if pat in explanation:
+            return True
+
+    # if answer dominates the explanation
+    if a and a in e and len(a) / max(len(e), 1) > 0.5:
+        return True
+
+    # remove answer + connectors, see if anything substantial left
+    stripped = e
+    if a:
+        stripped = stripped.replace(a, "")
+    for c in CONNECTORS:
+        stripped = stripped.replace(re.sub(r"[\W_]+", "", c), "")
+    if len(stripped) < 8:
+        return True
+
     # ratio of explanation chars that come from answer or connectors
     allowed = a
     for c in CONNECTORS:
         allowed += c
     covered = sum(1 for ch in e if ch in allowed)
-    if covered / max(len(e), 1) >= 0.8:
+    if covered / max(len(e), 1) >= 0.7:
         return True
 
-    # token overlap
+    # token overlap + no extra tokens
     a_tokens = set(re.findall(r"[A-Za-z0-9]+|[\u4e00-\u9fff]+", answer))
     e_tokens = set(re.findall(r"[A-Za-z0-9]+|[\u4e00-\u9fff]+", explanation))
     if not e_tokens:
         return True
     overlap = len(a_tokens & e_tokens) / max(len(e_tokens), 1)
-    if overlap > LIMITS["restatement_overlap"] and not has_knowledge(explanation):
+    extra_tokens = [t for t in e_tokens if t not in a_tokens and len(t) >= 2]
+    if overlap > LIMITS["restatement_overlap"] and (not extra_tokens) and not has_knowledge(explanation):
         return True
     return False
 

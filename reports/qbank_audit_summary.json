@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-21T13:38:18",
+  "generated_at": "2026-02-21T13:43:39",
   "total_questions": 1000,
   "banned_phrase_hits": 0,
   "restatement_fail_count": 0,
@@ -13,241 +13,61 @@
   "catchphrase_flags": {
     "ai.json": {
       "重點": {
-        "count": 14,
-        "level": "WARN",
-        "ids": [
-          "ai_v3_0077",
-          "ai_v3_0083",
-          "ai_v3_0085",
-          "ai_v3_0088",
-          "ai_v3_0090",
-          "ai_v3_0092",
-          "ai_v3_0096",
-          "ai_v3_0098",
-          "ai_v3_0103",
-          "ai_v3_0104",
-          "ai_v3_0106",
-          "ai_v3_0110",
-          "ai_v3_0114",
-          "ai_v3_0117"
-        ]
-      },
-      "想成": {
-        "count": 4,
+        "count": 1,
         "level": "OK",
         "ids": [
-          "ai_v3_0078",
-          "ai_v3_0082",
-          "ai_v3_0086",
-          "ai_v3_0116"
-        ]
-      },
-      "對味": {
-        "count": 4,
-        "level": "OK",
-        "ids": [
-          "ai_v3_0078",
-          "ai_v3_0082",
-          "ai_v3_0086",
-          "ai_v3_0116"
+          "ai_v3_0114"
         ]
       },
       "登場": {
-        "count": 4,
+        "count": 1,
         "level": "OK",
         "ids": [
-          "ai_v3_0112",
-          "ai_v3_0114",
-          "ai_v3_0115",
-          "ai_v3_0117"
+          "ai_v3_0114"
         ]
       }
     },
     "business.json": {
       "登場": {
-        "count": 13,
-        "level": "WARN",
+        "count": 6,
+        "level": "OK",
         "ids": [
-          "business_v3_0076",
           "business_v3_0082",
           "business_v3_0083",
           "business_v3_0086",
-          "business_v3_0087",
           "business_v3_0088",
-          "business_v3_0093",
           "business_v3_0100",
-          "business_v3_0102",
-          "business_v3_0107",
-          "business_v3_0111",
-          "business_v3_0117",
-          "business_v3_0118"
+          "business_v3_0107"
         ]
       },
-      "想成": {
-        "count": 5,
-        "level": "OK",
-        "ids": [
-          "business_v3_0083",
-          "business_v3_0085",
-          "business_v3_0092",
-          "business_v3_0096",
-          "business_v3_0112"
-        ]
-      },
-      "對味": {
-        "count": 5,
-        "level": "OK",
-        "ids": [
-          "business_v3_0083",
-          "business_v3_0085",
-          "business_v3_0092",
-          "business_v3_0096",
-          "business_v3_0112"
-        ]
-      }
-    },
-    "fun_facts.json": {
-      "想成": {
-        "count": 6,
-        "level": "OK",
-        "ids": [
-          "fun_v3_0080",
-          "fun_v3_0087",
-          "fun_v3_0091",
-          "fun_v3_0095",
-          "fun_v3_0097",
-          "fun_v3_0099"
-        ]
-      },
-      "對味": {
-        "count": 6,
-        "level": "OK",
-        "ids": [
-          "fun_v3_0080",
-          "fun_v3_0087",
-          "fun_v3_0091",
-          "fun_v3_0095",
-          "fun_v3_0097",
-          "fun_v3_0099"
-        ]
-      }
-    },
-    "history.json": {
-      "想成": {
-        "count": 5,
-        "level": "OK",
-        "ids": [
-          "history_v3_0080",
-          "history_v3_0085",
-          "history_v3_0090",
-          "history_v3_0091",
-          "history_v3_0092"
-        ]
-      },
-      "對味": {
-        "count": 5,
-        "level": "OK",
-        "ids": [
-          "history_v3_0080",
-          "history_v3_0085",
-          "history_v3_0090",
-          "history_v3_0091",
-          "history_v3_0092"
-        ]
-      }
-    },
-    "kpop.json": {
-      "想成": {
-        "count": 3,
-        "level": "OK",
-        "ids": [
-          "kpop_v3_0116",
-          "kpop_v3_0118",
-          "kpop_v3_0119"
-        ]
-      },
-      "對味": {
-        "count": 3,
-        "level": "OK",
-        "ids": [
-          "kpop_v3_0116",
-          "kpop_v3_0118",
-          "kpop_v3_0119"
-        ]
-      }
-    },
-    "money.json": {
       "想成": {
         "count": 1,
         "level": "OK",
         "ids": [
-          "money_v3_0117"
+          "business_v3_0083"
         ]
       },
       "對味": {
         "count": 1,
         "level": "OK",
         "ids": [
-          "money_v3_0117"
-        ]
-      },
-      "重點": {
-        "count": 1,
-        "level": "OK",
-        "ids": [
-          "money_v3_0120"
-        ]
-      },
-      "關鍵": {
-        "count": 1,
-        "level": "OK",
-        "ids": [
-          "money_v3_0120"
-        ]
-      }
-    },
-    "nba.json": {
-      "想成": {
-        "count": 4,
-        "level": "OK",
-        "ids": [
-          "nba_v3_0091",
-          "nba_v3_0092",
-          "nba_v3_0099",
-          "nba_v3_0106"
-        ]
-      },
-      "對味": {
-        "count": 4,
-        "level": "OK",
-        "ids": [
-          "nba_v3_0091",
-          "nba_v3_0092",
-          "nba_v3_0099",
-          "nba_v3_0106"
-        ]
-      }
-    },
-    "science.json": {
-      "重點": {
-        "count": 10,
-        "level": "WARN",
-        "ids": [
-          "science_v3_0027",
-          "science_v3_0030",
-          "science_v3_0035",
-          "science_v3_0037",
-          "science_v3_0052",
-          "science_v3_0059",
-          "science_v3_0068",
-          "science_v3_0073",
-          "science_v3_0090",
-          "science_v3_0095"
+          "business_v3_0083"
         ]
       }
     }
   },
   "opening_repeat_flags": {
+    "ai.json": [
+      {
+        "opening": "提到「下列何者屬於」",
+        "level": "WARN",
+        "ids": [
+          "ai_v3_0055",
+          "ai_v3_0072",
+          "ai_v3_0093"
+        ]
+      }
+    ],
     "fun_facts.json": [
       {
         "opening": "不會屬於冷知識常見說",
@@ -259,17 +79,25 @@
         ]
       },
       {
-        "opening": "這件事說的就是不會，",
+        "opening": "不會在冷知識裡很常見",
         "level": "WARN",
         "ids": [
           "fun_v3_0066",
-          "fun_v3_0067",
-          "fun_v3_0090",
-          "fun_v3_0092"
+          "fun_v3_0076",
+          "fun_v3_0090"
         ]
       }
     ],
     "kpop.json": [
+      {
+        "opening": "提到「BIGBAN」",
+        "level": "WARN",
+        "ids": [
+          "kpop_v3_0009",
+          "kpop_v3_0074",
+          "kpop_v3_0110"
+        ]
+      },
       {
         "opening": "2022屬於韓流文化",
         "level": "WARN",
@@ -278,16 +106,65 @@
           "kpop_v3_0049",
           "kpop_v3_0086"
         ]
+      },
+      {
+        "opening": "提到「SEVENT」",
+        "level": "WARN",
+        "ids": [
+          "kpop_v3_0064",
+          "kpop_v3_0082",
+          "kpop_v3_0100"
+        ]
+      }
+    ],
+    "money.json": [
+      {
+        "opening": "在投資的語境裡，「台",
+        "level": "WARN",
+        "ids": [
+          "money_v3_0076",
+          "money_v3_0085",
+          "money_v3_0088",
+          "money_v3_0118"
+        ]
       }
     ],
     "nba.json": [
       {
-        "opening": "這件事說的就是Wil",
+        "opening": "在籃球的語境裡，「「",
         "level": "WARN",
         "ids": [
-          "nba_v3_0036",
+          "nba_v3_0039",
+          "nba_v3_0050",
+          "nba_v3_0079"
+        ]
+      },
+      {
+        "opening": "Wilt Chamb",
+        "level": "WARN",
+        "ids": [
           "nba_v3_0081",
-          "nba_v3_0103"
+          "nba_v3_0084",
+          "nba_v3_0103",
+          "nba_v3_0120"
+        ]
+      },
+      {
+        "opening": "John Stock",
+        "level": "WARN",
+        "ids": [
+          "nba_v3_0090",
+          "nba_v3_0091",
+          "nba_v3_0113"
+        ]
+      },
+      {
+        "opening": "Russell We",
+        "level": "WARN",
+        "ids": [
+          "nba_v3_0096",
+          "nba_v3_0110",
+          "nba_v3_0112"
         ]
       }
     ],
