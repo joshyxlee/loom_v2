@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-02-21T13:38:18",
+  "total_questions": 1000,
+  "banned_phrase_hits": 0,
+  "restatement_fail_count": 0,
+  "knowledge_fail_count": 0,
+  "char_length_violations": 0,
+  "sentence_count_violations": 0,
+  "emoji_violations": 0,
+  "exclam_violations": 0,
+  "tilde_violations": 0,
+  "similarity_fail_packs": [],
+  "catchphrase_flags": {
+    "ai.json": {
+      "重點": {
+        "count": 14,
+        "level": "WARN",
+        "ids": [
+          "ai_v3_0077",
+          "ai_v3_0083",
+          "ai_v3_0085",
+          "ai_v3_0088",
+          "ai_v3_0090",
+          "ai_v3_0092",
+          "ai_v3_0096",
+          "ai_v3_0098",
+          "ai_v3_0103",
+          "ai_v3_0104",
+          "ai_v3_0106",
+          "ai_v3_0110",
+          "ai_v3_0114",
+          "ai_v3_0117"
+        ]
+      },
+      "想成": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "ai_v3_0078",
+          "ai_v3_0082",
+          "ai_v3_0086",
+          "ai_v3_0116"
+        ]
+      },
+      "對味": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "ai_v3_0078",
+          "ai_v3_0082",
+          "ai_v3_0086",
+          "ai_v3_0116"
+        ]
+      },
+      "登場": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "ai_v3_0112",
+          "ai_v3_0114",
+          "ai_v3_0115",
+          "ai_v3_0117"
+        ]
+      }
+    },
+    "business.json": {
+      "登場": {
+        "count": 13,
+        "level": "WARN",
+        "ids": [
+          "business_v3_0076",
+          "business_v3_0082",
+          "business_v3_0083",
+          "business_v3_0086",
+          "business_v3_0087",
+          "business_v3_0088",
+          "business_v3_0093",
+          "business_v3_0100",
+          "business_v3_0102",
+          "business_v3_0107",
+          "business_v3_0111",
+          "business_v3_0117",
+          "business_v3_0118"
+        ]
+      },
+      "想成": {
+        "count": 5,
+        "level": "OK",
+        "ids": [
+          "business_v3_0083",
+          "business_v3_0085",
+          "business_v3_0092",
+          "business_v3_0096",
+          "business_v3_0112"
+        ]
+      },
+      "對味": {
+        "count": 5,
+        "level": "OK",
+        "ids": [
+          "business_v3_0083",
+          "business_v3_0085",
+          "business_v3_0092",
+          "business_v3_0096",
+          "business_v3_0112"
+        ]
+      }
+    },
+    "fun_facts.json": {
+      "想成": {
+        "count": 6,
+        "level": "OK",
+        "ids": [
+          "fun_v3_0080",
+          "fun_v3_0087",
+          "fun_v3_0091",
+          "fun_v3_0095",
+          "fun_v3_0097",
+          "fun_v3_0099"
+        ]
+      },
+      "對味": {
+        "count": 6,
+        "level": "OK",
+        "ids": [
+          "fun_v3_0080",
+          "fun_v3_0087",
+          "fun_v3_0091",
+          "fun_v3_0095",
+          "fun_v3_0097",
+          "fun_v3_0099"
+        ]
+      }
+    },
+    "history.json": {
+      "想成": {
+        "count": 5,
+        "level": "OK",
+        "ids": [
+          "history_v3_0080",
+          "history_v3_0085",
+          "history_v3_0090",
+          "history_v3_0091",
+          "history_v3_0092"
+        ]
+      },
+      "對味": {
+        "count": 5,
+        "level": "OK",
+        "ids": [
+          "history_v3_0080",
+          "history_v3_0085",
+          "history_v3_0090",
+          "history_v3_0091",
+          "history_v3_0092"
+        ]
+      }
+    },
+    "kpop.json": {
+      "想成": {
+        "count": 3,
+        "level": "OK",
+        "ids": [
+          "kpop_v3_0116",
+          "kpop_v3_0118",
+          "kpop_v3_0119"
+        ]
+      },
+      "對味": {
+        "count": 3,
+        "level": "OK",
+        "ids": [
+          "kpop_v3_0116",
+          "kpop_v3_0118",
+          "kpop_v3_0119"
+        ]
+      }
+    },
+    "money.json": {
+      "想成": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "money_v3_0117"
+        ]
+      },
+      "對味": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "money_v3_0117"
+        ]
+      },
+      "重點": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "money_v3_0120"
+        ]
+      },
+      "關鍵": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "money_v3_0120"
+        ]
+      }
+    },
+    "nba.json": {
+      "想成": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "nba_v3_0091",
+          "nba_v3_0092",
+          "nba_v3_0099",
+          "nba_v3_0106"
+        ]
+      },
+      "對味": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "nba_v3_0091",
+          "nba_v3_0092",
+          "nba_v3_0099",
+          "nba_v3_0106"
+        ]
+      }
+    },
+    "science.json": {
+      "重點": {
+        "count": 10,
+        "level": "WARN",
+        "ids": [
+          "science_v3_0027",
+          "science_v3_0030",
+          "science_v3_0035",
+          "science_v3_0037",
+          "science_v3_0052",
+          "science_v3_0059",
+          "science_v3_0068",
+          "science_v3_0073",
+          "science_v3_0090",
+          "science_v3_0095"
+        ]
+      }
+    }
+  },
+  "opening_repeat_flags": {
+    "fun_facts.json": [
+      {
+        "opening": "不會屬於冷知識常見說",
+        "level": "WARN",
+        "ids": [
+          "fun_v3_0058",
+          "fun_v3_0075",
+          "fun_v3_0077"
+        ]
+      },
+      {
+        "opening": "這件事說的就是不會，",
+        "level": "WARN",
+        "ids": [
+          "fun_v3_0066",
+          "fun_v3_0067",
+          "fun_v3_0090",
+          "fun_v3_0092"
+        ]
+      }
+    ],
+    "kpop.json": [
+      {
+        "opening": "2022屬於韓流文化",
+        "level": "WARN",
+        "ids": [
+          "kpop_v3_0046",
+          "kpop_v3_0049",
+          "kpop_v3_0086"
+        ]
+      }
+    ],
+    "nba.json": [
+      {
+        "opening": "這件事說的就是Wil",
+        "level": "WARN",
+        "ids": [
+          "nba_v3_0036",
+          "nba_v3_0081",
+          "nba_v3_0103"
+        ]
+      }
+    ],
+    "world.json": [
+      {
+        "opening": "題目提到「下列哪個國",
+        "level": "WARN",
+        "ids": [
+          "world_v3_0007",
+          "world_v3_0015",
+          "world_v3_0016"
+        ]
+      }
+    ]
+  }
+}
