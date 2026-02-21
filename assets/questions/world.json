@@ -1398,5 +1398,19 @@
     "answerIndex": 0,
     "explanation": "孟加拉灣常見於地理，用在「世界上最大的」這類語境。這是用來交代概念或規則的說法，很實用。",
     "difficulty": "medium"
+  },
+  {
+    "id": "world_golden_0001",
+    "subject": "world",
+    "prompt": "為什麼地球的赤道周長比南北極方向更長？",
+    "options": [
+      "因為地球是完美球體",
+      "因為地球自轉造成赤道微微鼓起",
+      "因為海平面在赤道較高",
+      "因為赤道溫度更高"
+    ],
+    "answerIndex": 1,
+    "explanation": "地球自轉會讓赤道略微鼓起，形成「赤道隆起」。因此赤道周長比穿過兩極的周長略長。",
+    "difficulty": "medium"
   }
 ]

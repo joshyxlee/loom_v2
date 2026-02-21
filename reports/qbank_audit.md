@@ -1,11 +1,11 @@
 # QBank Audit 摘要
 
-- 產生時間：2026-02-21T13:43:39
-- 題目數：1000
+- 產生時間：2026-02-21T13:57:37
+- 題目數：1009
 - banned phrase 命中：0
 - restatement 失敗：0
-- knowledge nugget 失敗：0
-- 字數違規：0
+- knowledge nugget 失敗：4
+- 字數違規：1
 - 句數違規：0
 - emoji 違規：0
 - 驚嘆號違規：0

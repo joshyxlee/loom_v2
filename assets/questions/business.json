@@ -1558,5 +1558,19 @@
     "answerIndex": 1,
     "explanation": "顯示可用於行銷的收入餘額是概念常用名詞，連到「為何在決定獲」。這個說法用來交代規則或背景，很好用。",
     "difficulty": "hard"
+  },
+  {
+    "id": "business_golden_0001",
+    "subject": "business",
+    "prompt": "為什麼行銷人常看 LTV/CAC 比值？",
+    "options": [
+      "因為越低越好",
+      "衡量每位客戶帶來的長期價值是否覆蓋獲客成本",
+      "只用來估算廣告點擊率",
+      "用來計算員工績效"
+    ],
+    "answerIndex": 1,
+    "explanation": "LTV 是客戶終身價值，CAC 是獲客成本，兩者比值能看出生意是否划算。常見經驗值是 LTV/CAC > 3 代表健康成長。",
+    "difficulty": "medium"
   }
 ]

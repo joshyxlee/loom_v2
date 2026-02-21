@@ -1398,5 +1398,19 @@
     "answerIndex": 1,
     "explanation": "說到「為什麼鏡子成」，前後翻轉最常被提起。因為它改變條件，所以現象會出現。🧪",
     "difficulty": "medium"
+  },
+  {
+    "id": "science_golden_0001",
+    "subject": "science",
+    "prompt": "天空為什麼看起來是藍色？",
+    "options": [
+      "因為海洋反射",
+      "因為氧氣本身是藍色",
+      "因為短波光更容易被瑞利散射",
+      "因為雲朵染色"
+    ],
+    "answerIndex": 2,
+    "explanation": "陽光進入大氣後，短波長的藍光更容易被瑞利散射。這些散射光從四面八方進入眼睛，所以天空看起來偏藍。",
+    "difficulty": "medium"
   }
 ]

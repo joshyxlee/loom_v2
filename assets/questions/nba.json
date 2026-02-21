@@ -1688,5 +1688,19 @@
     "explanation": "Wilt Chamberlain是籃球規則裡的固定說法，對應「NBA史上「」。它把概念說得更明確，記起來不費力。🏀",
     "difficulty": "hard",
     "subject": "nba"
+  },
+  {
+    "id": "nba_golden_0001",
+    "subject": "nba",
+    "prompt": "NBA 24 秒違例的設計初衷是？",
+    "options": [
+      "讓比分更低",
+      "避免拖延、提升比賽節奏",
+      "讓防守更容易",
+      "減少犯規次數"
+    ],
+    "answerIndex": 1,
+    "explanation": "24 秒進攻時限在 1954 年被引入，目的是讓攻守更流暢。它把比賽節奏固定在一個「不拖戲」的速度。",
+    "difficulty": "medium"
   }
 ]

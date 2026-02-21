@@ -1678,5 +1678,19 @@
     "answerIndex": 0,
     "explanation": "提到「在多任務學習」時，共享表示提升泛化經常被提起。屬於機器學習流程或評估指標。",
     "difficulty": "hard"
+  },
+  {
+    "id": "ai_golden_0001",
+    "subject": "ai",
+    "prompt": "為什麼訓練神經網路常會用 Dropout？",
+    "options": [
+      "讓模型更快收斂",
+      "隨機關閉部分神經元以降低過擬合",
+      "讓模型只記住訓練資料",
+      "增加參數數量以提高容量"
+    ],
+    "answerIndex": 1,
+    "explanation": "Dropout 會在訓練時隨機關掉部分神經元，讓模型不靠單一路徑過度記憶。這種「打散依賴」的機制能減少過擬合，泛化表現更穩。",
+    "difficulty": "medium"
   }
 ]

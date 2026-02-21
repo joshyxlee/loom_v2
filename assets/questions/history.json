@@ -1398,5 +1398,19 @@
     "answerIndex": 2,
     "explanation": "亞洲與非洲屬於歷史脈絡常見說法，和「「冷戰時期」」有關。因為它會影響題目描述的條件，所以常被提到。📜",
     "difficulty": "medium"
+  },
+  {
+    "id": "history_golden_0001",
+    "subject": "history",
+    "prompt": "羅馬帝國修築大量道路的主要目的之一是？",
+    "options": [
+      "觀光旅遊",
+      "軍事與行政快速移動",
+      "裝飾城市街景",
+      "阻止商人往來"
+    ],
+    "answerIndex": 1,
+    "explanation": "羅馬道路是軍事與行政的動脈，能讓軍團與官員快速調動。很多路旁還有里程碑，方便計算距離與稅務。",
+    "difficulty": "medium"
   }
 ]

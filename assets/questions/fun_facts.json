@@ -1398,5 +1398,19 @@
     "answerIndex": 2,
     "explanation": "提到「人類一天平均」時，約6千步經常被提起。常見於冷知識例子，拿來聊天很有料。",
     "difficulty": "medium"
+  },
+  {
+    "id": "funFacts_golden_0001",
+    "subject": "funFacts",
+    "prompt": "香蕉為什麼常常是彎的？",
+    "options": [
+      "因為果皮乾縮",
+      "因為成熟時掉落造成彎曲",
+      "因為向光性導致生長朝光源彎曲",
+      "因為樹枝本身是彎的"
+    ],
+    "answerIndex": 2,
+    "explanation": "香蕉幼果會朝向光源生長，這叫「向光性」。生長激素在背光側較多，推著果實往光的一側彎。",
+    "difficulty": "medium"
   }
 ]

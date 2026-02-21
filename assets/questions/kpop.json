@@ -1688,5 +1688,19 @@
     "explanation": "IZ*ONE是韓流文化裡的固定說法，對應「IVE的成員」。這個說法用來交代規則或背景，很好用。",
     "difficulty": "medium",
     "subject": "kpop"
+  },
+  {
+    "id": "kpop_golden_0001",
+    "subject": "kpop",
+    "prompt": "K-pop 的「repackage 專輯」通常指什麼？",
+    "options": [
+      "把舊歌刪掉重錄",
+      "把原專輯加上新歌並換新主打再發行",
+      "把演唱會實況剪成精選",
+      "只改封面不改內容"
+    ],
+    "answerIndex": 1,
+    "explanation": "Repackage 是在原專輯基礎上加新歌、換主打再發行，等於延長宣傳週期。粉絲常把它視為「同一張專輯的第二章」。",
+    "difficulty": "medium"
   }
 ]
