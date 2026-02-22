@@ -378,7 +378,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const double kGutter = 20;
     const double kCardRadius = 16;
     const double kCardPadding = 16;
-    const double kHomeCtaHeight = 56;
+    const double kHomeCtaHeight = 48;
     const double kHomeBottomNavHeight = 64;
     final bottomInset = MediaQuery.of(context).viewPadding.bottom;
     final bottomReserve =
@@ -616,8 +616,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const SizedBox(height: LoomSpacing.md),
                               SizedBox(
-                                width: 120,
-                                height: 120,
+                                width: 96,
+                                height: 96,
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: Text(
@@ -628,7 +628,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     textAlign: TextAlign.center,
                                     style: LoomTypography.bigNumber.copyWith(
                                       fontFeatures: const [FontFeature.tabularFigures()],
-                                      fontSize: 80,
+                                      fontSize: 64,
                                       fontWeight: FontWeight.w700,
                                       color: LoomTheme.accent(context),
                                     ),
@@ -658,8 +658,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Container(
                                 width: double.infinity,
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 14,
-                                  vertical: 10,
+                                  horizontal: 16,
+                                  vertical: 12,
                                 ),
                                 decoration: BoxDecoration(
                                   color: LoomTheme.card(context).withOpacity(0.7),
