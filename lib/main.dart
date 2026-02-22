@@ -476,62 +476,94 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Icon(Icons.attach_money),
             )
           : null,
-      bottomNavigationBar: _HomeBottomNav(onTap: (index) {
-        if (index == 0) return;
-        if (index == 1) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => AdvancedChallengeScreen(
-                subjects: subjects,
-                onStartSubject: (subject) => _startSubject(context, subject),
+      floatingActionButtonLocation: kDebugMode
+          ? FloatingActionButtonLocation.endTop
+          : null,
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.all(LoomSpacing.screen),
+              child: Builder(
+                builder: (context) {
+                  final scheme = Theme.of(context).colorScheme;
+                  return LoomPrimaryButton(
+                    label: '開始變聰明！',
+                    onPressed: () => _startSubject(context, primarySubject),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        scheme.primary,
+                        scheme.primary.withOpacity(0.85),
+                      ],
+                    ),
+                    shadowColor: scheme.primary.withOpacity(0.18),
+                  );
+                },
               ),
-            ),
-          );
-          return;
-        }
-        if (index == 2) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => LeaderboardScreen(
-                knowledgeBalance: knowledgeBalance,
-              ),
-            ),
-          );
-          return;
-        }
-        if (index == 3) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => ShopScreen(
-                repository: widget.repository,
-                progressService: widget.progressService,
-                coreDataStore: widget.coreDataStore,
-              ),
-            ),
-          );
-          return;
-        }
-        if (index == 4) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => SettingsScreen(onReset: _resetAll),
-            ),
-          );
-          return;
-        }
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => _PlaceholderScreen(
-              title: ['主線', '分科', '排行', '商城', '設定'][index],
             ),
           ),
-        );
-      }),
+          _HomeBottomNav(onTap: (index) {
+            if (index == 0) return;
+            if (index == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => AdvancedChallengeScreen(
+                    subjects: subjects,
+                    onStartSubject: (subject) => _startSubject(context, subject),
+                  ),
+                ),
+              );
+              return;
+            }
+            if (index == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => LeaderboardScreen(
+                    knowledgeBalance: knowledgeBalance,
+                  ),
+                ),
+              );
+              return;
+            }
+            if (index == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ShopScreen(
+                    repository: widget.repository,
+                    progressService: widget.progressService,
+                    coreDataStore: widget.coreDataStore,
+                  ),
+                ),
+              );
+              return;
+            }
+            if (index == 4) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => SettingsScreen(onReset: _resetAll),
+                ),
+              );
+              return;
+            }
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => _PlaceholderScreen(
+                  title: ['主線', '分科', '排行', '商城', '設定'][index],
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(
@@ -547,6 +579,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.only(
                     bottom: kBottomNavigationBarHeight +
                         MediaQuery.of(context).viewPadding.bottom +
+                        LoomSizes.buttonHeight +
                         LoomSpacing.md,
                   ),
                   child: Column(
@@ -696,28 +729,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                      const SizedBox(height: LoomSpacing.md),
-                      SizedBox(
-                        height: LoomSizes.buttonHeight + 8,
-                        child: Builder(
-                          builder: (context) {
-                            final scheme = Theme.of(context).colorScheme;
-                            return LoomPrimaryButton(
-                              label: '開始變聰明！',
-                              onPressed: () => _startSubject(context, primarySubject),
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  scheme.primary,
-                                  scheme.primary.withOpacity(0.85),
-                                ],
-                              ),
-                              shadowColor: scheme.primary.withOpacity(0.18),
-                            );
-                          },
                         ),
                       ),
                       const SizedBox(height: LoomSpacing.md),
