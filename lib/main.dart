@@ -379,6 +379,10 @@ class _HomeScreenState extends State<HomeScreen> {
     const double kCardRadius = 16;
     const double kCardPadding = 16;
     const double kHomeCtaHeight = 56;
+    const double kHomeBottomNavHeight = 64;
+    final bottomInset = MediaQuery.of(context).viewPadding.bottom;
+    final bottomReserve =
+        kHomeCtaHeight + kHomeBottomNavHeight + bottomInset + LoomSpacing.lg;
     widget.progressService.ensureDailyState();
     if (widget.progressService.streakSavePending) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -471,37 +475,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.all(LoomSpacing.screen),
-              child: SizedBox(
-                height: kHomeCtaHeight,
-                child: Builder(
-                  builder: (context) {
-                    final scheme = Theme.of(context).colorScheme;
-                    return LoomPrimaryButton(
-                      label: '開始變聰明！',
-                      onPressed: () => _startSubject(context, primarySubject),
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          scheme.primary,
-                          scheme.primary.withOpacity(0.85),
-                        ],
-                      ),
-                      shadowColor: scheme.primary.withOpacity(0.18),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          _HomeBottomNav(onTap: (index) {
+      bottomNavigationBar: _HomeBottomNav(onTap: (index) {
             if (index == 0) return;
             if (index == 1) {
               Navigator.push(
@@ -557,24 +531,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             );
           }),
-        ],
-      ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.zero,
-          child: Column(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.only(
-                    left: LoomSpacing.screen,
-                    right: LoomSpacing.screen,
-                    top: LoomSpacing.screen,
-                    bottom: 172,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              padding: EdgeInsets.only(
+                left: LoomSpacing.screen,
+                right: LoomSpacing.screen,
+                top: LoomSpacing.screen,
+                bottom: bottomReserve,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+
                       StreakCard(
                         streakDays: streakDays,
                         prevStreakDays: prevStreakDays,
@@ -736,14 +706,45 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(height: LoomSpacing.lg),
-                    ],
+                ],
+              ),
+            ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: SafeArea(
+                top: false,
+                child: Padding(
+                  padding: const EdgeInsets.all(LoomSpacing.screen),
+                  child: SizedBox(
+                    height: kHomeCtaHeight,
+                    child: Builder(
+                      builder: (context) {
+                        final scheme = Theme.of(context).colorScheme;
+                        return LoomPrimaryButton(
+                          label: '開始變聰明！',
+                          onPressed: () => _startSubject(context, primarySubject),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              scheme.primary,
+                              scheme.primary.withOpacity(0.85),
+                            ],
+                          ),
+                          shadowColor: scheme.primary.withOpacity(0.18),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+
     );
   }
 }
