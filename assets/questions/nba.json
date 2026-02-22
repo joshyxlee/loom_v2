@@ -9,7 +9,7 @@
       "8 分鐘"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，12 分鐘常用來描述「一場NBA比」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "NBA 每節正規時間 12 分鐘，一場比賽共四節。若平手就進延長賽。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -23,7 +23,7 @@
       "21 英尺 6 英吋"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，23 英尺 9 英吋常用來描述「NBA球場標」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "NBA 三分線頂端距離約 23 呎 9 吋（約 7.24 公尺），轉角較近。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -37,7 +37,7 @@
       "0 分"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球規則裡，1 分常用來描述「一次罰球命中」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "罰球命中得 1 分，常出現在投籃犯規或技術犯規後。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -51,7 +51,7 @@
       "4 次"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，6 次常用來描述「NBA球員被」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "NBA 球員累積第 6 次犯規就犯滿離場，戰術上常會刻意製造犯規麻煩。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -65,7 +65,7 @@
       "76 場"
     ],
     "answerIndex": 1,
-    "explanation": "82 場是籃球規則裡的固定說法，對應「NBA例行賽」。它把概念說得更明確，記起來不費力。",
+    "explanation": "NBA 例行賽每隊 82 場，主客場交錯，賽季長度也讓輪休成為常態。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -79,7 +79,7 @@
       "塞爾提克"
     ],
     "answerIndex": 0,
-    "explanation": "湖人在籃球裡很常見，和「以下哪一隊位」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "洛杉磯的球隊是湖人（Lakers），同城還有快艇。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -93,7 +93,7 @@
       "4 分"
     ],
     "answerIndex": 2,
-    "explanation": "3 分屬於籃球規則常見說法，和「NBA的「三」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "三分球命中得 3 分，是拉開比分差距的重要武器。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -107,7 +107,7 @@
       "9 戰 5 勝"
     ],
     "answerIndex": 2,
-    "explanation": "7 戰 4 勝是籃球裡的固定說法，對應「NBA總決賽」。7這個數字一出現，印象就定住了。",
+    "explanation": "NBA 總決賽採 7 戰 4 勝制，最多打七場、先拿四勝封王。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -121,7 +121,7 @@
       "回場違例"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，兩次運球（雙運）常用來描述「球員運球時雙」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "雙手同時拍球是「雙運」（兩次運球）違例，必須把球交出。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -135,7 +135,7 @@
       "12 秒"
     ],
     "answerIndex": 1,
-    "explanation": "8 秒是籃球規則裡的固定說法，對應「進攻方在後場」。它把概念說得更明確，記起來不費力。",
+    "explanation": "進攻方有 8 秒要把球帶過半場，超時就是違例。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -149,7 +149,7 @@
       "7 名"
     ],
     "answerIndex": 1,
-    "explanation": "5 名屬於籃球規則常見說法，和「NBA一隊上」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "場上同時上場球員是 5 名，這是籃球最基本的配置。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -163,7 +163,7 @@
       "邊線外側"
     ],
     "answerIndex": 0,
-    "explanation": "籃框正下方的禁區是籃球規則裡的固定說法，對應「「三秒區」指」。它把概念說得更明確，記起來不費力。",
+    "explanation": "三秒區就是籃框正下方的禁區，也是防守卡位的核心區域。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -177,7 +177,7 @@
       "防守方封阻傳球"
     ],
     "answerIndex": 0,
-    "explanation": "高吊傳球給隊友空中接球灌籃是籃球常用名詞，連到「NBA的「空」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "空中接力是高吊傳球給隊友空中接球完成灌籃，畫面感十足。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -191,7 +191,7 @@
       "搶到進攻籃板"
     ],
     "answerIndex": 1,
-    "explanation": "傳球讓隊友直接得分屬於籃球規則常見說法，和「「助攻」在數」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "助攻指的是傳球讓隊友直接得分，是組織進攻的重要指標。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -205,7 +205,7 @@
       "總決賽結束後"
     ],
     "answerIndex": 1,
-    "explanation": "例行賽中段是籃球裡的固定說法，對應「NBA「明星」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "明星賽通常在例行賽中段舉行，也是球員短暫休息的時間點。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -219,7 +219,7 @@
       "罰球次數"
     ],
     "answerIndex": 1,
-    "explanation": "投籃失手後搶到球是籃球規則裡的固定說法，對應「NBA「籃板」。它把概念說得更明確，記起來不費力。",
+    "explanation": "籃板是投籃未進後搶到球，分為進攻籃板和防守籃板。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -233,7 +233,7 @@
       "小前鋒"
     ],
     "answerIndex": 2,
-    "explanation": "控球後衛屬於籃球規則常見說法，和「哪一個位置通」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "控球後衛通常負責控球與組織進攻，是場上的指揮官。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -247,7 +247,7 @@
       "罰球命中"
     ],
     "answerIndex": 0,
-    "explanation": "抄截是籃球規則裡的固定說法，對應「下列哪一項屬」。它把概念說得更明確，記起來不費力。",
+    "explanation": "抄截屬於防守數據，代表成功把球從對手手中斷下。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -261,7 +261,7 @@
       "改判進攻犯規"
     ],
     "answerIndex": 1,
-    "explanation": "算分且可能加罰屬於籃球規則常見說法，和「球員投籃被對」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "球被碰到仍進算得分，若有犯規可再加罰一次，俗稱「And-1」。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -275,7 +275,7 @@
       "上籃命中"
     ],
     "answerIndex": 1,
-    "explanation": "把球扣進籃框是籃球裡的固定說法，對應「NBA的「灌」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "灌籃就是把球直接扣進籃框，是最具觀賞性的得分方式之一。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -289,7 +289,7 @@
       "30 秒"
     ],
     "answerIndex": 2,
-    "explanation": "24 秒屬於籃球規則常見說法，和「NBA球隊每」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "每次進攻有 24 秒時限，超時沒出手就違例失去球權。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -303,7 +303,7 @@
       "連續兩節加時"
     ],
     "answerIndex": 1,
-    "explanation": "連續兩天比賽屬於籃球規則常見說法，和「「背靠背」賽」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "背靠背指連續兩天比賽，對體能影響很大。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -317,7 +317,7 @@
       "單打時間拖久"
     ],
     "answerIndex": 1,
-    "explanation": "快速推進反擊得分是籃球常用名詞，連到「「快攻」通常」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "快攻是快速推進反擊得分，通常來自抄截或籃板後的加速。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -331,7 +331,7 @@
       "18 人"
     ],
     "answerIndex": 2,
-    "explanation": "15 人是籃球常用名詞，連到「NBA每隊名」。數字15就是記憶點，畫面感很強。🏀",
+    "explanation": "NBA 每隊名單通常 15 人（含雙向名單以外的正式名額）。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -345,7 +345,7 @@
       "邊鋒守門員"
     ],
     "answerIndex": 3,
-    "explanation": "邊鋒守門員屬於籃球規則常見說法，和「下列哪一項不」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "邊鋒守門員不是籃球位置，正確位置是控衛、得分後衛、小前鋒、大前鋒、中鋒。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -359,7 +359,7 @@
       "讓比賽暫停"
     ],
     "answerIndex": 1,
-    "explanation": "讓球權轉換到防守方是籃球常用名詞，連到「「抄截」對比」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "抄截會讓球權立刻轉到防守方，常造成快攻機會。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -373,7 +373,7 @@
       "太陽"
     ],
     "answerIndex": 2,
-    "explanation": "塞爾提克屬於籃球規則常見說法，和「以下哪支隊伍」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "塞爾提克屬於東區球隊，是東區傳統強權之一。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -387,7 +387,7 @@
       "逼迫對方走步"
     ],
     "answerIndex": 1,
-    "explanation": "在對方出手時把球拍掉屬於籃球規則常見說法，和「「封阻」是指」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "封阻就是在對方出手時把球拍掉，是典型防守精彩鏡頭。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -401,7 +401,7 @@
       "10 名"
     ],
     "answerIndex": 2,
-    "explanation": "8 名是籃球規則裡的固定說法，對應「NBA的「季」。它把概念說得更明確，記起來不費力。",
+    "explanation": "季後賽通常每區前 8 名進入（近年有附加賽制度，但正賽仍是 8 隊）。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -415,7 +415,7 @@
       "對手踩到邊線"
     ],
     "answerIndex": 1,
-    "explanation": "進攻者肘擊推人屬於籃球規則常見說法，和「下列哪一項屬」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "進攻者肘擊或推人屬於進攻犯規，會讓球權轉換。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -429,7 +429,7 @@
       "分區冠軍"
     ],
     "answerIndex": 2,
-    "explanation": "NBA 總冠軍是籃球規則裡的固定說法，對應「NBA賽季最」。它把概念說得更明確，記起來不費力。",
+    "explanation": "賽季最終冠軍稱為 NBA 總冠軍，贏得總決賽才能封王。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -443,7 +443,7 @@
       "教練團成員"
     ],
     "answerIndex": 1,
-    "explanation": "替補上場的球員是籃球規則裡的固定說法，對應「「板凳球員」」。它把概念說得更明確，記起來不費力。",
+    "explanation": "板凳球員就是替補上場的球員，很多強隊有「板凳火力」。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -457,7 +457,7 @@
       "球員防守三秒"
     ],
     "answerIndex": 0,
-    "explanation": "球員移動時未運球在籃球裡很常見，和「「走步」違例」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "走步是球員移動卻未運球或收球後走太多步，被吹違例。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -471,7 +471,7 @@
       "8 分鐘"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，5 分鐘常用來描述「NBA比賽中」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "NBA 加時賽每節 5 分鐘，不是正規 12 分鐘。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -485,7 +485,7 @@
       "追加罰球給犯規方"
     ],
     "answerIndex": 1,
-    "explanation": "球權轉換屬於籃球規則常見說法，和「在比賽中「違」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "一般違例（如走步、回場）會導致球權轉換給對手。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -499,7 +499,7 @@
       "Puma"
     ],
     "answerIndex": 0,
-    "explanation": "Wilson是籃球裡的固定說法，對應「下列哪一項是」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "NBA 比賽用球品牌是 Wilson。2021 起由 Wilson 接替 Spalding。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -513,7 +513,7 @@
       "夏季聯賽"
     ],
     "answerIndex": 2,
-    "explanation": "常規賽程是籃球常用名詞，連到「NBA的「例」。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "NBA 例行賽就是常規賽程，決定季後賽排名與主場優勢。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -527,7 +527,7 @@
       "媒體轉播權"
     ],
     "answerIndex": 1,
-    "explanation": "持球進攻的權利屬於籃球規則常見說法，和「「球權」在籃」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "球權指的是持球進攻的權利，球權交替意味著換邊進攻。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -541,7 +541,7 @@
       "籃板 / 抄截"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球的語境裡，「「投籃命中率」多半會提到命中球數 / 出手次數。這個說法用來交代規則或背景，很好用。",
+    "explanation": "投籃命中率＝命中球數÷出手次數，是最基本的效率指標。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -555,7 +555,7 @@
       "球被封阻"
     ],
     "answerIndex": 0,
-    "explanation": "球回到自己後場在籃球裡很常見，和「「回場違例」」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "回場違例是球過半場後又被帶回後場，球權直接交給對手。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -569,7 +569,7 @@
       "比賽時間可延長"
     ],
     "answerIndex": 1,
-    "explanation": "在主場比賽場次較多是籃球常用名詞，連到「NBA的「主」。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "主場優勢代表季後賽有更多主場場次，熟悉環境＋球迷加油常是關鍵。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -583,7 +583,7 @@
       "三分線外"
     ],
     "answerIndex": 1,
-    "explanation": "籃框附近的油漆區屬於籃球規則常見說法，和「「禁區」在籃」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "禁區指籃框附近的油漆區，通常是卡位、肉搏最多的地方。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -597,7 +597,7 @@
       "隊徽"
     ],
     "answerIndex": 1,
-    "explanation": "背號屬於籃球規則常見說法，和「NBA球員在」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "球員身上的號碼叫背號，球迷多半用背號辨認球員。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -611,7 +611,7 @@
       "18 英尺"
     ],
     "answerIndex": 2,
-    "explanation": "15 英尺屬於籃球規則常見說法，和「「罰球線」距」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "罰球線距離籃框 15 呎（約 4.57 公尺），是固定規格。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -625,7 +625,7 @@
       "改判回場違例"
     ],
     "answerIndex": 0,
-    "explanation": "超過限制後對手罰球在籃球裡很常見，和「下列哪一項屬」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "團隊犯規達到門檻後會進入罰球狀態，讓對手可站上罰球線。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -639,7 +639,7 @@
       "Magic Johnson"
     ],
     "answerIndex": 0,
-    "explanation": "Michael Jordan屬於籃球規則常見說法，和「「籃球之神」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "「籃球之神」指 Michael Jordan，他在 90 年代建立王朝與傳奇地位。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -653,7 +653,7 @@
       "塞爾提克"
     ],
     "answerIndex": 0,
-    "explanation": "湖人屬於籃球規則常見說法，和「下列哪一隊以」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "紫金配色最有名的是 湖人。這配色幾乎成了球隊標誌。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -667,7 +667,7 @@
       "籃板最多"
     ],
     "answerIndex": 0,
-    "explanation": "抄截最多是籃球規則裡的固定說法，對應「「抄截王」是」。它把概念說得更明確，記起來不費力。",
+    "explanation": "抄截王指的是 抄截最多。代表防守預判與反應很快。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -681,7 +681,7 @@
       "總冠軍球員"
     ],
     "answerIndex": 1,
-    "explanation": "替補球員是籃球規則裡的固定說法，對應「「最佳第六人」。它把概念說得更明確，記起來不費力。",
+    "explanation": "最佳第六人獎是表揚替補球員的表現，通常來自板凳火力。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -695,7 +695,7 @@
       "減少旅途疲勞"
     ],
     "answerIndex": 2,
-    "explanation": "在籃球的語境裡，「「主場」比賽」多半會提到裁判必定偏袒。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "主場優勢不包含「裁判必定偏袒」，這並不是聯盟規則或保證。",
     "difficulty": "easy",
     "subject": "nba"
   },
@@ -709,7 +709,7 @@
       "球員薪資歸零"
     ],
     "answerIndex": 1,
-    "explanation": "最後調整陣容的時間點在籃球裡很常見，和「「交易截止日」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "交易截止日是賽季中最後能大改陣容的時點。過了之後就只能用現有陣容打到季後賽。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -723,7 +723,7 @@
       "由教練投票決定"
     ],
     "answerIndex": 0,
-    "explanation": "由上季戰績與樂透抽籤決定是籃球裡的固定說法，對應「「選秀順位」」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "選秀順位由上季戰績加上樂透抽籤決定。目的就是平衡強弱、讓弱隊有翻身機會。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -737,7 +737,7 @@
       "季後賽必定先發"
     ],
     "answerIndex": 0,
-    "explanation": "可同時在 NBA 與發展聯盟出賽是籃球規則裡的固定說法，對應「「雙向合約」」。它把概念說得更明確，記起來不費力。🏀",
+    "explanation": "雙向合約讓球員在 NBA 與 G League 之間往返。球隊可以低成本培養新人。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -751,7 +751,7 @@
       "大前鋒與小前鋒"
     ],
     "answerIndex": 0,
-    "explanation": "控衛與內線是籃球規則裡的固定說法，對應「「擋拆」戰術」。它把概念說得更明確，記起來不費力。",
+    "explanation": "擋拆最常是控衛＋內線的配合。控衛持球、內線做掩護製造錯位。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -765,7 +765,7 @@
       "讓球星集中到大市場"
     ],
     "answerIndex": 1,
-    "explanation": "維持聯盟競爭平衡屬於籃球規則常見說法，和「「薪資上限」」有關。因為它會影響題目描述的條件，所以常被提到。🏀",
+    "explanation": "薪資上限是為了競爭平衡，避免豪門無限堆球星。讓聯盟保持可看性。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -779,7 +779,7 @@
       "球隊交易超過 5 人"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球規則裡，球隊薪資超過上限特定門檻常用來描述「「豪華稅」通」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "豪華稅是超過薪資上限「豪華稅門檻」才觸發；例如 2023–24 門檻約 1.65 億美元。超標越多，稅率越高，重複超標還有加碼（repeater tax）。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -793,7 +793,7 @@
       "決定主場優勢"
     ],
     "answerIndex": 1,
-    "explanation": "決定第 7-10 名的季後賽席位在籃球裡很常見，和「「附加賽Pl」相關。7這個數字一出現，印象就定住了。",
+    "explanation": "附加賽決定第 7–10 名的季後賽席位。讓更多球隊還有機會拚進季後賽。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -807,7 +807,7 @@
       "只影響裁判尺度"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，影響凝聚力與穩定性常用來描述「「球隊文化」」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "球隊文化會影響凝聚力與執行力。長期穩定的強隊往往贏在這裡。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -821,7 +821,7 @@
       "避免進攻犯規"
     ],
     "answerIndex": 0,
-    "explanation": "防止球員站樁守在禁區屬於籃球規則常見說法，和「「防守三秒」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "防守三秒是指防守者不能在禁區連續停留超過 3 秒（除非正在防守對位）。這規則避免中鋒站樁，讓進攻更流動。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -835,7 +835,7 @@
       "降低投籃命中率"
     ],
     "answerIndex": 1,
-    "explanation": "終結對手進攻並發動反擊是籃球常用名詞，連到「「防守籃板」」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "防守籃板等於終結對手回合並啟動快攻。籃板控制常直接影響比賽節奏。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -849,7 +849,7 @@
       "球隊市值"
     ],
     "answerIndex": 0,
-    "explanation": "球員綜合影響力屬於籃球規則常見說法，和「「球員效率值」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "球員效率值是用來看綜合影響力的指標。不是唯一答案，但能快速比較表現。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -863,7 +863,7 @@
       "兩者完全相同"
     ],
     "answerIndex": 0,
-    "explanation": "真實命中率包含罰球影響是籃球規則裡的固定說法，對應「「三分球命中」。它把概念說得更明確，記起來不費力。",
+    "explanation": "三分命中率只看外線投籃，真實命中率把兩分、三分、罰球都算進去。後者更完整。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -877,7 +877,7 @@
       "新擴編球隊"
     ],
     "answerIndex": 1,
-    "explanation": "未進季後賽的球隊屬於籃球規則常見說法，和「「選秀樂透」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "選秀樂透主要影響沒進季後賽的球隊。給弱隊更多機會拿到高順位。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -891,7 +891,7 @@
       "新秀限定球員"
     ],
     "answerIndex": 0,
-    "explanation": "合約到期可自由簽約的球員屬於籃球規則常見說法，和「「自由球員」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "自由球員是合約到期、可以自由簽約的球員。市場上最熱門的資源之一。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -905,7 +905,7 @@
       "最年輕的五名球員"
     ],
     "answerIndex": 1,
-    "explanation": "每場比賽開場上場的五名球員在籃球裡很常見，和「「先發五人」」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "先發五人就是開場上場的五名球員。通常代表教練最信任的組合。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -919,7 +919,7 @@
       "合約最短"
     ],
     "answerIndex": 1,
-    "explanation": "戰術與未來規劃的中心屬於籃球規則常見說法，和「「球隊核心」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "球隊核心是戰術與建隊中心的球員。所有配置多半圍繞他。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -933,7 +933,7 @@
       "增加票房收入"
     ],
     "answerIndex": 0,
-    "explanation": "避免球員過度疲勞屬於籃球規則常見說法，和「「輪休」的主」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "輪休是為了避免過度疲勞與傷病。漫長賽季裡很常見。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -947,7 +947,7 @@
       "自動獲得明星球員"
     ],
     "answerIndex": 0,
-    "explanation": "讓球隊可在未送出等值薪資下交易是籃球常用名詞，連到「「交易例外T」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "交易例外讓球隊在不送出等值薪資時仍可交易。是一種薪資空間工具。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -961,7 +961,7 @@
       "掩護者站在禁區不動"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球規則裡，掩護者向外線移動接球常用來描述「「掩護後外拆」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "外拆是掩護後往外線拉開接球投籃。跟內線順下形成不同選項。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -975,7 +975,7 @@
       "球員必須打先發"
     ],
     "answerIndex": 0,
-    "explanation": "提到「「球員選項P」時，球員可在合約最後一年選擇是否留隊會被提到。這個說法用來交代規則或背景，很好用。",
+    "explanation": "球員選項讓球員決定是否執行合約最後一年。選擇權在球員手上。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -989,7 +989,7 @@
       "避免犯規"
     ],
     "answerIndex": 0,
-    "explanation": "限制對方球星得分屬於籃球規則常見說法，和「「團隊協防」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "團隊協防主要是限制對方核心得分，逼他把球傳出去，讓防守輪轉補位。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1003,7 +1003,7 @@
       "罰球訓練"
     ],
     "answerIndex": 1,
-    "explanation": "比賽末段影響勝負的進攻屬於籃球規則常見說法，和「「第四節」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "第四節關鍵球指比賽末段影響勝負的一次進攻或投籃，俗稱『clutch』。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1017,7 +1017,7 @@
       "最佳新人"
     ],
     "answerIndex": 2,
-    "explanation": "整體表現進步最多的球員是籃球裡的固定說法，對應「「球員進步獎」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "球員進步獎（MIP）是給整體表現進步最多的球員，不是得分王。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1031,7 +1031,7 @@
       "只影響籃板"
     ],
     "answerIndex": 1,
-    "explanation": "高價值出手能提高效率是籃球常用名詞，連到「「投籃選擇」」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "投籃選擇影響進攻效率，高價值出手（籃下、空檔三分）通常更有效。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1045,7 +1045,7 @@
       "會讓球員不能投籃"
     ],
     "answerIndex": 0,
-    "explanation": "容易形成錯位屬於籃球規則常見說法，和「「擋拆換防」」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "擋拆換防容易形成錯位，可能讓後衛對上高大內線被點名單打。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1059,7 +1059,7 @@
       "罰球"
     ],
     "answerIndex": 1,
-    "explanation": "進攻籃板屬於籃球規則常見說法，和「「二次進攻得」有關。因為它會影響題目描述的條件，所以常被提到。🏀",
+    "explanation": "二次進攻多來自進攻籃板，等於多一次出手機會。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1073,7 +1073,7 @@
       "立即補罰球"
     ],
     "answerIndex": 1,
-    "explanation": "球權轉換並可能被快攻是籃球常用名詞，連到「「控球失誤」」。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "控球失誤會把球權交給對手，常直接被打成快攻。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1087,7 +1087,7 @@
       "球迷上座率"
     ],
     "answerIndex": 0,
-    "explanation": "每 100 回合失分是籃球常用名詞，連到「「防守效率」」。數字100就是記憶點，畫面感很強。",
+    "explanation": "防守效率通常用每 100 回合失分衡量，數字越低代表防守越好。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1101,7 +1101,7 @@
       "新人得分王"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球的語境裡，「「選秀狀元」」多半會提到選秀第一順位。這個說法用來交代規則或背景，很好用。",
+    "explanation": "選秀狀元就是選秀第一順位，通常被視為最被看好的新人。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1115,7 +1115,7 @@
       "觀眾音量大小"
     ],
     "answerIndex": 0,
-    "explanation": "球員間默契與合作程度屬於籃球規則常見說法，和「「球隊化學效」有關。因為它會影響題目描述的條件，所以常被提到。🏀",
+    "explanation": "球隊化學效應指球員之間的默契與合作程度，會影響場上流暢度。",
     "difficulty": "medium",
     "subject": "nba"
   },
@@ -1129,7 +1129,7 @@
       "James Harden"
     ],
     "answerIndex": 1,
-    "explanation": "Wilt Chamberlain常見於籃球語境，搭配「NBA史上單」出現。這個說法用來交代規則或背景，很好用。",
+    "explanation": "NBA 單場得分紀錄是 Wilt Chamberlain 的 100 分（1962）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1143,7 +1143,7 @@
       "Ray Allen"
     ],
     "answerIndex": 0,
-    "explanation": "Stephen Curry在籃球裡很常見，和「NBA史上單」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單季三分命中最多紀錄由 Stephen Curry 保持（2015–16 賽季）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1157,7 +1157,7 @@
       "35 次"
     ],
     "answerIndex": 2,
-    "explanation": "在籃球規則裡，30 次常用來描述「NBA史上單」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "單場助攻紀錄是 30 次（Scott Skiles，1990）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1171,7 +1171,7 @@
       "Nate Thurmond"
     ],
     "answerIndex": 1,
-    "explanation": "Wilt Chamberlain是籃球規則裡的固定說法，對應「NBA史上單」。它把概念說得更明確，記起來不費力。",
+    "explanation": "單場籃板紀錄由 Wilt Chamberlain 保持（55 個，1960）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1184,8 +1184,8 @@
       "12 次",
       "14 次"
     ],
-    "answerIndex": 2,
-    "explanation": "在籃球規則裡，12 次常用來描述「NBA史上單」。這個概念用來交代背景或規則，很實用。",
+    "answerIndex": 1,
+    "explanation": "單場抄截紀錄為 11 次（多人並列），NBA 官方承認 1973 年起資料。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1199,7 +1199,7 @@
       "17 次"
     ],
     "answerIndex": 3,
-    "explanation": "17 次在籃球裡很常見，和「NBA史上單」相關。17這個數字一出現，印象就定住了。",
+    "explanation": "單場封阻紀錄為 17 次（Elmore Smith），屬早期紀錄。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1213,7 +1213,7 @@
       "Giannis Antetokounmpo"
     ],
     "answerIndex": 0,
-    "explanation": "Derrick Rose是籃球規則裡的固定說法，對應「NBA史上最」。它把概念說得更明確，記起來不費力。🏀",
+    "explanation": "史上最年輕 MVP 是 Derrick Rose（2010–11），22 歲獲獎。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1227,7 +1227,7 @@
       "馬刺"
     ],
     "answerIndex": 1,
-    "explanation": "塞爾提克在籃球裡很常見，和「NBA史上總」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "總冠軍次數最多的球隊是塞爾提克，歷史上奪冠最多。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1241,7 +1241,7 @@
       "三場連勝"
     ],
     "answerIndex": 0,
-    "explanation": "三項數據達到 10 以上屬於籃球規則常見說法，和「「三雙」的定」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "三雙指單場至少三項主要數據（得分/籃板/助攻/抄截/阻攻）達到 10 以上。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1255,7 +1255,7 @@
       "Steve Nash"
     ],
     "answerIndex": 1,
-    "explanation": "John Stockton是籃球裡的固定說法，對應「NBA史上助」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "NBA 歷史助攻王是 John Stockton，生涯累積助攻數最多。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1269,7 +1269,7 @@
       "Allen Iverson"
     ],
     "answerIndex": 0,
-    "explanation": "John Stockton常見於籃球語境，搭配「NBA史上抄」出現。這個說法用來交代規則或背景，很好用。",
+    "explanation": "NBA 歷史抄截王同樣是 John Stockton，生涯抄截數最多。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1283,7 +1283,7 @@
       "2007-08 塞爾提克"
     ],
     "answerIndex": 0,
-    "explanation": "2015-16 勇士常見於籃球語境，搭配「NBA單季例」出現。2015這個數字一出現，印象就定住了。",
+    "explanation": "單季例行賽最多勝場是 2015–16 勇士的 73 勝。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1297,7 +1297,7 @@
       "Tim Duncan"
     ],
     "answerIndex": 0,
-    "explanation": "Stephen Curry屬於籃球規則常見說法，和「NBA歷史上」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "首位全票 MVP 是 Stephen Curry（2015–16），唯一拿到全數第一名。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1311,7 +1311,7 @@
       "James Harden"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球的語境裡，「NBA史上單」多半會提到Wilt Chamberlain。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "單季場均得分最高是 Wilt Chamberlain（1961–62，場均 50.4 分）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1325,7 +1325,7 @@
       "Kareem Abdul-Jabbar"
     ],
     "answerIndex": 0,
-    "explanation": "Karl Malone是籃球常用名詞，連到「NBA史上最」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "史上最年長 MVP 是 Karl Malone（1998–99），當時 35 歲。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1339,7 +1339,7 @@
       "LeBron James"
     ],
     "answerIndex": 1,
-    "explanation": "Russell Westbrook是籃球常用名詞，連到「NBA史上單」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單季場均大三元紀錄由 Russell Westbrook 保持（2016–17 起），以全能數據寫下里程碑。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1353,7 +1353,7 @@
       "15 顆"
     ],
     "answerIndex": 2,
-    "explanation": "14 顆屬於籃球規則常見說法，和「NBA史上單」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "單場三分命中紀錄是 14 顆（Klay Thompson，2018）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1367,7 +1367,7 @@
       "Luka Dončić"
     ],
     "answerIndex": 0,
-    "explanation": "LeBron James是籃球規則裡的固定說法，對應「NBA史上最」。它把概念說得更明確，記起來不費力。🏀",
+    "explanation": "最年輕破萬分得分是 LeBron James，展現超早熟的得分能力。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1381,7 +1381,7 @@
       "Michael Jordan"
     ],
     "answerIndex": 1,
-    "explanation": "提到「NBA史上生」時，LeBron James經常被點名。這個說法用來交代規則或背景，很好用。",
+    "explanation": "生涯總得分王是 LeBron James（已超越 Kareem），成為歷史第一。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1395,7 +1395,7 @@
       "兩名得分後衛"
     ],
     "answerIndex": 1,
-    "explanation": "兩名前鋒或前鋒+中鋒屬於籃球規則常見說法，和「NBA史上單」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "傳統第一隊前鋒席位常見「兩名前鋒或前鋒＋中鋒」組合，因為位置評選分工。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1409,7 +1409,7 @@
       "30 球"
     ],
     "answerIndex": 2,
-    "explanation": "28 球在籃球裡很常見，和「NBA史上單」相關。28這個數字一出現，印象就定住了。",
+    "explanation": "單場罰球命中最多紀錄為 28 球（如 Adrian Dantley、James Harden 等並列）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1423,7 +1423,7 @@
       "公牛"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球規則裡，湖人常用來描述「NBA史上最」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "最長連勝紀錄是湖人 33 連勝（1971–72），NBA 歷史第一。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1437,7 +1437,7 @@
       "Dennis Rodman"
     ],
     "answerIndex": 1,
-    "explanation": "Wilt Chamberlain是籃球常用名詞，跟「NBA史上單」相關。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "單季平均籃板最高是 Wilt Chamberlain（1960–61，場均 27.2）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1451,7 +1451,7 @@
       "Larry Bird"
     ],
     "answerIndex": 0,
-    "explanation": "在籃球的語境裡，「NBA史上最」多半會提到Magic Johnson。這個說法用來交代規則或背景，很好用。🏀",
+    "explanation": "最年輕的總冠軍 MVP 是 Magic Johnson（1980），新秀年就拿下。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1465,7 +1465,7 @@
       "Damian Lillard"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，James Harden常用來描述「NBA史上單」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "單季三分出手最多紀錄由 James Harden 保持（2018–19）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1478,8 +1478,8 @@
       "28 次",
       "30 次"
     ],
-    "answerIndex": 2,
-    "explanation": "28 次常見於籃球語境，搭配「NBA史上單」出現。28這個數字一出現，印象就定住了。",
+    "answerIndex": 1,
+    "explanation": "單場三分出手最多紀錄為 24 次（Klay Thompson，2016）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1493,7 +1493,7 @@
       "大三元"
     ],
     "answerIndex": 0,
-    "explanation": "四雙在籃球裡很常見，和「NBA史上單」相關。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單場抄截與封阻都上雙稱為「四雙」，因為四項數據破 10。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1507,7 +1507,7 @@
       "Tim Duncan"
     ],
     "answerIndex": 2,
-    "explanation": "提到「NBA史上單」時，Giannis Antetokounmpo會被提到。這個說法用來交代規則或背景，很好用。",
+    "explanation": "同年拿 MVP 與最佳防守球員的是 Giannis Antetokounmpo（2019–20）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1521,7 +1521,7 @@
       "馬刺"
     ],
     "answerIndex": 1,
-    "explanation": "湖人是籃球規則裡的固定說法，對應「NBA史上「」。它把概念說得更明確，記起來不費力。",
+    "explanation": "最近一次總冠軍三連霸是湖人（2000–2002）。",
     "difficulty": "hard",
     "subject": "nba",
     "asOf": "2026-02-20",
@@ -1545,7 +1545,7 @@
       "Oscar Robertson"
     ],
     "answerIndex": 1,
-    "explanation": "Russell Westbrook屬於籃球規則常見說法，和「NBA史上唯」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "季後賽平均大三元的唯一球員是 Russell Westbrook（2016–17）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1559,7 +1559,7 @@
       "Kevin Durant"
     ],
     "answerIndex": 1,
-    "explanation": "在籃球規則裡，Kobe Bryant常用來描述「NBA史上最」。這個概念用來交代背景或規則，很實用。",
+    "explanation": "最年輕全明星先發是 Kobe Bryant（1998），當時 19 歲。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1573,7 +1573,7 @@
       "Magic Johnson"
     ],
     "answerIndex": 1,
-    "explanation": "Russell Westbrook是籃球規則裡的固定說法，對應「NBA史上唯」。它把概念說得更明確，記起來不費力。",
+    "explanation": "以場均大三元奪 MVP 的球員是 Russell Westbrook（2016–17）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1587,7 +1587,7 @@
       "Chris Paul"
     ],
     "answerIndex": 1,
-    "explanation": "John Stockton是籃球常用名詞，連到「NBA史上「」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單季總助攻紀錄由 John Stockton 保持（1990–91，1164 次）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1601,7 +1601,7 @@
       "Ray Allen"
     ],
     "answerIndex": 0,
-    "explanation": "Steve Kerr是籃球裡的固定說法，對應「NBA史上單」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單季三分命中率最高紀錄是 Steve Kerr（1995–96，45.4%）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1615,7 +1615,7 @@
       "Tim Duncan"
     ],
     "answerIndex": 1,
-    "explanation": "Michael Jordan屬於籃球規則常見說法，和「NBA史上「」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "總冠軍 MVP 次數最多的是 Michael Jordan（6 次）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1629,7 +1629,7 @@
       "15 次"
     ],
     "answerIndex": 1,
-    "explanation": "13 次是籃球裡的固定說法，對應「NBA史上「」。13這個數字一出現，印象就定住了。",
+    "explanation": "單場失誤最多紀錄是 13 次（多位球員並列）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1643,7 +1643,7 @@
       "Michael Jordan"
     ],
     "answerIndex": 0,
-    "explanation": "Alvin Robertson屬於籃球規則常見說法，和「NBA史上「」有關。因為它會影響題目描述的條件，所以常被提到。",
+    "explanation": "單季平均抄截最高是 Alvin Robertson（1985–86，場均 3.67）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1657,7 +1657,7 @@
       "David Robinson"
     ],
     "answerIndex": 0,
-    "explanation": "Mark Eaton是籃球裡的固定說法，對應「NBA史上「」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "單季平均封阻最高是 Mark Eaton（1984–85，場均 5.56）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1671,7 +1671,7 @@
       "Kareem Abdul-Jabbar"
     ],
     "answerIndex": 0,
-    "explanation": "AC Green是籃球裡的固定說法，對應「NBA史上「」。這個說法用來交代規則或背景，很好用。",
+    "explanation": "最長連續出賽紀錄是 AC Green（1192 場）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1685,7 +1685,7 @@
       "LeBron James"
     ],
     "answerIndex": 0,
-    "explanation": "Wilt Chamberlain是籃球規則裡的固定說法，對應「NBA史上「」。它把概念說得更明確，記起來不費力。🏀",
+    "explanation": "單季平均上場時間最高是 Wilt Chamberlain（1961–62，場均 48.5 分鐘）。",
     "difficulty": "hard",
     "subject": "nba"
   },
@@ -1700,7 +1700,367 @@
       "減少犯規次數"
     ],
     "answerIndex": 1,
-    "explanation": "24 秒進攻時限在 1954 年被引入，目的是讓攻守更流暢。它把比賽節奏固定在一個「不拖戲」的速度。",
+    "explanation": "24 秒規則是 避免拖延、提升比賽節奏。進攻時間到還沒出手就違例。",
     "difficulty": "medium"
+  },
+  {
+    "id": "nba_v3_0121",
+    "prompt": "誰被公認為 NBA 史上『天勾（Skyhook）』的代表球員？",
+    "options": [
+      "Kareem Abdul-Jabbar",
+      "Hakeem Olajuwon",
+      "Shaquille O'Neal",
+      "Tim Duncan"
+    ],
+    "answerIndex": 0,
+    "explanation": "Kareem Abdul-Jabbar 的天勾幾乎無法封阻，是他成為歷史得分傳奇的招牌武器。"
+  },
+  {
+    "id": "nba_v3_0122",
+    "prompt": "『Logo Shot』最常與哪位球星畫上等號？",
+    "options": [
+      "Stephen Curry",
+      "Damian Lillard",
+      "Trae Young",
+      "James Harden"
+    ],
+    "answerIndex": 1,
+    "explanation": "Damian Lillard 以超遠距離致勝球聞名，甚至在 Logo 附近出手也能命中。"
+  },
+  {
+    "id": "nba_v3_0123",
+    "prompt": "『The Process』最代表的球星是誰？",
+    "options": [
+      "Joel Embiid",
+      "Nikola Jokić",
+      "Giannis Antetokounmpo",
+      "Karl-Anthony Towns"
+    ],
+    "answerIndex": 0,
+    "explanation": "費城 76 人的重建口號『The Process』最終由 Joel Embiid 扛起，成為球隊門面。"
+  },
+  {
+    "id": "nba_v3_0124",
+    "prompt": "哪位球員以『Point God』外號聞名？",
+    "options": [
+      "Chris Paul",
+      "Steve Nash",
+      "John Stockton",
+      "Rajon Rondo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Chris Paul 以控場、助攻與失誤控制著稱，因此被稱為『Point God』。"
+  },
+  {
+    "id": "nba_v3_0125",
+    "prompt": "『The Mailman』是指哪位球星？",
+    "options": [
+      "Karl Malone",
+      "Charles Barkley",
+      "Patrick Ewing",
+      "Alonzo Mourning"
+    ],
+    "answerIndex": 0,
+    "explanation": "Karl Malone 外號『The Mailman』，意思是他總能穩定「把分數送到」。"
+  },
+  {
+    "id": "nba_v3_0126",
+    "prompt": "哪位球員以『The Truth』著稱？",
+    "options": [
+      "Paul Pierce",
+      "Ray Allen",
+      "Kevin Garnett",
+      "Carmelo Anthony"
+    ],
+    "answerIndex": 0,
+    "explanation": "Paul Pierce 因關鍵時刻的得分能力被稱為『The Truth』。"
+  },
+  {
+    "id": "nba_v3_0127",
+    "prompt": "『The Big Fundamental』是指哪位球星？",
+    "options": [
+      "Tim Duncan",
+      "Dirk Nowitzki",
+      "Kevin Garnett",
+      "David Robinson"
+    ],
+    "answerIndex": 0,
+    "explanation": "Tim Duncan 以基本功扎實與高效率聞名，被稱為『The Big Fundamental』。"
+  },
+  {
+    "id": "nba_v3_0128",
+    "prompt": "哪位球員以『The Answer』為外號？",
+    "options": [
+      "Allen Iverson",
+      "Tracy McGrady",
+      "Vince Carter",
+      "Dwyane Wade"
+    ],
+    "answerIndex": 0,
+    "explanation": "Allen Iverson 的外號是『The Answer』，代表他在場上的無解突破。"
+  },
+  {
+    "id": "nba_v3_0129",
+    "prompt": "哪位球星以『The Big Ticket』著稱？",
+    "options": [
+      "Kevin Garnett",
+      "Dirk Nowitzki",
+      "Chris Webber",
+      "Rasheed Wallace"
+    ],
+    "answerIndex": 0,
+    "explanation": "Kevin Garnett 因為帶來票房與激情而被稱為『The Big Ticket』。"
+  },
+  {
+    "id": "nba_v3_0130",
+    "prompt": "『The Flash』通常指哪位球員？",
+    "options": [
+      "Dwyane Wade",
+      "Russell Westbrook",
+      "Derrick Rose",
+      "Ja Morant"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dwyane Wade 因爆發力與速度被稱為『The Flash』。"
+  },
+  {
+    "id": "nba_v3_0131",
+    "prompt": "哪位球員以『The Beard』聞名？",
+    "options": [
+      "James Harden",
+      "Jayson Tatum",
+      "Devin Booker",
+      "Kawhi Leonard"
+    ],
+    "answerIndex": 0,
+    "explanation": "James Harden 以招牌大鬍子與招式多變的得分方式著稱。"
+  },
+  {
+    "id": "nba_v3_0132",
+    "prompt": "『The Greek Freak』指的是誰？",
+    "options": [
+      "Giannis Antetokounmpo",
+      "Nikola Jokić",
+      "Luka Dončić",
+      "Kristaps Porziņģis"
+    ],
+    "answerIndex": 0,
+    "explanation": "Giannis 來自希臘、身體條件驚人，因此被稱為『希臘怪物』。"
+  },
+  {
+    "id": "nba_v3_0133",
+    "prompt": "『The Joker』是哪位 MVP 級球星的外號？",
+    "options": [
+      "Nikola Jokić",
+      "Luka Dončić",
+      "Joel Embiid",
+      "Domantas Sabonis"
+    ],
+    "answerIndex": 0,
+    "explanation": "Nikola Jokić 以幽默個性與全能打法被稱為『The Joker』。"
+  },
+  {
+    "id": "nba_v3_0134",
+    "prompt": "哪位球員以『The Claw』著稱？",
+    "options": [
+      "Kawhi Leonard",
+      "Jimmy Butler",
+      "Paul George",
+      "Kyrie Irving"
+    ],
+    "answerIndex": 0,
+    "explanation": "Kawhi Leonard 因手掌巨大、抄截強勢而被稱為『The Claw』。"
+  },
+  {
+    "id": "nba_v3_0135",
+    "prompt": "『The Brow』是指哪位球員？",
+    "options": [
+      "Anthony Davis",
+      "DeMarcus Cousins",
+      "Zion Williamson",
+      "Bam Adebayo"
+    ],
+    "answerIndex": 0,
+    "explanation": "Anthony Davis 因明顯眉毛與禁區宰制力被稱為『The Brow』。"
+  },
+  {
+    "id": "nba_v3_0136",
+    "prompt": "『King James』是指哪位球星？",
+    "options": [
+      "LeBron James",
+      "Kevin Durant",
+      "Carmelo Anthony",
+      "Paul Pierce"
+    ],
+    "answerIndex": 0,
+    "explanation": "LeBron James 長年維持巔峰表現，因此有『King James』稱號。"
+  },
+  {
+    "id": "nba_v3_0137",
+    "prompt": "『The Black Mamba』是誰的外號？",
+    "options": [
+      "Kobe Bryant",
+      "Michael Jordan",
+      "Tracy McGrady",
+      "Vince Carter"
+    ],
+    "answerIndex": 0,
+    "explanation": "Kobe Bryant 自創『Black Mamba』精神，象徵冷血與專注。"
+  },
+  {
+    "id": "nba_v3_0138",
+    "prompt": "哪位球員以『Chef』的綽號聞名？",
+    "options": [
+      "Stephen Curry",
+      "Klay Thompson",
+      "Damian Lillard",
+      "CJ McCollum"
+    ],
+    "answerIndex": 0,
+    "explanation": "Stephen Curry 因三分火力像在『做菜』般精準，被叫做 Chef Curry。"
+  },
+  {
+    "id": "nba_v3_0139",
+    "prompt": "『The Dream』是指哪位中鋒？",
+    "options": [
+      "Hakeem Olajuwon",
+      "David Robinson",
+      "Patrick Ewing",
+      "Shaquille O'Neal"
+    ],
+    "answerIndex": 0,
+    "explanation": "Hakeem Olajuwon 的夢幻腳步太經典，因此綽號是『The Dream』。"
+  },
+  {
+    "id": "nba_v3_0140",
+    "prompt": "『The Admiral』是指哪位球星？",
+    "options": [
+      "David Robinson",
+      "Tim Duncan",
+      "Karl Malone",
+      "Alonzo Mourning"
+    ],
+    "answerIndex": 0,
+    "explanation": "David Robinson 曾在海軍服役，因而被稱為『The Admiral』。"
+  },
+  {
+    "id": "nba_v3_0141",
+    "prompt": "『The Worm』通常指哪位籃板狂人？",
+    "options": [
+      "Dennis Rodman",
+      "Ben Wallace",
+      "Dwight Howard",
+      "Charles Barkley"
+    ],
+    "answerIndex": 0,
+    "explanation": "Dennis Rodman 以籃板與防守聞名，加上鮮明造型被稱為『The Worm』。"
+  },
+  {
+    "id": "nba_v3_0142",
+    "prompt": "『The Glove』是哪位防守名將的外號？",
+    "options": [
+      "Gary Payton",
+      "Jason Kidd",
+      "Michael Jordan",
+      "Scottie Pippen"
+    ],
+    "answerIndex": 0,
+    "explanation": "Gary Payton 以鎖死對手聞名，外號『The Glove』。"
+  },
+  {
+    "id": "nba_v3_0143",
+    "prompt": "『The Big Aristotle』是誰的綽號？",
+    "options": [
+      "Shaquille O'Neal",
+      "Hakeem Olajuwon",
+      "Yao Ming",
+      "Dwight Howard"
+    ],
+    "answerIndex": 0,
+    "explanation": "Shaquille O'Neal 有多個外號，其中之一就是『The Big Aristotle』。"
+  },
+  {
+    "id": "nba_v3_0144",
+    "prompt": "『The Matrix』指的是哪位球員？",
+    "options": [
+      "Shawn Marion",
+      "Tracy McGrady",
+      "Grant Hill",
+      "Paul George"
+    ],
+    "answerIndex": 0,
+    "explanation": "Shawn Marion 以全能身手與獨特投籃姿勢，被叫作『The Matrix』。"
+  },
+  {
+    "id": "nba_v3_0145",
+    "prompt": "哪位球員被稱為『Half Man, Half Amazing』？",
+    "options": [
+      "Vince Carter",
+      "Jason Richardson",
+      "Julius Erving",
+      "Dominique Wilkins"
+    ],
+    "answerIndex": 0,
+    "explanation": "Vince Carter 以驚人彈跳與灌籃聞名，外號就是『Half Man, Half Amazing』。"
+  },
+  {
+    "id": "nba_v3_0146",
+    "prompt": "『The Stifle Tower』是哪位球員的外號？",
+    "options": [
+      "Rudy Gobert",
+      "Joel Embiid",
+      "Bam Adebayo",
+      "Brook Lopez"
+    ],
+    "answerIndex": 0,
+    "explanation": "Rudy Gobert 以禁區封鎖著稱，外號『The Stifle Tower』。"
+  },
+  {
+    "id": "nba_v3_0147",
+    "prompt": "「The Logo」最常指哪位 NBA 傳奇？",
+    "options": [
+      "Jerry West",
+      "Oscar Robertson",
+      "John Havlicek",
+      "Bob Cousy"
+    ],
+    "answerIndex": 0,
+    "explanation": "「The Logo」指 Jerry West，他的剪影成為 NBA 標誌。"
+  },
+  {
+    "id": "nba_v3_0148",
+    "prompt": "『The Truth』之外，哪位球星常被稱為『Uncle Drew』？",
+    "options": [
+      "Kyrie Irving",
+      "Kyle Lowry",
+      "Mike Conley",
+      "Jrue Holiday"
+    ],
+    "answerIndex": 0,
+    "explanation": "Kyrie Irving 因廣告角色『Uncle Drew』而成為他的代表外號。"
+  },
+  {
+    "id": "nba_v3_0149",
+    "prompt": "『The Process』球星之外，哪位球員被稱為『The Franchise』？",
+    "options": [
+      "Steve Francis",
+      "Carmelo Anthony",
+      "Grant Hill",
+      "Chris Webber"
+    ],
+    "answerIndex": 0,
+    "explanation": "Steve Francis 在火箭時期被稱為『The Franchise』，代表球隊門面。"
+  },
+  {
+    "id": "nba_v3_0150",
+    "prompt": "『The Big O』通常指哪位傳奇控衛？",
+    "options": [
+      "Oscar Robertson",
+      "Isiah Thomas",
+      "Jerry West",
+      "Bob Cousy"
+    ],
+    "answerIndex": 0,
+    "explanation": "Oscar Robertson 以全能身手與大三元聞名，外號『The Big O』。"
   }
 ]
