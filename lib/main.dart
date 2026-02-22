@@ -378,6 +378,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const double kGutter = 20;
     const double kCardRadius = 16;
     const double kCardPadding = 16;
+    const double kHomeCtaHeight = 56;
     widget.progressService.ensureDailyState();
     if (widget.progressService.streakSavePending) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -477,23 +478,26 @@ class _HomeScreenState extends State<HomeScreen> {
             top: false,
             child: Padding(
               padding: const EdgeInsets.all(LoomSpacing.screen),
-              child: Builder(
-                builder: (context) {
-                  final scheme = Theme.of(context).colorScheme;
-                  return LoomPrimaryButton(
-                    label: '開始變聰明！',
-                    onPressed: () => _startSubject(context, primarySubject),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        scheme.primary,
-                        scheme.primary.withOpacity(0.85),
-                      ],
-                    ),
-                    shadowColor: scheme.primary.withOpacity(0.18),
-                  );
-                },
+              child: SizedBox(
+                height: kHomeCtaHeight,
+                child: Builder(
+                  builder: (context) {
+                    final scheme = Theme.of(context).colorScheme;
+                    return LoomPrimaryButton(
+                      label: '開始變聰明！',
+                      onPressed: () => _startSubject(context, primarySubject),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          scheme.primary,
+                          scheme.primary.withOpacity(0.85),
+                        ],
+                      ),
+                      shadowColor: scheme.primary.withOpacity(0.18),
+                    );
+                  },
+                ),
               ),
             ),
           ),
@@ -557,18 +561,16 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            LoomSpacing.screen,
-            LoomSpacing.sm,
-            LoomSpacing.screen,
-            LoomSpacing.md,
-          ),
+          padding: EdgeInsets.zero,
           child: Column(
             children: [
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.only(
-                    bottom: LoomSpacing.md,
+                    left: LoomSpacing.screen,
+                    right: LoomSpacing.screen,
+                    top: LoomSpacing.screen,
+                    bottom: 172,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
