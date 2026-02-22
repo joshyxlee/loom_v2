@@ -621,111 +621,102 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       const SizedBox(height: LoomSpacing.md),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(kCardRadius),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: LoomTheme.card(context),
-                            borderRadius: BorderRadius.circular(kCardRadius),
-                            border: Border.all(color: LoomTheme.border(context)),
-                            boxShadow: LoomElevation.card,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(kCardPadding),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '智慧指數',
-                                  style: LoomTypography.sectionTitle.copyWith(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: LoomTheme.textSecondary(context),
-                                  ),
+                      Material(
+                        color: LoomTheme.card(context),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(kCardRadius),
+                          side: BorderSide(color: LoomTheme.border(context)),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        elevation: 0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(kCardPadding),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                '智慧指數',
+                                style: LoomTypography.sectionTitle.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: LoomTheme.textSecondary(context),
                                 ),
-                                const SizedBox(height: LoomSpacing.md),
-                                SizedBox(
-                                  width: 120,
-                                  height: 120,
-                                  child: Stack(
-                                    alignment: Alignment.center,
-                                    children: [
-                                      FittedBox(
-                                        fit: BoxFit.scaleDown,
-                                        child: Text(
-                                          knowledgeBalance.toString(),
-                                          maxLines: 1,
-                                          softWrap: false,
-                                          overflow: TextOverflow.visible,
-                                          textAlign: TextAlign.center,
-                                          style: LoomTypography.bigNumber.copyWith(
-                                            fontFeatures: const [FontFeature.tabularFigures()],
-                                            fontSize: 80,
-                                            fontWeight: FontWeight.w700,
-                                            color: LoomTheme.accent(context),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(height: LoomSpacing.sm),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 4,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: LoomTheme.accent(context).withOpacity(0.12),
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
+                              ),
+                              const SizedBox(height: LoomSpacing.md),
+                              SizedBox(
+                                width: 120,
+                                height: 120,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
                                   child: Text(
-                                    '今天 +$dailyPlus',
-                                    style: LoomTypography.secondary.copyWith(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
+                                    knowledgeBalance.toString(),
+                                    maxLines: 1,
+                                    softWrap: false,
+                                    overflow: TextOverflow.visible,
+                                    textAlign: TextAlign.center,
+                                    style: LoomTypography.bigNumber.copyWith(
+                                      fontFeatures: const [FontFeature.tabularFigures()],
+                                      fontSize: 80,
+                                      fontWeight: FontWeight.w700,
                                       color: LoomTheme.accent(context),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: LoomSpacing.sm),
-                                Text(
-                                  '再多玩幾題吧！\n智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
-                                  textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: LoomSpacing.sm),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: LoomTheme.accent(context).withOpacity(0.12),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Text(
+                                  '今天 +$dailyPlus',
                                   style: LoomTypography.secondary.copyWith(
-                                    fontSize: 14,
-                                    color: LoomTheme.textSecondary(context),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: LoomTheme.accent(context),
                                   ),
                                 ),
-                                const SizedBox(height: LoomSpacing.md),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: SizedBox(
-                                        height: 4,
-                                        child: LinearProgressIndicator(
-                                          value: levelProgress,
-                                          color: LoomTheme.accent(context),
-                                          backgroundColor: LoomTheme.border(context),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      'Lv $currentLevel',
-                                      style: LoomTypography.secondary.copyWith(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: LoomTheme.textSecondary(context),
-                                      ),
-                                    ),
-                                  ],
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                '再多玩幾題吧！\n智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
+                                textAlign: TextAlign.center,
+                                style: LoomTypography.secondary.copyWith(
+                                  fontSize: 14,
+                                  color: LoomTheme.textSecondary(context),
                                 ),
-                                const SizedBox(height: LoomSpacing.sm),
-                                const SizedBox(height: 12),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(height: 16),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: SizedBox(
+                                      height: 4,
+                                      child: LinearProgressIndicator(
+                                        value: levelProgress,
+                                        color: LoomTheme.accent(context),
+                                        backgroundColor: LoomTheme.border(context),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Lv $currentLevel',
+                                    style: LoomTypography.secondary.copyWith(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: LoomTheme.textSecondary(context),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 16),
+                            ],
                           ),
                         ),
                       ),
