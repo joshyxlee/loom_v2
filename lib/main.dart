@@ -167,6 +167,9 @@ class _OnboardingGateState extends State<OnboardingGate> {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     if (!_ready) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
@@ -372,6 +375,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     widget.progressService.ensureDailyState();
     if (widget.progressService.streakSavePending) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -615,104 +621,115 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       const SizedBox(height: LoomSpacing.md),
-                      LoomCard(
-                        background: LoomTheme.card(context),
-                        borderColor: LoomTheme.border(context),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                              Text(
-                                '智慧指數',
-                                style: LoomTypography.sectionTitle.copyWith(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                  color: LoomTheme.textSecondary(context),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(kCardRadius),
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: LoomTheme.card(context),
+                            borderRadius: BorderRadius.circular(kCardRadius),
+                            border: Border.all(color: LoomTheme.border(context)),
+                            boxShadow: LoomElevation.card,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(kCardPadding),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '智慧指數',
+                                  style: LoomTypography.sectionTitle.copyWith(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: LoomTheme.textSecondary(context),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: LoomSpacing.md),
-                              SizedBox(
-                                width: 120,
-                                height: 120,
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: Text(
-                                        knowledgeBalance.toString(),
-                                        maxLines: 1,
-                                        softWrap: false,
-                                        overflow: TextOverflow.visible,
-                                        textAlign: TextAlign.center,
-                                        style: LoomTypography.bigNumber.copyWith(
-                                          fontFeatures: const [FontFeature.tabularFigures()],
-                                          fontSize: 80,
-                                          fontWeight: FontWeight.w700,
-                                          color: LoomTheme.accent(context),
+                                const SizedBox(height: LoomSpacing.md),
+                                SizedBox(
+                                  width: 120,
+                                  height: 120,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(
+                                          knowledgeBalance.toString(),
+                                          maxLines: 1,
+                                          softWrap: false,
+                                          overflow: TextOverflow.visible,
+                                          textAlign: TextAlign.center,
+                                          style: LoomTypography.bigNumber.copyWith(
+                                            fontFeatures: const [FontFeature.tabularFigures()],
+                                            fontSize: 80,
+                                            fontWeight: FontWeight.w700,
+                                            color: LoomTheme.accent(context),
+                                          ),
                                         ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(height: LoomSpacing.sm),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 10,
+                                    vertical: 4,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: LoomTheme.accent(context).withOpacity(0.12),
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  child: Text(
+                                    '今天 +$dailyPlus',
+                                    style: LoomTypography.secondary.copyWith(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      color: LoomTheme.accent(context),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: LoomSpacing.sm),
+                                Text(
+                                  '再多玩幾題吧！\n智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
+                                  textAlign: TextAlign.center,
+                                  style: LoomTypography.secondary.copyWith(
+                                    fontSize: 14,
+                                    color: LoomTheme.textSecondary(context),
+                                  ),
+                                ),
+                                const SizedBox(height: LoomSpacing.md),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: SizedBox(
+                                        height: 4,
+                                        child: LinearProgressIndicator(
+                                          value: levelProgress,
+                                          color: LoomTheme.accent(context),
+                                          backgroundColor: LoomTheme.border(context),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      'Lv $currentLevel',
+                                      style: LoomTypography.secondary.copyWith(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: LoomTheme.textSecondary(context),
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
-                              const SizedBox(height: LoomSpacing.sm),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: LoomTheme.accent(context).withOpacity(0.12),
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                child: Text(
-                                  '今天 +$dailyPlus',
-                                  style: LoomTypography.secondary.copyWith(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                    color: LoomTheme.accent(context),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: LoomSpacing.sm),
-                              Text(
-                                '再多玩幾題吧！智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: LoomTypography.secondary.copyWith(
-                                  fontSize: 14,
-                                  color: LoomTheme.textSecondary(context),
-                                ),
-                              ),
-                              const SizedBox(height: LoomSpacing.md),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: SizedBox(
-                                      height: 4,
-                                      child: LinearProgressIndicator(
-                                        value: levelProgress,
-                                        color: LoomTheme.accent(context),
-                                        backgroundColor: LoomTheme.border(context),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Lv $currentLevel',
-                                    style: LoomTypography.secondary.copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color: LoomTheme.textSecondary(context),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                const SizedBox(height: LoomSpacing.sm),
+                                const SizedBox(height: 12),
+                              ],
+                            ),
                           ),
                         ),
-                      const SizedBox(height: LoomSpacing.md),
+                      ),
+                      const SizedBox(height: LoomSpacing.lg),
                     ],
                   ),
                 ),
@@ -757,6 +774,9 @@ class _CardSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(14),
@@ -783,6 +803,9 @@ class _HomeBottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return BottomNavigationBar(
       currentIndex: 0,
       onTap: onTap,
@@ -807,6 +830,9 @@ class _PlaceholderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: Center(
@@ -823,6 +849,9 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return Scaffold(
       appBar: AppBar(title: const Text('設定')),
       body: Padding(
@@ -1008,6 +1037,9 @@ class _SubjectButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return OutlinedButton(
       onPressed: onTap,
       child: Align(
@@ -1045,6 +1077,9 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     final title = _tabIndex == 0 ? '總榜' : '本週';
     return Scaffold(
       appBar: AppBar(title: const Text('看看你現在站在哪 🏆')),
@@ -1090,6 +1125,9 @@ class _LeaderboardSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     return LoomCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1621,6 +1659,9 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     final question = _sessionQuestions[_index];
     final inventory = InventoryService.instance;
     final skipCount = inventory.count('util_skip_question');
@@ -2015,6 +2056,9 @@ class _BoostCounterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     String? label;
     if (focusRemaining > 0) {
       label = '專注 x$focusRemaining';
@@ -2060,6 +2104,9 @@ class _AnswerOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     final showCorrect = isLocked && isCorrectOption;
     final showWrong = isLocked && selected && !isCorrectOption;
     final baseBg = LoomTheme.surface(context);
@@ -2142,6 +2189,9 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double kGutter = 20;
+    const double kCardRadius = 16;
+    const double kCardPadding = 16;
     final bannerColor =
         isCorrect ? LoomTheme.positive(context) : LoomTheme.negative(context);
     final textColor = isCorrect
