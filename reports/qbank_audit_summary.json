@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-02-21T13:57:37",
-  "total_questions": 1009,
+  "generated_at": "2026-02-22T14:29:46",
+  "total_questions": 1039,
   "banned_phrase_hits": 0,
-  "restatement_fail_count": 0,
-  "knowledge_fail_count": 4,
-  "char_length_violations": 1,
+  "restatement_fail_count": 10,
+  "knowledge_fail_count": 437,
+  "char_length_violations": 5,
   "sentence_count_violations": 0,
   "emoji_violations": 0,
   "exclam_violations": 0,
@@ -13,169 +13,180 @@
   "catchphrase_flags": {
     "ai.json": {
       "重點": {
-        "count": 1,
+        "count": 2,
         "level": "OK",
         "ids": [
-          "ai_v3_0114"
+          "ai_v3_0076",
+          "ai_v3_0095"
         ]
       },
-      "登場": {
+      "關鍵": {
         "count": 1,
         "level": "OK",
         "ids": [
-          "ai_v3_0114"
+          "ai_v3_0082"
         ]
       }
     },
     "business.json": {
-      "登場": {
-        "count": 6,
+      "關鍵": {
+        "count": 2,
         "level": "OK",
         "ids": [
-          "business_v3_0082",
-          "business_v3_0083",
-          "business_v3_0086",
-          "business_v3_0088",
-          "business_v3_0100",
+          "business_v3_0027",
+          "business_v3_0036"
+        ]
+      },
+      "登場": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
           "business_v3_0107"
         ]
-      },
+      }
+    },
+    "fun_facts.json": {
       "想成": {
-        "count": 1,
+        "count": 2,
         "level": "OK",
         "ids": [
-          "business_v3_0083"
+          "fun_v3_0001",
+          "fun_v3_0060"
         ]
       },
-      "對味": {
+      "重點": {
+        "count": 2,
+        "level": "OK",
+        "ids": [
+          "fun_v3_0067",
+          "fun_v3_0077"
+        ]
+      },
+      "其實就是": {
         "count": 1,
         "level": "OK",
         "ids": [
-          "business_v3_0083"
+          "fun_v3_0068"
+        ]
+      }
+    },
+    "history.json": {
+      "關鍵": {
+        "count": 4,
+        "level": "OK",
+        "ids": [
+          "history_v3_0032",
+          "history_v3_0041",
+          "history_v3_0047",
+          "history_v3_0099"
+        ]
+      }
+    },
+    "kpop.json": {
+      "登場": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "kpop_v3_0002"
+        ]
+      },
+      "關鍵": {
+        "count": 1,
+        "level": "OK",
+        "ids": [
+          "kpop_v3_0039"
+        ]
+      }
+    },
+    "money.json": {
+      "重點": {
+        "count": 5,
+        "level": "OK",
+        "ids": [
+          "money_v3_0014",
+          "money_v3_0018",
+          "money_v3_0050",
+          "money_v3_0057",
+          "money_v3_0070"
+        ]
+      }
+    },
+    "nba.json": {
+      "關鍵": {
+        "count": 3,
+        "level": "OK",
+        "ids": [
+          "nba_v3_0041",
+          "nba_v3_0072",
+          "nba_v3_0126"
         ]
       }
     }
   },
   "opening_repeat_flags": {
-    "ai.json": [
-      {
-        "opening": "提到「下列何者屬於」",
-        "level": "WARN",
-        "ids": [
-          "ai_v3_0055",
-          "ai_v3_0072",
-          "ai_v3_0093"
-        ]
-      }
-    ],
-    "fun_facts.json": [
-      {
-        "opening": "不會屬於冷知識常見說",
-        "level": "WARN",
-        "ids": [
-          "fun_v3_0058",
-          "fun_v3_0075",
-          "fun_v3_0077"
-        ]
-      },
-      {
-        "opening": "不會在冷知識裡很常見",
-        "level": "WARN",
-        "ids": [
-          "fun_v3_0066",
-          "fun_v3_0076",
-          "fun_v3_0090"
-        ]
-      }
-    ],
     "kpop.json": [
       {
-        "opening": "提到「BIGBAN」",
+        "opening": "BLACKPINK ",
         "level": "WARN",
         "ids": [
-          "kpop_v3_0009",
-          "kpop_v3_0074",
-          "kpop_v3_0110"
+          "kpop_v3_0002",
+          "kpop_v3_0027",
+          "kpop_v3_0060"
         ]
       },
       {
-        "opening": "2022屬於韓流文化",
-        "level": "WARN",
+        "opening": "SEVENTEEN ",
+        "level": "FAIL",
         "ids": [
-          "kpop_v3_0046",
-          "kpop_v3_0049",
-          "kpop_v3_0086"
-        ]
-      },
-      {
-        "opening": "提到「SEVENT」",
-        "level": "WARN",
-        "ids": [
-          "kpop_v3_0064",
+          "kpop_v3_0005",
+          "kpop_v3_0021",
+          "kpop_v3_0045",
           "kpop_v3_0082",
-          "kpop_v3_0100"
-        ]
-      }
-    ],
-    "money.json": [
-      {
-        "opening": "在投資的語境裡，「台",
-        "level": "WARN",
-        "ids": [
-          "money_v3_0076",
-          "money_v3_0085",
-          "money_v3_0088",
-          "money_v3_0118"
-        ]
-      }
-    ],
-    "nba.json": [
-      {
-        "opening": "在籃球的語境裡，「「",
-        "level": "WARN",
-        "ids": [
-          "nba_v3_0039",
-          "nba_v3_0050",
-          "nba_v3_0079"
+          "kpop_v3_0100",
+          "kpop_v3_0118"
         ]
       },
       {
-        "opening": "Wilt Chamb",
+        "opening": "Red Velvet",
         "level": "WARN",
         "ids": [
-          "nba_v3_0081",
-          "nba_v3_0084",
-          "nba_v3_0103",
-          "nba_v3_0120"
+          "kpop_v3_0006",
+          "kpop_v3_0025",
+          "kpop_v3_0081",
+          "kpop_v3_0099",
+          "kpop_v3_0117"
         ]
       },
       {
-        "opening": "John Stock",
-        "level": "WARN",
+        "opening": "Stray Kids",
+        "level": "FAIL",
         "ids": [
-          "nba_v3_0090",
-          "nba_v3_0091",
-          "nba_v3_0113"
+          "kpop_v3_0013",
+          "kpop_v3_0032",
+          "kpop_v3_0047",
+          "kpop_v3_0065",
+          "kpop_v3_0083",
+          "kpop_v3_0101"
         ]
       },
       {
-        "opening": "Russell We",
+        "opening": "LE SSERAFI",
         "level": "WARN",
         "ids": [
-          "nba_v3_0096",
-          "nba_v3_0110",
-          "nba_v3_0112"
+          "kpop_v3_0015",
+          "kpop_v3_0034",
+          "kpop_v3_0067",
+          "kpop_v3_0085",
+          "kpop_v3_0103"
         ]
-      }
-    ],
-    "world.json": [
+      },
       {
-        "opening": "題目提到「下列哪個國",
+        "opening": "NCT DREAM ",
         "level": "WARN",
         "ids": [
-          "world_v3_0007",
-          "world_v3_0015",
-          "world_v3_0016"
+          "kpop_v3_0044",
+          "kpop_v3_0076",
+          "kpop_v3_0112"
         ]
       }
     ]
