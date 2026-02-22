@@ -378,7 +378,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const double kGutter = 20;
     const double kCardRadius = 16;
     const double kCardPadding = 16;
-    const double kHomeCtaHeight = 48;
+    const double kHomeCtaHeight = 56;
     const double kHomeBottomNavHeight = 64;
     final bottomInset = MediaQuery.of(context).viewPadding.bottom;
     final bottomReserve =
@@ -716,7 +716,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SafeArea(
                 top: false,
                 child: Padding(
-                  padding: const EdgeInsets.all(LoomSpacing.screen),
+                  padding: const EdgeInsets.symmetric(horizontal: LoomSpacing.screen),
                   child: SizedBox(
                     height: kHomeCtaHeight,
                     child: Builder(
