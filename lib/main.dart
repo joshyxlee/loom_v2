@@ -683,12 +683,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               const SizedBox(height: 12),
-                              Text(
-                                '再多玩幾題吧！\n智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
-                                textAlign: TextAlign.center,
-                                style: LoomTypography.secondary.copyWith(
-                                  fontSize: 14,
-                                  color: LoomTheme.textSecondary(context),
+                              Container(
+                                width: double.infinity,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 14,
+                                  vertical: 10,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: LoomTheme.card(context).withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(14),
+                                  border: Border.all(color: LoomTheme.border(context)),
+                                ),
+                                child: Text(
+                                  '再多玩幾題吧！\n智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
+                                  textAlign: TextAlign.center,
+                                  style: LoomTypography.secondary.copyWith(
+                                    fontSize: 14,
+                                    height: 1.35,
+                                    color: LoomTheme.textSecondary(context),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 16),
