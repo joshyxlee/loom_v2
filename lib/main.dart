@@ -464,21 +464,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      floatingActionButton: kDebugMode
-          ? FloatingActionButton(
-              onPressed: () {
-                TokenService.instance.addToken(5000);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('DEBUG: +5000 tokens added')),
-                );
-                setState(() {});
-              },
-              child: const Icon(Icons.attach_money),
-            )
-          : null,
-      floatingActionButtonLocation: kDebugMode
-          ? FloatingActionButtonLocation.endTop
-          : null,
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -576,11 +561,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.only(
-                    bottom: kBottomNavigationBarHeight +
-                        MediaQuery.of(context).viewPadding.bottom +
-                        LoomSizes.buttonHeight +
-                        LoomSpacing.md,
+                  padding: const EdgeInsets.only(
+                    bottom: LoomSpacing.md,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -633,14 +615,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       const SizedBox(height: LoomSpacing.md),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.40,
-                        child: LoomCard(
-                          background: LoomTheme.card(context),
-                          borderColor: LoomTheme.border(context),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                      LoomCard(
+                        background: LoomTheme.card(context),
+                        borderColor: LoomTheme.border(context),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
                               Text(
                                 '智慧指數',
                                 style: LoomTypography.sectionTitle.copyWith(
@@ -696,10 +676,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               const SizedBox(height: LoomSpacing.sm),
                               Text(
-                                '再 $remainingToNext 就可升等並拿到 $nextLevelReward 元知識幣！',
+                                '再多玩幾題吧！智慧指數再上漲 $remainingToNext 就可以升等拿到 $nextLevelReward 元的知識幣！',
                                 textAlign: TextAlign.center,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                                 style: LoomTypography.secondary.copyWith(
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   color: LoomTheme.textSecondary(context),
                                 ),
                               ),
@@ -730,7 +712,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-                      ),
                       const SizedBox(height: LoomSpacing.md),
                     ],
                   ),
@@ -849,6 +830,16 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            LoomPrimaryButton(
+              label: '充值',
+              onPressed: () {
+                TokenService.instance.addToken(5000);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('已充值 +5000 知識幣')),
+                );
+              },
+            ),
+            const SizedBox(height: LoomSpacing.sm),
             LoomPrimaryButton(
               label: '刷新',
               onPressed: () {
