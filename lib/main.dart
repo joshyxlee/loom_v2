@@ -459,8 +459,8 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: LoomSpacing.screen),
             child: TokenChip(
               label: '知識幣 \$${tokenService.knowledgeToken}',
-              onTap: () {
-                Navigator.push(
+              onTap: () async {
+                await Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => ShopScreen(
@@ -470,6 +470,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 );
+                if (!mounted) return;
+                setState(() {});
               },
             ),
           ),
@@ -501,7 +503,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return;
             }
             if (index == 3) {
-              Navigator.push(
+              await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => ShopScreen(
@@ -511,6 +513,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               );
+              if (!mounted) return;
+              setState(() {});
               return;
             }
             if (index == 4) {
